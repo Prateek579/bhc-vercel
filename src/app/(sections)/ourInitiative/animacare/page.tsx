@@ -230,8 +230,8 @@ export default function Animacare() {
 
               {/* Mission Description */}
               <p className="text-base sm:text-lg md:text-xl max-w-3xl opacity-90 leading-relaxed font-['Montserrat'] font-[400] leading-[100%] tracking-[0%] align-middle text-[#F7F7F7]">
-                Our mission is not just about numbers — it's about touching lives, building trust, and transforming
-                healthcare access for communities that had long been forgotten. We're not stopping here — this is just
+                Our mission is not just about numbers — it&apos;s about touching lives, building trust, and transforming
+                healthcare access for communities that had long been forgotten. We&apos;re not stopping here — this is just
                 the beginning.
               </p>
 

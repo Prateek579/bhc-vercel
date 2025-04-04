@@ -181,7 +181,7 @@ export default function KnowUsBetter() {
             <span className="text-[#003366]"> Team</span>
           </h2>
           <p className="text-lg text-gray-600 font-['Montserrat'] mx-auto">
-            Bridge Healthcare's expert team innovates tele-diagnostics for better healthcare access.
+            Bridge Healthcare&apos;s expert team innovates tele-diagnostics for better healthcare access.
           </p>
         </div>
 

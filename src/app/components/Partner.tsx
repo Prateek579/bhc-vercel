@@ -10,7 +10,7 @@ const Partner = () => {
                     <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold font-['Montserrat'] leading-tight tracking-tight text-[#F4F0E3]">Explore Partnership With us</h2>
                     <p className="text-sm sm:text-base lg:text-lg font-normal font-['Montserrat'] leading-relaxed tracking-normal text-[#F4F0E3] max-w-3xl mx-auto opacity-90">
                         Whether you are healthcare Professional, a clinic or someone
-                        Passionate about improving Healthcare access, there's a place for you
+                        Passionate about improving Healthcare access, there&apos;s a place for you
                         at bridge health care.
                     </p>
                     <div className="mt-6 sm:mt-8 lg:mt-10">

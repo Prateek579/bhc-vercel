@@ -23,7 +23,7 @@ const LandingPage = () => {
     }, 10000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [backgroundImages.length]);
 
   const handleDotClick = (index: number) => {
     setCurrentImageIndex(index);
@@ -98,10 +98,10 @@ const LandingPage = () => {
                 <span className='text-[#009688]'>Our </span>Journey So Far
               </h2>
               <p className="text-[#555555] text-[20px] font-['Montserrat'] font-medium leading-[100%] align-middle tracking-[0px]">
-                India's leading tech-driven healthcare solution, delivering real-time care with human touch and compassion.
+                India&apos;s leading tech-driven healthcare solution, delivering real-time care with human touch and compassion.
               </p>
               <p className="text-[13px] text-[#888888] font-['Montserrat'] font-normal leading-[23px] tracking-[0%] align-middle">
-                Bridge Healthcare is transforming rural healthcare with 45 Smart Health Centres, 45 Mobile Units, and AI-powered diagnostics, reaching 10 million lives. Through tele-diagnostics and nurse-assisted care, we ensure accessible, real-time medical support. Our mission is to expand, enhance AI-driven care, and build India's largest tech-enabled rural health network.
+                Bridge Healthcare is transforming rural healthcare with 45 Smart Health Centres, 45 Mobile Units, and AI-powered diagnostics, reaching 10 million lives. Through tele-diagnostics and nurse-assisted care, we ensure accessible, real-time medical support. Our mission is to expand, enhance AI-driven care, and build India&apos;s largest tech-enabled rural health network.
               </p>
             </div>
 
@@ -660,7 +660,7 @@ const LandingPage = () => {
                 />
               </div>
               <p className="text-[#616161] mb-4 sm:mb-6 font-['Montserrat'] text-sm sm:text-base sm:text-base font-[400] leading-[100%] align-middle tracking-[0%]">
-                In today's fast-paced tech world, staying ahead is crucial. Our training programs focus on cutting-edge technologies to enhance your skills.
+                In today&apos;s fast-paced tech world, staying ahead is crucial. Our training programs focus on cutting-edge technologies to enhance your skills.
               </p>
               <div className="flex items-center">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">

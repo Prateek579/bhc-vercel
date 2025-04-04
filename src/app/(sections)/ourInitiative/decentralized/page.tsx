@@ -17,7 +17,7 @@ export default function Decentralized() {
         <div className="relative z-10 flex flex-col gap-6 max-w-xl lg:max-w-2xl">
           <div className="space-y-4">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-[700] font-['Montserrat'] leading-[120%] sm:leading-[110%] md:leading-[100%] tracking-[0%] align-middle text-[#1A1A1A] mb-4 sm:mb-6">
-              <span className="text-[#18A093]">Building The India's Largest</span>{' '}
+              <span className="text-[#18A093]">Building The India&apos;s Largest</span>{' '}
               <span className="text-[#003366]">Decentralized Healthcare Network</span>
             </h1>
             {/* <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-['Montserrat'] leading-tight">
@@ -213,7 +213,7 @@ export default function Decentralized() {
             <span className="text-[#003366]"> Healthcare in India</span>
           </h2>
           <p className="text-[20px] text-[#555555] font-[500] font-['Montserrat'] leading-[100%] tracking-[0px] align-middle mb-16">
-            India’s healthcare system faces deep gaps in accessibility and affordability — especially in rural regions. We're building a decentralized, tech-driven ecosystem that delivers real-time, community-centered care where it’s needed most.
+            India&apos;s healthcare system faces deep gaps in accessibility and affordability — especially in rural regions. We&apos;re building a decentralized, tech-driven ecosystem that delivers real-time, community-centered care where it’s needed most.
           </p>
         </div>
 

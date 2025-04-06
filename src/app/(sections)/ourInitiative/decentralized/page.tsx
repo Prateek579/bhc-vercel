@@ -20,11 +20,6 @@ export default function Decentralized() {
               <span className="text-[#18A093]">Building The India&apos;s Largest</span>{' '}
               <span className="text-[#003366]">Decentralized Healthcare Network</span>
             </h1>
-            {/* <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-['Montserrat'] leading-tight">
-              <span className='text-[#17A7AB] whitespace-nowrap'>Building The India's Largest</span>
-              <br />
-              <span className='text-[#003366]'>Decentralized Healthcare Network</span>
-            </h1> */}
           </div>
 
           <p className="text-base sm:text-lg md:text-xl font-[400] font-['Font family'] leading-[150%] sm:leading-[130%] md:leading-[100%] tracking-[0%] align-middle text-[#555555]">

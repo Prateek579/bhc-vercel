@@ -1,11 +1,84 @@
 'use client';
 import Partner from '@/app/components/Partner';
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+
+const useCountAnimation = (end: number, duration: number = 1000) => {
+  const [count, setCount] = useState(0);
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    let startTime: number | null = null;
+    const animateCount = (currentTime: number) => {
+      if (!startTime) startTime = currentTime;
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      setCount(Math.floor(progress * end));
+
+      if (progress < 1) {
+        requestAnimationFrame(animateCount);
+      }
+    };
+
+    requestAnimationFrame(animateCount);
+  }, [end, duration, isInView]);
+
+  return { count, setIsInView };
+};
 
 export default function Animacare() {
-
   const [activeFaq, setActiveFaq] = React.useState<string | null>(null);
+  const statsRef = useRef<HTMLDivElement>(null);
+  const missionStatsRef = useRef<HTMLDivElement>(null);
+
+  const specialistReferrals = useCountAnimation(10);
+  const diseaseDetection = useCountAnimation(20);
+  const patientsTreated = useCountAnimation(400);
+  const patientsSatisfied = useCountAnimation(90);
+
+  // Mission 2025 statistics
+  const healthCentres = useCountAnimation(45);
+  const mobileUnits = useCountAnimation(45);
+  const millionPeople = useCountAnimation(10);
+
+  useEffect(() => {
+    if (!statsRef.current) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          specialistReferrals.setIsInView(true);
+          diseaseDetection.setIsInView(true);
+          patientsTreated.setIsInView(true);
+          patientsSatisfied.setIsInView(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(statsRef.current);
+    return () => observer.disconnect();
+  }, [specialistReferrals, diseaseDetection, patientsTreated, patientsSatisfied]);
+
+  // Observer for Mission 2025 statistics
+  useEffect(() => {
+    if (!missionStatsRef.current) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          healthCentres.setIsInView(true);
+          mobileUnits.setIsInView(true);
+          millionPeople.setIsInView(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(missionStatsRef.current);
+    return () => observer.disconnect();
+  }, [healthCentres, mobileUnits, millionPeople]);
 
   return (<>
     <div className="relative overflow-hidden">
@@ -24,24 +97,10 @@ export default function Animacare() {
             <span className="text-[#003366]">Animacare Initiative</span>
           </h1>
           <p className="text-lg sm:text-xl text-gray-700 leading-relaxed">
-            By 2036, we will transform Indian healthcare.
+            Revolutionizing Rural Healthcare with Tele-Diagnostic Solutions
           </p>
         </div>
       </div>
-
-      {/* <div className="relative z-10 flex flex-col gap-6 max-w-xl lg:max-w-2xl">
-          <div className="space-y-4">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-['Montserrat'] leading-tight">
-              <span className='text-[#17A7AB] whitespace-nowrap'>Impactful & Bold Innovative</span>
-              <br />
-              <span className='text-[#003366]'>Animacare Initiative</span>
-            </h1>
-          </div>
-
-          <p className="text-lg md:text-xl lg:text-2xl text-gray-500 max-w-xl opacity-90 font-['Montserrat'] font-normal leading-relaxed">
-          Revolutionizing Rural Healthcare with Tele-Diagnostic Solutions
-          </p>
-        </div> */}
 
       {/* India Map Illustration */}
       <div className="relative lg:absolute lg:inset-y-0 lg:right-0 w-full lg:w-1/2 mt-8 lg:mt-0">
@@ -63,7 +122,7 @@ export default function Animacare() {
           <div>
             <h2 className="mb-4 text-2xl sm:text-3xl md:text-4xl lg:text-[36px] font-[700] font-['Montserrat'] leading-tight sm:leading-tight md:leading-tight lg:leading-[100%] tracking-[0px] align-middle text-[#003366]">
               <span className="text-[#18A093]">Chapter 1-</span>{' '}
-              <span className="text-[#003366]">West Bengal (Murshidhabad district)</span>
+              <span className="text-[#003366]">West Bengal (Murshidhabad)</span>
             </h2>
             <p className="text-base sm:text-lg md:text-xl font-[400] font-['Font family'] leading-[150%] sm:leading-[130%] md:leading-[100%] tracking-[0%] align-middle text-[#555555]">Revolutionizing Rural Healthcare with Tele-Diagnostic Solutions</p>
           </div>
@@ -113,12 +172,12 @@ export default function Animacare() {
             </div>
 
             {/* Map Image */}
-            <div className="relative h-[250px] sm:h-[350px] md:h-[450px] lg:h-[550px]">
+            <div className="relative h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] flex items-center justify-center">
               <Image
                 src="/icons/anim-2-img.png"
                 alt="Murshidabad District Map"
-                fill
-                className="object-contain"
+                width={200} height={200}
+                className="sm:h-[95%] md:h-[80%] lg:h-[80%] w-auto"
               />
             </div>
           </div>
@@ -143,12 +202,12 @@ export default function Animacare() {
           </div>
 
           {/* Statistics Section */}
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+          <div ref={statsRef} className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
             <div className="text-center p-4 sm:p-6">
               <div className="flex justify-center mb-4">
                 <Image src="/icons/anim-2-lgo4.png" alt="Specialists" width={48} height={48} />
               </div>
-              <h4 className="text-xl sm:text-2xl lg:text-3xl font-[700] text-[#1A1A1A] mb-2">10+</h4>
+              <h4 className="text-xl sm:text-2xl lg:text-3xl font-[700] text-[#1A1A1A] mb-2">{specialistReferrals.count}+</h4>
               <p className="text-sm sm:text-base text-gray-600">Specialist Referrals</p>
             </div>
 
@@ -156,7 +215,7 @@ export default function Animacare() {
               <div className="flex justify-center mb-4">
                 <Image src="/icons/anim-2-lgo5.png" alt="Disease" width={48} height={48} />
               </div>
-              <h4 className="text-xl sm:text-2xl lg:text-3xl font-[700] text-[#1A1A1A] mb-2">20%</h4>
+              <h4 className="text-xl sm:text-2xl lg:text-3xl font-[700] text-[#1A1A1A] mb-2">{diseaseDetection.count}%</h4>
               <p className="text-sm sm:text-base text-gray-600">Early Disease Detected</p>
             </div>
 
@@ -164,7 +223,7 @@ export default function Animacare() {
               <div className="flex justify-center mb-4">
                 <Image src="/icons/anim-2-lgo6.png" alt="Patients" width={48} height={48} />
               </div>
-              <h4 className="text-xl sm:text-2xl lg:text-3xl font-[700] text-[#1A1A1A] mb-2">400+</h4>
+              <h4 className="text-xl sm:text-2xl lg:text-3xl font-[700] text-[#1A1A1A] mb-2">{patientsTreated.count}+</h4>
               <p className="text-sm sm:text-base text-gray-600">Patients Treated</p>
             </div>
 
@@ -172,7 +231,7 @@ export default function Animacare() {
               <div className="flex justify-center mb-4">
                 <Image src="/icons/anim-2-lgo7.png" alt="Satisfaction" width={48} height={48} />
               </div>
-              <h4 className="text-xl sm:text-2xl lg:text-3xl font-[700] text-[#1A1A1A] mb-2">90%</h4>
+              <h4 className="text-xl sm:text-2xl lg:text-3xl font-[700] text-[#1A1A1A] mb-2">{patientsSatisfied.count}%</h4>
               <p className="text-sm sm:text-base text-gray-600">Patients Satisfied</p>
             </div>
           </div>
@@ -236,22 +295,22 @@ export default function Animacare() {
               </p>
 
               {/* Statistics Cards */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full mt-4">
+              <div ref={missionStatsRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full mt-4">
                 {/* Smart Health Centres */}
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 sm:p-8 text-[#003366] border-1 border-gray-100">
-                  <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2">45</h3>
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 sm:p-8 text-white border-1 border-gray-100">
+                  <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2">{healthCentres.count}</h3>
                   <p className="text-sm sm:text-base opacity-90">Smart Health Centres</p>
                 </div>
 
                 {/* Smart Mobile Units */}
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 sm:p-8 text-[#003366] border-1 border-gray-100">
-                  <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2">45</h3>
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 sm:p-8 text-white border-1 border-gray-100">
+                  <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2">{mobileUnits.count}</h3>
                   <p className="text-sm sm:text-base opacity-90">Smart Mobile Units</p>
                 </div>
 
                 {/* Million People */}
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 sm:p-8 text-[#003366] border-1 border-gray-100">
-                  <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2">10 M</h3>
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 sm:p-8 text-white border-1 border-gray-100">
+                  <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2">{millionPeople.count} M</h3>
                   <p className="text-sm sm:text-base opacity-90">Million People</p>
                 </div>
               </div>
@@ -450,12 +509,12 @@ export default function Animacare() {
 
         <div className="space-y-3 sm:space-y-4 lg:space-y-6">
           {/* FAQ Items */}
-          <div className="border border-gray-200 rounded-lg overflow-hidden">
+          <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq1' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
             <button
               onClick={() => setActiveFaq(activeFaq === 'faq1' ? null : 'faq1')}
-              className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6 hover:bg-gray-50 transition-colors duration-200"
+              className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6 transition-colors duration-200"
             >
-              <span className="text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] text-[#333333] font-['Montserrat']">What is Bridge Healthcare and what makes it different from other healthcare providers?</span>
+              <span className={`text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq1' ? 'text-white' : 'text-[#333333]'} `}>What is the Animacare Initiative and how does the model work?</span>
               <svg
                 className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq1' ? 'rotate-180' : ''}`}
                 fill="none"
@@ -465,17 +524,18 @@ export default function Animacare() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq1' ? 'max-h-40 py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
-              <p className="text-sm sm:text-base lg:text-lg text-gray-700 font-['Montserrat']">Bridge Healthcare is a revolutionary healthcare platform that brings quality medical services directly to rural and underserved communities through our network of Smart Health Centres and Mobile Units.</p>
+            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq1' ? 'max-h-[1000px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
+              <p className="text-sm sm:text-base lg:text-lg font-['Montserrat'] text-white">The Animacare Initiative is Bridge Healthcare’s flagship rural health model—designed to create an integrated, tech-enabled care network across villages. The model is built around strategically placed Tele-Diagnostic and Tele-Consultation Centers (TDTCs) and mobile Medical Tele-Consultation Units (MTCUs). Together, they provide accessible, affordable, and continuous care by combining on-ground diagnostics, trained nurse assistance, and specialist tele-consultation, ensuring no one is left behind due to distance or lack of infrastructure.</p>
             </div>
           </div>
 
-          <div className="border border-gray-200 rounded-lg overflow-hidden">
+          <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq2' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
             <button
               onClick={() => setActiveFaq(activeFaq === 'faq2' ? null : 'faq2')}
-              className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6 hover:bg-gray-50 transition-colors duration-200"
+              className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6  transition-colors duration-200"
             >
-              <span className="text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] text-[#333333] font-['Montserrat']">How does Bridge Healthcare ensure quality healthcare in rural areas?</span>
+              <span className={`text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq2' ? 'text-white' : 'text-[#333333]'} `}>What services are provided by TDTCs and MTCUs?
+              </span>
               <svg
                 className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq2' ? 'rotate-180' : ''}`}
                 fill="none"
@@ -485,17 +545,19 @@ export default function Animacare() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq2' ? 'max-h-40 py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
-              <p className="text-sm sm:text-base lg:text-lg text-gray-700 font-['Montserrat']">Through our network of Smart Health Centres and Mobile Units, we combine advanced technology with trained healthcare professionals to deliver quality medical services directly to rural communities.</p>
+            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq2' ? 'max-h-[1000px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
+              <p className="text-sm sm:text-base lg:text-lg text-white font-['Montserrat']">
+                TDTCs act as fixed community care hubs equipped with the Smart Healthcare Machine and a dedicated operator/nurse. They offer routine checkups, diagnostic tests, real-time doctor consultations, health record digitization, and printed prescriptions.
+                MTCUs are mobile units that take these services to remote hamlets—reaching those who can&apos;t travel to health centers. They serve as a bridge between hard-to-reach populations and the core care ecosystem.</p>
             </div>
           </div>
 
-          <div className="border border-gray-200 rounded-lg overflow-hidden">
+          <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq3' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
             <button
               onClick={() => setActiveFaq(activeFaq === 'faq3' ? null : 'faq3')}
-              className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6 hover:bg-gray-50 transition-colors duration-200"
+              className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6  transition-colors duration-200"
             >
-              <span className="text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] text-[#333333] font-['Montserrat']">What services does Bridge Healthcare provide through its Smart Health Centres?</span>
+              <span className={`text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq3' ? 'text-white' : 'text-[#333333]'} `}>How does the referral and follow-up system work?</span>
               <svg
                 className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq3' ? 'rotate-180' : ''}`}
                 fill="none"
@@ -505,19 +567,19 @@ export default function Animacare() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq3' ? 'max-h-40 py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
-              <p className="text-sm sm:text-base lg:text-lg text-gray-700 font-['Montserrat']">Our Smart Health Centres offer comprehensive services including health check-ups, tele-consultations, diagnostics, and wellness programs, all supported by trained healthcare professionals and advanced technology.</p>
+            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq3' ? 'max-h-[1000px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
+              <p className="text-sm sm:text-base lg:text-lg text-white font-['Montserrat']">Once a consultation is complete, doctors can digitally prescribe follow-up visits, diagnostics, or hospital referrals. Each patient&apos;s data is securely stored and linked to their profile, ensuring smooth coordination for repeat visits or escalations to higher medical facilities. The nurse at the TDTC tracks follow-up timelines, reaching out to patients proactively and ensuring care continuity with dignity.</p>
             </div>
           </div>
 
-          <div className="border border-gray-200 rounded-lg overflow-hidden">
+          <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq4' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
             <button
-              onClick={() => setActiveFaq(activeFaq === 'faq3' ? null : 'faq3')}
-              className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6 hover:bg-gray-50 transition-colors duration-200"
+              onClick={() => setActiveFaq(activeFaq === 'faq4' ? null : 'faq4')}
+              className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6  transition-colors duration-200"
             >
-              <span className="text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] text-[#333333] font-['Montserrat']">Where is Bridge Healthcare currently operating? Are your services available in my area?</span>
+              <span className={`text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq4' ? 'text-white' : 'text-[#333333]'} `}>What early results or outcomes have you achieved so far?</span>
               <svg
-                className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq3' ? 'rotate-180' : ''}`}
+                className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq4' ? 'rotate-180' : ''}`}
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -525,19 +587,23 @@ export default function Animacare() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq3' ? 'max-h-40 py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
-              <p className="text-sm sm:text-base lg:text-lg text-gray-700 font-['Montserrat']">Our Smart Health Centres offer comprehensive services including health check-ups, tele-consultations, diagnostics, and wellness programs, all supported by trained healthcare professionals and advanced technology.</p>
+            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq4' ? 'max-h-[1000px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
+              <p className="text-sm sm:text-base lg:text-lg text-white font-['Montserrat']">Our deployments in rural districts like Murshidabad (West Bengal) and Varanasi (Uttar Pradesh) have already led to:
+                <br />1: Hundreds of patients receiving quality consultations without leaving their village
+                <br />2: High detection rates of early-stage chronic conditions
+                <br />3: Increased health-seeking behavior, especially among women and the elderly
+              </p>
             </div>
           </div>
 
-          <div className="border border-gray-200 rounded-lg overflow-hidden">
+          <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq5' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
             <button
-              onClick={() => setActiveFaq(activeFaq === 'faq3' ? null : 'faq3')}
-              className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6 hover:bg-gray-50 transition-colors duration-200"
+              onClick={() => setActiveFaq(activeFaq === 'faq5' ? null : 'faq5')}
+              className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6  transition-colors duration-200"
             >
-              <span className="text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] text-[#333333] font-['Montserrat']">How can I get involved with Bridge Healthcare — as a partner, funder or volunteer?</span>
+              <span className={`text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq5' ? 'text-white' : 'text-[#333333]'} `}> How scalable is the Animacare Initiative for other rural regions?</span>
               <svg
-                className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq3' ? 'rotate-180' : ''}`}
+                className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq5' ? 'rotate-180' : ''}`}
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -545,8 +611,8 @@ export default function Animacare() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq3' ? 'max-h-40 py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
-              <p className="text-sm sm:text-base lg:text-lg text-gray-700 font-['Montserrat']">Our Smart Health Centres offer comprehensive services including health check-ups, tele-consultations, diagnostics, and wellness programs, all supported by trained healthcare professionals and advanced technology.</p>
+            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq5' ? 'max-h-[1000px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
+              <p className="text-sm sm:text-base lg:text-lg text-white font-['Montserrat']">The model is highly scalable and adaptable. It requires minimal infrastructure, runs with trained local staff and leverages existing hospital partnerships. Whether it’s hilly terrain, tribal belts, or flood-prone villages—the model can be replicated with low operational cost and high community trust. We’re actively inviting CSR funders, NGOs and Government bodies to partner with us in bringing this impact to many more districts across India.</p>
             </div>
           </div>
         </div>

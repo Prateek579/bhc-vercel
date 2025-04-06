@@ -12,12 +12,15 @@ const Navbar = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const toggleDropdown = (menu: string) => {
     setActiveDropdown(activeDropdown === menu ? null : menu);
+    setTimeout(() => {
+      setActiveDropdown(null);
+    }, 3000);
   };
 
   const navItems = [
     { title: 'Our Products', href: '/ourProducts' },
     { title: 'Our Solution', href: '/ourSolution' },
-    { 
+    {
       title: 'Our Initiative',
       href: '/our-initiative',
       hasDropdown: true,
@@ -26,15 +29,13 @@ const Navbar = () => {
         { title: 'Decentralized Health Network', href: '/ourInitiative/decentralized' },
       ]
     },
-    { 
+    {
       title: 'Know Us better',
       href: '/know-us-better',
       hasDropdown: true,
       dropdownItems: [
         { title: 'About Us', href: '/knowUsBetter/about' },
         { title: 'News', href: '/knowUsBetter/news' },
-        { title: 'Blogs', href: '/know-us-better/team' },
-        { title: 'Achievement', href: '/know-us-better/team' },
       ]
     },
     { title: 'Contact Us', href: '/contactUs' },
@@ -67,12 +68,12 @@ const Navbar = () => {
 
             <div className="relative group">
               <button
-                onClick={() => toggleDropdown('Our Initiative')}
                 className="nav-menu-item text-gray-700 hover:text-gray-900 px-3 py-2 inline-flex items-center"
+                onClick={() => toggleDropdown('Our Initiative')}
               >
                 Our Initiative
                 <svg
-                  className={`ml-2 h-4 w-4 transition-transform ${activeDropdown === 'Our Initiative' ? 'rotate-180' : ''}`}
+                  className="ml-2 h-4 w-4 transition-transform"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -83,10 +84,10 @@ const Navbar = () => {
               {activeDropdown === 'Our Initiative' && (
                 <div className="dropdown-menu absolute left-0 mt-2">
                   <div role="menu">
-                    <Link href="/ourInitiative/animacare" className="dropdown-item">
+                    <Link href="/ourInitiative/animacare" className="dropdown-item" onClick={() => setActiveDropdown(null)}>
                       <span className="dropdown-item-text">Animacare</span>
                     </Link>
-                    <Link href="/ourInitiative/decentralized" className="dropdown-item">
+                    <Link href="/ourInitiative/decentralized" className="dropdown-item" onClick={() => setActiveDropdown(null)}>
                       <span className="dropdown-item-text">Decentralized Health Network</span>
                     </Link>
                   </div>
@@ -96,12 +97,12 @@ const Navbar = () => {
 
             <div className="relative group">
               <button
-                onClick={() => toggleDropdown('Know Us better')}
                 className="nav-menu-item text-gray-700 hover:text-gray-900 px-3 py-2 inline-flex items-center"
+                onClick={() => toggleDropdown('Know Us better')}
               >
                 Know Us better
                 <svg
-                  className={`ml-2 h-4 w-4 transition-transform ${activeDropdown === 'Know Us better' ? 'rotate-180' : ''}`}
+                  className="ml-2 h-4 w-4 transition-transform"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -118,12 +119,12 @@ const Navbar = () => {
                     <Link href="/knowUsBetter/news" className="dropdown-item">
                       <span className="dropdown-item-text">News</span>
                     </Link>
-                    <Link href="/know-us-better/team" className="dropdown-item">
+                    <button onClick={(e) => e.preventDefault()} className="dropdown-item">
                       <span className="dropdown-item-text">Blogs</span>
-                    </Link>
-                    <Link href="/know-us-better/team" className="dropdown-item">
+                    </button>
+                    <button onClick={(e) => e.preventDefault()} className="dropdown-item">
                       <span className="dropdown-item-text">Achievement</span>
-                    </Link>
+                    </button>
                   </div>
                 </div>
               )}
@@ -138,35 +139,12 @@ const Navbar = () => {
 
           {/* Get Involved Button */}
           <div className="hidden md:block relative">
-            <button
-              onClick={() => toggleDropdown('get-involved')}
+            <Link
+              href="/getInvolved"
               className="inline-flex items-center justify-center px-6 py-2 border border-transparent text-base font-medium rounded-md text-white bg-[#003366] hover:bg-blue-900"
             >
               Get Involved
-              <svg
-                className={`ml-2 h-4 w-4 transition-transform ${activeDropdown === 'get-involved' ? 'rotate-180' : ''}`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            {activeDropdown === 'get-involved' && (
-              <div className="dropdown-menu absolute right-0 mt-2">
-                <div role="menu">
-                  <Link href="/get-involved/volunteer" className="dropdown-item">
-                    <span className="dropdown-item-text">Volunteer</span>
-                  </Link>
-                  <Link href="/get-involved/donate" className="dropdown-item">
-                    <span className="dropdown-item-text">Donate</span>
-                  </Link>
-                  <Link href="/get-involved/partner" className="dropdown-item">
-                    <span className="dropdown-item-text">Partner with Us</span>
-                  </Link>
-                </div>
-              </div>
-            )}
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -221,6 +199,7 @@ const Navbar = () => {
                 <Link
                   href={item.href}
                   className="nav-menu-item w-full text-left px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 flex justify-between items-center"
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   {item.title}
                 </Link>
@@ -232,6 +211,7 @@ const Navbar = () => {
                       key={dropdownItem.title}
                       href={dropdownItem.href}
                       className="nav-menu-item block px-3 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                      onClick={() => setIsMenuOpen(false)}
                     >
                       {dropdownItem.title}
                     </Link>
@@ -241,8 +221,9 @@ const Navbar = () => {
             </div>
           ))}
           <Link
-            href="/get-involved"
+            href="/getInvolved"
             className="block w-full text-center px-4 py-2 text-base font-medium text-white bg-[#003366] hover:bg-blue-900 rounded-md"
+            onClick={() => setIsMenuOpen(false)}
           >
             Get Involved
           </Link>

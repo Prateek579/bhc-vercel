@@ -264,7 +264,7 @@ export default function KnowUsBetter() {
           <div className="bg-gray-50 p-6 rounded-lg text-center bg-gray-200">
             <div className="relative w-48 h-48 mx-auto mb-4">
               <Image
-                src="/icons/abt-4-img1.png"
+                src="/icons/abt-4-img4.png"
                 alt="Team Member"
                 fill
                 className="object-cover rounded-lg"
@@ -289,7 +289,7 @@ export default function KnowUsBetter() {
           <div className="bg-gray-50 p-6 rounded-lg text-center bg-gray-200">
             <div className="relative w-48 h-48 mx-auto mb-4">
               <Image
-                src="/icons/abt-4-img2.png"
+                src="/icons/abt-4-img5.png"
                 alt="Team Member"
                 fill
                 className="object-cover rounded-lg"
@@ -314,7 +314,30 @@ export default function KnowUsBetter() {
           <div className="bg-gray-50 p-6 rounded-lg text-center bg-gray-200">
             <div className="relative w-48 h-48 mx-auto mb-4">
               <Image
-                src="/icons/abt-4-img3.png"
+                src="/icons/abt-4-img6.png"
+                alt="Team Member"
+                fill
+                className="object-cover rounded-lg"
+              />
+            </div>
+            <h3 className="text-xl font-bold text-[#003366] mb-1">Dr. B Rebecca </h3>
+            <p className="text-gray-600 mb-4">Co-Founder</p>
+            <div className="flex justify-center gap-4">
+              <a href="#" className="text-gray-600 hover:text-[#00A99D]">
+                <Image src="/icons/ttr.png" alt="Twitter" width={20} height={20} />
+              </a>
+              <a href="#" className="text-gray-600 hover:text-[#00A99D]">
+                <Image src="/icons/lkdn.png" alt="LinkedIn" width={20} height={20} />
+              </a>
+              <a href="#" className="text-gray-600 hover:text-[#00A99D]">
+                <Image src="/icons/intrnt.png" alt="Website" width={20} height={20} />
+              </a>
+            </div>
+          </div>
+          <div className="bg-gray-50 p-6 rounded-lg text-center bg-gray-200">
+            <div className="relative w-48 h-48 mx-auto mb-4">
+              <Image
+                src="/icons/abt-4-img7.png"
                 alt="Team Member"
                 fill
                 className="object-cover rounded-lg"
@@ -351,12 +374,12 @@ export default function KnowUsBetter() {
 
         <div className="space-y-3 sm:space-y-4 lg:space-y-6">
           {/* FAQ Items */}
-          <div className="border border-gray-200 rounded-lg overflow-hidden">
+          <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq1' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
             <button
               onClick={() => setActiveFaq(activeFaq === 'faq1' ? null : 'faq1')}
-              className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6 hover:bg-gray-50 transition-colors duration-200"
+              className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6 transition-colors duration-200"
             >
-              <span className="text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] text-[#333333] font-['Montserrat']">What is Bridge Healthcare and what makes it different from other healthcare providers?</span>
+              <span className={`text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq1' ? 'text-white' : 'text-[#333333]'} `}>What inspired the creation of Bridge Healthcare?</span>
               <svg
                 className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq1' ? 'rotate-180' : ''}`}
                 fill="none"
@@ -366,17 +389,18 @@ export default function KnowUsBetter() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq1' ? 'max-h-40 py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
-              <p className="text-sm sm:text-base lg:text-lg text-gray-700 font-['Montserrat']">Bridge Healthcare is a revolutionary healthcare platform that brings quality medical services directly to rural and underserved communities through our network of Smart Health Centres and Mobile Units.</p>
+            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq1' ? 'max-h-[1000px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
+              <p className="text-sm sm:text-base lg:text-lg font-['Montserrat'] text-white">Bridge Healthcare was born from a simple yet powerful realization: millions of people in rural India still lack access to timely, quality healthcare. We saw a chance to go beyond convenience and create real-world impact — by bringing diagnostics, doctor consultations, and continuous care right to the doorstep of every village through technology and local empowerment.</p>
             </div>
           </div>
 
-          <div className="border border-gray-200 rounded-lg overflow-hidden">
+          <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq2' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
             <button
               onClick={() => setActiveFaq(activeFaq === 'faq2' ? null : 'faq2')}
-              className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6 hover:bg-gray-50 transition-colors duration-200"
+              className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6  transition-colors duration-200"
             >
-              <span className="text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] text-[#333333] font-['Montserrat']">How does Bridge Healthcare ensure quality healthcare in rural areas?</span>
+              <span className={`text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq2' ? 'text-white' : 'text-[#333333]'} `}>What is the core mission and vision of Bridge Healthcare?
+              </span>
               <svg
                 className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq2' ? 'rotate-180' : ''}`}
                 fill="none"
@@ -386,17 +410,17 @@ export default function KnowUsBetter() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq2' ? 'max-h-40 py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
-              <p className="text-sm sm:text-base lg:text-lg text-gray-700 font-['Montserrat']">Through our network of Smart Health Centres and Mobile Units, we combine advanced technology with trained healthcare professionals to deliver quality medical services directly to rural communities.</p>
+            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq2' ? 'max-h-[1000px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
+              <p className="text-sm sm:text-base lg:text-lg text-white font-['Montserrat']">Our mission is to make healthcare equitable, real-time and preventive for every community — regardless of location or income. We envision a future where people in the most remote areas receive the same standard of care as those in cities, through a system powered by innovation, empathy and grassroots connectivity.</p>
             </div>
           </div>
 
-          <div className="border border-gray-200 rounded-lg overflow-hidden">
+          <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq3' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
             <button
               onClick={() => setActiveFaq(activeFaq === 'faq3' ? null : 'faq3')}
-              className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6 hover:bg-gray-50 transition-colors duration-200"
+              className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6  transition-colors duration-200"
             >
-              <span className="text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] text-[#333333] font-['Montserrat']">What services does Bridge Healthcare provide through its Smart Health Centres?</span>
+              <span className={`text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq3' ? 'text-white' : 'text-[#333333]'} `}>Who are the people behind Bridge Healthcare?</span>
               <svg
                 className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq3' ? 'rotate-180' : ''}`}
                 fill="none"
@@ -406,19 +430,19 @@ export default function KnowUsBetter() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq3' ? 'max-h-40 py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
-              <p className="text-sm sm:text-base lg:text-lg text-gray-700 font-['Montserrat']">Our Smart Health Centres offer comprehensive services including health check-ups, tele-consultations, diagnostics, and wellness programs, all supported by trained healthcare professionals and advanced technology.</p>
+            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq3' ? 'max-h-[1000px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
+              <p className="text-sm sm:text-base lg:text-lg text-white font-['Montserrat']">Bridge Healthcare is driven by a passionate team of healthcare professionals, engineers, and social innovators with experience across rural development, diagnostics, public health and technology. We’re united by a shared vision — to reimagine how healthcare reaches people, blending deep empathy with practical execution, at scale.</p>
             </div>
           </div>
 
-          <div className="border border-gray-200 rounded-lg overflow-hidden">
+          <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq4' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
             <button
-              onClick={() => setActiveFaq(activeFaq === 'faq3' ? null : 'faq3')}
-              className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6 hover:bg-gray-50 transition-colors duration-200"
+              onClick={() => setActiveFaq(activeFaq === 'faq4' ? null : 'faq4')}
+              className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6  transition-colors duration-200"
             >
-              <span className="text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] text-[#333333] font-['Montserrat']">Where is Bridge Healthcare currently operating? Are your services available in my area?</span>
+              <span className={`text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq4' ? 'text-white' : 'text-[#333333]'} `}>How does Bridge Healthcare plan to scale its impact?</span>
               <svg
-                className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq3' ? 'rotate-180' : ''}`}
+                className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq4' ? 'rotate-180' : ''}`}
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -426,19 +450,19 @@ export default function KnowUsBetter() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq3' ? 'max-h-40 py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
-              <p className="text-sm sm:text-base lg:text-lg text-gray-700 font-['Montserrat']">Our Smart Health Centres offer comprehensive services including health check-ups, tele-consultations, diagnostics, and wellness programs, all supported by trained healthcare professionals and advanced technology.</p>
+            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq4' ? 'max-h-[1000px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
+              <p className="text-sm sm:text-base lg:text-lg text-white font-['Montserrat']">We scale by creating hyperlocal care ecosystems. By deploying Smart Healthcare Machines, training local operators, and connecting them with doctors via our tech platform, we make healthcare accessible, efficient and trustworthy. Our model is flexible enough to serve rural villages and high-density urban clusters alike, enabling broad and meaningful replication.</p>
             </div>
           </div>
 
-          <div className="border border-gray-200 rounded-lg overflow-hidden">
+          <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq5' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
             <button
-              onClick={() => setActiveFaq(activeFaq === 'faq3' ? null : 'faq3')}
-              className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6 hover:bg-gray-50 transition-colors duration-200"
+              onClick={() => setActiveFaq(activeFaq === 'faq5' ? null : 'faq5')}
+              className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6  transition-colors duration-200"
             >
-              <span className="text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] text-[#333333] font-['Montserrat']">How can I get involved with Bridge Healthcare — as a partner, funder or volunteer?</span>
+              <span className={`text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq5' ? 'text-white' : 'text-[#333333]'} `}>How can individuals or organizations collaborate with Bridge Healthcare?</span>
               <svg
-                className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq3' ? 'rotate-180' : ''}`}
+                className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq5' ? 'rotate-180' : ''}`}
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -446,8 +470,8 @@ export default function KnowUsBetter() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq3' ? 'max-h-40 py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
-              <p className="text-sm sm:text-base lg:text-lg text-gray-700 font-['Montserrat']">Our Smart Health Centres offer comprehensive services including health check-ups, tele-consultations, diagnostics, and wellness programs, all supported by trained healthcare professionals and advanced technology.</p>
+            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq5' ? 'max-h-[1000px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
+              <p className="text-sm sm:text-base lg:text-lg text-white font-['Montserrat']">We believe collaboration is key to systemic change. Whether you&apos;re a CSR partner, NGO, hospital, panchayat, or impact-driven institution, there’s space to work together. From deploying care units to running health programs or scaling our platform in new regions—we invite you to join us in building a healthier, more inclusive future.</p>
             </div>
           </div>
         </div>

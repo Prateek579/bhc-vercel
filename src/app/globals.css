@@ -34,3 +34,23 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Infinite scrolling animation for specialty cards */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.specialty-cards-container {
+  display: flex;
+  width: max-content;
+  animation: scroll 30s linear infinite;
+}
+
+.specialty-cards-container:hover {
+  animation-play-state: paused;
+}

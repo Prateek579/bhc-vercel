@@ -1,6 +1,5 @@
 "use client"
 
-import Link from "next/link";
 
 const Partner = () => {
     return (
@@ -14,12 +13,11 @@ const Partner = () => {
                         at bridge health care.
                     </p>
                     <div className="mt-6 sm:mt-8 lg:mt-10">
-                        <Link
-                            href="/get-involved"
+                    <button onClick={(e) => e.preventDefault()}
                             className="inline-block px-6 sm:px-8 py-2.5 sm:py-3 bg-white text-[#003366] rounded-xl font-semibold hover:bg-opacity-90 transition-all duration-300 text-sm sm:text-base"
                         >
                             Get Involved
-                        </Link>
+                        </button>
                     </div>
                 </div>
             </div>

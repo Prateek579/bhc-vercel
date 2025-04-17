@@ -33,7 +33,8 @@ const LandingPage = () => {
   const statsRef = useRef<HTMLDivElement>(null);
   const [activeProd, setActiveProd] = React.useState<number | null>(1);
   const [showMore, setShowMore] = useState(false);
-
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const [activeCard, setActiveCard] = useState<string | null>(null);
 
   const departments = useCountAnimation(25);
   const diseaseDetection = useCountAnimation(20);
@@ -70,6 +71,33 @@ const LandingPage = () => {
     observer.observe(statsRef.current);
     return () => observer.disconnect();
   }, [departments, diseaseDetection, hospitalReferrals, satisfactionRate]);
+
+  useEffect(() => {
+    // Safe window check for SSR
+    const checkTouchDevice = (): boolean => {
+      if (typeof window === 'undefined') return false;
+      return 'ontouchstart' in window;
+    };
+
+    setIsTouchDevice(checkTouchDevice());
+  }, []);
+
+  const handleToggle = (e: React.MouseEvent<HTMLDivElement, MouseEvent>, cardId: string): void => {
+    if (isTouchDevice) {
+      // Remove touch-hover class from all cards except the current one
+      const cards = document.querySelectorAll('.card-hover');
+      cards.forEach(card => card.classList.remove('touch-hover'));
+
+      // Toggle the current card
+      if (activeCard === cardId) {
+        e.currentTarget.classList.remove('touch-hover');
+        setActiveCard(null);
+      } else {
+        e.currentTarget.classList.add('touch-hover');
+        setActiveCard(cardId);
+      }
+    }
+  };
 
   return (
     <>
@@ -256,17 +284,18 @@ const LandingPage = () => {
 
       {/* Journey So Far Section */}
       <div className="relative bg-white overflow-hidden">
-        <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-20 md:py-32">
+        <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             {/* Text Content */}
             <div className="space-y-6">
-              <h2 className="text-[36px] font-[700] font-['Montserrat'] leading-[100%] tracking-[0px] align-middle text-[#003366]">
-                <span className='text-[#009688]'>Our </span>Journey So Far
+              <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+                <span className="text-[#18A093]">Our</span>{' '}
+                <span className="text-[#003366]">Journey</span>
               </h2>
-              <p className="text-[#555555] text-[20px] font-['Montserrat'] font-medium leading-[100%] align-middle tracking-[0px]">
+              <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
                 India&apos;s leading tech-driven healthcare solution, delivering real-time care with human touch and compassion.
               </p>
-              <p className="text-[13px] text-[#888888] font-['Montserrat'] font-normal leading-[23px] tracking-[0%] align-middle">
+              <p className="text-[13px] text-[#888888] font-['Montserrat'] font-[400] leading-[23px] tracking-[0%] align-middle">
                 Bridge Healthcare is transforming rural healthcare with 45 Smart Health Centres, 45 Mobile Units, and AI-powered diagnostics, reaching 10 million lives. Through tele-diagnostics and nurse-assisted care, we ensure accessible, real-time medical support. Our mission is to expand, enhance AI-driven care, and build India&apos;s largest tech-enabled rural health network.
               </p>
             </div>
@@ -357,19 +386,18 @@ const LandingPage = () => {
       </div>
       {/* Our Addressing Key Challenges Section */}
       <div className="relative bg-white overflow-hidden">
-        <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-20 md:py-32">
+        <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             {/* Text Content */}
             <div className="space-y-6">
-              <h2 className="text-[36px] font-[700] font-['Montserrat']">
+              <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
                 <span className="text-[#18A093]">Addressing</span>{' '}
                 <span className="text-[#003366]">Key Challenges</span>
               </h2>
-              <p className="text-[#555555] text-[20px] font-['Montserrat'] font-medium leading-[100%] align-middle tracking-[0px]">
+              <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
                 Tackling the most pressing gaps in healthcare, delivering innovative, tech-driven solutions.
               </p>
               <div className="space-y-4">
-                Feature List
                 <div className="flex flex-col space-y-2">
                   <div
                     className="flex flex-row items-center space-x-3 py-2 cursor-pointer"
@@ -395,7 +423,7 @@ const LandingPage = () => {
                         Quality healthcare remains out of reach for millions — whether in underserved rural areas or even in premium residential complexes where medical infrastructure is lacking.
                       </p>
                       <div className="mt-2">
-                        <p className="text-sm font-medium mb-1">BHC&apos;s Solution:</p>
+                        <p className="text-sm font-medium mb-1 text-[#003366]">BHC&apos;s Solution:</p>
                         <ul className="list-disc pl-5 space-y-1 text-sm">
                           <li>Deploys Smart Healthcare Machines (TDMs) in societies and remote regions to offer instant health checkups and real-time specialist consultations.</li>
                           <li>Brings care to the doorstep — no hospital visits, no long waits.</li>
@@ -429,7 +457,7 @@ const LandingPage = () => {
                         While video consultations have become widespread, they lack the power of real-time diagnostic data — turning medical advice into educated guesses rather than precise treatment.
                       </p>
                       <div className="mt-2">
-                        <p className="text-sm font-medium mb-1">BHC&apos;s Solution:</p>
+                        <p className="text-sm font-medium mb-1 text-[#003366]">BHC&apos;s Solution:</p>
                         <ul className="list-disc pl-5 space-y-1 text-sm">
                           <li>Enables real-time transmission of vitals, ECG, stethoscope and imaging tools during live consultations.</li>
                           <li>Doctors can now diagnose with real-time data, not assumptions.</li>
@@ -463,7 +491,7 @@ const LandingPage = () => {
                         Traditional healthcare systems focus primarily on treatment, leaving room to strengthen efforts in early detection, wellness tracking and continuous chronic care.
                       </p>
                       <div className="mt-2">
-                        <p className="text-sm font-medium mb-1">BHC&apos;s Solution:</p>
+                        <p className="text-sm font-medium mb-1 text-[#003366]">BHC&apos;s Solution:</p>
                         <ul className="list-disc pl-5 space-y-1 text-sm">
                           <li>Encourages regular health checkups and personalized wellness programs through its Smart Healthcare Machines and on-site nurse support.</li>
                           <li>Helps individuals stay healthier, longer — by focusing on prevention, monitoring, and timely action.</li>
@@ -494,13 +522,13 @@ const LandingPage = () => {
                   {activeFaq === 'disconnected' && (
                     <div className="pl-8 space-y-2 text-[#555555]">
                       <p className="text-sm font-normal leading-relaxed">
-                        Traditional healthcare systems focus primarily on treatment, leaving room to strengthen efforts in early detection, wellness tracking and continuous chronic care.
+                        Disconnected health records and fragmented follow-ups lead to inefficiencies for both patients and healthcare providers. BHC’s Solution: Offers connected apps for patients, doctors and nurses, plus a smart admin dashboard for hospitals to track and manage care journeys. Ensures seamless, personalized healthcare — from diagnostics to consultation to follow-up.
                       </p>
                       <div className="mt-2">
-                        <p className="text-sm font-medium mb-1">BHC&apos;s Solution:</p>
+                        <p className="text-sm font-medium mb-1 text-[#003366]">BHC&apos;s Solution:</p>
                         <ul className="list-disc pl-5 space-y-1 text-sm">
-                          <li>Encourages regular health checkups and personalized wellness programs through its Smart Healthcare Machines and on-site nurse support.</li>
-                          <li>Helps individuals stay healthier, longer — by focusing on prevention, monitoring, and timely action.</li>
+                          <li>Offers connected apps for patients, doctors and nurses, plus a smart admin dashboard for hospitals to track and manage care journeys.</li>
+                          <li>Ensures seamless, personalized healthcare — from diagnostics to consultation to follow-up.</li>
                         </ul>
                       </div>
                     </div>
@@ -517,14 +545,14 @@ const LandingPage = () => {
             </div>
 
             {/* Circular Image Pattern */}
-            <div className="relative w-[300px] h-[300px] sm:w-[450px] sm:h-[450px] md:w-[550px] md:h-[550px] lg:w-[700px] lg:h-[700px] mx-auto">
+            <div className="relative w-[100%] h-[100%] flex items-center justify-center overflow-hidden">
               {/* Center animation */}
               <Image
                 src="/icons/hm-anim.gif"
                 alt="Healthcare Network Animation"
-                fill
-                className="w-[100%] h-[100%] object-contain"
-                priority
+                width={100}
+                height={100}
+                className="h-[90%] w-[90%]"
               />
             </div>
           </div>
@@ -532,15 +560,14 @@ const LandingPage = () => {
       </div>
       {/* Our Key Services Section */}
       <div className="relative bg-white overflow-hidden">
-        <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-20 md:py-32">
-          <h2 className="text-[36px] font-[700] font-['Montserrat'] mb-4">
+        <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
+          <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
             <span className="text-[#18A093]">Our</span>{' '}
-            <span className="text-[#003366]">Key Services</span>
+            <span className="text-[#003366]">Key Challenges</span>
           </h2>
-          <p className="text-[#555555] text-[20px] font-['Montserrat'] font-medium leading-[100%] align-middle tracking-[0px] mb-4">
+          <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
             The Smart Healthcare Machine improves healthcare with data-driven accessibility and efficiency.
           </p>
-
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Service Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -620,11 +647,11 @@ const LandingPage = () => {
       {/* Why Join Bridge Healthcare Section */}
       <div className="relative bg-white overflow-hidden">
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-12 sm:py-20 md:py-32">
-          <h2 className="text-[28px] sm:text-[32px] md:text-[36px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+          <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
             <span className="text-[#18A093]">Why Join</span>{' '}
             <span className="text-[#003366]">Bridge Healthcare</span>
           </h2>
-          <p className="text-[#555555] text-[16px] sm:text-[18px] md:text-[20px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
+          <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
             Be part of a mission to transform healthcare through innovation, accessibility and impact.
           </p>
 
@@ -642,71 +669,158 @@ const LandingPage = () => {
               </div>
             </div>
 
-            {/* Service Cards */}
-            <div className="bg-white p-4 sm:p-6 rounded-lg border border-gray-200 hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] transition-all duration-300 group">
-              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-start sm:justify-center h-full gap-4 sm:gap-0">
-                <div className="sm:mr-4">
-                  <Image
-                    src="/icons/hm-6-lgo.png"
-                    alt="Comprehensive Healthcare"
-                    width={48}
-                    height={48}
-                  />
-                </div>
-                <div className="flex flex-col">
-                  <h3 className="text-[16px] sm:text-[18px] md:text-[20px] font-[600] leading-[1.2] sm:leading-[20px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] mb-2 group-hover:text-white">Comprehensive Healthcare Solutions</h3>
-                  <p className="text-[#989898] mb-4 font-['Montserrat'] text-[12px] sm:text-[13px] md:text-[14px] font-[400] leading-[1.4] sm:leading-[100%] align-middle tracking-[0%] group-hover:text-white">Delivering real-time diagnostics, preventive care and teleconsultations through a unified platform that ensures end-to-end patient care.</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white p-4 sm:p-6 rounded-lg border border-gray-200 hover:shadow-md transition-all duration-300 hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] group">
-              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-start sm:justify-center h-full gap-4 sm:gap-0">
-                <div className="sm:mr-4">
+            {/* Service Cards - 1*/}
+            <div
+              onClick={(e) => handleToggle(e, 'card2')}
+              className={`bg-white p-4 sm:p-6 rounded-lg border border-gray-200 transition-all duration-300 group card-hover 
+                  hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] 
+                  hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] 
+                  hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] 
+                  touch-hover:bg-gradient-to-r touch-hover:from-[rgba(24,160,147,0.7)] 
+                  touch-hover:via-[rgba(18,131,135,0.7)] touch-hover:via-[rgba(11,100,122,0.7)] 
+                  touch-hover:via-[rgba(6,80,114,0.7)] touch-hover:to-[rgba(0,51,102,0.7)]`}
+            >
+              <div className="flex flex-row sm:flex-row items-center justify-around h-full gap-4 sm:gap-0">
+                <div className="flex items-center justify-center relative w-[15%]">
                   <Image
                     src="/icons/hm-6-lgo.png"
                     alt="Healthcare Partnership"
-                    width={48}
-                    height={48}
+                    width={50}
+                    height={50}
+                    className="group-hover:hidden touch-hover:hidden transition-opacity duration-300"
                   />
+                  {/* <Image
+                    src="/icons/hm-6-lgo1.png"
+                    alt="Healthcare Partnership"
+                    width={50}
+                    height={50}
+                    className="hidden group-hover:block touch-hover:block transition-opacity duration-300 delay-150 mr-4"
+                  /> */}
                 </div>
-                <div className="flex flex-col">
-                  <h3 className="group-hover:text-white text-[16px] sm:text-[18px] md:text-[20px] font-[600] leading-[1.2] sm:leading-[20px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] mb-2">Healthcare Partnership Model</h3>
-                  <p className="text-[#989898] mb-4 font-['Montserrat'] text-[12px] sm:text-[13px] md:text-[14px] font-[400] leading-[1.4] sm:leading-[100%] align-middle tracking-[0%] group-hover:text-white">Collaborating with hospitals, communities, and institutions to build sustainable, patient-centric healthcare ecosystems.</p>
+                <div className='w-[85%]'>
+                  <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">
+                    Comprehensive Healthcare Solutions
+                  </h3>
+                  <p className="text-[#989898] font-['Montserrat'] text-[15px] sm:leading-[1.2] sm:text-[10px] md:text-[14px] font-[300] leading-[1.8] tracking-[0%] group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300">
+                    Delivering real-time diagnostics, preventive care and teleconsultations through a unified platform that ensures end-to-end patient care.
+                  </p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-white p-4 sm:p-6 rounded-lg border border-gray-200 hover:shadow-md transition-all duration-300 hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] group">
-              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-start sm:justify-center h-full gap-4 sm:gap-0">
-                <div className="sm:mr-4">
+            {/* Service Cards -2 */}
+            <div
+              onClick={(e) => handleToggle(e, 'card2')}
+              className={`bg-white p-4 sm:p-6 rounded-lg border border-gray-200 transition-all duration-300 group card-hover 
+                  hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] 
+                  hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] 
+                  hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] 
+                  touch-hover:bg-gradient-to-r touch-hover:from-[rgba(24,160,147,0.7)] 
+                  touch-hover:via-[rgba(18,131,135,0.7)] touch-hover:via-[rgba(11,100,122,0.7)] 
+                  touch-hover:via-[rgba(6,80,114,0.7)] touch-hover:to-[rgba(0,51,102,0.7)]`}
+            >
+              <div className="flex flex-row sm:flex-row items-center justify-around h-full gap-4 sm:gap-0">
+                <div className="flex items-center justify-center relative w-[15%]">
                   <Image
                     src="/icons/hm-6-lgo.png"
-                    alt="Innovation & Technology"
-                    width={48}
-                    height={48}
+                    alt="Healthcare Partnership"
+                    width={50}
+                    height={50}
+                    className="group-hover:hidden touch-hover:hidden transition-opacity duration-300"
+                  />
+                  <Image
+                    src="/icons/hm-6-lgo1.png"
+                    alt="Healthcare Partnership"
+                    width={50}
+                    height={50}
+                    className="hidden group-hover:block touch-hover:block transition-opacity duration-300 delay-150 mr-4"
                   />
                 </div>
-                <div className="flex flex-col">
-                  <h3 className="group-hover:text-white text-[16px] sm:text-[18px] md:text-[20px] font-[600] leading-[1.2] sm:leading-[20px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] mb-2">Innovation & Technology</h3>
-                  <p className="group-hover:text-white text-[#989898] mb-4 font-['Montserrat'] text-[12px] sm:text-[13px] md:text-[14px] font-[400] leading-[1.4] sm:leading-[100%] align-middle tracking-[0%]">Leveraging advanced medical devices and digital platforms to enhance care delivery, accuracy and accessibility.</p>
+                <div className='w-[85%]'>
+                  <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">
+                    Healthcare Partnership Model
+                  </h3>
+                  <p className="text-[#989898] font-['Montserrat'] text-[15px] sm:leading-[1.2] sm:text-[10px] md:text-[14px] font-[300] leading-[1.8] tracking-[0%] group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300">
+                    Collaborating with hospitals, communities, and institutions to build sustainable, patient-centric healthcare ecosystems.
+                  </p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-white p-4 sm:p-6 rounded-lg border border-gray-200 hover:shadow-md transition-all duration-300 hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] group">
-              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-start sm:justify-center h-full gap-4 sm:gap-0">
-                <div className="sm:mr-4">
+            {/* Service Cards -3 */}
+            <div
+              onClick={(e) => handleToggle(e, 'card2')}
+              className={`bg-white p-4 sm:p-6 rounded-lg border border-gray-200 transition-all duration-300 group card-hover 
+                  hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] 
+                  hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] 
+                  hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] 
+                  touch-hover:bg-gradient-to-r touch-hover:from-[rgba(24,160,147,0.7)] 
+                  touch-hover:via-[rgba(18,131,135,0.7)] touch-hover:via-[rgba(11,100,122,0.7)] 
+                  touch-hover:via-[rgba(6,80,114,0.7)] touch-hover:to-[rgba(0,51,102,0.7)]`}
+            >
+              <div className="flex flex-row sm:flex-row items-center justify-around h-full gap-4 sm:gap-0">
+                <div className="flex items-center justify-center relative w-[15%]">
                   <Image
                     src="/icons/hm-6-lgo.png"
-                    alt="Scalable Healthcare"
-                    width={48}
-                    height={48}
+                    alt="Healthcare Partnership"
+                    width={50}
+                    height={50}
+                    className="group-hover:hidden touch-hover:hidden transition-opacity duration-300"
+                  />
+                  <Image
+                    src="/icons/hm-6-lgo1.png"
+                    alt="Healthcare Partnership"
+                    width={50}
+                    height={50}
+                    className="hidden group-hover:block touch-hover:block transition-opacity duration-300 delay-150 mr-4"
                   />
                 </div>
-                <div className="flex flex-col">
-                  <h3 className="group-hover:text-white text-[16px] sm:text-[18px] md:text-[20px] font-[600] leading-[1.2] sm:leading-[20px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] mb-2">Scalable Healthcare Solution</h3>
-                  <p className="group-hover:text-white text-[#989898] mb-4 font-['Montserrat'] text-[12px] sm:text-[13px] md:text-[14px] font-[400] leading-[1.4] sm:leading-[100%] align-middle tracking-[0%]">Designed to expand across geographies—from urban centers to remote areas — while maintaining quality and efficiency.</p>
+                <div className='w-[85%]'>
+                  <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">
+                    Innovation & Technology
+                  </h3>
+                  <p className="text-[#989898] font-['Montserrat'] text-[15px] sm:leading-[1.2] sm:text-[10px] md:text-[14px] font-[300] leading-[1.8] tracking-[0%] group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300">
+                    Leveraging advanced medical devices and digital platforms to enhance care delivery, accuracy and accessibility.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Service Cards -4 */}
+            <div
+              onClick={(e) => handleToggle(e, 'card2')}
+              className={`bg-white p-4 sm:p-6 rounded-lg border border-gray-200 transition-all duration-300 group card-hover 
+                  hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] 
+                  hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] 
+                  hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] 
+                  touch-hover:bg-gradient-to-r touch-hover:from-[rgba(24,160,147,0.7)] 
+                  touch-hover:via-[rgba(18,131,135,0.7)] touch-hover:via-[rgba(11,100,122,0.7)] 
+                  touch-hover:via-[rgba(6,80,114,0.7)] touch-hover:to-[rgba(0,51,102,0.7)]`}
+            >
+              <div className="flex flex-row sm:flex-row items-center justify-around h-full gap-4 sm:gap-0">
+                <div className="flex items-center justify-center relative w-[15%]">
+                  <Image
+                    src="/icons/hm-6-lgo.png"
+                    alt="Healthcare Partnership"
+                    width={50}
+                    height={50}
+                    className="group-hover:hidden touch-hover:hidden transition-opacity duration-300"
+                  />
+                  <Image
+                    src="/icons/hm-6-lgo1.png"
+                    alt="Healthcare Partnership"
+                    width={50}
+                    height={50}
+                    className="hidden group-hover:block touch-hover:block transition-opacity duration-300 delay-150 mr-4"
+                  />
+                </div>
+                <div className='w-[85%]'>
+                  <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">
+                    Scalable Healthcare Solution
+                  </h3>
+                  <p className="text-[#989898] font-['Montserrat'] text-[15px] sm:leading-[1.2] sm:text-[10px] md:text-[14px] font-[300] leading-[1.8] tracking-[0%] group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300">
+                    Designed to expand across geographies—from urban centers to remote areas — while maintaining quality and efficiency.
+                  </p>
                 </div>
               </div>
             </div>
@@ -724,15 +838,16 @@ const LandingPage = () => {
 
       {/* Our Products Section */}
       <div className="relative bg-white overflow-hidden">
-        <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-12 sm:py-16 md:py-24 lg:py-32">
+        <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
           <div className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[36px] font-[700] font-['Montserrat'] leading-tight sm:leading-tight md:leading-tight lg:leading-[100%] tracking-[0px] align-middle text-[#003366]">
+            <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
               <span className="text-[#18A093]">Our</span>{' '}
               <span className="text-[#003366]">Products Overview</span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl font-[400] font-['Font family'] leading-[150%] sm:leading-[130%] md:leading-[100%] tracking-[0%] align-middle text-[#555555]">
+            <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
               Smart Healthcare Machine integrates tele-consultations with real-time health data and is supported by Doctor, Patient and Nurse applications for streamlined collaboration and proactive care.
-            </p></div>
+            </p>
+          </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             {/* Text Content */}
             <div className="space-y-6 mt-10">
@@ -786,278 +901,262 @@ const LandingPage = () => {
                   </div>
                 </div>
               </div>
+            </div>
+            {activeProd === 1 &&
+              <div className="top-4 z-10">
+                <div className="relative h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px] rounded-lg overflow-hidden p-4 sm:p-6 md:p-8 lg:p-8 flex flex-col items-center justify-center">
+                  <Image
+                    src="/icons/hm-7-img.png"
+                    alt="Smart Healthcare Machine"
+                    width={100}
+                    height={100}
+                    className="w-[150px] sm:w-[250px] md:w-[250px] lg:w-[350px] object-contain transition-all duration-300"
+                    priority
+                  />
+                  <div className="flex justify-center mt-6">
+                    <button
+                      onClick={() => setShowMore(!showMore)}
+                      className="px-6 py-2 text-[#003366] border-2 border-[#003366] rounded-md hover:bg-[#003366] hover:text-white transition-all duration-300"
+                    >
+                      {showMore ? 'Show Less' : 'Show More'}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            }
+            {activeProd === 2 &&
+              <div className="sticky top-4 z-10">
+                <div className="relative h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px] rounded-lg overflow-hidden p-4 sm:p-6 md:p-8 lg:p-8 flex flex-col items-center justify-center">
+                  <Image
+                    src="/icons/hm-7-img.png"
+                    alt="Smart Healthcare Machine"
+                    width={100}
+                    height={100}
+                    className="w-[150px] sm:w-[250px] md:w-[250px] lg:w-[350px] object-contain transition-all duration-300"
+                    priority
+                  />
+                  <div className="flex justify-center mt-6">
+                    <button
+                      onClick={() => setShowMore(!showMore)}
+                      className="px-6 py-2 text-[#003366] border-2 border-[#003366] rounded-md hover:bg-[#003366] hover:text-white transition-all duration-300"
+                    >
+                      {showMore ? 'Show Less' : 'Show More'}
+                    </button>
+                  </div>
+                </div>
 
-              <div className="mt-8">
-                <div
-                  className="inline-block px-8 py-3 border-2 border-[#003366] text-[#003366] rounded-md font-semibold hover:bg-[#003366] hover:text-white transition-all duration-300"
-                >
-                  Know more
+              </div>
+            }
+            {activeProd === 3 &&
+              <div className="sticky top-4 z-10">
+                <div className="relative h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px] rounded-lg overflow-hidden p-4 sm:p-6 md:p-8 lg:p-8 flex flex-col items-center justify-center">
+                  <Image
+                    src="/icons/hm-7-img2.png"
+                    alt="Smart Healthcare Machine"
+                    width={100}
+                    height={100}
+                    className="w-[150px] sm:w-[250px] md:w-[250px] lg:w-[350px] object-contain transition-all duration-300"
+                    priority
+                  />
+                  <div className="flex justify-center mt-6">
+                    <button
+                      onClick={() => setShowMore(!showMore)}
+                      className="px-6 py-2 text-[#003366] border-2 border-[#003366] rounded-md hover:bg-[#003366] hover:text-white transition-all duration-300"
+                    >
+                      {showMore ? 'Show Less' : 'Show More'}
+                    </button>
+                  </div>
+                </div>
+
+              </div>}
+            {activeProd === 4 &&
+              <div className="sticky top-4 z-10">
+                <div className="relative h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px] rounded-lg overflow-hidden p-4 sm:p-6 md:p-8 lg:p-8 flex flex-col items-center justify-center">
+                  <Image
+                    src="/icons/hm-7-img3.png"
+                    alt="Smart Healthcare Machine"
+                    width={100}
+                    height={100}
+                    className="w-[150px] sm:w-[250px] md:w-[250px] lg:w-[350px] object-contain transition-all duration-300"
+                    priority
+                  />
+                  <div className="flex justify-center mt-6">
+                    <button
+                      onClick={() => setShowMore(!showMore)}
+                      className="px-6 py-2 text-[#003366] border-2 border-[#003366] rounded-md hover:bg-[#003366] hover:text-white transition-all duration-300"
+                    >
+                      {showMore ? 'Show Less' : 'Show More'}
+                    </button>
+                  </div>
+                </div>
+
+              </div>
+            }
+          </div>
+        </div>
+        {showMore && activeProd === 1 && (
+          <div className="relative bg-white overflow-hidden">
+            <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-5 md:py-5 flex flex-col md:flex-row gap-4 md:gap-0">
+              <div className="space-y-4 sm:space-y-5 md:space-y-6 bg-white rounded-lg p-3 sm:p-4 md:p-5 w-full md:w-[70%]">
+                <h3 className="text-xl sm:text-2xl md:text-[24px] font-[700] font-['Montserrat'] leading-[110%] sm:leading-[105%] md:leading-[100%] tracking-[0%] align-middle text-[#003366] mb-4 sm:mb-6 md:mb-8">How It Works</h3>
+                <div className="space-y-3 sm:space-y-4">
+                  <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">1.</div>
+                    <p className="text-sm sm:text-base md:text-lg text-gray-600">The TDM delivers instant health checkups with vitals, ECG, blood tests, and imaging tools—providing accurate, digital results within minutes for fast, data-driven medical consultations.</p>
+                  </div>
+
+                  <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">2.</div>
+                    <p className="text-sm sm:text-base md:text-lg text-gray-600">Patients can either walk in or schedule an appointment or with help from the on-site nurse.</p>
+                  </div>
+                  <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">3.</div>
+                    <p className="text-sm sm:text-base md:text-lg text-gray-600">Real-time diagnostic consultations with experienced doctors — bringing expert medical care to patients, right from the comfort of their homes.</p>
+                  </div>
+                  <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">4.</div>
+                    <p className="text-sm sm:text-base md:text-lg text-gray-600">The doctor uploads a digital prescription and suggests follow-up or specialist care if required, while the on-site nurse guides the patient in understanding and executing the next steps.</p>
+                  </div>
+                </div>
+              </div>
+              <div className="space-y-4 bg-white rounded-lg p-3 sm:p-4 md:p-5 w-full md:w-[30%]">
+                <h3 className="text-xl sm:text-2xl md:text-[24px] font-[700] font-['Montserrat'] leading-[110%] sm:leading-[105%] md:leading-[100%] tracking-[0%] align-middle text-[#003366] mb-4 sm:mb-6 md:mb-8">Our Features</h3>
+                <div className="space-y-4 sm:space-y-6 md:space-y-8">
+                  <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">1.</div>
+                    <p className="text-sm sm:text-base md:text-lg text-gray-600">Virtual consultations</p>
+                  </div>
                 </div>
               </div>
             </div>
-            {activeProd === 1 &&
-              <div className="space-y-6">
-                <div className="sticky top-4 z-10">
-                  <div className="relative aspect-square rounded-lg overflow-hidden p-4 sm:p-6 md:p-8 lg:p-12 flex flex-col items-center justify-center bg-white">
-                    <Image
-                      src="/icons/hm-7-img.png"
-                      alt="Smart Healthcare Machine"
-                      width={450}
-                      height={450}
-                      className="w-[250px] sm:w-[300px] md:w-[350px] lg:w-[450px] h-auto object-contain transition-all duration-300"
-                      priority
-                    />
-                    <div className="flex justify-center mt-6">
-                      <button
-                        onClick={() => setShowMore(!showMore)}
-                        className="px-6 py-2 text-[#003366] border-2 border-[#003366] rounded-md hover:bg-[#003366] hover:text-white transition-all duration-300"
-                      >
-                        {showMore ? 'Show Less' : 'Show More'}
-                      </button>
-                    </div>
-                  </div>
 
-                </div>
-                {showMore && (
-                  <div className="relative bg-white overflow-hidden">
-                    <div className="max-w-screen-2xl mx-auto px-3 sm:px-4 md:px-5 py-3 sm:py-4 md:py-5">
-                      <div className="space-y-4 sm:space-y-5 md:space-y-6 bg-white rounded-lg p-3 sm:p-4 md:p-5">
-                        <h3 className="text-xl sm:text-2xl md:text-[24px] font-[700] font-['Montserrat'] leading-[110%] sm:leading-[105%] md:leading-[100%] tracking-[0%] align-middle text-[#003366] mb-4 sm:mb-6 md:mb-8">How It Works</h3>
-                        <div className="space-y-3 sm:space-y-4">
-                          <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                            <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">1.</div>
-                            <p className="text-sm sm:text-base md:text-lg text-gray-600">The TDM delivers instant health checkups with vitals, ECG, blood tests, and imaging tools—providing accurate, digital results within minutes for fast, data-driven medical consultations.</p>
-                          </div>
-
-                          <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                            <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">2.</div>
-                            <p className="text-sm sm:text-base md:text-lg text-gray-600">Patients can either walk in or schedule an appointment or with help from the on-site nurse.</p>
-                          </div>
-                          <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                            <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">3.</div>
-                            <p className="text-sm sm:text-base md:text-lg text-gray-600">Real-time diagnostic consultations with experienced doctors — bringing expert medical care to patients, right from the comfort of their homes.</p>
-                          </div>
-                          <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                            <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">4.</div>
-                            <p className="text-sm sm:text-base md:text-lg text-gray-600">The doctor uploads a digital prescription and suggests follow-up or specialist care if required, while the on-site nurse guides the patient in understanding and executing the next steps.</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="space-y-4 bg-white rounded-lg p-3 sm:p-4 md:p-5 mt-4 sm:mt-5 md:mt-6">
-                        <h3 className="text-xl sm:text-2xl md:text-[24px] font-[700] font-['Montserrat'] leading-[110%] sm:leading-[105%] md:leading-[100%] tracking-[0%] align-middle text-[#003366] mb-4 sm:mb-6 md:mb-8">Our Features</h3>
-                        <div className="space-y-4 sm:space-y-6 md:space-y-8">
-                          <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                            <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">1.</div>
-                            <p className="text-sm sm:text-base md:text-lg text-gray-600">Virtual consultations</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                )}
-              </div>}
-            {activeProd === 2 &&
-              <div className="space-y-6">
-                <div className="sticky top-4 z-10">
-                  <div className="relative aspect-square rounded-lg overflow-hidden p-4 sm:p-6 md:p-8 lg:p-12 flex flex-col items-center justify-center bg-white">
-                    <Image
-                      src="/icons/hm-7-img.png"
-                      alt="Smart Healthcare Machine"
-                      width={450}
-                      height={450}
-                      className="w-[250px] sm:w-[300px] md:w-[350px] lg:w-[450px] h-auto object-contain transition-all duration-300"
-                      priority
-                    />
-                    <div className="flex justify-center mt-6">
-                      <button
-                        onClick={() => setShowMore(!showMore)}
-                        className="px-6 py-2 text-[#003366] border-2 border-[#003366] rounded-md hover:bg-[#003366] hover:text-white transition-all duration-300"
-                      >
-                        {showMore ? 'Show Less' : 'Show More'}
-                      </button>
-                    </div>
-                  </div>
-
-                </div>
-                {showMore && (
-                  <div className="relative bg-white overflow-hidden">
-                    <div className="max-w-screen-2xl mx-auto px-3 sm:px-4 md:px-5 py-3 sm:py-4 md:py-5">
-                      <div className="space-y-4 sm:space-y-5 md:space-y-6 bg-white rounded-lg p-3 sm:p-4 md:p-5">
-                        <h3 className="text-xl sm:text-2xl md:text-[24px] font-[700] font-['Montserrat'] leading-[110%] sm:leading-[105%] md:leading-[100%] tracking-[0%] align-middle text-[#003366] mb-4 sm:mb-6 md:mb-8">How It Works</h3>
-                        <div className="space-y-3 sm:space-y-4">
-                          <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                            <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">1.</div>
-                            <p className="text-sm sm:text-base md:text-lg text-gray-600">Doctors receive live health data from the TDM, including vitals, ECG, and diagnostic images, before or during the consultation.</p>
-                          </div>
-
-                          <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                            <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">2.</div>
-                            <p className="text-sm sm:text-base md:text-lg text-gray-600">The app enables secure, high-quality video calls with patients, supported by on-site nurse assistance if needed.</p>
-                          </div>
-                          <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                            <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">3.</div>
-                            <p className="text-sm sm:text-base md:text-lg text-gray-600">After evaluation, doctors can generate and upload digital prescriptions directly through the app for instant patient access.</p>
-                          </div>
-                          <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                            <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">4.</div>
-                            <p className="text-sm sm:text-base md:text-lg text-gray-600">Doctors can schedule follow-up consultations, refer patients to specialists, or suggest additional care — all tracked within the platform.</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="space-y-4 bg-white rounded-lg p-3 sm:p-4 md:p-5 mt-4 sm:mt-5 md:mt-6">
-                        <h3 className="text-xl sm:text-2xl md:text-[24px] font-[700] font-['Montserrat'] leading-[110%] sm:leading-[105%] md:leading-[100%] tracking-[0%] align-middle text-[#003366] mb-4 sm:mb-6 md:mb-8">Our Features</h3>
-                        <div className="space-y-4 sm:space-y-6 md:space-y-8">
-                          <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                            <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">1.</div>
-                            <p className="text-sm sm:text-base md:text-lg text-gray-600">Virtual consultations</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                )}
-              </div>}
-            {activeProd === 3 &&
-              <div className="space-y-6">
-                <div className="sticky top-4 z-10">
-                  <div className="relative aspect-square rounded-lg overflow-hidden p-4 sm:p-6 md:p-8 lg:p-12 flex flex-col items-center justify-center bg-white">
-                    <Image
-                      src="/icons/hm-7-img2.png"
-                      alt="Smart Healthcare Machine"
-                      width={450}
-                      height={450}
-                      className="w-[250px] sm:w-[300px] md:w-[350px] lg:w-[450px] h-auto object-contain transition-all duration-300"
-                      priority
-                    />
-                    <div className="flex justify-center mt-6">
-                      <button
-                        onClick={() => setShowMore(!showMore)}
-                        className="px-6 py-2 text-[#003366] border-2 border-[#003366] rounded-md hover:bg-[#003366] hover:text-white transition-all duration-300"
-                      >
-                        {showMore ? 'Show Less' : 'Show More'}
-                      </button>
-                    </div>
-                  </div>
-
-                </div>
-                {showMore && (
-                  <div className="relative bg-white overflow-hidden">
-                    <div className="max-w-screen-2xl mx-auto px-3 sm:px-4 md:px-5 py-3 sm:py-4 md:py-5">
-                      <div className="space-y-4 sm:space-y-5 md:space-y-6 bg-white rounded-lg p-3 sm:p-4 md:p-5">
-                        <h3 className="text-xl sm:text-2xl md:text-[24px] font-[700] font-['Montserrat'] leading-[110%] sm:leading-[105%] md:leading-[100%] tracking-[0%] align-middle text-[#003366] mb-4 sm:mb-6 md:mb-8">How It Works</h3>
-                        <div className="space-y-3 sm:space-y-4">
-                          <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                            <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">1.</div>
-                            <p className="text-sm sm:text-base md:text-lg text-gray-600">Virtual consultations with experienced doctors, making healthcare more accessible and efficient. Patients receive expert medical advice from the comfort of their homes.</p>
-                          </div>
-
-                          <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                            <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">2.</div>
-                            <p className="text-sm sm:text-base md:text-lg text-gray-600">Virtual consultations with experienced doctors, making healthcare more accessible and efficient. Patients receive expert medical advice from the comfort of their homes.</p>
-                          </div>
-                          <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                            <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">3.</div>
-                            <p className="text-sm sm:text-base md:text-lg text-gray-600">Virtual consultations with experienced doctors, making healthcare more accessible and efficient. Patients receive expert medical advice from the comfort of their homes.</p>
-                          </div>
-                          <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                            <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">4.</div>
-                            <p className="text-sm sm:text-base md:text-lg text-gray-600">Virtual consultations with experienced doctors, making healthcare more accessible and efficient. Patients receive expert medical advice from the comfort of their homes.</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="space-y-4 bg-white rounded-lg p-3 sm:p-4 md:p-5 mt-4 sm:mt-5 md:mt-6">
-                        <h3 className="text-xl sm:text-2xl md:text-[24px] font-[700] font-['Montserrat'] leading-[110%] sm:leading-[105%] md:leading-[100%] tracking-[0%] align-middle text-[#003366] mb-4 sm:mb-6 md:mb-8">Our Features</h3>
-                        <div className="space-y-4 sm:space-y-6 md:space-y-8">
-                          <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                            <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">1.</div>
-                            <p className="text-sm sm:text-base md:text-lg text-gray-600">Virtual consultations</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                )}
-              </div>}
-            {activeProd === 4 &&
-              <div className="space-y-6">
-                <div className="sticky top-4 z-10">
-                  <div className="relative aspect-square rounded-lg overflow-hidden p-4 sm:p-6 md:p-8 lg:p-12 flex flex-col items-center justify-center bg-white">
-                    <Image
-                      src="/icons/hm-7-img3.png"
-                      alt="Smart Healthcare Machine"
-                      width={450}
-                      height={450}
-                      className="w-[250px] sm:w-[300px] md:w-[350px] lg:w-[450px] h-auto object-contain transition-all duration-300"
-                      priority
-                    />
-                    <div className="flex justify-center mt-6">
-                      <button
-                        onClick={() => setShowMore(!showMore)}
-                        className="px-6 py-2 text-[#003366] border-2 border-[#003366] rounded-md hover:bg-[#003366] hover:text-white transition-all duration-300"
-                      >
-                        {showMore ? 'Show Less' : 'Show More'}
-                      </button>
-                    </div>
-                  </div>
-
-                </div>
-                {showMore && (
-                  <div className="relative bg-white overflow-hidden">
-                    <div className="max-w-screen-2xl mx-auto px-3 sm:px-4 md:px-5 py-3 sm:py-4 md:py-5">
-                      <div className="space-y-4 sm:space-y-5 md:space-y-6 bg-white rounded-lg p-3 sm:p-4 md:p-5">
-                        <h3 className="text-xl sm:text-2xl md:text-[24px] font-[700] font-['Montserrat'] leading-[110%] sm:leading-[105%] md:leading-[100%] tracking-[0%] align-middle text-[#003366] mb-4 sm:mb-6 md:mb-8">How It Works</h3>
-                        <div className="space-y-3 sm:space-y-4">
-                          <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                            <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">1.</div>
-                            <p className="text-sm sm:text-base md:text-lg text-gray-600">The TDM delivers instant health checkups with vitals, ECG, blood tests, and imaging tools—providing accurate, digital results within minutes for fast, data-driven medical consultations.</p>
-                          </div>
-
-                          <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                            <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">2.</div>
-                            <p className="text-sm sm:text-base md:text-lg text-gray-600">Patients can either walk in or schedule an appointment or with help from the on-site nurse.</p>
-                          </div>
-                          <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                            <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">3.</div>
-                            <p className="text-sm sm:text-base md:text-lg text-gray-600">Real-time diagnostic consultations with experienced doctors — bringing expert medical care to patients, right from the comfort of their homes.</p>
-                          </div>
-                          <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                            <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">4.</div>
-                            <p className="text-sm sm:text-base md:text-lg text-gray-600">The doctor uploads a digital prescription and suggests follow-up or specialist care if required, while the on-site nurse guides the patient in understanding and executing the next steps.</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="space-y-4 bg-white rounded-lg p-3 sm:p-4 md:p-5 mt-4 sm:mt-5 md:mt-6">
-                        <h3 className="text-xl sm:text-2xl md:text-[24px] font-[700] font-['Montserrat'] leading-[110%] sm:leading-[105%] md:leading-[100%] tracking-[0%] align-middle text-[#003366] mb-4 sm:mb-6 md:mb-8">Our Features</h3>
-                        <div className="space-y-4 sm:space-y-6 md:space-y-8">
-                          <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                            <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">1.</div>
-                            <p className="text-sm sm:text-base md:text-lg text-gray-600">Virtual consultations</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                )}
-              </div>}
           </div>
-        </div>
+        )}
+        {showMore && activeProd === 2 && (
+          <div className="relative bg-white overflow-hidden">
+            <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 sm:py-4 md:py-8 lg:py-10 flex flex-col md:flex-row gap-4 md:gap-0">
+              <div className="space-y-4 sm:space-y-5 md:space-y-6 bg-white rounded-lg p-3 sm:p-4 md:p-5 w-full md:w-[70%]">
+                <h3 className="text-xl sm:text-2xl md:text-[24px] font-[700] font-['Montserrat'] leading-[110%] sm:leading-[105%] md:leading-[100%] tracking-[0%] align-middle text-[#003366] mb-4 sm:mb-6 md:mb-8">How It Works</h3>
+                <div className="space-y-3 sm:space-y-4">
+                  <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">1.</div>
+                    <p className="text-sm sm:text-base md:text-lg text-gray-600">Doctors receive live health data from the TDM, including vitals, ECG, and diagnostic images, before or during the consultation.</p>
+                  </div>
+
+                  <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">2.</div>
+                    <p className="text-sm sm:text-base md:text-lg text-gray-600">The app enables secure, high-quality video calls with patients, supported by on-site nurse assistance if needed.</p>
+                  </div>
+                  <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">3.</div>
+                    <p className="text-sm sm:text-base md:text-lg text-gray-600">After evaluation, doctors can generate and upload digital prescriptions directly through the app for instant patient access.</p>
+                  </div>
+                  <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">4.</div>
+                    <p className="text-sm sm:text-base md:text-lg text-gray-600">Doctors can schedule follow-up consultations, refer patients to specialists, or suggest additional care — all tracked within the platform.</p>
+                  </div>
+                </div>
+              </div>
+              <div className="space-y-4 bg-white rounded-lg p-3 sm:p-4 md:p-5 w-full md:w-[30%]">
+                <h3 className="text-xl sm:text-2xl md:text-[24px] font-[700] font-['Montserrat'] leading-[110%] sm:leading-[105%] md:leading-[100%] tracking-[0%] align-middle text-[#003366] mb-4 sm:mb-6 md:mb-8">Our Features</h3>
+                <div className="space-y-4 sm:space-y-6 md:space-y-8">
+                  <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">1.</div>
+                    <p className="text-sm sm:text-base md:text-lg text-gray-600">Virtual consultations</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+        {showMore && activeProd === 3 && (
+          <div className="relative bg-white overflow-hidden">
+            <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 sm:py-4 md:py-8 lg:py-10 flex flex-col md:flex-row gap-4 md:gap-0">
+              <div className="space-y-4 sm:space-y-5 md:space-y-6 bg-white rounded-lg p-3 sm:p-4 md:p-5 w-full md:w-[70%]">
+                <h3 className="text-xl sm:text-2xl md:text-[24px] font-[700] font-['Montserrat'] leading-[110%] sm:leading-[105%] md:leading-[100%] tracking-[0%] align-middle text-[#003366] mb-4 sm:mb-6 md:mb-8">How It Works</h3>
+                <div className="space-y-3 sm:space-y-4">
+                  <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">1.</div>
+                    <p className="text-sm sm:text-base md:text-lg text-gray-600">Virtual consultations with experienced doctors, making healthcare more accessible and efficient. Patients receive expert medical advice from the comfort of their homes.</p>
+                  </div>
+
+                  <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">2.</div>
+                    <p className="text-sm sm:text-base md:text-lg text-gray-600">Virtual consultations with experienced doctors, making healthcare more accessible and efficient. Patients receive expert medical advice from the comfort of their homes.</p>
+                  </div>
+                  <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">3.</div>
+                    <p className="text-sm sm:text-base md:text-lg text-gray-600">Virtual consultations with experienced doctors, making healthcare more accessible and efficient. Patients receive expert medical advice from the comfort of their homes.</p>
+                  </div>
+                  <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">4.</div>
+                    <p className="text-sm sm:text-base md:text-lg text-gray-600">Virtual consultations with experienced doctors, making healthcare more accessible and efficient. Patients receive expert medical advice from the comfort of their homes.</p>
+                  </div>
+                </div>
+              </div>
+              <div className="space-y-4 bg-white rounded-lg p-3 sm:p-4 md:p-5 w-full md:w-[30%]">
+                <h3 className="text-xl sm:text-2xl md:text-[24px] font-[700] font-['Montserrat'] leading-[110%] sm:leading-[105%] md:leading-[100%] tracking-[0%] align-middle text-[#003366] mb-4 sm:mb-6 md:mb-8">Our Features</h3>
+                <div className="space-y-4 sm:space-y-6 md:space-y-8">
+                  <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">1.</div>
+                    <p className="text-sm sm:text-base md:text-lg text-gray-600">Virtual consultations</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        )}
+        {showMore && activeProd === 4 && (
+          <div className="relative bg-white overflow-hidden">
+            <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 sm:py-4 md:py-8 lg:py-10 flex flex-col md:flex-row gap-4 md:gap-0">
+              <div className="space-y-4 sm:space-y-5 md:space-y-6 bg-white rounded-lg p-3 sm:p-4 md:p-5 w-full md:w-[70%]">
+                <h3 className="text-xl sm:text-2xl md:text-[24px] font-[700] font-['Montserrat'] leading-[110%] sm:leading-[105%] md:leading-[100%] tracking-[0%] align-middle text-[#003366] mb-4 sm:mb-6 md:mb-8">How It Works</h3>
+                <div className="space-y-3 sm:space-y-4">
+                  <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">1.</div>
+                    <p className="text-sm sm:text-base md:text-lg text-gray-600">The TDM delivers instant health checkups with vitals, ECG, blood tests, and imaging tools—providing accurate, digital results within minutes for fast, data-driven medical consultations.</p>
+                  </div>
+
+                  <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">2.</div>
+                    <p className="text-sm sm:text-base md:text-lg text-gray-600">Patients can either walk in or schedule an appointment or with help from the on-site nurse.</p>
+                  </div>
+                  <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">3.</div>
+                    <p className="text-sm sm:text-base md:text-lg text-gray-600">Real-time diagnostic consultations with experienced doctors — bringing expert medical care to patients, right from the comfort of their homes.</p>
+                  </div>
+                  <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">4.</div>
+                    <p className="text-sm sm:text-base md:text-lg text-gray-600">The doctor uploads a digital prescription and suggests follow-up or specialist care if required, while the on-site nurse guides the patient in understanding and executing the next steps.</p>
+                  </div>
+                </div>
+              </div>
+              <div className="space-y-4 bg-white rounded-lg p-3 sm:p-4 md:p-5 w-full md:w-[30%]">
+                <h3 className="text-xl sm:text-2xl md:text-[24px] font-[700] font-['Montserrat'] leading-[110%] sm:leading-[105%] md:leading-[100%] tracking-[0%] align-middle text-[#003366] mb-4 sm:mb-6 md:mb-8">Our Features</h3>
+                <div className="space-y-4 sm:space-y-6 md:space-y-8">
+                  <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">1.</div>
+                    <p className="text-sm sm:text-base md:text-lg text-gray-600">Virtual consultations</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        )}
       </div>
 
       {/* Testimonials Section */}
       <div className="relative bg-white overflow-hidden">
-        <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-20 md:py-32">
-          <h2 className="text-2xl sm:text-3xl lg:text-[36px] font-[700] font-['Montserrat'] mb-2 sm:mb-4">
+        <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
+          <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
             <span className="text-[#18A093]">Our</span>{' '}
             <span className="text-[#003366]">Testimonials</span>
           </h2>
-          <p className="text-[#555555] text-base sm:text-lg lg:text-[20px] font-['Montserrat'] font-medium mb-6 sm:mb-8 lg:mb-12 max-w-full sm:max-w-[90%] lg:max-w-[80%]">
+          <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
             Our impact is reflected in the voices of patients, doctors and public sector leaders who trust us.
           </p>
-
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {/* Testimonial Card 1 */}
             <div className="bg-white p-6 sm:p-8 lg:p-10 rounded-lg border border-gray-200 relative flex flex-col justify-around">
@@ -1161,15 +1260,14 @@ const LandingPage = () => {
 
       {/* FAQ Section */}
       <div className="relative bg-white overflow-hidden">
-        <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-16 sm:py-20 lg:py-32">
-          <h2 className="text-2xl sm:text-3xl lg:text-[36px] font-[700] font-['Montserrat'] mb-4 sm:mb-6 lg:mb-8">
+        <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
+          <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
             <span className="text-[#18A093]">Frequently Asked</span>{' '}
             <span className="text-[#003366]">Questions</span>
           </h2>
-          <p className="text-base sm:text-lg lg:text-[20px] text-[#555555] font-['Montserrat'] font-medium mb-8 sm:mb-10 lg:mb-12">
+          <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
             Learn how our solutions bring quality healthcare closer to those who need it most.
           </p>
-
           <div className="space-y-2 sm:space-y-3 lg:space-y-4">
             {/* FAQ Items */}
             <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq1' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>

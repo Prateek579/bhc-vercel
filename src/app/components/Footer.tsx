@@ -11,7 +11,7 @@ const Footer = () => {
       <div className="relative bg-white overflow-hidden">
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-6 md:px-10 lg:px-22 py-10 sm:py-12 md:py-16 lg:py-22">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6 md:gap-8 items-center justify-items-center">
-            <div className="w-full max-w-[150px] sm:max-w-[170px] md:max-w-[200px] aspect-[3/1] relative">
+            <div className="w-full max-w-[200px] sm:max-w-[220px] md:max-w-[250px] aspect-[3/1] relative">
               <Image
                 src="/icons/hm-11-img1.svg"
                 alt="StartupTN"
@@ -19,7 +19,7 @@ const Footer = () => {
                 className="object-contain"
               />
             </div>
-            <div className="w-full max-w-[150px] sm:max-w-[170px] md:max-w-[200px] aspect-[3/1] relative">
+            <div className="w-full max-w-[200px] sm:max-w-[220px] md:max-w-[250px] aspect-[3/1] relative">
               <Image
                 src="/icons/hm-11-img2.svg"
                 alt="Crescent Innovation"
@@ -27,7 +27,7 @@ const Footer = () => {
                 className="object-contain"
               />
             </div>
-            <div className="w-full max-w-[150px] sm:max-w-[170px] md:max-w-[200px] aspect-[3/1] relative">
+            <div className="w-full max-w-[200px] sm:max-w-[220px] md:max-w-[250px] aspect-[3/1] relative">
               <Image
                 src="/icons/hm-11-img3.svg"
                 alt="ESF"
@@ -35,7 +35,7 @@ const Footer = () => {
                 className="object-contain"
               />
             </div>
-            <div className="w-full max-w-[150px] sm:max-w-[170px] md:max-w-[200px] aspect-[3/1] relative">
+            <div className="w-full max-w-[200px] sm:max-w-[220px] md:max-w-[250px] aspect-[3/1] relative">
               <Image
                 src="/icons/hm-11-img4.svg"
                 alt="SICCI"
@@ -43,7 +43,7 @@ const Footer = () => {
                 className="object-contain"
               />
             </div>
-            <div className="w-full max-w-[150px] sm:max-w-[170px] md:max-w-[200px] aspect-[3/1] relative">
+            <div className="w-full max-w-[200px] sm:max-w-[220px] md:max-w-[250px] aspect-[3/1] relative">
               <Image
                 src="/icons/hm-11-img5.png"
                 alt="Wipro"
@@ -57,58 +57,57 @@ const Footer = () => {
 
 
 
-      <footer className="bg-gradient-to-r from-[#18A093] to-[#003366] text-white pt-12 pb-8 sm:pt-16 sm:pb-8 md:pt-20 md:pb-10 lg:pt-20 lg:pb-10">
+      <footer className="bg-gradient-to-r from-[#18A093] to-[#003366] text-white pt-10 pb-8 sm:pt-16 sm:pb-8 md:pt-20 md:pb-10 lg:pt-20 lg:py-5">
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 md:px-10 lg:px-22">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-6 md:gap-8 mb-8 sm:mb-10 md:mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-6 md:gap-8 mb-5">
             {/* Product Column */}
             <div>
-              <h3 className="text-lg sm:text-xl font-bold mb-4 sm:mb-5 md:mb-6">Product</h3>
+              <h3 className="text-2xl sm:text-3xl font-base mb-4 sm:mb-5 md:mb-6">Product</h3>
               <ul className="space-y-2 sm:space-y-3 md:space-y-4">
-                <li><button onClick={(e) => e.preventDefault()} className="text-sm sm:text-base hover:text-gray-300 transition-colors bg-transparent border-none p-0 cursor-pointer text-white">Smart Healthcare machine</button></li>
-                <li><button onClick={(e) => e.preventDefault()} className="text-sm sm:text-base hover:text-gray-300 transition-colors">Supporting Applications</button></li>
-                <li><button onClick={(e) => e.preventDefault()} className="text-sm sm:text-base hover:text-gray-300 transition-colors">Admin Software</button></li>
+                <li><button onClick={(e) => e.preventDefault()} className="text-lg sm:text-xl hover:text-gray-300 transition-colors bg-transparent border-none p-0 cursor-pointer text-white">Smart Healthcare Machine</button></li>
+                <li><button onClick={(e) => e.preventDefault()} className="text-lg sm:text-xl hover:text-gray-300 transition-colors">Supporting Applications</button></li>
+                <li><button onClick={(e) => e.preventDefault()} className="text-lg sm:text-xl hover:text-gray-300 transition-colors">Admin Software</button></li>
               </ul>
             </div>
 
             {/* Solution Column */}
             <div>
-              <h3 className="text-lg sm:text-xl font-bold mb-4 sm:mb-5 md:mb-6">Solution</h3>
+              <h3 className="text-2xl sm:text-3xl font-base mb-4 sm:mb-5 md:mb-6">Solution</h3>
               <ul className="space-y-2 sm:space-y-3 md:space-y-4">
-                <li><button onClick={(e) => e.preventDefault()} className="text-sm sm:text-base hover:text-gray-300 transition-colors">Tele-Diagnostic Services</button></li>
-                <li><button onClick={(e) => e.preventDefault()} className="text-sm sm:text-base hover:text-gray-300 transition-colors">Personalized Care</button></li>
-                <li><button onClick={(e) => e.preventDefault()} className="text-sm sm:text-base hover:text-gray-300 transition-colors">Approachable and Friendly care</button></li>
+                <li><button onClick={(e) => e.preventDefault()} className="text-lg sm:text-xl hover:text-gray-300 transition-colors">Tele-Diagnostic Services</button></li>
+                <li><button onClick={(e) => e.preventDefault()} className="text-lg sm:text-xl hover:text-gray-300 transition-colors">Personalized Care</button></li>
+                <li><button onClick={(e) => e.preventDefault()} className="text-lg sm:text-xl hover:text-gray-300 transition-colors">Approachable and Friendly Care</button></li>
               </ul>
             </div>
 
             {/* Explore Column */}
             <div>
-              <h3 className="text-lg sm:text-xl font-bold mb-4 sm:mb-5 md:mb-6">Explore</h3>
+              <h3 className="text-2xl sm:text-3xl font-base mb-4 sm:mb-5 md:mb-6">Explore</h3>
               <ul className="space-y-2 sm:space-y-3 md:space-y-4">
-                <li><Link href="/knowUsBetter/about" className="text-sm sm:text-base hover:text-gray-300 transition-colors">About</Link></li>
-                <li><Link href="/ourProducts" className="text-sm sm:text-base hover:text-gray-300 transition-colors">Our Product</Link></li>
-                <li><button onClick={(e) => e.preventDefault()} className="text-sm sm:text-base hover:text-gray-300 transition-colors">Our Services</button></li>
-                <li><Link href="/contactUs" className="text-sm sm:text-base hover:text-gray-300 transition-colors">Contact us</Link></li>
-                <li><button onClick={(e) => e.preventDefault()} className="text-sm sm:text-base hover:text-gray-300 transition-colors">Our Team</button></li>
+                <li><Link href="/knowUsBetter/about" className="text-lg sm:text-xl hover:text-gray-300 transition-colors">About</Link></li>
+                <li><Link href="/ourProducts" className="text-lg sm:text-xl hover:text-gray-300 transition-colors">Our Product</Link></li>
+                <li><button onClick={(e) => e.preventDefault()} className="text-lg sm:text-xl hover:text-gray-300 transition-colors">Our Services</button></li>
+                <li><Link href="/contactUs" className="text-lg sm:text-xl hover:text-gray-300 transition-colors">Contact Us</Link></li>
               </ul>
             </div>
 
             {/* Contact Column */}
             <div>
-              <h3 className="text-lg sm:text-xl font-bold mb-4 sm:mb-5 md:mb-6">Contact</h3>
+              <h3 className="text-2xl sm:text-3xl font-base mb-4 sm:mb-5 md:mb-6">Contact</h3>
               <ul className="space-y-2 sm:space-y-3 md:space-y-4">
                 <li className="flex flex-row items-center">
                   <Image src="/icons/ft-img1.png" alt="phone image" width={13} height={13} className='mr-3 sm:mr-4 h-3 w-3 sm:h-4 sm:w-4' />
-                  <span className="mr-1 text-sm sm:text-base">T:</span>
-                  <a href="tel:+919191441392" className="text-sm sm:text-base hover:text-gray-300 transition-colors">+91991441392</a>
+                  <span className="mr-1 text-base sm:text-lg">T:</span>
+                  <a href="tel:+919191441392" className="text-lg sm:text-xl hover:text-gray-300 transition-colors">+91991441392</a>
                 </li>
                 <li className="flex flex-row items-center">
                   <Image src="/icons/ft-img2.png" alt="phone image" width={22} height={22} className='mr-3 sm:mr-4 h-5 w-5 sm:h-6 sm:w-6' />
-                  <span className="mr-1 text-sm sm:text-base">E:</span>
-                  <a href="mailto:Support@bridgehealth.care" className="text-sm sm:text-base hover:text-gray-300 transition-colors">Support@bridgehealth.care</a>
+                  <span className="mr-1 text-base sm:text-lg">E:</span>
+                  <a href="mailto:Support@bridgehealth.care" className="text-lg sm:text-xl hover:text-gray-300 transition-colors">Support@bridgehealth.care</a>
                 </li>
                 <li className="flex flex-row">
                   <Image src="/icons/ft-img3.png" alt="phone image" width={10} height={10} className='mr-3 sm:mr-4 h-5 w-5 sm:h-6 sm:w-6 mt-1' />
-                  <span className="text-xs sm:text-sm md:text-base">Address: 13B/8, 4th Main Road, Indira Nagar, Adyar, Chennai, TN -600020</span>
+                  <span className="text-base sm:text-lg md:text-xl">Address: 13B/8, 4th Main Road, Indira Nagar, Adyar, Chennai, TN -600020</span>
                 </li>
               </ul>
             </div>
@@ -137,9 +136,9 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="flex flex-col md:flex-row justify-between items-center pt-3 sm:pt-3 md:pt-4">
-            <div className="mb-3 md:mb-0 text-xs sm:text-sm">
-              ©Copyright 2025 Bridge Healthcare Private Limited.
+          <div className="flex flex-col md:flex-row justify-between items-center pt-1 sm:pt-1 md:pt-2">
+            <div className="md:mb-0 text-xs sm:text-sm">
+              ©Copyright 2022 Bridge Healthcare Private Limited.
             </div>
             <div className="flex space-x-4 sm:space-x-5 md:space-x-6 text-xs sm:text-sm">
               <Link href="/privacy-policy" className="hover:text-gray-300 transition-colors">Privacy Policy</Link>

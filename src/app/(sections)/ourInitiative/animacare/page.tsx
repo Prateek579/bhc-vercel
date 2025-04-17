@@ -29,6 +29,9 @@ const useCountAnimation = (end: number, duration: number = 1000) => {
 
 export default function Animacare() {
   const [activeFaq, setActiveFaq] = React.useState<string | null>(null);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const [activeCard, setActiveCard] = useState<string | null>(null);
+
   const statsRef = useRef<HTMLDivElement>(null);
   const missionStatsRef = useRef<HTMLDivElement>(null);
 
@@ -80,6 +83,33 @@ export default function Animacare() {
     return () => observer.disconnect();
   }, [healthCentres, mobileUnits, millionPeople]);
 
+  useEffect(() => {
+    // Safe window check for SSR
+    const checkTouchDevice = (): boolean => {
+      if (typeof window === 'undefined') return false;
+      return 'ontouchstart' in window;
+    };
+
+    setIsTouchDevice(checkTouchDevice());
+  }, []);
+
+  const handleToggle = (e: React.MouseEvent<HTMLDivElement, MouseEvent>, cardId: string): void => {
+    if (isTouchDevice) {
+      // Remove touch-hover class from all cards except the current one
+      const cards = document.querySelectorAll('.card-hover');
+      cards.forEach(card => card.classList.remove('touch-hover'));
+
+      // Toggle the current card
+      if (activeCard === cardId) {
+        e.currentTarget.classList.remove('touch-hover');
+        setActiveCard(null);
+      } else {
+        e.currentTarget.classList.add('touch-hover');
+        setActiveCard(cardId);
+      }
+    }
+  };
+
   return (<>
     <div className="relative overflow-hidden">
       <div
@@ -116,7 +146,7 @@ export default function Animacare() {
     </div>
     {/* West Bengal Healthcare Initiative Section */}
     <div className="relative overflow-hidden bg-white">
-      <div className="max-w-screen-2xl mx-auto px-3 sm:px-6 md:px-8 lg:px-22 py-20 md:py-32">
+      <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
         <div className="space-y-8">
           {/* Chapter Title */}
           <div>
@@ -165,7 +195,7 @@ export default function Animacare() {
                   </div>
                   <div>
                     <h4 className="text-lg sm:text-xl lg:text-2xl font-[700] text-[#565656] font-['Montserrat'] tracking-[0%] mb-2">1886 villages</h4>
-                    <p className="text-sm sm:text-base text-gray-500">Inadequate healthcare access</p>
+                    <p className="text-sm sm:text-base text-gray-500">Inadequate Healthcare Access</p>
                   </div>
                 </div>
               </div>
@@ -202,37 +232,37 @@ export default function Animacare() {
           </div>
 
           {/* Statistics Section */}
-          <div ref={statsRef} className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
-            <div className="text-center p-4 sm:p-6">
+          <div ref={statsRef} className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-20">
+            <div className="text-center p-4 sm:p-6 border-2 border-gray-200 rounded-xl transition-all duration-300 hover:shadow-lg hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] group">
               <div className="flex justify-center mb-4">
-                <Image src="/icons/anim-2-lgo4.png" alt="Specialists" width={48} height={48} />
+                <Image src="/icons/anim-2-lgo4.png" alt="Specialists" width={48} height={48} className="group-hover:brightness-0 group-hover:invert transition-all duration-300" />
               </div>
-              <h4 className="text-xl sm:text-2xl lg:text-3xl font-[700] text-[#1A1A1A] mb-2">{specialistReferrals.count}+</h4>
-              <p className="text-sm sm:text-base text-gray-600">Specialist Referrals</p>
+              <h4 className="text-xl sm:text-2xl lg:text-3xl font-[700] text-[#1A1A1A] mb-2 group-hover:text-white transition-colors duration-300">{specialistReferrals.count}+</h4>
+              <p className="text-sm sm:text-base text-gray-600 group-hover:text-white transition-colors duration-300">Specialist Referrals</p>
             </div>
 
-            <div className="text-center p-4 sm:p-6">
+            <div className="text-center p-4 sm:p-6 border-2 border-gray-200 rounded-xl transition-all duration-300 hover:shadow-lg hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] group">
               <div className="flex justify-center mb-4">
-                <Image src="/icons/anim-2-lgo5.png" alt="Disease" width={48} height={48} />
+                <Image src="/icons/anim-2-lgo5.png" alt="Disease" width={48} height={48} className="group-hover:brightness-0 group-hover:invert transition-all duration-300" />
               </div>
-              <h4 className="text-xl sm:text-2xl lg:text-3xl font-[700] text-[#1A1A1A] mb-2">{diseaseDetection.count}%</h4>
-              <p className="text-sm sm:text-base text-gray-600">Early Disease Detected</p>
+              <h4 className="text-xl sm:text-2xl lg:text-3xl font-[700] text-[#1A1A1A] mb-2 group-hover:text-white transition-colors duration-300">{diseaseDetection.count}%</h4>
+              <p className="text-sm sm:text-base text-gray-600 group-hover:text-white transition-colors duration-300">Early Disease Detected</p>
             </div>
 
-            <div className="text-center p-4 sm:p-6">
+            <div className="text-center p-4 sm:p-6 border-2 border-gray-200 rounded-xl transition-all duration-300 hover:shadow-lg hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] group">
               <div className="flex justify-center mb-4">
-                <Image src="/icons/anim-2-lgo6.png" alt="Patients" width={48} height={48} />
+                <Image src="/icons/anim-2-lgo6.png" alt="Patients" width={48} height={48} className="group-hover:brightness-0 group-hover:invert transition-all duration-300" />
               </div>
-              <h4 className="text-xl sm:text-2xl lg:text-3xl font-[700] text-[#1A1A1A] mb-2">{patientsTreated.count}+</h4>
-              <p className="text-sm sm:text-base text-gray-600">Patients Treated</p>
+              <h4 className="text-xl sm:text-2xl lg:text-3xl font-[700] text-[#1A1A1A] mb-2 group-hover:text-white transition-colors duration-300">{patientsTreated.count}+</h4>
+              <p className="text-sm sm:text-base text-gray-600 group-hover:text-white transition-colors duration-300">Patients Treated</p>
             </div>
 
-            <div className="text-center p-4 sm:p-6">
+            <div className="text-center p-4 sm:p-6 border-2 border-gray-200 rounded-xl transition-all duration-300 hover:shadow-lg hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] group">
               <div className="flex justify-center mb-4">
-                <Image src="/icons/anim-2-lgo7.png" alt="Satisfaction" width={48} height={48} />
+                <Image src="/icons/anim-2-lgo7.png" alt="Satisfaction" width={48} height={48} className="group-hover:brightness-0 group-hover:invert transition-all duration-300" />
               </div>
-              <h4 className="text-xl sm:text-2xl lg:text-3xl font-[700] text-[#1A1A1A] mb-2">{patientsSatisfied.count}%</h4>
-              <p className="text-sm sm:text-base text-gray-600">Patients Satisfied</p>
+              <h4 className="text-xl sm:text-2xl lg:text-3xl font-[700] text-[#1A1A1A] mb-2 group-hover:text-white transition-colors duration-300">{patientsSatisfied.count}%</h4>
+              <p className="text-sm sm:text-base text-gray-600 group-hover:text-white transition-colors duration-300">Patients Satisfied</p>
             </div>
           </div>
         </div>
@@ -241,7 +271,7 @@ export default function Animacare() {
 
     {/* Original Animacare Initiative Section */}
     <div className="relative overflow-hidden bg-white">
-      <div className="max-w-screen-2xl mx-auto px-3 sm:px-6 md:px-8 lg:px-22 py-20 md:py-32">
+      <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="space-y-6">
             <h2 className="text-4xl md:text-5xl font-bold">
@@ -271,7 +301,7 @@ export default function Animacare() {
 
     {/* Animacare Initiative Section */}
     <div className="relative overflow-hidden bg-white">
-      <div className='max-w-screen-2xl mx-auto px-3 sm:px-6 md:px-8 lg:px-22 py-20 md:py-32'>
+      <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
         <div className="relative rounded-xl overflow-hidden bg-gradient-to-r from-[#17A7AB] to-[#003366] text-white">
           <div className="mx-auto px-2 sm:px-2 md:px-4 lg:px-10 py-5 md:py-10">
             <div className="flex flex-col items-start gap-8">
@@ -327,13 +357,13 @@ export default function Animacare() {
 
     {/* Health Network Flow Section */}
     <div className="relative overflow-hidden bg-white">
-      <div className="max-w-screen-2xl mx-auto px-3 sm:px-6 md:px-8 lg:px-22 py-20 md:py-32">
+      <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
         <div className="mb-8">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[36px] font-[700] font-['Montserrat'] leading-tight sm:leading-tight md:leading-tight lg:leading-[100%] tracking-[0px] align-middle">
-            <span className="text-[#17A7AB]">Network Workflow of </span>{' '}
+          <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+            <span className="text-[#18A093]">Network Workflow of</span>{' '}
             <span className="text-[#003366]">Animacare Initiative</span>
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-gray-600 leading-relaxed">
+          <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
             A scalable network of Tele-Diagnostic & Tele-Consultation Centers (TDTCs) and Mobile Tele-Clinics (MTCUs).
           </p>
         </div>
@@ -342,7 +372,7 @@ export default function Animacare() {
           {/* Left Column - TDTC Information */}
           <div className="space-y-6">
             {/* First TDTC Box */}
-            <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
+            <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:scale-[1.02] hover:translate-y-[-4px]">
               <div className="flex items-center gap-4 mb-4">
                 <Image
                   src="/icons/hm-6-lgo.png"
@@ -374,7 +404,7 @@ export default function Animacare() {
             </div>
 
             {/* Second TDTC Box */}
-            <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
+            <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:transform hover:translate-y-[-4px]">
               <div className="flex items-center gap-4 mb-4">
                 <Image
                   src="/icons/hm-6-lgo.png"
@@ -422,35 +452,77 @@ export default function Animacare() {
 
     {/* Social Impacts & Sustainability Section */}
     <div className="relative overflow-hidden bg-white">
-      <div className="max-w-screen-2xl mx-auto px-3 sm:px-6 md:px-8 lg:px-22 py-20 md:py-32">
-        <h2 className="mb-4 text-2xl sm:text-3xl md:text-4xl lg:text-[36px] font-[700] font-['Montserrat'] leading-tight sm:leading-tight md:leading-tight lg:leading-[100%] tracking-[0px] align-middle text-[#003366]">
+      <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
+        <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
           <span className="text-[#18A093]">Social Impacts</span>{' '}
           <span className="text-[#003366]">& Sustainability</span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
           {/* Left Column */}
-          <div className="flex flex-col space-y-8 h-full">
-            <div className="flex items-start gap-4 flex-1">
-              <Image src="/icons/anim-4-lgo1.png" alt="Innovation" width={48} height={48} />
-              <div>
-                <h3 className="text-lg font-semibold text-[#003366] mb-2">On-Site Diagnostics & Tele-Medicine</h3>
-                <p className="text-gray-600 text-sm">Delivering advanced tele-diagnostics and smart healthcare through cutting-edge technology.</p>
+          <div className="flex flex-col items-center justify-between h-full">
+            <div
+              onClick={(e) => handleToggle(e, 'card1')}
+              className={`w-full flex flex-row items-center justify-between bg-white p-4 sm:p-6 rounded-lg border border-gray-200 transition-all duration-300 group card-hover 
+                  hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] 
+                  hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] 
+                  hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] 
+                  touch-hover:bg-gradient-to-r touch-hover:from-[rgba(24,160,147,0.7)] 
+                  touch-hover:via-[rgba(18,131,135,0.7)] touch-hover:via-[rgba(11,100,122,0.7)] 
+                  touch-hover:via-[rgba(6,80,114,0.7)] touch-hover:to-[rgba(0,51,102,0.7)]`}
+            >
+
+              <Image src="/icons/anim-4-lgo1.png" alt="Innovation" width={40} height={40} className="group-hover:hidden touch-hover:hidden transition-opacity duration-300 mr-2" />
+              <div className='w-[90%] group-hover:w-full'>
+                <h3 className="text-lg font-semibold text-[#003366] leading-[1.2] sm:leading-[20px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">
+                  Affordable Healthcare at the Doorstep
+                </h3>
+                <p className="text-gray-600 text-sm group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300">
+                  Delivering advanced tele-diagnostics and smart healthcare through cutting-edge technology.
+                </p>
               </div>
             </div>
 
-            <div className="flex items-start gap-4 flex-1">
-              <Image src="/icons/anim-4-lgo1.png" alt="Innovation" width={48} height={48} />
-              <div>
-                <h3 className="text-lg font-semibold text-[#003366] mb-2">Innovation And Technology</h3>
-                <p className="text-gray-600 text-sm">Delivering advanced tele-diagnostics and smart healthcare through cutting-edge technology.</p>
+            <div
+              onClick={(e) => handleToggle(e, 'card2')}
+              className={`w-full flex flex-row items-center justify-between bg-white p-4 sm:p-6 rounded-lg border border-gray-200 transition-all duration-300 group card-hover 
+                  hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] 
+                  hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] 
+                  hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] 
+                  touch-hover:bg-gradient-to-r touch-hover:from-[rgba(24,160,147,0.7)] 
+                  touch-hover:via-[rgba(18,131,135,0.7)] touch-hover:via-[rgba(11,100,122,0.7)] 
+                  touch-hover:via-[rgba(6,80,114,0.7)] touch-hover:to-[rgba(0,51,102,0.7)]`}
+            >
+
+              <Image src="/icons/anim-4-lgo1.png" alt="Innovation" width={40} height={40} className="group-hover:hidden touch-hover:hidden transition-opacity duration-300 mr-2" />
+              <div className='w-[90%] group-hover:w-full'>
+                <h3 className="text-lg font-semibold text-[#003366] leading-[1.2] sm:leading-[20px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">
+                  Expanding Healthcare Access in Underserved Areas
+                </h3>
+                <p className="text-gray-600 text-sm group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300">
+                  Ensures timely access to diagnostics and specialist consultations in rural and remote communities.
+                </p>
               </div>
             </div>
 
-            <div className="flex items-start gap-4 flex-1">
-              <Image src="/icons/anim-4-lgo1.png" alt="Innovation" width={48} height={48} />
-              <div>
-                <h3 className="text-lg font-semibold text-[#003366] mb-2">Innovation And Technology</h3>
-                <p className="text-gray-600 text-sm">Delivering advanced tele-diagnostics and smart healthcare through cutting-edge technology.</p>
+            <div
+              onClick={(e) => handleToggle(e, 'card3')}
+              className={`w-full flex flex-row items-center justify-between bg-white p-4 sm:p-6 rounded-lg border border-gray-200 transition-all duration-300 group card-hover 
+                  hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] 
+                  hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] 
+                  hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] 
+                  touch-hover:bg-gradient-to-r touch-hover:from-[rgba(24,160,147,0.7)] 
+                  touch-hover:via-[rgba(18,131,135,0.7)] touch-hover:via-[rgba(11,100,122,0.7)] 
+                  touch-hover:via-[rgba(6,80,114,0.7)] touch-hover:to-[rgba(0,51,102,0.7)]`}
+            >
+
+              <Image src="/icons/anim-4-lgo1.png" alt="Innovation" width={40} height={40} className="group-hover:hidden touch-hover:hidden transition-opacity duration-300 mr-2" />
+              <div className='w-[90%] group-hover:w-full'>
+                <h3 className="text-lg font-semibold text-[#003366] leading-[1.2] sm:leading-[20px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">
+                  Reducing Healthcare Carbon Footprint
+                </h3>
+                <p className="text-gray-600 text-sm group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300">
+                  Reduces unnecessary travel, hospital visits, and resource usage — supporting a more sustainable healthcare model.
+                </p>
               </div>
             </div>
           </div>
@@ -467,28 +539,70 @@ export default function Animacare() {
           </div>
 
           {/* Right Column */}
-          <div className="flex flex-col space-y-8 h-full">
-            <div className="flex items-start gap-4 flex-1">
-              <Image src="/icons/anim-4-lgo1.png" alt="Innovation" width={48} height={48} />
-              <div>
-                <h3 className="text-lg font-semibold text-[#003366] mb-2">Innovation And Technology</h3>
-                <p className="text-gray-600 text-sm">Delivering advanced tele-diagnostics and smart healthcare through cutting-edge technology.</p>
+          <div className="flex flex-col items-center justify-between h-full">
+            <div
+              onClick={(e) => handleToggle(e, 'card4')}
+              className={`w-full flex flex-row items-center justify-between bg-white p-4 sm:p-6 rounded-lg border border-gray-200 transition-all duration-300 group card-hover 
+                  hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] 
+                  hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] 
+                  hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] 
+                  touch-hover:bg-gradient-to-r touch-hover:from-[rgba(24,160,147,0.7)] 
+                  touch-hover:via-[rgba(18,131,135,0.7)] touch-hover:via-[rgba(11,100,122,0.7)] 
+                  touch-hover:via-[rgba(6,80,114,0.7)] touch-hover:to-[rgba(0,51,102,0.7)]`}
+            >
+
+              <Image src="/icons/anim-4-lgo1.png" alt="Innovation" width={40} height={40} className="group-hover:hidden touch-hover:hidden transition-opacity duration-300 mr-2" />
+              <div className='w-[90%] group-hover:w-full'>
+                <h3 className="text-lg font-semibold text-[#003366] leading-[1.2] sm:leading-[20px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">
+                  Empowering Local Workforce
+                </h3>
+                <p className="text-gray-600 text-sm group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300">
+                  Creating job opportunities and strengthening the grassroots health ecosystem.
+                </p>
               </div>
             </div>
 
-            <div className="flex items-start gap-4 flex-1">
-              <Image src="/icons/anim-4-lgo1.png" alt="Innovation" width={48} height={48} />
-              <div>
-                <h3 className="text-lg font-semibold text-[#003366] mb-2">Innovation And Technology</h3>
-                <p className="text-gray-600 text-sm">Delivering advanced tele-diagnostics and smart healthcare through cutting-edge technology.</p>
+            <div
+              onClick={(e) => handleToggle(e, 'card5')}
+              className={`w-full flex flex-row items-center justify-between bg-white p-4 sm:p-6 rounded-lg border border-gray-200 transition-all duration-300 group card-hover 
+                  hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] 
+                  hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] 
+                  hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] 
+                  touch-hover:bg-gradient-to-r touch-hover:from-[rgba(24,160,147,0.7)] 
+                  touch-hover:via-[rgba(18,131,135,0.7)] touch-hover:via-[rgba(11,100,122,0.7)] 
+                  touch-hover:via-[rgba(6,80,114,0.7)] touch-hover:to-[rgba(0,51,102,0.7)]`}
+            >
+
+              <Image src="/icons/anim-4-lgo1.png" alt="Innovation" width={40} height={40} className="group-hover:hidden touch-hover:hidden transition-opacity duration-300 mr-2" />
+              <div className='w-[90%] group-hover:w-full'>
+                <h3 className="text-lg font-semibold text-[#003366] leading-[1.2] sm:leading-[20px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">
+                  Supporting CSR and NGO Initiatives
+                </h3>
+                <p className="text-gray-600 text-sm group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300">
+                  Health missions to deploy healthcare solutions that create lasting impact across underserved geographies.
+                </p>
               </div>
             </div>
 
-            <div className="flex items-start gap-4 flex-1">
-              <Image src="/icons/anim-4-lgo1.png" alt="Innovation" width={48} height={48} />
-              <div>
-                <h3 className="text-lg font-semibold text-[#003366] mb-2">Innovation And Technology</h3>
-                <p className="text-gray-600 text-sm">Delivering advanced tele-diagnostics and smart healthcare through cutting-edge technology.</p>
+            <div
+              onClick={(e) => handleToggle(e, 'card6')}
+              className={`w-full flex flex-row items-center justify-between bg-white p-4 sm:p-6 rounded-lg border border-gray-200 transition-all duration-300 group card-hover 
+                  hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] 
+                  hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] 
+                  hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] 
+                  touch-hover:bg-gradient-to-r touch-hover:from-[rgba(24,160,147,0.7)] 
+                  touch-hover:via-[rgba(18,131,135,0.7)] touch-hover:via-[rgba(11,100,122,0.7)] 
+                  touch-hover:via-[rgba(6,80,114,0.7)] touch-hover:to-[rgba(0,51,102,0.7)]`}
+            >
+
+              <Image src="/icons/anim-4-lgo1.png" alt="Innovation" width={40} height={40} className="group-hover:hidden touch-hover:hidden transition-opacity duration-300 mr-2" />
+              <div className='w-[90%] group-hover:w-full'>
+                <h3 className="text-lg font-semibold text-[#003366] leading-[1.2] sm:leading-[20px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">
+                  Digital Health Literacy & Awareness
+                </h3>
+                <p className="text-gray-600 text-sm group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300">
+                  Empowered with digital health knowledge to understand and manage their wellness better.
+                </p>
               </div>
             </div>
           </div>
@@ -498,15 +612,14 @@ export default function Animacare() {
 
     {/* FAQ Section */}
     <div className="relative bg-white overflow-hidden">
-      <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-16 sm:py-20 lg:py-32">
-        <h2 className="text-2xl sm:text-3xl lg:text-[36px] font-[700] font-['Montserrat'] mb-4 sm:mb-6 lg:mb-8">
+      <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
+        <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
           <span className="text-[#18A093]">Frequently Asked</span>{' '}
           <span className="text-[#003366]">Questions</span>
         </h2>
-        <p className="text-base sm:text-lg lg:text-[20px] text-[#555555] font-['Montserrat'] font-medium mb-8 sm:mb-10 lg:mb-12">
+        <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
           Learn how our solutions bring quality healthcare closer to those who need it most.
         </p>
-
         <div className="space-y-3 sm:space-y-4 lg:space-y-6">
           {/* FAQ Items */}
           <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq1' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>

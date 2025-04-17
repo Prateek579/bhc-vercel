@@ -9,13 +9,10 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const toggleDropdown = (menu: string) => {
-    setActiveDropdown(activeDropdown === menu ? null : menu);
-    setTimeout(() => {
-      setActiveDropdown(null);
-    }, 3000);
+  const toggleDropdown = (title: string) => {
+    setActiveDropdown(activeDropdown === title ? null : title);
   };
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const navItems = [
     { title: 'Our Products', href: '/ourProducts' },
@@ -54,26 +51,25 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <div className="relative group">
-              <Link href="/ourProducts" className="nav-menu-item text-gray-700 hover:text-gray-900 px-3 py-2 inline-flex items-center">
+            <div className="relative group z-50">
+              <Link href="/ourProducts" className="nav-menu-item text-gray-700 hover:text-[#18A093] px-3 py-2 inline-flex items-center">
                 Our Products
               </Link>
             </div>
 
-            <div className="relative group">
-              <Link href="/ourSolution" className="nav-menu-item text-gray-700 hover:text-gray-900 px-3 py-2 inline-flex items-center">
+            <div className="relative group z-50">
+              <Link href="/ourSolution" className="nav-menu-item text-gray-700 hover:text-[#18A093] px-3 py-2 inline-flex items-center">
                 Our Solution
               </Link>
             </div>
 
-            <div className="relative group">
+            <div className="relative group z-50">
               <button
-                className="nav-menu-item text-gray-700 hover:text-gray-900 px-3 py-2 inline-flex items-center"
-                onClick={() => toggleDropdown('Our Initiative')}
+                className="nav-menu-item text-gray-700 hover:text-[#18A093] px-3 py-2 inline-flex items-center"
               >
                 Our Initiative
                 <svg
-                  className="ml-2 h-4 w-4 transition-transform"
+                  className="ml-2 h-4 w-4 transition-transform group-hover:rotate-180"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -81,28 +77,27 @@ const Navbar = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              {activeDropdown === 'Our Initiative' && (
-                <div className="dropdown-menu absolute left-0 mt-2">
+              
+                <div className="dropdown-menu absolute left-0 mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
                   <div role="menu">
-                    <Link href="/ourInitiative/animacare" className="dropdown-item" onClick={() => setActiveDropdown(null)}>
+                    <Link href="/ourInitiative/animacare" className="dropdown-item">
                       <span className="dropdown-item-text">Animacare</span>
                     </Link>
-                    <Link href="/ourInitiative/decentralized" className="dropdown-item" onClick={() => setActiveDropdown(null)}>
+                    <Link href="/ourInitiative/decentralized" className="dropdown-item">
                       <span className="dropdown-item-text">Decentralized Health Network</span>
                     </Link>
                   </div>
                 </div>
-              )}
+              
             </div>
 
-            <div className="relative group">
+            <div className="relative group z-50">
               <button
-                className="nav-menu-item text-gray-700 hover:text-gray-900 px-3 py-2 inline-flex items-center"
-                onClick={() => toggleDropdown('Know Us better')}
+                className="nav-menu-item text-gray-700 hover:text-[#18A093] px-3 py-2 inline-flex items-center"
               >
                 Know Us better
                 <svg
-                  className="ml-2 h-4 w-4 transition-transform"
+                  className="ml-2 h-4 w-4 transition-transform group-hover:rotate-180"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -110,8 +105,8 @@ const Navbar = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              {activeDropdown === 'Know Us better' && (
-                <div className="dropdown-menu absolute left-0 mt-2">
+              
+                <div className="dropdown-menu absolute left-0 mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
                   <div role="menu">
                     <Link href="/knowUsBetter/about" className="dropdown-item">
                       <span className="dropdown-item-text">About Us</span>
@@ -119,32 +114,43 @@ const Navbar = () => {
                     <Link href="/knowUsBetter/news" className="dropdown-item">
                       <span className="dropdown-item-text">News</span>
                     </Link>
-                    <button onClick={(e) => e.preventDefault()} className="dropdown-item">
+                    <Link href="/knowUsBetter/blogs" className="dropdown-item">
                       <span className="dropdown-item-text">Blogs</span>
-                    </button>
-                    <button onClick={(e) => e.preventDefault()} className="dropdown-item">
+                    </Link>
+                    <Link href="/knowUsBetter/achievement" className="dropdown-item">
                       <span className="dropdown-item-text">Achievement</span>
-                    </button>
+                    </Link>
                   </div>
                 </div>
-              )}
+              
             </div>
 
-            <div className="relative group">
-              <Link href="/contactUs" className="nav-menu-item text-gray-700 hover:text-gray-900 px-3 py-2 inline-flex items-center">
+            <div className="relative group z-50">
+              <Link href="/contactUs" className="nav-menu-item text-gray-700 hover:text-[#18A093] px-3 py-2 inline-flex items-center">
                 Contact Us
               </Link>
             </div>
           </div>
+          <div className="flex flex-row items-center justify-between">
+            {/* Login */}
+            <div className="hidden md:block relative mr-2">
+              <Link
+                href="https://doctor.bridgehealth.care/"
+                className="inline-flex items-center justify-center px-6 py-2 border border-transparent text-base font-medium rounded-md text-white bg-[#18A093] hover:opacity-80 "
+              >
+                Doctor Login
+              </Link>
+            </div>
 
-          {/* Get Involved Button */}
-          <div className="hidden md:block relative">
-            <Link
-              href="/getInvolved"
-              className="inline-flex items-center justify-center px-6 py-2 border border-transparent text-base font-medium rounded-md text-white bg-[#003366] hover:bg-blue-900"
-            >
-              Get Involved
-            </Link>
+            {/* Get Involved Button */}
+            <div className="hidden md:block relative">
+              <Link
+                href="/getInvolved"
+                className="inline-flex items-center justify-center px-6 py-2 border border-transparent text-base font-medium rounded-md text-white bg-[#003366] hover:bg-blue-900"
+              >
+                Get Involved
+              </Link>
+            </div>
           </div>
 
           {/* Mobile menu button */}
@@ -181,20 +187,36 @@ const Navbar = () => {
           {navItems.map((item) => (
             <div key={item.title} className="relative">
               {item.hasDropdown ? (
-                <button
-                  onClick={() => toggleDropdown(item.title)}
-                  className="nav-menu-item w-full text-left px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 flex justify-between items-center"
-                >
-                  {item.title}
-                  <svg
-                    className={`ml-2 h-4 w-4 transition-transform ${activeDropdown === item.title ? 'rotate-180' : ''}`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
+                <>
+                  <button
+                    onClick={() => toggleDropdown(item.title)}
+                    className="nav-menu-item w-full text-left px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 flex justify-between items-center"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
+                    {item.title}
+                    <svg
+                      className={`ml-2 h-4 w-4 transition-transform ${activeDropdown === item.title ? 'rotate-180' : ''}`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  {activeDropdown === item.title && (
+                    <div className="pl-4">
+                      {item.dropdownItems?.map((dropdownItem) => (
+                        <Link
+                          key={dropdownItem.title}
+                          href={dropdownItem.href}
+                          className="nav-menu-item block px-3 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          {dropdownItem.title}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </>
               ) : (
                 <Link
                   href={item.href}
@@ -204,22 +226,14 @@ const Navbar = () => {
                   {item.title}
                 </Link>
               )}
-              {item.hasDropdown && activeDropdown === item.title && (
-                <div className="pl-4">
-                  {item.dropdownItems?.map((dropdownItem) => (
-                    <Link
-                      key={dropdownItem.title}
-                      href={dropdownItem.href}
-                      className="nav-menu-item block px-3 py-2 text-sm text-gray-700 hover:bg-gray-50"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {dropdownItem.title}
-                    </Link>
-                  ))}
-                </div>
-              )}
             </div>
           ))}
+          <Link
+            href="https://doctor.bridgehealth.care/"
+            className="w-full inline-flex items-center justify-center px-6 py-2 border border-transparent text-base font-medium rounded-md text-white bg-[#18A093] hover:opacity-80 "
+          >
+            Doctor Login
+          </Link>
           <Link
             href="/getInvolved"
             className="block w-full text-center px-4 py-2 text-base font-medium text-white bg-[#003366] hover:bg-blue-900 rounded-md"

@@ -40,10 +40,33 @@ body {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
 }
+
+.touch-hover {
+  background-image: linear-gradient(to right,
+      rgba(24, 160, 147, 0.7),
+      rgba(18, 131, 135, 0.7),
+      rgba(11, 100, 122, 0.7),
+      rgba(6, 80, 114, 0.7),
+      rgba(0, 51, 102, 0.7));
+}
+
+.touch-hover .touch-hover\:hidden {
+  display: none !important;
+}
+
+.touch-hover .touch-hover\:block {
+  display: block !important;
+}
+
+.touch-hover .touch-hover\:text-white {
+  color: white !important;
+}
+
 
 .specialty-cards-container {
   display: flex;

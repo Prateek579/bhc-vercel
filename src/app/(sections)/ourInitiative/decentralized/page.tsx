@@ -5,50 +5,39 @@ import Image from 'next/image';
 export default function Decentralized() {
   return (<>
     <div className="relative overflow-hidden">
-      <div
-        className="absolute inset-0 -z-10"
-        style={{
-          backgroundImage: 'url("/icons/abt-1-img.png")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      />
-      <div className="max-w-screen-2xl mx-auto px-3 sm:px-6 md:px-8 lg:px-22 py-16 md:py-28">
-        <div className="relative z-10 flex flex-col gap-6 max-w-xl lg:max-w-2xl">
-          <div className="space-y-4">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-[700] font-['Montserrat'] leading-[120%] sm:leading-[110%] md:leading-[100%] tracking-[0%] align-middle text-[#1A1A1A] mb-4 sm:mb-6">
-              <span className="text-[#18A093]">Building The India&apos;s Largest</span>{' '}
-              <span className="text-[#003366]">Decentralized Healthcare Network</span>
+      <div className="relative min-h-screen overflow-hidden py-8 sm:py-12 md:py-16 lg:py-20 bg-[linear-gradient(270deg,rgba(255,255,255,0)_0%,#083350_100%)] flex items-center">
+        <div
+          className="absolute inset-0 -z-10"
+          style={{
+            backgroundImage: 'url("/icons/hm-1-sl-4-img.png")',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#003366]/70 to-transparent" />
+        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 md:px-8 lg:px-22 w-full">
+          <div className="relative z-10 flex flex-col gap-6 max-w-4xl text-white">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-['Montserrat'] leading-tight">
+              Building The World&apos;s Largest
+              <span> Decentralized Healthcare Network</span>
             </h1>
+            <p className="text-sm md:text-base lg:text-lg opacity-90 font-['Montserrat'] font-normal leading-relaxed text-[#FFA500]">
+              By 2036, Transforming access to care by building a decentralized, tech-enabled healthcare network across every Indian sub-division.
+            </p>
           </div>
-
-          <p className="text-base sm:text-lg md:text-xl font-[400] font-['Font family'] leading-[150%] sm:leading-[130%] md:leading-[100%] tracking-[0%] align-middle text-[#555555]">
-            By 2036, Transforming access to care by building a decentralized, tech-enabled healthcare network across every Indian sub-division.
-          </p>
-        </div>
-
-        {/* India Map Illustration */}
-        <div className="relative lg:absolute lg:inset-y-0 lg:right-0 w-full lg:w-1/2 mt-8 lg:mt-0">
-          <Image
-            src="/icons/dc-1-img.png"
-            alt="India Map"
-            width={600}
-            height={600}
-            className="opacity-80 w-full h-auto max-h-[616px] object-contain mx-auto"
-          />
         </div>
       </div>
     </div>
 
     {/* Second Section - About Bridge Healthcare */}
     <div className="bg-white py-16 md:py-24">
-      <div className="max-w-screen-2xl mx-auto px-3 sm:px-6 md:px-8 lg:px-22">
+      <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
         <div className="max-w-2xl">
-          <h2 className="mb-4 text-2xl sm:text-3xl md:text-4xl lg:text-[36px] font-[700] font-['Montserrat'] leading-tight sm:leading-tight md:leading-tight lg:leading-[100%] tracking-[0px] align-middle text-[#003366]">
+          <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
             <span className="text-[#18A093]">About</span>{' '}
             <span className="text-[#003366]">Bridge Healthcare</span>
           </h2>
-          <p className="text-[20px] text-[#555555] font-[500] font-['Montserrat'] leading-[100%] tracking-[0px] align-middle mb-16">
+          <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
             Reimagining healthcare delivery through smart diagnostics and seamless connectivity.
           </p>
         </div>
@@ -57,7 +46,7 @@ export default function Decentralized() {
           {/* Vision and Mission Column */}
           <div className="w-full md:w-1/2 space-y-12">
             {/* Vision */}
-            <div className="space-y-4">
+            <div className="border-2 border-gray-200 space-y-4 p-4 rounded-xl group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300">
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8">
                   <Image
@@ -67,15 +56,15 @@ export default function Decentralized() {
                     height={32}
                   />
                 </div>
-                <h3 className="text-2xl font-[700] leading-[100%] tracking-[0%] align-middle text-[#333333] font-['Montserrat']">Vision</h3>
+                <h3 className="text-2xl font-[700] leading-[100%] tracking-[0%] align-middle text-[#333333] group-hover:text-white font-['Montserrat'] transition-colors duration-300">Vision</h3>
               </div>
-              <p className="text-[#666666] font-['Montserrat'] font-[400] text-[14px] leading-[100%] tracking-[0%] align-middle">
+              <p className="text-sm sm:text-[14px] font-[400] leading-[1.6] sm:leading-[1.5] tracking-[0%] text-[#666666] group-hover:text-white transition-colors duration-300">
                 To revolutionize healthcare delivery by making premium, technology-driven healthcare services accessible, affordable, and reliable for everyone, everywhere.
               </p>
             </div>
 
             {/* Mission */}
-            <div className="space-y-4">
+            <div className="border-2 border-gray-200 space-y-4 p-4 rounded-xl group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300">
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8">
                   <Image
@@ -85,9 +74,9 @@ export default function Decentralized() {
                     height={32}
                   />
                 </div>
-                <h3 className="text-2xl font-[700] leading-[100%] tracking-[0%] align-middle text-[#333333] font-['Montserrat']">Mission</h3>
+                <h3 className="text-2xl font-[700] leading-[100%] tracking-[0%] align-middle text-[#333333] group-hover:text-white font-['Montserrat'] transition-colors duration-300">Mission</h3>
               </div>
-              <p className="text-[#666666] font-['Montserrat'] font-[400] text-[14px] leading-[100%] tracking-[0%] align-middle">
+              <p className="text-sm sm:text-[14px] font-[400] leading-[1.6] sm:leading-[1.5] tracking-[0%] text-[#666666] group-hover:text-white transition-colors duration-300">
                 To empower individuals and healthcare providers through advanced Tele-Diagnostic and Smart Healthcare solutions, ensuring real-time diagnostics, seamless tele-consultations, and connected care that improves health outcomes and transforms lives.
               </p>
             </div>
@@ -108,11 +97,11 @@ export default function Decentralized() {
 
     {/* Mission 2036 Section */}
     <div className="bg-white py-8 sm:py-12 md:py-16 lg:py-24">
-      <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 md:px-8 lg:px-22">
+      <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
           {/* Left Column - Statistics */}
           <div className="space-y-6 sm:space-y-8 lg:space-y-10">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-[700] font-['Montserrat'] leading-tight tracking-[0px] align-middle">
+            <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
               <span className="text-[#18A093]">Mission</span>{' '}
               <span className="text-[#003366]">2036</span>
             </h2>
@@ -201,14 +190,14 @@ export default function Decentralized() {
 
     {/* Fourth Section - Our Strength and Capacity */}
     <div className="bg-gray-50 py-16 md:py-24">
-      <div className="max-w-screen-2xl mx-auto px-3 sm:px-6 md:px-8 lg:px-22">
+      <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
         <div className="mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            <span className="text-[#00A99D]">How We’re Redefining</span>
-            <span className="text-[#003366]"> Healthcare in India</span>
+          <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+            <span className="text-[#18A093]">How We’re Redefining</span>{' '}
+            <span className="text-[#003366]">Healthcare in India</span>
           </h2>
-          <p className="text-[20px] text-[#555555] font-[500] font-['Montserrat'] leading-[100%] tracking-[0px] align-middle mb-16">
-            India&apos;s healthcare system faces deep gaps in accessibility and affordability — especially in rural regions. We&apos;re building a decentralized, tech-driven ecosystem that delivers real-time, community-centered care where it’s needed most.
+          <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
+            India&apos;s healthcare system faces deep gaps in accessibility and affordability — especially in rural regions. We&apos;re building a decentralized, tech-driven ecosystem that delivers real-time, community-centered care where it&apos;s needed most.
           </p>
         </div>
 
@@ -268,13 +257,13 @@ export default function Decentralized() {
     </div>
     {/* Fifth Section - Roadmap */}
     <div className="bg-white py-16 md:py-24">
-      <div className="max-w-screen-2xl mx-auto px-3 sm:px-6 md:px-8 lg:px-22">
+      <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
         <div className="mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            <span className="text-[#18A093]">Roadmap of</span>{' '}
+          <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+            <span className="text-[#18A093]">How We’re Redefining</span>{' '}
             <span className="text-[#003366]">Decentralized Healthcare Network</span>
           </h2>
-          <p className="text-[20px] text-[#555555] font-[500] font-['Montserrat'] leading-[100%] tracking-[0px] align-middle mb-16">
+          <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
             Milestones toward creating a nationwide network of smart health hubs across every sub-division in India.
           </p>
         </div>

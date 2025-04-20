@@ -270,7 +270,90 @@ export default function Animacare() {
     </div>
 
     {/* Original Animacare Initiative Section */}
+
     <div className="relative overflow-hidden bg-white">
+      <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
+        <div className="flex flex-col md:flex-row items-center justity-between">
+          <div className="space-y-6 w-[65%]">
+            <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+              <span className="text-[#17A7AB]">Animacare</span>{' '}
+              <span className="text-[#003366]">Initiative</span>
+            </h2>
+            <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium">
+              To effectively cater to the healthcare needs of rural regions, we will develop a Mobile Tele-Clinic Unit that complements the Tele-Diagnostic and Tele-Consultation Centers in sub-divisions of district. This solution ensures that even the most geographically isolated communities have access to primary and preventive healthcare.
+            </p>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* TDTC Column */}
+              <div className="bg-white p-6 ">
+                <div className="flex flex-col items-center gap-4 mb-4 border-b-2 border-[#003366]">
+                  <div className="w-12 h-12">
+                    <Image
+                      src="/icons/anim-6-lgo2.png"
+                      alt="TDTC Building"
+                      width={48}
+                      height={48}
+                      className="w-full h-full"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-[#333333]">Tele-Diagnostic & Tele-Consultation Centre</h3>
+                  </div>
+                </div>
+                <div className="mt-4">
+                  <h4 className="text-lg font-medium mb-3 text-[#333333]">TDTC Elements:</h4>
+                  <ul className="space-y-2 text-sm sm:text-base md:text-lg text-gray-600  ">
+                    <li>Smart Healthcare Machine</li>
+                    <li>2 Nurses, 1 Supervisor</li>
+                    <li>Clinic Inventory</li>
+                    <li>1 Technician</li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* MTCU Column */}
+              <div className="bg-white p-6 ">
+                <div className="flex flex-col items-center gap-4 mb-4 border-b-2 border-[#003366]">
+                  <div className="w-12 h-12">
+                    <Image
+                      src="/icons/anim-6-lgo2.png"
+                      alt="MTCU Vehicle"
+                      width={48}
+                      height={48}
+                      className="w-full h-full"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-[#333333]">Mobile Tele-Clinic Unit</h3>
+                  </div>
+                </div>
+                <div className="mt-4">
+                  <h4 className="text-lg font-medium mb-3 text-[#333333]">MTCU Elements:</h4>
+                  <ul className="space-y-2 text-sm sm:text-base md:text-lg text-gray-600">
+                    <li>Smart Healthcare Machine</li>
+                    <li>2 Nurses, 1 Driver</li>
+                    <li>Clinic Inventory</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="relative flex items-center justify-center w-[35%]">
+            <Image
+              src="/icons/anim-5-img.png"
+              alt="Tele-Consultation"
+              width={150}
+              height={100}
+              className="h-full w-full w-auto rounded-lg "
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    {/* <div className="relative overflow-hidden bg-white">
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="space-y-6">
@@ -299,7 +382,7 @@ export default function Animacare() {
           </div>
         </div>
       </div>
-    </div>
+    </div> */}
 
     {/* Animacare Initiative Section */}
     <div className="relative overflow-hidden bg-white">
@@ -377,22 +460,18 @@ export default function Animacare() {
                 />
                 <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">Tele-Diagnostic & Tele-Consultation Centre</h3>
               </div>
-              <ul className="grid grid-cols-2 gap-x-4 gap-y-3 text-gray-600">
-                <li className="flex items-center gap-2 text-sm sm:text-base md:text-lg text-gray-600">
-                  <span className="w-2 h-2 bg-[#17A7AB] rounded-full"></span>
-                  <span>Smart Healthcare Machine</span>
+              <ul className="text-gray-600">
+                <li className="flex items-start gap-2 text-sm sm:text-base md:text-lg text-gray-600">
+                  <span className="w-2 h-2 bg-[#17A7AB] rounded-full mt-[0.5em]"></span>
+                  <span>Installed at district sub-divisions, serving as the main center for healthcare services.</span>
                 </li>
-                <li className="flex items-center gap-2 text-sm sm:text-base md:text-lg text-gray-600">
-                  <span className="w-2 h-2 bg-[#17A7AB] rounded-full"></span>
-                  <span>2 Nurses, 1 Supervisor</span>
+                <li className="flex items-start gap-2 text-sm sm:text-base md:text-lg text-gray-600">
+                  <span className="w-2 h-2 bg-[#17A7AB] rounded-full mt-[0.5em]"></span>
+                  <span>Staffed with specialist doctors (via telemedicine), nurses and technicians.</span>
                 </li>
-                <li className="flex items-center gap-2 text-sm sm:text-base md:text-lg text-gray-600">
-                  <span className="w-2 h-2 bg-[#17A7AB] rounded-full"></span>
-                  <span>Clinic Inventory</span>
-                </li>
-                <li className="flex items-center gap-2 text-sm sm:text-base md:text-lg text-gray-600">
-                  <span className="w-2 h-2 bg-[#17A7AB] rounded-full"></span>
-                  <span>1 Technician</span>
+                <li className="flex items-start gap-2 text-sm sm:text-base md:text-lg text-gray-600">
+                  <span className="w-2 h-2 bg-[#17A7AB] rounded-full mt-[0.5em]"></span>
+                  <span>Equipped with Smart Healthcare Machine, ECG facility, advanced diagnostic tools and EHR.</span>
                 </li>
               </ul>
             </div>
@@ -409,31 +488,31 @@ export default function Animacare() {
                 />
                 <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">Mobile Tele-Clinic Unit</h3>
               </div>
-              <ul className="grid grid-cols-2 gap-x-4 gap-y-3 text-gray-600">
-                <li className="flex items-center gap-2 text-sm sm:text-base md:text-lg text-gray-600">
-                  <span className="w-2 h-2 bg-[#17A7AB] rounded-full"></span>
-                  <span>Smart Healthcare Machine</span>
+              <ul className="text-gray-600">
+                <li className="flex items-start gap-2 text-sm sm:text-base md:text-lg text-gray-600">
+                  <span className="w-2 h-2 bg-[#17A7AB] rounded-full mt-[0.5em]"></span>
+                  <span>Each TDTC is supported by 1 MTCUs per 300 sq. km area.</span>
                 </li>
-                <li className="flex items-center gap-2 text-sm sm:text-base md:text-lg text-gray-600">
-                  <span className="w-2 h-2 bg-[#17A7AB] rounded-full"></span>
-                  <span>2 Nurses, 1 Driver</span>
+                <li className="flex items-start gap-2 text-sm sm:text-base md:text-lg text-gray-600">
+                  <span className="w-2 h-2 bg-[#17A7AB] rounded-full mt-[0.5em]"></span>
+                  <span>MTCUs travel daily to remote villages, providing on-site health screenings, diagnostics and tele-consultations.</span>
                 </li>
-                <li className="flex items-center gap-2 text-sm sm:text-base md:text-lg text-gray-600">
-                  <span className="w-2 h-2 bg-[#17A7AB] rounded-full"></span>
-                  <span>Clinic Inventory</span>
+                <li className="flex items-start gap-2 text-sm sm:text-base md:text-lg text-gray-600">
+                  <span className="w-2 h-2 bg-[#17A7AB] rounded-full mt-[0.5em]"></span>
+                  <span>Each MTCU has 2 nurses and a driver, ensuring full medical assistance on the ground.</span>
                 </li>
               </ul>
             </div>
           </div>
 
           {/* Right Column - Network Flow Diagram */}
-          <div className="relative w-full h-full flex items-center justify-center">
+          <div className="relative  w-full h-full flex items-center justify-center">
             <Image
               src="/icons/anim-5-img.png"
               alt="TDTC Center"
               width={400}
               height={400}
-              className="w-[75%] h-[75%]"
+              className="w-[80%] h-[80%]"
             />
           </div>
         </div>

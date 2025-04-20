@@ -114,9 +114,6 @@ const Navbar = () => {
                   <Link href="/knowUsBetter/news" className="dropdown-item">
                     <span className="dropdown-item-text">News</span>
                   </Link>
-                  <Link href="/knowUsBetter/achievement" className="dropdown-item">
-                    <span className="dropdown-item-text">Achievement&apos;s</span>
-                  </Link>
                 </div>
               </div>
 
@@ -128,18 +125,17 @@ const Navbar = () => {
               </Link>
             </div>
           </div>
-          <div className="hidden md:block relative mr-2">
-            <Link
-              href="https://doctor.bridgehealth.care/"
-              className="inline-flex items-center justify-center px-6 py-2 border border-transparent text-base font-medium rounded-md text-white bg-[#18A093] hover:bg-white hover:border-1 hover:border-[#18A093] hover:text-[#18A093] hover:transition-colors duration-300 "
-            >
-              Doctor Login
-            </Link>
-          </div>
-          <div className="flex flex-row items-center justify-between">
+
+          <div className="flex flex-row items-center justify-between mr-4">
             {/* Login */}
-
-
+            <div className="hidden md:block relative mr-7">
+              <Link
+                href="https://doctor.bridgehealth.care/"
+                className="inline-flex items-center justify-center px-6 py-2 border border-transparent text-base font-medium rounded-md text-white bg-[#18A093] hover:bg-white hover:border-1 hover:border-[#18A093] hover:text-[#18A093] hover:transition-colors duration-300 "
+              >
+                Doctor Login
+              </Link>
+            </div>
             {/* Get Involved Button */}
             <div className="hidden md:block relative">
               <Link

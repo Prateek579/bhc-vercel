@@ -2,6 +2,7 @@
 
 import Partner from '@/app/components/Partner';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 export default function OurSolution() {
@@ -9,6 +10,14 @@ export default function OurSolution() {
   const [activeSol, setActiveSol] = React.useState<number | null>(1);
   const [showAllCards, setShowAllCards] = React.useState<boolean>(false);
   return (<>
+    <div className="fixed right-10 top-[40%] transform -translate-y-1/2 z-50 transform rotate-270 origin-top-right whitespace-nowrap">
+      <Link
+        href="/contactUs"
+        className="inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-md text-white bg-gradient-to-r from-[#18A093] via-[#128387] to-[#003366] hover:from-[#003366] hover:via-[#128387] hover:to-[#18A093] transition-all duration-300 shadow-lg hover:shadow-xl"
+      >
+        Schedule a Demo
+      </Link>
+    </div>
     <div className="relative overflow-hidden min-h-[50vh] sm:min-h-[60vh] md:min-h-[70vh]">
       <div
         className="absolute inset-0 -z-10"

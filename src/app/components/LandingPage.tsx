@@ -32,7 +32,7 @@ const useCountAnimation = (end: number, duration: number = 1000) => {
 const LandingPage = () => {
   const [activeFaq, setActiveFaq] = React.useState<string | null>(null);
   const statsRef = useRef<HTMLDivElement>(null);
-  const [activeProd, setActiveProd] = React.useState<number | null>(1);
+  // const [activeProd, setActiveProd] = React.useState<number | null>(1);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
   const [activeCard, setActiveCard] = useState<string | null>(null);
 
@@ -314,6 +314,7 @@ const LandingPage = () => {
         style={{ background: 'linear-gradient(90deg, rgba(24, 160, 147, 0.7) 0%, rgba(18, 131, 135, 0.7) 33.17%, rgba(11, 100, 122, 0.7) 64.42%, rgba(6, 80, 114, 0.7) 87.02%, rgba(0, 51, 102, 0.7) 100%)' }}>
 
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22">
+          <h1 className='font-bold text-[20px] sm:text-[25px] md:text-[35px] lg:text-[45px] text-center'>Impact that Matter&apos;s</h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 text-white">
             {/* Specialist Referrals */}
             <div className="flex flex-col items-center justify-center text-center p-3 sm:p-4 md:p-5 h-[140px] sm:h-[150px] md:h-[160px] space-y-3 sm:space-y-4">
@@ -726,6 +727,317 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
+
+      {/* Our Products Section */}
+      <div className="relative bg-white overflow-hidden">
+        <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
+          <div className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
+            <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+              <span className="text-[#18A093]">Our</span>{' '}
+              <span className="text-[#003366]">Products</span>
+            </h2>
+            <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
+              <span className="text-black font-bold">Smart Healthcare Machine</span> integrates tele-consultations with real-time health data and is supported by <span className="text-black font-bold">Doctor</span>, <span className="text-black font-bold">Patient</span> and <span className="text-black font-bold">Nurse</span> applications for streamlined collaboration and proactive care.
+            </p>
+          </div>
+          {/* NEW CARD} */}
+
+          {/* NEW CARD} */}
+          <div className="py-4 sm:py-6 md:py-8 lg:py-10">
+            <p className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4 text-[#003366]">Smart Healthcare Machine Features</p>
+            <div className="flex flex-col sm:flex-col md:flex-row space-y-4 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300">
+              <div className="w-[40%] items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 flex items-center justify-center border-r-2 border-[#003366] mr-5">
+                <Image src="/icons/hm-7-img.png" alt="Smart Healthcare Machine Features" width={32} height={32} className="w-auto h-[80%]" />
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* Vitals Section */}
+                <div className="space-y-2">
+                  <h3 className="text-[#003366] text-[18px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize font-['Montserrat] border-b-2 border-gray-300">Vitals</h3>
+                  <div className="grid grid-cols-2 gap-2">
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#18A093]">•</span>
+                      <span className='text-sm sm:text-base md:text-lg text-gray-600' >Pulse Rate</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#18A093]">•</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Temperature</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#18A093]">•</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>SpO2</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#18A093]">•</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Blood Pressure</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#18A093]">•</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>BMI</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#18A093]">•</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Heart Rate</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Blood Tests Section */}
+                <div className="space-y-2">
+                  <h3 className="text-[#003366] text-[18px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize font-['Montserrat] border-b-2 border-gray-300">Blood Tests</h3>
+                  <div className="grid grid-cols-2 gap-2">
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#18A093]">•</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Hemoglobin</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#18A093]">•</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Lipid Profile</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#18A093]">•</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Blood Sugar</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#18A093]">•</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Renal Function</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#18A093]">•</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>HbA1c</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* RAPID TEST */}
+                <div className="space-y-2">
+                  <h3 className="text-[#003366] text-[18px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize font-['Montserrat] border-b-2 border-gray-300">Rapid Test</h3>
+                  <div className="grid grid-cols-2 gap-2">
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#18A093]">•</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Ovulation LH</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#18A093]">•</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Malaria AG</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#18A093]">•</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>HIV I & II</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#18A093]">•</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Troponin I</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#18A093]">•</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Hepatitis C</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#18A093]">•</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Hepatitis B</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#18A093]">•</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Malaria AB</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#18A093]">•</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Pregnancy hCG</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#18A093]">•</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Syphilis</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#18A093]">•</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Typhoid</span>
+                    </div>
+                  </div>
+                </div>
+                {/* Digital Stethoscope Section */}
+                <div className="space-y-2">
+                  <h3 className="text-[#003366] text-[18px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize font-['Montserrat] border-b-2 border-gray-300">Digital Stethoscope</h3>
+                  <p className='text-blacktext-sm sm:text-base md:text-lg text-gray-600 text-center'>Live Stethoscope</p>
+                  <div className="grid grid-cols-2 gap-2">
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#18A093]">•</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Aortic Sound</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#18A093]">•</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Mitral Sound</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#18A093]">•</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Pulmonic Sound</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#18A093]">•</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Tricuspid Sound</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* ECG Section */}
+                <div className="space-y-2">
+                  <h3 className="text-[#003366] text-[18px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize font-['Montserrat] border-b-2 border-gray-300">ECG</h3>
+                  <div className="grid grid-cols-2 gap-2">
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#18A093]">•</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>12 Lead</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#18A093]">•</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Respiration Rate</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <h3 className="text-[#003366] text-[18px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize font-['Montserrat] border-b-2 border-gray-300">Tele-Consultation: Real-Time Data</h3>
+                  <div className="grid grid-cols-2 gap-2">
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#18A093]">•</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Video Consultation</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#18A093]">•</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Real-Time Data Accessibility</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Digital Modules Section */}
+                <div className="space-y-2 md:col-span-2">
+                  <h3 className="text-[#003366] text-[18px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize font-['Montserrat] border-b-2 border-gray-300">Digital Modules for Specialist Consultation</h3>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#18A093]">•</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Spirometer</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#18A093]">•</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Otoscope</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#18A093]">•</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Ultrasound</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#18A093]">•</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Irish Scope</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#18A093]">•</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Dermatoscope</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* <div className="ml-auto hidden group-hover:block">
+                <div className='flex flex-row items-center'>
+                  <Link href="/ourProducts" className="text-[#003366]">Know More</Link>
+                  <svg className="w-5 h-5 text-[#003366]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div> */}
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+            {/* Text Content */}
+
+            {/* Product List */}
+            <div className="border-2 border-gray-200 group hover:cursor-pointer flex items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300 group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366]" >
+              <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
+                <Image src="/icons/prd-2-lgo1.png" alt="Smart Healthcare Machine" width={32} height={32} className="w-full h-full" />
+              </div>
+              <p className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white">Smart Healthcare Machine</p>
+              <div className="ml-auto hidden group-hover:block">
+                <div className='flex flex-row items-center'>
+                  <Link href="/ourProducts"
+                    className="text-white"
+                  >
+                    Know More
+                  </Link>
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <div className="border-2 border-gray-200 group hover:cursor-pointer flex items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300 group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366]" >
+              <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
+                <Image src="/icons/prd-2-lgo1.png" alt="Doctor App" width={32} height={32} />
+              </div>
+              <p className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white">Doctor App</p>
+              <div className="ml-auto hidden group-hover:block ">
+                <div className='flex flex-row items-center'>
+                  <Link href="/ourProducts"
+                    className="text-[#003366] group-hover:text-white"
+                  >
+                    Know More
+                  </Link>
+                  <svg className="w-5 h-5 text-[#003366] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <div className="border-2 border-gray-200 group hover:cursor-pointer flex items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300  group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366]" >
+              <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
+                <Image src="/icons/prd-2-log2.png" alt="Patient App" width={32} height={32} />
+              </div>
+              <p className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white">Patient App</p>
+              <div className="ml-auto hidden group-hover:block">
+                <div className='flex flex-row items-center'>
+                  <Link href="/ourProducts"
+                    className="text-[#003366] group-hover:text-white"
+                  >
+                    Know More
+                  </Link>
+                  <svg className="w-5 h-5 text-[#003366] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+
+            <div className="border-2 border-gray-200 hover:cursor-pointer group flex items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300 group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366]" >
+              <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
+                <Image src="/icons/prd-2-log2.png" alt="Operator / Nurse App" width={32} height={32} />
+              </div>
+              <p className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white">Nurse App</p>
+              <div className="ml-auto hidden group-hover:block">
+                <div className='flex flex-row items-center'>
+                  <Link href="/ourProducts"
+                    className="text-[#003366] group-hover:text-white"
+                  >
+                    Know More
+                  </Link>
+                  <svg className="w-5 h-5 text-[#003366] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-12">
+              <Link href="/contactUs"
+                className="inline-block px-8 py-3 border-1 border-[#003366] text-[#003366] rounded-xl font-semibold hover:bg-[#003366] hover:text-white transition-all duration-300"
+              >
+                Scheduled Demo
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Why Join Bridge Healthcare Section */}
       <div className="relative bg-white overflow-hidden">
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-12 sm:py-20 md:py-32">
@@ -883,300 +1195,6 @@ const LandingPage = () => {
         </div>
       </div>
 
-      {/* Our Products Section */}
-      <div className="relative bg-white overflow-hidden">
-        <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-          <div className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
-            <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
-              <span className="text-[#18A093]">Our</span>{' '}
-              <span className="text-[#003366]">Products</span>
-            </h2>
-            <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
-              <span className="text-black font-bold">Smart Healthcare Machine</span> integrates tele-consultations with real-time health data and is supported by <span className="text-black font-bold">Doctor</span>, <span className="text-black font-bold">Patient</span> and <span className="text-black font-bold">Nurse</span> applications for streamlined collaboration and proactive care.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-            {/* Text Content */}
-            <div className="space-y-6 mt-5">
-              <div className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
-                {/* Product List */}
-                <div className={`flex items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300 ${activeProd === 1 && 'border-2 border-gray-300'}`} onClick={() => setActiveProd(1)}>
-                  <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
-                    <Image src="/icons/prd-2-lgo1.png" alt="Smart Healthcare Machine" width={32} height={32} className="w-full h-full" />
-                  </div>
-                  <p className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat']">Smart Healthcare Machine</p>
-                  <div className="ml-auto">
-                    <svg className="w-5 h-5 text-[#003366]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
-                </div>
-                {activeProd === 1 && (<>
-                  <div className="h-full w-full flex flex-col items-center justify-center block lg:hidden">
-                    <Image
-                      src="/icons/hm-7-img.png"
-                      alt="Smart Healthcare Machine"
-                      width={100}
-                      height={100}
-                      className="w-[250px] sm:w-[350px] md:w-[250px] lg:w-[350px] object-contain transition-all duration-300"
-                      priority
-                    />
-                  </div>
-                  <div className="relative bg-white overflow-hidden">
-                    <div className="pb-5 sm:pb-2 md:pb-3 lg:pb-5 flex flex-col md:flex-row gap-4 md:gap-0">
-                      <div className="w-full pb-1 sm:pb-1 md:pb-2 lg:pb-3">
-                        <h3 className="text-[22px] sm:text-[28px] md:text-[30px] font-[700] font-['Montserrat'] mb-1 sm:mb-1 md:mb-2 text-[#003366]">Key Features</h3>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
-                          <div className="bg-white rounded-lg sm:p-5 md:p-6 transition-all duration-300">
-                            <div className="space-y-1 sm:space-y-2 md:space-y-4">
-                              <div className="flex items-start gap-3 sm:gap-4 md:gap-5">
-                                <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 flex items-center justify-center text-[#18A093] font-semibold">1.</div>
-                                <p className="text-base sm:text-lg md:text-xl text-gray-700">Health Screening</p>
-                              </div>
-                              <div className="flex items-start gap-3 sm:gap-4 md:gap-5">
-                                <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 flex items-center justify-center text-[#18A093] font-semibold">2.</div>
-                                <p className="text-base sm:text-lg md:text-xl text-gray-700">Real-Time Diagnostics Integration</p>
-                              </div>
-                              <div className="flex items-start gap-3 sm:gap-4 md:gap-5">
-                                <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 flex items-center justify-center text-[#18A093] font-semibold">3.</div>
-                                <p className="text-base sm:text-lg md:text-xl text-gray-700">Tele-Consultation with Live Data Sync</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="bg-white rounded-lg p-4 sm:p-5 md:p-6 transition-all duration-300">
-                            <div className="space-y-1 sm:space-y-2 md:space-y-4">
-                              <div className="flex items-start gap-3 sm:gap-4 md:gap-5">
-                                <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 flex items-center justify-center text-[#18A093] font-semibold">4.</div>
-                                <p className="text-base sm:text-lg md:text-xl text-gray-700">Scan and Analyse Health Records</p>
-                              </div>
-                              <div className="flex items-start gap-3 sm:gap-4 md:gap-5">
-                                <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 flex items-center justify-center text-[#18A093] font-semibold">5.</div>
-                                <p className="text-base sm:text-lg md:text-xl text-gray-700">Print Health Reports and Prescription</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                </>)}
-                <div className={`flex items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300 ${activeProd === 2 && 'border-2 border-gray-300'}`} onClick={() => setActiveProd(2)}>
-                  <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
-                    <Image src="/icons/prd-2-lgo1.png" alt="Doctor App" width={32} height={32} />
-                  </div>
-                  <p className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat']">Doctor App</p>
-                  <div className="ml-auto">
-                    <svg className="w-5 h-5 text-[#003366]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
-                </div>
-                {activeProd === 2 && (<>
-                  <div className="h-full w-full flex flex-col items-center justify-center block lg:hidden">
-                    <Image
-                      src="/icons/hm-7-img.png"
-                      alt="Smart Healthcare Machine"
-                      width={100}
-                      height={100}
-                      className="w-[250px] sm:w-[350px] md:w-[250px] lg:w-[350px] object-contain transition-all duration-300"
-                      priority
-                    />
-                  </div>
-                  <div className="relative bg-white overflow-hidden">
-                    <div className="pb-5 sm:pb-2 md:pb-3 lg:pb-5 flex flex-col md:flex-row gap-4 md:gap-0">
-                      <div className="w-full pb-5 sm:pb-2 md:pb-3 lg:pb-5">
-                        <h3 className="text-[22px] sm:text-[28px] md:text-[30px] font-[700] font-['Montserrat'] mb-2 sm:mb-2 md:mb-4 text-[#003366]">Key Features</h3>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 sm:gap-1 md:gap-6">
-                          <div className="space-y-2 bg-white rounded-lg p-3 sm:pt-4 md:p-5">
-                            <div className="space-y-2 sm:space-y-4 md:space-y-4">
-                              <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                                <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">1.</div>
-                                <p className="text-sm sm:text-base md:text-lg text-gray-600">Multi SHM Accessibility</p>
-                              </div>
-                              <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                                <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">2.</div>
-                                <p className="text-sm sm:text-base md:text-lg text-gray-600">Live Video Consultation with Real-Time Data</p>
-                              </div>
-                              <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                                <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">3.</div>
-                                <p className="text-sm sm:text-base md:text-lg text-gray-600">Instant Access to Patient Records</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="space-y-4 bg-white rounded-lg px-3 sm:p-4 md:p-5">
-                            <div className="space-y-2 sm:space-y-4 md:space-y-4">
-                              <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                                <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">4.</div>
-                                <p className="text-sm sm:text-base md:text-lg text-gray-600">Easy Prescription Writing & Upload</p>
-                              </div>
-                              <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                                <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">5.</div>
-                                <p className="text-sm sm:text-base md:text-lg text-gray-600">Dashboard to Track Consultations</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div></>)
-                }
-                <div className={`flex items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300 ${activeProd === 3 && 'border-2 border-gray-300'}`} onClick={() => setActiveProd(3)}>
-                  <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
-                    <Image src="/icons/prd-2-log2.png" alt="Patient App" width={32} height={32} />
-                  </div>
-                  <p className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat']">Patient App</p>
-                  <div className="ml-auto">
-                    <svg className="w-5 h-5 text-[#003366]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
-                </div>
-                {activeProd === 3 && (<>
-                  <div className="h-full w-full flex flex-col items-center justify-center block lg:hidden">
-                    <Image
-                      src="/icons/hm-7-img2.png"
-                      alt="Smart Healthcare Machine"
-                      width={100}
-                      height={100}
-                      className="w-[250px] sm:w-[350px] md:w-[250px] lg:w-[350px] object-contain transition-all duration-300"
-                      priority
-                    />
-                  </div>
-                  <div className="relative bg-white overflow-hidden">
-                    <div className="pb-5 sm:pb-2 md:pb-3 lg:pb-5 flex flex-col md:flex-row gap-4 md:gap-0">
-                      <div className="space-y-4 bg-white rounded-lg p-3 sm:p-4 md:p-5 w-full md:w-[30%]">
-                        <h3 className="text-xl sm:text-2xl md:text-[24px] font-[700] font-['Montserrat'] leading-[110%] sm:leading-[105%] md:leading-[100%] tracking-[0%] align-middle text-[#003366] mb-4 sm:mb-6 md:mb-8">Key Features</h3>
-                        <div className="space-y-4 sm:space-y-6 md:space-y-8">
-                          <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                            <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">1.</div>
-                            <p className="text-sm sm:text-base md:text-lg text-gray-600">Virtual consultations</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                </>)}
-
-                <div className={`flex items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300 ${activeProd === 4 && 'border-2 border-gray-300'}`} onClick={() => setActiveProd(4)}>
-                  <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
-                    <Image src="/icons/prd-2-log2.png" alt="Operator / Nurse App" width={32} height={32} />
-                  </div>
-                  <p className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat']">Nurse App</p>
-                  <div className="ml-auto">
-                    <svg className="w-5 h-5 text-[#003366]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
-                </div>
-                {activeProd === 4 && (<>
-                  <div className="h-full w-full flex flex-col items-center justify-center block lg:hidden">
-                    <Image
-                      src="/icons/hm-7-img3.png"
-                      alt="Smart Healthcare Machine"
-                      width={100}
-                      height={100}
-                      className="w-[250px] sm:w-[350px] md:w-[250px] lg:w-[350px] object-contain transition-all duration-300"
-                      priority
-                    />
-                  </div>
-                  <div className="relative bg-white overflow-hidden">
-                    <div className="pb-5 sm:pb-2 md:pb-3 lg:pb-5">
-                      <h3 className="text-[22px] sm:text-[28px] md:text-[30px] font-[700] font-['Montserrat'] mb-2 sm:mb-2 md:mb-4 text-[#003366]">Key Features</h3>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-0 sm:gap-1 md:gap-6">
-                        <div className="space-y-2 bg-white rounded-lg px-3 sm:pt-4 md:p-5">
-                          <div className="space-y-2 sm:space-y-4 md:space-y-4">
-                            <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                              <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">1.</div>
-                              <p className="text-sm sm:text-base md:text-lg text-gray-600">Appointment and Schedule Management</p>
-                            </div>
-                            <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                              <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">2.</div>
-                              <p className="text-sm sm:text-base md:text-lg text-gray-600">Patient Queue Management</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="space-y-2 bg-white rounded-lg p-3 sm:pt-4 md:p-5">
-                          <div className="space-y-2 sm:space-y-4 md:space-y-4">
-                            <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                              <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">3.</div>
-                              <p className="text-sm sm:text-base md:text-lg text-gray-600">Patient Health Records Digitization</p>
-                            </div>
-                            <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                              <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">4.</div>
-                              <p className="text-sm sm:text-base md:text-lg text-gray-600">Analytics & Follow-up Tracking</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </>)}
-                <div className="mt-12">
-                  <Link href="/contactUs"
-                    className="inline-block px-8 py-3 border-1 border-[#003366] text-[#003366] rounded-xl font-semibold hover:bg-[#003366] hover:text-white transition-all duration-300"
-                  >
-                    Contact Us
-                  </Link>
-                </div>
-              </div>
-            </div>
-            {activeProd === 1 &&
-              <div className="h-full w-full flex flex-col items-center justify-center hidden lg:block">
-                <div className="h-full w-full flex flex-col items-center justify-center">
-                  <Image
-                    src="/icons/hm-7-img.png"
-                    alt="Smart Healthcare Machine"
-                    width={100}
-                    height={100}
-                    className="w-[250px] sm:w-[350px] md:w-[250px] lg:w-[350px] object-contain transition-all duration-300"
-                    priority
-                  /></div>
-              </div>
-            }
-            {activeProd === 2 &&
-              <div className="h-full w-full hidden lg:block">
-                <div className="h-full w-full flex flex-col items-center justify-center">
-                  <Image
-                    src="/icons/hm-7-img.png"
-                    alt="Smart Healthcare Machine"
-                    width={100}
-                    height={100}
-                    className="w-[250px] sm:w-[350px] md:w-[250px] lg:w-[350px] transition-all duration-300"
-                  /></div>
-              </div>
-            }
-            {activeProd === 3 &&
-              <div className="h-full w-full flex flex-col items-center justify-center hidden lg:block">
-                <div className="h-full w-full flex flex-col items-center justify-center">
-                  <Image
-                    src="/icons/hm-7-img2.png"
-                    alt="Smart Healthcare Machine"
-                    width={100}
-                    height={100}
-                    className="w-[250px] sm:w-[350px] md:w-[250px] lg:w-[350px] object-contain transition-all duration-300"
-                    priority
-                  /></div>
-              </div>
-            }
-            {activeProd === 4 &&
-              <div className="h-full w-full hidden lg:block">
-                <div className="h-full w-full flex flex-col items-center justify-center">
-                  <Image
-                    src="/icons/hm-7-img3.png"
-                    alt="Smart Healthcare Machine"
-                    width={100}
-                    height={100}
-                    className="w-[250px] sm:w-[350px] md:w-[250px] lg:w-[340px] object-contain transition-all duration-300"
-                    priority
-                  /></div>
-              </div>
-            }
-          </div>
-        </div>
-      </div>
-
       {/* Testimonials Section */}
       <div className="relative bg-white overflow-hidden">
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
@@ -1200,7 +1218,7 @@ const LandingPage = () => {
                 />
               </div>
               <p className="text-[#616161] mb-4 sm:mb-6 font-['Montserrat'] text-sm sm:text-base sm:text-base font-[400] leading-[100%] align-middle tracking-[0%]">
-                We understand that injuries and acute pain can happen unexpectedly. Our emergency physiotherapy services are designed to provide prompt.
+                As a gastroenterologist, having quick access to liver function tests, vitals, and previous reports helps me make decisions with greater clarity. The SHM platform makes all of this available in a single interface. It feels organized and efficient, especially during follow-ups and chronic care management.
               </p>
               <div className="flex items-center">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
@@ -1213,8 +1231,9 @@ const LandingPage = () => {
                   />
                 </div>
                 <div>
-                  <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Jane Smith</h4>
-                  <p className="text-gray-500 text-xs sm:text-sm font-['Montserrat']">Retired Teacher</p>
+                  <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Sagar P Kabadi</h4>
+                  <p className="text-gray-500 text-xs sm:text-sm font-['Montserrat']">Senior Consultant, Medical Gastroenterologist
+                  </p>
                 </div>
               </div>
             </div>
@@ -1231,7 +1250,7 @@ const LandingPage = () => {
                 />
               </div>
               <p className="text-[#616161] mb-4 sm:mb-6 font-['Montserrat'] text-sm sm:text-base sm:text-base font-[400] leading-[100%] align-middle tracking-[0%]">
-                In today&apos;s fast-paced tech world, staying ahead is crucial. Our training programs focus on cutting-edge technologies to enhance your skills.
+                The SHM platform stands out with its ability to organize and present all necessary patient data—especially radiology reports like MRIs and CTs—before I begin my consultation. It brings a lot of clarity to my decision-making and allows me to focus directly on the clinical need.
               </p>
               <div className="flex items-center">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
@@ -1244,8 +1263,8 @@ const LandingPage = () => {
                   />
                 </div>
                 <div>
-                  <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">John Doe</h4>
-                  <p className="text-gray-500 text-xs sm:text-sm font-['Montserrat']">Software Engineer</p>
+                  <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Pratham R Bysan</h4>
+                  <p className="text-gray-500 text-xs sm:text-sm font-['Montserrat']">Consultant Neurosciences</p>
                 </div>
               </div>
             </div>
@@ -1262,7 +1281,7 @@ const LandingPage = () => {
                 />
               </div>
               <p className="text-[#616161] mb-4 sm:mb-6 font-['Montserrat'] text-sm sm:text-base sm:text-base font-[400] leading-[100%] align-middle tracking-[0%]">
-                Creativity knows no bounds. Our workshops are tailored to inspire and empower aspiring designers to bring their visions to life.
+                In cardiology, speed and accuracy are essential. SHM delivers real-time 12-lead ECGs that are clear and immediate. Combined with vitals and patient history, it gives me all the inputs I need to make confident and timely clinical decisions. It’s an excellent tool for proactive cardiac care.
               </p>
               <div className="flex items-center">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
@@ -1275,8 +1294,153 @@ const LandingPage = () => {
                   />
                 </div>
                 <div>
-                  <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Emily Johnson</h4>
-                  <p className="text-gray-500 text-sm font-['Montserrat']">Graphic Designer</p>
+                  <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Sarthak Sahoo</h4>
+                  <p className="text-gray-500 text-sm font-['Montserrat']">Senior Consultant, Cardiology</p>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white p-6 sm:p-8 lg:p-10 rounded-lg border border-gray-200 relative flex flex-col justify-around">
+              <div className="absolute top-2 left-2">
+                <Image
+                  src="/icons/hm-8-img2.png"
+                  alt="Quote icon"
+                  width={50}
+                  height={50}
+                  className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
+                />
+              </div>
+              <p className="text-[#616161] mb-4 sm:mb-6 font-['Montserrat'] text-sm sm:text-base sm:text-base font-[400] leading-[100%] align-middle tracking-[0%]">
+                SHM has helped me connect with patients across all stages—from fertility counseling to postnatal care. I can easily access hormone profiles, ultrasound reports, and vitals. The digital prescription pad is seamless—I can document symptoms, prescribe medications or tests, and sign everything in one place.
+              </p>
+              <div className="flex items-center">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
+                  <Image
+                    src="/icons/hm-8-img.png"
+                    alt="Emily Johnson"
+                    width={48}
+                    height={48}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <div>
+                  <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Priyanka Das</h4>
+                  <p className="text-gray-500 text-sm font-['Montserrat']">Senior Consultant, Obstetrics & Gynaecology</p>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white p-6 sm:p-8 lg:p-10 rounded-lg border border-gray-200 relative flex flex-col justify-around">
+              <div className="absolute top-2 left-2">
+                <Image
+                  src="/icons/hm-8-img2.png"
+                  alt="Quote icon"
+                  width={50}
+                  height={50}
+                  className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
+                />
+              </div>
+              <p className="text-[#616161] mb-4 sm:mb-6 font-['Montserrat'] text-sm sm:text-base sm:text-base font-[400] leading-[100%] align-middle tracking-[0%]">
+                What I value most is the time-saving design. The digital queue, instant patient summaries, and seamless transition to the next case help me respond swiftly. With all reports and vitals ready when I join the call, every second is utilized effectively.
+              </p>
+              <div className="flex items-center">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
+                  <Image
+                    src="/icons/hm-8-img.png"
+                    alt="Emily Johnson"
+                    width={48}
+                    height={48}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <div>
+                  <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Vijay Kumar K M</h4>
+                  <p className="text-gray-500 text-sm font-['Montserrat']">Consultant, Emergency Medicine</p>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white p-6 sm:p-8 lg:p-10 rounded-lg border border-gray-200 relative flex flex-col justify-around">
+              <div className="absolute top-2 left-2">
+                <Image
+                  src="/icons/hm-8-img2.png"
+                  alt="Quote icon"
+                  width={50}
+                  height={50}
+                  className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
+                />
+              </div>
+              <p className="text-[#616161] mb-4 sm:mb-6 font-['Montserrat'] text-sm sm:text-base sm:text-base font-[400] leading-[100%] align-middle tracking-[0%]">
+                For surgical follow-ups and cosmetic consultations, SHM gives me everything I need—clinical images, vitals, and case history—well before I begin the consultation. It’s efficient and ensures I can provide precise guidance, even for patients consulting from a distance.
+              </p>
+              <div className="flex items-center">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
+                  <Image
+                    src="/icons/hm-8-img.png"
+                    alt="Emily Johnson"
+                    width={48}
+                    height={48}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <div>
+                  <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Ramesh K T </h4>
+                  <p className="text-gray-500 text-sm font-['Montserrat']">Consultant Plastic & Cosmetic Surgeon</p>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white p-6 sm:p-8 lg:p-10 rounded-lg border border-gray-200 relative flex flex-col justify-around">
+              <div className="absolute top-2 left-2">
+                <Image
+                  src="/icons/hm-8-img2.png"
+                  alt="Quote icon"
+                  width={50}
+                  height={50}
+                  className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
+                />
+              </div>
+              <p className="text-[#616161] mb-4 sm:mb-6 font-['Montserrat'] text-sm sm:text-base sm:text-base font-[400] leading-[100%] align-middle tracking-[0%]">
+                I find the SHM platform incredibly useful for reviewing patient X-rays, post-op images, and orthopedic test results. The structured format, combined with real-time vitals and symptom input, makes remote orthopedic evaluations smoother and more accurate.
+              </p>
+              <div className="flex items-center">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
+                  <Image
+                    src="/icons/hm-8-img.png"
+                    alt="Emily Johnson"
+                    width={48}
+                    height={48}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <div>
+                  <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Avinash Parthasarathy</h4>
+                  <p className="text-gray-500 text-sm font-['Montserrat']">Consultant, Orthopaedics</p>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white p-6 sm:p-8 lg:p-10 rounded-lg border border-gray-200 relative flex flex-col justify-around">
+              <div className="absolute top-2 left-2">
+                <Image
+                  src="/icons/hm-8-img2.png"
+                  alt="Quote icon"
+                  width={50}
+                  height={50}
+                  className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
+                />
+              </div>
+              <p className="text-[#616161] mb-4 sm:mb-6 font-['Montserrat'] text-sm sm:text-base sm:text-base font-[400] leading-[100%] align-middle tracking-[0%]">
+                In dermatology, image quality is critical. The SHM delivers high-resolution dermatoscope images, along with all relevant patient information in one place. It has made remote consultations feel just as thorough and reliable as in-person visits.
+              </p>
+              <div className="flex items-center">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
+                  <Image
+                    src="/icons/hm-8-img.png"
+                    alt="Emily Johnson"
+                    width={48}
+                    height={48}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <div>
+                  <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Abhiram Rayapati</h4>
+                  <p className="text-gray-500 text-sm font-['Montserrat']">Chief Consultant, Dermatology & ENT</p>
                 </div>
               </div>
             </div>

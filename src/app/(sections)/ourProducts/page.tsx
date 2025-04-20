@@ -7,8 +7,8 @@ import Link from 'next/link';
 
 export default function OurProducts() {
   const [activeFaq, setActiveFaq] = React.useState<string | null>(null);
-  const [activeProd, setActiveProd] = React.useState<number | null>(1);
-  const [activeStep, setActiveStep] = useState<string | null>(null);
+  // const [activeProd, setActiveProd] = React.useState<number | null>(1);
+  const [activeStep] = useState<string | null>(null);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   useEffect(() => {
@@ -20,12 +20,48 @@ export default function OurProducts() {
     setIsTouchDevice(checkTouchDevice());
   }, []);
 
-  const handleStepToggle = (e: React.MouseEvent<HTMLDivElement, MouseEvent>, stepId: string): void => {
+  const [activeCard, setActiveCard] = React.useState<string | null>(null);
+
+
+
+  const handleStepToggle = (e: React.MouseEvent<HTMLDivElement, MouseEvent>, cardId: string): void => {
     if (isTouchDevice) {
-      setActiveStep(stepId);
+      const cards = document.querySelectorAll('.card-hover');
+      cards.forEach(card => card.classList.remove('touch-hover'));
+
+      if (activeCard === cardId) {
+        e.currentTarget.classList.remove('touch-hover');
+        setActiveCard(null);
+      } else {
+        e.currentTarget.classList.add('touch-hover');
+        setActiveCard(cardId);
+      }
+    }
+  };
+
+  const handleToggle = (e: React.MouseEvent<HTMLDivElement, MouseEvent>, cardId: string): void => {
+    if (isTouchDevice) {
+      const cards = document.querySelectorAll('.card-hover');
+      cards.forEach(card => card.classList.remove('touch-hover'));
+
+      if (activeCard === cardId) {
+        e.currentTarget.classList.remove('touch-hover');
+        setActiveCard(null);
+      } else {
+        e.currentTarget.classList.add('touch-hover');
+        setActiveCard(cardId);
+      }
     }
   };
   return (<>
+    <div className="fixed right-10 top-[40%] transform -translate-y-1/2 z-50 transform rotate-270 origin-top-right whitespace-nowrap">
+      <Link
+        href="/contactUs"
+        className="inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-md text-white bg-gradient-to-r from-[#18A093] via-[#128387] to-[#003366] hover:from-[#003366] hover:via-[#128387] hover:to-[#18A093] transition-all duration-300 shadow-lg hover:shadow-xl"
+      >
+        Schedule a Demo
+      </Link>
+    </div>
     <div className="relative overflow-hidden min-h-[50vh] sm:min-h-[60vh] md:min-h-[70vh]">
       <div
         className="absolute inset-0 -z-10"
@@ -61,284 +97,347 @@ export default function OurProducts() {
             <span className="text-black font-bold">Smart Healthcare Machine</span> integrates tele-consultations with real-time health data and is supported by <span className="text-black font-bold">Doctor</span>, <span className="text-black font-bold">Patient</span> and <span className="text-black font-bold">Nurse</span> applications for streamlined collaboration and proactive care.
           </p>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-          {/* Text Content */}
-          <div className="space-y-6 mt-5">
-            <div className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
-              {/* Product List */}
-              <div className={`flex items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300 ${activeProd === 1 && 'border-2 border-gray-300'}`} onClick={() => setActiveProd(1)}>
-                <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
-                  <Image src="/icons/prd-2-lgo1.png" alt="Smart Healthcare Machine" width={32} height={32} className="w-full h-full" />
-                </div>
-                <p className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat']">Smart Healthcare Machine</p>
-                <div className="ml-auto">
-                  <svg className="w-5 h-5 text-[#003366]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </div>
-              {activeProd === 1 && (<>
-                <div className="h-full w-full flex flex-col items-center justify-center block lg:hidden">
-                  <Image
-                    src="/icons/hm-7-img.png"
-                    alt="Smart Healthcare Machine"
-                    width={100}
-                    height={100}
-                    className="w-[250px] sm:w-[350px] md:w-[250px] lg:w-[350px] object-contain transition-all duration-300"
-                    priority
-                  />
-                </div>
-                <div className="relative bg-white overflow-hidden">
-                  <div className="pb-5 sm:pb-2 md:pb-3 lg:pb-5 flex flex-col md:flex-row gap-4 md:gap-0">
-                    <div className="w-full pb-5 sm:pb-2 md:pb-3 lg:pb-5">
-                      <h3 className="text-[22px] sm:text-[28px] md:text-[30px] font-[700] font-['Montserrat'] mb-2 sm:mb-2 md:mb-4 text-[#003366]">Key Features</h3>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-0 sm:gap-1 md:gap-4">
-                        <div className="space-y-2 bg-white rounded-lg p-3 sm:pt-4 md:p-5">
-                          <div className="space-y-2 sm:space-y-4 md:space-y-4">
-                            <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                              <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">1.</div>
-                              <p className="text-sm sm:text-base md:text-lg text-gray-600">Health Screening</p>
-                            </div>
-                            <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                              <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">2.</div>
-                              <p className="text-sm sm:text-base md:text-lg text-gray-600">Real-Time Diagnostics Integration</p>
-                            </div>
-                            <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                              <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">3.</div>
-                              <p className="text-sm sm:text-base md:text-lg text-gray-600">Tele-Consultation wiht Live Data Sync</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="space-y-2 bg-white rounded-lg px-3 sm:pt-4 md:p-5">
-                          <div className="space-y-2 sm:space-y-4 md:space-y-4">
-                            <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                              <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">4.</div>
-                              <p className="text-sm sm:text-base md:text-lg text-gray-600">Scan and Analyse Health Records</p>
-                            </div>
-                            <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                              <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">5.</div>
-                              <p className="text-sm sm:text-base md:text-lg text-gray-600">Print-Health Reports and Prescription</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
 
-                </div>
-              </>)}
-              <div className={`flex items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300 ${activeProd === 2 && 'border-2 border-gray-300'}`} onClick={() => setActiveProd(2)}>
-                <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
-                  <Image src="/icons/prd-2-lgo1.png" alt="Doctor App" width={32} height={32} />
-                </div>
-                <p className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat']">Doctor App</p>
-                <div className="ml-auto">
-                  <svg className="w-5 h-5 text-[#003366]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
+        {/* NEW CARD} */}
+        <div className="py-4 sm:py-6 md:py-8 lg:py-10">
+          <p className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4 text-[#003366]">Smart Healthcare Machine Features</p>
+          <div className="flex flex-col sm:flex-col md:flex-row space-y-4 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300">
+            <div className="w-[40%] items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 flex items-center justify-center border-r-2 border-[#003366] mr-5">
+              <Image src="/icons/hm-7-img.png" alt="Smart Healthcare Machine Features" width={32} height={32} className="w-auto h-[80%]" />
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {/* Vitals Section */}
+              <div className="space-y-2">
+                <h3 className="text-[#003366] text-[18px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize font-['Montserrat] border-b-2 border-gray-300">Vitals</h3>
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#18A093]">•</span>
+                    <span className='text-sm sm:text-base md:text-lg text-gray-600' >Pulse Rate</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#18A093]">•</span>
+                    <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Temperature</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#18A093]">•</span>
+                    <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>SpO2</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#18A093]">•</span>
+                    <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Blood Pressure</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#18A093]">•</span>
+                    <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>BMI</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#18A093]">•</span>
+                    <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Heart Rate</span>
+                  </div>
                 </div>
               </div>
-              {activeProd === 2 && (<>
-                <div className="h-full w-full flex flex-col items-center justify-center block lg:hidden">
-                  <Image
-                    src="/icons/hm-7-img.png"
-                    alt="Smart Healthcare Machine"
-                    width={100}
-                    height={100}
-                    className="w-[250px] sm:w-[350px] md:w-[250px] lg:w-[350px] object-contain transition-all duration-300"
-                    priority
-                  />
-                </div>
-                <div className="relative bg-white overflow-hidden">
-                  <div className="pb-5 sm:pb-2 md:pb-3 lg:pb-5 flex flex-col md:flex-row gap-4 md:gap-0">
-                    <div className="w-full pb-5 sm:pb-2 md:pb-3 lg:pb-5">
-                      <h3 className="text-[22px] sm:text-[28px] md:text-[30px] font-[700] font-['Montserrat'] mb-2 sm:mb-2 md:mb-4 text-[#003366]">Key Features</h3>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-0 sm:gap-1 md:gap-6">
-                        <div className="space-y-2 bg-white rounded-lg p-3 sm:pt-4 md:p-5">
-                          <div className="space-y-2 sm:space-y-4 md:space-y-4">
-                            <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                              <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">1.</div>
-                              <p className="text-sm sm:text-base md:text-lg text-gray-600">Multi SHM Accessibility</p>
-                            </div>
-                            <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                              <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">2.</div>
-                              <p className="text-sm sm:text-base md:text-lg text-gray-600">Live Video Consultation with Real-Time Data</p>
-                            </div>
-                            <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                              <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">3.</div>
-                              <p className="text-sm sm:text-base md:text-lg text-gray-600">Instant Access to Patient Records</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="space-y-4 bg-white rounded-lg px-3 sm:p-4 md:p-5">
-                          <div className="space-y-2 sm:space-y-4 md:space-y-4">
-                            <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                              <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">4.</div>
-                              <p className="text-sm sm:text-base md:text-lg text-gray-600">Easy Prescription Writing & Upload</p>
-                            </div>
-                            <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                              <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">5.</div>
-                              <p className="text-sm sm:text-base md:text-lg text-gray-600">Dashboard to Track Consultations</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div></>)
-              }
-              <div className={`flex items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300 ${activeProd === 3 && 'border-2 border-gray-300'}`} onClick={() => setActiveProd(3)}>
-                <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
-                  <Image src="/icons/prd-2-log2.png" alt="Patient App" width={32} height={32} />
-                </div>
-                <p className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat']">Patient App</p>
-                <div className="ml-auto">
-                  <svg className="w-5 h-5 text-[#003366]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </div>
-              {activeProd === 3 && (<>
-                <div className="h-full w-full flex flex-col items-center justify-center block lg:hidden">
-                  <Image
-                    src="/icons/hm-7-img2.png"
-                    alt="Smart Healthcare Machine"
-                    width={100}
-                    height={100}
-                    className="w-[250px] sm:w-[350px] md:w-[250px] lg:w-[350px] object-contain transition-all duration-300"
-                    priority
-                  />
-                </div>
-                <div className="relative bg-white overflow-hidden">
-                  <div className="pb-5 sm:pb-2 md:pb-3 lg:pb-5 flex flex-col md:flex-row gap-4 md:gap-0">
-                    <div className="space-y-4 bg-white rounded-lg p-3 sm:p-4 md:p-5 w-full md:w-[30%]">
-                      <h3 className="text-xl sm:text-2xl md:text-[24px] font-[700] font-['Montserrat'] leading-[110%] sm:leading-[105%] md:leading-[100%] tracking-[0%] align-middle text-[#003366] mb-4 sm:mb-6 md:mb-8">Key Features</h3>
-                      <div className="space-y-4 sm:space-y-6 md:space-y-8">
-                        <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                          <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">1.</div>
-                          <p className="text-sm sm:text-base md:text-lg text-gray-600">Virtual consultations</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
 
+              {/* Blood Tests Section */}
+              <div className="space-y-2">
+                <h3 className="text-[#003366] text-[18px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize font-['Montserrat] border-b-2 border-gray-300">Blood Tests</h3>
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#18A093]">•</span>
+                    <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Hemoglobin</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#18A093]">•</span>
+                    <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Lipid Profile</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#18A093]">•</span>
+                    <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Blood Sugar</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#18A093]">•</span>
+                    <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Renal Function</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#18A093]">•</span>
+                    <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>HbA1c</span>
+                  </div>
                 </div>
-              </>)}
+              </div>
 
-              <div className={`flex items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300 ${activeProd === 4 && 'border-2 border-gray-300'}`} onClick={() => setActiveProd(4)}>
-                <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
-                  <Image src="/icons/prd-2-log2.png" alt="Operator / Nurse App" width={32} height={32} />
+              {/* RAPID TEST */}
+              <div className="space-y-2">
+                <h3 className="text-[#003366] text-[18px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize font-['Montserrat] border-b-2 border-gray-300">Rapid Test</h3>
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#18A093]">•</span>
+                    <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Ovulation LH</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#18A093]">•</span>
+                    <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Malaria AG</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#18A093]">•</span>
+                    <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>HIV I & II</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#18A093]">•</span>
+                    <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Troponin I</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#18A093]">•</span>
+                    <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Hepatitis C</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#18A093]">•</span>
+                    <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Hepatitis B</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#18A093]">•</span>
+                    <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Malaria AB</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#18A093]">•</span>
+                    <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Pregnancy hCG</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#18A093]">•</span>
+                    <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Syphilis</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#18A093]">•</span>
+                    <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Typhoid</span>
+                  </div>
                 </div>
-                <p className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat']">Nurse App</p>
-                <div className="ml-auto">
+              </div>
+              {/* Digital Stethoscope Section */}
+              <div className="space-y-2">
+                <h3 className="text-[#003366] text-[18px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize font-['Montserrat] border-b-2 border-gray-300">Digital Stethoscope</h3>
+                <p className='text-blacktext-sm sm:text-base md:text-lg text-gray-600 text-center'>Live Stethoscope</p>
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#18A093]">•</span>
+                    <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Aortic Sound</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#18A093]">•</span>
+                    <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Mitral Sound</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#18A093]">•</span>
+                    <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Pulmonic Sound</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#18A093]">•</span>
+                    <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Tricuspid Sound</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* ECG Section */}
+              <div className="space-y-2">
+                <h3 className="text-[#003366] text-[18px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize font-['Montserrat] border-b-2 border-gray-300">ECG</h3>
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#18A093]">•</span>
+                    <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>12 Lead</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#18A093]">•</span>
+                    <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Respiration Rate</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <h3 className="text-[#003366] text-[18px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize font-['Montserrat] border-b-2 border-gray-300">Tele-Consultation: Real-Time Data</h3>
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#18A093]">•</span>
+                    <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Video Consultation</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#18A093]">•</span>
+                    <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Real-Time Data Accessibility</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Digital Modules Section */}
+              <div className="space-y-2 md:col-span-2">
+                <h3 className="text-[#003366] text-[18px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize font-['Montserrat] border-b-2 border-gray-300">Digital Modules for Specialist Consultation</h3>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#18A093]">•</span>
+                    <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Spirometer</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#18A093]">•</span>
+                    <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Otoscope</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#18A093]">•</span>
+                    <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Ultrasound</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#18A093]">•</span>
+                    <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Irish Scope</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#18A093]">•</span>
+                    <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Dermatoscope</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* <div className="ml-auto hidden group-hover:block">
+                <div className='flex flex-row items-center'>
+                  <Link href="/ourProducts" className="text-[#003366]">Know More</Link>
                   <svg className="w-5 h-5 text-[#003366]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </div>
-              </div>
-              {activeProd === 4 && (<>
-                <div className="h-full w-full flex flex-col items-center justify-center block lg:hidden">
-                  <Image
-                    src="/icons/hm-7-img3.png"
-                    alt="Smart Healthcare Machine"
-                    width={100}
-                    height={100}
-                    className="w-[250px] sm:w-[350px] md:w-[250px] lg:w-[350px] object-contain transition-all duration-300"
-                    priority
-                  />
-                </div>
-                <div className="relative bg-white overflow-hidden">
-                  <div className="pb-5 sm:pb-2 md:pb-3 lg:pb-5">
-                    <h3 className="text-[22px] sm:text-[28px] md:text-[30px] font-[700] font-['Montserrat'] mb-2 sm:mb-2 md:mb-4 text-[#003366]">Key Features</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-0 sm:gap-1 md:gap-6">
-                      <div className="space-y-2 bg-white rounded-lg px-3 sm:pt-4 md:p-5">
-                        <div className="space-y-2 sm:space-y-4 md:space-y-4">
-                          <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                            <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">1.</div>
-                            <p className="text-sm sm:text-base md:text-lg text-gray-600">Appointment and Schedule Management</p>
-                          </div>
-                          <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                            <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">2.</div>
-                            <p className="text-sm sm:text-base md:text-lg text-gray-600">Patient Queue Management</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="space-y-2 bg-white rounded-lg p-3 sm:pt-4 md:p-5">
-                        <div className="space-y-2 sm:space-y-4 md:space-y-4">
-                          <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                            <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">3.</div>
-                            <p className="text-sm sm:text-base md:text-lg text-gray-600">Patient Health Records Digitization</p>
-                          </div>
-                          <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                            <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">4.</div>
-                            <p className="text-sm sm:text-base md:text-lg text-gray-600">Analytics & Follow-up Tracking</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </>)}
-              <div className="mt-12">
-                <Link href="/contactUs"
-                  className="inline-block px-8 py-3 border-1 border-[#003366] text-[#003366] rounded-xl font-semibold hover:bg-[#003366] hover:text-white transition-all duration-300"
-                >
-                  Contact Us
-                </Link>
+              </div> */}
+          </div>
+        </div>
+
+        {/* PRODUCT CONTENT */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Smart Healthcare Machine */}
+          <div
+            className={`relative bg-white rounded-lg border-1 border-gray-300 overflow-hidden card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around min-h-[350px] ${activeCard === 'prod1' ? 'touch-hover' : ''}`}
+            onClick={(e) => handleToggle(e, 'prod1')}
+          >
+            <div className="absolute inset-0 w-full h-[80%] group-hover:hidden touch-hover:hidden">
+              <Image
+                src="/icons/hm-7-img.png"
+                alt="Smart Healthcare Machine"
+                width={200}
+                height={200}
+                className='w-full h-full object-contain p-4'
+              />
+
+            </div>
+            <div className="absolute h-[20%] bottom-0 left-0 right-0 bg-black bg-opacity-80 p-3 group-hover:hidden">
+              <h3 className="text-[24px] font-[600] text-center text-white font-['Montserrat']">
+                Smart Healthcare Machine
+              </h3>
+            </div>
+            <div className="relative z-10 p-4 flex flex-col items-center justify-center h-full">
+              <div className="text-sm md:text-base text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
+                <h4 className="font-semibold mb-2 text-lg text-white">Key Features:</h4>
+                <ul className="list-disc pl-5">
+                  <li>Health Screening</li>
+                  <li>Real-Time Diagnostics Integration</li>
+                  <li>Tele-Consultation with Live Data Sync</li>
+                  <li>Scan and Analyse Health Records</li>
+                  <li>Print Health Reports and Prescription</li>
+                </ul>
               </div>
             </div>
           </div>
-          {activeProd === 1 &&
-            <div className="h-full w-full flex flex-col items-center justify-center hidden lg:block">
-              <div className="h-full w-full flex flex-col items-center justify-center">
-                <Image
-                  src="/icons/hm-7-img.png"
-                  alt="Smart Healthcare Machine"
-                  width={100}
-                  height={100}
-                  className="w-[250px] sm:w-[350px] md:w-[250px] lg:w-[350px] object-contain transition-all duration-300"
-                  priority
-                /></div>
+          {/* Doctor App */}
+          <div
+            className={`relative bg-white rounded-lg border-1 border-gray-300 overflow-hidden card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around min-h-[350px] ${activeCard === 'prod2' ? 'touch-hover' : ''}`}
+            onClick={(e) => handleToggle(e, 'prod2')}
+          >
+            <div className="h-[80%] absolute inset-0 w-full group-hover:hidden touch-hover:hidden">
+              <Image
+                src="/icons/hm-7-img.png"
+                alt="Doctor App"
+                width={200}
+                height={200}
+                className='w-full h-full object-contain p-4'
+              />
+
             </div>
-          }
-          {activeProd === 2 &&
-            <div className="h-full w-full hidden lg:block">
-              <div className="h-full w-full flex flex-col items-center justify-center">
-                <Image
-                  src="/icons/hm-7-img.png"
-                  alt="Smart Healthcare Machine"
-                  width={100}
-                  height={100}
-                  className="w-[250px] sm:w-[350px] md:w-[250px] lg:w-[350px] transition-all duration-300"
-                /></div>
+            <div className="h-[20%] absolute bottom-0 left-0 right-0 bg-black bg-opacity-80 p-3 group-hover:hidden">
+              <h3 className="text-[24px] font-[600] text-center text-white font-['Montserrat']">
+                Doctor App
+              </h3>
             </div>
-          }
-          {activeProd === 3 &&
-            <div className="h-full w-full flex flex-col items-center justify-center hidden lg:block">
-              <div className="h-full w-full flex flex-col items-center justify-center">
-                <Image
-                  src="/icons/hm-7-img2.png"
-                  alt="Smart Healthcare Machine"
-                  width={100}
-                  height={100}
-                  className="w-[250px] sm:w-[350px] md:w-[250px] lg:w-[350px] object-contain transition-all duration-300"
-                  priority
-                /></div>
+            <div className="relative z-10 p-4 flex flex-col items-center justify-center h-full">
+
+              <div className="text-sm md:text-base text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
+                <h4 className="font-semibold mb-2 text-lg text-white">Key Features:</h4>
+                <ul className="list-disc pl-5 space-y-2">
+                  <li>Multi SHM Accessibility</li>
+                  <li>Live Video Consultation with Real-Time Data</li>
+                  <li>Instant Access to Patient Records</li>
+                  <li>Easy Prescription Writing & Upload</li>
+                  <li>Dashboard to Track Consultations</li>
+                </ul>
+              </div>
             </div>
-          }
-          {activeProd === 4 &&
-            <div className="h-full w-full hidden lg:block">
-              <div className="h-full w-full flex flex-col items-center justify-center">
-                <Image
-                  src="/icons/hm-7-img3.png"
-                  alt="Smart Healthcare Machine"
-                  width={100}
-                  height={100}
-                  className="w-[250px] sm:w-[350px] md:w-[250px] lg:w-[340px] object-contain transition-all duration-300"
-                  priority
-                /></div>
+          </div>
+          {/* Patient App */}
+          <div
+            className={`relative bg-white rounded-lg border-1 border-gray-300 overflow-hidden card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around min-h-[350px] ${activeCard === 'prod3' ? 'touch-hover' : ''}`}
+            onClick={(e) => handleToggle(e, 'prod3')}
+          >
+            <div className="h-[80%] absolute inset-0 w-full group-hover:hidden touch-hover:hidden">
+              <Image
+                src="/icons/hm-7-img2.png"
+                alt="Patient App"
+                width={200}
+                height={200}
+                className='w-full h-full object-contain p-4'
+              />
+
             </div>
-          }
+            <div className="h-[20%] absolute bottom-0 left-0 right-0 bg-black bg-opacity-80 p-3 group-hover:hidden">
+              <h3 className="text-[24px] font-[600] text-center text-white font-['Montserrat']">
+                Patient App
+              </h3>
+            </div>
+            <div className="relative z-10 p-4 flex flex-col items-center justify-center h-full">
+              <div className="text-sm md:text-base text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
+                <h4 className="font-semibold mb-2 text-lg text-white">Key Features:</h4>
+                <ul className="list-disc pl-5 space-y-2">
+                  <li>Easy Registration & Profile Management</li>
+                  <li>Book Appointments & View History</li>
+                  <li>Access Health Records & Reports</li>
+                  <li>Video Consultation with Doctors</li>
+                  <li>Medicine Reminders & Health Tips</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Nurse App */}
+          <div
+            className={`relative bg-white rounded-lg border-1 border-gray-300 overflow-hidden card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around min-h-[350px] ${activeCard === 'prod4' ? 'touch-hover' : ''}`}
+            onClick={(e) => handleToggle(e, 'prod4')}
+          >
+            <div className="h-[80%] absolute inset-0 w-full group-hover:hidden touch-hover:hidden">
+              <Image
+                src="/icons/hm-7-img3.png"
+                alt="Nurse App"
+                width={200}
+                height={200}
+                className='w-full h-full object-contain p-4'
+              />
+
+            </div>
+            <div className="h-[20%] absolute bottom-0 left-0 right-0 bg-black bg-opacity-80 p-3 group-hover:hidden">
+              <h3 className="text-[24px] font-[600] text-center text-white font-['Montserrat']">
+                Nurse App
+              </h3>
+            </div>
+            <div className="relative z-10 p-4 flex flex-col items-center justify-center h-full">
+              <div className="text-sm md:text-base text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
+                <h4 className="font-semibold mb-2 text-lg text-white">Key Features:</h4>
+                <ul className="list-disc pl-5 space-y-2">
+                  <li>Patient Queue Management</li>
+                  <li>Vital Signs Recording</li>
+                  <li>Assist in Tele-Consultation</li>
+                  <li>Health Records Management</li>
+                  <li>Patient Care Coordination</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -428,6 +527,26 @@ export default function OurProducts() {
         </div>
       </div>
     </div>
+
+    {/* Video Section */}
+    <div className="relative bg-white overflow-hidden">
+      <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
+        <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4 text-center">
+          <span className="text-[#18A093]">Demo</span>{' '}
+          <span className="text-[#003366]">Video</span>
+        </h2>
+        <div className="relative w-full max-w-4xl mx-auto aspect-video rounded-xl overflow-hidden shadow-lg">
+          <iframe
+            className="absolute top-0 left-0 w-full h-full"
+            src="https://www.youtube.com/embed/k4ox3iHLH-Q?si=WQrMyZUlS8sdUZA0"
+            title="Product Demo Video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
+      </div>
+    </div>
+
     {/* FAQ Section */}
     <div className="relative bg-white overflow-hidden">
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">

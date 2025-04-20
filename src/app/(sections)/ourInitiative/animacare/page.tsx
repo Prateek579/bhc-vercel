@@ -35,9 +35,9 @@ export default function Animacare() {
   const statsRef = useRef<HTMLDivElement>(null);
   const missionStatsRef = useRef<HTMLDivElement>(null);
 
-  const specialistReferrals = useCountAnimation(10);
+  const specialistReferrals = useCountAnimation(100);
   const diseaseDetection = useCountAnimation(20);
-  const patientsTreated = useCountAnimation(400);
+  const patientsTreated = useCountAnimation(2000);
   const patientsSatisfied = useCountAnimation(90);
 
   // Mission 2025 statistics
@@ -154,7 +154,7 @@ export default function Animacare() {
               <span className="text-[#18A093]">Chapter 1-</span>{' '}
               <span className="text-[#003366]">West Bengal (Murshidhabad)</span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl font-[400] font-['Font family'] leading-[150%] sm:leading-[130%] md:leading-[100%] tracking-[0%] align-middle text-[#555555]">Revolutionizing Rural Healthcare with Tele-Diagnostic Solutions</p>
+            <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">Revolutionizing Rural Healthcare with Tele-Diagnostic Solutions</p>
           </div>
 
           {/* District Info */}
@@ -164,7 +164,7 @@ export default function Animacare() {
                 <span className="text-[#003366]">Transforming Healthcare Access in</span>{' '}
                 <span className="text-[#18A093]">Murshidabad, WB</span>
               </h2>
-              <p className="text-base sm:text-lg text-gray-600 leading-relaxed">Why Murshidabad?
+              <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">Why Murshidabad?
               </p>
 
               {/* Statistics */}
@@ -204,7 +204,7 @@ export default function Animacare() {
             {/* Map Image */}
             <div className="relative h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] flex items-center justify-center">
               <Image
-                src="/icons/anim-2-img.png"
+                src="/icons/anim-2-img1.1.png"
                 alt="Murshidabad District Map"
                 width={200} height={200}
                 className="sm:h-[95%] md:h-[80%] lg:h-[80%] w-auto"
@@ -214,10 +214,10 @@ export default function Animacare() {
 
           {/* Impact Images */}
           <div className="mt-12">
-            <h3 className="text-xl sm:text-2xl font-[700] text-[#1A1A1A] mb-6">Impacts</h3>
+            <h3 className="mb-4 text-2xl sm:text-3xl md:text-4xl lg:text-[36px] font-[700] font-['Montserrat'] leading-tight sm:leading-tight md:leading-tight lg:leading-[100%] tracking-[0px] align-middle text-[#003366]">Our Footprint in Murshidabad</h3>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               <div className="relative h-40 sm:h-44 lg:h-48">
-                <Image src="/icons/anim-2-img1.png" alt="Impact 1" fill className="object-cover rounded-lg" />
+                <Image src="/icons/anim-2-img2.1.png" alt="Impact 1" fill className="object-cover rounded-lg" />
               </div>
               <div className="relative h-40 sm:h-44 lg:h-48">
                 <Image src="/icons/anim-2-img1.png" alt="Impact 2" fill className="object-cover rounded-lg" />
@@ -274,25 +274,27 @@ export default function Animacare() {
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="space-y-6">
-            <h2 className="text-4xl md:text-5xl font-bold">
+            <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
               <span className="text-[#17A7AB]">Animacare</span>{' '}
               <span className="text-[#003366]">Initiative</span>
             </h2>
-            <p className="text-gray-600 text-lg leading-relaxed">
+            <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium">
               Revolutionizing Rural Healthcare with Tele-Diagnostic Solutions
             </p>
-            <p className="text-gray-600">
-              To effectively cater to the healthcare needs of rural regions, we will develop a Mobile Tele-Clinic Unit that complements the Tele-Diagnostic and Tele-Consultation Centers in sub-divisions of districts. This solution ensures that even the most geographically isolated communities have access to primary and preventive healthcare.
+            <p className="text-sm sm:text-base md:text-lg text-gray-600">
+              Animacare is redefining rural healthcare through on-ground diagnostics and real-time tele-consultation.
+              To ensure that even the most geographically isolated communities have access to primary and preventive care, our innovatively designed Tele-Diagnostic Solutions combine Smart Healthcare Machines with mobile Tele-Clinic Units—delivering timely checkups, virtual doctor consultations, and early disease detection right at the doorstep.
+
             </p>
           </div>
 
-          <div className="relative">
+          <div className="relative flex items-center justify-center">
             <Image
-              src="/icons/anim-3-img.png"
+              src="/icons/anim-3-img2.png"
               alt="Tele-Consultation"
-              width={600}
-              height={400}
-              className="w-full h-auto rounded-lg "
+              width={150}
+              height={100}
+              className="h-full w-auto rounded-lg "
             />
           </div>
         </div>
@@ -318,37 +320,29 @@ export default function Animacare() {
               </div>
 
               {/* Mission Description */}
-              <p className="text-base sm:text-lg md:text-xl max-w-3xl opacity-90 leading-relaxed font-['Montserrat'] font-[400] leading-[100%] tracking-[0%] align-middle text-[#F7F7F7]">
+              <p className="text-base sm:text-lg md:text-xl opacity-90 leading-relaxed font-['Montserrat'] font-[400] leading-[100%] tracking-[0%] align-middle text-[#F7F7F7]">
                 Our mission is not just about numbers — it&apos;s about touching lives, building trust, and transforming
-                healthcare access for communities that had long been forgotten. We&apos;re not stopping here — this is just
+                healthcare access for communities that has been unreached. We&apos;re not stopping here — this is just
                 the beginning.
               </p>
 
               {/* Statistics Cards */}
               <div ref={missionStatsRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full mt-4">
                 {/* Smart Health Centres */}
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 sm:p-8 text-white border-1 border-gray-100">
-                  <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2">{healthCentres.count}</h3>
-                  <p className="text-sm sm:text-base opacity-90">Smart Health Centres</p>
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 sm:p-8 text-white border-1 border-gray-100 flex items-center">
+                  <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2">{healthCentres.count} <span className="text-base sm:text-lg md:text-xl max-w-3xl opacity-90 leading-relaxed font-['Montserrat'] font-[400] leading-[100%] tracking-[0%] align-middle text-white">Smart Health Centres</span></h3>
                 </div>
 
                 {/* Smart Mobile Units */}
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 sm:p-8 text-white border-1 border-gray-100">
-                  <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2">{mobileUnits.count}</h3>
-                  <p className="text-sm sm:text-base opacity-90">Smart Mobile Units</p>
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 sm:p-8 text-white border-1 border-gray-100 flex items-center">
+                  <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2">{mobileUnits.count} <span className="text-base sm:text-lg md:text-xl max-w-3xl opacity-90 leading-relaxed font-['Montserrat'] font-[400] leading-[100%] tracking-[0%] align-middle text-[#F7F7F7]">Smart Mobile Units</span></h3>
                 </div>
 
                 {/* Million People */}
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 sm:p-8 text-white border-1 border-gray-100">
-                  <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2">{millionPeople.count} M</h3>
-                  <p className="text-sm sm:text-base opacity-90">Million People</p>
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 sm:p-8 text-white border-1 border-gray-100 flex items-center">
+                  <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2">{millionPeople.count} <span className="text-base sm:text-lg md:text-xl max-w-3xl opacity-90 leading-relaxed font-['Montserrat'] font-[400] leading-[100%] tracking-[0%] align-middle text-[#F7F7F7]">Million People</span></h3>
                 </div>
               </div>
-
-              {/* Get Involved Button */}
-              <button className="mt-8 px-8 py-3 bg-white text-[#003366] rounded-md font-semibold text-lg hover:bg-opacity-90 transition-colors">
-                Get Involved
-              </button>
             </div>
           </div>
         </div>
@@ -368,35 +362,35 @@ export default function Animacare() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-start">
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-8 items-start">
           {/* Left Column - TDTC Information */}
-          <div className="space-y-6">
+          <div className="flex flex-col h-full items-center justify-between">
             {/* First TDTC Box */}
-            <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:scale-[1.02] hover:translate-y-[-4px]">
-              <div className="flex items-center gap-4 mb-4">
+            <div className="bg-white w-full p-6 rounded-lg border border-gray-200 shadow-sm transition-all duration-300">
+              <div className="flex items-center gap-4 mb-6">
                 <Image
-                  src="/icons/hm-6-lgo.png"
+                  src="/icons/anim-6-lgo2.png"
                   alt="TDTC Icon"
                   width={40}
                   height={40}
                   className="flex-shrink-0"
                 />
-                <h3 className="text-xl font-semibold text-[#003366]">Tele-Diagnostic & Tele-Consultation Centre</h3>
+                <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">Tele-Diagnostic & Tele-Consultation Centre</h3>
               </div>
-              <ul className="space-y-3 text-gray-600">
-                <li className="flex items-center gap-2">
+              <ul className="grid grid-cols-2 gap-x-4 gap-y-3 text-gray-600">
+                <li className="flex items-center gap-2 text-sm sm:text-base md:text-lg text-gray-600">
                   <span className="w-2 h-2 bg-[#17A7AB] rounded-full"></span>
-                  <span>Tele-Diagnostic Machine</span>
+                  <span>Smart Healthcare Machine</span>
                 </li>
-                <li className="flex items-center gap-2">
+                <li className="flex items-center gap-2 text-sm sm:text-base md:text-lg text-gray-600">
                   <span className="w-2 h-2 bg-[#17A7AB] rounded-full"></span>
                   <span>2 Nurses, 1 Supervisor</span>
                 </li>
-                <li className="flex items-center gap-2">
+                <li className="flex items-center gap-2 text-sm sm:text-base md:text-lg text-gray-600">
                   <span className="w-2 h-2 bg-[#17A7AB] rounded-full"></span>
                   <span>Clinic Inventory</span>
                 </li>
-                <li className="flex items-center gap-2">
+                <li className="flex items-center gap-2 text-sm sm:text-base md:text-lg text-gray-600">
                   <span className="w-2 h-2 bg-[#17A7AB] rounded-full"></span>
                   <span>1 Technician</span>
                 </li>
@@ -404,33 +398,29 @@ export default function Animacare() {
             </div>
 
             {/* Second TDTC Box */}
-            <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:transform hover:translate-y-[-4px]">
-              <div className="flex items-center gap-4 mb-4">
+            <div className="w-full p-6 rounded-lg border border-gray-200 shadow-sm transition-all duration-300">
+              <div className="flex items-center gap-4 mb-6">
                 <Image
-                  src="/icons/hm-6-lgo.png"
+                  src="/icons/anim-6-lgo2.png"
                   alt="TDTC Icon"
                   width={40}
                   height={40}
                   className="flex-shrink-0"
                 />
-                <h3 className="text-xl font-semibold text-[#003366]">Tele-Diagnostic & Tele-Consultation Centre</h3>
+                <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">Mobile Tele-Clinic Unit</h3>
               </div>
-              <ul className="space-y-3 text-gray-600">
-                <li className="flex items-center gap-2">
+              <ul className="grid grid-cols-2 gap-x-4 gap-y-3 text-gray-600">
+                <li className="flex items-center gap-2 text-sm sm:text-base md:text-lg text-gray-600">
                   <span className="w-2 h-2 bg-[#17A7AB] rounded-full"></span>
-                  <span>Tele-Diagnostic Machine</span>
+                  <span>Smart Healthcare Machine</span>
                 </li>
-                <li className="flex items-center gap-2">
+                <li className="flex items-center gap-2 text-sm sm:text-base md:text-lg text-gray-600">
                   <span className="w-2 h-2 bg-[#17A7AB] rounded-full"></span>
-                  <span>2 Nurses, 1 Supervisor</span>
+                  <span>2 Nurses, 1 Driver</span>
                 </li>
-                <li className="flex items-center gap-2">
+                <li className="flex items-center gap-2 text-sm sm:text-base md:text-lg text-gray-600">
                   <span className="w-2 h-2 bg-[#17A7AB] rounded-full"></span>
                   <span>Clinic Inventory</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-[#17A7AB] rounded-full"></span>
-                  <span>1 Technician</span>
                 </li>
               </ul>
             </div>
@@ -443,7 +433,7 @@ export default function Animacare() {
               alt="TDTC Center"
               width={400}
               height={400}
-              className="w-[80%] h-[80%]"
+              className="w-[75%] h-[75%]"
             />
           </div>
         </div>
@@ -474,10 +464,17 @@ export default function Animacare() {
               <Image src="/icons/anim-4-lgo1.png" alt="Innovation" width={40} height={40} className="group-hover:hidden touch-hover:hidden transition-opacity duration-300 mr-2" />
               <div className='w-[90%] group-hover:w-full'>
                 <h3 className="text-lg font-semibold text-[#003366] leading-[1.2] sm:leading-[20px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">
-                  Affordable Healthcare at the Doorstep
+                  Improved Access to Quality Healthcare in Underserved Areas
                 </h3>
-                <p className="text-gray-600 text-sm group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300">
-                  Delivering advanced tele-diagnostics and smart healthcare through cutting-edge technology.
+                <p className="text-gray-600 group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300 flex items-center gap-2 text-sm sm:text-base md:text-lg text-gray-600">
+                  <span className='text-[#003366]'>What we do:</span> Deploy SHMs in rural clinics, PHCs, and diagnostic centers with specialist consultation access
+                  Impact Metric:
+                  <br />
+                  <span className=''>📍 Number of rural sites covered</span>
+                  <br />
+                  👥 Number of patients served per location/month
+                  <br />
+                  ⏱ Reduction in average travel time to access healthcare
                 </p>
               </div>
             </div>
@@ -496,10 +493,18 @@ export default function Animacare() {
               <Image src="/icons/anim-4-lgo1.png" alt="Innovation" width={40} height={40} className="group-hover:hidden touch-hover:hidden transition-opacity duration-300 mr-2" />
               <div className='w-[90%] group-hover:w-full'>
                 <h3 className="text-lg font-semibold text-[#003366] leading-[1.2] sm:leading-[20px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">
-                  Expanding Healthcare Access in Underserved Areas
+                  Early Detection & Prevention of Chronic Diseases
                 </h3>
-                <p className="text-gray-600 text-sm group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300">
-                  Ensures timely access to diagnostics and specialist consultations in rural and remote communities.
+                <p className="text-gray-600 group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300 flex items-center gap-2 text-sm sm:text-base md:text-lg text-gray-600">
+                  <span className='text-[#003366]'>What we do:</span> Conduct routine vitals & blood tests to detect conditions like diabetes, hypertension, anemia early
+                  Impact Metric:
+                  <br />
+                  🩺 Number of screenings conducted
+                  <br />
+                  📈 Percentage of chronic cases identified early
+                  <br />
+                  🧾 Number of follow-ups scheduled based on early diagnosis
+
                 </p>
               </div>
             </div>
@@ -518,10 +523,19 @@ export default function Animacare() {
               <Image src="/icons/anim-4-lgo1.png" alt="Innovation" width={40} height={40} className="group-hover:hidden touch-hover:hidden transition-opacity duration-300 mr-2" />
               <div className='w-[90%] group-hover:w-full'>
                 <h3 className="text-lg font-semibold text-[#003366] leading-[1.2] sm:leading-[20px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">
-                  Reducing Healthcare Carbon Footprint
+                  Healthcare Equity for Women, Elderly & Low-Income Groups
+
                 </h3>
-                <p className="text-gray-600 text-sm group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300">
-                  Reduces unnecessary travel, hospital visits, and resource usage — supporting a more sustainable healthcare model.
+                <p className="text-gray-600 group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300 flex items-center gap-2 text-sm sm:text-base md:text-lg text-gray-600">
+                  <span className='text-[#003366]'>What we do:</span> Prioritize care through nurse-led support, flexible queue slots, and low-cost services
+                  Impact Metric:
+                  <br />
+                  👩‍🦳 Percentage of women and elderly served
+                  <br />
+                  💰 Income-wise demographic data
+                  <br />
+                  🕒 Avg. wait time reduced due to digital queue scheduling
+
                 </p>
               </div>
             </div>
@@ -554,10 +568,19 @@ export default function Animacare() {
               <Image src="/icons/anim-4-lgo1.png" alt="Innovation" width={40} height={40} className="group-hover:hidden touch-hover:hidden transition-opacity duration-300 mr-2" />
               <div className='w-[90%] group-hover:w-full'>
                 <h3 className="text-lg font-semibold text-[#003366] leading-[1.2] sm:leading-[20px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">
-                  Empowering Local Workforce
+                  Digitization of Health Records for Continuity of Care
+
                 </h3>
-                <p className="text-gray-600 text-sm group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300">
-                  Creating job opportunities and strengthening the grassroots health ecosystem.
+                <p className="text-gray-600 group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300 flex items-center gap-2 text-sm sm:text-base md:text-lg text-gray-600">
+                  <span className='text-[#003366]'>What we do: </span> Maintain secure EHR for every patient across visits and consultations
+                  Impact Metric:
+                  <br />
+                  📂 Number of digital records created
+                  <br />
+                  🔁 Percentage of patients with multiple visits/follow-ups tracked via EHR
+                  <br />
+                  📊 Usage of EHR by doctors for prescription & follow-up accuracy
+
                 </p>
               </div>
             </div>
@@ -576,10 +599,19 @@ export default function Animacare() {
               <Image src="/icons/anim-4-lgo1.png" alt="Innovation" width={40} height={40} className="group-hover:hidden touch-hover:hidden transition-opacity duration-300 mr-2" />
               <div className='w-[90%] group-hover:w-full'>
                 <h3 className="text-lg font-semibold text-[#003366] leading-[1.2] sm:leading-[20px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">
-                  Supporting CSR and NGO Initiatives
+                  Community Employment & Skill Development
+
                 </h3>
-                <p className="text-gray-600 text-sm group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300">
-                  Health missions to deploy healthcare solutions that create lasting impact across underserved geographies.
+                <p className="text-gray-600 group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300 flex items-center gap-2 text-sm sm:text-base md:text-lg text-gray-600">
+                  <span className='text-[#003366]'>What we do: </span> Hire and train local nurses/operators to run SHM systems
+                  Impact Metric:
+                  <br />
+                  🧑‍⚕ Number of healthcare jobs created
+                  <br />
+                  🏫 Number of training hours delivered
+                  <br />
+                  📋 Retention rate of local staff per deployment
+
                 </p>
               </div>
             </div>
@@ -598,10 +630,18 @@ export default function Animacare() {
               <Image src="/icons/anim-4-lgo1.png" alt="Innovation" width={40} height={40} className="group-hover:hidden touch-hover:hidden transition-opacity duration-300 mr-2" />
               <div className='w-[90%] group-hover:w-full'>
                 <h3 className="text-lg font-semibold text-[#003366] leading-[1.2] sm:leading-[20px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">
-                  Digital Health Literacy & Awareness
+                  Data-Driven Public Health Planning
+
                 </h3>
-                <p className="text-gray-600 text-sm group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300">
-                  Empowered with digital health knowledge to understand and manage their wellness better.
+                <p className="text-gray-600 group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300 flex items-center gap-2 text-sm sm:text-base md:text-lg text-gray-600">
+                  <span className='text-[#003366]'>What we do: </span> Share anonymized, real-time health insights with hospitals, funders, and NGOs
+                  Impact Metric:
+                  <br />
+                  📡 Number of data points collected and reported
+                  <br />
+                  📍 Health trends identified per location
+                  <br />
+                  🎯 Number of targeted interventions planned or modified using dat
                 </p>
               </div>
             </div>

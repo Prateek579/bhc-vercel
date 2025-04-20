@@ -6,6 +6,29 @@ import Partner from '@/app/components/Partner';
 
 export default function KnowUsBetter() {
   const [activeFaq, setActiveFaq] = React.useState<string | null>(null);
+  const [activeCard, setActiveCard] = React.useState<string | null>(null);
+  const [isTouchDevice, setIsTouchDevice] = React.useState<boolean>(false);
+
+  React.useEffect(() => {
+    setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0);
+  }, []);
+
+  const handleToggle = (e: React.MouseEvent<HTMLDivElement, MouseEvent>, cardId: string): void => {
+    if (isTouchDevice) {
+      // Remove touch-hover class from all cards except the current one
+      const cards = document.querySelectorAll('.card-hover');
+      cards.forEach(card => card.classList.remove('touch-hover'));
+
+      // Toggle the current card
+      if (activeCard === cardId) {
+        e.currentTarget.classList.remove('touch-hover');
+        setActiveCard(null);
+      } else {
+        e.currentTarget.classList.add('touch-hover');
+        setActiveCard(cardId);
+      }
+    }
+  };
   return (<>
     <div className="relative overflow-hidden min-h-[50vh] sm:min-h-[60vh] md:min-h-[70vh]">
       <div
@@ -31,14 +54,14 @@ export default function KnowUsBetter() {
     </div>
 
     {/* Second Section - About Bridge Healthcare */}
-    <div className="bg-white py-16 md:py-24">
-      <div className="max-w-screen-2xl mx-auto px-3 sm:px-6 md:px-8 lg:px-22">
-        <div className="max-w-2xl">
-          <h2 className="mb-4 text-2xl sm:text-3xl md:text-4xl lg:text-[36px] font-[700] font-['Montserrat'] leading-tight sm:leading-tight md:leading-tight lg:leading-[100%] tracking-[0px] align-middle text-[#003366]">
+    <div className="relative bg-white">
+      <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
+        <div className="w-full">
+          <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
             <span className="text-[#18A093]">About</span>{' '}
             <span className="text-[#003366]">Bridge Healthcare</span>
           </h2>
-          <p className="text-[20px] text-[#555555] font-[500] font-['Montserrat'] leading-[100%] tracking-[0px] align-middle mb-16">
+          <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
             Reimagining healthcare delivery through smart diagnostics and seamless connectivity.
           </p>
         </div>
@@ -47,7 +70,7 @@ export default function KnowUsBetter() {
           {/* Vision and Mission Column */}
           <div className="w-full md:w-1/2 space-y-12">
             {/* Vision */}
-            <div className="space-y-4">
+            <div className="border-2 border-gray-200 space-y-4 p-4 rounded-xl group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300">
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8">
                   <Image
@@ -57,15 +80,15 @@ export default function KnowUsBetter() {
                     height={32}
                   />
                 </div>
-                <h3 className="text-2xl font-[700] leading-[100%] tracking-[0%] align-middle text-[#333333] font-['Montserrat']">Vision</h3>
+                <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white transition-colors duration-300">Vision</h3>
               </div>
-              <p className="text-[#666666] font-['Montserrat'] font-[400] text-[14px] leading-[100%] tracking-[0%] align-middle">
+              <p className="text-sm sm:text-base md:text-lg text-gray-600 group-hover:text-white transition-colors duration-300">
                 To revolutionize healthcare delivery by making premium, technology-driven healthcare services accessible, affordable, and reliable for everyone, everywhere.
               </p>
             </div>
 
             {/* Mission */}
-            <div className="space-y-4">
+            <div className="border-2 border-gray-200 space-y-4 p-4 rounded-xl group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300">
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8">
                   <Image
@@ -75,21 +98,22 @@ export default function KnowUsBetter() {
                     height={32}
                   />
                 </div>
-                <h3 className="text-2xl font-[700] leading-[100%] tracking-[0%] align-middle text-[#333333] font-['Montserrat']">Mission</h3>
+                <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white transition-colors duration-300">Mission</h3>
               </div>
-              <p className="text-[#666666] font-['Montserrat'] font-[400] text-[14px] leading-[100%] tracking-[0%] align-middle">
+              <p className="text-sm sm:text-base md:text-lg text-gray-600 group-hover:text-white transition-colors duration-300">
                 To empower individuals and healthcare providers through advanced Tele-Diagnostic and Smart Healthcare solutions, ensuring real-time diagnostics, seamless tele-consultations, and connected care that improves health outcomes and transforms lives.
               </p>
             </div>
           </div>
 
           {/* Image Column */}
-          <div className="w-full md:w-1/2 relative min-h-[250px]">
+          <div className="w-full md:w-1/2 flex items-center justify-center">
             <Image
               src="/icons/hm-5-img.png"
               alt="Healthcare professionals using Bridge Healthcare platform"
-              fill
-              className="object-cover rounded-lg shadow-xl max-h-[300px]"
+              className="object-cover rounded-lg shadow-xl w-full md:w-full lg:w-[550px]"
+              width={200}
+              height={200}
             />
           </div>
         </div>
@@ -109,19 +133,22 @@ export default function KnowUsBetter() {
     <div className="bg-gray-50 py-16 md:py-24">
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-6 md:px-8 lg:px-22">
         <div className="mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            <span className="text-[#00A99D]">Our</span>
-            <span className="text-[#003366]"> Strength And Capacity</span>
+          <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+            <span className="text-[#18A093]">Our</span>{' '}
+            <span className="text-[#003366]">Strength And Capacity</span>
           </h2>
-          <p className="text-[20px] text-[#555555] font-[500] font-['Montserrat'] leading-[100%] tracking-[0px] align-middle mb-16">
+          <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
             Robust Performance & Scalable Capacity for Evolving Healthcare Needs
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Card 1 - Academics & Researchers */}
-          <div className="bg-white p-8 rounded-lg border-1 border-gray-300">
-            <div className="mb-6">
+          <div
+            className={`bg-white p-8 rounded-lg border-1 border-gray-300 card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-start justify-center ${activeCard === 'card1' ? 'touch-hover' : ''}`}
+            onClick={(e) => handleToggle(e, 'card1')}
+          >
+            <div className="mb-6 group-hover:hidden touch-hover:hidden">
               <Image
                 src="/icons/abt-3-lgo4.png"
                 alt="Academic Icon"
@@ -130,15 +157,18 @@ export default function KnowUsBetter() {
                 className="text-[#00A99D]"
               />
             </div>
-            <h3 className="text-2xl font-[700] font-['Montserrat'] leading-[100%] tracking-[0%] align-middle text-[#333333] mb-4">Academics & Researchers</h3>
-            <p className="text-gray-600 font-['Montserrat']">
+            <h3 className="text-2xl font-[700] font-['Montserrat'] leading-[100%] tracking-[0%] align-middle text-[#333333] mb-4 group-hover:hidden touch-hover:hidden">Academics & Researchers</h3>
+            <p className="text-gray-600 font-['Montserrat'] group-hover:text-white touch-hover:text-white hidden group-hover:block touch-hover:block">
               Experts from IITS, AIIMS, NIMHANS, CMC Vellore & leading institutions, specializing in healthcare technology with a deep understanding of rural healthcare challenges
             </p>
           </div>
 
           {/* Card 2 - Industry Professionals */}
-          <div className="bg-white p-8 rounded-lg border-1 border-gray-300">
-            <div className="mb-6">
+          <div
+            className={`bg-white p-8 rounded-lg border-1 border-gray-300 card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-start justify-center ${activeCard === 'card2' ? 'touch-hover' : ''}`}
+            onClick={(e) => handleToggle(e, 'card2')}
+          >
+            <div className="mb-6 group-hover:hidden touch-hover:hidden">
               <Image
                 src="/icons/abt-3-lgo2.png"
                 alt="Industry Icon"
@@ -147,15 +177,18 @@ export default function KnowUsBetter() {
                 className="text-[#00A99D]"
               />
             </div>
-            <h3 className="text-2xl font-[700] font-['Montserrat'] leading-[100%] tracking-[0%] align-middle text-[#333333] mb-4">Industry Professionals & Entrepreneurs</h3>
-            <p className="text-gray-600 font-['Montserrat']">
+            <h3 className="text-2xl font-[700] font-['Montserrat'] leading-[100%] tracking-[0%] align-middle text-[#333333] mb-4 group-hover:hidden touch-hover:hidden">Industry Professionals & Entrepreneurs</h3>
+            <p className="text-gray-600 font-['Montserrat'] group-hover:text-white touch-hover:text-white hidden group-hover:block touch-hover:block">
               Proven track record of 20+ years of experience in operations, product innovation & scaling technology-driven solutions
             </p>
           </div>
 
           {/* Card 3 - Hospitals & NGO */}
-          <div className="bg-white p-8 rounded-lg border-1 border-gray-300">
-            <div className="mb-6">
+          <div
+            className={`bg-white p-8 rounded-lg border-1 border-gray-300 card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-start justify-center ${activeCard === 'card3' ? 'touch-hover' : ''}`}
+            onClick={(e) => handleToggle(e, 'card3')}
+          >
+            <div className="mb-6 group-hover:hidden touch-hover:hidden">
               <Image
                 src="/icons/abt-3-lgo3.png"
                 alt="Hospital Icon"
@@ -164,8 +197,8 @@ export default function KnowUsBetter() {
                 className="text-[#00A99D]"
               />
             </div>
-            <h3 className="text-2xl font-[700] font-['Montserrat'] leading-[100%] tracking-[0%] align-middle text-[#333333] mb-4">Hospitals & NGO Collaborators</h3>
-            <p className="text-gray-600 font-['Montserrat']">
+            <h3 className="text-2xl font-[700] font-['Montserrat'] leading-[100%] tracking-[0%] align-middle text-[#333333] mb-4 group-hover:hidden touch-hover:hidden">Hospitals & NGO Collaborators</h3>
+            <p className="text-gray-600 font-['Montserrat'] group-hover:text-white touch-hover:text-white hidden group-hover:block touch-hover:block">
               Partnering with Prestigious Hospitals, alongside healthcare-focused NGO with vast experience in impact-driven programs.
             </p>
           </div>
@@ -173,14 +206,14 @@ export default function KnowUsBetter() {
       </div>
     </div>
     {/* Fourth Section - Our Team */}
-    <div className="bg-white py-16 md:py-24">
+    <div className="bg-white">
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-6 md:px-8 lg:px-22">
         <div className="mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            <span className="text-[#00A99D]">Meet Our</span>
-            <span className="text-[#003366]"> Team</span>
+          <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+            <span className="text-[#18A093]">Meet Our</span>{' '}
+            <span className="text-[#003366]">Team</span>
           </h2>
-          <p className="text-lg text-gray-600 font-['Montserrat'] mx-auto">
+          <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
             Bridge Healthcare&apos;s expert team innovates tele-diagnostics for better healthcare access.
           </p>
         </div>
@@ -197,7 +230,8 @@ export default function KnowUsBetter() {
               />
             </div>
             <h3 className="text-xl font-bold text-[#003366] mb-1">Anmol Garg</h3>
-            <p className="text-gray-600 mb-4">Co-Founder & CEO</p>
+            <p className="text-gray-600">(PH.D., IIT MADRAS)</p>
+            <p className="text-gray-600 mb-4">CO-FOUNDER & CEO</p>
             <div className="flex justify-center gap-4">
               <a href="#" className="text-gray-600 hover:text-[#00A99D]">
                 <Image src="/icons/ttr.png" alt="Twitter" width={20} height={20} />
@@ -222,7 +256,8 @@ export default function KnowUsBetter() {
               />
             </div>
             <h3 className="text-xl font-bold text-[#003366] mb-1">Rahul Soni</h3>
-            <p className="text-gray-600 mb-4">Co-Founder & CTO</p>
+            <p className="text-gray-600">(M.S., IIT MADRAS)</p>
+            <p className="text-gray-600 mb-4">CO-FOUNDER & CTO</p>
             <div className="flex justify-center gap-4">
               <a href="#" className="text-gray-600 hover:text-[#00A99D]">
                 <Image src="/icons/ttr.png" alt="Twitter" width={20} height={20} />
@@ -240,14 +275,15 @@ export default function KnowUsBetter() {
           <div className="bg-gray-50 p-6 rounded-lg text-center bg-gray-200">
             <div className="relative w-48 h-48 mx-auto mb-4">
               <Image
-                src="/icons/abt-4-img3.png"
+                src="/icons/abt-4-img3.1.png"
                 alt="Team Member"
                 fill
                 className="object-cover rounded-lg"
               />
             </div>
-            <h3 className="text-xl font-bold text-[#003366] mb-1">Dr. B Rebecca </h3>
-            <p className="text-gray-600 mb-4">Co-Founder</p>
+            <h3 className="text-xl font-bold text-[#003366] mb-1">Dr. B. Rebecca </h3>
+            <p className="text-gray-600">(CMO, IIT MADRAS)</p>
+            <p className="text-gray-600 mb-4">DIRECTOR</p>
             <div className="flex justify-center gap-4">
               <a href="#" className="text-gray-600 hover:text-[#00A99D]">
                 <Image src="/icons/ttr.png" alt="Twitter" width={20} height={20} />
@@ -270,8 +306,9 @@ export default function KnowUsBetter() {
                 className="object-cover rounded-lg"
               />
             </div>
-            <h3 className="text-xl font-bold text-[#003366] mb-1">Anmol Garg</h3>
-            <p className="text-gray-600 mb-4">Co-Founder & CEO</p>
+            <h3 className="text-xl font-bold text-[#003366] mb-1">MD SHAJAHAN SK</h3>
+            <p className="text-gray-600">(MSW, M & PSW)</p>
+            <p className="text-gray-600 mb-4">NGO PARTNER</p>
             <div className="flex justify-center gap-4">
               <a href="#" className="text-gray-600 hover:text-[#00A99D]">
                 <Image src="/icons/ttr.png" alt="Twitter" width={20} height={20} />
@@ -295,8 +332,9 @@ export default function KnowUsBetter() {
                 className="object-cover rounded-lg"
               />
             </div>
-            <h3 className="text-xl font-bold text-[#003366] mb-1">Rahul Soni</h3>
-            <p className="text-gray-600 mb-4">Co-Founder & CTO</p>
+            <h3 className="text-xl font-bold text-[#003366] mb-1">DR. SAGAR P KABADI</h3>
+            <p className="text-gray-600">(MBBS, MD - INTERNAL MEDICINE, C.C.E.B.D.M)</p>
+            <p className="text-gray-600 mb-4">PARTNERING DOCTOR</p>
             <div className="flex justify-center gap-4">
               <a href="#" className="text-gray-600 hover:text-[#00A99D]">
                 <Image src="/icons/ttr.png" alt="Twitter" width={20} height={20} />
@@ -320,8 +358,9 @@ export default function KnowUsBetter() {
                 className="object-cover rounded-lg"
               />
             </div>
-            <h3 className="text-xl font-bold text-[#003366] mb-1">Dr. B Rebecca </h3>
-            <p className="text-gray-600 mb-4">Co-Founder</p>
+            <h3 className="text-xl font-bold text-[#003366] mb-1">DR. AMIT NAIN</h3>
+            <p className="text-gray-600">(ASST. PROF IIT MADRAS)</p>
+            <p className="text-gray-600 mb-4">PRODUCT ADVISER</p>
             <div className="flex justify-center gap-4">
               <a href="#" className="text-gray-600 hover:text-[#00A99D]">
                 <Image src="/icons/ttr.png" alt="Twitter" width={20} height={20} />
@@ -343,8 +382,9 @@ export default function KnowUsBetter() {
                 className="object-cover rounded-lg"
               />
             </div>
-            <h3 className="text-xl font-bold text-[#003366] mb-1">Dr. B Rebecca </h3>
-            <p className="text-gray-600 mb-4">Co-Founder</p>
+            <h3 className="text-xl font-bold text-[#003366] mb-1">DR. PRATHAM R</h3>
+            <p className="text-gray-600">(MBBS, MS - MCH - NEURO SURGERY)</p>
+            <p className="text-gray-600 mb-4">PARTNERING DOCTOR</p>
             <div className="flex justify-center gap-4">
               <a href="#" className="text-gray-600 hover:text-[#00A99D]">
                 <Image src="/icons/ttr.png" alt="Twitter" width={20} height={20} />

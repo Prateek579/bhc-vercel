@@ -46,6 +46,24 @@ body {
   }
 }
 
+/* Infinite sliding animation for decentralized page image */
+@keyframes slideLeftRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+.slide-animation {
+  animation: slideLeftRight 20s linear infinite;
+}
+
+.slide-animation:hover {
+  animation-play-state: paused;
+}
+
 .touch-hover {
   background-image: linear-gradient(to right,
       rgba(24, 160, 147, 0.7),

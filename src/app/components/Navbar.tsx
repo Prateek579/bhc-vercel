@@ -15,8 +15,8 @@ const Navbar = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const navItems = [
-    { title: 'Our Products', href: '/ourProducts' },
-    { title: 'Our Solution', href: '/ourSolution' },
+    { title: 'Products', href: '/ourProducts' },
+    { title: 'Solutions', href: '/ourSolution' },
     {
       title: 'Our Initiative',
       href: '/our-initiative',
@@ -27,7 +27,7 @@ const Navbar = () => {
       ]
     },
     {
-      title: 'Know Us better',
+      title: 'Know Us Better',
       href: '/know-us-better',
       hasDropdown: true,
       dropdownItems: [
@@ -53,13 +53,13 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-8">
             <div className="relative group z-50">
               <Link href="/ourProducts" className="nav-menu-item text-gray-700 hover:text-[#18A093] px-3 py-2 inline-flex items-center">
-                Our Products
+                Products
               </Link>
             </div>
 
             <div className="relative group z-50">
               <Link href="/ourSolution" className="nav-menu-item text-gray-700 hover:text-[#18A093] px-3 py-2 inline-flex items-center">
-                Our Solution
+                Solutions
               </Link>
             </div>
 
@@ -67,7 +67,7 @@ const Navbar = () => {
               <button
                 className="nav-menu-item text-gray-700 hover:text-[#18A093] px-3 py-2 inline-flex items-center"
               >
-                Our Initiative
+                Initiative
                 <svg
                   className="ml-2 h-4 w-4 transition-transform group-hover:rotate-180"
                   fill="none"
@@ -77,25 +77,25 @@ const Navbar = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              
-                <div className="dropdown-menu absolute left-0 mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                  <div role="menu">
-                    <Link href="/ourInitiative/animacare" className="dropdown-item">
-                      <span className="dropdown-item-text">Animacare</span>
-                    </Link>
-                    <Link href="/ourInitiative/decentralized" className="dropdown-item">
-                      <span className="dropdown-item-text">Decentralized Health Network</span>
-                    </Link>
-                  </div>
+
+              <div className="dropdown-menu absolute left-0 mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                <div role="menu">
+                  <Link href="/ourInitiative/animacare" className="dropdown-item">
+                    <span className="dropdown-item-text">Animacare</span>
+                  </Link>
+                  <Link href="/ourInitiative/decentralized" className="dropdown-item">
+                    <span className="dropdown-item-text">Decentralized Health Network</span>
+                  </Link>
                 </div>
-              
+              </div>
+
             </div>
 
             <div className="relative group z-50">
               <button
                 className="nav-menu-item text-gray-700 hover:text-[#18A093] px-3 py-2 inline-flex items-center"
               >
-                Know Us better
+                Know Us Better
                 <svg
                   className="ml-2 h-4 w-4 transition-transform group-hover:rotate-180"
                   fill="none"
@@ -105,24 +105,21 @@ const Navbar = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              
-                <div className="dropdown-menu absolute left-0 mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                  <div role="menu">
-                    <Link href="/knowUsBetter/about" className="dropdown-item">
-                      <span className="dropdown-item-text">About Us</span>
-                    </Link>
-                    <Link href="/knowUsBetter/news" className="dropdown-item">
-                      <span className="dropdown-item-text">News</span>
-                    </Link>
-                    <Link href="/knowUsBetter/blogs" className="dropdown-item">
-                      <span className="dropdown-item-text">Blogs</span>
-                    </Link>
-                    <Link href="/knowUsBetter/achievement" className="dropdown-item">
-                      <span className="dropdown-item-text">Achievement</span>
-                    </Link>
-                  </div>
+
+              <div className="dropdown-menu absolute left-0 mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                <div role="menu">
+                  <Link href="/knowUsBetter/about" className="dropdown-item">
+                    <span className="dropdown-item-text">About Us</span>
+                  </Link>
+                  <Link href="/knowUsBetter/news" className="dropdown-item">
+                    <span className="dropdown-item-text">News</span>
+                  </Link>
+                  <Link href="/knowUsBetter/achievement" className="dropdown-item">
+                    <span className="dropdown-item-text">Achievement&apos;s</span>
+                  </Link>
                 </div>
-              
+              </div>
+
             </div>
 
             <div className="relative group z-50">
@@ -131,22 +128,23 @@ const Navbar = () => {
               </Link>
             </div>
           </div>
+          <div className="hidden md:block relative mr-2">
+            <Link
+              href="https://doctor.bridgehealth.care/"
+              className="inline-flex items-center justify-center px-6 py-2 border border-transparent text-base font-medium rounded-md text-white bg-[#18A093] hover:bg-white hover:border-1 hover:border-[#18A093] hover:text-[#18A093] hover:transition-colors duration-300 "
+            >
+              Doctor Login
+            </Link>
+          </div>
           <div className="flex flex-row items-center justify-between">
             {/* Login */}
-            <div className="hidden md:block relative mr-2">
-              <Link
-                href="https://doctor.bridgehealth.care/"
-                className="inline-flex items-center justify-center px-6 py-2 border border-transparent text-base font-medium rounded-md text-white bg-[#18A093] hover:opacity-80 "
-              >
-                Doctor Login
-              </Link>
-            </div>
+
 
             {/* Get Involved Button */}
             <div className="hidden md:block relative">
               <Link
                 href="/getInvolved"
-                className="inline-flex items-center justify-center px-6 py-2 border border-transparent text-base font-medium rounded-md text-white bg-[#003366] hover:bg-blue-900"
+                className="inline-flex items-center justify-center px-6 py-2 border border-transparent text-base font-medium rounded-md text-white bg-[#003366] hover:bg-white hover:border-1 hover:border-[#003366] hover:text-[#003366] hover:transition-colors duration-300"
               >
                 Get Involved
               </Link>

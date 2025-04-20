@@ -92,6 +92,20 @@
 }
 
 .dropdown-item-text {
-  font-size: 0.875rem;
-  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 100%;
+}
+
+@media (min-width: 640px) {
+  .dropdown-item-text {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 768px) {
+  .dropdown-item-text {
+    font-size: 16px;
+  }
 }

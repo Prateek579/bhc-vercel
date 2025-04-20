@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Partner from './Partner';
+import Link from 'next/link';
 
 const useCountAnimation = (end: number, duration: number = 1000) => {
   const [count, setCount] = useState(0);
@@ -32,7 +33,6 @@ const LandingPage = () => {
   const [activeFaq, setActiveFaq] = React.useState<string | null>(null);
   const statsRef = useRef<HTMLDivElement>(null);
   const [activeProd, setActiveProd] = React.useState<number | null>(1);
-  const [showMore, setShowMore] = useState(false);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
   const [activeCard, setActiveCard] = useState<string | null>(null);
 
@@ -104,7 +104,7 @@ const LandingPage = () => {
       {/* FIRST PAGE */}
       {pageNum === 1 &&
         <div className="relative min-h-screen bg-[linear-gradient(270deg,rgba(255,255,255,0)_0%,#083350_100%)] overflow-hidden">
-          <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-20 md:py-32">
+          <div className="mx-auto px-3 sm:px-15 lg:px-22  w-full min-h-screen flex flex-row items-center">
             <div className="relative z-10 flex flex-col gap-6 max-w-2xl text-white">
               <div className="space-y-2">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#4A90E2] font-['Montserrat'] text-[40px] leading-[100%] align-middle">
@@ -117,21 +117,12 @@ const LandingPage = () => {
                   Sustainable
                 </h1>
               </div>
-
-              <p className="text-sm md:text-base lg:text-lg max-w-xl opacity-90 font-['Montserrat'] font-normal text-[14px] leading-[100%] align-middle text-[#CACACA]">
-                Providing immediate access to healthcare, empowering individuals and communities to lead healthier lifestyle
-                <br />
-                or
-                <br />
-                Rooted in affordability. Delivered with dignity. Sustained by design.
-              </p>
-
-              <div className="mt-8">
-                <button onClick={(e) => e.preventDefault()}
-                  className="inline-block px-8 py-3 bg-white text-[#003366] rounded-xl font-semibold hover:bg-opacity-90 transition-all duration-300"
+              <div className="mt-4 sm:mt-6 md:mt-8">
+                <Link href="/ourProducts"
+                  className="inline-block px-6 sm:px-8 py-2.5 sm:py-3 bg-white text-[#003366] rounded-xl font-semibold hover:bg-opacity-90 transition-all duration-300 text-sm sm:text-base"
                 >
                   Know More
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -169,16 +160,17 @@ const LandingPage = () => {
                 </div>
 
                 <div className="space-y-4 sm:space-y-6">
-                  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-['Montserrat'] leading-tight">
-                    Transforming Healthcare Access in <span className="text-[#003366]">Murshidabad, WB</span>
+                  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-['Montserrat']">
+                    <p>Transforming Healthcare Access in</p>
+                    <p className="text-[#003366] inline-block">Murshidabad, WB</p>
                   </h1>
 
                   <div className="mt-4 sm:mt-6 md:mt-8">
-                    <button onClick={(e) => e.preventDefault()}
+                    <Link href="/ourInitiative/animacare"
                       className="inline-block px-6 sm:px-8 py-2.5 sm:py-3 bg-white text-[#003366] rounded-xl font-semibold hover:bg-opacity-90 transition-all duration-300 text-sm sm:text-base"
                     >
                       Know More
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -239,11 +231,11 @@ const LandingPage = () => {
                 a larger impact
               </h2>
               <div className="mt-8">
-                <button onClick={(e) => e.preventDefault()}
+                <Link href="/getInvolved"
                   className="inline-block px-8 py-3 bg-white text-[#003366] rounded-xl font-semibold hover:bg-opacity-90 transition-all duration-300"
                 >
                   Get Involved
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -272,11 +264,11 @@ const LandingPage = () => {
                 By 2036, aspiring to transform Indian healthcare
               </p>
               <div className="mt-8">
-                <button onClick={(e) => e.preventDefault()}
+                <Link href="/ourInitiative/decentralized"
                   className="inline-block px-8 py-3 bg-white text-[#003366] rounded-xl font-semibold hover:bg-opacity-90 transition-all duration-300"
                 >
                   Get Involved
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -289,14 +281,15 @@ const LandingPage = () => {
             {/* Text Content */}
             <div className="space-y-6">
               <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
-                <span className="text-[#18A093]">Our</span>{' '}
-                <span className="text-[#003366]">Journey</span>
+                <span className="text-[#18A093]">Reimagining Access to</span>{' '}
+                <span className="text-[#003366]">Quality Healthcare</span>
               </h2>
               <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
-                India&apos;s leading tech-driven healthcare solution, delivering real-time care with human touch and compassion.
+                From Cities to Villages. From Clinics to Communities.
               </p>
-              <p className="text-[13px] text-[#888888] font-['Montserrat'] font-[400] leading-[23px] tracking-[0%] align-middle">
-                Bridge Healthcare is transforming rural healthcare with 45 Smart Health Centres, 45 Mobile Units, and AI-powered diagnostics, reaching 10 million lives. Through tele-diagnostics and nurse-assisted care, we ensure accessible, real-time medical support. Our mission is to expand, enhance AI-driven care, and build India&apos;s largest tech-enabled rural health network.
+              <p className="text-sm sm:text-base md:text-lg text-gray-600">
+                At Bridge Healthcare, we turn everyday spaces—residential societies, community centers, and underserved areas—into fully connected health hubs. With our Smart Healthcare Machine (SHM) and real-time tele-diagnostics, we deliver vital checkups, doctor consultations, and wellness programs where they&apos;re needed most.
+                Since 2022, we&apos;ve been making personalized, preventive healthcare accessible, affordable, and always within reach.
               </p>
             </div>
 
@@ -394,21 +387,16 @@ const LandingPage = () => {
                 <span className="text-[#18A093]">Addressing</span>{' '}
                 <span className="text-[#003366]">Key Challenges</span>
               </h2>
-              <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
-                Tackling the most pressing gaps in healthcare, delivering innovative, tech-driven solutions.
-              </p>
               <div className="space-y-4">
                 <div className="flex flex-col space-y-2">
                   <div
                     className="flex flex-row items-center space-x-3 py-2 cursor-pointer"
                     onClick={() => setActiveFaq(activeFaq === 'healthcare' ? null : 'healthcare')}
                   >
-                    <div className="flex-shrink-0 w-5 h-5 mt-1">
-                      <svg viewBox="0 0 20 20" fill="#003366">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                      </svg>
+                    <div className="flex-shrink-0 mt-1 ">
+                      <Image src="/icons/hm-6-lgo.png" alt='logo image' width={25} height={25} />
                     </div>
-                    <p className="text-[#003366] font-['Montserrat'] text-base font-medium leading-none align-middle tracking-[0%]">Limited Access to Quality Healthcare</p>
+                    <p className="text-[#003366] font-['Montserrat'] text-[18px] sm:text-[18px] md:text-[22px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize transition-opacity duration-300">Limited Access to Quality Healthcare</p>
                     <svg
                       className={`w-5 h-5 transform transition-transform ${activeFaq === 'healthcare' ? 'rotate-180' : ''}`}
                       fill="none"
@@ -437,12 +425,10 @@ const LandingPage = () => {
                     className="flex flex-row items-center space-x-3 py-2 cursor-pointer"
                     onClick={() => setActiveFaq(activeFaq === 'telemedicine' ? null : 'telemedicine')}
                   >
-                    <div className="flex-shrink-0 w-5 h-5 mt-1">
-                      <svg viewBox="0 0 20 20" fill="#003366">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                      </svg>
+                    <div className="flex-shrink-0 mt-1 ">
+                      <Image src="/icons/hm-6-lgo.png" alt='logo image' width={25} height={25} />
                     </div>
-                    <p className="text-[#003366] font-['Montserrat'] text-base font-medium leading-none align-middle tracking-[0%]">Lack of Real-Time, Integrated Diagnostics in Telemedicine</p>
+                    <p className="text-[#003366] font-['Montserrat'] text-[18px] sm:text-[18px] md:text-[22px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize transition-opacity duration-300">Lack of Real-Time, Integrated Diagnostics in Telemedicine</p>
                     <svg
                       className={`w-5 h-5 transform transition-transform ${activeFaq === 'telemedicine' ? 'rotate-180' : ''}`}
                       fill="none"
@@ -471,12 +457,10 @@ const LandingPage = () => {
                     className="flex flex-row items-center space-x-3 py-2 cursor-pointer"
                     onClick={() => setActiveFaq(activeFaq === 'preventive' ? null : 'preventive')}
                   >
-                    <div className="flex-shrink-0 w-5 h-5 mt-1">
-                      <svg viewBox="0 0 20 20" fill="#003366">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                      </svg>
+                    <div className="flex-shrink-0 mt-1 ">
+                      <Image src="/icons/hm-6-lgo.png" alt='logo image' width={25} height={25} />
                     </div>
-                    <p className="text-[#003366] font-['Montserrat'] text-base font-medium leading-none align-middle tracking-[0%]">Lack of Focus on Preventive and Chronic Disease Management</p>
+                    <p className="text-[#003366] font-['Montserrat'] text-[18px] sm:text-[18px] md:text-[22px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize transition-opacity duration-300">Lack of Focus on Preventive and Chronic Disease Management</p>
                     <svg
                       className={`w-5 h-5 transform transition-transform ${activeFaq === 'preventive' ? 'rotate-180' : ''}`}
                       fill="none"
@@ -505,12 +489,10 @@ const LandingPage = () => {
                     className="flex flex-row items-center space-x-3 py-2 cursor-pointer"
                     onClick={() => setActiveFaq(activeFaq === 'disconnected' ? null : 'disconnected')}
                   >
-                    <div className="flex-shrink-0 w-5 h-5 mt-1">
-                      <svg viewBox="0 0 20 20" fill="#003366">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                      </svg>
+                    <div className="flex-shrink-0 mt-1">
+                      <Image src="/icons/hm-6-lgo.png" alt='logo image' width={25} height={25} />
                     </div>
-                    <p className="text-[#003366] font-['Montserrat'] text-base font-medium leading-none align-middle tracking-[0%]">Disconnected Healthcare Journey and Lack of Timely Follow-up</p>
+                    <p className="text-[#003366] font-['Montserrat'] text-[18px] sm:text-[18px] md:text-[22px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize transition-opacity duration-300">Disconnected Healthcare Journey and Lack of Timely Follow-up</p>
                     <svg
                       className={`w-5 h-5 transform transition-transform ${activeFaq === 'disconnected' ? 'rotate-180' : ''}`}
                       fill="none"
@@ -535,25 +517,58 @@ const LandingPage = () => {
                   )}
                 </div>
               </div>
-              <div className="mt-8">
-                <button onClick={(e) => e.preventDefault()}
-                  className="inline-block px-8 py-3 border-1 border-[#003366] text-[#003366] rounded-xl font-semibold hover:bg-[#003366] hover:text-white transition-all duration-300"
-                >
-                  Know more
-                </button>
-              </div>
             </div>
 
-            {/* Circular Image Pattern */}
-            <div className="relative w-[100%] h-[100%] flex items-center justify-center overflow-hidden">
-              {/* Center animation */}
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 p-4">
+              {/* Health Checkup */}
+              <div className="rounded-lg border border-gray-200 overflow-hidden">
+                <Image
+                  src="/icons/hm-4-img1.jpg"
+                  alt="Health Checkup"
+                  width={60}
+                  height={60}
+                  className='w-full h-full'
+                />
+              </div>
+              <div className="rounded-lg shadow-md border border-gray-200 overflow-hidden">
+                <Image
+                  src="/icons/hm-4-img2.jpg"
+                  alt="Health Checkup"
+                  width={60}
+                  height={60}
+                  className='w-full h-full'
+                />
+              </div>
+              <div className="rounded-lg shadow-md border border-gray-200 overflow-hidden">
+                <Image
+                  src="/icons/hm-4-img3.jpg"
+                  alt="Health Checkup"
+                  width={60}
+                  height={60}
+                  className='w-full h-full contain'
+                />
+              </div>
+              <div className="rounded-lg shadow-md border border-gray-200 overflow-hidden">
+                <Image
+                  src="/icons/hm-4-img1.png"
+                  alt="Health Checkup"
+                  width={60}
+                  height={60}
+                  className='w-full h-full contain'
+                />
+              </div>
+
+              {/* <div className="relative w-[100%] h-[100%] flex items-center justify-center overflow-hidden">
+              Center animation
               <Image
                 src="/icons/hm-anim.gif"
                 alt="Healthcare Network Animation"
-                width={100}
-                height={100}
-                className="h-[90%] w-[90%]"
+                width={500}
+                height={500}
+                className="h-[100%] w-[100%]"
               />
+            </div> */}
             </div>
           </div>
         </div>
@@ -563,84 +578,151 @@ const LandingPage = () => {
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
           <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
             <span className="text-[#18A093]">Our</span>{' '}
-            <span className="text-[#003366]">Key Challenges</span>
+            <span className="text-[#003366]">Key Services</span>
           </h2>
           <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
             The Smart Healthcare Machine improves healthcare with data-driven accessibility and efficiency.
           </p>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* <div className="grid grid-cols-1 lg:grid-cols-2"> */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6 lg:gap-8">
             {/* Service Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {/* Health Checkup */}
-              <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 flex flex-col items-center justify-center text-center">
-                <div className="w-12 h-12 mb-4">
-                  <Image
-                    src="/icons/hm-5-lgo1.png"
-                    alt="Health Checkup"
-                    width={48}
-                    height={48}
-                  />
-                </div>
-                <h3 className="text-[14px] font-[500] leading-[100%] tracking-[0%] text-center align-middle text-[#555555] font-['Montserrat']">Smart Healthcare Machine Deployment</h3>
-              </div>
+            {/* <div className="grid grid-cols-1 sm:grid-cols-2 gap-6"> */}
+            {/* Health Checkup */}
 
-              {/* Specialist Consultation */}
-              <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 flex flex-col items-center justify-center text-center">
-                <div className="w-12 h-12 mb-4">
-                  <Image
-                    src="/icons/hm-5-lgo2.png"
-                    alt="Specialist Consultation"
-                    width={48}
-                    height={48}
-                  />
-                </div>
-                <h3 className="text-[14px] font-[500] leading-[100%] tracking-[0%] text-center align-middle text-[#555555] font-['Montserrat']">Real-Time, Data-Driven Teleconsultation</h3>
-              </div>
 
-              {/* Hospital Connecting Services */}
-              <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 flex flex-col items-center justify-center text-center">
-                <div className="w-12 h-12 mb-4">
-                  <Image
-                    src="/icons/hm-5-lgo3.png"
-                    alt="Hospital Connecting Services"
-                    width={48}
-                    height={48}
-                  />
-                </div>
-                <h3 className="text-[14px] font-[500] leading-[100%] tracking-[0%] text-center align-middle text-[#555555] font-['Montserrat']"> Integrated Digital Ecosystem for Seamless Care</h3>
-              </div>
+            <div
+              className={`p-4 bg-white rounded-lg border-1 border-gray-300 card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around min-h-[150px] md:min-h-[200px] lg:min-h-[250px] ${activeCard === 'phase1' ? 'touch-hover' : ''}`}
+              onClick={(e) => handleToggle(e, 'phase1')}
+            >
+              <div className="flex flex-row items-center justify-around group-hover:hidden touch-hover:hidden">
+                <Image
+                  src="/icons/hm-5-lgo1.png"
+                  alt="Health Checkup"
+                  width={48}
+                  height={48}
+                />
 
-              {/* Personalised Healthcare */}
-              <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 flex flex-col items-center justify-center text-center">
-                <div className="w-12 h-12 mb-4">
-                  <Image
-                    src="/icons/hm-5-lgo4.png"
-                    alt="Personalised Healthcare"
-                    width={48}
-                    height={48}
-                  />
-                </div>
-                <h3 className="text-[14px] font-[500] leading-[100%] tracking-[0%] text-center align-middle text-[#555555] font-['Montserrat']">Preventive Health Checkups & Chronic Care Programs</h3>
+              </div>
+              <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-middle align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">Integrated Tele-Diagnostic & Specialist Consultation Access</h3>
+              <p className="text-sm sm:text-base md:text-lg text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
+                Our SHM enables real-time diagnostics — from vitals to ECG and blood tests — paired with virtual access to city-based specialist doctors. This bridges the rural healthcare gap by ensuring timely, expert-led diagnosis and advice at the patient’s doorstep.
+              </p>
+            </div>
+
+            <div
+              className={`p-4 bg-white rounded-lg border-1 border-gray-300 card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around min-h-[150px] md:min-h-[200px] lg:min-h-[250px] ${activeCard === 'phase1' ? 'touch-hover' : ''}`}
+              onClick={(e) => handleToggle(e, 'phase1')}
+            >
+              <div className="flex flex-row items-center justify-around group-hover:hidden touch-hover:hidden">
+                <Image
+                  src="/icons/hm-5-lgo1.png"
+                  alt="Health Checkup"
+                  width={48}
+                  height={48}
+                />
+
+              </div>
+              <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-middle align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300"> Nurse-Assisted Health Access Points at PHCs, Diagnostic Centers & Clinics
+              </h3>
+              <p className="text-sm sm:text-base md:text-lg text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
+                Deployed within existing healthcare infrastructure, our SHM units are operated by trained nurses — blending digital innovation with human care. Patients receive personalized support and guided consultations in familiar, trusted environments.
+
+              </p>
+            </div>
+            <div
+              className={`relative bg-white rounded-lg border-1 border-gray-300 overflow-hidden card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around min-h-[150px] md:min-h-[200px] lg:min-h-[250px] ${activeCard === 'phase1' ? 'touch-hover' : ''}`}
+              onClick={(e) => handleToggle(e, 'phase1')}
+            >
+              <div className="absolute inset-0 w-full h-full group-hover:hidden touch-hover:hidden">
+                <Image
+                  src="/icons/hm-4-img1.jpg"
+                  alt="Health Checkup"
+                  width={48}
+                  height={48}
+                  className='w-full h-full object-cover'
+                />
+              </div>
+              <div className="relative z-10 p-4 flex flex-col items-center justify-center h-full">
+                <h3 className="text-[18px] text-white  sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-middle align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">
+                  Smart Queue Management with Digital Time Slots
+                </h3>
+                <p className="text-sm sm:text-base md:text-lg text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
+                  Patients no longer need to wait endlessly. Our system assigns a time slot, allowing them to plan their day — minimizing wage loss, travel fatigue, and overcrowding at the consultation site.
+                </p>
               </div>
             </div>
+            <div
+              className={`p-4 bg-white rounded-lg border-1 border-gray-300 card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around min-h-[150px] md:min-h-[200px] lg:min-h-[250px] ${activeCard === 'phase1' ? 'touch-hover' : ''}`}
+              onClick={(e) => handleToggle(e, 'phase1')}
+            >
+              <div className="flex flex-row items-center justify-around group-hover:hidden touch-hover:hidden">
+                <Image
+                  src="/icons/hm-5-lgo1.png"
+                  alt="Health Checkup"
+                  width={48}
+                  height={48}
+                />
+
+              </div>
+              <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-middle align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">Digital Health Records (EHR) & Follow-Ups
+              </h3>
+              <p className="text-sm sm:text-base md:text-lg text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
+                Every patient interaction — checkups, diagnostics, consultations — is securely recorded. This ensures continuity of care, helps doctors track health progress and allows for intelligent follow-up and medication reminders.
+
+              </p>
+            </div>
+            <div
+              className={`p-4 bg-white rounded-lg border-1 border-gray-300 card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around min-h-[150px] md:min-h-[200px] lg:min-h-[250px] ${activeCard === 'phase1' ? 'touch-hover' : ''}`}
+              onClick={(e) => handleToggle(e, 'phase1')}
+            >
+              <div className="flex flex-row items-center justify-around group-hover:hidden touch-hover:hidden">
+                <Image
+                  src="/icons/hm-5-lgo1.png"
+                  alt="Health Checkup"
+                  width={48}
+                  height={48}
+                />
+
+              </div>
+              <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-middle align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">Preventive Health Programs & Early Detection
+              </h3>
+              <p className="text-sm sm:text-base md:text-lg text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
+                Regular screenings promote early detection of chronic conditions. This, combined with timely consultations, encourages preventive care and reduces long-term complications.
+
+              </p>
+            </div>
+            <div
+              className={`p-4 bg-white rounded-lg border-1 border-gray-300 card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around min-h-[150px] md:min-h-[200px] lg:min-h-[250px] ${activeCard === 'phase1' ? 'touch-hover' : ''}`}
+              onClick={(e) => handleToggle(e, 'phase1')}
+            >
+              <div className="flex flex-row items-center justify-around group-hover:hidden touch-hover:hidden">
+                <Image
+                  src="/icons/hm-5-lgo1.png"
+                  alt="Health Checkup"
+                  width={48}
+                  height={48}
+                />
+
+              </div>
+              <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-middle align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">Health Data Analytics for Targeted Public Health Interventions
+              </h3>
+              <p className="text-sm sm:text-base md:text-lg text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
+                Real-time health trends from every SHM location feed into our analytics dashboard — helping hospitals, NGOs and funders plan wellness programs and allocate resources effectively.
+              </p>
+            </div>
+
+            {/* </div> */}
 
             {/* Image Section */}
-            <div className="relative flex flex-row items-center justify-center w-full h-[400px] rounded-lg overflow-hidden shadow-xl">
+            {/* <div className="rflex items-center justify-center w-full h-full">
               <Image
-                src="/icons/hm-5-img.png"
+                src="/icons/hm-anim.gif"
                 alt="Healthcare Services"
-                fill
-                className="object-cover w-[90%] h-[90%]"
+                width={100}
+                height={100}
+                className="w-[98%] h-[98%]"
               />
-            </div>
-          </div>
-
-          <div className="mt-8">
-            <button onClick={(e) => e.preventDefault()}
-              className="inline-block px-8 py-3 border-1 border-[#003366] text-[#003366] rounded-xl font-semibold hover:bg-[#003366] hover:text-white transition-all duration-300"
-            >
-              Know more
-            </button>
+            </div> */}
           </div>
         </div>
       </div>
@@ -671,7 +753,7 @@ const LandingPage = () => {
 
             {/* Service Cards - 1*/}
             <div
-              onClick={(e) => handleToggle(e, 'card2')}
+              onClick={(e) => handleToggle(e, 'card1')}
               className={`bg-white p-4 sm:p-6 rounded-lg border border-gray-200 transition-all duration-300 group card-hover 
                   hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] 
                   hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] 
@@ -681,7 +763,7 @@ const LandingPage = () => {
                   touch-hover:via-[rgba(6,80,114,0.7)] touch-hover:to-[rgba(0,51,102,0.7)]`}
             >
               <div className="flex flex-row sm:flex-row items-center justify-around h-full gap-4 sm:gap-0">
-                <div className="flex items-center justify-center relative w-[15%]">
+                <div className="flex items-center justify-center relative w-[15%] group-hover:hidden touch-hover:hidden">
                   <Image
                     src="/icons/hm-6-lgo.png"
                     alt="Healthcare Partnership"
@@ -689,19 +771,12 @@ const LandingPage = () => {
                     height={50}
                     className="group-hover:hidden touch-hover:hidden transition-opacity duration-300"
                   />
-                  {/* <Image
-                    src="/icons/hm-6-lgo1.png"
-                    alt="Healthcare Partnership"
-                    width={50}
-                    height={50}
-                    className="hidden group-hover:block touch-hover:block transition-opacity duration-300 delay-150 mr-4"
-                  /> */}
                 </div>
-                <div className='w-[85%]'>
+                <div className='w-[85%] touch-hover:w-[100%]'>
                   <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">
                     Comprehensive Healthcare Solutions
                   </h3>
-                  <p className="text-[#989898] font-['Montserrat'] text-[15px] sm:leading-[1.2] sm:text-[10px] md:text-[14px] font-[300] leading-[1.8] tracking-[0%] group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300">
+                  <p className="text-[#989898] text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.5] tracking-[0%] group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300">
                     Delivering real-time diagnostics, preventive care and teleconsultations through a unified platform that ensures end-to-end patient care.
                   </p>
                 </div>
@@ -720,7 +795,7 @@ const LandingPage = () => {
                   touch-hover:via-[rgba(6,80,114,0.7)] touch-hover:to-[rgba(0,51,102,0.7)]`}
             >
               <div className="flex flex-row sm:flex-row items-center justify-around h-full gap-4 sm:gap-0">
-                <div className="flex items-center justify-center relative w-[15%]">
+                <div className="flex items-center justify-center relative w-[15%] group-hover:hidden touch-hover:hidden">
                   <Image
                     src="/icons/hm-6-lgo.png"
                     alt="Healthcare Partnership"
@@ -728,19 +803,12 @@ const LandingPage = () => {
                     height={50}
                     className="group-hover:hidden touch-hover:hidden transition-opacity duration-300"
                   />
-                  <Image
-                    src="/icons/hm-6-lgo1.png"
-                    alt="Healthcare Partnership"
-                    width={50}
-                    height={50}
-                    className="hidden group-hover:block touch-hover:block transition-opacity duration-300 delay-150 mr-4"
-                  />
                 </div>
-                <div className='w-[85%]'>
+                <div className='w-[85%] touch-hover:w-[100%]'>
                   <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">
                     Healthcare Partnership Model
                   </h3>
-                  <p className="text-[#989898] font-['Montserrat'] text-[15px] sm:leading-[1.2] sm:text-[10px] md:text-[14px] font-[300] leading-[1.8] tracking-[0%] group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300">
+                  <p className="text-[#989898] text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.5] tracking-[0%] group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300">
                     Collaborating with hospitals, communities, and institutions to build sustainable, patient-centric healthcare ecosystems.
                   </p>
                 </div>
@@ -749,7 +817,7 @@ const LandingPage = () => {
 
             {/* Service Cards -3 */}
             <div
-              onClick={(e) => handleToggle(e, 'card2')}
+              onClick={(e) => handleToggle(e, 'card3')}
               className={`bg-white p-4 sm:p-6 rounded-lg border border-gray-200 transition-all duration-300 group card-hover 
                   hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] 
                   hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] 
@@ -759,7 +827,7 @@ const LandingPage = () => {
                   touch-hover:via-[rgba(6,80,114,0.7)] touch-hover:to-[rgba(0,51,102,0.7)]`}
             >
               <div className="flex flex-row sm:flex-row items-center justify-around h-full gap-4 sm:gap-0">
-                <div className="flex items-center justify-center relative w-[15%]">
+                <div className="flex items-center justify-center relative w-[15%] group-hover:hidden touch-hover:hidden">
                   <Image
                     src="/icons/hm-6-lgo.png"
                     alt="Healthcare Partnership"
@@ -767,19 +835,13 @@ const LandingPage = () => {
                     height={50}
                     className="group-hover:hidden touch-hover:hidden transition-opacity duration-300"
                   />
-                  <Image
-                    src="/icons/hm-6-lgo1.png"
-                    alt="Healthcare Partnership"
-                    width={50}
-                    height={50}
-                    className="hidden group-hover:block touch-hover:block transition-opacity duration-300 delay-150 mr-4"
-                  />
+
                 </div>
-                <div className='w-[85%]'>
+                <div className='w-[85%] touch-hover:w-[100%]'>
                   <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">
                     Innovation & Technology
                   </h3>
-                  <p className="text-[#989898] font-['Montserrat'] text-[15px] sm:leading-[1.2] sm:text-[10px] md:text-[14px] font-[300] leading-[1.8] tracking-[0%] group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300">
+                  <p className="text-[#989898] text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.5] tracking-[0%] group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300">
                     Leveraging advanced medical devices and digital platforms to enhance care delivery, accuracy and accessibility.
                   </p>
                 </div>
@@ -788,7 +850,7 @@ const LandingPage = () => {
 
             {/* Service Cards -4 */}
             <div
-              onClick={(e) => handleToggle(e, 'card2')}
+              onClick={(e) => handleToggle(e, 'card4')}
               className={`bg-white p-4 sm:p-6 rounded-lg border border-gray-200 transition-all duration-300 group card-hover 
                   hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] 
                   hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] 
@@ -798,7 +860,7 @@ const LandingPage = () => {
                   touch-hover:via-[rgba(6,80,114,0.7)] touch-hover:to-[rgba(0,51,102,0.7)]`}
             >
               <div className="flex flex-row sm:flex-row items-center justify-around h-full gap-4 sm:gap-0">
-                <div className="flex items-center justify-center relative w-[15%]">
+                <div className="flex items-center justify-center relative w-[15%] group-hover:hidden touch-hover:hidden">
                   <Image
                     src="/icons/hm-6-lgo.png"
                     alt="Healthcare Partnership"
@@ -806,32 +868,17 @@ const LandingPage = () => {
                     height={50}
                     className="group-hover:hidden touch-hover:hidden transition-opacity duration-300"
                   />
-                  <Image
-                    src="/icons/hm-6-lgo1.png"
-                    alt="Healthcare Partnership"
-                    width={50}
-                    height={50}
-                    className="hidden group-hover:block touch-hover:block transition-opacity duration-300 delay-150 mr-4"
-                  />
                 </div>
-                <div className='w-[85%]'>
+                <div className='w-[85%] touch-hover:w-[100%]'>
                   <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">
                     Scalable Healthcare Solution
                   </h3>
-                  <p className="text-[#989898] font-['Montserrat'] text-[15px] sm:leading-[1.2] sm:text-[10px] md:text-[14px] font-[300] leading-[1.8] tracking-[0%] group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300">
+                  <p className="text-[#989898] text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.5] tracking-[0%] group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300">
                     Designed to expand across geographies—from urban centers to remote areas — while maintaining quality and efficiency.
                   </p>
                 </div>
               </div>
             </div>
-          </div>
-
-          <div className="mt-12">
-            <button onClick={(e) => e.preventDefault()}
-              className="inline-block px-8 py-3 border-1 border-[#003366] text-[#003366] rounded-xl font-semibold hover:bg-[#003366] hover:text-white transition-all duration-300"
-            >
-              Get Involved
-            </button>
           </div>
         </div>
       </div>
@@ -842,309 +889,292 @@ const LandingPage = () => {
           <div className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
             <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
               <span className="text-[#18A093]">Our</span>{' '}
-              <span className="text-[#003366]">Products Overview</span>
+              <span className="text-[#003366]">Products</span>
             </h2>
             <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
-              Smart Healthcare Machine integrates tele-consultations with real-time health data and is supported by Doctor, Patient and Nurse applications for streamlined collaboration and proactive care.
+              <span className="text-black font-bold">Smart Healthcare Machine</span> integrates tele-consultations with real-time health data and is supported by <span className="text-black font-bold">Doctor</span>, <span className="text-black font-bold">Patient</span> and <span className="text-black font-bold">Nurse</span> applications for streamlined collaboration and proactive care.
             </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             {/* Text Content */}
-            <div className="space-y-6 mt-10">
+            <div className="space-y-6 mt-5">
               <div className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
                 {/* Product List */}
                 <div className={`flex items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300 ${activeProd === 1 && 'border-2 border-gray-300'}`} onClick={() => setActiveProd(1)}>
                   <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
                     <Image src="/icons/prd-2-lgo1.png" alt="Smart Healthcare Machine" width={32} height={32} className="w-full h-full" />
                   </div>
-                  <p className="text-sm sm:text-base md:text-lg text-[#003366] font-['Montserrat']">Smart Healthcare Machine</p>
+                  <p className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat']">Smart Healthcare Machine</p>
                   <div className="ml-auto">
                     <svg className="w-5 h-5 text-[#003366]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </div>
                 </div>
+                {activeProd === 1 && (<>
+                  <div className="h-full w-full flex flex-col items-center justify-center block lg:hidden">
+                    <Image
+                      src="/icons/hm-7-img.png"
+                      alt="Smart Healthcare Machine"
+                      width={100}
+                      height={100}
+                      className="w-[250px] sm:w-[350px] md:w-[250px] lg:w-[350px] object-contain transition-all duration-300"
+                      priority
+                    />
+                  </div>
+                  <div className="relative bg-white overflow-hidden">
+                    <div className="pb-5 sm:pb-2 md:pb-3 lg:pb-5 flex flex-col md:flex-row gap-4 md:gap-0">
+                      <div className="w-full pb-1 sm:pb-1 md:pb-2 lg:pb-3">
+                        <h3 className="text-[22px] sm:text-[28px] md:text-[30px] font-[700] font-['Montserrat'] mb-1 sm:mb-1 md:mb-2 text-[#003366]">Key Features</h3>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
+                          <div className="bg-white rounded-lg sm:p-5 md:p-6 transition-all duration-300">
+                            <div className="space-y-1 sm:space-y-2 md:space-y-4">
+                              <div className="flex items-start gap-3 sm:gap-4 md:gap-5">
+                                <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 flex items-center justify-center text-[#18A093] font-semibold">1.</div>
+                                <p className="text-base sm:text-lg md:text-xl text-gray-700">Health Screening</p>
+                              </div>
+                              <div className="flex items-start gap-3 sm:gap-4 md:gap-5">
+                                <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 flex items-center justify-center text-[#18A093] font-semibold">2.</div>
+                                <p className="text-base sm:text-lg md:text-xl text-gray-700">Real-Time Diagnostics Integration</p>
+                              </div>
+                              <div className="flex items-start gap-3 sm:gap-4 md:gap-5">
+                                <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 flex items-center justify-center text-[#18A093] font-semibold">3.</div>
+                                <p className="text-base sm:text-lg md:text-xl text-gray-700">Tele-Consultation with Live Data Sync</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="bg-white rounded-lg p-4 sm:p-5 md:p-6 transition-all duration-300">
+                            <div className="space-y-1 sm:space-y-2 md:space-y-4">
+                              <div className="flex items-start gap-3 sm:gap-4 md:gap-5">
+                                <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 flex items-center justify-center text-[#18A093] font-semibold">4.</div>
+                                <p className="text-base sm:text-lg md:text-xl text-gray-700">Scan and Analyse Health Records</p>
+                              </div>
+                              <div className="flex items-start gap-3 sm:gap-4 md:gap-5">
+                                <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 flex items-center justify-center text-[#18A093] font-semibold">5.</div>
+                                <p className="text-base sm:text-lg md:text-xl text-gray-700">Print Health Reports and Prescription</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
 
+                  </div>
+                </>)}
                 <div className={`flex items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300 ${activeProd === 2 && 'border-2 border-gray-300'}`} onClick={() => setActiveProd(2)}>
                   <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
                     <Image src="/icons/prd-2-lgo1.png" alt="Doctor App" width={32} height={32} />
                   </div>
-                  <p className="text-sm sm:text-base md:text-lg text-[#003366] font-['Montserrat']">Doctor App</p>
+                  <p className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat']">Doctor App</p>
                   <div className="ml-auto">
                     <svg className="w-5 h-5 text-[#003366]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </div>
                 </div>
-
+                {activeProd === 2 && (<>
+                  <div className="h-full w-full flex flex-col items-center justify-center block lg:hidden">
+                    <Image
+                      src="/icons/hm-7-img.png"
+                      alt="Smart Healthcare Machine"
+                      width={100}
+                      height={100}
+                      className="w-[250px] sm:w-[350px] md:w-[250px] lg:w-[350px] object-contain transition-all duration-300"
+                      priority
+                    />
+                  </div>
+                  <div className="relative bg-white overflow-hidden">
+                    <div className="pb-5 sm:pb-2 md:pb-3 lg:pb-5 flex flex-col md:flex-row gap-4 md:gap-0">
+                      <div className="w-full pb-5 sm:pb-2 md:pb-3 lg:pb-5">
+                        <h3 className="text-[22px] sm:text-[28px] md:text-[30px] font-[700] font-['Montserrat'] mb-2 sm:mb-2 md:mb-4 text-[#003366]">Key Features</h3>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 sm:gap-1 md:gap-6">
+                          <div className="space-y-2 bg-white rounded-lg p-3 sm:pt-4 md:p-5">
+                            <div className="space-y-2 sm:space-y-4 md:space-y-4">
+                              <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
+                                <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">1.</div>
+                                <p className="text-sm sm:text-base md:text-lg text-gray-600">Multi SHM Accessibility</p>
+                              </div>
+                              <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
+                                <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">2.</div>
+                                <p className="text-sm sm:text-base md:text-lg text-gray-600">Live Video Consultation with Real-Time Data</p>
+                              </div>
+                              <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
+                                <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">3.</div>
+                                <p className="text-sm sm:text-base md:text-lg text-gray-600">Instant Access to Patient Records</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="space-y-4 bg-white rounded-lg px-3 sm:p-4 md:p-5">
+                            <div className="space-y-2 sm:space-y-4 md:space-y-4">
+                              <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
+                                <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">4.</div>
+                                <p className="text-sm sm:text-base md:text-lg text-gray-600">Easy Prescription Writing & Upload</p>
+                              </div>
+                              <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
+                                <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">5.</div>
+                                <p className="text-sm sm:text-base md:text-lg text-gray-600">Dashboard to Track Consultations</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div></>)
+                }
                 <div className={`flex items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300 ${activeProd === 3 && 'border-2 border-gray-300'}`} onClick={() => setActiveProd(3)}>
                   <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
                     <Image src="/icons/prd-2-log2.png" alt="Patient App" width={32} height={32} />
                   </div>
-                  <p className="text-sm sm:text-base md:text-lg text-[#003366] font-['Montserrat']">Patient App</p>
+                  <p className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat']">Patient App</p>
                   <div className="ml-auto">
                     <svg className="w-5 h-5 text-[#003366]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </div>
                 </div>
+                {activeProd === 3 && (<>
+                  <div className="h-full w-full flex flex-col items-center justify-center block lg:hidden">
+                    <Image
+                      src="/icons/hm-7-img2.png"
+                      alt="Smart Healthcare Machine"
+                      width={100}
+                      height={100}
+                      className="w-[250px] sm:w-[350px] md:w-[250px] lg:w-[350px] object-contain transition-all duration-300"
+                      priority
+                    />
+                  </div>
+                  <div className="relative bg-white overflow-hidden">
+                    <div className="pb-5 sm:pb-2 md:pb-3 lg:pb-5 flex flex-col md:flex-row gap-4 md:gap-0">
+                      <div className="space-y-4 bg-white rounded-lg p-3 sm:p-4 md:p-5 w-full md:w-[30%]">
+                        <h3 className="text-xl sm:text-2xl md:text-[24px] font-[700] font-['Montserrat'] leading-[110%] sm:leading-[105%] md:leading-[100%] tracking-[0%] align-middle text-[#003366] mb-4 sm:mb-6 md:mb-8">Key Features</h3>
+                        <div className="space-y-4 sm:space-y-6 md:space-y-8">
+                          <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
+                            <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">1.</div>
+                            <p className="text-sm sm:text-base md:text-lg text-gray-600">Virtual consultations</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </>)}
 
                 <div className={`flex items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300 ${activeProd === 4 && 'border-2 border-gray-300'}`} onClick={() => setActiveProd(4)}>
                   <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
                     <Image src="/icons/prd-2-log2.png" alt="Operator / Nurse App" width={32} height={32} />
                   </div>
-                  <p className="text-sm sm:text-base md:text-lg text-[#003366] font-['Montserrat']">Operator / Nurse App</p>
+                  <p className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat']">Nurse App</p>
                   <div className="ml-auto">
                     <svg className="w-5 h-5 text-[#003366]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </div>
                 </div>
+                {activeProd === 4 && (<>
+                  <div className="h-full w-full flex flex-col items-center justify-center block lg:hidden">
+                    <Image
+                      src="/icons/hm-7-img3.png"
+                      alt="Smart Healthcare Machine"
+                      width={100}
+                      height={100}
+                      className="w-[250px] sm:w-[350px] md:w-[250px] lg:w-[350px] object-contain transition-all duration-300"
+                      priority
+                    />
+                  </div>
+                  <div className="relative bg-white overflow-hidden">
+                    <div className="pb-5 sm:pb-2 md:pb-3 lg:pb-5">
+                      <h3 className="text-[22px] sm:text-[28px] md:text-[30px] font-[700] font-['Montserrat'] mb-2 sm:mb-2 md:mb-4 text-[#003366]">Key Features</h3>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-0 sm:gap-1 md:gap-6">
+                        <div className="space-y-2 bg-white rounded-lg px-3 sm:pt-4 md:p-5">
+                          <div className="space-y-2 sm:space-y-4 md:space-y-4">
+                            <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
+                              <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">1.</div>
+                              <p className="text-sm sm:text-base md:text-lg text-gray-600">Appointment and Schedule Management</p>
+                            </div>
+                            <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
+                              <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">2.</div>
+                              <p className="text-sm sm:text-base md:text-lg text-gray-600">Patient Queue Management</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="space-y-2 bg-white rounded-lg p-3 sm:pt-4 md:p-5">
+                          <div className="space-y-2 sm:space-y-4 md:space-y-4">
+                            <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
+                              <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">3.</div>
+                              <p className="text-sm sm:text-base md:text-lg text-gray-600">Patient Health Records Digitization</p>
+                            </div>
+                            <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
+                              <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">4.</div>
+                              <p className="text-sm sm:text-base md:text-lg text-gray-600">Analytics & Follow-up Tracking</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </>)}
+                <div className="mt-12">
+                  <Link href="/contactUs"
+                    className="inline-block px-8 py-3 border-1 border-[#003366] text-[#003366] rounded-xl font-semibold hover:bg-[#003366] hover:text-white transition-all duration-300"
+                  >
+                    Contact Us
+                  </Link>
+                </div>
               </div>
             </div>
             {activeProd === 1 &&
-              <div className="top-4 z-10">
-                <div className="relative h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px] rounded-lg overflow-hidden p-4 sm:p-6 md:p-8 lg:p-8 flex flex-col items-center justify-center">
+              <div className="h-full w-full flex flex-col items-center justify-center hidden lg:block">
+                <div className="h-full w-full flex flex-col items-center justify-center">
                   <Image
                     src="/icons/hm-7-img.png"
                     alt="Smart Healthcare Machine"
                     width={100}
                     height={100}
-                    className="w-[150px] sm:w-[250px] md:w-[250px] lg:w-[350px] object-contain transition-all duration-300"
+                    className="w-[250px] sm:w-[350px] md:w-[250px] lg:w-[350px] object-contain transition-all duration-300"
                     priority
-                  />
-                  <div className="flex justify-center mt-6">
-                    <button
-                      onClick={() => setShowMore(!showMore)}
-                      className="px-6 py-2 text-[#003366] border-2 border-[#003366] rounded-md hover:bg-[#003366] hover:text-white transition-all duration-300"
-                    >
-                      {showMore ? 'Show Less' : 'Show More'}
-                    </button>
-                  </div>
-                </div>
+                  /></div>
               </div>
             }
             {activeProd === 2 &&
-              <div className="sticky top-4 z-10">
-                <div className="relative h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px] rounded-lg overflow-hidden p-4 sm:p-6 md:p-8 lg:p-8 flex flex-col items-center justify-center">
+              <div className="h-full w-full hidden lg:block">
+                <div className="h-full w-full flex flex-col items-center justify-center">
                   <Image
                     src="/icons/hm-7-img.png"
                     alt="Smart Healthcare Machine"
                     width={100}
                     height={100}
-                    className="w-[150px] sm:w-[250px] md:w-[250px] lg:w-[350px] object-contain transition-all duration-300"
-                    priority
-                  />
-                  <div className="flex justify-center mt-6">
-                    <button
-                      onClick={() => setShowMore(!showMore)}
-                      className="px-6 py-2 text-[#003366] border-2 border-[#003366] rounded-md hover:bg-[#003366] hover:text-white transition-all duration-300"
-                    >
-                      {showMore ? 'Show Less' : 'Show More'}
-                    </button>
-                  </div>
-                </div>
-
+                    className="w-[250px] sm:w-[350px] md:w-[250px] lg:w-[350px] transition-all duration-300"
+                  /></div>
               </div>
             }
             {activeProd === 3 &&
-              <div className="sticky top-4 z-10">
-                <div className="relative h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px] rounded-lg overflow-hidden p-4 sm:p-6 md:p-8 lg:p-8 flex flex-col items-center justify-center">
+              <div className="h-full w-full flex flex-col items-center justify-center hidden lg:block">
+                <div className="h-full w-full flex flex-col items-center justify-center">
                   <Image
                     src="/icons/hm-7-img2.png"
                     alt="Smart Healthcare Machine"
                     width={100}
                     height={100}
-                    className="w-[150px] sm:w-[250px] md:w-[250px] lg:w-[350px] object-contain transition-all duration-300"
+                    className="w-[250px] sm:w-[350px] md:w-[250px] lg:w-[350px] object-contain transition-all duration-300"
                     priority
-                  />
-                  <div className="flex justify-center mt-6">
-                    <button
-                      onClick={() => setShowMore(!showMore)}
-                      className="px-6 py-2 text-[#003366] border-2 border-[#003366] rounded-md hover:bg-[#003366] hover:text-white transition-all duration-300"
-                    >
-                      {showMore ? 'Show Less' : 'Show More'}
-                    </button>
-                  </div>
-                </div>
-
-              </div>}
+                  /></div>
+              </div>
+            }
             {activeProd === 4 &&
-              <div className="sticky top-4 z-10">
-                <div className="relative h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px] rounded-lg overflow-hidden p-4 sm:p-6 md:p-8 lg:p-8 flex flex-col items-center justify-center">
+              <div className="h-full w-full hidden lg:block">
+                <div className="h-full w-full flex flex-col items-center justify-center">
                   <Image
                     src="/icons/hm-7-img3.png"
                     alt="Smart Healthcare Machine"
                     width={100}
                     height={100}
-                    className="w-[150px] sm:w-[250px] md:w-[250px] lg:w-[350px] object-contain transition-all duration-300"
+                    className="w-[250px] sm:w-[350px] md:w-[250px] lg:w-[340px] object-contain transition-all duration-300"
                     priority
-                  />
-                  <div className="flex justify-center mt-6">
-                    <button
-                      onClick={() => setShowMore(!showMore)}
-                      className="px-6 py-2 text-[#003366] border-2 border-[#003366] rounded-md hover:bg-[#003366] hover:text-white transition-all duration-300"
-                    >
-                      {showMore ? 'Show Less' : 'Show More'}
-                    </button>
-                  </div>
-                </div>
-
+                  /></div>
               </div>
             }
           </div>
         </div>
-        {showMore && activeProd === 1 && (
-          <div className="relative bg-white overflow-hidden">
-            <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-5 md:py-5 flex flex-col md:flex-row gap-4 md:gap-0">
-              <div className="space-y-4 sm:space-y-5 md:space-y-6 bg-white rounded-lg p-3 sm:p-4 md:p-5 w-full md:w-[70%]">
-                <h3 className="text-xl sm:text-2xl md:text-[24px] font-[700] font-['Montserrat'] leading-[110%] sm:leading-[105%] md:leading-[100%] tracking-[0%] align-middle text-[#003366] mb-4 sm:mb-6 md:mb-8">How It Works</h3>
-                <div className="space-y-3 sm:space-y-4">
-                  <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">1.</div>
-                    <p className="text-sm sm:text-base md:text-lg text-gray-600">The TDM delivers instant health checkups with vitals, ECG, blood tests, and imaging tools—providing accurate, digital results within minutes for fast, data-driven medical consultations.</p>
-                  </div>
-
-                  <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">2.</div>
-                    <p className="text-sm sm:text-base md:text-lg text-gray-600">Patients can either walk in or schedule an appointment or with help from the on-site nurse.</p>
-                  </div>
-                  <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">3.</div>
-                    <p className="text-sm sm:text-base md:text-lg text-gray-600">Real-time diagnostic consultations with experienced doctors — bringing expert medical care to patients, right from the comfort of their homes.</p>
-                  </div>
-                  <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">4.</div>
-                    <p className="text-sm sm:text-base md:text-lg text-gray-600">The doctor uploads a digital prescription and suggests follow-up or specialist care if required, while the on-site nurse guides the patient in understanding and executing the next steps.</p>
-                  </div>
-                </div>
-              </div>
-              <div className="space-y-4 bg-white rounded-lg p-3 sm:p-4 md:p-5 w-full md:w-[30%]">
-                <h3 className="text-xl sm:text-2xl md:text-[24px] font-[700] font-['Montserrat'] leading-[110%] sm:leading-[105%] md:leading-[100%] tracking-[0%] align-middle text-[#003366] mb-4 sm:mb-6 md:mb-8">Our Features</h3>
-                <div className="space-y-4 sm:space-y-6 md:space-y-8">
-                  <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">1.</div>
-                    <p className="text-sm sm:text-base md:text-lg text-gray-600">Virtual consultations</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        )}
-        {showMore && activeProd === 2 && (
-          <div className="relative bg-white overflow-hidden">
-            <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 sm:py-4 md:py-8 lg:py-10 flex flex-col md:flex-row gap-4 md:gap-0">
-              <div className="space-y-4 sm:space-y-5 md:space-y-6 bg-white rounded-lg p-3 sm:p-4 md:p-5 w-full md:w-[70%]">
-                <h3 className="text-xl sm:text-2xl md:text-[24px] font-[700] font-['Montserrat'] leading-[110%] sm:leading-[105%] md:leading-[100%] tracking-[0%] align-middle text-[#003366] mb-4 sm:mb-6 md:mb-8">How It Works</h3>
-                <div className="space-y-3 sm:space-y-4">
-                  <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">1.</div>
-                    <p className="text-sm sm:text-base md:text-lg text-gray-600">Doctors receive live health data from the TDM, including vitals, ECG, and diagnostic images, before or during the consultation.</p>
-                  </div>
-
-                  <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">2.</div>
-                    <p className="text-sm sm:text-base md:text-lg text-gray-600">The app enables secure, high-quality video calls with patients, supported by on-site nurse assistance if needed.</p>
-                  </div>
-                  <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">3.</div>
-                    <p className="text-sm sm:text-base md:text-lg text-gray-600">After evaluation, doctors can generate and upload digital prescriptions directly through the app for instant patient access.</p>
-                  </div>
-                  <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">4.</div>
-                    <p className="text-sm sm:text-base md:text-lg text-gray-600">Doctors can schedule follow-up consultations, refer patients to specialists, or suggest additional care — all tracked within the platform.</p>
-                  </div>
-                </div>
-              </div>
-              <div className="space-y-4 bg-white rounded-lg p-3 sm:p-4 md:p-5 w-full md:w-[30%]">
-                <h3 className="text-xl sm:text-2xl md:text-[24px] font-[700] font-['Montserrat'] leading-[110%] sm:leading-[105%] md:leading-[100%] tracking-[0%] align-middle text-[#003366] mb-4 sm:mb-6 md:mb-8">Our Features</h3>
-                <div className="space-y-4 sm:space-y-6 md:space-y-8">
-                  <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">1.</div>
-                    <p className="text-sm sm:text-base md:text-lg text-gray-600">Virtual consultations</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-        {showMore && activeProd === 3 && (
-          <div className="relative bg-white overflow-hidden">
-            <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 sm:py-4 md:py-8 lg:py-10 flex flex-col md:flex-row gap-4 md:gap-0">
-              <div className="space-y-4 sm:space-y-5 md:space-y-6 bg-white rounded-lg p-3 sm:p-4 md:p-5 w-full md:w-[70%]">
-                <h3 className="text-xl sm:text-2xl md:text-[24px] font-[700] font-['Montserrat'] leading-[110%] sm:leading-[105%] md:leading-[100%] tracking-[0%] align-middle text-[#003366] mb-4 sm:mb-6 md:mb-8">How It Works</h3>
-                <div className="space-y-3 sm:space-y-4">
-                  <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">1.</div>
-                    <p className="text-sm sm:text-base md:text-lg text-gray-600">Virtual consultations with experienced doctors, making healthcare more accessible and efficient. Patients receive expert medical advice from the comfort of their homes.</p>
-                  </div>
-
-                  <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">2.</div>
-                    <p className="text-sm sm:text-base md:text-lg text-gray-600">Virtual consultations with experienced doctors, making healthcare more accessible and efficient. Patients receive expert medical advice from the comfort of their homes.</p>
-                  </div>
-                  <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">3.</div>
-                    <p className="text-sm sm:text-base md:text-lg text-gray-600">Virtual consultations with experienced doctors, making healthcare more accessible and efficient. Patients receive expert medical advice from the comfort of their homes.</p>
-                  </div>
-                  <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">4.</div>
-                    <p className="text-sm sm:text-base md:text-lg text-gray-600">Virtual consultations with experienced doctors, making healthcare more accessible and efficient. Patients receive expert medical advice from the comfort of their homes.</p>
-                  </div>
-                </div>
-              </div>
-              <div className="space-y-4 bg-white rounded-lg p-3 sm:p-4 md:p-5 w-full md:w-[30%]">
-                <h3 className="text-xl sm:text-2xl md:text-[24px] font-[700] font-['Montserrat'] leading-[110%] sm:leading-[105%] md:leading-[100%] tracking-[0%] align-middle text-[#003366] mb-4 sm:mb-6 md:mb-8">Our Features</h3>
-                <div className="space-y-4 sm:space-y-6 md:space-y-8">
-                  <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">1.</div>
-                    <p className="text-sm sm:text-base md:text-lg text-gray-600">Virtual consultations</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        )}
-        {showMore && activeProd === 4 && (
-          <div className="relative bg-white overflow-hidden">
-            <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 sm:py-4 md:py-8 lg:py-10 flex flex-col md:flex-row gap-4 md:gap-0">
-              <div className="space-y-4 sm:space-y-5 md:space-y-6 bg-white rounded-lg p-3 sm:p-4 md:p-5 w-full md:w-[70%]">
-                <h3 className="text-xl sm:text-2xl md:text-[24px] font-[700] font-['Montserrat'] leading-[110%] sm:leading-[105%] md:leading-[100%] tracking-[0%] align-middle text-[#003366] mb-4 sm:mb-6 md:mb-8">How It Works</h3>
-                <div className="space-y-3 sm:space-y-4">
-                  <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">1.</div>
-                    <p className="text-sm sm:text-base md:text-lg text-gray-600">The TDM delivers instant health checkups with vitals, ECG, blood tests, and imaging tools—providing accurate, digital results within minutes for fast, data-driven medical consultations.</p>
-                  </div>
-
-                  <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">2.</div>
-                    <p className="text-sm sm:text-base md:text-lg text-gray-600">Patients can either walk in or schedule an appointment or with help from the on-site nurse.</p>
-                  </div>
-                  <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">3.</div>
-                    <p className="text-sm sm:text-base md:text-lg text-gray-600">Real-time diagnostic consultations with experienced doctors — bringing expert medical care to patients, right from the comfort of their homes.</p>
-                  </div>
-                  <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">4.</div>
-                    <p className="text-sm sm:text-base md:text-lg text-gray-600">The doctor uploads a digital prescription and suggests follow-up or specialist care if required, while the on-site nurse guides the patient in understanding and executing the next steps.</p>
-                  </div>
-                </div>
-              </div>
-              <div className="space-y-4 bg-white rounded-lg p-3 sm:p-4 md:p-5 w-full md:w-[30%]">
-                <h3 className="text-xl sm:text-2xl md:text-[24px] font-[700] font-['Montserrat'] leading-[110%] sm:leading-[105%] md:leading-[100%] tracking-[0%] align-middle text-[#003366] mb-4 sm:mb-6 md:mb-8">Our Features</h3>
-                <div className="space-y-4 sm:space-y-6 md:space-y-8">
-                  <div className="flex items-start gap-1 sm:gap-2 md:gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center text-gray-600">1.</div>
-                    <p className="text-sm sm:text-base md:text-lg text-gray-600">Virtual consultations</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        )}
       </div>
 
       {/* Testimonials Section */}

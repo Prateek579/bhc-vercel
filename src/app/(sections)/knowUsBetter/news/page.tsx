@@ -6,30 +6,6 @@ import React, { useState } from 'react';
 
 export default function News() {
     const [activeTab, setActiveTab] = useState('NEWS');
-
-    const tabContent = {
-        NEWS: Array(9).fill({
-            image: "/icons/ns-2-img.png",
-            title: "Revolutionizing Healthcare with Smart Diagnostics",
-            description: "Smart Healthcare Machines enable real-time monitoring, remote consultations.",
-            date: "March 11 2025",
-            location: "Murshidapur"
-        }),
-        BLOGS: Array(9).fill({
-            image: "/icons/ns-2-img2.png",
-            title: "The Future of Telemedicine",
-            description: "Exploring how telemedicine is transforming healthcare delivery worldwide.",
-            date: "March 15 2025",
-            location: "Online"
-        }),
-        ACHIEVEMENTS: Array(9).fill({
-            image: "/icons/ns-2-img3.png",
-            title: "Bridge Healthcare Wins Innovation Award",
-            description: "Recognized for outstanding contributions to healthcare technology.",
-            date: "March 20 2025",
-            location: "New Delhi"
-        })
-    };
     return (
         <>
             <div className="relative overflow-hidden">
@@ -67,12 +43,14 @@ export default function News() {
                                 NEWS
                             </button>
                             <button
+                                disabled
                                 onClick={() => setActiveTab('BLOGS')}
                                 className={`px-6 sm:px-8 lg:px-12 py-2 sm:py-2.5 text-sm sm:text-base lg:text-lg font-medium text-[#1A1A1A] bg-white font-bold leading-[100%] text-center align-middle ${activeTab === 'BLOGS' ? 'border-b-2 border-black' : ''}`}
                             >
                                 BLOGS
                             </button>
                             <button
+                                disabled
                                 onClick={() => setActiveTab('ACHIEVEMENTS')}
                                 className={`px-6 sm:px-8 lg:px-12 py-2 sm:py-2.5 text-sm sm:text-base lg:text-lg font-medium text-[#1A1A1A] bg-white font-bold leading-[100%] text-center align-middle ${activeTab === 'ACHIEVEMENTS' ? 'border-b-2 border-black' : ''}`}
                             >
@@ -82,31 +60,103 @@ export default function News() {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-                        {tabContent[activeTab as keyof typeof tabContent].map((item: { image: string; title: string; description: string; date: string; location: string; }, index) => (
-                            <div key={index} className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                                <div className="relative h-40 sm:h-44 lg:h-48">
-                                    <Image
-                                        src={item.image}
-                                        alt="Healthcare news"
-                                        layout="fill"
-                                        objectFit="cover"
-                                    />
-                                </div>
-                                <div className="p-4 sm:p-5 lg:p-6">
-                                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">
-                                        {item.title}
-                                    </h3>
-                                    <p className="text-xs sm:text-sm lg:text-base text-gray-600 mb-3 sm:mb-4">
-                                        {item.description}
-                                    </p>
-                                    <div className="flex items-center text-xs sm:text-sm text-gray-500">
-                                        <span>{item.date}</span>
-                                        <span className="mx-2">|</span>
-                                        <span>{item.location}</span>
-                                    </div>
+
+                        <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                            <div className="relative h-50 sm:h-70 lg:h-100">
+                                <Image
+                                    src="/icons/ns-2-img1.png"
+                                    alt="Healthcare news"
+                                    layout="fill"
+                                    objectFit="h-full"
+                                />
+                            </div>
+                            <div className="p-4 sm:p-5 lg:p-6">
+                                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">
+                                    Railways Introduces Affordable Health Testing for Passengers at Stations
+                                </h3>
+                                <p className="text-xs sm:text-sm lg:text-base text-gray-600 mb-3 sm:mb-4">
+                                    n a significant step towards passenger welfare, the railway authorities have launched an affordable health testing facility at platforms. Passengers can now get tested for conditions like fever and blood-related issues at a minimal cost, with reports available digitally within 8 to 10 minutes. The service currently accommodates 10 to 12 passengers daily.
+                                </p>
+                                <div className="flex items-center text-xs sm:text-sm text-gray-500">
+                                    <span>March 15 2025</span>
+                                    <span className="mx-2">|</span>
+                                    <span>Murshidapur</span>
                                 </div>
                             </div>
-                        ))}
+                        </div>
+                        <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                            <div className="relative h-40 sm:h-44 lg:h-48">
+                                <Image
+                                    src="/icons/ns-2-img6.png"
+                                    alt="Healthcare news"
+                                    layout="fill"
+                                    objectFit="cover"
+                                />
+                            </div>
+                            <div className="p-4 sm:p-5 lg:p-6">
+                                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">
+                                    With the support of the Ruth Foundation Charitable Trust, India&apos;s first Tele-Diagnostic and Tele-Consultation service is now available at Ashirbad Diagnostics in Nabagram.
+                                </h3>
+                                <p className="text-xs sm:text-sm lg:text-base text-gray-600 mb-3 sm:mb-4">
+                                    India&apos;s first Tele-Diagnostic and Tele-Consultation service has launched at Ashirbad Diagnostics in Nabagram, West Bengal, with support from the Ruth Foundation Charitable Trust. This initiative brings remote diagnostic and consultation services to underserved communities. By leveraging telemedicine, the project aims to close healthcare gaps in rural areas—marking a major step toward improved medical access across India.
+                                </p>
+                                <div className="flex items-center text-xs sm:text-sm text-gray-500">
+                                    <span>March 15 2025</span>
+                                    <span className="mx-2">|</span>
+                                    <span>Murshidapur</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                            <div className="relative h-40 sm:h-44 lg:h-48">
+                                <Image
+                                    src="/icons/ns-2-img4.png"
+                                    alt="Healthcare news"
+                                    layout="fill"
+                                    objectFit="cover"
+                                />
+                            </div>
+                            <div className="p-4 sm:p-5 lg:p-6">
+                                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">
+                                    MLA Kanai Chandra Mondal Inaugurates Ashirbad Diagnostic Centre in Nabagram
+                                </h3>
+                                <p className="text-xs sm:text-sm lg:text-base text-gray-600 mb-3 sm:mb-4">
+                                    MLA Kanai Chandra Mondal officially inaugurated the Ashirbad Diagnostic Centre in Nabagram by cutting the ribbon at Ashirbad Pathological Laboratory. People from all religions and local dignitaries attended the event, celebrating the launch of a much-needed healthcare facility in the area. The MLA highlighted how this center will save residents from traveling to Berhampore for routine medical tests.
+
+
+                                </p>
+                                <div className="flex items-center text-xs sm:text-sm text-gray-500">
+                                    <span>March 15 2025</span>
+                                    <span className="mx-2">|</span>
+                                    <span>Murshidapur</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                            <div className="relative h-40 sm:h-44 lg:h-48">
+                                <Image
+                                    src="/icons/ns-2-img5.png"
+                                    alt="Healthcare news"
+                                    layout="fill"
+                                    objectFit="cover"
+                                />
+                            </div>
+                            <div className="p-4 sm:p-5 lg:p-6">
+                                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">
+                                    India&apos;s First Tele-Diagnostic and Tele-Consultation Service Now in Nabagram
+                                </h3>
+                                <p className="text-xs sm:text-sm lg:text-base text-gray-600 mb-3 sm:mb-4">
+                                    With support from the Ruth Foundation Charitable Trust, India&apos;s first Tele-Diagnostic and Tele-Consultation service has been launched at Ashirbad Diagnostic Centre, Nabagram. This initiative aims to provide rural communities with accessible, digital healthcare services. The facility will enable locals to undergo various tests and consult doctors remotely—bridging critical healthcare gaps in the region.
+
+
+                                </p>
+                                <div className="flex items-center text-xs sm:text-sm text-gray-500">
+                                    <span>March 15 2025</span>
+                                    <span className="mx-2">|</span>
+                                    <span>Murshidapur</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

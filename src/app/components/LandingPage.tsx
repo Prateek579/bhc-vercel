@@ -314,7 +314,7 @@ const LandingPage = () => {
         style={{ background: 'linear-gradient(90deg, rgba(24, 160, 147, 0.7) 0%, rgba(18, 131, 135, 0.7) 33.17%, rgba(11, 100, 122, 0.7) 64.42%, rgba(6, 80, 114, 0.7) 87.02%, rgba(0, 51, 102, 0.7) 100%)' }}>
 
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22">
-          <h1 className='font-bold text-[20px] sm:text-[25px] md:text-[35px] lg:text-[45px] text-center'>Impact that Matter&apos;s</h1>
+          <h1 className='font-bold mb-2 md:mb-4 text-[20px] sm:text-[20px] md:text-[30px] lg:text-[40px] text-center'>Impact that matter&apos;s</h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 text-white">
             {/* Specialist Referrals */}
             <div className="flex flex-col items-center justify-center text-center p-3 sm:p-4 md:p-5 h-[140px] sm:h-[150px] md:h-[160px] space-y-3 sm:space-y-4">
@@ -950,88 +950,82 @@ const LandingPage = () => {
             {/* Text Content */}
 
             {/* Product List */}
-            <div className="border-2 border-gray-200 group hover:cursor-pointer flex items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300 group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366]" >
-              <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
-                <Image src="/icons/prd-2-lgo1.png" alt="Smart Healthcare Machine" width={32} height={32} className="w-full h-full" />
-              </div>
-              <p className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white">Smart Healthcare Machine</p>
-              <div className="ml-auto hidden group-hover:block">
-                <div className='flex flex-row items-center'>
-                  <Link href="/ourProducts"
-                    className="text-white"
-                  >
-                    Know More
-                  </Link>
-                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
+            <Link href="/ourProducts" className="w-full">
+              <div className="border-2 border-gray-200 group hover:cursor-pointer flex items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300 group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366]" >
+                <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
+                  <Image src="/icons/prd-2-lgo1.png" alt="Smart Healthcare Machine" width={32} height={32} className="w-full h-full" />
+                </div>
+                <p className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white">Smart Healthcare Machine</p>
+                <div className="ml-auto hidden group-hover:block">
+                  <div className='flex flex-row items-center'>
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
+            <Link href="/ourProducts"
+            >
 
-            <div className="border-2 border-gray-200 group hover:cursor-pointer flex items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300 group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366]" >
-              <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
-                <Image src="/icons/prd-2-lgo1.png" alt="Doctor App" width={32} height={32} />
-              </div>
-              <p className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white">Doctor App</p>
-              <div className="ml-auto hidden group-hover:block ">
-                <div className='flex flex-row items-center'>
-                  <Link href="/ourProducts"
-                    className="text-[#003366] group-hover:text-white"
-                  >
-                    Know More
-                  </Link>
-                  <svg className="w-5 h-5 text-[#003366] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
+              <div className="border-2 border-gray-200 group hover:cursor-pointer flex items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300 group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366]" >
+                <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
+                  <Image src="/icons/prd-2-lgo1.png" alt="Doctor App" width={32} height={32} />
+                </div>
+                <p className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white">Doctor App</p>
+                <div className="ml-auto hidden group-hover:block ">
+                  <div className='flex flex-row items-center'>
+                    <svg className="w-5 h-5 text-[#003366] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
 
-            <div className="border-2 border-gray-200 group hover:cursor-pointer flex items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300  group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366]" >
-              <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
-                <Image src="/icons/prd-2-log2.png" alt="Patient App" width={32} height={32} />
-              </div>
-              <p className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white">Patient App</p>
-              <div className="ml-auto hidden group-hover:block">
-                <div className='flex flex-row items-center'>
-                  <Link href="/ourProducts"
-                    className="text-[#003366] group-hover:text-white"
-                  >
-                    Know More
-                  </Link>
-                  <svg className="w-5 h-5 text-[#003366] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
+            <Link href="/ourProducts"
+            >
+
+              <div className="border-2 border-gray-200 group hover:cursor-pointer flex items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300  group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366]" >
+                <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
+                  <Image src="/icons/prd-2-log2.png" alt="Patient App" width={32} height={32} />
+                </div>
+                <p className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white">Patient App</p>
+                <div className="ml-auto hidden group-hover:block">
+                  <div className='flex flex-row items-center'>
+                    <svg className="w-5 h-5 text-[#003366] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
+
+            <Link href="/ourProducts"
+            >
 
 
-            <div className="border-2 border-gray-200 hover:cursor-pointer group flex items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300 group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366]" >
-              <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
-                <Image src="/icons/prd-2-log2.png" alt="Operator / Nurse App" width={32} height={32} />
-              </div>
-              <p className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white">Nurse App</p>
-              <div className="ml-auto hidden group-hover:block">
-                <div className='flex flex-row items-center'>
-                  <Link href="/ourProducts"
-                    className="text-[#003366] group-hover:text-white"
-                  >
-                    Know More
-                  </Link>
-                  <svg className="w-5 h-5 text-[#003366] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
+              <div className="border-2 border-gray-200 hover:cursor-pointer group flex items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300 group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366]" >
+                <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
+                  <Image src="/icons/prd-2-log2.png" alt="Operator / Nurse App" width={32} height={32} />
+                </div>
+                <p className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white">Nurse App</p>
+                <div className="ml-auto hidden group-hover:block">
+                  <div className='flex flex-row items-center'>
+
+                    <svg className="w-5 h-5 text-[#003366] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
 
             <div className="mt-12">
               <Link href="/contactUs"
                 className="inline-block px-8 py-3 border-1 border-[#003366] text-[#003366] rounded-xl font-semibold hover:bg-[#003366] hover:text-white transition-all duration-300"
               >
-                Scheduled Demo
+                Schedule Demo
               </Link>
             </div>
           </div>
@@ -1217,7 +1211,7 @@ const LandingPage = () => {
                   className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
                 />
               </div>
-              <p className="text-[#616161] mb-4 sm:mb-6 font-['Montserrat'] text-sm sm:text-base sm:text-base font-[400] leading-[100%] align-middle tracking-[0%]">
+              <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
                 As a gastroenterologist, having quick access to liver function tests, vitals, and previous reports helps me make decisions with greater clarity. The SHM platform makes all of this available in a single interface. It feels organized and efficient, especially during follow-ups and chronic care management.
               </p>
               <div className="flex items-center">
@@ -1249,7 +1243,7 @@ const LandingPage = () => {
                   className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
                 />
               </div>
-              <p className="text-[#616161] mb-4 sm:mb-6 font-['Montserrat'] text-sm sm:text-base sm:text-base font-[400] leading-[100%] align-middle tracking-[0%]">
+              <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
                 The SHM platform stands out with its ability to organize and present all necessary patient data—especially radiology reports like MRIs and CTs—before I begin my consultation. It brings a lot of clarity to my decision-making and allows me to focus directly on the clinical need.
               </p>
               <div className="flex items-center">
@@ -1280,7 +1274,7 @@ const LandingPage = () => {
                   className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
                 />
               </div>
-              <p className="text-[#616161] mb-4 sm:mb-6 font-['Montserrat'] text-sm sm:text-base sm:text-base font-[400] leading-[100%] align-middle tracking-[0%]">
+              <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
                 In cardiology, speed and accuracy are essential. SHM delivers real-time 12-lead ECGs that are clear and immediate. Combined with vitals and patient history, it gives me all the inputs I need to make confident and timely clinical decisions. It’s an excellent tool for proactive cardiac care.
               </p>
               <div className="flex items-center">
@@ -1309,7 +1303,7 @@ const LandingPage = () => {
                   className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
                 />
               </div>
-              <p className="text-[#616161] mb-4 sm:mb-6 font-['Montserrat'] text-sm sm:text-base sm:text-base font-[400] leading-[100%] align-middle tracking-[0%]">
+              <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
                 SHM has helped me connect with patients across all stages—from fertility counseling to postnatal care. I can easily access hormone profiles, ultrasound reports, and vitals. The digital prescription pad is seamless—I can document symptoms, prescribe medications or tests, and sign everything in one place.
               </p>
               <div className="flex items-center">
@@ -1338,7 +1332,7 @@ const LandingPage = () => {
                   className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
                 />
               </div>
-              <p className="text-[#616161] mb-4 sm:mb-6 font-['Montserrat'] text-sm sm:text-base sm:text-base font-[400] leading-[100%] align-middle tracking-[0%]">
+              <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
                 What I value most is the time-saving design. The digital queue, instant patient summaries, and seamless transition to the next case help me respond swiftly. With all reports and vitals ready when I join the call, every second is utilized effectively.
               </p>
               <div className="flex items-center">
@@ -1367,7 +1361,7 @@ const LandingPage = () => {
                   className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
                 />
               </div>
-              <p className="text-[#616161] mb-4 sm:mb-6 font-['Montserrat'] text-sm sm:text-base sm:text-base font-[400] leading-[100%] align-middle tracking-[0%]">
+              <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
                 For surgical follow-ups and cosmetic consultations, SHM gives me everything I need—clinical images, vitals, and case history—well before I begin the consultation. It’s efficient and ensures I can provide precise guidance, even for patients consulting from a distance.
               </p>
               <div className="flex items-center">
@@ -1396,7 +1390,7 @@ const LandingPage = () => {
                   className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
                 />
               </div>
-              <p className="text-[#616161] mb-4 sm:mb-6 font-['Montserrat'] text-sm sm:text-base sm:text-base font-[400] leading-[100%] align-middle tracking-[0%]">
+              <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
                 I find the SHM platform incredibly useful for reviewing patient X-rays, post-op images, and orthopedic test results. The structured format, combined with real-time vitals and symptom input, makes remote orthopedic evaluations smoother and more accurate.
               </p>
               <div className="flex items-center">
@@ -1425,7 +1419,7 @@ const LandingPage = () => {
                   className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
                 />
               </div>
-              <p className="text-[#616161] mb-4 sm:mb-6 font-['Montserrat'] text-sm sm:text-base sm:text-base font-[400] leading-[100%] align-middle tracking-[0%]">
+              <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
                 In dermatology, image quality is critical. The SHM delivers high-resolution dermatoscope images, along with all relevant patient information in one place. It has made remote consultations feel just as thorough and reliable as in-person visits.
               </p>
               <div className="flex items-center">

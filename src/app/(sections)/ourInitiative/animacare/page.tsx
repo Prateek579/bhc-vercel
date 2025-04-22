@@ -273,15 +273,15 @@ export default function Animacare() {
 
     <div className="relative overflow-hidden bg-white">
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
+        <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+          <span className="text-[#17A7AB]">Animacare</span>{' '}
+          <span className="text-[#003366]">Initiative</span>
+        </h2>
+        <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium">
+          To effectively cater to the healthcare needs of rural regions, we will develop a Mobile Tele-Clinic Unit that complements the Tele-Diagnostic and Tele-Consultation Centers in sub-divisions of district. This solution ensures that even the most geographically isolated communities have access to primary and preventive healthcare.
+        </p>
         <div className="flex flex-col md:flex-row items-center justity-between">
           <div className="space-y-6 w-[65%]">
-            <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
-              <span className="text-[#17A7AB]">Animacare</span>{' '}
-              <span className="text-[#003366]">Initiative</span>
-            </h2>
-            <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium">
-              To effectively cater to the healthcare needs of rural regions, we will develop a Mobile Tele-Clinic Unit that complements the Tele-Diagnostic and Tele-Consultation Centers in sub-divisions of district. This solution ensures that even the most geographically isolated communities have access to primary and preventive healthcare.
-            </p>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* TDTC Column */}
               <div className="bg-white p-6 ">
@@ -299,9 +299,9 @@ export default function Animacare() {
                     <h3 className="text-xl font-semibold text-[#333333]">Tele-Diagnostic & Tele-Consultation Centre</h3>
                   </div>
                 </div>
-                <div className="mt-4">
+                <div className="mt-4 flex flex-col items-center">
                   <h4 className="text-lg font-medium mb-3 text-[#333333]">TDTC Elements:</h4>
-                  <ul className="space-y-2 text-sm sm:text-base md:text-lg text-gray-600  ">
+                  <ul className="space-y-2 text-sm sm:text-base md:text-lg text-gray-600 flex flex-col items-center">
                     <li>Smart Healthcare Machine</li>
                     <li>2 Nurses, 1 Supervisor</li>
                     <li>Clinic Inventory</li>
@@ -326,9 +326,9 @@ export default function Animacare() {
                     <h3 className="text-xl font-semibold text-[#333333]">Mobile Tele-Clinic Unit</h3>
                   </div>
                 </div>
-                <div className="mt-4">
+                <div className="mt-4 flex flex-col items-center">
                   <h4 className="text-lg font-medium mb-3 text-[#333333]">MTCU Elements:</h4>
-                  <ul className="space-y-2 text-sm sm:text-base md:text-lg text-gray-600">
+                  <ul className="space-y-2 text-sm sm:text-base md:text-lg text-gray-600 flex flex-col items-center">
                     <li>Smart Healthcare Machine</li>
                     <li>2 Nurses, 1 Driver</li>
                     <li>Clinic Inventory</li>
@@ -338,13 +338,13 @@ export default function Animacare() {
             </div>
           </div>
 
-          <div className="relative flex items-center justify-center w-[35%]">
+          <div className="relative  flex items-center justify-center w-[35%] md:border-l-2 md:border-[#003366]">
             <Image
               src="/icons/anim-5-img.png"
               alt="Tele-Consultation"
               width={150}
               height={100}
-              className="h-full w-full w-auto rounded-lg "
+              className="h-[80%] w-[80%] rounded-lg "
             />
           </div>
         </div>
@@ -445,68 +445,100 @@ export default function Animacare() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-8 items-start">
+        <div className="grid grid-cols-1 space-y-4 md:space-y-8">
           {/* Left Column - TDTC Information */}
-          <div className="flex flex-col h-full items-center justify-between">
-            {/* First TDTC Box */}
-            <div className="bg-white w-full p-6 rounded-lg border border-gray-200 shadow-sm transition-all duration-300">
-              <div className="flex items-center gap-4 mb-6">
-                <Image
-                  src="/icons/anim-6-lgo2.png"
-                  alt="TDTC Icon"
-                  width={40}
-                  height={40}
-                  className="flex-shrink-0"
-                />
-                <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">Tele-Diagnostic & Tele-Consultation Centre</h3>
-              </div>
-              <ul className="text-gray-600">
-                <li className="flex items-start gap-2 text-sm sm:text-base md:text-lg text-gray-600">
-                  <span className="w-2 h-2 bg-[#17A7AB] rounded-full mt-[0.5em]"></span>
-                  <span>Installed at district sub-divisions, serving as the main center for healthcare services.</span>
-                </li>
-                <li className="flex items-start gap-2 text-sm sm:text-base md:text-lg text-gray-600">
-                  <span className="w-2 h-2 bg-[#17A7AB] rounded-full mt-[0.5em]"></span>
-                  <span>Staffed with specialist doctors (via telemedicine), nurses and technicians.</span>
-                </li>
-                <li className="flex items-start gap-2 text-sm sm:text-base md:text-lg text-gray-600">
-                  <span className="w-2 h-2 bg-[#17A7AB] rounded-full mt-[0.5em]"></span>
-                  <span>Equipped with Smart Healthcare Machine, ECG facility, advanced diagnostic tools and EHR.</span>
-                </li>
-              </ul>
-            </div>
 
-            {/* Second TDTC Box */}
-            <div className="w-full p-6 rounded-lg border border-gray-200 shadow-sm transition-all duration-300">
-              <div className="flex items-center gap-4 mb-6">
-                <Image
-                  src="/icons/anim-6-lgo2.png"
-                  alt="TDTC Icon"
-                  width={40}
-                  height={40}
-                  className="flex-shrink-0"
-                />
-                <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">Mobile Tele-Clinic Unit</h3>
-              </div>
-              <ul className="text-gray-600">
-                <li className="flex items-start gap-2 text-sm sm:text-base md:text-lg text-gray-600">
-                  <span className="w-2 h-2 bg-[#17A7AB] rounded-full mt-[0.5em]"></span>
-                  <span>Each TDTC is supported by 1 MTCUs per 300 sq. km area.</span>
-                </li>
-                <li className="flex items-start gap-2 text-sm sm:text-base md:text-lg text-gray-600">
-                  <span className="w-2 h-2 bg-[#17A7AB] rounded-full mt-[0.5em]"></span>
-                  <span>MTCUs travel daily to remote villages, providing on-site health screenings, diagnostics and tele-consultations.</span>
-                </li>
-                <li className="flex items-start gap-2 text-sm sm:text-base md:text-lg text-gray-600">
-                  <span className="w-2 h-2 bg-[#17A7AB] rounded-full mt-[0.5em]"></span>
-                  <span>Each MTCU has 2 nurses and a driver, ensuring full medical assistance on the ground.</span>
-                </li>
-              </ul>
+          {/* First TDTC Box */}
+          <div
+            onClick={(e) => handleToggle(e, 'tdtc')}
+            className={`w-full p-6 rounded-lg border border-gray-200 shadow-sm transition-all duration-300 card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] ${activeCard === 'tdtc' ? 'touch-hover' : ''}`}
+          >
+            <div className="flex items-center gap-4 mb-6">
+              <Image
+                src="/icons/anim-6-lgo2.png"
+                alt="TDTC Icon"
+                width={40}
+                height={40}
+                className="flex-shrink-0 group-hover:hidden touch-hover:hidden"
+              />
+              <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white touch-hover:text-white transition-colors duration-300">Tele-Diagnostic & Tele-Consultation Centre</h3>
             </div>
+            <ul className="text-gray-600 group-hover:text-white touch-hover:text-white transition-colors duration-300">
+              <li className="flex items-start gap-2 text-sm sm:text-base md:text-lg">
+                <span className="w-2 h-2 bg-[#17A7AB] group-hover:bg-white touch-hover:bg-white rounded-full mt-[0.5em]"></span>
+                <span>Installed at district sub-divisions, serving as the main center for healthcare services.</span>
+              </li>
+              <li className="flex items-start gap-2 text-sm sm:text-base md:text-lg">
+                <span className="w-2 h-2 bg-[#17A7AB] group-hover:bg-white touch-hover:bg-white rounded-full mt-[0.5em]"></span>
+                <span>Staffed with specialist doctors (via telemedicine), nurses and technicians.</span>
+              </li>
+              <li className="flex items-start gap-2 text-sm sm:text-base md:text-lg">
+                <span className="w-2 h-2 bg-[#17A7AB] group-hover:bg-white touch-hover:bg-white rounded-full mt-[0.5em]"></span>
+                <span>Equipped with Smart Healthcare Machine, ECG facility, advanced diagnostic tools and EHR.</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Second TDTC Box */}
+          <div
+            onClick={(e) => handleToggle(e, 'mtcu')}
+            className={`w-full p-6 rounded-lg border border-gray-200 shadow-sm transition-all duration-300 card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] ${activeCard === 'mtcu' ? 'touch-hover' : ''}`}
+          >
+            <div className="flex items-center gap-4 mb-6">
+              <Image
+                src="/icons/anim-6-lgo2.png"
+                alt="TDTC Icon"
+                width={40}
+                height={40}
+                className="flex-shrink-0 group-hover:hidden touch-hover:hidden"
+              />
+              <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white touch-hover:text-white transition-colors duration-300">Mobile Tele-Clinic Unit</h3>
+            </div>
+            <ul className="text-gray-600 group-hover:text-white touch-hover:text-white transition-colors duration-300">
+              <li className="flex items-start gap-2 text-sm sm:text-base md:text-lg">
+                <span className="w-2 h-2 bg-[#17A7AB] group-hover:bg-white touch-hover:bg-white rounded-full mt-[0.5em]"></span>
+                <span>Each TDTC is supported by 1 MTCUs per 300 sq. km area.</span>
+              </li>
+              <li className="flex items-start gap-2 text-sm sm:text-base md:text-lg">
+                <span className="w-2 h-2 bg-[#17A7AB] group-hover:bg-white touch-hover:bg-white rounded-full mt-[0.5em]"></span>
+                <span>MTCUs travel daily to remote villages, providing on-site health screenings, diagnostics and tele-consultations.</span>
+              </li>
+              <li className="flex items-start gap-2 text-sm sm:text-base md:text-lg">
+                <span className="w-2 h-2 bg-[#17A7AB] group-hover:bg-white touch-hover:bg-white rounded-full mt-[0.5em]"></span>
+                <span>Each MTCU has 2 nurses and a driver, ensuring full medical assistance on the ground.</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Third Referral Box */}
+          <div
+            onClick={(e) => handleToggle(e, 'referral')}
+            className={`w-full p-6 rounded-lg border border-gray-200 shadow-sm transition-all duration-300 card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] ${activeCard === 'referral' ? 'touch-hover' : ''}`}
+          >
+            <div className="flex items-center gap-4 mb-6">
+              <Image
+                src="/icons/anim-6-lgo2.png"
+                alt="TDTC Icon"
+                width={40}
+                height={40}
+                className="flex-shrink-0 group-hover:hidden touch-hover:hidden"
+              />
+              <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white touch-hover:text-white transition-colors duration-300">Seamless Referral & Follow-up System</h3>
+            </div>
+            <ul className="text-gray-600 group-hover:text-white touch-hover:text-white transition-colors duration-300">
+              <li className="flex items-start gap-2 text-sm sm:text-base md:text-lg">
+                <span className="w-2 h-2 bg-[#17A7AB] group-hover:bg-white touch-hover:bg-white rounded-full mt-[0.5em]"></span>
+                <span>Patients needing further treatment are referred to the nearest TDTC or partnered hospitals.</span>
+              </li>
+              <li className="flex items-start gap-2 text-sm sm:text-base md:text-lg">
+                <span className="w-2 h-2 bg-[#17A7AB] group-hover:bg-white touch-hover:bg-white rounded-full mt-[0.5em]"></span>
+                <span>AI-powered patient records ensure continuous monitoring and follow-ups at both MTCUs and TDTCs.</span>
+              </li>
+            </ul>
           </div>
 
           {/* Right Column - Network Flow Diagram */}
-          <div className="relative  w-full h-full flex items-center justify-center">
+          {/* <div className="relative  w-full h-full flex items-center justify-center">
             <Image
               src="/icons/anim-5-img.png"
               alt="TDTC Center"
@@ -514,7 +546,7 @@ export default function Animacare() {
               height={400}
               className="w-[80%] h-[80%]"
             />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
@@ -528,7 +560,7 @@ export default function Animacare() {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
           {/* Left Column */}
-          <div className="flex flex-col items-center justify-between h-full">
+          <div className="flex flex-col space-y-4 items-center justify-between h-full">
             <div
               onClick={(e) => handleToggle(e, 'card1')}
               className={`w-full flex flex-row items-center justify-between bg-white p-4 sm:p-6 rounded-lg border border-gray-200 transition-all duration-300 group card-hover 
@@ -546,8 +578,9 @@ export default function Animacare() {
                   Improved Access to Quality Healthcare in Underserved Areas
                 </h3>
                 <p className="text-gray-600 group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300 flex items-center gap-2 text-sm sm:text-base md:text-lg text-gray-600">
-                  <span className='text-[#003366]'>What we do:</span> Deploy SHMs in rural clinics, PHCs, and diagnostic centers with specialist consultation access
-                  Impact Metric:
+                  <span className='text-[#003366]'>What we do:</span> Deploy SHMs in rural clinics, PHCs, and diagnostic centers with specialist consultation access.
+                  <br />
+                  <span className='text-[#003366]'>Impact Metric:</span>
                   <br />
                   <span className=''>📍 Number of rural sites covered</span>
                   <br />
@@ -576,7 +609,8 @@ export default function Animacare() {
                 </h3>
                 <p className="text-gray-600 group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300 flex items-center gap-2 text-sm sm:text-base md:text-lg text-gray-600">
                   <span className='text-[#003366]'>What we do:</span> Conduct routine vitals & blood tests to detect conditions like diabetes, hypertension, anemia early
-                  Impact Metric:
+                  <br />
+                  <span className='text-[#003366]'>Impact Metric:</span>
                   <br />
                   🩺 Number of screenings conducted
                   <br />
@@ -607,7 +641,8 @@ export default function Animacare() {
                 </h3>
                 <p className="text-gray-600 group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300 flex items-center gap-2 text-sm sm:text-base md:text-lg text-gray-600">
                   <span className='text-[#003366]'>What we do:</span> Prioritize care through nurse-led support, flexible queue slots, and low-cost services
-                  Impact Metric:
+                  <br />
+                  <span className='text-[#003366]'>Impact Metric:</span>
                   <br />
                   👩‍🦳 Percentage of women and elderly served
                   <br />
@@ -632,7 +667,7 @@ export default function Animacare() {
           </div>
 
           {/* Right Column */}
-          <div className="flex flex-col items-center justify-between h-full">
+          <div className="flex flex-col space-y-4 items-center justify-between h-full">
             <div
               onClick={(e) => handleToggle(e, 'card4')}
               className={`w-full flex flex-row items-center justify-between bg-white p-4 sm:p-6 rounded-lg border border-gray-200 transition-all duration-300 group card-hover 
@@ -652,7 +687,8 @@ export default function Animacare() {
                 </h3>
                 <p className="text-gray-600 group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300 flex items-center gap-2 text-sm sm:text-base md:text-lg text-gray-600">
                   <span className='text-[#003366]'>What we do: </span> Maintain secure EHR for every patient across visits and consultations
-                  Impact Metric:
+                  <br />
+                  <span className='text-[#003366]'>Impact Metric:</span>
                   <br />
                   📂 Number of digital records created
                   <br />
@@ -683,7 +719,8 @@ export default function Animacare() {
                 </h3>
                 <p className="text-gray-600 group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300 flex items-center gap-2 text-sm sm:text-base md:text-lg text-gray-600">
                   <span className='text-[#003366]'>What we do: </span> Hire and train local nurses/operators to run SHM systems
-                  Impact Metric:
+                  <br />
+                  <span className='text-[#003366]'>Impact Metric:</span>
                   <br />
                   🧑‍⚕ Number of healthcare jobs created
                   <br />
@@ -714,7 +751,8 @@ export default function Animacare() {
                 </h3>
                 <p className="text-gray-600 group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300 flex items-center gap-2 text-sm sm:text-base md:text-lg text-gray-600">
                   <span className='text-[#003366]'>What we do: </span> Share anonymized, real-time health insights with hospitals, funders, and NGOs
-                  Impact Metric:
+                  <br />
+                  <span className='text-[#003366]'>Impact Metric:</span>
                   <br />
                   📡 Number of data points collected and reported
                   <br />

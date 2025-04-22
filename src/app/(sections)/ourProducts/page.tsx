@@ -7,8 +7,7 @@ import Link from 'next/link';
 
 export default function OurProducts() {
   const [activeFaq, setActiveFaq] = React.useState<string | null>(null);
-  // const [activeProd, setActiveProd] = React.useState<number | null>(1);
-  const [activeStep] = useState<string | null>(null);
+  const [activeStep, setActiveStep] = useState<string | null>(null);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   useEffect(() => {
@@ -29,12 +28,12 @@ export default function OurProducts() {
       const cards = document.querySelectorAll('.card-hover');
       cards.forEach(card => card.classList.remove('touch-hover'));
 
-      if (activeCard === cardId) {
+      if (activeStep === cardId) {
         e.currentTarget.classList.remove('touch-hover');
-        setActiveCard(null);
+        setActiveStep(null);
       } else {
         e.currentTarget.classList.add('touch-hover');
-        setActiveCard(cardId);
+        setActiveStep(cardId);
       }
     }
   };
@@ -101,9 +100,9 @@ export default function OurProducts() {
         {/* NEW CARD} */}
         <div className="py-4 sm:py-6 md:py-8 lg:py-10">
           <p className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4 text-[#003366]">Smart Healthcare Machine Features</p>
-          <div className="flex flex-col sm:flex-col md:flex-row space-y-4 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300">
-            <div className="w-[40%] items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 flex items-center justify-center border-r-2 border-[#003366] mr-5">
-              <Image src="/icons/hm-7-img.png" alt="Smart Healthcare Machine Features" width={32} height={32} className="w-auto h-[80%]" />
+          <div className="flex flex-col sm:flex-col md:flex-row space-y-4 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300 min-h-[300px]">
+            <div className="w-full md:w-[40%]  min-h-[300px] space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 flex items-center justify-center border-r-2 border-[#003366] mr-5">
+              <Image src="/icons/hm-7-img.png" alt="Smart Healthcare Machine Features" width={32} height={32} className="w-auto min-h-[300px] md:h-[80%] " />
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {/* Vitals Section */}
@@ -303,10 +302,10 @@ export default function OurProducts() {
         </div>
 
         {/* PRODUCT CONTENT */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 place-items-center">
           {/* Smart Healthcare Machine */}
           <div
-            className={`relative bg-white rounded-lg border-1 border-gray-300 overflow-hidden card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around min-h-[350px] ${activeCard === 'prod1' ? 'touch-hover' : ''}`}
+            className={`w-[70%] relative bg-white rounded-lg border-1 border-gray-300 overflow-hidden card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around min-h-[350px] ${activeCard === 'prod1' ? 'touch-hover' : ''}`}
             onClick={(e) => handleToggle(e, 'prod1')}
           >
             <div className="absolute inset-0 w-full h-[80%] group-hover:hidden touch-hover:hidden">
@@ -317,9 +316,8 @@ export default function OurProducts() {
                 height={200}
                 className='w-full h-full object-contain p-4'
               />
-
             </div>
-            <div className="absolute h-[20%] bottom-0 left-0 right-0 bg-black bg-opacity-80 p-3 group-hover:hidden">
+            <div className="absolute h-[20%] bottom-0 left-0 right-0 bg-black bg-opacity-80 p-3 group-hover:hidden touch-hover:hidden">
               <h3 className="text-[24px] font-[600] text-center text-white font-['Montserrat']">
                 Smart Healthcare Machine
               </h3>
@@ -339,7 +337,7 @@ export default function OurProducts() {
           </div>
           {/* Doctor App */}
           <div
-            className={`relative bg-white rounded-lg border-1 border-gray-300 overflow-hidden card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around min-h-[350px] ${activeCard === 'prod2' ? 'touch-hover' : ''}`}
+            className={`w-[70%] relative bg-white rounded-lg border-1 border-gray-300 overflow-hidden card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around min-h-[350px] ${activeCard === 'prod2' ? 'touch-hover' : ''}`}
             onClick={(e) => handleToggle(e, 'prod2')}
           >
             <div className="h-[80%] absolute inset-0 w-full group-hover:hidden touch-hover:hidden">
@@ -350,9 +348,8 @@ export default function OurProducts() {
                 height={200}
                 className='w-full h-full object-contain p-4'
               />
-
             </div>
-            <div className="h-[20%] absolute bottom-0 left-0 right-0 bg-black bg-opacity-80 p-3 group-hover:hidden">
+            <div className="absolute h-[20%] bottom-0 left-0 right-0 bg-black bg-opacity-80 p-3 group-hover:hidden touch-hover:hidden">
               <h3 className="text-[24px] font-[600] text-center text-white font-['Montserrat']">
                 Doctor App
               </h3>
@@ -373,7 +370,7 @@ export default function OurProducts() {
           </div>
           {/* Patient App */}
           <div
-            className={`relative bg-white rounded-lg border-1 border-gray-300 overflow-hidden card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around min-h-[350px] ${activeCard === 'prod3' ? 'touch-hover' : ''}`}
+            className={`w-[70%] relative bg-white rounded-lg border-1 border-gray-300 overflow-hidden card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around min-h-[350px] ${activeCard === 'prod3' ? 'touch-hover' : ''}`}
             onClick={(e) => handleToggle(e, 'prod3')}
           >
             <div className="h-[80%] absolute inset-0 w-full group-hover:hidden touch-hover:hidden">
@@ -384,9 +381,8 @@ export default function OurProducts() {
                 height={200}
                 className='w-full h-full object-contain p-4'
               />
-
             </div>
-            <div className="h-[20%] absolute bottom-0 left-0 right-0 bg-black bg-opacity-80 p-3 group-hover:hidden">
+            <div className="absolute h-[20%] bottom-0 left-0 right-0 bg-black bg-opacity-80 p-3 group-hover:hidden touch-hover:hidden">
               <h3 className="text-[24px] font-[600] text-center text-white font-['Montserrat']">
                 Patient App
               </h3>
@@ -407,7 +403,7 @@ export default function OurProducts() {
 
           {/* Nurse App */}
           <div
-            className={`relative bg-white rounded-lg border-1 border-gray-300 overflow-hidden card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around min-h-[350px] ${activeCard === 'prod4' ? 'touch-hover' : ''}`}
+            className={`w-[70%] relative bg-white rounded-lg border-1 border-gray-300 overflow-hidden card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around min-h-[350px] ${activeCard === 'prod4' ? 'touch-hover' : ''}`}
             onClick={(e) => handleToggle(e, 'prod4')}
           >
             <div className="h-[80%] absolute inset-0 w-full group-hover:hidden touch-hover:hidden">
@@ -418,9 +414,8 @@ export default function OurProducts() {
                 height={200}
                 className='w-full h-full object-contain p-4'
               />
-
             </div>
-            <div className="h-[20%] absolute bottom-0 left-0 right-0 bg-black bg-opacity-80 p-3 group-hover:hidden">
+            <div className="absolute h-[20%] bottom-0 left-0 right-0 bg-black bg-opacity-80 p-3 group-hover:hidden touch-hover:hidden">
               <h3 className="text-[24px] font-[600] text-center text-white font-['Montserrat']">
                 Nurse App
               </h3>
@@ -538,7 +533,7 @@ export default function OurProducts() {
         <div className="relative w-full max-w-4xl mx-auto aspect-video rounded-xl overflow-hidden shadow-lg">
           <iframe
             className="absolute top-0 left-0 w-full h-full"
-            src="https://www.youtube.com/embed/k4ox3iHLH-Q?si=WQrMyZUlS8sdUZA0"
+            src="https://www.youtube.com/embed/1SaZ5HdS0K4?si=5UFygb_j8uoTeNu8https://www.youtube.com/embed/1SaZ5HdS0K4?si=5UFygb_j8uoTeNu8"
             title="Product Demo Video"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen

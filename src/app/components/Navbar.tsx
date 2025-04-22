@@ -3,11 +3,13 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import '../styles/navbar.css';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const pathname = usePathname();
 
   const toggleDropdown = (title: string) => {
     setActiveDropdown(activeDropdown === title ? null : title);
@@ -52,20 +54,19 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <div className="relative group z-50">
-              <Link href="/ourProducts" className="nav-menu-item text-gray-700 hover:text-[#18A093] px-3 py-2 inline-flex items-center">
+              <Link href="/ourProducts" className={`nav-menu-item text-gray-700 hover:text-[#18A093] px-3 py-2 inline-flex items-center ${pathname === '/ourProducts' ? 'nav-menu-item-active' : ''}`}>
                 Products
               </Link>
             </div>
-
             <div className="relative group z-50">
-              <Link href="/ourSolution" className="nav-menu-item text-gray-700 hover:text-[#18A093] px-3 py-2 inline-flex items-center">
+              <Link href="/ourSolution" className={`nav-menu-item text-gray-700 hover:text-[#18A093] px-3 py-2 inline-flex items-center ${pathname === '/ourSolution' ? 'nav-menu-item-active' : ''}`}>
                 Solutions
               </Link>
             </div>
 
             <div className="relative group z-50">
               <button
-                className="nav-menu-item text-gray-700 hover:text-[#18A093] px-3 py-2 inline-flex items-center"
+                className={`nav-menu-item text-gray-700 hover:text-[#18A093] px-3 py-2 inline-flex items-center ${pathname.startsWith('/ourInitiative') ? 'nav-menu-item-active' : ''}`}
               >
                 Initiative
                 <svg
@@ -80,20 +81,19 @@ const Navbar = () => {
 
               <div className="dropdown-menu absolute left-0 mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
                 <div role="menu">
-                  <Link href="/ourInitiative/animacare" className="dropdown-item">
+                  <Link href="/ourInitiative/animacare" className={`dropdown-item ${pathname === '/ourInitiative/animacare' ? 'text-[#18A093] after:w-[calc(100%-2rem)]' : ''}`}>
                     <span className="dropdown-item-text">Animacare</span>
                   </Link>
-                  <Link href="/ourInitiative/decentralized" className="dropdown-item">
+                  <Link href="/ourInitiative/decentralized" className={`dropdown-item ${pathname === '/ourInitiative/decentralized' ? 'text-[#18A093] after:w-[calc(100%-2rem)]' : ''}`}>
                     <span className="dropdown-item-text">Decentralized Health Network</span>
                   </Link>
                 </div>
               </div>
-
             </div>
 
             <div className="relative group z-50">
               <button
-                className="nav-menu-item text-gray-700 hover:text-[#18A093] px-3 py-2 inline-flex items-center"
+                className={`nav-menu-item text-gray-700 hover:text-[#18A093] px-3 py-2 inline-flex items-center ${pathname.startsWith('/knowUsBetter') ? 'nav-menu-item-active' : ''}`}
               >
                 Know Us Better
                 <svg
@@ -108,19 +108,18 @@ const Navbar = () => {
 
               <div className="dropdown-menu absolute left-0 mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
                 <div role="menu">
-                  <Link href="/knowUsBetter/about" className="dropdown-item">
+                  <Link href="/knowUsBetter/about" className={`dropdown-item ${pathname === '/knowUsBetter/about' ? 'text-[#18A093] after:w-[calc(100%-2rem)]' : ''}`}>
                     <span className="dropdown-item-text">About Us</span>
                   </Link>
-                  <Link href="/knowUsBetter/news" className="dropdown-item">
+                  <Link href="/knowUsBetter/news" className={`dropdown-item ${pathname === '/knowUsBetter/news' ? 'text-[#18A093] after:w-[calc(100%-2rem)]' : ''}`}>
                     <span className="dropdown-item-text">News</span>
                   </Link>
                 </div>
               </div>
-
             </div>
 
             <div className="relative group z-50">
-              <Link href="/contactUs" className="nav-menu-item text-gray-700 hover:text-[#18A093] px-3 py-2 inline-flex items-center">
+              <Link href="/contactUs" className={`nav-menu-item text-gray-700 hover:text-[#18A093] px-3 py-2 inline-flex items-center ${pathname === '/contactUs' ? 'nav-menu-item-active' : ''}`}>
                 Contact Us
               </Link>
             </div>

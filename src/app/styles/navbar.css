@@ -38,6 +38,14 @@
   width: 100%;
 }
 
+.nav-menu-item-active::after {
+  width: 100%;
+}
+
+.nav-menu-item-active {
+  color: #18A093;
+}
+
 .dropdown-menu {
   background-color: white;
   border-radius: 8px;

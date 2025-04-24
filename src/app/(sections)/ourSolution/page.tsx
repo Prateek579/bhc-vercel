@@ -46,7 +46,7 @@ export default function OurSolution() {
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
         <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
           <span className="text-[#18A093]">Our</span>{' '}
-          <span className="text-[#003366]">Solution Overview</span>
+          <span className="text-[#003366]">Solution</span>
         </h2>
         <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
           The Smart Healthcare Machine improves healthcare with data-driven accessibility and efficiency.
@@ -56,8 +56,8 @@ export default function OurSolution() {
             <div className={`bg-white p-4 sm:p-5 lg:py-6 rounded-lg flex items-center space-x-2 sm:space-x-3 lg:space-x-4 cursor-pointer transition-shadow ${activeSol === 1 && 'border-2 border-gray-300 shadow-sm'}`} onClick={() => setActiveSol(1)}>
               <Image src="/icons/sol-2-lgo1.png"
                 alt='heart'
-                width={25}
-                height={25}
+                width={100}
+                height={100}
                 className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
               <span className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat']">Health Check Up</span>
             </div>
@@ -68,8 +68,8 @@ export default function OurSolution() {
                   <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
                     <Image src="/icons/sol-2-lgo4.png"
                       alt='heart'
-                      width={35}
-                      height={35}
+                      width={100}
+                      height={100}
                       className="w-10 h-10 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
                   </div>
                   <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Body Checkups 30+</h3>
@@ -84,8 +84,8 @@ export default function OurSolution() {
                   <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
                     <Image src="/icons/sol-2-lgo4.png"
                       alt='heart'
-                      width={40}
-                      height={40}
+                      width={100}
+                      height={100}
                       className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
                   </div>
                   <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Cardiac Checkups</h3>
@@ -103,8 +103,8 @@ export default function OurSolution() {
                       <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
                         <Image src="/icons/sol-2-lgo4.png"
                           alt='heart'
-                          width={40}
-                          height={40}
+                          width={100}
+                          height={100}
                           className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
                       </div>
                       <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Diabetes</h3>
@@ -119,8 +119,8 @@ export default function OurSolution() {
                       <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
                         <Image src="/icons/sol-2-lgo4.png"
                           alt='heart'
-                          width={40}
-                          height={40}
+                          width={100}
+                          height={100}
                           className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
                       </div>
                       <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Regular Checkups</h3>
@@ -145,8 +145,8 @@ export default function OurSolution() {
             <div className={`bg-white p-4 sm:p-5 lg:p-6 rounded-lg flex items-center space-x-2 sm:space-x-3 lg:space-x-4 cursor-pointer transition-shadow ${activeSol === 2 && 'border-2 border-gray-300 shadow-sm'}`} onClick={() => setActiveSol(2)}>
               <Image src="/icons/sol-2-lgo5.png"
                 alt='heart'
-                width={25}
-                height={25}
+                width={100}
+                height={100}
                 className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
               <span className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat']">Consultation</span>
             </div>
@@ -156,8 +156,8 @@ export default function OurSolution() {
                   <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
                     <Image src="/icons/sol-2-lgo4.png"
                       alt='heart'
-                      width={35}
-                      height={35}
+                      width={100}
+                      height={100}
                       className="w-10 h-10 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
                   </div>
                   <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Tele-Consultation services</h3>
@@ -172,8 +172,8 @@ export default function OurSolution() {
                   <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
                     <Image src="/icons/sol-2-lgo4.png"
                       alt='heart'
-                      width={40}
-                      height={40}
+                      width={100}
+                      height={100}
                       className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
                   </div>
                   <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Real-time Diagnostic interface</h3>
@@ -189,8 +189,8 @@ export default function OurSolution() {
                     <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
                       <Image src="/icons/sol-2-lgo4.png"
                         alt='heart'
-                        width={40}
-                        height={40}
+                        width={100}
+                        height={100}
                         className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
                     </div>
                     <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Tele-Digital Stethoscope</h3>
@@ -205,8 +205,8 @@ export default function OurSolution() {
                     <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
                       <Image src="/icons/sol-2-lgo4.png"
                         alt='heart'
-                        width={40}
-                        height={40}
+                        width={100}
+                        height={100}
                         className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
                     </div>
                     <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Advance modules</h3>
@@ -221,8 +221,8 @@ export default function OurSolution() {
                     <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
                       <Image src="/icons/sol-2-lgo4.png"
                         alt='heart'
-                        width={40}
-                        height={40}
+                        width={100}
+                        height={100}
                         className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
                     </div>
                     <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Upload Documents</h3>
@@ -236,8 +236,8 @@ export default function OurSolution() {
                     <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
                       <Image src="/icons/sol-2-lgo4.png"
                         alt='heart'
-                        width={40}
-                        height={40}
+                        width={100}
+                        height={100}
                         className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
                     </div>
                     <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Printed Prescription</h3>
@@ -261,8 +261,8 @@ export default function OurSolution() {
             <div className={`bg-white p-4 sm:p-5 lg:p-6 rounded-lg flex items-center space-x-2 sm:space-x-3 lg:space-x-4 cursor-pointer transition-shadow ${activeSol === 3 && 'border-2 border-gray-300 shadow-md'}`} onClick={() => setActiveSol(3)}>
               <Image src="/icons/sol-2-lgo5.png"
                 alt='heart'
-                width={25}
-                height={25}
+                width={100}
+                height={100}
                 className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
               <span className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat']">Hospital Connecting Service</span>
             </div>
@@ -272,8 +272,8 @@ export default function OurSolution() {
                   <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
                     <Image src="/icons/sol-2-lgo4.png"
                       alt='heart'
-                      width={35}
-                      height={35}
+                      width={100}
+                      height={100}
                       className="w-10 h-10 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
                   </div>
                   <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Hospital Specialists Connectivity</h3>
@@ -288,8 +288,8 @@ export default function OurSolution() {
                   <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
                     <Image src="/icons/sol-2-lgo4.png"
                       alt='heart'
-                      width={40}
-                      height={40}
+                      width={100}
+                      height={100}
                       className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
                   </div>
                   <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Admin Dashboard for Hospital Operations</h3>
@@ -305,8 +305,8 @@ export default function OurSolution() {
                     <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
                       <Image src="/icons/sol-2-lgo4.png"
                         alt='heart'
-                        width={40}
-                        height={40}
+                        width={100}
+                        height={100}
                         className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
                     </div>
                     <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Patient Referral & Inflow Support</h3>
@@ -321,8 +321,8 @@ export default function OurSolution() {
                     <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
                       <Image src="/icons/sol-2-lgo4.png"
                         alt='heart'
-                        width={40}
-                        height={40}
+                        width={100}
+                        height={100}
                         className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
                     </div>
                     <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Chronic & Preventive Care Program Partnerships</h3>
@@ -345,8 +345,8 @@ export default function OurSolution() {
             <div className={`bg-white p-4 sm:p-5 lg:p-6 rounded-lg flex items-center space-x-2 sm:space-x-3 lg:space-x-4 cursor-pointer transition-shadow ${activeSol === 4 && 'border-2 border-gray-300 shadow-md'}`} onClick={() => setActiveSol(4)}>
               <Image src="/icons/sol-2-lgo3.png"
                 alt='heart'
-                width={25}
-                height={25}
+                width={100}
+                height={100}
                 className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
               <span className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat']">Wellness Programs</span>
             </div>
@@ -357,8 +357,8 @@ export default function OurSolution() {
                 <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
                   <Image src="/icons/sol-2-lgo4.png"
                     alt='heart'
-                    width={35}
-                    height={35}
+                    width={100}
+                    height={100}
                     className="w-10 h-10 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
                 </div>
                 <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Dietary and Lifestyle Counseling</h3>
@@ -373,8 +373,8 @@ export default function OurSolution() {
                 <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
                   <Image src="/icons/sol-2-lgo4.png"
                     alt='heart'
-                    width={40}
-                    height={40}
+                    width={100}
+                    height={100}
                     className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
                 </div>
                 <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Educational Workshops and Resources</h3>
@@ -390,8 +390,8 @@ export default function OurSolution() {
                   <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
                     <Image src="/icons/sol-2-lgo4.png"
                       alt='heart'
-                      width={40}
-                      height={40}
+                      width={100}
+                      height={100}
                       className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
                   </div>
                   <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Tele-Consultations with Specialists</h3>
@@ -406,8 +406,8 @@ export default function OurSolution() {
                   <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
                     <Image src="/icons/sol-2-lgo4.png"
                       alt='heart'
-                      width={40}
-                      height={40}
+                      width={100}
+                      height={100}
                       className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
                   </div>
                   <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Personalized Health Checkups</h3>
@@ -434,8 +434,8 @@ export default function OurSolution() {
                 <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
                   <Image src="/icons/sol-2-lgo4.png"
                     alt='heart'
-                    width={35}
-                    height={35}
+                    width={100}
+                    height={100}
                     className="w-10 h-10 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
                 </div>
                 <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Body Checkups 30+</h3>
@@ -450,8 +450,8 @@ export default function OurSolution() {
                 <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
                   <Image src="/icons/sol-2-lgo4.png"
                     alt='heart'
-                    width={40}
-                    height={40}
+                    width={100}
+                    height={100}
                     className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
                 </div>
                 <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Cardiac Checkups</h3>
@@ -469,8 +469,8 @@ export default function OurSolution() {
                     <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
                       <Image src="/icons/sol-2-lgo4.png"
                         alt='heart'
-                        width={40}
-                        height={40}
+                        width={100}
+                        height={100}
                         className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
                     </div>
                     <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Diabetes</h3>
@@ -485,8 +485,8 @@ export default function OurSolution() {
                     <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
                       <Image src="/icons/sol-2-lgo4.png"
                         alt='heart'
-                        width={40}
-                        height={40}
+                        width={100}
+                        height={100}
                         className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
                     </div>
                     <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Regular Checkups</h3>
@@ -512,8 +512,8 @@ export default function OurSolution() {
                 <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
                   <Image src="/icons/sol-2-lgo4.png"
                     alt='heart'
-                    width={35}
-                    height={35}
+                    width={100}
+                    height={100}
                     className="w-10 h-10 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
                 </div>
                 <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Tele-Consultation services</h3>
@@ -528,8 +528,8 @@ export default function OurSolution() {
                 <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
                   <Image src="/icons/sol-2-lgo4.png"
                     alt='heart'
-                    width={40}
-                    height={40}
+                    width={100}
+                    height={100}
                     className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
                 </div>
                 <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Real-time Diagnostic interface</h3>
@@ -545,8 +545,8 @@ export default function OurSolution() {
                   <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
                     <Image src="/icons/sol-2-lgo4.png"
                       alt='heart'
-                      width={40}
-                      height={40}
+                      width={100}
+                      height={100}
                       className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
                   </div>
                   <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Tele-Digital Stethoscope</h3>
@@ -561,8 +561,8 @@ export default function OurSolution() {
                   <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
                     <Image src="/icons/sol-2-lgo4.png"
                       alt='heart'
-                      width={40}
-                      height={40}
+                      width={100}
+                      height={100}
                       className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
                   </div>
                   <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Advance modules</h3>
@@ -577,8 +577,8 @@ export default function OurSolution() {
                   <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
                     <Image src="/icons/sol-2-lgo4.png"
                       alt='heart'
-                      width={40}
-                      height={40}
+                      width={100}
+                      height={100}
                       className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
                   </div>
                   <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Upload Documents</h3>
@@ -592,8 +592,8 @@ export default function OurSolution() {
                   <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
                     <Image src="/icons/sol-2-lgo4.png"
                       alt='heart'
-                      width={40}
-                      height={40}
+                      width={100}
+                      height={100}
                       className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
                   </div>
                   <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Printed Prescription</h3>
@@ -619,8 +619,8 @@ export default function OurSolution() {
                 <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
                   <Image src="/icons/sol-2-lgo4.png"
                     alt='heart'
-                    width={35}
-                    height={35}
+                    width={100}
+                    height={100}
                     className="w-10 h-10 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
                 </div>
                 <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Hospital Specialists Connectivity</h3>
@@ -635,8 +635,8 @@ export default function OurSolution() {
                 <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
                   <Image src="/icons/sol-2-lgo4.png"
                     alt='heart'
-                    width={40}
-                    height={40}
+                    width={100}
+                    height={100}
                     className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
                 </div>
                 <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Admin Dashboard for Hospital Operations</h3>
@@ -652,8 +652,8 @@ export default function OurSolution() {
                   <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
                     <Image src="/icons/sol-2-lgo4.png"
                       alt='heart'
-                      width={40}
-                      height={40}
+                      width={100}
+                      height={100}
                       className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
                   </div>
                   <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Patient Referral & Inflow Support</h3>
@@ -668,8 +668,8 @@ export default function OurSolution() {
                   <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
                     <Image src="/icons/sol-2-lgo4.png"
                       alt='heart'
-                      width={40}
-                      height={40}
+                      width={100}
+                      height={100}
                       className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
                   </div>
                   <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Chronic & Preventive Care Program Partnerships</h3>
@@ -694,8 +694,8 @@ export default function OurSolution() {
                 <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
                   <Image src="/icons/sol-2-lgo4.png"
                     alt='heart'
-                    width={35}
-                    height={35}
+                    width={100}
+                    height={100}
                     className="w-10 h-10 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
                 </div>
                 <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Dietary and Lifestyle Counseling</h3>
@@ -710,8 +710,8 @@ export default function OurSolution() {
                 <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
                   <Image src="/icons/sol-2-lgo4.png"
                     alt='heart'
-                    width={40}
-                    height={40}
+                    width={100}
+                    height={100}
                     className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
                 </div>
                 <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Educational Workshops and Resources</h3>
@@ -727,8 +727,8 @@ export default function OurSolution() {
                   <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
                     <Image src="/icons/sol-2-lgo4.png"
                       alt='heart'
-                      width={40}
-                      height={40}
+                      width={100}
+                      height={100}
                       className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
                   </div>
                   <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Tele-Consultations with Specialists</h3>
@@ -743,8 +743,8 @@ export default function OurSolution() {
                   <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
                     <Image src="/icons/sol-2-lgo4.png"
                       alt='heart'
-                      width={40}
-                      height={40}
+                      width={100}
+                      height={100}
                       className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
                   </div>
                   <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Personalized Health Checkups</h3>
@@ -805,7 +805,7 @@ export default function OurSolution() {
               <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center">
                 <Image src="/icons/sol-3-lgo.png" alt="Dermatology" width={32} height={32} className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
               </div>
-              <h3 className="text-base sm:text-lg text-gray-500 text-cente group-hover:text-white">Pulmonary medicine</h3>
+              <h3 className="text-base sm:text-lg text-gray-500 text-center group-hover:text-white">Pulmonary medicine</h3>
             </div>
 
             <div className="hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg border border-gray-200 flex flex-col items-center space-y-3 sm:space-y-4">

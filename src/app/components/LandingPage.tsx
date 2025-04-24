@@ -314,7 +314,7 @@ const LandingPage = () => {
         style={{ background: 'linear-gradient(90deg, rgba(24, 160, 147, 0.7) 0%, rgba(18, 131, 135, 0.7) 33.17%, rgba(11, 100, 122, 0.7) 64.42%, rgba(6, 80, 114, 0.7) 87.02%, rgba(0, 51, 102, 0.7) 100%)' }}>
 
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22">
-          <h1 className='font-bold mb-2 md:mb-4 text-[20px] sm:text-[20px] md:text-[30px] lg:text-[40px] text-center'>Impact that matter&apos;s</h1>
+          <h1 className='font-bold mb-2 md:mb-4 text-[20px] sm:text-[20px] md:text-[30px] lg:text-[35px] text-center'>Impact that matters</h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 text-white">
             {/* Specialist Referrals */}
             <div className="flex flex-col items-center justify-center text-center p-3 sm:p-4 md:p-5 h-[140px] sm:h-[150px] md:h-[160px] space-y-3 sm:space-y-4">
@@ -381,182 +381,180 @@ const LandingPage = () => {
       {/* Our Addressing Key Challenges Section */}
       <div className="relative bg-white overflow-hidden">
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
+          <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+            <span className="text-[#18A093]">Addressing</span>{' '}
+            <span className="text-[#003366]">Key Challenges</span>
+          </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             {/* Text Content */}
             <div className="space-y-6">
-              <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
-                <span className="text-[#18A093]">Addressing</span>{' '}
-                <span className="text-[#003366]">Key Challenges</span>
-              </h2>
-              <div className="space-y-4">
-                <div className="flex flex-col space-y-2">
-                  <div
-                    className="flex flex-row items-center space-x-3 py-2 cursor-pointer"
-                    onClick={() => setActiveFaq(activeFaq === 'healthcare' ? null : 'healthcare')}
-                  >
-                    <div className="flex-shrink-0 mt-1 ">
-                      <Image src="/icons/hm-6-lgo.png" alt='logo image' width={25} height={25} />
-                    </div>
-                    <p className="text-[#003366] font-['Montserrat'] text-[18px] sm:text-[18px] md:text-[22px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize transition-opacity duration-300">Limited Access to Quality Healthcare</p>
-                    <svg
-                      className={`w-5 h-5 transform transition-transform ${activeFaq === 'healthcare' ? 'rotate-180' : ''}`}
-                      fill="none"
-                      stroke="#003366"
-                      viewBox="0 0 24 24"
-                    >
-                    </svg>
+              <div className="flex flex-col space-y-2">
+                <div
+                  className="flex flex-row items-center space-x-3 py-2 cursor-pointer"
+                  onClick={() => setActiveFaq(activeFaq === 'healthcare' ? null : 'healthcare')}
+                >
+                  <div className="flex-shrink-0 mt-1 ">
+                    <Image src="/icons/hm-6-lgo.png" alt='logo image' width={25} height={25} />
                   </div>
-                  {activeFaq === 'healthcare' && (
-                    <div className="pl-8 space-y-2 text-[#555555]">
-                      <p className="text-sm font-normal leading-relaxed">
-                        Quality healthcare remains out of reach for millions — whether in underserved rural areas or even in premium residential complexes where medical infrastructure is lacking.
-                      </p>
-                      <div className="mt-2">
-                        <p className="text-sm font-medium mb-1 text-[#003366]">BHC&apos;s Solution:</p>
-                        <ul className="list-disc pl-5 space-y-1 text-sm">
-                          <li>Deploys Smart Healthcare Machines (TDMs) in societies and remote regions to offer instant health checkups and real-time specialist consultations.</li>
-                          <li>Brings care to the doorstep — no hospital visits, no long waits.</li>
-                        </ul>
-                      </div>
-                    </div>
-                  )}
-                </div>
-                <div className="flex flex-col space-y-2">
-                  <div
-                    className="flex flex-row items-center space-x-3 py-2 cursor-pointer"
-                    onClick={() => setActiveFaq(activeFaq === 'telemedicine' ? null : 'telemedicine')}
+                  <p className="text-[#003366] font-['Montserrat'] text-[18px] sm:text-[18px] md:text-[22px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize transition-opacity duration-300">Limited Access to Quality Healthcare</p>
+                  <svg
+                    className={`w-5 h-5 transform transition-transform ${activeFaq === 'healthcare' ? 'rotate-180' : ''}`}
+                    fill="none"
+                    stroke="#003366"
+                    viewBox="0 0 24 24"
                   >
-                    <div className="flex-shrink-0 mt-1 ">
-                      <Image src="/icons/hm-6-lgo.png" alt='logo image' width={25} height={25} />
-                    </div>
-                    <p className="text-[#003366] font-['Montserrat'] text-[18px] sm:text-[18px] md:text-[22px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize transition-opacity duration-300">Lack of Real-Time, Integrated Diagnostics in Telemedicine</p>
-                    <svg
-                      className={`w-5 h-5 transform transition-transform ${activeFaq === 'telemedicine' ? 'rotate-180' : ''}`}
-                      fill="none"
-                      stroke="#003366"
-                      viewBox="0 0 24 24"
-                    >
-                    </svg>
-                  </div>
-                  {activeFaq === 'telemedicine' && (
-                    <div className="pl-8 space-y-2 text-[#555555]">
-                      <p className="text-sm font-normal leading-relaxed">
-                        While video consultations have become widespread, they lack the power of real-time diagnostic data — turning medical advice into educated guesses rather than precise treatment.
-                      </p>
-                      <div className="mt-2">
-                        <p className="text-sm font-medium mb-1 text-[#003366]">BHC&apos;s Solution:</p>
-                        <ul className="list-disc pl-5 space-y-1 text-sm">
-                          <li>Enables real-time transmission of vitals, ECG, stethoscope and imaging tools during live consultations.</li>
-                          <li>Doctors can now diagnose with real-time data, not assumptions.</li>
-                        </ul>
-                      </div>
-                    </div>
-                  )}
+                  </svg>
                 </div>
-                <div className="flex flex-col space-y-2">
-                  <div
-                    className="flex flex-row items-center space-x-3 py-2 cursor-pointer"
-                    onClick={() => setActiveFaq(activeFaq === 'preventive' ? null : 'preventive')}
+                {activeFaq === 'healthcare' && (
+                  <div className="pl-8 space-y-2 text-[#555555]">
+                    <p className="text-sm font-normal leading-relaxed">
+                      Quality healthcare remains out of reach for millions — whether in underserved rural areas or even in premium residential complexes where medical infrastructure is lacking.
+                    </p>
+                    <div className="mt-2">
+                      <p className="text-sm font-medium mb-1 text-[#003366]">BHC&apos;s Solution:</p>
+                      <ul className="list-disc pl-5 space-y-1 text-sm">
+                        <li>Deploys Smart Healthcare Machines (TDMs) in societies and remote regions to offer instant health checkups and real-time specialist consultations.</li>
+                        <li>Brings care to the doorstep — no hospital visits, no long waits.</li>
+                      </ul>
+                    </div>
+                  </div>
+                )}
+              </div>
+              <div className="flex flex-col space-y-2">
+                <div
+                  className="flex flex-row items-center space-x-3 py-2 cursor-pointer"
+                  onClick={() => setActiveFaq(activeFaq === 'telemedicine' ? null : 'telemedicine')}
+                >
+                  <div className="flex-shrink-0 mt-1 ">
+                    <Image src="/icons/hm-6-lgo.png" alt='logo image' width={25} height={25} />
+                  </div>
+                  <p className="text-[#003366] font-['Montserrat'] text-[18px] sm:text-[18px] md:text-[22px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize transition-opacity duration-300">Lack of Real-Time, Integrated Diagnostics in Telemedicine</p>
+                  <svg
+                    className={`w-5 h-5 transform transition-transform ${activeFaq === 'telemedicine' ? 'rotate-180' : ''}`}
+                    fill="none"
+                    stroke="#003366"
+                    viewBox="0 0 24 24"
                   >
-                    <div className="flex-shrink-0 mt-1 ">
-                      <Image src="/icons/hm-6-lgo.png" alt='logo image' width={25} height={25} />
-                    </div>
-                    <p className="text-[#003366] font-['Montserrat'] text-[18px] sm:text-[18px] md:text-[22px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize transition-opacity duration-300">Lack of Focus on Preventive and Chronic Disease Management</p>
-                    <svg
-                      className={`w-5 h-5 transform transition-transform ${activeFaq === 'preventive' ? 'rotate-180' : ''}`}
-                      fill="none"
-                      stroke="#003366"
-                      viewBox="0 0 24 24"
-                    >
-                    </svg>
-                  </div>
-                  {activeFaq === 'preventive' && (
-                    <div className="pl-8 space-y-2 text-[#555555]">
-                      <p className="text-sm font-normal leading-relaxed">
-                        Traditional healthcare systems focus primarily on treatment, leaving room to strengthen efforts in early detection, wellness tracking and continuous chronic care.
-                      </p>
-                      <div className="mt-2">
-                        <p className="text-sm font-medium mb-1 text-[#003366]">BHC&apos;s Solution:</p>
-                        <ul className="list-disc pl-5 space-y-1 text-sm">
-                          <li>Encourages regular health checkups and personalized wellness programs through its Smart Healthcare Machines and on-site nurse support.</li>
-                          <li>Helps individuals stay healthier, longer — by focusing on prevention, monitoring, and timely action.</li>
-                        </ul>
-                      </div>
-                    </div>
-                  )}
+                  </svg>
                 </div>
-                <div className="flex flex-col space-y-2">
-                  <div
-                    className="flex flex-row items-center space-x-3 py-2 cursor-pointer"
-                    onClick={() => setActiveFaq(activeFaq === 'disconnected' ? null : 'disconnected')}
+                {activeFaq === 'telemedicine' && (
+                  <div className="pl-8 space-y-2 text-[#555555]">
+                    <p className="text-sm font-normal leading-relaxed">
+                      While video consultations have become widespread, they lack the power of real-time diagnostic data — turning medical advice into educated guesses rather than precise treatment.
+                    </p>
+                    <div className="mt-2">
+                      <p className="text-sm font-medium mb-1 text-[#003366]">BHC&apos;s Solution:</p>
+                      <ul className="list-disc pl-5 space-y-1 text-sm">
+                        <li>Enables real-time transmission of vitals, ECG, stethoscope and imaging tools during live consultations.</li>
+                        <li>Doctors can now diagnose with real-time data, not assumptions.</li>
+                      </ul>
+                    </div>
+                  </div>
+                )}
+              </div>
+              <div className="flex flex-col space-y-2">
+                <div
+                  className="flex flex-row items-center space-x-3 py-2 cursor-pointer"
+                  onClick={() => setActiveFaq(activeFaq === 'preventive' ? null : 'preventive')}
+                >
+                  <div className="flex-shrink-0 mt-1 ">
+                    <Image src="/icons/hm-6-lgo.png" alt='logo image' width={25} height={25} />
+                  </div>
+                  <p className="text-[#003366] font-['Montserrat'] text-[18px] sm:text-[18px] md:text-[22px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize transition-opacity duration-300">Lack of Focus on Preventive and Chronic Disease Management</p>
+                  <svg
+                    className={`w-5 h-5 transform transition-transform ${activeFaq === 'preventive' ? 'rotate-180' : ''}`}
+                    fill="none"
+                    stroke="#003366"
+                    viewBox="0 0 24 24"
                   >
-                    <div className="flex-shrink-0 mt-1">
-                      <Image src="/icons/hm-6-lgo.png" alt='logo image' width={25} height={25} />
-                    </div>
-                    <p className="text-[#003366] font-['Montserrat'] text-[18px] sm:text-[18px] md:text-[22px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize transition-opacity duration-300">Disconnected Healthcare Journey and Lack of Timely Follow-up</p>
-                    <svg
-                      className={`w-5 h-5 transform transition-transform ${activeFaq === 'disconnected' ? 'rotate-180' : ''}`}
-                      fill="none"
-                      stroke="#003366"
-                      viewBox="0 0 24 24"
-                    >
-                    </svg>
-                  </div>
-                  {activeFaq === 'disconnected' && (
-                    <div className="pl-8 space-y-2 text-[#555555]">
-                      <p className="text-sm font-normal leading-relaxed">
-                        Disconnected health records and fragmented follow-ups lead to inefficiencies for both patients and healthcare providers. BHC’s Solution: Offers connected apps for patients, doctors and nurses, plus a smart admin dashboard for hospitals to track and manage care journeys. Ensures seamless, personalized healthcare — from diagnostics to consultation to follow-up.
-                      </p>
-                      <div className="mt-2">
-                        <p className="text-sm font-medium mb-1 text-[#003366]">BHC&apos;s Solution:</p>
-                        <ul className="list-disc pl-5 space-y-1 text-sm">
-                          <li>Offers connected apps for patients, doctors and nurses, plus a smart admin dashboard for hospitals to track and manage care journeys.</li>
-                          <li>Ensures seamless, personalized healthcare — from diagnostics to consultation to follow-up.</li>
-                        </ul>
-                      </div>
-                    </div>
-                  )}
+                  </svg>
                 </div>
+                {activeFaq === 'preventive' && (
+                  <div className="pl-8 space-y-2 text-[#555555]">
+                    <p className="text-sm font-normal leading-relaxed">
+                      Traditional healthcare systems focus primarily on treatment, leaving room to strengthen efforts in early detection, wellness tracking and continuous chronic care.
+                    </p>
+                    <div className="mt-2">
+                      <p className="text-sm font-medium mb-1 text-[#003366]">BHC&apos;s Solution:</p>
+                      <ul className="list-disc pl-5 space-y-1 text-sm">
+                        <li>Encourages regular health checkups and personalized wellness programs through its Smart Healthcare Machines and on-site nurse support.</li>
+                        <li>Helps individuals stay healthier, longer — by focusing on prevention, monitoring, and timely action.</li>
+                      </ul>
+                    </div>
+                  </div>
+                )}
+              </div>
+              <div className="flex flex-col space-y-2">
+                <div
+                  className="flex flex-row items-center space-x-3 py-2 cursor-pointer"
+                  onClick={() => setActiveFaq(activeFaq === 'disconnected' ? null : 'disconnected')}
+                >
+                  <div className="flex-shrink-0 mt-1">
+                    <Image src="/icons/hm-6-lgo.png" alt='logo image' width={25} height={25} />
+                  </div>
+                  <p className="text-[#003366] font-['Montserrat'] text-[18px] sm:text-[18px] md:text-[22px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize transition-opacity duration-300">Disconnected Healthcare Journey and Lack of Timely Follow-up</p>
+                  <svg
+                    className={`w-5 h-5 transform transition-transform ${activeFaq === 'disconnected' ? 'rotate-180' : ''}`}
+                    fill="none"
+                    stroke="#003366"
+                    viewBox="0 0 24 24"
+                  >
+                  </svg>
+                </div>
+                {activeFaq === 'disconnected' && (
+                  <div className="pl-8 space-y-2 text-[#555555]">
+                    <p className="text-sm font-normal leading-relaxed">
+                      Disconnected health records and fragmented follow-ups lead to inefficiencies for both patients and healthcare providers. BHC’s Solution: Offers connected apps for patients, doctors and nurses, plus a smart admin dashboard for hospitals to track and manage care journeys. Ensures seamless, personalized healthcare — from diagnostics to consultation to follow-up.
+                    </p>
+                    <div className="mt-2">
+                      <p className="text-sm font-medium mb-1 text-[#003366]">BHC&apos;s Solution:</p>
+                      <ul className="list-disc pl-5 space-y-1 text-sm">
+                        <li>Offers connected apps for patients, doctors and nurses, plus a smart admin dashboard for hospitals to track and manage care journeys.</li>
+                        <li>Ensures seamless, personalized healthcare — from diagnostics to consultation to follow-up.</li>
+                      </ul>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
 
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 p-4">
               {/* Health Checkup */}
-              <div className="rounded-lg border border-gray-200 overflow-hidden">
+              <div className="rounded-lg w-full h-full border border-gray-200 overflow-hidden bg-black">
+                <Image
+                  src="/icons/hm-4-img1.1.jpeg"
+                  alt="Health Checkup"
+                  width={300}
+                  height={300}
+                  className='w-full h-full'
+                />
+              </div>
+              <div className="rounded-lg shadow-md border border-gray-200 overflow-hidden">
+                <Image
+                  src="/icons/hm-4-img2.1.jpg"
+                  alt="Health Checkup"
+                  width={300}
+                  height={300}
+                  className='w-full h-full'
+                />
+              </div>
+              <div className="rounded-lg shadow-md border border-gray-200 overflow-hidden">
+                <Image
+                  src="/icons/hm-4-img2.1.webp"
+                  alt="Health Checkup"
+                  width={300}
+                  height={300}
+                  className='w-full h-full'
+                />
+              </div>
+              <div className="rounded-lg shadow-md border border-gray-200 overflow-hidden">
                 <Image
                   src="/icons/hm-4-img1.jpg"
                   alt="Health Checkup"
-                  width={60}
-                  height={60}
+                  width={300}
+                  height={300}
                   className='w-full h-full'
-                />
-              </div>
-              <div className="rounded-lg shadow-md border border-gray-200 overflow-hidden">
-                <Image
-                  src="/icons/hm-4-img2.jpg"
-                  alt="Health Checkup"
-                  width={60}
-                  height={60}
-                  className='w-full h-full'
-                />
-              </div>
-              <div className="rounded-lg shadow-md border border-gray-200 overflow-hidden">
-                <Image
-                  src="/icons/hm-4-img3.jpg"
-                  alt="Health Checkup"
-                  width={60}
-                  height={60}
-                  className='w-full h-full contain'
-                />
-              </div>
-              <div className="rounded-lg shadow-md border border-gray-200 overflow-hidden">
-                <Image
-                  src="/icons/hm-4-img1.png"
-                  alt="Health Checkup"
-                  width={60}
-                  height={60}
-                  className='w-full h-full contain'
                 />
               </div>
 
@@ -638,8 +636,8 @@ const LandingPage = () => {
                 <Image
                   src="/icons/hm-4-img1.jpg"
                   alt="Health Checkup"
-                  width={48}
-                  height={48}
+                  width={500}
+                  height={500}
                   className='w-full h-full object-cover'
                 />
               </div>
@@ -747,7 +745,7 @@ const LandingPage = () => {
             <p className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4 text-[#003366]">Smart Healthcare Machine Features</p>
             <div className="flex flex-col sm:flex-col md:flex-row space-y-4 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300">
               <div className="w-[40%] items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 flex items-center justify-center border-r-2 border-[#003366] mr-5">
-                <Image src="/icons/hm-7-img.png" alt="Smart Healthcare Machine Features" width={32} height={32} className="w-auto h-[80%]" />
+                <Image src="/icons/hm-7-img.png" alt="Smart Healthcare Machine Features" width={300} height={300} className="w-auto h-[80%]" />
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* Vitals Section */}
@@ -1461,7 +1459,7 @@ const LandingPage = () => {
             <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq1' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
               <button
                 onClick={() => setActiveFaq(activeFaq === 'faq1' ? null : 'faq1')}
-                className="w-full flex items-center justify-between p-2 sm:p-3 lg:p-4 transition-colors duration-200"
+                className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6 transition-colors duration-200"
               >
                 <span className={`text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq1' ? 'text-white' : 'text-[#333333]'} `}>What is Bridge Healthcare and what makes it different from other healthcare providers?</span>
                 <svg

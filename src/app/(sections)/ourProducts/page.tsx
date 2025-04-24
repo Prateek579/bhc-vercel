@@ -102,7 +102,7 @@ export default function OurProducts() {
           <p className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4 text-[#003366]">Smart Healthcare Machine Features</p>
           <div className="flex flex-col sm:flex-col md:flex-row space-y-4 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300 min-h-[300px]">
             <div className="w-full md:w-[40%]  min-h-[300px] space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 flex items-center justify-center border-r-2 border-[#003366] mr-5">
-              <Image src="/icons/hm-7-img.png" alt="Smart Healthcare Machine Features" width={32} height={32} className="w-auto min-h-[300px] md:h-[80%] " />
+              <Image src="/icons/hm-7-img.png" alt="Smart Healthcare Machine Features" width={300} height={300} className="w-auto min-h-[300px] md:h-[80%] " />
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {/* Vitals Section */}
@@ -453,8 +453,8 @@ export default function OurProducts() {
             <Image
               src="/icons/prd-3-img.png"
               alt="Telediagnosis Workflow"
-              width={200}
-              height={200}
+              width={500}
+              height={500}
               className="w-full max-w-[300px] sm:max-w-[400px] lg:max-w-[500px] h-auto"
             />
           </div>

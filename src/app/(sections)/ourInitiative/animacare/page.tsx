@@ -206,7 +206,7 @@ export default function Animacare() {
               <Image
                 src="/icons/anim-2-img1.1.png"
                 alt="Murshidabad District Map"
-                width={200} height={200}
+                width={500} height={500}
                 className="sm:h-[95%] md:h-[80%] lg:h-[80%] w-auto"
               />
             </div>
@@ -217,7 +217,7 @@ export default function Animacare() {
             <h3 className="mb-4 text-2xl sm:text-3xl md:text-4xl lg:text-[36px] font-[700] font-['Montserrat'] leading-tight sm:leading-tight md:leading-tight lg:leading-[100%] tracking-[0px] align-middle text-[#003366]">Our Footprint in Murshidabad</h3>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               <div className="relative h-40 sm:h-44 lg:h-48">
-                <Image src="/icons/anim-2-img2.1.png" alt="Impact 1" fill className="object-cover rounded-lg" />
+                <Image src="/icons/anim-2-img2.1.png" alt="Impact 1" width={500} height={500} className="w-full h-full rounded-lg" />
               </div>
               <div className="relative h-40 sm:h-44 lg:h-48">
                 <Image src="/icons/anim-2-img1.png" alt="Impact 2" fill className="object-cover rounded-lg" />
@@ -296,7 +296,7 @@ export default function Animacare() {
                     />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-[#333333]">Tele-Diagnostic & Tele-Consultation Centre</h3>
+                    <h3 className="text-xl font-semibold text-center text-[#333333]">Tele-Diagnostic & Tele-Consultation Centre</h3>
                   </div>
                 </div>
                 <div className="mt-4 flex flex-col items-center">

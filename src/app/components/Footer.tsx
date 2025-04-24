@@ -63,7 +63,7 @@ const Footer = () => {
             {/* Product Column */}
             <div>
               <h3 className="text-2xl sm:text-3xl font-base mb-4 sm:mb-5 md:mb-6">Product</h3>
-              <ul className="space-y-2 sm:space-y-3 md:space-y-4">
+              <ul className="space-y-2 sm:space-y-3 md:space-y-4 ">
                 <li><button onClick={(e) => e.preventDefault()} className="text-lg sm:text-xl hover:text-gray-300 transition-colors bg-transparent border-none p-0 cursor-pointer text-white">Smart Healthcare Machine</button></li>
                 <li><button onClick={(e) => e.preventDefault()} className="text-lg sm:text-xl hover:text-gray-300 transition-colors">Supporting Applications</button></li>
                 <li><button onClick={(e) => e.preventDefault()} className="text-lg sm:text-xl hover:text-gray-300 transition-colors">Admin Software</button></li>

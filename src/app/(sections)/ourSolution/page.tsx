@@ -780,109 +780,79 @@ export default function OurSolution() {
           <div className="specialty-cards-container pb-4 sm:pb-5 lg:pb-6 space-x-4 sm:space-x-5 lg:space-x-6">
             {/* First set of cards */}
             {/* Department Cards */}
-            <div className="hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg border border-gray-200 flex flex-col items-center space-y-3 sm:space-y-4">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center">
-                <Image src="/icons/sol-3-lgo.png" alt="Neuro Science" width={32} height={32} className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
-              </div>
+            <div className="hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center space-y-3 sm:space-y-4">
+              <Image src="/icons/sol-3-neu.png" alt="Pediatrics" width={70} height={70} />
               <h3 className="text-base sm:text-lg text-gray-500 text-center group-hover:text-white">Neurology</h3>
             </div>
 
-            <div className="hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg border border-gray-200 flex flex-col items-center space-y-3 sm:space-y-4">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center">
-                <Image src="/icons/sol-3-lgo.png" alt="Cardiology" width={32} height={32} className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
-              </div>
+            <div className="hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center space-y-3 sm:space-y-4">
+              <Image src="/icons/sol-3-drmt.png" alt="Pediatrics" width={60} height={60} />
               <h3 className="text-base sm:text-lg text-gray-500 text-center group-hover:text-white">Dermatology</h3>
             </div>
 
-            <div className="hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg border border-gray-200 flex flex-col items-center space-y-3 sm:space-y-4">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center">
-                <Image src="/icons/sol-3-lgo.png" alt="Psychology" width={32} height={32} className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
-              </div>
+            <div className="hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center space-y-3 sm:space-y-4">
+              <Image src="/icons/sol-3-rdo.png" alt="Pediatrics" width={60} height={60} />
               <h3 className="text-base sm:text-lg text-gray-500 text-center group-hover:text-white">Radiology</h3>
             </div>
 
-            <div className="hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg border border-gray-200 flex flex-col items-center space-y-3 sm:space-y-4">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center">
-                <Image src="/icons/sol-3-lgo.png" alt="Dermatology" width={32} height={32} className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
-              </div>
-              <h3 className="text-base sm:text-lg text-gray-500 text-center group-hover:text-white">Pulmonary medicine</h3>
+            <div className="hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center space-y-3 sm:space-y-4">
+              <Image src="/icons/sol-3-pul.png" alt="Pediatrics" width={74} height={74} />
+              <h3 className="text-base sm:text-lg text-gray-800 text-center group-hover:text-white">Pulmonary</h3>
             </div>
 
-            <div className="hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg border border-gray-200 flex flex-col items-center space-y-3 sm:space-y-4">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center">
-                <Image src="/icons/sol-3-lgo.png" alt="Orthopedics" width={32} height={32} className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
-              </div>
+            <div className="hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center space-y-3 sm:space-y-4">
+              <Image src="/icons/sol-3-ent.png" alt="Pediatrics" width={60} height={60} />
               <h3 className="text-base sm:text-lg text-gray-500 text-center group-hover:text-white">ENT</h3>
             </div>
 
-            <div className="hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] group w-48 bg-white p-6 rounded-lg border border-gray-200 flex flex-col items-center space-y-4">
-              <div className="w-16 h-16 flex items-center justify-center">
-                <Image src="/icons/sol-3-lgo.png" alt="Pediatrics" width={40} height={40} />
-              </div>
+            <div className="hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] group w-48 bg-white p-6 flex flex-col items-center space-y-4 rounded-lg">
+              <Image src="/icons/sol-3-crdio.png" alt="Pediatrics" width={60} height={60} />
               <h3 className="text-lg text-gray-500 text-center group-hover:text-white">Cardiology</h3>
             </div>
 
-            <div className="hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] group w-48 bg-white p-6 rounded-lg border border-gray-200 flex flex-col items-center space-y-4">
-              <div className="w-16 h-16 flex items-center justify-center">
-                <Image src="/icons/sol-3-lgo.png" alt="Neurology" width={40} height={40} />
-              </div>
+            <div className="hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] group w-48 bg-white p-6   flex flex-col items-center space-y-4">
+              <Image src="/icons/sol-3-ortho.png" alt="Pediatrics" width={60} height={60} />
               <h3 className="text-lg text-gray-500 text-center group-hover:text-white">Orthopedics</h3>
             </div>
 
-            <div className="hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] group w-48 bg-white p-6 rounded-lg border border-gray-200 flex flex-col items-center space-y-4">
-              <div className="w-16 h-16 flex items-center justify-center">
-                <Image src="/icons/sol-3-lgo.png" alt="Radiology" width={40} height={40} />
-              </div>
-              <h3 className="text-lg text-gray-500 text-center group-hover:text-white">Obstetrics & Gynecology </h3>
+            <div className="hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] group w-48 bg-white p-6  flex flex-col items-center space-y-4">
+              <Image src="/icons/sol-3-obs.png" alt="Pediatrics" width={60} height={60} />
+              <h3 className="text-lg text-gray-500 text-center group-hover:text-white">Obstetrics & Gynecology</h3>
             </div>
 
             {/* Duplicate set of cards for continuous scrolling */}
             <div className="hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg border border-gray-200 flex flex-col items-center space-y-3 sm:space-y-4">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center">
-                <Image src="/icons/sol-3-lgo.png" alt="Neuro Science" width={32} height={32} className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
-              </div>
+              <Image src="/icons/sol-3-hemo.png" alt="Pediatrics" width={60} height={60} />
               <h3 className="text-base sm:text-lg text-gray-500 text-center group-hover:text-white">Haematology</h3>
             </div>
 
             <div className="hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg border border-gray-200 flex flex-col items-center space-y-3 sm:space-y-4">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center">
-                <Image src="/icons/sol-3-lgo.png" alt="Cardiology" width={32} height={32} className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
-              </div>
+              <Image src="/icons/sol-3-fmly.png" alt="Pediatrics" width={60} height={60} />
               <h3 className="text-base sm:text-lg text-gray-500 text-center group-hover:text-white">Family Medicine</h3>
             </div>
 
             <div className="hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg border border-gray-200 flex flex-col items-center space-y-3 sm:space-y-4">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center">
-                <Image src="/icons/sol-3-lgo.png" alt="Psychology" width={32} height={32} className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
-              </div>
+              <Image src="/icons/sol-3-psy.png" alt="Pediatrics" width={60} height={60} />
               <h3 className="text-base sm:text-lg text-gray-500 text-center group-hover:text-white">Psychology</h3>
             </div>
 
             <div className="hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg border border-gray-200 flex flex-col items-center space-y-3 sm:space-y-4">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center">
-                <Image src="/icons/sol-3-lgo.png" alt="Dermatology" width={32} height={32} className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
-              </div>
+              <Image src="/icons/sol-3-pedi.png" alt="Pediatrics" width={60} height={60} />
               <h3 className="text-base sm:text-lg text-gray-500 text-center group-hover:text-white">Pediatrics</h3>
             </div>
 
             <div className="hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg border border-gray-200 flex flex-col items-center space-y-3 sm:space-y-4">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center">
-                <Image src="/icons/sol-3-lgo.png" alt="Orthopedics" width={32} height={32} className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
-              </div>
-              <h3 className="text-base sm:text-lg text-gray-500 text-center group-hover:text-white">Orthopedics</h3>
+              <Image src="/icons/sol-3-opt.png" alt="Pediatrics" width={60} height={60} />
+              <h3 className="text-base sm:text-lg text-gray-500 text-center group-hover:text-white">Ophthalmology</h3>
             </div>
 
             <div className="hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] group w-48 bg-white p-6 rounded-lg border border-gray-200 flex flex-col items-center space-y-4">
-              <div className="w-16 h-16 flex items-center justify-center">
-                <Image src="/icons/sol-3-lgo.png" alt="Pediatrics" width={40} height={40} />
-              </div>
+              <Image src="/icons/sol-3-ando.png" alt="Pediatrics" width={60} height={60} />
               <h3 className="text-lg text-gray-500 text-center group-hover:text-white">Endocrinology</h3>
             </div>
 
             <div className="hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] group w-48 bg-white p-6 rounded-lg border border-gray-200 flex flex-col items-center space-y-4">
-              <div className="w-16 h-16 flex items-center justify-center">
-                <Image src="/icons/sol-3-lgo.png" alt="Neurology" width={40} height={40} />
-              </div>
+              <Image src="/icons/sol-3-nutri.png" alt="Pediatrics" width={60} height={60} />
               <h3 className="text-lg text-gray-500 text-center group-hover:text-white">Nutrition & Wellness</h3>
             </div>
           </div>

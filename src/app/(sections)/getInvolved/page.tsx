@@ -453,5 +453,4 @@ export default function GetInvolved() {
                 </div>
             </div>
         </div>
-    </>);
-}
+    </>);}

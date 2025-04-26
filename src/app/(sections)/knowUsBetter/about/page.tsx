@@ -220,182 +220,151 @@ export default function KnowUsBetter() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Team Member 1 */}
-          <div className="bg-gray-50 p-6 rounded-lg text-center bg-gray-200">
-            <div className="relative w-48 h-48 mx-auto mb-4">
+          <div className="bg-gray-50 p-4 rounded-lg text-center bg-gray-200 flex flex-col items-center justify-center">
+            <div className="relative w-35 h-35 mx-auto mb-4">
               <Image
-                src="/icons/abt-4-img1.png"
+                src="/icons/abt-2-img3.0.png"
                 alt="Team Member"
                 fill
                 className="object-cover rounded-lg"
               />
+              <a href="http://www.linkedin.com/in/anmol-garg-bhc" className="absolute bottom-2 bg-white left-2 text-gray-600 hover:text-[#00A99D]">
+                <Image src="/icons/lkdn.png" alt="LinkedIn" width={30} height={30} />
+              </a>
             </div>
             <h3 className="text-xl font-bold text-[#003366] mb-1">Anmol Garg</h3>
             <p className="text-gray-600">(PH.D., IIT MADRAS)</p>
             <p className="text-gray-600 mb-4">CO-FOUNDER & CEO</p>
-            <div className="flex justify-center gap-4">
-              <a href="#" className="text-gray-600 hover:text-[#00A99D]">
-                <Image src="/icons/ttr.png" alt="Twitter" width={20} height={20} />
-              </a>
-              <a href="#" className="text-gray-600 hover:text-[#00A99D]">
-                <Image src="/icons/lkdn.png" alt="LinkedIn" width={20} height={20} />
-              </a>
-              <a href="#" className="text-gray-600 hover:text-[#00A99D]">
-                <Image src="/icons/intrnt.png" alt="Website" width={20} height={20} />
-              </a>
-            </div>
           </div>
 
           {/* Team Member 2 */}
-          <div className="bg-gray-50 p-6 rounded-lg text-center bg-gray-200">
-            <div className="relative w-48 h-48 mx-auto mb-4">
+          <div className="bg-gray-50 p-4 rounded-lg text-center bg-gray-200 flex flex-col items-center justify-center">
+            <div className="relative w-35 h-35 mx-auto mb-4">
               <Image
-                src="/icons/abt-4-img2.png"
+                src="/icons/abt-4-img3.7.png"
                 alt="Team Member"
                 fill
                 className="object-cover rounded-lg"
               />
+              <a href="http://linkedin.com/in/rahul-soni-b8782a83" className="absolute bottom-2 bg-white left-2 text-gray-600 hover:text-[#00A99D]">
+                <Image src="/icons/lkdn.png" alt="LinkedIn" width={30} height={30} />
+              </a>
             </div>
             <h3 className="text-xl font-bold text-[#003366] mb-1">Rahul Soni</h3>
             <p className="text-gray-600">(M.S., IIT MADRAS)</p>
             <p className="text-gray-600 mb-4">CO-FOUNDER & CTO</p>
-            <div className="flex justify-center gap-4">
-              <a href="#" className="text-gray-600 hover:text-[#00A99D]">
-                <Image src="/icons/ttr.png" alt="Twitter" width={20} height={20} />
-              </a>
-              <a href="#" className="text-gray-600 hover:text-[#00A99D]">
-                <Image src="/icons/lkdn.png" alt="LinkedIn" width={20} height={20} />
-              </a>
-              <a href="#" className="text-gray-600 hover:text-[#00A99D]">
-                <Image src="/icons/intrnt.png" alt="Website" width={20} height={20} />
-              </a>
-            </div>
           </div>
 
           {/* Team Member 3 */}
-          <div className="bg-gray-50 p-6 rounded-lg text-center bg-gray-200">
-            <div className="relative w-48 h-48 mx-auto mb-4">
+          <div className="bg-gray-50 p-4 rounded-lg text-center bg-gray-200 flex flex-col items-center justify-center">
+            <div className="relative w-35 h-35 mx-auto mb-4">
               <Image
-                src="/icons/abt-4-img3.1.png"
+                src="/icons/abt-4-img3.3.png"
                 alt="Team Member"
                 fill
                 className="object-cover rounded-lg"
               />
+              <a href="#" className="absolute bottom-2 bg-white left-2 text-gray-600 hover:text-[#00A99D]">
+                <Image src="/icons/lkdn.png" alt="LinkedIn" width={30} height={30} />
+              </a>
             </div>
             <h3 className="text-xl font-bold text-[#003366] mb-1">Dr. B. Rebecca </h3>
             <p className="text-gray-600">(CMO, IIT MADRAS)</p>
             <p className="text-gray-600 mb-4">DIRECTOR</p>
-            <div className="flex justify-center gap-4">
-              <a href="#" className="text-gray-600 hover:text-[#00A99D]">
-                <Image src="/icons/ttr.png" alt="Twitter" width={20} height={20} />
-              </a>
-              <a href="#" className="text-gray-600 hover:text-[#00A99D]">
-                <Image src="/icons/lkdn.png" alt="LinkedIn" width={20} height={20} />
-              </a>
-              <a href="#" className="text-gray-600 hover:text-[#00A99D]">
-                <Image src="/icons/intrnt.png" alt="Website" width={20} height={20} />
-              </a>
-            </div>
+
           </div>
           {/* Team Member 1 */}
-          <div className="bg-gray-50 p-6 rounded-lg text-center bg-gray-200">
-            <div className="relative w-48 h-48 mx-auto mb-4">
+          <div className="bg-gray-50 p-4 rounded-lg text-center bg-gray-200 flex flex-col items-center justify-center">
+            <div className="relative w-35 h-35 mx-auto mb-4">
               <Image
-                src="/icons/abt-4-img4.png"
+                src="/icons/abt-4-img3.6.png"
                 alt="Team Member"
                 fill
                 className="object-cover rounded-lg"
               />
+              <a href="https://www.ruthfoundationtrust.org/" className="absolute bottom-2 bg-white left-2 rounded-full text-gray-600 hover:text-[#00A99D]">
+                <Image src="/icons/intrnt.png" alt="LinkedIn" width={30} height={30} />
+              </a>
             </div>
             <h3 className="text-xl font-bold text-[#003366] mb-1">MD SHAJAHAN SK</h3>
             <p className="text-gray-600">(MSW, M & PSW)</p>
             <p className="text-gray-600 mb-4">NGO PARTNER</p>
-            <div className="flex justify-center gap-4">
-              <a href="#" className="text-gray-600 hover:text-[#00A99D]">
-                <Image src="/icons/ttr.png" alt="Twitter" width={20} height={20} />
-              </a>
-              <a href="#" className="text-gray-600 hover:text-[#00A99D]">
-                <Image src="/icons/lkdn.png" alt="LinkedIn" width={20} height={20} />
-              </a>
-              <a href="#" className="text-gray-600 hover:text-[#00A99D]">
-                <Image src="/icons/intrnt.png" alt="Website" width={20} height={20} />
-              </a>
-            </div>
+
           </div>
 
-          {/* Team Member 2 */}
-          <div className="bg-gray-50 p-6 rounded-lg text-center bg-gray-200">
-            <div className="relative w-48 h-48 mx-auto mb-4">
+          <div className="bg-gray-50 p-4 rounded-lg text-center bg-gray-200 flex flex-col items-center justify-center">
+            <div className="relative w-35 h-35 mx-auto mb-4">
               <Image
-                src="/icons/abt-4-img5.png"
+                src="/icons/abt-4-img3.8.png"
                 alt="Team Member"
                 fill
                 className="object-cover rounded-lg"
               />
-            </div>
-            <h3 className="text-xl font-bold text-[#003366] mb-1">DR. SAGAR P KABADI</h3>
-            <p className="text-gray-600">(MBBS, MD - INTERNAL MEDICINE, C.C.E.B.D.M)</p>
-            <p className="text-gray-600 mb-4">PARTNERING DOCTOR</p>
-            <div className="flex justify-center gap-4">
-              <a href="#" className="text-gray-600 hover:text-[#00A99D]">
-                <Image src="/icons/ttr.png" alt="Twitter" width={20} height={20} />
-              </a>
-              <a href="#" className="text-gray-600 hover:text-[#00A99D]">
-                <Image src="/icons/lkdn.png" alt="LinkedIn" width={20} height={20} />
-              </a>
-              <a href="#" className="text-gray-600 hover:text-[#00A99D]">
-                <Image src="/icons/intrnt.png" alt="Website" width={20} height={20} />
+              <a href="http://linkedin.com/in/divinvolve" className="absolute bottom-2 bg-white left-2 rounded-full text-gray-600 hover:text-[#00A99D]">
+                <Image src="/icons/lkdn.png" alt="LinkedIn" width={30} height={30} />
               </a>
             </div>
+            <h3 className="text-xl font-bold text-[#003366] mb-1">Divanshu Kumar
+            </h3>
+            <p className="text-gray-600">CEO, Solinas Integrity
+            </p>
+            <p className="text-gray-600 mb-4">Business Adviser</p>
+
           </div>
 
-          {/* Team Member 3 */}
-          <div className="bg-gray-50 p-6 rounded-lg text-center bg-gray-200">
-            <div className="relative w-48 h-48 mx-auto mb-4">
+          <div className="bg-gray-50 p-4 rounded-lg text-center bg-gray-200 flex flex-col items-center justify-center">
+            <div className="relative w-35 h-35 mx-auto mb-4">
               <Image
-                src="/icons/abt-4-img6.png"
+                src="/icons/abt-4-img3.2.png"
                 alt="Team Member"
                 fill
                 className="object-cover rounded-lg"
               />
+              <a href="http://linkedin.com/in/amit-nain-nanochem" className="absolute bottom-2 bg-white left-2 text-gray-600 hover:text-[#00A99D]">
+                <Image src="/icons/lkdn.png" alt="LinkedIn" width={30} height={30} />
+              </a>
             </div>
             <h3 className="text-xl font-bold text-[#003366] mb-1">DR. AMIT NAIN</h3>
             <p className="text-gray-600">(ASST. PROF IIT MADRAS)</p>
             <p className="text-gray-600 mb-4">PRODUCT ADVISER</p>
-            <div className="flex justify-center gap-4">
-              <a href="#" className="text-gray-600 hover:text-[#00A99D]">
-                <Image src="/icons/ttr.png" alt="Twitter" width={20} height={20} />
-              </a>
-              <a href="#" className="text-gray-600 hover:text-[#00A99D]">
-                <Image src="/icons/lkdn.png" alt="LinkedIn" width={20} height={20} />
-              </a>
-              <a href="#" className="text-gray-600 hover:text-[#00A99D]">
-                <Image src="/icons/intrnt.png" alt="Website" width={20} height={20} />
-              </a>
-            </div>
+
           </div>
-          <div className="bg-gray-50 p-6 rounded-lg text-center bg-gray-200">
-            <div className="relative w-48 h-48 mx-auto mb-4">
+
+          {/* Team Member 2 */}
+          <div className="bg-gray-50 p-4 rounded-lg text-center bg-gray-200 flex flex-col items-center justify-center">
+            <div className="relative w-35 h-35 mx-auto mb-4">
               <Image
-                src="/icons/abt-4-img7.png"
+                src="/icons/abt-4-img3.5.png"
                 alt="Team Member"
                 fill
                 className="object-cover rounded-lg"
               />
+              <a href="#" className="absolute bottom-2 bg-white left-2 text-gray-600 hover:text-[#00A99D]">
+                <Image src="/icons/lkdn.png" alt="LinkedIn" width={30} height={30} />
+              </a>
+            </div>
+            <h3 className="text-xl font-bold text-[#003366] mb-1">DR. SAGAR P KABADI</h3>
+            <p className="text-gray-600">(MBBS, MD - INTERNAL MEDICINE, C.C.E.B.D.M)</p>
+            <p className="text-gray-600 mb-4">PARTNERING DOCTOR</p>
+
+          </div>
+
+          {/* Team Member 3 */}
+
+          <div className="bg-gray-50 p-4 rounded-lg text-center bg-gray-200 flex flex-col items-center justify-center">
+            <div className="relative w-35 h-35 mx-auto mb-4">
+              <Image
+                src="/icons/abt-4-img3.4.png"
+                alt="Team Member"
+                fill
+                className="object-cover rounded-lg"
+              />
+              <a href="#" className="absolute bottom-2 bg-white left-2 text-gray-600 hover:text-[#00A99D]">
+                <Image src="/icons/lkdn.png" alt="LinkedIn" width={30} height={30} />
+              </a>
             </div>
             <h3 className="text-xl font-bold text-[#003366] mb-1">DR. PRATHAM R</h3>
             <p className="text-gray-600">(MBBS, MS - MCH - NEURO SURGERY)</p>
-            <p className="text-gray-600 mb-4">PARTNERING DOCTOR</p>
-            <div className="flex justify-center gap-4">
-              <a href="#" className="text-gray-600 hover:text-[#00A99D]">
-                <Image src="/icons/ttr.png" alt="Twitter" width={20} height={20} />
-              </a>
-              <a href="#" className="text-gray-600 hover:text-[#00A99D]">
-                <Image src="/icons/lkdn.png" alt="LinkedIn" width={20} height={20} />
-              </a>
-              <a href="#" className="text-gray-600 hover:text-[#00A99D]">
-                <Image src="/icons/intrnt.png" alt="Website" width={20} height={20} />
-              </a>
-            </div>
           </div>
         </div>
       </div>

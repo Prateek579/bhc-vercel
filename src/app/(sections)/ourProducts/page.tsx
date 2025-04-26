@@ -97,12 +97,11 @@ export default function OurProducts() {
           </p>
         </div>
 
-        {/* NEW CARD} */}
         <div className="py-4 sm:py-6 md:py-8 lg:py-10">
           <p className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4 text-[#003366]">Smart Healthcare Machine Features</p>
-          <div className="flex flex-col sm:flex-col md:flex-row space-y-4 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300 min-h-[300px]">
-            <div className="w-full md:w-[40%]  min-h-[300px] space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 flex items-center justify-center border-r-2 border-[#003366] mr-5">
-              <Image src="/icons/hm-7-img.png" alt="Smart Healthcare Machine Features" width={300} height={300} className="w-auto min-h-[300px] md:h-[80%] " />
+          <div className="flex flex-col sm:flex-col md:flex-row space-y-4 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300">
+            <div className="w-full md:w-[40%] items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 flex items-center justify-center md:border-r-2 md:border-[#003366] md:mr-5 md:pr-5">
+              <Image src="/icons/hm-shm.png" alt="Smart Healthcare Machine Features" width={300} height={300} className="w-[50%] h-auto md:w-auto md:h-[80%]" />
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {/* Vitals Section */}
@@ -110,27 +109,27 @@ export default function OurProducts() {
                 <h3 className="text-[#003366] text-[18px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize font-['Montserrat] border-b-2 border-gray-300">Vitals</h3>
                 <div className="grid grid-cols-2 gap-2">
                   <div className="flex items-center gap-2">
-                    <span className="text-[#18A093]">•</span>
+                    <Image src="/icons/hm-6-pr.png" alt='Pulse Rate image' width={25} height={25} />
                     <span className='text-sm sm:text-base md:text-lg text-gray-600' >Pulse Rate</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[#18A093]">•</span>
+                    <Image src="/icons/hm-6-tem.png" alt='Temperature image' width={20} height={20} />
                     <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Temperature</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[#18A093]">•</span>
+                    <Image src="/icons/hm-6-spo.png" alt='SpO2 image' width={25} height={25} />
                     <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>SpO2</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-[#18A093]">•</span>
+                  <div className="flex items-center gap-1">
+                    <Image src="/icons/hm-6-pp.png" alt='Blood Pressure images' width={25} height={25} />
                     <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Blood Pressure</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[#18A093]">•</span>
+                    <Image src="/icons/hm-6-bmi.png" alt='Blood Sugar images' width={25} height={25} />
                     <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>BMI</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[#18A093]">•</span>
+                    <Image src="/icons/hm-6-hrt.png" alt='Heart Rate images' width={25} height={25} />
                     <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Heart Rate</span>
                   </div>
                 </div>
@@ -141,23 +140,23 @@ export default function OurProducts() {
                 <h3 className="text-[#003366] text-[18px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize font-['Montserrat] border-b-2 border-gray-300">Blood Tests</h3>
                 <div className="grid grid-cols-2 gap-2">
                   <div className="flex items-center gap-2">
-                    <span className="text-[#18A093]">•</span>
+                    <Image src="/icons/hm-6-hem.png" alt='Hemoglobin images' width={25} height={25} />
                     <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Hemoglobin</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[#18A093]">•</span>
+                    <Image src="/icons/hm-6-lp.png" alt='Lipid Profile images' width={25} height={25} />
                     <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Lipid Profile</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[#18A093]">•</span>
+                    <Image src="/icons/hm-6-bs.png" alt='Blood Sugar images' width={25} height={25} />
                     <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Blood Sugar</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[#18A093]">•</span>
-                    <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Renal Function</span>
+                    <Image src="/icons/hm-6-rft.png" alt='Renal Funtion Test images' width={25} height={25} />
+                    <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Renal Function Test</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[#18A093]">•</span>
+                    <Image src="/icons/hm-6-hb.png" alt='HbA1c images' width={25} height={25} />
                     <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>HbA1c</span>
                   </div>
                 </div>
@@ -168,43 +167,42 @@ export default function OurProducts() {
                 <h3 className="text-[#003366] text-[18px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize font-['Montserrat] border-b-2 border-gray-300">Rapid Test</h3>
                 <div className="grid grid-cols-2 gap-2">
                   <div className="flex items-center gap-2">
-                    <span className="text-[#18A093]">•</span>
+
                     <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Ovulation LH</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[#18A093]">•</span>
+
                     <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Malaria AG</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[#18A093]">•</span>
                     <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>HIV I & II</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[#18A093]">•</span>
+
                     <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Troponin I</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[#18A093]">•</span>
+
                     <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Hepatitis C</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[#18A093]">•</span>
+
                     <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Hepatitis B</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[#18A093]">•</span>
+
                     <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Malaria AB</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[#18A093]">•</span>
+
                     <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Pregnancy hCG</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[#18A093]">•</span>
+
                     <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Syphilis</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[#18A093]">•</span>
+
                     <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Typhoid</span>
                   </div>
                 </div>
@@ -212,22 +210,22 @@ export default function OurProducts() {
               {/* Digital Stethoscope Section */}
               <div className="space-y-2">
                 <h3 className="text-[#003366] text-[18px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize font-['Montserrat] border-b-2 border-gray-300">Digital Stethoscope</h3>
-                <p className='text-blacktext-sm sm:text-base md:text-lg text-gray-600 text-center'>Live Stethoscope</p>
+                <p className='text-blacktext-sm sm:text-base md:text-lg text-gray-600 text-center flex flex-row items-center justify-center'><Image src="/icons/hm-6-ls.png" alt='Stethoscope images' width={25} height={25} className='mr-2' />Live Stethoscope</p>
                 <div className="grid grid-cols-2 gap-2">
                   <div className="flex items-center gap-2">
-                    <span className="text-[#18A093]">•</span>
+
                     <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Aortic Sound</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[#18A093]">•</span>
+
                     <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Mitral Sound</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[#18A093]">•</span>
+
                     <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Pulmonic Sound</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[#18A093]">•</span>
+
                     <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Tricuspid Sound</span>
                   </div>
                 </div>
@@ -238,11 +236,11 @@ export default function OurProducts() {
                 <h3 className="text-[#003366] text-[18px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize font-['Montserrat] border-b-2 border-gray-300">ECG</h3>
                 <div className="grid grid-cols-2 gap-2">
                   <div className="flex items-center gap-2">
-                    <span className="text-[#18A093]">•</span>
+                    <Image src="/icons/hm-6-lead.png" alt='12 Lead image' width={25} height={25} />
                     <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>12 Lead</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[#18A093]">•</span>
+                    <Image src="/icons/hm-6-rr.png" alt='Respiration rate images' width={25} height={25} />
                     <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Respiration Rate</span>
                   </div>
                 </div>
@@ -252,11 +250,11 @@ export default function OurProducts() {
                 <h3 className="text-[#003366] text-[18px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize font-['Montserrat] border-b-2 border-gray-300">Tele-Consultation: Real-Time Data</h3>
                 <div className="grid grid-cols-2 gap-2">
                   <div className="flex items-center gap-2">
-                    <span className="text-[#18A093]">•</span>
+                    <Image src="/icons/hm-6-vc.png" alt='Video Consultation image' width={25} height={25} />
                     <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Video Consultation</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[#18A093]">•</span>
+                    <Image src="/icons/hm-6-rtda.png" alt='Real time data images' width={25} height={25} />
                     <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Real-Time Data Accessibility</span>
                   </div>
                 </div>
@@ -267,23 +265,23 @@ export default function OurProducts() {
                 <h3 className="text-[#003366] text-[18px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize font-['Montserrat] border-b-2 border-gray-300">Digital Modules for Specialist Consultation</h3>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
                   <div className="flex items-center gap-2">
-                    <span className="text-[#18A093]">•</span>
+                    <Image src="/icons/hm-6-sp.png" alt='Spirometer images' width={25} height={25} />
                     <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Spirometer</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[#18A093]">•</span>
+                    <Image src="/icons/hm-6-os.png" alt='Otoscope image' width={25} height={25} />
                     <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Otoscope</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[#18A093]">•</span>
-                    <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Ultrasound</span>
+                    <Image src="/icons/hm-6-pu.png" alt='Portable Ultrasound images' width={25} height={25} />
+                    <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Portable Ultrasound</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[#18A093]">•</span>
+                    <Image src="/icons/hm-6-is.png" alt='Irish Scope images' width={25} height={25} />
                     <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Irish Scope</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[#18A093]">•</span>
+                    <Image src="/icons/hm-6-der.png" alt='Dermatoscope' width={25} height={25} />
                     <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Dermatoscope</span>
                   </div>
                 </div>
@@ -310,14 +308,14 @@ export default function OurProducts() {
           >
             <div className="absolute inset-0 w-full h-[80%] group-hover:hidden touch-hover:hidden">
               <Image
-                src="/icons/hm-7-img.png"
+                src="/icons/hm-shm.png"
                 alt="Smart Healthcare Machine"
                 width={200}
                 height={200}
-                className='w-full h-full object-contain p-4'
+                className='w-full h-full object-contain'
               />
             </div>
-            <div className="absolute h-[20%] bottom-0 left-0 right-0 bg-black bg-opacity-80 p-3 group-hover:hidden touch-hover:hidden">
+            <div className="absolute h-[20%] bottom-0 left-0 right-0 bg-[#003366] bg-opacity-80 p-3 group-hover:hidden touch-hover:hidden">
               <h3 className="text-[24px] font-[600] text-center text-white font-['Montserrat']">
                 Smart Healthcare Machine
               </h3>
@@ -325,7 +323,7 @@ export default function OurProducts() {
             <div className="relative z-10 p-4 flex flex-col items-center justify-center h-full">
               <div className="text-sm md:text-base text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
                 <h4 className="font-semibold mb-2 text-lg text-white">Key Features:</h4>
-                <ul className="list-disc pl-5">
+                <ul className="list-disc pl-5 space-y-2">
                   <li>Health Screening</li>
                   <li>Real-Time Diagnostics Integration</li>
                   <li>Tele-Consultation with Live Data Sync</li>
@@ -342,14 +340,14 @@ export default function OurProducts() {
           >
             <div className="h-[80%] absolute inset-0 w-full group-hover:hidden touch-hover:hidden">
               <Image
-                src="/icons/hm-7-img.png"
+                src="/icons/prd-2-img3.jpg"
                 alt="Doctor App"
                 width={200}
                 height={200}
-                className='w-full h-full object-contain p-4'
+                className='w-full h-full object-contain'
               />
             </div>
-            <div className="absolute h-[20%] bottom-0 left-0 right-0 bg-black bg-opacity-80 p-3 group-hover:hidden touch-hover:hidden">
+            <div className="absolute h-[20%] bottom-0 left-0 right-0 bg-[#003366] bg-opacity-80 p-3 group-hover:hidden touch-hover:hidden">
               <h3 className="text-[24px] font-[600] text-center text-white font-['Montserrat']">
                 Doctor App
               </h3>
@@ -375,14 +373,14 @@ export default function OurProducts() {
           >
             <div className="h-[80%] absolute inset-0 w-full group-hover:hidden touch-hover:hidden">
               <Image
-                src="/icons/hm-7-img2.png"
+                src="/icons/prd-2-img2.1.jpg"
                 alt="Patient App"
                 width={200}
                 height={200}
-                className='w-full h-full object-contain p-4'
+                className='w-full h-full object-cover p-4'
               />
             </div>
-            <div className="absolute h-[20%] bottom-0 left-0 right-0 bg-black bg-opacity-80 p-3 group-hover:hidden touch-hover:hidden">
+            <div className="absolute h-[20%] bottom-0 left-0 right-0 bg-[#003366] bg-opacity-80 p-3 group-hover:hidden touch-hover:hidden">
               <h3 className="text-[24px] font-[600] text-center text-white font-['Montserrat']">
                 Patient App
               </h3>
@@ -408,14 +406,14 @@ export default function OurProducts() {
           >
             <div className="h-[80%] absolute inset-0 w-full group-hover:hidden touch-hover:hidden">
               <Image
-                src="/icons/hm-7-img3.png"
+                src="/icons/prd-2-img4.jpg"
                 alt="Nurse App"
                 width={200}
                 height={200}
-                className='w-full h-full object-contain p-4'
+                className='w-full h-full object-cover p-4'
               />
             </div>
-            <div className="absolute h-[20%] bottom-0 left-0 right-0 bg-black bg-opacity-80 p-3 group-hover:hidden touch-hover:hidden">
+            <div className="absolute h-[20%] bottom-0 left-0 right-0 bg-[#003366] bg-opacity-80 p-3 group-hover:hidden touch-hover:hidden">
               <h3 className="text-[24px] font-[600] text-center text-white font-['Montserrat']">
                 Nurse App
               </h3>

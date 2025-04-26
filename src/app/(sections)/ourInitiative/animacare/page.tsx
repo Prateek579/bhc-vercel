@@ -220,13 +220,13 @@ export default function Animacare() {
                 <Image src="/icons/anim-2-img2.1.png" alt="Impact 1" width={500} height={500} className="w-full h-full rounded-lg" />
               </div>
               <div className="relative h-40 sm:h-44 lg:h-48">
-                <Image src="/icons/anim-2-img1.png" alt="Impact 2" fill className="object-cover rounded-lg" />
+                <Image src="/icons/anim-2-img22.jpg" alt="Impact 2" fill className="object-cover rounded-lg" />
               </div>
               <div className="relative h-40 sm:h-44 lg:h-48">
-                <Image src="/icons/anim-2-img2.png" alt="Impact 3" fill className="object-cover rounded-lg" />
+                <Image src="/icons/anim-2-img23.jpg" alt="Impact 3" fill className="object-cover rounded-lg" />
               </div>
               <div className="relative h-40 sm:h-44 lg:h-48">
-                <Image src="/icons/anim-2-img3.png" alt="Impact 4" fill className="object-cover rounded-lg" />
+                <Image src="/icons/anim-2-img24.jpg" alt="Impact 4" fill className="object-cover rounded-lg" />
               </div>
             </div>
           </div>

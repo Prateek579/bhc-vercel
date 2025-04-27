@@ -286,9 +286,9 @@ export default function Animacare() {
               {/* TDTC Column */}
               <div className="bg-white p-6 ">
                 <div className="flex flex-col items-center gap-4 mb-4 border-b-2 border-[#003366]">
-                  <div className="w-12 h-12">
+                  <div className="w-16 h-16">
                     <Image
-                      src="/icons/anim-6-lgo2.png"
+                      src="/icons/anim-6-lgo1.png"
                       alt="TDTC Building"
                       width={48}
                       height={48}
@@ -313,9 +313,9 @@ export default function Animacare() {
               {/* MTCU Column */}
               <div className="bg-white p-6 ">
                 <div className="flex flex-col items-center gap-4 mb-4 border-b-2 border-[#003366]">
-                  <div className="w-12 h-12">
+                  <div className="w-16 h-16">
                     <Image
-                      src="/icons/anim-6-lgo2.png"
+                      src="/icons/anim-6-lgo2.1.png"
                       alt="MTCU Vehicle"
                       width={48}
                       height={48}
@@ -342,9 +342,9 @@ export default function Animacare() {
             <Image
               src="/icons/anim-5-img.png"
               alt="Tele-Consultation"
-              width={150}
-              height={100}
-              className="h-[80%] w-[80%] rounded-lg "
+              width={1000}
+              height={1000}
+              className="h-[95%] w-[95%] rounded-lg "
             />
           </div>
         </div>
@@ -455,7 +455,7 @@ export default function Animacare() {
           >
             <div className="flex items-center gap-4 mb-6">
               <Image
-                src="/icons/anim-6-lgo2.png"
+                src="/icons/anim-6-lgo1.png"
                 alt="TDTC Icon"
                 width={40}
                 height={40}
@@ -486,10 +486,10 @@ export default function Animacare() {
           >
             <div className="flex items-center gap-4 mb-6">
               <Image
-                src="/icons/anim-6-lgo2.png"
+                src="/icons/anim-6-lgo2.1.png"
                 alt="TDTC Icon"
-                width={40}
-                height={40}
+                width={55}
+                height={55}
                 className="flex-shrink-0 group-hover:hidden touch-hover:hidden"
               />
               <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white touch-hover:text-white transition-colors duration-300">Mobile Tele-Clinic Unit</h3>
@@ -517,10 +517,10 @@ export default function Animacare() {
           >
             <div className="flex items-center gap-4 mb-6">
               <Image
-                src="/icons/anim-6-lgo2.png"
+                src="/icons/anim-5-lgo2.png"
                 alt="TDTC Icon"
-                width={40}
-                height={40}
+                width={35}
+                height={35}
                 className="flex-shrink-0 group-hover:hidden touch-hover:hidden"
               />
               <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white touch-hover:text-white transition-colors duration-300">Seamless Referral & Follow-up System</h3>

@@ -35,6 +35,11 @@ const LandingPage = () => {
   // const [activeProd, setActiveProd] = React.useState<number | null>(1);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
   const [activeCard, setActiveCard] = useState<string | null>(null);
+  const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
+  const [currentMediaIndexOne, setCurrentMediaIndexOne] = useState(0);
+  const [currentMediaIndexTwo, setCurrentMediaIndexTwo] = useState(0);
+  const [currentMediaIndexThree, setCurrentMediaIndexThree] = useState(1);
+  const [currentMediaIndexFive, setCurrentMediaIndexFive] = useState(0);
 
   const departments = useCountAnimation(25);
   const diseaseDetection = useCountAnimation(20);
@@ -80,6 +85,19 @@ const LandingPage = () => {
     };
 
     setIsTouchDevice(checkTouchDevice());
+  }, []);
+
+  // Image carousel effect for Key Services section
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentMediaIndex((prevIndex) => (prevIndex >= 3 ? 0 : prevIndex + 1));
+      setCurrentMediaIndexOne((prev) => (prev >= 4 ? 0 : prev + 1));
+      setCurrentMediaIndexTwo((pre) => (pre >= 2 ? 0 : pre + 1));
+      setCurrentMediaIndexThree((prev) => (prev == 1 ? 2 : 1));
+      setCurrentMediaIndexFive((prev) => (prev >= 2 ? 0 : prev + 1));
+    }, 2000);
+
+    return () => clearInterval(interval);
   }, []);
 
   const handleToggle = (e: React.MouseEvent<HTMLDivElement, MouseEvent>, cardId: string): void => {
@@ -407,10 +425,11 @@ const LandingPage = () => {
                     height={450}
                     className="object-cover w-full h-full"
                   />
-                  <div className="absolute bottom-0  bg-gradient-to-t from-black/80 to-black/20 flex flex-col justify-end p-8">
+                  <div className="absolute bottom-0  bg-gradient-to-t from-black/80 to-black/20 flex flex-col justify-start p-8 h-[55%]">
                     <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">Limited Access to Quality Care</h3>
                     <p className="text-white/90 text-sm sm:text-base">
-                      Quality healthcare remains out of reach for millions — whether in underserved rural areas or even in premium residential complexes where medical infrastructure is lacking.
+                      Quality healthcare remains inaccessible for millions — from remote rural regions to premium residential areas lacking sufficient medical infrastructure.
+
                     </p>
                   </div>
                 </div>
@@ -423,11 +442,10 @@ const LandingPage = () => {
                     height={450}
                     className="object-cover w-full h-full"
                   />
-                  <div className="absolute bottom-0 bg-gradient-to-t from-black/80 to-black/20  flex flex-col justify-end p-8">
-                    <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">Gaps in Real-Time Tele-Diagnostics
-                    </h3>
+                  <div className="absolute bottom-0 bg-gradient-to-t from-black/80 to-black/20  flex flex-col justify-start p-8 h-[55%]">
+                    <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">Gaps in Real-Time Tele-Diagnostics</h3>
                     <p className="text-white/90 text-sm sm:text-base">
-                      While video consultations have become widespread, they lack the power of real-time diagnostic data — turning medical advice into educated guesses rather than precise treatment.
+                      While video consultations are common, they often lack real-time diagnostic data, leading to treatment based on assumptions rather than precision.
                     </p>
                   </div>
                 </div>
@@ -442,10 +460,10 @@ const LandingPage = () => {
                     height={450}
                     className="object-cover w-full h-full"
                   />
-                  <div className="absolute bottom-0  bg-gradient-to-t from-black/80 to-black/20 flex flex-col justify-end p-8">
+                  <div className="absolute bottom-0  bg-gradient-to-t from-black/80 to-black/20 flex flex-col justify-start p-8 h-[55%]">
                     <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">Neglect of Preventive & Chronic Care</h3>
                     <p className="text-white/90 text-sm sm:text-base">
-                      Traditional healthcare systems focus primarily on treatment, leaving room to strengthen efforts in early detection, wellness tracking and continuous chronic care.
+                      Healthcare today still emphasizes treatment over prevention — missing crucial opportunities for early detection, wellness tracking, and chronic disease management.
                     </p>
                   </div>
                 </div>
@@ -458,10 +476,10 @@ const LandingPage = () => {
                     height={450}
                     className="object-cover w-full h-full"
                   />
-                  <div className="absolute bottom-0  bg-gradient-to-t from-black/80 to-black/20 flex flex-col justify-end p-8">
+                  <div className="absolute bottom-0  bg-gradient-to-t from-black/80 to-black/20 flex flex-col justify-start p-8 h-[55%]">
                     <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">Fragmented Care & Missed Follow-Ups</h3>
                     <p className="text-white/90 text-sm sm:text-base">
-                      Disconnected health records and fragmented follow-ups lead to inefficiencies for both patients and healthcare providers. BHC’s Solution: Offers connected apps for patients, doctors and nurses, plus a smart admin dashboard for hospitals to track and manage care journeys. Ensures seamless, personalized healthcare — from diagnostics to consultation to follow-up.
+                      Disconnected health records and fragmented follow-ups lead to inefficiencies for both patients and healthcare providers.
                     </p>
                   </div>
                 </div>
@@ -508,128 +526,131 @@ const LandingPage = () => {
 
 
             <div
-              className={`p-4 bg-white rounded-lg border-1 border-gray-300 card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around min-h-[150px] md:min-h-[200px] lg:min-h-[250px] ${activeCard === 'phase1' ? 'touch-hover' : ''}`}
+              className={`bg-white rounded-lg overflow-hidden border-1 border-gray-300 card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around h-[250px] md:h-[300px] lg:h-[350px] ${activeCard === 'phase1' ? 'touch-hover' : ''}`}
               onClick={(e) => handleToggle(e, 'phase1')}
             >
-              <div className="flex flex-row items-center justify-around group-hover:hidden touch-hover:hidden">
+              <div className="flex flex-row items-center justify-around w-full h-[85%] group-hover:hidden touch-hover:hidden">
                 <Image
-                  src="/icons/hm-5-lgo1.png"
+                  src={`/icons/hm-5-img4.${currentMediaIndexOne + 1}.jpg`}
                   alt="Health Checkup"
-                  width={48}
-                  height={48}
+                  width={400}
+                  height={400}
+                  className='h-full w-full'
                 />
-
               </div>
-              <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-middle align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">Tele-Diagnostic Access</h3>
-              <p className="text-sm sm:text-base md:text-lg text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
+              <h3 className="h-[15%] text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] flex flex-row items-center justify-center capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">Tele-Diagnostic Access</h3>
+              <p className="w-[90%] text-sm sm:text-base md:text-lg text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
                 SHM delivers real-time diagnostics and virtual specialist access, bridging rural healthcare gaps with timely, doorstep expert care.
               </p>
             </div>
 
             <div
-              className={`p-4 bg-white rounded-lg border-1 border-gray-300 card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around min-h-[150px] md:min-h-[200px] lg:min-h-[250px] ${activeCard === 'phase1' ? 'touch-hover' : ''}`}
-              onClick={(e) => handleToggle(e, 'phase1')}
+              className={`bg-white rounded-lg overflow-hidden border-1 border-gray-300 card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around h-[250px] md:h-[300px] lg:h-[350px] ${activeCard === 'phase2' ? 'touch-hover' : ''}`}
+              onClick={(e) => handleToggle(e, 'phase2')}
             >
-              <div className="flex flex-row items-center justify-around group-hover:hidden touch-hover:hidden">
+              <div className="flex flex-row items-center justify-around w-full h-[85%] group-hover:hidden touch-hover:hidden">
                 <Image
-                  src="/icons/hm-5-lgo1.png"
+                  src={`/icons/hm-5-img2.${currentMediaIndexTwo + 1}.jpg`}
                   alt="Health Checkup"
-                  width={48}
-                  height={48}
+                  width={400}
+                  height={400}
+                  className='h-full w-full'
                 />
 
               </div>
-              <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-middle align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">Nurse-Enabled Access
+              <h3 className="h-[15%] text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] flex flex-row items-center justify-center capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">Nurse-Enabled Access
 
               </h3>
-              <p className="text-sm sm:text-base md:text-lg text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
+              <p className=" w-[90%] text-sm sm:text-base md:text-lg text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
                 SHM units integrate into existing healthcare setups, combining digital tools and nurse-led care for personalized, trusted patient support.
               </p>
             </div>
-
             <div
-              className={`p-4 bg-white rounded-lg border-1 border-gray-300 card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around min-h-[150px] md:min-h-[200px] lg:min-h-[250px] ${activeCard === 'phase1' ? 'touch-hover' : ''}`}
-              onClick={(e) => handleToggle(e, 'phase1')}
+              className={`bg-white rounded-lg overflow-hidden border-1 border-gray-300 card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around h-[250px] md:h-[300px] lg:h-[350px] ${activeCard === 'phase3' ? 'touch-hover' : ''}`}
+              onClick={(e) => handleToggle(e, 'phase3')}
             >
-              <div className="flex flex-row items-center justify-around group-hover:hidden touch-hover:hidden">
-                <Image
-                  src="/icons/hm-5-lgo1.png"
-                  alt="Health Checkup"
-                  width={48}
-                  height={48}
-                />
 
+              <div className="flex flex-row items-center justify-around w-full h-[85%] group-hover:hidden touch-hover:hidden">
+                <Image
+                  src={`/icons/hm-5-img3.${currentMediaIndexThree}.jpg`}
+                  alt="Health Checkup"
+                  width={400}
+                  height={400}
+                  className='h-full w-full'
+                />
               </div>
-              <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-middle align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">Smart Queueing
+              <h3 className="h-[15%] text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] flex flex-row items-center justify-center capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">Smart Queueing
 
 
               </h3>
-              <p className="text-sm sm:text-base md:text-lg text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
+              <p className="w-[90%] text-sm sm:text-base md:text-lg text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
                 Patients get scheduled time slots, reducing wait times, travel strain, wage loss, and overcrowding at consultation sites.
 
               </p>
             </div>
             <div
-              className={`p-4 bg-white rounded-lg border-1 border-gray-300 card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around min-h-[150px] md:min-h-[200px] lg:min-h-[250px] ${activeCard === 'phase1' ? 'touch-hover' : ''}`}
-              onClick={(e) => handleToggle(e, 'phase1')}
+              className={`bg-white rounded-lg overflow-hidden border-1 border-gray-300 card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around h-[250px] md:h-[300px] lg:h-[350px] ${activeCard === 'phase4' ? 'touch-hover' : ''}`}
+              onClick={(e) => handleToggle(e, 'phase4')}
             >
-              <div className="flex flex-row items-center justify-around group-hover:hidden touch-hover:hidden">
+              <div className="flex flex-row items-center justify-around w-full h-[85%] group-hover:hidden touch-hover:hidden">
+
                 <Image
-                  src="/icons/hm-5-lgo1.png"
+                  src={`/icons/hm-5-img1.${currentMediaIndex + 1}.jpg`}
                   alt="Health Checkup"
-                  width={48}
-                  height={48}
+                  width={400}
+                  height={400}
+                  className='h-full w-full'
                 />
 
               </div>
-              <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-middle align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">Digital Health Tracking
+              <h3 className="h-[15%] text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] flex flex-row items-center justify-center capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">Digital Health Tracking
 
               </h3>
-              <p className="text-sm sm:text-base md:text-lg text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
+              <p className="w-[90%] text-sm sm:text-base md:text-lg text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
                 Every patient interaction is securely recorded, ensuring continuous care, health tracking, and intelligent follow-ups and medication reminders.
 
 
               </p>
             </div>
             <div
-              className={`p-4 bg-white rounded-lg border-1 border-gray-300 card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around min-h-[150px] md:min-h-[200px] lg:min-h-[250px] ${activeCard === 'phase1' ? 'touch-hover' : ''}`}
-              onClick={(e) => handleToggle(e, 'phase1')}
+              className={`bg-white rounded-lg overflow-hidden border-1 border-gray-300 card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around h-[250px] md:h-[300px] lg:h-[350px] ${activeCard === 'phase5' ? 'touch-hover' : ''}`}
+              onClick={(e) => handleToggle(e, 'phase5')}
             >
-              <div className="flex flex-row items-center justify-around group-hover:hidden touch-hover:hidden">
+              <div className="flex flex-row items-center justify-around w-full h-[85%] group-hover:hidden touch-hover:hidden">
+
                 <Image
-                  src="/icons/hm-5-lgo1.png"
+                  src={`/icons/hm-5-img5.${currentMediaIndexFive + 1}.jpg`}
                   alt="Health Checkup"
-                  width={48}
-                  height={48}
+                  width={400}
+                  height={400}
+                  className='h-full w-full'
                 />
-
               </div>
-              <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-middle align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">Preventive Health
-
+              <h3 className="h-[15%] text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] flex flex-row items-center justify-center capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">Preventive Health
               </h3>
-              <p className="text-sm sm:text-base md:text-lg text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
+              <p className="w-[90%] text-sm sm:text-base md:text-lg text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
                 Regular screenings enable early chronic condition detection, promoting preventive care and reducing long-term complications through timely      consultations.
-
-
               </p>
             </div>
             <div
-              className={`p-4 bg-white rounded-lg border-1 border-gray-300 card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around min-h-[150px] md:min-h-[200px] lg:min-h-[250px] ${activeCard === 'phase1' ? 'touch-hover' : ''}`}
-              onClick={(e) => handleToggle(e, 'phase1')}
+              className={`bg-white rounded-lg overflow-hidden border-1 border-gray-300 card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around h-[250px] md:h-[300px] lg:h-[350px] ${activeCard === 'phase6' ? 'touch-hover' : ''}`}
+              onClick={(e) => handleToggle(e, 'phase6')}
             >
-              <div className="flex flex-row items-center justify-around group-hover:hidden touch-hover:hidden">
+              <div className="flex flex-row items-center justify-around w-full h-[85%] group-hover:hidden touch-hover:hidden">
+
                 <Image
-                  src="/icons/hm-5-lgo1.png"
+                  src={`/icons/hm-5-img6.${currentMediaIndexFive + 1}.jpg`}
                   alt="Health Checkup"
-                  width={48}
-                  height={48}
+                  width={400}
+                  height={400}
+                  className='h-full w-full'
                 />
 
               </div>
-              <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-middle align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">Targeted Health Interventions
+              <h3 className="h-[15%] text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] flex flex-row items-center justify-center capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">Targeted Health Interventions
 
               </h3>
-              <p className="text-sm sm:text-base md:text-lg text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
+              <p className="w-[90%] text-sm sm:text-base md:text-lg text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
                 Real-time health trends from SHM locations feed into analytics, aiding hospitals, NGOs, and funders in planning and resource allocation.
               </p>
             </div>
@@ -1368,34 +1389,52 @@ const LandingPage = () => {
       {/* We Work With Section */}
       <div className="relative bg-white overflow-hidden">
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-          <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+          <h2 className="text-[28px] xs:text-[30px] sm:text-[34px] md:text-[38px] lg:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
             <span className="text-[#18A093]">We</span>{' '}
             <span className="text-[#003366]">Work With</span>
           </h2>
-          <div className="w-full flex flex-row itmes-center justify-between">
-            <div className="w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6  flex flex-col items-center justify-center space-y-3 sm:space-y-4">
-              <Image src="/icons/hm-10-img1.png" alt="Pediatrics" width={70} height={70} className='w-15 md:w-20' />
-              <h3 className="text-base sm:text-lg text-gray-800 text-center ">CSR & Impact Organizations</h3>
+          <div className="w-full grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-2 xs:gap-3 sm:gap-4 md:gap-5">
+            <div className="bg-white p-3 xs:p-4 sm:p-5 lg:p-6 flex flex-col items-center justify-center h-[180px] xs:h-[200px] sm:h-[220px] md:h-[250px] space-y-2 xs:space-y-3 sm:space-y-4">
+              <div className="flex-1 flex items-center justify-center">
+                <Image src="/icons/hm-10-img11.png" alt="CSR & Impact Funds" width={70} height={70} className='w-10 xs:w-12 sm:w-14 md:w-16 lg:w-20 h-auto object-contain' />
+              </div>
+              <h3 className="text-xs xs:text-sm sm:text-base lg:text-lg text-gray-800 text-center h-[40%]">CSR & Impact Funds</h3>
             </div>
-            <div className="w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6  flex flex-col items-center justify-center space-y-3 sm:space-y-4">
-              <Image src="/icons/hm-10-img2.png" alt="Pediatrics" width={70} height={70} className='w-15 md:w-20' />
-              <h3 className="text-base sm:text-lg text-gray-800 text-center ">Doctors & Healthcare Professionals</h3>
+            <div className="bg-white p-3 xs:p-4 sm:p-5 lg:p-6 flex flex-col items-center justify-center h-[180px] xs:h-[200px] sm:h-[220px] md:h-[250px] space-y-2 xs:space-y-3 sm:space-y-4">
+              <div className="flex-1 flex items-center justify-center">
+                <Image src="/icons/hm-10-img12.png" alt="Doctors & Healthcare Professionals" width={70} height={70} className='w-10 xs:w-12 sm:w-14 md:w-16 lg:w-20 h-auto object-contain' />
+              </div>
+              <h3 className="text-xs xs:text-sm sm:text-base lg:text-lg text-gray-800 text-center h-[40%]">Healthcare Professionals</h3>
             </div>
-            <div className="w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6  flex flex-col items-center justify-center space-y-3 sm:space-y-4">
-              <Image src="/icons/hm-10-img3.png" alt="Pediatrics" width={70} height={60} className='w-15 md:w-18 md:h-17' />
-              <h3 className="text-base sm:text-lg text-gray-800 text-center ">IT Parks & Corporate</h3>
+            <div className="bg-white p-3 xs:p-4 sm:p-5 lg:p-6 flex flex-col items-center justify-center h-[180px] xs:h-[200px] sm:h-[220px] md:h-[250px] space-y-2 xs:space-y-3 sm:space-y-4">
+              <div className="flex-1 flex items-center justify-center h-[50%]">
+                <Image src="/icons/hm-10-img13.png" alt="Hospitals & Clinics" width={70} height={60} className='w-10 xs:w-12 sm:w-14 md:w-16 lg:w-18 h-auto object-contain' />
+              </div>
+              <h3 className="text-xs xs:text-sm sm:text-base lg:text-lg text-gray-800 text-center h-[40%]">Hospitals & Clinics</h3>
             </div>
-            <div className="w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6  flex flex-col items-center justify-center space-y-3 sm:space-y-4">
-              <Image src="/icons/hm-10-img4.png" alt="Pediatrics" width={70} height={70} className='w-15 md:w-20' />
-              <h3 className="text-base sm:text-lg text-gray-800 text-center ">Policy Makers & Local Bodies</h3>
+            <div className="bg-white p-3 xs:p-4 sm:p-5 lg:p-6 flex flex-col items-center justify-center h-[180px] xs:h-[200px] sm:h-[220px] md:h-[250px] space-y-2 xs:space-y-3 sm:space-y-4">
+              <div className="flex-1 flex items-center justify-center h-[50%]">
+                <Image src="/icons/hm-10-img14.png" alt="IT Park & Corporate" width={70} height={70} className='w-10 xs:w-12 sm:w-14 md:w-16 lg:w-20 h-auto object-contain' />
+              </div>
+              <h3 className="text-xs xs:text-sm sm:text-base lg:text-lg text-gray-800 text-center h-[40%] ">IT Park & Corporate</h3>
             </div>
-            <div className="w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6  flex flex-col items-center justify-center space-y-3 sm:space-y-4">
-              <Image src="/icons/hm-10-img5.png" alt="Pediatrics" width={70} height={70} className='w-15 md:w-20 md:h-20' />
-              <h3 className="text-base sm:text-lg text-gray-800 text-center ">Residential Societies & Gated Communities</h3>
+            <div className="bg-white p-3 xs:p-4 sm:p-5 lg:p-6 flex flex-col items-center justify-center h-[180px] xs:h-[200px] sm:h-[220px] md:h-[250px] space-y-2 xs:space-y-3 sm:space-y-4">
+              <div className="flex-1 flex items-center justify-center h-[50%]">
+                <Image src="/icons/hm-10-img15.png" alt="Policy Makers & Local Bodies" width={70} height={70} className='w-10 xs:w-12 sm:w-14 md:w-16 lg:w-20 h-auto object-contain' />
+              </div>
+              <h3 className="text-xs xs:text-sm sm:text-base lg:text-lg text-gray-800 text-center h-[40%] ">Policy Makers & Local Bodies</h3>
             </div>
-            <div className="w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6  flex flex-col items-center justify-center space-y-3 sm:space-y-4">
-              <Image src="/icons/hm-10-img6.png" alt="Pediatrics" width={70} height={70} className='w-15 md:w-20' />
-              <h3 className="text-base sm:text-lg text-gray-800 text-center ">Rural Health Centers & Panchayats</h3>
+            <div className="bg-white p-3 xs:p-4 sm:p-5 lg:p-6 flex flex-col items-center justify-center h-[180px] xs:h-[200px] sm:h-[220px] md:h-[250px] space-y-2 xs:space-y-3 sm:space-y-4">
+              <div className="flex-1 flex items-center justify-center h-[50%]">
+                <Image src="/icons/hm-10-img16.png" alt="Residential Complex & Gated Communities" width={70} height={70} className='w-10 xs:w-12 sm:w-14 md:w-16 lg:w-20 h-auto object-contain' />
+              </div>
+              <h3 className="text-xs xs:text-sm sm:text-base lg:text-lg text-gray-800 text-center h-[40%] ">Residential Complex</h3>
+            </div>
+            <div className="bg-white p-3 xs:p-4 sm:p-5 lg:p-6 flex flex-col items-center justify-center h-[180px] xs:h-[200px] sm:h-[220px] md:h-[250px] space-y-2 xs:space-y-3 sm:space-y-4">
+              <div className="flex-1 flex items-center justify-center h-[50%]">
+                <Image src="/icons/hm-10-img17.png" alt="Rural Health Centers & Panchayats" width={70} height={70} className='w-10 xs:w-12 sm:w-14 md:w-16 lg:w-20 h-auto object-contain' />
+              </div>
+              <h3 className="text-xs xs:text-sm sm:text-base lg:text-lg text-gray-800 text-center h-[40%] ">Rural Health Centers</h3>
             </div>
           </div>
         </div>

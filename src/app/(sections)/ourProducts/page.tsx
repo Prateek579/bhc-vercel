@@ -523,12 +523,12 @@ export default function OurProducts() {
 
     {/* Video Section */}
     <div className="relative bg-white overflow-hidden">
-      <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-        <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4 text-center">
+      <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15 bg-gray-100">
+        <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-8 text-center">
           <span className="text-[#18A093]">Demo</span>{' '}
           <span className="text-[#003366]">Video</span>
         </h2>
-        <div className="relative w-full max-w-4xl mx-auto aspect-video rounded-xl overflow-hidden shadow-lg">
+        <div className="relative w-full md:w-5xl mx-auto aspect-video rounded-xl overflow-hidden shadow-lg">
           <iframe
             className="absolute top-0 left-0 w-full h-full"
             src="https://www.youtube.com/embed/1SaZ5HdS0K4?si=5UFygb_j8uoTeNu8https://www.youtube.com/embed/1SaZ5HdS0K4?si=5UFygb_j8uoTeNu8"

@@ -40,6 +40,7 @@ const LandingPage = () => {
   const [currentMediaIndexTwo, setCurrentMediaIndexTwo] = useState(0);
   const [currentMediaIndexThree, setCurrentMediaIndexThree] = useState(1);
   const [currentMediaIndexFive, setCurrentMediaIndexFive] = useState(0);
+  const [showFaq, setShowFaq] = useState(false);
 
   const departments = useCountAnimation(25);
   const diseaseDetection = useCountAnimation(20);
@@ -47,16 +48,18 @@ const LandingPage = () => {
   const satisfactionRate = useCountAnimation(90);
   // Using a single static background image
   const [pageNum, setPageNum] = React.useState(1);
+  const [cardNum, setCardNum] = React.useState(1);
+
   const backgroundImage = '/hm-1-img.jpg';
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setPageNum(prevPageNum => prevPageNum === 2 ? 1 : prevPageNum + 1);
-  //   }, 5000);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPageNum(prevPageNum => prevPageNum === 4 ? 1 : prevPageNum + 1);
+    }, 5000);
 
-  //   // Cleanup function to clear the interval when component unmounts
-  //   return () => clearInterval(interval);
-  // }, []);
+    // Cleanup function to clear the interval when component unmounts
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     if (!statsRef.current) return;
@@ -314,11 +317,11 @@ const LandingPage = () => {
             {/* Video Component */}
             <div className="relative aspect-video flex items-center justify-center overflow-hidden">
               <Image
-                src="/hm-2-img.png"
+                src="/icons/hm-2-img.png"
                 alt="Journey So Far"
                 width={500}
                 height={300}
-                className="object-cover rounded-3xl w-[90%] h-[90%]"
+                className="object-contain rounded-3xl w-[90%] h-[90%]"
                 priority
               />
             </div>
@@ -400,7 +403,7 @@ const LandingPage = () => {
       {/* Our Addressing Key Challenges Section */}
       <div className="relative bg-white py-16 overflow-hidden">
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22">
-          <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+          <h2 className="text-[32px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-3 sm:mb-4 text-center">
             <span className="text-[#18A093]">Addressing</span>{' '}
             <span className="text-[#003366]">Key Challenges</span>
           </h2>
@@ -408,7 +411,7 @@ const LandingPage = () => {
           <div className="relative flex flex-col items-center justify-center">
             <div className="flex items-center justify-center overflow-hidden w-[80%]">
               <button
-                onClick={() => setPageNum(prevPage => prevPage === 1 ? 2 : prevPage - 1)}
+                onClick={() => setCardNum(prevPage => prevPage === 1 ? 2 : prevPage - 1)}
                 className="absolute left-0 z-10 p-2 rounded-full bg-white shadow-lg hover:bg-gray-100 transition-all duration-300"
               >
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -416,7 +419,7 @@ const LandingPage = () => {
                 </svg>
               </button>
 
-              {pageNum === 1 && <div className="flex-1 flex justify-center gap-6">
+              {cardNum === 1 && <div className="flex-1 flex justify-center gap-6">
                 <div className="relative group overflow-hidden rounded-lg w-full max-w-[600px] aspect-[4/3]">
                   <Image
                     src="/icons/hm-4-img1.1.jpeg"
@@ -425,9 +428,9 @@ const LandingPage = () => {
                     height={450}
                     className="object-cover w-full h-full"
                   />
-                  <div className="absolute bottom-0  bg-gradient-to-t from-black/80 to-black/20 flex flex-col justify-start p-8 h-[55%]">
-                    <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">Limited Access to Quality Care</h3>
-                    <p className="text-white/90 text-sm sm:text-base">
+                  <div className="absolute bottom-0  bg-gradient-to-t from-black/90 to-black/10 flex flex-col justify-start p-8 h-[45%]">
+                    <h3 className="text-2xl sm:text-[26px] font-['Montserrat'] font-bold text-white mb-4 text-center">Limited Access to Quality Care</h3>
+                    <p className="text-white/90 text-sm font-['Montserrat'] sm:text-[16px] text-center">
                       Quality healthcare remains inaccessible for millions — from remote rural regions to premium residential areas lacking sufficient medical infrastructure.
 
                     </p>
@@ -451,7 +454,7 @@ const LandingPage = () => {
                 </div>
               </div>}
 
-              {pageNum === 2 && <div className="flex-1 flex justify-center gap-6">
+              {cardNum === 2 && <div className="flex-1 flex justify-center gap-6">
                 <div className="relative group overflow-hidden rounded-lg w-full max-w-[600px] aspect-[4/3]">
                   <Image
                     src="/icons/hm-4-img2.1.webp"
@@ -486,7 +489,7 @@ const LandingPage = () => {
               </div>}
 
               <button
-                onClick={() => setPageNum(prevPage => prevPage === 2 ? 1 : prevPage + 1)}
+                onClick={() => setCardNum(prevPage => prevPage === 2 ? 1 : prevPage + 1)}
                 className="absolute right-0 z-10 p-2 rounded-full bg-white shadow-lg hover:bg-gray-100 transition-all duration-300"
               >
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -499,8 +502,8 @@ const LandingPage = () => {
               {[1, 2].map((num) => (
                 <button
                   key={num}
-                  onClick={() => setPageNum(num)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${pageNum === num ? 'bg-[#003366] w-4' : 'bg-gray-300'}`}
+                  onClick={() => setCardNum(num)}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${cardNum === num ? 'bg-[#003366] w-4' : 'bg-gray-300'}`}
                 />
               ))}
             </div>
@@ -511,13 +514,13 @@ const LandingPage = () => {
       {/* Our Key Services Section */}
       <div className="relative bg-white overflow-hidden">
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-          <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+          <h2 className="text-[32px] sm:text-[38px] md:text-[42px] text-center font-[700] font-['Montserrat'] mb-3 sm:mb-4">
             <span className="text-[#18A093]">Our</span>{' '}
             <span className="text-[#003366]">Key Services</span>
           </h2>
-          <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
+          {/* <p className="text-[#555555] text-[18px] sm:text-[22px] text-center md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
             The Smart Healthcare Machine improves healthcare with data-driven accessibility and efficiency.
-          </p>
+          </p> */}
           {/* <div className="grid grid-cols-1 lg:grid-cols-2"> */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6 lg:gap-8">
             {/* Service Cards */}
@@ -529,14 +532,21 @@ const LandingPage = () => {
               className={`bg-white rounded-lg overflow-hidden border-1 border-gray-300 card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around h-[250px] md:h-[300px] lg:h-[350px] ${activeCard === 'phase1' ? 'touch-hover' : ''}`}
               onClick={(e) => handleToggle(e, 'phase1')}
             >
-              <div className="flex flex-row items-center justify-around w-full h-[85%] group-hover:hidden touch-hover:hidden">
-                <Image
-                  src={`/icons/hm-5-img4.${currentMediaIndexOne + 1}.jpg`}
-                  alt="Health Checkup"
-                  width={400}
-                  height={400}
-                  className='h-full w-full'
-                />
+              <div className="flex flex-row items-center justify-around w-full h-[85%] group-hover:hidden touch-hover:hidden image-transition-container">
+                {[0, 1, 2, 3, 4].map((index) => (
+                  <div 
+                    key={index} 
+                    className={`image-transition-item ${index === currentMediaIndexOne ? 'active' : index === (currentMediaIndexOne === 0 ? 4 : currentMediaIndexOne - 1) ? 'previous' : ''}`}
+                  >
+                    <Image
+                      src={`/icons/hm-5-img4.${index + 1}.jpg`}
+                      alt="Health Checkup"
+                      width={400}
+                      height={400}
+                      className='h-full w-full'
+                    />
+                  </div>
+                ))}
               </div>
               <h3 className="h-[15%] text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] flex flex-row items-center justify-center capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">Tele-Diagnostic Access</h3>
               <p className="w-[90%] text-sm sm:text-base md:text-lg text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
@@ -548,14 +558,21 @@ const LandingPage = () => {
               className={`bg-white rounded-lg overflow-hidden border-1 border-gray-300 card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around h-[250px] md:h-[300px] lg:h-[350px] ${activeCard === 'phase2' ? 'touch-hover' : ''}`}
               onClick={(e) => handleToggle(e, 'phase2')}
             >
-              <div className="flex flex-row items-center justify-around w-full h-[85%] group-hover:hidden touch-hover:hidden">
-                <Image
-                  src={`/icons/hm-5-img2.${currentMediaIndexTwo + 1}.jpg`}
-                  alt="Health Checkup"
-                  width={400}
-                  height={400}
-                  className='h-full w-full'
-                />
+              <div className="flex flex-row items-center justify-around w-full h-[85%] group-hover:hidden touch-hover:hidden image-transition-container">
+                {[0, 1, 2].map((index) => (
+                  <div 
+                    key={index} 
+                    className={`image-transition-item ${index === currentMediaIndexTwo ? 'active' : index === (currentMediaIndexTwo === 0 ? 2 : currentMediaIndexTwo - 1) ? 'previous' : ''}`}
+                  >
+                    <Image
+                      src={`/icons/hm-5-img2.${index + 1}.jpg`}
+                      alt="Health Checkup"
+                      width={400}
+                      height={400}
+                      className='h-full w-full'
+                    />
+                  </div>
+                ))}
 
               </div>
               <h3 className="h-[15%] text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] flex flex-row items-center justify-center capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">Nurse-Enabled Access
@@ -570,38 +587,45 @@ const LandingPage = () => {
               onClick={(e) => handleToggle(e, 'phase3')}
             >
 
-              <div className="flex flex-row items-center justify-around w-full h-[85%] group-hover:hidden touch-hover:hidden">
-                <Image
-                  src={`/icons/hm-5-img3.${currentMediaIndexThree}.jpg`}
-                  alt="Health Checkup"
-                  width={400}
-                  height={400}
-                  className='h-full w-full'
-                />
+              <div className="flex flex-row items-center justify-around w-full h-[85%] group-hover:hidden touch-hover:hidden image-transition-container">
+                {[1, 2].map((index) => (
+                  <div 
+                    key={index} 
+                    className={`image-transition-item ${index === currentMediaIndexThree ? 'active' : index === (currentMediaIndexThree === 1 ? 2 : 1) ? 'previous' : ''}`}
+                  >
+                    <Image
+                      src={`/icons/hm-5-img3.${index}.jpg`}
+                      alt="Health Checkup"
+                      width={400}
+                      height={400}
+                      className='h-full w-full'
+                    />
+                  </div>
+                ))}
               </div>
-              <h3 className="h-[15%] text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] flex flex-row items-center justify-center capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">Smart Queueing
-
-
-              </h3>
+              <h3 className="h-[15%] text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] flex flex-row items-center justify-center capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">Smart Queueing</h3>
               <p className="w-[90%] text-sm sm:text-base md:text-lg text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
-                Patients get scheduled time slots, reducing wait times, travel strain, wage loss, and overcrowding at consultation sites.
-
-              </p>
+                Patients get scheduled time slots, reducing wait times, travel strain, wage loss, and overcrowding at consultation sites.</p>
             </div>
             <div
               className={`bg-white rounded-lg overflow-hidden border-1 border-gray-300 card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around h-[250px] md:h-[300px] lg:h-[350px] ${activeCard === 'phase4' ? 'touch-hover' : ''}`}
               onClick={(e) => handleToggle(e, 'phase4')}
             >
-              <div className="flex flex-row items-center justify-around w-full h-[85%] group-hover:hidden touch-hover:hidden">
-
-                <Image
-                  src={`/icons/hm-5-img1.${currentMediaIndex + 1}.jpg`}
-                  alt="Health Checkup"
-                  width={400}
-                  height={400}
-                  className='h-full w-full'
-                />
-
+              <div className="flex flex-row items-center justify-around w-full h-[85%] group-hover:hidden touch-hover:hidden image-transition-container">
+                {[0, 1, 2, 3].map((index) => (
+                  <div 
+                    key={index} 
+                    className={`image-transition-item ${index === currentMediaIndex ? 'active' : index === (currentMediaIndex === 0 ? 3 : currentMediaIndex - 1) ? 'previous' : ''}`}
+                  >
+                    <Image
+                      src={`/icons/hm-5-img1.${index + 1}.jpg`}
+                      alt="Health Checkup"
+                      width={400}
+                      height={400}
+                      className='h-full w-full'
+                    />
+                  </div>
+                ))}
               </div>
               <h3 className="h-[15%] text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] flex flex-row items-center justify-center capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">Digital Health Tracking
 
@@ -616,15 +640,21 @@ const LandingPage = () => {
               className={`bg-white rounded-lg overflow-hidden border-1 border-gray-300 card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around h-[250px] md:h-[300px] lg:h-[350px] ${activeCard === 'phase5' ? 'touch-hover' : ''}`}
               onClick={(e) => handleToggle(e, 'phase5')}
             >
-              <div className="flex flex-row items-center justify-around w-full h-[85%] group-hover:hidden touch-hover:hidden">
-
-                <Image
-                  src={`/icons/hm-5-img5.${currentMediaIndexFive + 1}.jpg`}
-                  alt="Health Checkup"
-                  width={400}
-                  height={400}
-                  className='h-full w-full'
-                />
+              <div className="flex flex-row items-center justify-around w-full h-[85%] group-hover:hidden touch-hover:hidden image-transition-container">
+                {[0, 1, 2].map((index) => (
+                  <div 
+                    key={index} 
+                    className={`image-transition-item ${index === currentMediaIndexFive ? 'active' : index === (currentMediaIndexFive === 0 ? 2 : currentMediaIndexFive - 1) ? 'previous' : ''}`}
+                  >
+                    <Image
+                      src={`/icons/hm-5-img5.${index + 1}.jpg`}
+                      alt="Health Checkup"
+                      width={400}
+                      height={400}
+                      className='h-full w-full'
+                    />
+                  </div>
+                ))}
               </div>
               <h3 className="h-[15%] text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] flex flex-row items-center justify-center capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">Preventive Health
               </h3>
@@ -636,16 +666,21 @@ const LandingPage = () => {
               className={`bg-white rounded-lg overflow-hidden border-1 border-gray-300 card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around h-[250px] md:h-[300px] lg:h-[350px] ${activeCard === 'phase6' ? 'touch-hover' : ''}`}
               onClick={(e) => handleToggle(e, 'phase6')}
             >
-              <div className="flex flex-row items-center justify-around w-full h-[85%] group-hover:hidden touch-hover:hidden">
-
-                <Image
-                  src={`/icons/hm-5-img6.${currentMediaIndexFive + 1}.jpg`}
-                  alt="Health Checkup"
-                  width={400}
-                  height={400}
-                  className='h-full w-full'
-                />
-
+              <div className="flex flex-row items-center justify-around w-full h-[85%] group-hover:hidden touch-hover:hidden image-transition-container">
+                {[0, 1, 2].map((index) => (
+                  <div 
+                    key={index} 
+                    className={`image-transition-item ${index === currentMediaIndexFive ? 'active' : index === (currentMediaIndexFive === 0 ? 2 : currentMediaIndexFive - 1) ? 'previous' : ''}`}
+                  >
+                    <Image
+                      src={`/icons/hm-5-img6.${index + 1}.jpg`}
+                      alt="Health Checkup"
+                      width={400}
+                      height={400}
+                      className='h-full w-full'
+                    />
+                  </div>
+                ))}
               </div>
               <h3 className="h-[15%] text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] flex flex-row items-center justify-center capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">Targeted Health Interventions
 
@@ -1398,43 +1433,43 @@ const LandingPage = () => {
               <div className="flex-1 flex items-center justify-center">
                 <Image src="/icons/hm-10-img11.png" alt="CSR & Impact Funds" width={70} height={70} className='w-10 xs:w-12 sm:w-14 md:w-16 lg:w-20 h-auto object-contain' />
               </div>
-              <h3 className="text-xs xs:text-sm sm:text-base lg:text-lg text-gray-800 text-center h-[40%]">CSR & Impact Funds</h3>
+              <h3 className="text-xs font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-gray-800 text-center h-[40%]">CSR & Impact Funds</h3>
             </div>
             <div className="bg-white p-3 xs:p-4 sm:p-5 lg:p-6 flex flex-col items-center justify-center h-[180px] xs:h-[200px] sm:h-[220px] md:h-[250px] space-y-2 xs:space-y-3 sm:space-y-4">
               <div className="flex-1 flex items-center justify-center">
                 <Image src="/icons/hm-10-img12.png" alt="Doctors & Healthcare Professionals" width={70} height={70} className='w-10 xs:w-12 sm:w-14 md:w-16 lg:w-20 h-auto object-contain' />
               </div>
-              <h3 className="text-xs xs:text-sm sm:text-base lg:text-lg text-gray-800 text-center h-[40%]">Healthcare Professionals</h3>
+              <h3 className="text-xs font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-gray-800 text-center h-[40%]">Healthcare Professionals</h3>
             </div>
             <div className="bg-white p-3 xs:p-4 sm:p-5 lg:p-6 flex flex-col items-center justify-center h-[180px] xs:h-[200px] sm:h-[220px] md:h-[250px] space-y-2 xs:space-y-3 sm:space-y-4">
               <div className="flex-1 flex items-center justify-center h-[50%]">
                 <Image src="/icons/hm-10-img13.png" alt="Hospitals & Clinics" width={70} height={60} className='w-10 xs:w-12 sm:w-14 md:w-16 lg:w-18 h-auto object-contain' />
               </div>
-              <h3 className="text-xs xs:text-sm sm:text-base lg:text-lg text-gray-800 text-center h-[40%]">Hospitals & Clinics</h3>
+              <h3 className="text-xs font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-gray-800 text-center h-[40%]">Hospitals & Clinics</h3>
             </div>
             <div className="bg-white p-3 xs:p-4 sm:p-5 lg:p-6 flex flex-col items-center justify-center h-[180px] xs:h-[200px] sm:h-[220px] md:h-[250px] space-y-2 xs:space-y-3 sm:space-y-4">
               <div className="flex-1 flex items-center justify-center h-[50%]">
                 <Image src="/icons/hm-10-img14.png" alt="IT Park & Corporate" width={70} height={70} className='w-10 xs:w-12 sm:w-14 md:w-16 lg:w-20 h-auto object-contain' />
               </div>
-              <h3 className="text-xs xs:text-sm sm:text-base lg:text-lg text-gray-800 text-center h-[40%] ">IT Park & Corporate</h3>
+              <h3 className="text-xs font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-gray-800 text-center h-[40%] ">IT Park & Corporate</h3>
             </div>
             <div className="bg-white p-3 xs:p-4 sm:p-5 lg:p-6 flex flex-col items-center justify-center h-[180px] xs:h-[200px] sm:h-[220px] md:h-[250px] space-y-2 xs:space-y-3 sm:space-y-4">
               <div className="flex-1 flex items-center justify-center h-[50%]">
                 <Image src="/icons/hm-10-img15.png" alt="Policy Makers & Local Bodies" width={70} height={70} className='w-10 xs:w-12 sm:w-14 md:w-16 lg:w-20 h-auto object-contain' />
               </div>
-              <h3 className="text-xs xs:text-sm sm:text-base lg:text-lg text-gray-800 text-center h-[40%] ">Policy Makers & Local Bodies</h3>
+              <h3 className="text-xs font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-gray-800 text-center h-[40%] ">Policy Makers & Local Bodies</h3>
             </div>
             <div className="bg-white p-3 xs:p-4 sm:p-5 lg:p-6 flex flex-col items-center justify-center h-[180px] xs:h-[200px] sm:h-[220px] md:h-[250px] space-y-2 xs:space-y-3 sm:space-y-4">
               <div className="flex-1 flex items-center justify-center h-[50%]">
                 <Image src="/icons/hm-10-img16.png" alt="Residential Complex & Gated Communities" width={70} height={70} className='w-10 xs:w-12 sm:w-14 md:w-16 lg:w-20 h-auto object-contain' />
               </div>
-              <h3 className="text-xs xs:text-sm sm:text-base lg:text-lg text-gray-800 text-center h-[40%] ">Residential Complex</h3>
+              <h3 className="text-xs font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-gray-800 text-center h-[40%] ">Residential Complex</h3>
             </div>
             <div className="bg-white p-3 xs:p-4 sm:p-5 lg:p-6 flex flex-col items-center justify-center h-[180px] xs:h-[200px] sm:h-[220px] md:h-[250px] space-y-2 xs:space-y-3 sm:space-y-4">
               <div className="flex-1 flex items-center justify-center h-[50%]">
                 <Image src="/icons/hm-10-img17.png" alt="Rural Health Centers & Panchayats" width={70} height={70} className='w-10 xs:w-12 sm:w-14 md:w-16 lg:w-20 h-auto object-contain' />
               </div>
-              <h3 className="text-xs xs:text-sm sm:text-base lg:text-lg text-gray-800 text-center h-[40%] ">Rural Health Centers</h3>
+              <h3 className="text-xs font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-gray-800 text-center h-[40%] ">Rural Health Centers</h3>
             </div>
           </div>
         </div>
@@ -1460,9 +1495,9 @@ const LandingPage = () => {
             <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq1' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
               <button
                 onClick={() => setActiveFaq(activeFaq === 'faq1' ? null : 'faq1')}
-                className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6 transition-colors duration-200"
+                className="w-full flex items-center justify-between p-2 sm:p-3 lg:p-4 transition-colors duration-200"
               >
-                <span className={`text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq1' ? 'text-white' : 'text-[#333333]'} `}>What is Bridge Healthcare and what makes it different from other healthcare providers?</span>
+                <span className={`text-base sm:text-lg lg:text-[18px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq1' ? 'text-white' : 'text-[#333333]'} `}>What is Bridge Healthcare and what makes it different from other healthcare providers?</span>
                 <svg
                   className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq1' ? 'rotate-180' : ''}`}
                   fill="none"
@@ -1473,16 +1508,16 @@ const LandingPage = () => {
                 </svg>
               </button>
               <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq1' ? 'max-h-[500px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
-                <p className="text-sm sm:text-base lg:text-lg font-['Montserrat'] text-white leading-relaxed">Bridge Healthcare is a purpose-led health-tech initiative focused on transforming how care reaches underserved communities. We go beyond traditional healthcare delivery by placing Smart Healthcare Machines in rural villages and local hubs, enabling real-time diagnostics, specialist tele-consultations and connected health records — right at the doorstep. Our model blends technology, community trust and accessibility, making healthcare proactive, not reactive.</p>
+                <p className="text-sm sm:text-[14px] lg:text-[16px] font-['Montserrat'] text-white leading-relaxed">Bridge Healthcare is a purpose-led health-tech initiative focused on transforming how care reaches underserved communities. We go beyond traditional healthcare delivery by placing Smart Healthcare Machines in rural villages and local hubs, enabling real-time diagnostics, specialist tele-consultations and connected health records — right at the doorstep. Our model blends technology, community trust and accessibility, making healthcare proactive, not reactive.</p>
               </div>
             </div>
 
             <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq2' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
               <button
                 onClick={() => setActiveFaq(activeFaq === 'faq2' ? null : 'faq2')}
-                className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6  transition-colors duration-200"
+                className="w-full flex items-center justify-between p-2 sm:p-3 lg:p-4 transition-colors duration-200"
               >
-                <span className={`text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq2' ? 'text-white' : 'text-[#333333]'} `}>Who can benefit from Bridge Healthcare’s services?
+                <span className={`text-base sm:text-lg lg:text-[18px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq2' ? 'text-white' : 'text-[#333333]'} `}>Who can benefit from Bridge Healthcare’s services?
                 </span>
                 <svg
                   className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq2' ? 'rotate-180' : ''}`}
@@ -1494,16 +1529,16 @@ const LandingPage = () => {
                 </svg>
               </button>
               <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq2' ? 'max-h-[500px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
-                <p className="text-sm sm:text-base lg:text-lg text-white font-['Montserrat'] leading-relaxed"> Our solutions are built for those often left out of mainstream healthcare—rural families, women, children, the elderly and chronic disease patients. At the same time, our model has proven effective in urban residential communities and IT parks, offering preventive care within walking distance, without disrupting daily routines.</p>
+                <p className="text-sm sm:text-[14px] lg:text-[16px] text-white font-['Montserrat'] leading-relaxed"> Our solutions are built for those often left out of mainstream healthcare—rural families, women, children, the elderly and chronic disease patients. At the same time, our model has proven effective in urban residential communities and IT parks, offering preventive care within walking distance, without disrupting daily routines.</p>
               </div>
             </div>
 
             <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq3' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
               <button
                 onClick={() => setActiveFaq(activeFaq === 'faq3' ? null : 'faq3')}
-                className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6  transition-colors duration-200"
+                className="w-full flex items-center justify-between p-2 sm:p-3 lg:p-4   transition-colors duration-200"
               >
-                <span className={`text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq3' ? 'text-white' : 'text-[#333333]'} `}> How does Bridge Healthcare improve healthcare accessibility and quality?</span>
+                <span className={`text-base sm:text-lg lg:text-[18px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq3' ? 'text-white' : 'text-[#333333]'} `}> How does Bridge Healthcare improve healthcare accessibility and quality?</span>
                 <svg
                   className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq3' ? 'rotate-180' : ''}`}
                   fill="none"
@@ -1514,16 +1549,16 @@ const LandingPage = () => {
                 </svg>
               </button>
               <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq3' ? 'max-h-[500px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
-                <p className="text-sm sm:text-base lg:text-lg text-white font-['Montserrat']">We bring healthcare to where people live. By deploying digitally equipped health points and training local nurses, we eliminate the need to travel for routine care. All diagnostic data is securely shared with doctors in real time, enabling timely decisions, early detection, and follow-ups — creating a loop of care that’s continuous, high-quality and community-rooted.</p>
+                <p className="text-sm sm:text-[14px] lg:text-[16px] text-white font-['Montserrat']">We bring healthcare to where people live. By deploying digitally equipped health points and training local nurses, we eliminate the need to travel for routine care. All diagnostic data is securely shared with doctors in real time, enabling timely decisions, early detection, and follow-ups — creating a loop of care that’s continuous, high-quality and community-rooted.</p>
               </div>
             </div>
 
-            <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq4' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
+            {showFaq === true && (<> <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq4' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
               <button
                 onClick={() => setActiveFaq(activeFaq === 'faq4' ? null : 'faq4')}
-                className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6  transition-colors duration-200"
+                className="w-full flex items-center justify-between p-2 sm:p-3 lg:p-4   transition-colors duration-200"
               >
-                <span className={`text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq4' ? 'text-white' : 'text-[#333333]'} `}>Where is Bridge Healthcare currently operating? Are your services available in my area?</span>
+                <span className={`text-base sm:text-lg lg:text-[18px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq4' ? 'text-white' : 'text-[#333333]'} `}>Where is Bridge Healthcare currently operating? Are your services available in my area?</span>
                 <svg
                   className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq4' ? 'rotate-180' : ''}`}
                   fill="none"
@@ -1534,28 +1569,35 @@ const LandingPage = () => {
                 </svg>
               </button>
               <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq4' ? 'max-h-[500px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
-                <p className="text-sm sm:text-base lg:text-lg text-white font-['Montserrat']">We are currently active in Varanasi, Uttar Pradesh and Murshidabad, West Bengal, with successful pilot deployments in both rural and urban settings of Chennai, Tamil Nadu and Bengaluru, Karnataka. We&apos;re expanding and if you&apos;re a local leader, institution, or funder looking to bring quality care to your community, we’d love to explore collaboration.</p>
+                <p className="text-sm sm:text-[14px] lg:text-[16px] text-white font-['Montserrat']">We are currently active in Varanasi, Uttar Pradesh and Murshidabad, West Bengal, with successful pilot deployments in both rural and urban settings of Chennai, Tamil Nadu and Bengaluru, Karnataka. We&apos;re expanding and if you&apos;re a local leader, institution, or funder looking to bring quality care to your community, we’d love to explore collaboration.</p>
               </div>
             </div>
 
-            <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq5' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
-              <button
-                onClick={() => setActiveFaq(activeFaq === 'faq5' ? null : 'faq5')}
-                className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6  transition-colors duration-200"
-              >
-                <span className={`text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq5' ? 'text-white' : 'text-[#333333]'} `}> How can I get involved with Bridge Healthcare — as a partner, funder or volunteer?</span>
-                <svg
-                  className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq5' ? 'rotate-180' : ''}`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+              <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq5' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
+                <button
+                  onClick={() => setActiveFaq(activeFaq === 'faq5' ? null : 'faq5')}
+                  className="w-full flex items-center justify-between p-2 sm:p-3 lg:p-4   transition-colors duration-200"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
+                  <span className={`text-base sm:text-lg lg:text-[18px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq5' ? 'text-white' : 'text-[#333333]'} `}> How can I get involved with Bridge Healthcare — as a partner, funder or volunteer?</span>
+                  <svg
+                    className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq5' ? 'rotate-180' : ''}`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq5' ? 'max-h-[500px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
+                  <p className="text-sm sm:text-[14px] lg:text-[16px] text-white font-['Montserrat']">We welcome changemakers from all walks of life. Whether you&apos;re a CSR funder, hospital, NGO, tech partner, or a passionate volunteer, there’s a role for you. You can support deployments, fund wellness drives, offer expertise or help us build local capacity. Together, we can make quality healthcare not just a service — but a right.</p>
+                </div>
+              </div></>)}
+            <div className="mt-12">
+              <button onClick={() => setShowFaq(!showFaq)}
+                className="inline-block px-8 py-3 border-1 border-[#003366] text-[#003366] rounded-xl font-semibold hover:bg-[#003366] hover:text-white transition-all duration-300"
+              >
+                {showFaq === true ? 'Hide All' : 'Show All'}
               </button>
-              <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq5' ? 'max-h-[500px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
-                <p className="text-sm sm:text-base lg:text-lg text-white font-['Montserrat']">We welcome changemakers from all walks of life. Whether you&apos;re a CSR funder, hospital, NGO, tech partner, or a passionate volunteer, there’s a role for you. You can support deployments, fund wellness drives, offer expertise or help us build local capacity. Together, we can make quality healthcare not just a service — but a right.</p>
-              </div>
             </div>
           </div>
         </div>

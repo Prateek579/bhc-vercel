@@ -9,6 +9,7 @@ export default function OurProducts() {
   const [activeFaq, setActiveFaq] = React.useState<string | null>(null);
   const [activeStep, setActiveStep] = useState<string | null>(null);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const [showFaq, setShowFaq] = useState(false);
 
   useEffect(() => {
     const checkTouchDevice = (): boolean => {
@@ -303,7 +304,7 @@ export default function OurProducts() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 place-items-center">
           {/* Smart Healthcare Machine */}
           <div
-            className={`w-[70%] relative bg-white rounded-lg border-1 border-gray-300 overflow-hidden card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around min-h-[350px] ${activeCard === 'prod1' ? 'touch-hover' : ''}`}
+            className={`w-[70%] relative bg-white rounded-lg border-1 border-gray-300 overflow-hidden card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-start justify-start p-6 min-h-[350px] ${activeCard === 'prod1' ? 'touch-hover' : ''}`}
             onClick={(e) => handleToggle(e, 'prod1')}
           >
             <div className="absolute inset-0 w-full h-[80%] group-hover:hidden touch-hover:hidden">
@@ -315,14 +316,14 @@ export default function OurProducts() {
                 className='w-full h-full object-contain'
               />
             </div>
-            <div className="absolute h-[20%] bottom-0 left-0 right-0 bg-[#003366] bg-opacity-80 p-3 group-hover:hidden touch-hover:hidden">
+            <div className="absolute h-[20%] bottom-0 left-0 right-0 bg-gradient-to-r from-[#003366] to-[#18A093] p-3 group-hover:hidden touch-hover:hidden">
               <h3 className="text-[24px] font-[600] text-center text-white font-['Montserrat']">
                 Smart Healthcare Machine
               </h3>
             </div>
-            <div className="relative z-10 p-4 flex flex-col items-center justify-center h-full">
-              <div className="text-sm md:text-base text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
-                <h4 className="font-semibold mb-2 text-lg text-white">Key Features:</h4>
+            <div className="relative z-10 p-4 h-full">
+              <div className="text-sm md:text-[18px] text-gray-600 font-['Montserrat'] hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
+                <h4 className="font-semibold mb-2 text-[20px] text-white font-['Montserrat']">Key Features:</h4>
                 <ul className="list-disc pl-5 space-y-2">
                   <li>Health Screening</li>
                   <li>Real-Time Diagnostics Integration</li>
@@ -613,7 +614,7 @@ export default function OurProducts() {
             </div>
           </div>
 
-          <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq4' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
+          {showFaq === true && <><div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq4' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
             <button
               onClick={() => setActiveFaq(activeFaq === 'faq4' ? null : 'faq4')}
               className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6  transition-colors duration-200"
@@ -633,24 +634,31 @@ export default function OurProducts() {
             </div>
           </div>
 
-          <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq5' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
-            <button
-              onClick={() => setActiveFaq(activeFaq === 'faq5' ? null : 'faq5')}
-              className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6  transition-colors duration-200"
-            >
-              <span className={`text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq5' ? 'text-white' : 'text-[#333333]'} `}>Can the Smart Healthcare Machine print prescriptions and health reports on the spot?</span>
-              <svg
-                className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq5' ? 'rotate-180' : ''}`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+            <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq5' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
+              <button
+                onClick={() => setActiveFaq(activeFaq === 'faq5' ? null : 'faq5')}
+                className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6  transition-colors duration-200"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
+                <span className={`text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq5' ? 'text-white' : 'text-[#333333]'} `}>Can the Smart Healthcare Machine print prescriptions and health reports on the spot?</span>
+                <svg
+                  className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq5' ? 'rotate-180' : ''}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq5' ? 'max-h-[1000px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
+                <p className="text-sm sm:text-base lg:text-lg text-white font-['Montserrat']">Absolutely. The machine comes equipped with both a Printer and a Document Scanner. It can instantly print prescriptions, diagnostic reports, and follow-up instructions, giving patients tangible takeaways after each visit. The scanner allows nurses to upload old prescriptions, lab reports, and discharge summaries to the patient’s digital profile—ensuring that both new and historical data are available to doctors for better clinical decisions. This process helps digitize healthcare journeys, especially for those who’ve never had a medical record before.</p>
+              </div>
+            </div></>}
+          <div className="mt-12">
+            <button onClick={() => setShowFaq(!showFaq)}
+              className="inline-block px-8 py-3 border-1 border-[#003366] text-[#003366] rounded-xl font-semibold hover:bg-[#003366] hover:text-white transition-all duration-300"
+            >
+              {showFaq === true ? 'Hide All' : 'Show All'}
             </button>
-            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq5' ? 'max-h-[1000px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
-              <p className="text-sm sm:text-base lg:text-lg text-white font-['Montserrat']">Absolutely. The machine comes equipped with both a Printer and a Document Scanner. It can instantly print prescriptions, diagnostic reports, and follow-up instructions, giving patients tangible takeaways after each visit. The scanner allows nurses to upload old prescriptions, lab reports, and discharge summaries to the patient’s digital profile—ensuring that both new and historical data are available to doctors for better clinical decisions. This process helps digitize healthcare journeys, especially for those who’ve never had a medical record before.</p>
-            </div>
           </div>
         </div>
       </div>

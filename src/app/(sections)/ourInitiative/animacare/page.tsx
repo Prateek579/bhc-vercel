@@ -31,6 +31,7 @@ export default function Animacare() {
   const [activeFaq, setActiveFaq] = React.useState<string | null>(null);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
   const [activeCard, setActiveCard] = useState<string | null>(null);
+  const [showFaq, setShowFaq] = useState(false);
 
   const statsRef = useRef<HTMLDivElement>(null);
   const missionStatsRef = useRef<HTMLDivElement>(null);
@@ -281,21 +282,21 @@ export default function Animacare() {
           To effectively cater to the healthcare needs of rural regions, we will develop a Mobile Tele-Clinic Unit that complements the Tele-Diagnostic and Tele-Consultation Centers in sub-divisions of district. This solution ensures that even the most geographically isolated communities have access to primary and preventive healthcare.
         </p>
         <div className="flex flex-col md:flex-row items-center justity-between">
-          <div className="space-y-6 w-[65%]">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="space-y-6 md:w-[65%] md:border-r-2 md:border-[#003366]">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 md:gap-8">
               {/* TDTC Column */}
-              <div className="bg-white p-6 ">
-                <div className="flex flex-col items-center gap-4 mb-4 border-b-2 border-[#003366]">
-                  <div className="w-16 h-16">
+              <div className="bg-white p-6">
+                <div className="flex flex-col items-center gap-4 md:mb-4 border-b-2 border-[#003366] h-[45%]">
+                  <div className="h-[65%] flex items-center justify-center">
                     <Image
                       src="/icons/anim-6-lgo1.png"
                       alt="TDTC Building"
                       width={48}
                       height={48}
-                      className="w-full h-full"
+                      className="w-20 h-22"
                     />
                   </div>
-                  <div>
+                  <div className='md:h-[35%]'>
                     <h3 className="text-xl font-semibold text-center text-[#333333]">Tele-Diagnostic & Tele-Consultation Centre</h3>
                   </div>
                 </div>
@@ -311,18 +312,18 @@ export default function Animacare() {
               </div>
 
               {/* MTCU Column */}
-              <div className="bg-white p-6 ">
-                <div className="flex flex-col items-center gap-4 mb-4 border-b-2 border-[#003366]">
-                  <div className="w-16 h-16">
+              <div className="bg-white p-6">
+                <div className="flex flex-col items-center gap-4 md:mb-4 border-b-2 border-[#003366] h-[45%]">
+                  <div className="h-[65%] flex items-center justify-center">
                     <Image
                       src="/icons/anim-6-lgo2.1.png"
                       alt="MTCU Vehicle"
-                      width={48}
-                      height={48}
-                      className="w-full h-full"
+                      width={100}
+                      height={100}
+                      className="w-24 h-21"
                     />
                   </div>
-                  <div>
+                  <div className='h-[35%]'>
                     <h3 className="text-xl font-semibold text-[#333333]">Mobile Tele-Clinic Unit</h3>
                   </div>
                 </div>
@@ -338,7 +339,7 @@ export default function Animacare() {
             </div>
           </div>
 
-          <div className="relative  flex items-center justify-center w-[35%] md:border-l-2 md:border-[#003366]">
+          <div className="relative  flex items-center justify-center w-[100%] sm:w-[60%] md:w-[35%]">
             <Image
               src="/icons/anim-5-img.png"
               alt="Tele-Consultation"
@@ -842,7 +843,7 @@ export default function Animacare() {
             </div>
           </div>
 
-          <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq4' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
+          {showFaq === true && <> <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq4' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
             <button
               onClick={() => setActiveFaq(activeFaq === 'faq4' ? null : 'faq4')}
               className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6  transition-colors duration-200"
@@ -866,24 +867,31 @@ export default function Animacare() {
             </div>
           </div>
 
-          <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq5' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
-            <button
-              onClick={() => setActiveFaq(activeFaq === 'faq5' ? null : 'faq5')}
-              className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6  transition-colors duration-200"
-            >
-              <span className={`text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq5' ? 'text-white' : 'text-[#333333]'} `}> How scalable is the Animacare Initiative for other rural regions?</span>
-              <svg
-                className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq5' ? 'rotate-180' : ''}`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+            <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq5' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
+              <button
+                onClick={() => setActiveFaq(activeFaq === 'faq5' ? null : 'faq5')}
+                className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6  transition-colors duration-200"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
+                <span className={`text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq5' ? 'text-white' : 'text-[#333333]'} `}> How scalable is the Animacare Initiative for other rural regions?</span>
+                <svg
+                  className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq5' ? 'rotate-180' : ''}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq5' ? 'max-h-[1000px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
+                <p className="text-sm sm:text-base lg:text-lg text-white font-['Montserrat']">The model is highly scalable and adaptable. It requires minimal infrastructure, runs with trained local staff and leverages existing hospital partnerships. Whether it’s hilly terrain, tribal belts, or flood-prone villages—the model can be replicated with low operational cost and high community trust. We’re actively inviting CSR funders, NGOs and Government bodies to partner with us in bringing this impact to many more districts across India.</p>
+              </div>
+            </div></>}
+          <div className="mt-12">
+            <button onClick={() => setShowFaq(!showFaq)}
+              className="inline-block px-8 py-3 border-1 border-[#003366] text-[#003366] rounded-xl font-semibold hover:bg-[#003366] hover:text-white transition-all duration-300"
+            >
+              {showFaq === true ? 'Hide All' : 'Show All'}
             </button>
-            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq5' ? 'max-h-[1000px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
-              <p className="text-sm sm:text-base lg:text-lg text-white font-['Montserrat']">The model is highly scalable and adaptable. It requires minimal infrastructure, runs with trained local staff and leverages existing hospital partnerships. Whether it’s hilly terrain, tribal belts, or flood-prone villages—the model can be replicated with low operational cost and high community trust. We’re actively inviting CSR funders, NGOs and Government bodies to partner with us in bringing this impact to many more districts across India.</p>
-            </div>
           </div>
         </div>
       </div>

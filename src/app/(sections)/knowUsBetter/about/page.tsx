@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Partner from '@/app/components/Partner';
 
@@ -8,6 +8,7 @@ export default function KnowUsBetter() {
   const [activeFaq, setActiveFaq] = React.useState<string | null>(null);
   const [activeCard, setActiveCard] = React.useState<string | null>(null);
   const [isTouchDevice, setIsTouchDevice] = React.useState<boolean>(false);
+  const [showFaq, setShowFaq] = useState(false);
 
   React.useEffect(() => {
     setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0);
@@ -83,7 +84,7 @@ export default function KnowUsBetter() {
                 <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white transition-colors duration-300">Vision</h3>
               </div>
               <p className="text-sm sm:text-base md:text-lg text-gray-600 group-hover:text-white transition-colors duration-300">
-                To revolutionize healthcare delivery by making premium, technology-driven healthcare services accessible, affordable, and reliable for everyone, everywhere.
+                To reimagine healthcare by creating resilient, inclusive systems that prioritize preventive care, empower communities, and transform lives at scale.
               </p>
             </div>
 
@@ -101,7 +102,8 @@ export default function KnowUsBetter() {
                 <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white transition-colors duration-300">Mission</h3>
               </div>
               <p className="text-sm sm:text-base md:text-lg text-gray-600 group-hover:text-white transition-colors duration-300">
-                To empower individuals and healthcare providers through advanced Tele-Diagnostic and Smart Healthcare solutions, ensuring real-time diagnostics, seamless tele-consultations, and connected care that improves health outcomes and transforms lives.
+                To bridge healthcare gaps by delivering accessible, connected, and proactive healthcare services to all — through innovation, compassion, and collaboration.
+
               </p>
             </div>
           </div>
@@ -264,7 +266,7 @@ export default function KnowUsBetter() {
                 fill
                 className="object-cover rounded-lg"
               />
-              <a href="#" className="absolute bottom-2 bg-white left-2 text-gray-600 hover:text-[#00A99D]">
+              <a href="http://linkedin.com/in/rebecca-punithavalli-0857b048" className="absolute bottom-2 bg-white left-2 text-gray-600 hover:text-[#00A99D]">
                 <Image src="/icons/lkdn.png" alt="LinkedIn" width={30} height={30} />
               </a>
             </div>
@@ -339,8 +341,8 @@ export default function KnowUsBetter() {
                 fill
                 className="object-cover rounded-lg"
               />
-              <a href="#" className="absolute bottom-2 bg-white left-2 text-gray-600 hover:text-[#00A99D]">
-                <Image src="/icons/lkdn.png" alt="LinkedIn" width={30} height={30} />
+              <a href="https://www.atreumhospital.com/our-doctors/sagar-p-kabadi" className="absolute rounded-full bottom-2 bg-white left-2 text-gray-600 hover:text-[#00A99D]">
+                <Image src="/icons/intrnt.png" alt="LinkedIn" width={30} height={30} />
               </a>
             </div>
             <h3 className="text-xl font-bold text-[#003366] mb-1">DR. SAGAR P KABADI</h3>
@@ -359,8 +361,8 @@ export default function KnowUsBetter() {
                 fill
                 className="object-cover rounded-lg"
               />
-              <a href="#" className="absolute bottom-2 bg-white left-2 text-gray-600 hover:text-[#00A99D]">
-                <Image src="/icons/lkdn.png" alt="LinkedIn" width={30} height={30} />
+              <a href="https://www.vasavihospitals.com/neurosurgery.php" className="absolute rounded-full bottom-2 bg-white left-2 text-gray-600 hover:text-[#00A99D]">
+                <Image src="/icons/intrnt.png" alt="LinkedIn" width={30} height={30} />
               </a>
             </div>
             <h3 className="text-xl font-bold text-[#003366] mb-1">DR. PRATHAM R</h3>
@@ -444,7 +446,7 @@ export default function KnowUsBetter() {
             </div>
           </div>
 
-          <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq4' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
+          {showFaq === true && <> <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq4' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
             <button
               onClick={() => setActiveFaq(activeFaq === 'faq4' ? null : 'faq4')}
               className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6  transition-colors duration-200"
@@ -464,24 +466,31 @@ export default function KnowUsBetter() {
             </div>
           </div>
 
-          <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq5' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
-            <button
-              onClick={() => setActiveFaq(activeFaq === 'faq5' ? null : 'faq5')}
-              className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6  transition-colors duration-200"
-            >
-              <span className={`text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq5' ? 'text-white' : 'text-[#333333]'} `}>How can individuals or organizations collaborate with Bridge Healthcare?</span>
-              <svg
-                className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq5' ? 'rotate-180' : ''}`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+            <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq5' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
+              <button
+                onClick={() => setActiveFaq(activeFaq === 'faq5' ? null : 'faq5')}
+                className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6  transition-colors duration-200"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
+                <span className={`text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq5' ? 'text-white' : 'text-[#333333]'} `}>How can individuals or organizations collaborate with Bridge Healthcare?</span>
+                <svg
+                  className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq5' ? 'rotate-180' : ''}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq5' ? 'max-h-[1000px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
+                <p className="text-sm sm:text-base lg:text-lg text-white font-['Montserrat']">We believe collaboration is key to systemic change. Whether you&apos;re a CSR partner, NGO, hospital, panchayat, or impact-driven institution, there’s space to work together. From deploying care units to running health programs or scaling our platform in new regions—we invite you to join us in building a healthier, more inclusive future.</p>
+              </div>
+            </div></>}
+          <div className="mt-12">
+            <button onClick={() => setShowFaq(!showFaq)}
+              className="inline-block px-8 py-3 border-1 border-[#003366] text-[#003366] rounded-xl font-semibold hover:bg-[#003366] hover:text-white transition-all duration-300"
+            >
+              {showFaq === true ? 'Hide All' : 'Show All'}
             </button>
-            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq5' ? 'max-h-[1000px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
-              <p className="text-sm sm:text-base lg:text-lg text-white font-['Montserrat']">We believe collaboration is key to systemic change. Whether you&apos;re a CSR partner, NGO, hospital, panchayat, or impact-driven institution, there’s space to work together. From deploying care units to running health programs or scaling our platform in new regions—we invite you to join us in building a healthier, more inclusive future.</p>
-            </div>
           </div>
         </div>
       </div>

@@ -211,246 +211,249 @@ export default function GetInvolved() {
                 <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
                     Our impact is reflected in the voices of patients, doctors and public sector leaders who trust us.
                 </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-                    {/* Testimonial Card 1 */}
-                    <div className="bg-white p-6 sm:p-8 lg:p-10 rounded-lg border border-gray-200 relative flex flex-col justify-around">
-                        <div className="absolute top-2 left-2">
-                            <Image
-                                src="/icons/hm-8-img2.png"
-                                alt="Quote icon"
-                                width={50}
-                                height={50}
-                                className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
-                            />
-                        </div>
-                        <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
-                            As a gastroenterologist, having quick access to liver function tests, vitals, and previous reports helps me make decisions with greater clarity. The SHM platform makes all of this available in a single interface. It feels organized and efficient, especially during follow-ups and chronic care management.
-                        </p>
-                        <div className="flex items-center">
-                            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
+                <div className="w-full overflow-hidden">
+                    <div className="specialty-cards-container  gap-4 sm:gap-6 lg:gap-8">
+                        {/* Testimonial Card 1 */}
+                        <div className="w-[250px] h-auto sm:w-[350px] sm:h-[250px] md:w-[400px] md:h-[350px] bg-white p-6 sm:p-8 lg:p-10 rounded-lg border border-gray-200 relative flex flex-col justify-around">
+                            <div className="absolute top-2 left-2">
                                 <Image
-                                    src="/icons/hm-8-img.png"
-                                    alt="Jane Smith"
-                                    width={48}
-                                    height={48}
-                                    className="object-cover w-full h-full"
+                                    src="/icons/hm-8-img2.png"
+                                    alt="Quote icon"
+                                    width={50}
+                                    height={50}
+                                    className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
                                 />
                             </div>
-                            <div>
-                                <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Sagar P Kabadi</h4>
-                                <p className="text-gray-500 text-xs sm:text-sm font-['Montserrat']">Senior Consultant, Medical Gastroenterologist
-                                </p>
+                            <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
+                                As a gastroenterologist, having quick access to liver function tests, vitals, and previous reports helps me make decisions with greater clarity. The SHM platform makes all of this available in a single interface. It feels organized and efficient, especially during follow-ups and chronic care management.
+                            </p>
+                            <div className="flex items-center">
+                                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
+                                    <Image
+                                        src="/icons/hm-8-img8.png"
+                                        alt="Jane Smith"
+                                        width={48}
+                                        height={48}
+                                        className="object-cover w-full h-full"
+                                    />
+                                </div>
+                                <div>
+                                    <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Sagar P Kabadi</h4>
+                                    <p className="text-gray-500 text-xs sm:text-sm font-['Montserrat']">Senior Consultant, Medical Gastroenterologist
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    {/* Testimonial Card 2 */}
-                    <div className="bg-white p-6 sm:p-8 lg:p-10 rounded-lg border border-gray-200 relative flex flex-col justify-around">
-                        <div className="absolute top-2 left-2">
-                            <Image
-                                src="/icons/hm-8-img2.png"
-                                alt="Quote icon"
-                                width={50}
-                                height={50}
-                                className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
-                            />
-                        </div>
-                        <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
-                            The SHM platform stands out with its ability to organize and present all necessary patient data—especially radiology reports like MRIs and CTs—before I begin my consultation. It brings a lot of clarity to my decision-making and allows me to focus directly on the clinical need.
-                        </p>
-                        <div className="flex items-center">
-                            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
+                        {/* Testimonial Card 2 */}
+                        <div className="w-[250px] h-auto sm:w-[350px] sm:w-[250px] md:w-[400px] md:w-[350px] bg-white p-6 sm:p-8 lg:p-10 rounded-lg border border-gray-200 relative flex flex-col justify-around">
+                            <div className="absolute top-2 left-2">
                                 <Image
-                                    src="/icons/hm-8-img.png"
-                                    alt="John Doe"
-                                    width={48}
-                                    height={48}
-                                    className="object-cover w-full h-full"
+                                    src="/icons/hm-8-img2.png"
+                                    alt="Quote icon"
+                                    width={50}
+                                    height={50}
+                                    className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
                                 />
                             </div>
-                            <div>
-                                <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Pratham R Bysan</h4>
-                                <p className="text-gray-500 text-xs sm:text-sm font-['Montserrat']">Consultant Neurosciences</p>
+                            <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
+                                The SHM platform stands out with its ability to organize and present all necessary patient data—especially radiology reports like MRIs and CTs—before I begin my consultation. It brings a lot of clarity to my decision-making and allows me to focus directly on the clinical need.
+                            </p>
+                            <div className="flex items-center">
+                                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
+                                    <Image
+                                        src="/icons/hm-8-img5.png"
+                                        alt="John Doe"
+                                        width={48}
+                                        height={48}
+                                        className="object-cover  w-full h-full"
+                                    />
+                                </div>
+                                <div>
+                                    <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Pratham R Bysan</h4>
+                                    <p className="text-gray-500 text-xs sm:text-sm font-['Montserrat']">Consultant Neurosciences</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    {/* Testimonial Card 3 */}
-                    <div className="bg-white p-6 sm:p-8 lg:p-10 rounded-lg border border-gray-200 relative flex flex-col justify-around">
-                        <div className="absolute top-2 left-2">
-                            <Image
-                                src="/icons/hm-8-img2.png"
-                                alt="Quote icon"
-                                width={50}
-                                height={50}
-                                className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
-                            />
-                        </div>
-                        <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
-                            In cardiology, speed and accuracy are essential. SHM delivers real-time 12-lead ECGs that are clear and immediate. Combined with vitals and patient history, it gives me all the inputs I need to make confident and timely clinical decisions. It’s an excellent tool for proactive cardiac care.
-                        </p>
-                        <div className="flex items-center">
-                            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
+                        {/* Testimonial Card 3 */}
+                        <div className="w-[250px] h-auto sm:w-[350px] sm:w-[250px] md:w-[400px] md:w-[350px] bg-white p-6 sm:p-8 lg:p-10 rounded-lg border border-gray-200 relative flex flex-col justify-around">
+                            <div className="absolute top-2 left-2">
                                 <Image
-                                    src="/icons/hm-8-img.png"
-                                    alt="Emily Johnson"
-                                    width={48}
-                                    height={48}
-                                    className="object-cover w-full h-full"
+                                    src="/icons/hm-8-img2.png"
+                                    alt="Quote icon"
+                                    width={50}
+                                    height={50}
+                                    className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
                                 />
                             </div>
-                            <div>
-                                <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Sarthak Sahoo</h4>
-                                <p className="text-gray-500 text-sm font-['Montserrat']">Senior Consultant, Cardiology</p>
+                            <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
+                                In cardiology, speed and accuracy are essential. SHM delivers real-time 12-lead ECGs that are clear and immediate. Combined with vitals and patient history, it gives me all the inputs I need to make confident and timely clinical decisions. It’s an excellent tool for proactive cardiac care.
+                            </p>
+                            <div className="flex items-center">
+                                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
+                                    <Image
+                                        src="/icons/hm-8-img9.png"
+                                        alt="Emily Johnson"
+                                        width={48}
+                                        height={48}
+                                        className="object-cover w-full h-full"
+                                    />
+                                </div>
+                                <div>
+                                    <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Sarthak Sahoo</h4>
+                                    <p className="text-gray-500 text-sm font-['Montserrat']">Senior Consultant, Cardiology</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="bg-white p-6 sm:p-8 lg:p-10 rounded-lg border border-gray-200 relative flex flex-col justify-around">
-                        <div className="absolute top-2 left-2">
-                            <Image
-                                src="/icons/hm-8-img2.png"
-                                alt="Quote icon"
-                                width={50}
-                                height={50}
-                                className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
-                            />
-                        </div>
-                        <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
-                            SHM has helped me connect with patients across all stages—from fertility counseling to postnatal care. I can easily access hormone profiles, ultrasound reports, and vitals. The digital prescription pad is seamless—I can document symptoms, prescribe medications or tests, and sign everything in one place.
-                        </p>
-                        <div className="flex items-center">
-                            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
+                        <div className="w-[250px] h-auto sm:w-[350px] sm:w-[250px] md:w-[400px] md:w-[350px] bg-white p-6 sm:p-8 lg:p-10 rounded-lg border border-gray-200 relative flex flex-col justify-around">
+                            <div className="absolute top-2 left-2">
                                 <Image
-                                    src="/icons/hm-8-img.png"
-                                    alt="Emily Johnson"
-                                    width={48}
-                                    height={48}
-                                    className="object-cover w-full h-full"
+                                    src="/icons/hm-8-img2.png"
+                                    alt="Quote icon"
+                                    width={50}
+                                    height={50}
+                                    className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
                                 />
                             </div>
-                            <div>
-                                <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Priyanka Das</h4>
-                                <p className="text-gray-500 text-sm font-['Montserrat']">Senior Consultant, Obstetrics & Gynaecology</p>
+                            <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
+                                SHM has helped me connect with patients across all stages—from fertility counseling to postnatal care. I can easily access hormone profiles, ultrasound reports, and vitals. The digital prescription pad is seamless—I can document symptoms, prescribe medications or tests, and sign everything in one place.
+                            </p>
+                            <div className="flex items-center">
+                                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
+                                    <Image
+                                        src="/icons/hm-8-img6.png"
+                                        alt="Emily Johnson"
+                                        width={48}
+                                        height={48}
+                                        className="object-cover w-full h-full"
+                                    />
+                                </div>
+                                <div>
+                                    <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Priyanka Das</h4>
+                                    <p className="text-gray-500 text-sm font-['Montserrat']">Senior Consultant, Obstetrics & Gynaecology</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="bg-white p-6 sm:p-8 lg:p-10 rounded-lg border border-gray-200 relative flex flex-col justify-around">
-                        <div className="absolute top-2 left-2">
-                            <Image
-                                src="/icons/hm-8-img2.png"
-                                alt="Quote icon"
-                                width={50}
-                                height={50}
-                                className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
-                            />
-                        </div>
-                        <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
-                            What I value most is the time-saving design. The digital queue, instant patient summaries, and seamless transition to the next case help me respond swiftly. With all reports and vitals ready when I join the call, every second is utilized effectively.
-                        </p>
-                        <div className="flex items-center">
-                            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
+                        <div className="w-[250px] h-auto sm:w-[350px] sm:w-[250px] md:w-[400px] md:w-[350px] bg-white p-6 sm:p-8 lg:p-10 rounded-lg border border-gray-200 relative flex flex-col justify-around">
+                            <div className="absolute top-2 left-2">
                                 <Image
-                                    src="/icons/hm-8-img.png"
-                                    alt="Emily Johnson"
-                                    width={48}
-                                    height={48}
-                                    className="object-cover w-full h-full"
+                                    src="/icons/hm-8-img2.png"
+                                    alt="Quote icon"
+                                    width={50}
+                                    height={50}
+                                    className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
                                 />
                             </div>
-                            <div>
-                                <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Vijay Kumar K M</h4>
-                                <p className="text-gray-500 text-sm font-['Montserrat']">Consultant, Emergency Medicine</p>
+                            <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
+                                What I value most is the time-saving design. The digital queue, instant patient summaries, and seamless transition to the next case help me respond swiftly. With all reports and vitals ready when I join the call, every second is utilized effectively.
+                            </p>
+                            <div className="flex items-center">
+                                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
+                                    <Image
+                                        src="/icons/hm-8-img11.png"
+                                        alt="Emily Johnson"
+                                        width={48}
+                                        height={48}
+                                        className="object-cover w-full h-full"
+                                    />
+                                </div>
+                                <div>
+                                    <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Vijay Kumar K M</h4>
+                                    <p className="text-gray-500 text-sm font-['Montserrat']">Consultant, Emergency Medicine</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="bg-white p-6 sm:p-8 lg:p-10 rounded-lg border border-gray-200 relative flex flex-col justify-around">
-                        <div className="absolute top-2 left-2">
-                            <Image
-                                src="/icons/hm-8-img2.png"
-                                alt="Quote icon"
-                                width={50}
-                                height={50}
-                                className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
-                            />
-                        </div>
-                        <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
-                            For surgical follow-ups and cosmetic consultations, SHM gives me everything I need—clinical images, vitals, and case history—well before I begin the consultation. It’s efficient and ensures I can provide precise guidance, even for patients consulting from a distance.
-                        </p>
-                        <div className="flex items-center">
-                            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
+                        <div className="w-[250px] h-auto sm:w-[350px] sm:w-[250px] md:w-[400px] md:w-[350px] bg-white p-6 sm:p-8 lg:p-10 rounded-lg border border-gray-200 relative flex flex-col justify-around">
+                            <div className="absolute top-2 left-2">
                                 <Image
-                                    src="/icons/hm-8-img.png"
-                                    alt="Emily Johnson"
-                                    width={48}
-                                    height={48}
-                                    className="object-cover w-full h-full"
+                                    src="/icons/hm-8-img2.png"
+                                    alt="Quote icon"
+                                    width={50}
+                                    height={50}
+                                    className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
                                 />
                             </div>
-                            <div>
-                                <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Ramesh K T </h4>
-                                <p className="text-gray-500 text-sm font-['Montserrat']">Consultant Plastic & Cosmetic Surgeon</p>
+                            <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
+                                For surgical follow-ups and cosmetic consultations, SHM gives me everything I need—clinical images, vitals, and case history—well before I begin the consultation. It’s efficient and ensures I can provide precise guidance, even for patients consulting from a distance.
+                            </p>
+                            <div className="flex items-center">
+                                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
+                                    <Image
+                                        src="/icons/hm-8-img7.png"
+                                        alt="Emily Johnson"
+                                        width={48}
+                                        height={48}
+                                        className="object-cover w-full h-full"
+                                    />
+                                </div>
+                                <div>
+                                    <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Ramesh K T </h4>
+                                    <p className="text-gray-500 text-sm font-['Montserrat']">Consultant Plastic & Cosmetic Surgeon</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="bg-white p-6 sm:p-8 lg:p-10 rounded-lg border border-gray-200 relative flex flex-col justify-around">
-                        <div className="absolute top-2 left-2">
-                            <Image
-                                src="/icons/hm-8-img2.png"
-                                alt="Quote icon"
-                                width={50}
-                                height={50}
-                                className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
-                            />
-                        </div>
-                        <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
-                            I find the SHM platform incredibly useful for reviewing patient X-rays, post-op images, and orthopedic test results. The structured format, combined with real-time vitals and symptom input, makes remote orthopedic evaluations smoother and more accurate.
-                        </p>
-                        <div className="flex items-center">
-                            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
+                        <div className="w-[250px] h-auto sm:w-[350px] sm:w-[250px] md:w-[400px] md:w-[350px] bg-white p-6 sm:p-8 lg:p-10 rounded-lg border border-gray-200 relative flex flex-col justify-around">
+                            <div className="absolute top-2 left-2">
                                 <Image
-                                    src="/icons/hm-8-img.png"
-                                    alt="Emily Johnson"
-                                    width={48}
-                                    height={48}
-                                    className="object-cover w-full h-full"
+                                    src="/icons/hm-8-img2.png"
+                                    alt="Quote icon"
+                                    width={50}
+                                    height={50}
+                                    className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
                                 />
                             </div>
-                            <div>
-                                <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Avinash Parthasarathy</h4>
-                                <p className="text-gray-500 text-sm font-['Montserrat']">Consultant, Orthopaedics</p>
+                            <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
+                                I find the SHM platform incredibly useful for reviewing patient X-rays, post-op images, and orthopedic test results. The structured format, combined with real-time vitals and symptom input, makes remote orthopedic evaluations smoother and more accurate.
+                            </p>
+                            <div className="flex items-center">
+                                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
+                                    <Image
+                                        src="/icons/hm-8-img3.png"
+                                        alt="Emily Johnson"
+                                        width={100}
+                                        height={100}
+                                        className="object-cover w-full h-full"
+                                    />
+                                </div>
+                                <div>
+                                    <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Avinash Parthasarathy</h4>
+                                    <p className="text-gray-500 text-sm font-['Montserrat']">Consultant, Orthopaedics</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="bg-white p-6 sm:p-8 lg:p-10 rounded-lg border border-gray-200 relative flex flex-col justify-around">
-                        <div className="absolute top-2 left-2">
-                            <Image
-                                src="/icons/hm-8-img2.png"
-                                alt="Quote icon"
-                                width={50}
-                                height={50}
-                                className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
-                            />
-                        </div>
-                        <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
-                            In dermatology, image quality is critical. The SHM delivers high-resolution dermatoscope images, along with all relevant patient information in one place. It has made remote consultations feel just as thorough and reliable as in-person visits.
-                        </p>
-                        <div className="flex items-center">
-                            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
+                        <div className="w-[250px] h-auto sm:w-[350px] sm:w-[250px] md:w-[400px] md:w-[350px] bg-white p-6 sm:p-8 lg:p-10 rounded-lg border border-gray-200 relative flex flex-col justify-around">
+                            <div className="absolute top-2 left-2">
                                 <Image
-                                    src="/icons/hm-8-img.png"
-                                    alt="Emily Johnson"
-                                    width={48}
-                                    height={48}
-                                    className="object-cover w-full h-full"
+                                    src="/icons/hm-8-img2.png"
+                                    alt="Quote icon"
+                                    width={50}
+                                    height={50}
+                                    className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
                                 />
                             </div>
-                            <div>
-                                <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Abhiram Rayapati</h4>
-                                <p className="text-gray-500 text-sm font-['Montserrat']">Chief Consultant, Dermatology & ENT</p>
+                            <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
+                                In dermatology, image quality is critical. The SHM delivers high-resolution dermatoscope images, along with all relevant patient information in one place. It has made remote consultations feel just as thorough and reliable as in-person visits.
+                            </p>
+                            <div className="flex items-center">
+                                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
+                                    <Image
+                                        src="/icons/hm-8-img1.png"
+                                        alt="Emily Johnson"
+                                        width={48}
+                                        height={48}
+                                        className="object-cover w-full h-full"
+                                    />
+                                </div>
+                                <div>
+                                    <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Abhiram Rayapati</h4>
+                                    <p className="text-gray-500 text-sm font-['Montserrat']">Chief Consultant, Dermatology & ENT</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </>);}
+    </>);
+}

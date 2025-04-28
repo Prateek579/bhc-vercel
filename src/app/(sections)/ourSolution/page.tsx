@@ -3,12 +3,13 @@
 import Partner from '@/app/components/Partner';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function OurSolution() {
   const [activeFaq, setActiveFaq] = React.useState<string | null>(null);
   const [activeSol, setActiveSol] = React.useState<number | null>(1);
   const [showAllCards, setShowAllCards] = React.useState<boolean>(false);
+  const [showFaq, setShowFaq] = useState(false);
   return (<>
     <div className="fixed right-10 top-[40%] transform -translate-y-1/2 z-50 transform rotate-270 origin-top-right whitespace-nowrap">
       <Link
@@ -933,7 +934,7 @@ export default function OurSolution() {
             </div>
           </div>
 
-          <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq4' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
+          {showFaq === true && <> <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq4' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
             <button
               onClick={() => setActiveFaq(activeFaq === 'faq4' ? null : 'faq4')}
               className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6  transition-colors duration-200"
@@ -955,51 +956,58 @@ export default function OurSolution() {
             </div>
           </div>
 
-          <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq5' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
-            <button
-              onClick={() => setActiveFaq(activeFaq === 'faq5' ? null : 'faq5')}
-              className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6  transition-colors duration-200"
-            >
-              <span className={`text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq5' ? 'text-white' : 'text-[#333333]'} `}> What is Bridge Healthcare’s Hospital Connecting Service and how does it work?</span>
-              <svg
-                className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq5' ? 'rotate-180' : ''}`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+            <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq5' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
+              <button
+                onClick={() => setActiveFaq(activeFaq === 'faq5' ? null : 'faq5')}
+                className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6  transition-colors duration-200"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq5' ? 'max-h-[1000px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
-              <p className="text-sm sm:text-base lg:text-lg font-['Montserrat'] text-white">Our Hospital Connecting Service bridges the gap between rural patients and advanced hospital care. Through our Smart Healthcare Machines and nurse-led operations, we capture diagnostic data and connect patients with specialists from partner hospitals in real time. If a case requires further intervention, our platform facilitates digital referrals, document transfer, and even hospital appointment bookings—ensuring smoother transitions from village-level care to secondary or tertiary institutions.
-                This model strengthens hospital outreach, enables early case identification, and reduces overcrowding by digitally triaging patients—all while keeping them informed, prepared, and guided through the care journey.</p>
+                <span className={`text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq5' ? 'text-white' : 'text-[#333333]'} `}> What is Bridge Healthcare’s Hospital Connecting Service and how does it work?</span>
+                <svg
+                  className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq5' ? 'rotate-180' : ''}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq5' ? 'max-h-[1000px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
+                <p className="text-sm sm:text-base lg:text-lg font-['Montserrat'] text-white">Our Hospital Connecting Service bridges the gap between rural patients and advanced hospital care. Through our Smart Healthcare Machines and nurse-led operations, we capture diagnostic data and connect patients with specialists from partner hospitals in real time. If a case requires further intervention, our platform facilitates digital referrals, document transfer, and even hospital appointment bookings—ensuring smoother transitions from village-level care to secondary or tertiary institutions.
+                  This model strengthens hospital outreach, enables early case identification, and reduces overcrowding by digitally triaging patients—all while keeping them informed, prepared, and guided through the care journey.</p>
+              </div>
             </div>
-          </div>
-          <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq6' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
-            <button
-              onClick={() => setActiveFaq(activeFaq === 'faq6' ? null : 'faq6')}
-              className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6  transition-colors duration-200"
-            >
-              <span className={`text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq6' ? 'text-white' : 'text-[#333333]'} `}> What kind of Wellness Programs does Bridge Healthcare offer?                </span>
-              <svg
-                className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq6' ? 'rotate-180' : ''}`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+            <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq6' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
+              <button
+                onClick={() => setActiveFaq(activeFaq === 'faq6' ? null : 'faq6')}
+                className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6  transition-colors duration-200"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
+                <span className={`text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq6' ? 'text-white' : 'text-[#333333]'} `}> What kind of Wellness Programs does Bridge Healthcare offer?                </span>
+                <svg
+                  className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq6' ? 'rotate-180' : ''}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq6' ? 'py-3 sm:py-4 lg:py-6' : 'max-h-0 py-0'} overflow-hidden`}>
+                <p className="text-sm sm:text-base lg:text-lg text-white font-['Montserrat']"> We offer community-driven Wellness Programs focused on preventive care, lifestyle monitoring, and chronic disease management. These programs are designed to detect risks early and promote healthier habits through periodic checkups, awareness drives, and health tracking via our digital system.
+                  <br />Wellness modules include:
+                  <br />1: Hypertension and Diabetes monitoring
+                  <br />2: Women’s wellness and reproductive health
+                  <br />3: Elderly care follow-ups
+                  <br />4: Nutrition and lifestyle guidance
+                  <br />All data is recorded in patient profiles, enabling long-term care visibility and helping hospitals or NGOs run evidence-based community health interventions.
+                </p>
+              </div>
+            </div></>}
+          <div className="mt-12">
+            <button onClick={() => setShowFaq(!showFaq)}
+              className="inline-block px-8 py-3 border-1 border-[#003366] text-[#003366] rounded-xl font-semibold hover:bg-[#003366] hover:text-white transition-all duration-300"
+            >
+              {showFaq === true ? 'Hide All' : 'Show All'}
             </button>
-            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq6' ? 'py-3 sm:py-4 lg:py-6' : 'max-h-0 py-0'} overflow-hidden`}>
-              <p className="text-sm sm:text-base lg:text-lg text-white font-['Montserrat']"> We offer community-driven Wellness Programs focused on preventive care, lifestyle monitoring, and chronic disease management. These programs are designed to detect risks early and promote healthier habits through periodic checkups, awareness drives, and health tracking via our digital system.
-                <br />Wellness modules include:
-                <br />1: Hypertension and Diabetes monitoring
-                <br />2: Women’s wellness and reproductive health
-                <br />3: Elderly care follow-ups
-                <br />4: Nutrition and lifestyle guidance
-                <br />All data is recorded in patient profiles, enabling long-term care visibility and helping hospitals or NGOs run evidence-based community health interventions.
-              </p>
-            </div>
           </div>
         </div>
       </div>

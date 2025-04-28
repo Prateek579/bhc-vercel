@@ -331,70 +331,73 @@ const LandingPage = () => {
       {/* Statistics Section */}
       <div
         ref={statsRef}
-        className="relative overflow-hidden py-4 sm:py-6 md:py-8 lg:py-10"
+        className="relative overflow-hidden py-4 sm:py-4 md:py-5 lg:py-5"
         style={{ background: 'linear-gradient(90deg, rgba(24, 160, 147, 0.7) 0%, rgba(18, 131, 135, 0.7) 33.17%, rgba(11, 100, 122, 0.7) 64.42%, rgba(6, 80, 114, 0.7) 87.02%, rgba(0, 51, 102, 0.7) 100%)' }}>
 
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22">
-          <h1 className='font-bold mb-2 md:mb-4 text-[20px] sm:text-[20px] md:text-[30px] lg:text-[35px] text-center'>Impact that matters</h1>
+          <h1 className='font-bold mb-2  text-[20px] sm:text-[20px] md:text-[30px] lg:text-[35px] text-center'>Impact that matters</h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 text-white">
             {/* Specialist Referrals */}
             <div className="flex flex-col items-center justify-center text-center p-3 sm:p-4 md:p-5 h-[140px] sm:h-[150px] md:h-[160px] space-y-3 sm:space-y-4">
-              <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10">
+              <div className="flex flex-row items-center">
                 <Image
                   src="/icons/hm-3-img1.png"
                   alt="Specialist Referrals"
                   width={40}
                   height={40}
-                  className="w-full h-full"
+                  className="w-12 h-14 sm:w-15 sm:h-17 md:w-15 md:h-17 mr-4"
                 />
+                <h3 className="text-2xl sm:text-[35px] md:text-[35px] font-bold font-['Montserrat']">{departments.count}+</h3>
               </div>
-              <h3 className="text-2xl sm:text-2xl md:text-3xl font-bold font-['Montserrat']">{departments.count}+</h3>
-              <p className="text-sm sm:text-base md:text-md opacity-90 font-['Montserrat']">Connecting Departments</p>
+              <p className="text-[18px] sm:text-[15px] md:text-[20px] opacity-90 font-['Montserrat']">Connecting Departments</p>
             </div>
 
             {/* Early Disease Detection */}
             <div className="flex flex-col items-center justify-center text-center p-3 sm:p-4 md:p-5 h-[140px] sm:h-[150px] md:h-[160px] space-y-3 sm:space-y-4">
-              <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10">
+              <div className="flex flex-row items-center">
                 <Image
                   src="/icons/hm-3-img2.png"
                   alt="Early Disease Detection"
                   width={40}
                   height={40}
-                  className="w-full h-full"
+                  className="w-12 h-14 sm:w-15 sm:h-17 md:w-15 md:h-17 mr-4"
                 />
+                <h3 className="text-2xl sm:text-[35px] md:text-[35px] font-bold font-['Montserrat']">{diseaseDetection.count}%</h3>
               </div>
-              <h3 className="text-2xl sm:text-2xl md:text-3xl font-bold font-['Montserrat']">{diseaseDetection.count}%</h3>
-              <p className="text-sm sm:text-base md:text-md opacity-90 font-['Montserrat']">Early Disease Detected</p>
+
+              <p className="text-[18px] sm:text-[15px] md:text-[20px] opacity-90 font-['Montserrat']">Early Disease Detected</p>
             </div>
 
             {/* Patients Treated */}
             <div className="flex flex-col items-center justify-center text-center p-3 sm:p-4 md:p-5 h-[140px] sm:h-[150px] md:h-[160px] space-y-3 sm:space-y-4">
-              <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10">
+              <div className="flex flex-row items-center">
                 <Image
                   src="/icons/hm-3-img3.png"
                   alt="Patients Treated"
                   width={40}
                   height={40}
-                  className="w-full h-full"
+                  className="w-12 h-14 sm:w-13 sm:h-15 mr-4"
                 />
+                <h3 className="text-2xl sm:text-[35px] md:text-[35px] font-bold font-['Montserrat']">{hospitalReferrals.count}+</h3>
               </div>
-              <h3 className="text-2xl sm:text-2xl md:text-3xl font-bold font-['Montserrat']">{hospitalReferrals.count}+</h3>
-              <p className="text-sm sm:text-base md:text-md opacity-90 font-['Montserrat']">Hospital Referals</p>
+
+              <p className="text-[18px] sm:text-[15px] md:text-[20px] opacity-90 font-['Montserrat']">Hospital Referals</p>
             </div>
 
             {/* Patient Satisfaction */}
             <div className="flex flex-col items-center justify-center text-center p-3 sm:p-4 md:p-5 h-[140px] sm:h-[150px] md:h-[160px] space-y-3 sm:space-y-4">
-              <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10">
+              <div className="flex flex-row items-center">
                 <Image
                   src="/icons/hm-3-img4.png"
                   alt="Patient Satisfaction"
                   width={40}
                   height={40}
-                  className="w-full h-full"
+                  className="w-12 h-14 sm:w-15 sm:h-17 md:w-15 md:h-17 mr-4"
                 />
+                <h3 className="text-2xl sm:text-[35px] md:text-[35px] font-bold font-['Montserrat']">{satisfactionRate.count}%</h3>
               </div>
-              <h3 className="text-2xl sm:text-2xl md:text-3xl font-bold font-['Montserrat']">{satisfactionRate.count}%</h3>
-              <p className="text-sm sm:text-base md:text-md opacity-90 font-['Montserrat']">Patients Satisfaction</p>
+
+              <p className="text-[18px] sm:text-[15px] md:text-[20px] opacity-90 font-['Montserrat']">Patients Satisfaction</p>
             </div>
           </div>
         </div>
@@ -405,11 +408,11 @@ const LandingPage = () => {
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22">
           <h2 className="text-[32px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-3 sm:mb-4 text-center">
             <span className="text-[#18A093]">Addressing</span>{' '}
-            <span className="text-[#003366]">Key Challenges</span>
+            <span className="text-[#003366]">Challenges</span>
           </h2>
 
           <div className="relative flex flex-col items-center justify-center">
-            <div className="flex items-center justify-center overflow-hidden w-[80%]">
+            <div className="flex items-center justify-center overflow-hidden w-[90%]">
               <button
                 onClick={() => setCardNum(prevPage => prevPage === 1 ? 2 : prevPage - 1)}
                 className="absolute left-0 z-10 p-2 rounded-full bg-white shadow-lg hover:bg-gray-100 transition-all duration-300"
@@ -432,41 +435,6 @@ const LandingPage = () => {
                     <h3 className="text-2xl sm:text-[26px] font-['Montserrat'] font-bold text-white mb-4 text-center">Limited Access to Quality Care</h3>
                     <p className="text-white/90 text-sm font-['Montserrat'] sm:text-[16px] text-center">
                       Quality healthcare remains inaccessible for millions — from remote rural regions to premium residential areas lacking sufficient medical infrastructure.
-
-                    </p>
-                  </div>
-                </div>
-
-                <div className="relative group overflow-hidden rounded-lg w-full max-w-[600px] aspect-[4/3]">
-                  <Image
-                    src="/icons/hm-4-img2.1.jpg"
-                    alt="Stormwater Drains"
-                    width={600}
-                    height={450}
-                    className="object-cover w-full h-full"
-                  />
-                  <div className="absolute bottom-0 bg-gradient-to-t from-black/80 to-black/20  flex flex-col justify-start p-8 h-[55%]">
-                    <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">Gaps in Real-Time Tele-Diagnostics</h3>
-                    <p className="text-white/90 text-sm sm:text-base">
-                      While video consultations are common, they often lack real-time diagnostic data, leading to treatment based on assumptions rather than precision.
-                    </p>
-                  </div>
-                </div>
-              </div>}
-
-              {cardNum === 2 && <div className="flex-1 flex justify-center gap-6">
-                <div className="relative group overflow-hidden rounded-lg w-full max-w-[600px] aspect-[4/3]">
-                  <Image
-                    src="/icons/hm-4-img2.1.webp"
-                    alt="Sewer Lines"
-                    width={600}
-                    height={450}
-                    className="object-cover w-full h-full"
-                  />
-                  <div className="absolute bottom-0  bg-gradient-to-t from-black/80 to-black/20 flex flex-col justify-start p-8 h-[55%]">
-                    <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">Neglect of Preventive & Chronic Care</h3>
-                    <p className="text-white/90 text-sm sm:text-base">
-                      Healthcare today still emphasizes treatment over prevention — missing crucial opportunities for early detection, wellness tracking, and chronic disease management.
                     </p>
                   </div>
                 </div>
@@ -479,12 +447,49 @@ const LandingPage = () => {
                     height={450}
                     className="object-cover w-full h-full"
                   />
-                  <div className="absolute bottom-0  bg-gradient-to-t from-black/80 to-black/20 flex flex-col justify-start p-8 h-[55%]">
-                    <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">Fragmented Care & Missed Follow-Ups</h3>
-                    <p className="text-white/90 text-sm sm:text-base">
+                  <div className="absolute bottom-0  bg-gradient-to-t from-black/100 to-black/10 flex flex-col justify-start p-8">
+                    <h3 className="text-2xl sm:text-[26px] font-['Montserrat'] font-bold text-white mb-4 text-center">Gaps in Real-Time Tele-Diagnostics</h3>
+                    <p className="text-white/90 text-sm font-['Montserrat'] sm:text-[16px] text-center">
+                      While video consultations are common, they often lack real-time diagnostic data, leading to treatment based on assumptions rather than precision.
+
+                    </p>
+                  </div>
+
+                </div>
+              </div>}
+
+              {cardNum === 2 && <div className="flex-1 flex justify-center gap-6">
+                <div className="relative group overflow-hidden rounded-lg w-full max-w-[600px] aspect-[4/3]">
+                  <Image
+                    src="/icons/hm-4-img2.1.webp"
+                    alt="Sewer Lines"
+                    width={600}
+                    height={450}
+                    className="object-cover w-full h-full"
+                  />
+                  <div className="absolute bottom-0  bg-gradient-to-t from-black/90 to-black/10 flex flex-col justify-start p-8">
+                    <h3 className="text-2xl sm:text-[26px] font-['Montserrat'] font-bold text-white mb-4 text-center">Neglect of Preventive & Chronic Care</h3>
+                    <p className="text-white/90 text-sm font-['Montserrat'] sm:text-[16px] text-center">
+                      Healthcare today still focuses more on treatment than prevention — missing early detection, wellness, and chronic care opportunities.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="relative group overflow-hidden rounded-lg w-full max-w-[600px] aspect-[4/3]">
+                  <Image
+                    src="/icons/hm-4-img2.1.jpg"
+                    alt="Stormwater Drains"
+                    width={600}
+                    height={450}
+                    className="object-cover w-full h-full"
+                  />
+                  <div className="absolute bottom-0  bg-gradient-to-t from-black/90 to-black/10 flex flex-col justify-start p-8">
+                    <h3 className="text-2xl sm:text-[26px] font-['Montserrat'] font-bold text-white mb-4 text-center">Fragmented Care & Missed Follow-Ups</h3>
+                    <p className="text-white/90 text-sm font-['Montserrat'] sm:text-[16px] text-center">
                       Disconnected health records and fragmented follow-ups lead to inefficiencies for both patients and healthcare providers.
                     </p>
                   </div>
+
                 </div>
               </div>}
 
@@ -516,7 +521,7 @@ const LandingPage = () => {
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
           <h2 className="text-[32px] sm:text-[38px] md:text-[42px] text-center font-[700] font-['Montserrat'] mb-3 sm:mb-4">
             <span className="text-[#18A093]">Our</span>{' '}
-            <span className="text-[#003366]">Key Services</span>
+            <span className="text-[#003366]">Solutions</span>
           </h2>
           {/* <p className="text-[#555555] text-[18px] sm:text-[22px] text-center md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
             The Smart Healthcare Machine improves healthcare with data-driven accessibility and efficiency.
@@ -529,13 +534,13 @@ const LandingPage = () => {
 
 
             <div
-              className={`bg-white rounded-lg overflow-hidden border-1 border-gray-300 card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around h-[250px] md:h-[300px] lg:h-[350px] ${activeCard === 'phase1' ? 'touch-hover' : ''}`}
+              className={`bg-white rounded-lg overflow-hidden border-1 border-gray-300 card-hover group hover:bg-[#0E7280] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around h-[250px] md:h-[300px] lg:h-[350px] ${activeCard === 'phase1' ? 'touch-hover' : ''}`}
               onClick={(e) => handleToggle(e, 'phase1')}
             >
-              <div className="flex flex-row items-center justify-around w-full h-[85%] group-hover:hidden touch-hover:hidden image-transition-container">
+              <div className="flex flex-row items-center justify-around w-full h-[85%] group-hover:hidden touch-hover:hidden image-transition-container overflow-hidden">
                 {[0, 1, 2, 3, 4].map((index) => (
-                  <div 
-                    key={index} 
+                  <div
+                    key={index}
                     className={`image-transition-item ${index === currentMediaIndexOne ? 'active' : index === (currentMediaIndexOne === 0 ? 4 : currentMediaIndexOne - 1) ? 'previous' : ''}`}
                   >
                     <Image
@@ -548,20 +553,26 @@ const LandingPage = () => {
                   </div>
                 ))}
               </div>
-              <h3 className="h-[15%] text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] flex flex-row items-center justify-center capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">Tele-Diagnostic Access</h3>
-              <p className="w-[90%] text-sm sm:text-base md:text-lg text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
-                SHM delivers real-time diagnostics and virtual specialist access, bridging rural healthcare gaps with timely, doorstep expert care.
-              </p>
+              <h3 className="h-[15%] text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] flex flex-row items-center justify-center capitalize text-gray-700 font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">Tele-Diagnostic Access</h3>
+              <div className="w-[90%] h-full h-[100%] pt-5 text-sm sm:text-base md:text-lg text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
+                <h4 className="font-semibold mb-2 text-[16px] md:text-[20px] text-white font-['Montserrat']">Real-time diagnostics and specialist consultations.                </h4>
+                <ul className="list-disc pl-5 space-y-2 text-[13px] md:text-[18px] text-white font-['Montserrat']">
+                  <li>Instant vitals</li>
+                  <li>ECGs, and diagnostics via SHM.</li>
+                  <li>Virtual consultations with expert doctors.</li>
+                  <li>Bridging healthcare gaps across geographies.</li>
+                </ul>
+              </div>
             </div>
 
             <div
-              className={`bg-white rounded-lg overflow-hidden border-1 border-gray-300 card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around h-[250px] md:h-[300px] lg:h-[350px] ${activeCard === 'phase2' ? 'touch-hover' : ''}`}
+              className={`bg-white rounded-lg overflow-hidden border-1 border-gray-300 card-hover group hover:bg-[#0E7280] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around h-[250px] md:h-[300px] lg:h-[350px] ${activeCard === 'phase2' ? 'touch-hover' : ''}`}
               onClick={(e) => handleToggle(e, 'phase2')}
             >
-              <div className="flex flex-row items-center justify-around w-full h-[85%] group-hover:hidden touch-hover:hidden image-transition-container">
+              <div className="flex flex-row items-center justify-around w-full h-[85%] group-hover:hidden touch-hover:hidden image-transition-container overflow-hidden">
                 {[0, 1, 2].map((index) => (
-                  <div 
-                    key={index} 
+                  <div
+                    key={index}
                     className={`image-transition-item ${index === currentMediaIndexTwo ? 'active' : index === (currentMediaIndexTwo === 0 ? 2 : currentMediaIndexTwo - 1) ? 'previous' : ''}`}
                   >
                     <Image
@@ -575,22 +586,27 @@ const LandingPage = () => {
                 ))}
 
               </div>
-              <h3 className="h-[15%] text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] flex flex-row items-center justify-center capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">Nurse-Enabled Access
+              <h3 className="h-[15%] text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] flex flex-row items-center justify-center capitalize text-gray-700 font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">Nurse-Enabled Access
 
               </h3>
-              <p className=" w-[90%] text-sm sm:text-base md:text-lg text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
-                SHM units integrate into existing healthcare setups, combining digital tools and nurse-led care for personalized, trusted patient support.
-              </p>
+              <div className=" w-[90%] h-[100%] pt-5 text-sm sm:text-base md:text-lg text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
+                <h4 className="font-semibold mb-2 text-[16px] md:text-[20px] text-white font-['Montserrat']">Blending digital healthcare with trusted nurse care.</h4>
+                <ul className="list-disc pl-5 space-y-2 text-[13px] md:text-[18px] text-white font-['Montserrat']">
+                  <li>SHM setups integrated into local clinics.</li>
+                  <li>Nurse-assisted diagnostics and consultations.</li>
+                  <li>Personalized care with digital support.</li>
+                </ul>
+              </div>
             </div>
             <div
-              className={`bg-white rounded-lg overflow-hidden border-1 border-gray-300 card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around h-[250px] md:h-[300px] lg:h-[350px] ${activeCard === 'phase3' ? 'touch-hover' : ''}`}
+              className={`bg-white rounded-lg overflow-hidden border-1 border-gray-300 card-hover group hover:bg-[#0E7280] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around h-[250px] md:h-[300px] lg:h-[350px] ${activeCard === 'phase3' ? 'touch-hover' : ''}`}
               onClick={(e) => handleToggle(e, 'phase3')}
             >
 
-              <div className="flex flex-row items-center justify-around w-full h-[85%] group-hover:hidden touch-hover:hidden image-transition-container">
+              <div className="flex flex-row items-center justify-around w-full h-[85%] group-hover:hidden touch-hover:hidden image-transition-container overflow-hidden">
                 {[1, 2].map((index) => (
-                  <div 
-                    key={index} 
+                  <div
+                    key={index}
                     className={`image-transition-item ${index === currentMediaIndexThree ? 'active' : index === (currentMediaIndexThree === 1 ? 2 : 1) ? 'previous' : ''}`}
                   >
                     <Image
@@ -603,18 +619,24 @@ const LandingPage = () => {
                   </div>
                 ))}
               </div>
-              <h3 className="h-[15%] text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] flex flex-row items-center justify-center capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">Smart Queueing</h3>
-              <p className="w-[90%] text-sm sm:text-base md:text-lg text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
-                Patients get scheduled time slots, reducing wait times, travel strain, wage loss, and overcrowding at consultation sites.</p>
+              <h3 className="h-[15%] text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] flex flex-row items-center justify-center capitalize text-gray-700 font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">Smart Queueing</h3>
+              <div className="w-[90%] h-[100%] pt-5 text-sm sm:text-base md:text-lg text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
+                <h4 className="font-semibold mb-2 text-[16px] md:text-[20px] text-white font-['Montserrat']">Organized scheduling for faster patient flow.</h4>
+                <ul className="list-disc pl-5 space-y-2 text-[13px] md:text-[18px] text-white font-['Montserrat']">
+                  <li>Digital time-slot scheduling.</li>
+                  <li>Reduced wait times and travel fatigue.</li>
+                  <li>Smooth, efficient clinic operations.</li>
+                </ul>
+              </div>
             </div>
             <div
-              className={`bg-white rounded-lg overflow-hidden border-1 border-gray-300 card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around h-[250px] md:h-[300px] lg:h-[350px] ${activeCard === 'phase4' ? 'touch-hover' : ''}`}
+              className={`bg-white rounded-lg overflow-hidden border-1 border-gray-300 card-hover group hover:bg-[#0E7280] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around h-[250px] md:h-[300px] lg:h-[350px] ${activeCard === 'phase4' ? 'touch-hover' : ''}`}
               onClick={(e) => handleToggle(e, 'phase4')}
             >
-              <div className="flex flex-row items-center justify-around w-full h-[85%] group-hover:hidden touch-hover:hidden image-transition-container">
+              <div className="flex flex-row items-center justify-around w-full h-[85%] group-hover:hidden touch-hover:hidden image-transition-container overflow-hidden">
                 {[0, 1, 2, 3].map((index) => (
-                  <div 
-                    key={index} 
+                  <div
+                    key={index}
                     className={`image-transition-item ${index === currentMediaIndex ? 'active' : index === (currentMediaIndex === 0 ? 3 : currentMediaIndex - 1) ? 'previous' : ''}`}
                   >
                     <Image
@@ -627,23 +649,26 @@ const LandingPage = () => {
                   </div>
                 ))}
               </div>
-              <h3 className="h-[15%] text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] flex flex-row items-center justify-center capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">Digital Health Tracking
+              <h3 className="h-[15%] text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] flex flex-row items-center justify-center capitalize text-gray-700 font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">Digital Health Tracking
 
               </h3>
-              <p className="w-[90%] text-sm sm:text-base md:text-lg text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
-                Every patient interaction is securely recorded, ensuring continuous care, health tracking, and intelligent follow-ups and medication reminders.
-
-
-              </p>
+              <div className="w-[90%] h-[100%] pt-5 text-sm sm:text-base md:text-lg text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
+                <h4 className="font-semibold mb-2 text-[16px] md:text-[20px] text-white font-['Montserrat']">Secure digital records for smarter health management.</h4>
+                <ul className="list-disc pl-5 space-y-2 text-[13px] md:text-[18px] text-white font-['Montserrat']">
+                  <li>Real-time patient health records.</li>
+                  <li>Intelligent tracking and follow-ups.</li>
+                  <li>Strengthened continuity of care.</li>
+                </ul>
+              </div>
             </div>
             <div
-              className={`bg-white rounded-lg overflow-hidden border-1 border-gray-300 card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around h-[250px] md:h-[300px] lg:h-[350px] ${activeCard === 'phase5' ? 'touch-hover' : ''}`}
+              className={`bg-white rounded-lg overflow-hidden border-1 border-gray-300 card-hover group hover:bg-[#0E7280] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around h-[250px] md:h-[300px] lg:h-[350px] ${activeCard === 'phase5' ? 'touch-hover' : ''}`}
               onClick={(e) => handleToggle(e, 'phase5')}
             >
-              <div className="flex flex-row items-center justify-around w-full h-[85%] group-hover:hidden touch-hover:hidden image-transition-container">
+              <div className="flex flex-row items-center justify-around w-full h-[85%] group-hover:hidden touch-hover:hidden image-transition-container overflow-hidden">
                 {[0, 1, 2].map((index) => (
-                  <div 
-                    key={index} 
+                  <div
+                    key={index}
                     className={`image-transition-item ${index === currentMediaIndexFive ? 'active' : index === (currentMediaIndexFive === 0 ? 2 : currentMediaIndexFive - 1) ? 'previous' : ''}`}
                   >
                     <Image
@@ -656,20 +681,25 @@ const LandingPage = () => {
                   </div>
                 ))}
               </div>
-              <h3 className="h-[15%] text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] flex flex-row items-center justify-center capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">Preventive Health
+              <h3 className="h-[15%] text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] flex flex-row items-center justify-center capitalize text-gray-700 font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">Preventive Health Care
               </h3>
-              <p className="w-[90%] text-sm sm:text-base md:text-lg text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
-                Regular screenings enable early chronic condition detection, promoting preventive care and reducing long-term complications through timely      consultations.
-              </p>
+              <div className="w-[90%] h-[100%] pt-5 text-sm sm:text-base md:text-lg text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
+                <h4 className="font-semibold mb-2 text-[16px] md:text-[20px] text-white font-['Montserrat']">Early detection and wellness programs for healthier lives.</h4>
+                <ul className="list-disc pl-5 space-y-2 text-[13px] md:text-[18px] text-white font-['Montserrat']">
+                  <li>Regular community health screenings.</li>
+                  <li>Early detection of chronic conditions.</li>
+                  <li>Promoting preventive healthcare culture.</li>
+                </ul>
+              </div>
             </div>
             <div
-              className={`bg-white rounded-lg overflow-hidden border-1 border-gray-300 card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around h-[250px] md:h-[300px] lg:h-[350px] ${activeCard === 'phase6' ? 'touch-hover' : ''}`}
+              className={`bg-white rounded-lg overflow-hidden border-1 border-gray-300 card-hover group hover:bg-[#0E7280] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around h-[250px] md:h-[300px] lg:h-[350px] ${activeCard === 'phase6' ? 'touch-hover' : ''}`}
               onClick={(e) => handleToggle(e, 'phase6')}
             >
-              <div className="flex flex-row items-center justify-around w-full h-[85%] group-hover:hidden touch-hover:hidden image-transition-container">
+              <div className="flex flex-row items-center justify-around w-full h-[85%] group-hover:hidden touch-hover:hidden image-transition-container overflow-hidden">
                 {[0, 1, 2].map((index) => (
-                  <div 
-                    key={index} 
+                  <div
+                    key={index}
                     className={`image-transition-item ${index === currentMediaIndexFive ? 'active' : index === (currentMediaIndexFive === 0 ? 2 : currentMediaIndexFive - 1) ? 'previous' : ''}`}
                   >
                     <Image
@@ -682,12 +712,17 @@ const LandingPage = () => {
                   </div>
                 ))}
               </div>
-              <h3 className="h-[15%] text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] flex flex-row items-center justify-center capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">Targeted Health Interventions
+              <h3 className="h-[15%] text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] flex flex-row items-center justify-center capitalize text-gray-700 font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">Targeted Health Interventions
 
               </h3>
-              <p className="w-[90%] text-sm sm:text-base md:text-lg text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
-                Real-time health trends from SHM locations feed into analytics, aiding hospitals, NGOs, and funders in planning and resource allocation.
-              </p>
+              <div className="w-[90%] h-[100%] pt-5 text-sm sm:text-base md:text-lg text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
+                <h4 className="font-semibold mb-2 text-[16px] md:text-[20px] text-white font-['Montserrat']">Data-driven insights for smarter public health planning.</h4>
+                <ul className="list-disc pl-5 space-y-2 text-[13px] md:text-[18px] text-white font-['Montserrat']">
+                  <li>Health trend analytics from SHM.</li>
+                  <li>Data-backed planning for hospitals and NGOs.</li>
+                  <li>Smarter resource allocation strategies.</li>
+                </ul>
+              </div>
             </div>
 
             {/* </div> */}
@@ -704,25 +739,22 @@ const LandingPage = () => {
             </div> */}
           </div>
         </div>
-      </div>
+      </div >
 
       {/* Our Products Section */}
-      <div className="relative bg-white overflow-hidden">
+      < div className="relative bg-white overflow-hidden" >
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
           <div className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
-            <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+            <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] text-center mb-3 sm:mb-4">
               <span className="text-[#18A093]">Our</span>{' '}
               <span className="text-[#003366]">Products</span>
             </h2>
-            <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
-              <span className="text-black font-bold">Smart Healthcare Machine</span> integrates tele-consultations with real-time health data and is supported by <span className="text-black font-bold">Doctor</span>, <span className="text-black font-bold">Patient</span> and <span className="text-black font-bold">Nurse</span> applications for streamlined collaboration and proactive care.
-            </p>
           </div>
           {/* NEW CARD} */}
 
           {/* NEW CARD} */}
           <div className="py-4 sm:py-6 md:py-8 lg:py-10">
-            <p className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4 text-[#003366]">Smart Healthcare Machine Features</p>
+            <p className="text-[20px] sm:text-[24px] md:text-[30px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize font-['Montserrat'] text-[#003366]">Smart Healthcare Machine Features</p>
             <div className="flex flex-col sm:flex-col md:flex-row space-y-4 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300">
               <div className="w-full md:w-[40%] items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 flex items-center justify-center md:border-r-2 md:border-[#003366] md:mr-5 md:pr-5">
                 <Image src="/icons/hm-shm.png" alt="Smart Healthcare Machine Features" width={300} height={300} className="w-[50%] h-auto md:w-auto md:h-[80%]" />
@@ -730,183 +762,183 @@ const LandingPage = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* Vitals Section */}
                 <div className="space-y-2">
-                  <h3 className="text-[#003366] text-[18px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize font-['Montserrat] border-b-2 border-gray-300">Vitals</h3>
+                  <h3 className="text-[#003366] text-start align-middle font-['Montserrat] border-b-2 border-gray-300 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%]">Vitals</h3>
                   <div className="grid grid-cols-2 gap-2">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
                       <Image src="/icons/hm-6-pr.png" alt='Pulse Rate image' width={25} height={25} />
-                      <span className='text-sm sm:text-base md:text-lg text-gray-600' >Pulse Rate</span>
+                      <span className='text-sm sm:text-base md:text-lg' >Pulse Rate</span>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
                       <Image src="/icons/hm-6-tem.png" alt='Temperature image' width={20} height={20} />
-                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Temperature</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Temperature</span>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
                       <Image src="/icons/hm-6-spo.png" alt='SpO2 image' width={25} height={25} />
-                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>SpO2</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg '>SpO2</span>
                     </div>
-                    <div className="flex items-center gap-1">
+                    <div className="flex items-center gap-1 text-gray-700 font-['Montserrat']">
                       <Image src="/icons/hm-6-pp.png" alt='Blood Pressure images' width={25} height={25} />
-                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Blood Pressure</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Blood Pressure</span>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
                       <Image src="/icons/hm-6-bmi.png" alt='Blood Sugar images' width={25} height={25} />
-                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>BMI</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg '>BMI</span>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
                       <Image src="/icons/hm-6-hrt.png" alt='Heart Rate images' width={25} height={25} />
-                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Heart Rate</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Heart Rate</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Blood Tests Section */}
                 <div className="space-y-2">
-                  <h3 className="text-[#003366] text-[18px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize font-['Montserrat] border-b-2 border-gray-300">Blood Tests</h3>
+                  <h3 className="text-[#003366] text-start align-middle font-['Montserrat] border-b-2 border-gray-300 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%]">Blood Tests</h3>
                   <div className="grid grid-cols-2 gap-2">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
                       <Image src="/icons/hm-6-hem.png" alt='Hemoglobin images' width={25} height={25} />
-                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Hemoglobin</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Hemoglobin</span>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
                       <Image src="/icons/hm-6-lp.png" alt='Lipid Profile images' width={25} height={25} />
-                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Lipid Profile</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Lipid Profile</span>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
                       <Image src="/icons/hm-6-bs.png" alt='Blood Sugar images' width={25} height={25} />
-                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Blood Sugar</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Blood Sugar</span>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
                       <Image src="/icons/hm-6-rft.png" alt='Renal Funtion Test images' width={25} height={25} />
-                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Renal Function Test</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Renal Function Test</span>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
                       <Image src="/icons/hm-6-hb.png" alt='HbA1c images' width={25} height={25} />
-                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>HbA1c</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg '>HbA1c</span>
                     </div>
                   </div>
                 </div>
 
                 {/* RAPID TEST */}
                 <div className="space-y-2">
-                  <h3 className="text-[#003366] text-[18px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize font-['Montserrat] border-b-2 border-gray-300">Rapid Test</h3>
+                  <h3 className="text-[#003366] text-start align-middle font-['Montserrat] border-b-2 border-gray-300 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%]">Rapid Test</h3>
                   <div className="grid grid-cols-2 gap-2">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
 
-                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Ovulation LH</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Ovulation LH</span>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
 
-                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Malaria AG</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Malaria AG</span>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>HIV I & II</span>
+                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
+                      <span className='text-blacktext-sm sm:text-base md:text-lg '>HIV I & II</span>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
 
-                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Troponin I</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Troponin I</span>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
 
-                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Hepatitis C</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Hepatitis C</span>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
 
-                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Hepatitis B</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Hepatitis B</span>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
 
-                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Malaria AB</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Malaria AB</span>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
 
-                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Pregnancy hCG</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Pregnancy hCG</span>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
 
-                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Syphilis</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Syphilis</span>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
 
-                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Typhoid</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Typhoid</span>
                     </div>
                   </div>
                 </div>
                 {/* Digital Stethoscope Section */}
                 <div className="space-y-2">
-                  <h3 className="text-[#003366] text-[18px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize font-['Montserrat] border-b-2 border-gray-300">Digital Stethoscope</h3>
-                  <p className='text-blacktext-sm sm:text-base md:text-lg text-gray-600 text-center flex flex-row items-center justify-center'><Image src="/icons/hm-6-ls.png" alt='Stethoscope images' width={25} height={25} className='mr-2' />Live Stethoscope</p>
+                  <h3 className="text-[#003366] text-start align-middle font-['Montserrat] border-b-2 border-gray-300 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%]">Digital Stethoscope</h3>
+                  <p className='text-blacktext-sm sm:text-base md:text-lg text-gray-600 text-center flex flex-row items-center justify-center text-gray-700 '><Image src="/icons/hm-6-ls.png" alt='Stethoscope images' width={25} height={25} className='mr-2' />Live Stethoscope</p>
                   <div className="grid grid-cols-2 gap-2">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
 
-                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Aortic Sound</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Aortic Sound</span>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
 
-                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Mitral Sound</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Mitral Sound</span>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
 
-                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Pulmonic Sound</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Pulmonic Sound</span>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
 
-                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Tricuspid Sound</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Tricuspid Sound</span>
                     </div>
                   </div>
                 </div>
 
                 {/* ECG Section */}
                 <div className="space-y-2">
-                  <h3 className="text-[#003366] text-[18px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize font-['Montserrat] border-b-2 border-gray-300">ECG</h3>
+                  <h3 className="text-[#003366] text-start align-middle font-['Montserrat] border-b-2 border-gray-300 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%]">ECG</h3>
                   <div className="grid grid-cols-2 gap-2">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
                       <Image src="/icons/hm-6-lead.png" alt='12 Lead image' width={25} height={25} />
-                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>12 Lead</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg '>12 Lead</span>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
                       <Image src="/icons/hm-6-rr.png" alt='Respiration rate images' width={25} height={25} />
-                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Respiration Rate</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Respiration Rate</span>
                     </div>
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <h3 className="text-[#003366] text-[18px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize font-['Montserrat] border-b-2 border-gray-300">Tele-Consultation: Real-Time Data</h3>
+                  <h3 className="text-[#003366] text-start align-middle font-['Montserrat] border-b-2 border-gray-300 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%]">Tele-Consultation: Real-Time Data</h3>
                   <div className="grid grid-cols-2 gap-2">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
                       <Image src="/icons/hm-6-vc.png" alt='Video Consultation image' width={25} height={25} />
-                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Video Consultation</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Video Consultation</span>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
                       <Image src="/icons/hm-6-rtda.png" alt='Real time data images' width={25} height={25} />
-                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Real-Time Data Accessibility</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg'>Real-Time Data Accessibility</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Digital Modules Section */}
                 <div className="space-y-2 md:col-span-2">
-                  <h3 className="text-[#003366] text-[18px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize font-['Montserrat] border-b-2 border-gray-300">Digital Modules for Specialist Consultation</h3>
+                  <h3 className="text-[#003366] text-start align-middle font-['Montserrat] border-b-2 border-gray-300 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%]">Digital Modules for Specialist Consultation</h3>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
                       <Image src="/icons/hm-6-sp.png" alt='Spirometer images' width={25} height={25} />
-                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Spirometer</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg'>Spirometer</span>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
                       <Image src="/icons/hm-6-os.png" alt='Otoscope image' width={25} height={25} />
-                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Otoscope</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg'>Otoscope</span>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
                       <Image src="/icons/hm-6-pu.png" alt='Portable Ultrasound images' width={25} height={25} />
-                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Portable Ultrasound</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg'>Portable Ultrasound</span>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
                       <Image src="/icons/hm-6-is.png" alt='Irish Scope images' width={25} height={25} />
-                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Irish Scope</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Irish Scope</span>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
                       <Image src="/icons/hm-6-der.png" alt='Dermatoscope' width={25} height={25} />
-                      <span className='text-blacktext-sm sm:text-base md:text-lg text-gray-600'>Dermatoscope</span>
+                      <span className='text-blacktext-sm sm:text-base md:text-lg'>Dermatoscope</span>
                     </div>
                   </div>
                 </div>
@@ -932,7 +964,7 @@ const LandingPage = () => {
                 <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
                   <Image src="/icons/prd-2-lgo1.png" alt="Smart Healthcare Machine" width={32} height={32} className="w-full h-full" />
                 </div>
-                <p className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white">Smart Healthcare Machine</p>
+                <p className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-gray-700 font-['Montserrat'] group-hover:text-white">SHM App</p>
                 <div className="ml-auto hidden group-hover:block">
                   <div className='flex flex-row items-center'>
                     <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -949,7 +981,7 @@ const LandingPage = () => {
                 <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
                   <Image src="/icons/prd-2-lgo1.png" alt="Doctor App" width={32} height={32} />
                 </div>
-                <p className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white">Doctor App</p>
+                <p className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-gray-700 font-['Montserrat'] group-hover:text-white">Doctor App</p>
                 <div className="ml-auto hidden group-hover:block ">
                   <div className='flex flex-row items-center'>
                     <svg className="w-5 h-5 text-[#003366] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -967,7 +999,7 @@ const LandingPage = () => {
                 <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
                   <Image src="/icons/prd-2-log2.png" alt="Patient App" width={32} height={32} />
                 </div>
-                <p className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white">Patient App</p>
+                <p className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-gray-700 font-['Montserrat'] group-hover:text-white">Patient App</p>
                 <div className="ml-auto hidden group-hover:block">
                   <div className='flex flex-row items-center'>
                     <svg className="w-5 h-5 text-[#003366] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -986,7 +1018,7 @@ const LandingPage = () => {
                 <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
                   <Image src="/icons/prd-2-log2.png" alt="Operator / Nurse App" width={32} height={32} />
                 </div>
-                <p className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white">Nurse App</p>
+                <p className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-gray-700 font-['Montserrat'] group-hover:text-white">Nurse App</p>
                 <div className="ml-auto hidden group-hover:block">
                   <div className='flex flex-row items-center'>
 
@@ -998,27 +1030,27 @@ const LandingPage = () => {
               </div>
             </Link>
 
-            <div className="mt-12">
+            <div className="mt-2">
               <Link href="/contactUs"
                 className="inline-block px-8 py-3 border-1 border-[#003366] text-[#003366] rounded-xl font-semibold hover:bg-[#003366] hover:text-white transition-all duration-300"
               >
-                Schedule Demo
+                Schedule a Demo
               </Link>
             </div>
           </div>
         </div>
-      </div>
+      </div >
 
       {/* Why Join Bridge Healthcare Section */}
-      <div className="relative bg-white overflow-hidden">
+      < div className="relative bg-white overflow-hidden" >
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-12 sm:py-20 md:py-32">
-          <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+          <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] text-center mb-3 sm:mb-4">
             <span className="text-[#18A093]">Why Join</span>{' '}
             <span className="text-[#003366]">Bridge Healthcare</span>
           </h2>
-          <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
+          {/* <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
             Be part of a mission to transform healthcare through innovation, accessibility and impact.
-          </p>
+          </p> */}
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-11 relative">
             {/* Center Logo */}
@@ -1164,16 +1196,16 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div >
 
       {/* Testimonials Section */}
-      <div className="relative bg-white overflow-hidden">
+      < div className="relative bg-white overflow-hidden" >
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-          <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+          <h2 className="text-[32px] sm:text-[38px] text-center md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
             <span className="text-[#18A093]">Our</span>{' '}
             <span className="text-[#003366]">Testimonials</span>
           </h2>
-          <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
+          <p className="text-[#555555] text-center text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
             Our impact is reflected in the voices of patients, doctors and public sector leaders who trust us.
           </p>
           <div className="w-full overflow-hidden">
@@ -1419,12 +1451,12 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div >
 
       {/* We Work With Section */}
-      <div className="relative bg-white overflow-hidden">
+      < div className="relative bg-white overflow-hidden" >
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-          <h2 className="text-[28px] xs:text-[30px] sm:text-[34px] md:text-[38px] lg:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+          <h2 className="text-[28px] xs:text-[30px] text-center sm:text-[34px] md:text-[38px] lg:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
             <span className="text-[#18A093]">We</span>{' '}
             <span className="text-[#003366]">Work With</span>
           </h2>
@@ -1457,7 +1489,7 @@ const LandingPage = () => {
               <div className="flex-1 flex items-center justify-center h-[50%]">
                 <Image src="/icons/hm-10-img15.png" alt="Policy Makers & Local Bodies" width={70} height={70} className='w-10 xs:w-12 sm:w-14 md:w-16 lg:w-20 h-auto object-contain' />
               </div>
-              <h3 className="text-xs font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-gray-800 text-center h-[40%] ">Policy Makers & Local Bodies</h3>
+              <h3 className="text-xs font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-gray-800 text-center h-[40%] ">Policy Makers</h3>
             </div>
             <div className="bg-white p-3 xs:p-4 sm:p-5 lg:p-6 flex flex-col items-center justify-center h-[180px] xs:h-[200px] sm:h-[220px] md:h-[250px] space-y-2 xs:space-y-3 sm:space-y-4">
               <div className="flex-1 flex items-center justify-center h-[50%]">
@@ -1473,23 +1505,48 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div >
 
+      {/* Our Certificated */}
+      < div className="relative bg-white overflow-hidden" >
+        <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
+          <div className="w-full grid grid-cols-2 md:grid-cols-4  gap-6">
+            <div className="flex-1 flex flex-col items-center justify-between">
+              <Image src="/icons/hm-cert-3.png" alt="CSR & Impact Funds" width={200} height={200} className='w-20 md:w-30 mb-4' />
+              <h3 className="text-xs font-['Montserrat'] xs:text-sm sm:text-base md:text-xl text-gray-800 text-center ">13485 : 2016</h3>
+            </div>
+            <div className="flex-1 flex flex-col items-center justify-between">
+              <Image src="/icons/hm-cert-1.png" alt="CSR & Impact Funds" width={200} height={200} className='w-20 md:w-30 mb-4' />
+              <h3 className="text-xs font-['Montserrat'] xs:text-sm sm:text-base md:text-xl text-gray-800 text-center ">27001 : 2013</h3>
+            </div>
+            <div className="flex-1 flex flex-col items-center justify-between">
+              <Image src="/icons/hm-cert-2.png" alt="CSR & Impact Funds" width={200} height={200} className='w-20 md:w-30 mb-4' />
+              <h3 className="text-xs font-['Montserrat'] xs:text-sm sm:text-base md:text-xl text-gray-800 text-center ">14001 : 2015</h3>
+            </div>
+            <div className="flex-1 flex flex-col items-center justify-between">
+              <Image src="/icons/hm-cert-4.png" alt="CSR & Impact Funds" width={200} height={200} className='w-20 md:w-30 mb-4' />
+              <h3 className="text-xs font-['Montserrat'] xs:text-sm sm:text-base md:text-xl text-gray-800 text-center ">9001 : 2015</h3>
+            </div>
+          </div>
+        </div>
+      </div >
 
       {/* Explore Partnership Section */}
-      <Partner />
+      < Partner />
+
+
 
 
       {/* FAQ Section */}
-      <div className="relative bg-white overflow-hidden">
+      < div className="relative bg-white overflow-hidden" >
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-          <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
-            <span className="text-[#18A093]">Frequently Asked</span>{' '}
-            <span className="text-[#003366]">Questions</span>
+          <h2 className="text-[32px] text-center sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+            <span className="text-[#18A093]">FA</span>
+            <span className="text-[#003366]">Q&apos;s</span>
           </h2>
-          <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
+          {/* <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
             Learn how our solutions bring quality healthcare closer to those who need it most.
-          </p>
+          </p> */}
           <div className="space-y-2 sm:space-y-3 lg:space-y-4">
             {/* FAQ Items */}
             <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq1' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
@@ -1601,7 +1658,7 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div >
 
     </>
   );

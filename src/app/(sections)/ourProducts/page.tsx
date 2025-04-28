@@ -89,17 +89,17 @@ export default function OurProducts() {
     <div className="relative bg-white overflow-hidden">
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
         <div className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
-          <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+          <h2 className="text-[32px] sm:text-[38px] text-center md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
             <span className="text-[#18A093]">Our</span>{' '}
             <span className="text-[#003366]">Products</span>
           </h2>
-          <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
+          <p className="text-[#555555] text-[18px] text-center sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
             <span className="text-black font-bold">Smart Healthcare Machine</span> integrates tele-consultations with real-time health data and is supported by <span className="text-black font-bold">Doctor</span>, <span className="text-black font-bold">Patient</span> and <span className="text-black font-bold">Nurse</span> applications for streamlined collaboration and proactive care.
           </p>
         </div>
 
         <div className="py-4 sm:py-6 md:py-8 lg:py-10">
-          <p className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4 text-[#003366]">Smart Healthcare Machine Features</p>
+          <p className="text-[20px] sm:text-[24px] md:text-[30px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize font-['Montserrat'] text-[#003366]">Smart Healthcare Machine Features</p>
           <div className="flex flex-col sm:flex-col md:flex-row space-y-4 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300">
             <div className="w-full md:w-[40%] items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 flex items-center justify-center md:border-r-2 md:border-[#003366] md:mr-5 md:pr-5">
               <Image src="/icons/hm-shm.png" alt="Smart Healthcare Machine Features" width={300} height={300} className="w-[50%] h-auto md:w-auto md:h-[80%]" />
@@ -304,7 +304,7 @@ export default function OurProducts() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 place-items-center">
           {/* Smart Healthcare Machine */}
           <div
-            className={`w-[70%] relative bg-white rounded-lg border-1 border-gray-300 overflow-hidden card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-start justify-start p-6 min-h-[350px] ${activeCard === 'prod1' ? 'touch-hover' : ''}`}
+            className={`w-[70%] relative bg-white rounded-lg border-1 border-gray-300 overflow-hidden card-hover group hover:bg-[#0E7280] transition-all duration-300 cursor-pointer flex flex-col items-start justify-start p-6 min-h-[350px] ${activeCard === 'prod1' ? 'touch-hover' : ''}`}
             onClick={(e) => handleToggle(e, 'prod1')}
           >
             <div className="absolute inset-0 w-full h-[80%] group-hover:hidden touch-hover:hidden">
@@ -316,7 +316,7 @@ export default function OurProducts() {
                 className='w-full h-full object-contain'
               />
             </div>
-            <div className="absolute h-[20%] bottom-0 left-0 right-0 bg-gradient-to-r from-[#003366] to-[#18A093] p-3 group-hover:hidden touch-hover:hidden">
+            <div className="absolute h-[20%] bottom-0 left-0 right-0 bg-[#0E7280] p-3 group-hover:hidden touch-hover:hidden">
               <h3 className="text-[24px] font-[600] text-center text-white font-['Montserrat']">
                 Smart Healthcare Machine
               </h3>
@@ -336,7 +336,7 @@ export default function OurProducts() {
           </div>
           {/* Doctor App */}
           <div
-            className={`w-[70%] relative bg-white rounded-lg border-1 border-gray-300 overflow-hidden card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around min-h-[350px] ${activeCard === 'prod2' ? 'touch-hover' : ''}`}
+            className={`w-[70%] relative bg-white rounded-lg border-1 border-gray-300 overflow-hidden card-hover group hover:bg-[#0E7280] transition-all duration-300 cursor-pointer flex flex-col items-start justify-start p-6 min-h-[350px] ${activeCard === 'prod2' ? 'touch-hover' : ''}`}
             onClick={(e) => handleToggle(e, 'prod2')}
           >
             <div className="h-[80%] absolute inset-0 w-full group-hover:hidden touch-hover:hidden">
@@ -348,15 +348,14 @@ export default function OurProducts() {
                 className='w-full h-full object-contain'
               />
             </div>
-            <div className="absolute h-[20%] bottom-0 left-0 right-0 bg-[#003366] bg-opacity-80 p-3 group-hover:hidden touch-hover:hidden">
+            <div className="absolute h-[20%] bottom-0 left-0 right-0 bg-[#0E7280] p-3 group-hover:hidden touch-hover:hidden">
               <h3 className="text-[24px] font-[600] text-center text-white font-['Montserrat']">
                 Doctor App
               </h3>
             </div>
-            <div className="relative z-10 p-4 flex flex-col items-center justify-center h-full">
-
-              <div className="text-sm md:text-base text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
-                <h4 className="font-semibold mb-2 text-lg text-white">Key Features:</h4>
+            <div className="relative z-10 p-4 h-full">
+              <div className="text-sm md:text-[18px] text-gray-600 font-['Montserrat'] hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
+                <h4 className="font-semibold mb-2 text-[20px] text-white font-['Montserrat']">Key Features:</h4>
                 <ul className="list-disc pl-5 space-y-2">
                   <li>Multi SHM Accessibility</li>
                   <li>Live Video Consultation with Real-Time Data</li>
@@ -369,7 +368,7 @@ export default function OurProducts() {
           </div>
           {/* Patient App */}
           <div
-            className={`w-[70%] relative bg-white rounded-lg border-1 border-gray-300 overflow-hidden card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around min-h-[350px] ${activeCard === 'prod3' ? 'touch-hover' : ''}`}
+            className={`w-[70%] relative bg-white rounded-lg border-1 border-gray-300 overflow-hidden card-hover group hover:bg-[#0E7280] transition-all duration-300 cursor-pointer flex flex-col items-start justify-start p-6 min-h-[350px] ${activeCard === 'prod3' ? 'touch-hover' : ''}`}
             onClick={(e) => handleToggle(e, 'prod3')}
           >
             <div className="h-[80%] absolute inset-0 w-full group-hover:hidden touch-hover:hidden">
@@ -381,14 +380,14 @@ export default function OurProducts() {
                 className='w-full h-full object-cover p-4'
               />
             </div>
-            <div className="absolute h-[20%] bottom-0 left-0 right-0 bg-[#003366] bg-opacity-80 p-3 group-hover:hidden touch-hover:hidden">
+            <div className="absolute h-[20%] bottom-0 left-0 right-0 bg-[#0E7280] bg-opacity-80 p-3 group-hover:hidden touch-hover:hidden">
               <h3 className="text-[24px] font-[600] text-center text-white font-['Montserrat']">
                 Patient App
               </h3>
             </div>
-            <div className="relative z-10 p-4 flex flex-col items-center justify-center h-full">
-              <div className="text-sm md:text-base text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
-                <h4 className="font-semibold mb-2 text-lg text-white">Key Features:</h4>
+            <div className="relative z-10 p-4 h-full">
+              <div className="text-sm md:text-[18px] text-gray-600 font-['Montserrat'] hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
+                <h4 className="font-semibold mb-2 text-[20px] text-white font-['Montserrat']">Key Features:</h4>
                 <ul className="list-disc pl-5 space-y-2">
                   <li>Easy Registration & Profile Management</li>
                   <li>Book Appointments & View History</li>
@@ -402,7 +401,7 @@ export default function OurProducts() {
 
           {/* Nurse App */}
           <div
-            className={`w-[70%] relative bg-white rounded-lg border-1 border-gray-300 overflow-hidden card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around min-h-[350px] ${activeCard === 'prod4' ? 'touch-hover' : ''}`}
+            className={`w-[70%] relative bg-white rounded-lg border-1 border-gray-300 overflow-hidden card-hover group hover:bg-[#0E7280] transition-all duration-300 cursor-pointer flex flex-col items-start justify-start p-6 min-h-[350px] ${activeCard === 'prod4' ? 'touch-hover' : ''}`}
             onClick={(e) => handleToggle(e, 'prod4')}
           >
             <div className="h-[80%] absolute inset-0 w-full group-hover:hidden touch-hover:hidden">
@@ -414,14 +413,14 @@ export default function OurProducts() {
                 className='w-full h-full object-cover p-4'
               />
             </div>
-            <div className="absolute h-[20%] bottom-0 left-0 right-0 bg-[#003366] bg-opacity-80 p-3 group-hover:hidden touch-hover:hidden">
+            <div className="absolute h-[20%] bottom-0 left-0 right-0 bg-[#0E7280] bg-opacity-80 p-3 group-hover:hidden touch-hover:hidden">
               <h3 className="text-[24px] font-[600] text-center text-white font-['Montserrat']">
                 Nurse App
               </h3>
             </div>
-            <div className="relative z-10 p-4 flex flex-col items-center justify-center h-full">
-              <div className="text-sm md:text-base text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
-                <h4 className="font-semibold mb-2 text-lg text-white">Key Features:</h4>
+            <div className="relative z-10 p-4 h-full">
+              <div className="text-sm md:text-[18px] text-gray-600 font-['Montserrat'] hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
+                <h4 className="font-semibold mb-2 text-[20px] text-white font-['Montserrat']">Key Features:</h4>
                 <ul className="list-disc pl-5 space-y-2">
                   <li>Patient Queue Management</li>
                   <li>Vital Signs Recording</li>

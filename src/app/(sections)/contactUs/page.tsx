@@ -17,14 +17,10 @@ export default function ContactUs() {
       />
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-6 md:px-8 lg:px-22 py-10 sm:py-16 md:py-24 lg:py-32">
         <div className="max-w-3xl">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-[700] font-['Montserrat'] leading-[120%] sm:leading-[110%] md:leading-[100%] tracking-[0%] align-middle text-[#1A1A1A] mb-4 sm:mb-6">
-            <span className="text-[#18A093]">Explore</span>{' '}
-            <span className="text-[#003366]">Partnership</span>{' '}
-            <span className="text-[#003366]">Opportunities with us.</span>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[45px] font-[700] font-['Montserrat'] leading-[120%] sm:leading-[110%] md:leading-[100%] tracking-[0%] align-middle text-[#1A1A1A] mb-4 sm:mb-6">
+            <span className="text-[#18A093]">Let’s Collaborate</span>{' '}
+            <span className="text-[#003366]">For Smarter, Healthier Communities.</span>{' '}
           </h1>
-          <p className="text-base sm:text-lg md:text-xl font-[400] font-['Font family'] leading-[150%] sm:leading-[130%] md:leading-[100%] tracking-[0%] align-middle text-[#555555]">
-            Providing immediate access to healthcare, empowering individuals and communities to lead healthier lives.
-          </p>
         </div>
       </div>
     </div>
@@ -34,7 +30,7 @@ export default function ContactUs() {
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
           {/* Location Card */}
-          <div className="bg-white p-4 sm:p-5 lg:p-6 rounded-lg border-1 border-gray-300 transition-all duration-300 hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] group">
+          <div className="bg-white p-4 sm:p-5 lg:p-6 rounded-lg border-1 border-gray-300 transition-all duration-300 hover:bg-[#0E7280] group">
             <div className="flex flex-row items-center justify-center h-full">
               <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-18 lg:h-20 flex items-center justify-center rounded-full mr-4">
                 <Image src="/icons/cont-2-lgo1.png" alt="Location" width={60} height={65} className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
@@ -47,7 +43,7 @@ export default function ContactUs() {
           </div>
 
           {/* Email Card */}
-          <div className="bg-white p-4 sm:p-5 lg:p-6 rounded-lg border-1 border-gray-300 transition-all duration-300 hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] group">
+          <div className="bg-white p-4 sm:p-5 lg:p-6 rounded-lg border-1 border-gray-300 transition-all duration-300 hover:bg-[#0E7280] group">
             <div className="flex flex-row items-center justify-center h-full">
               <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-18 lg:h-20 flex items-center justify-center rounded-full mr-4">
                 <Image src="/icons/cont-2-lgo2.png" alt="Email" width={60} height={65} className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
@@ -60,7 +56,7 @@ export default function ContactUs() {
           </div>
 
           {/* Phone Card */}
-          <div className="bg-white p-4 sm:p-5 lg:p-6 rounded-lg border-1 border-gray-300 transition-all duration-300 hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] group">
+          <div className="bg-white p-4 sm:p-5 lg:p-6 rounded-lg border-1 border-gray-300 transition-all duration-300 hover:bg-[#0E7280] group">
             <div className="flex flex-row items-center justify-center h-full">
               <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-18 lg:h-20 flex items-center justify-center rounded-full mr-4">
                 <Image src="/icons/cont-2-lgo3.png" alt="Phone" width={60} height={65} className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />

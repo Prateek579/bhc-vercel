@@ -19,14 +19,11 @@ export default function News() {
                 />
                 <div className="max-w-screen-2xl mx-auto px-3 sm:px-6 md:px-8 lg:px-22 py-10 sm:py-16 md:py-24 lg:py-32">
                     <div className="max-w-3xl">
-                        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-[700] font-['Montserrat'] leading-[120%] sm:leading-[110%] md:leading-[100%] tracking-[0%] align-middle text-[#1A1A1A] mb-4 sm:mb-6">
+                        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[45px] font-[700] font-['Montserrat'] leading-[120%] sm:leading-[110%] md:leading-[100%] tracking-[0%] align-middle text-[#1A1A1A] mb-4 sm:mb-6">
                             Latest Highlights &
                             <br />
                             Achievements
                         </h1>
-                        <p className="text-lg sm:text-xl text-gray-700 leading-relaxed">
-                            Providing immediate access to healthcare, empowering individuals and communities to lead healthier lives.
-                        </p>
                     </div>
                 </div>
             </div>

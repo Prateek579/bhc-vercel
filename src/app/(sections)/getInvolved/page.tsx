@@ -1,9 +1,40 @@
 'use client';
 
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 export default function GetInvolved() {
+
+    const [isTouchDevice, setIsTouchDevice] = useState(false);
+    const [activeCard, setActiveCard] = useState<string | null>(null);
+
+    useEffect(() => {
+        // Safe window check for SSR
+        const checkTouchDevice = (): boolean => {
+            if (typeof window === 'undefined') return false;
+            return 'ontouchstart' in window;
+        };
+
+        setIsTouchDevice(checkTouchDevice());
+    }, []);
+
+    const handleToggle = (e: React.MouseEvent<HTMLDivElement, MouseEvent>, cardId: string): void => {
+        if (isTouchDevice) {
+            // Remove touch-hover class from all cards except the current one
+            const cards = document.querySelectorAll('.card-hover');
+            cards.forEach(card => card.classList.remove('touch-hover'));
+
+            // Toggle the current card
+            if (activeCard === cardId) {
+                e.currentTarget.classList.remove('touch-hover');
+                setActiveCard(null);
+            } else {
+                e.currentTarget.classList.add('touch-hover');
+                setActiveCard(cardId);
+            }
+        }
+    };
+
     return (<>
         {/* FIRST SECTION */}
         <div className="relative overflow-hidden min-h-[50vh] sm:min-h-[60vh] md:min-h-[70vh]">
@@ -17,14 +48,10 @@ export default function GetInvolved() {
             />
             <div className="max-w-screen-2xl mx-auto px-3 sm:px-6 md:px-8 lg:px-22 py-10 sm:py-16 md:py-24 lg:py-32">
                 <div className="max-w-3xl">
-                    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-[700] font-['Montserrat'] leading-[120%] sm:leading-[110%] md:leading-[100%] tracking-[0%] align-middle text-[#1A1A1A] mb-4 sm:mb-6">
-                        <span className="text-[#18A093]">Explore</span>{' '}
-                        <span className="text-[#003366]">Partnership</span>{' '}
-                        <span className="text-[#003366]">Opportunities with Us</span>
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[45px] font-[700] font-['Montserrat'] leading-[120%] sm:leading-[110%] md:leading-[100%] tracking-[0%] align-middle text-[#1A1A1A] mb-4 sm:mb-6">
+                        <span className="text-[#18A093]">Partner. Sponsor. Volunteer</span>{' '}
+                        <span className="text-[#003366]">Expand Access to Care.</span>{' '}
                     </h1>
-                    <p className="text-base sm:text-lg md:text-xl font-[400] font-['Font family'] leading-[150%] sm:leading-[130%] md:leading-[100%] tracking-[0%] align-middle text-[#555555]">
-                        Let&apos;s collaborate to bring accessible, technology-driven healthcare to the communities that need it most.
-                    </p>
                 </div>
             </div>
         </div>
@@ -201,259 +228,141 @@ export default function GetInvolved() {
             </div>
         </div>
 
-        {/* Testimonials Section */}
-        <div className="relative bg-white overflow-hidden">
-            <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-                <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
-                    <span className="text-[#18A093]">Our</span>{' '}
-                    <span className="text-[#003366]">Testimonials</span>
+        {/* Why Join Bridge Healthcare Section */}
+        < div className="relative bg-white overflow-hidden" >
+            <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-12 sm:py-20 md:py-32">
+                <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] text-center mb-3 sm:mb-4">
+                    <span className="text-[#18A093]">Why Join</span>{' '}
+                    <span className="text-[#003366]">Bridge Healthcare</span>
                 </h2>
-                <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
-                    Our impact is reflected in the voices of patients, doctors and public sector leaders who trust us.
-                </p>
-                <div className="w-full overflow-hidden">
-                    <div className="specialty-cards-container  gap-4 sm:gap-6 lg:gap-8">
-                        {/* Testimonial Card 1 */}
-                        <div className="w-[250px] h-auto sm:w-[350px] sm:h-[250px] md:w-[400px] md:h-[350px] bg-white p-6 sm:p-8 lg:p-10 rounded-lg border border-gray-200 relative flex flex-col justify-around">
-                            <div className="absolute top-2 left-2">
-                                <Image
-                                    src="/icons/hm-8-img2.png"
-                                    alt="Quote icon"
-                                    width={50}
-                                    height={50}
-                                    className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
-                                />
-                            </div>
-                            <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
-                                As a gastroenterologist, having quick access to liver function tests, vitals, and previous reports helps me make decisions with greater clarity. The SHM platform makes all of this available in a single interface. It feels organized and efficient, especially during follow-ups and chronic care management.
-                            </p>
-                            <div className="flex items-center">
-                                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
-                                    <Image
-                                        src="/icons/hm-8-img8.png"
-                                        alt="Jane Smith"
-                                        width={48}
-                                        height={48}
-                                        className="object-cover w-full h-full"
-                                    />
-                                </div>
-                                <div>
-                                    <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Sagar P Kabadi</h4>
-                                    <p className="text-gray-500 text-xs sm:text-sm font-['Montserrat']">Senior Consultant, Medical Gastroenterologist
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                {/* <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
+            Be part of a mission to transform healthcare through innovation, accessibility and impact.
+          </p> */}
 
-                        {/* Testimonial Card 2 */}
-                        <div className="w-[250px] h-auto sm:w-[350px] sm:w-[250px] md:w-[400px] md:w-[350px] bg-white p-6 sm:p-8 lg:p-10 rounded-lg border border-gray-200 relative flex flex-col justify-around">
-                            <div className="absolute top-2 left-2">
-                                <Image
-                                    src="/icons/hm-8-img2.png"
-                                    alt="Quote icon"
-                                    width={50}
-                                    height={50}
-                                    className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
-                                />
-                            </div>
-                            <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
-                                The SHM platform stands out with its ability to organize and present all necessary patient data—especially radiology reports like MRIs and CTs—before I begin my consultation. It brings a lot of clarity to my decision-making and allows me to focus directly on the clinical need.
-                            </p>
-                            <div className="flex items-center">
-                                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
-                                    <Image
-                                        src="/icons/hm-8-img5.png"
-                                        alt="John Doe"
-                                        width={48}
-                                        height={48}
-                                        className="object-cover  w-full h-full"
-                                    />
-                                </div>
-                                <div>
-                                    <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Pratham R Bysan</h4>
-                                    <p className="text-gray-500 text-xs sm:text-sm font-['Montserrat']">Consultant Neurosciences</p>
-                                </div>
-                            </div>
-                        </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-11 relative">
+                    {/* Center Logo */}
+                    <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-full flex items-center justify-center z-10 hidden md:flex border-1 border-gray-300 p-2">
+                        <div className="w-16 sm:w-20 sm:h-20 md:w-28 md:h-28 flex item-center justify-center">
+                            <Image
+                                src="/icons/hm-6-img.png"
+                                alt="Bridge Healthcare Logo"
+                                width={200}
+                                height={200}
 
-                        {/* Testimonial Card 3 */}
-                        <div className="w-[250px] h-auto sm:w-[350px] sm:w-[250px] md:w-[400px] md:w-[350px] bg-white p-6 sm:p-8 lg:p-10 rounded-lg border border-gray-200 relative flex flex-col justify-around">
-                            <div className="absolute top-2 left-2">
+                            />
+                        </div>
+                    </div>
+
+                    {/* Service Cards - 1*/}
+                    <div
+                        onClick={(e) => handleToggle(e, 'card1')}
+                        className={`bg-white p-4 sm:p-6 rounded-lg border border-gray-200 transition-all duration-300 group card-hover 
+                  hover:bg-[#0E7280] min-h-[130px]`}
+                    >
+                        <div className="flex flex-row sm:flex-row items-center justify-around h-full gap-4 sm:gap-0">
+                            <div className="flex items-center justify-center relative w-[15%] group-hover:hidden touch-hover:hidden">
                                 <Image
-                                    src="/icons/hm-8-img2.png"
-                                    alt="Quote icon"
+                                    src="/icons/hm-6-lgo.png"
+                                    alt="Healthcare Partnership"
                                     width={50}
                                     height={50}
-                                    className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
+                                    className="group-hover:hidden touch-hover:hidden transition-opacity duration-300"
                                 />
                             </div>
-                            <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
-                                In cardiology, speed and accuracy are essential. SHM delivers real-time 12-lead ECGs that are clear and immediate. Combined with vitals and patient history, it gives me all the inputs I need to make confident and timely clinical decisions. It’s an excellent tool for proactive cardiac care.
-                            </p>
-                            <div className="flex items-center">
-                                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
-                                    <Image
-                                        src="/icons/hm-8-img9.png"
-                                        alt="Emily Johnson"
-                                        width={48}
-                                        height={48}
-                                        className="object-cover w-full h-full"
-                                    />
-                                </div>
-                                <div>
-                                    <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Sarthak Sahoo</h4>
-                                    <p className="text-gray-500 text-sm font-['Montserrat']">Senior Consultant, Cardiology</p>
-                                </div>
+                            <div className='w-[85%] touch-hover:w-[100%]'>
+                                <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-gray-700 font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">
+                                    Comprehensive Healthcare Solutions
+                                </h3>
+                                <p className="text-[#989898] text-[16px] sm:text-[18px] font-[400] leading-[1.6] sm:leading-[1.5] tracking-[0%] group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300">
+                                    Delivering real-time diagnostics, preventive care and teleconsultations through a unified platform that ensures end-to-end patient care.
+                                </p>
                             </div>
                         </div>
-                        <div className="w-[250px] h-auto sm:w-[350px] sm:w-[250px] md:w-[400px] md:w-[350px] bg-white p-6 sm:p-8 lg:p-10 rounded-lg border border-gray-200 relative flex flex-col justify-around">
-                            <div className="absolute top-2 left-2">
+                    </div>
+
+                    {/* Service Cards -2 */}
+                    <div
+                        onClick={(e) => handleToggle(e, 'card2')}
+                        className={`bg-white p-4 sm:p-6 rounded-lg border border-gray-200 transition-all duration-300 group card-hover 
+                  hover:bg-[#0E7280] min-h-[130px]`}
+                    >
+                        <div className="flex flex-row sm:flex-row items-center justify-around h-full gap-4 sm:gap-0">
+                            <div className="flex items-center justify-center relative w-[15%] group-hover:hidden touch-hover:hidden">
                                 <Image
-                                    src="/icons/hm-8-img2.png"
-                                    alt="Quote icon"
+                                    src="/icons/hm-6-lgo.png"
+                                    alt="Healthcare Partnership"
                                     width={50}
                                     height={50}
-                                    className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
+                                    className="group-hover:hidden touch-hover:hidden transition-opacity duration-300"
                                 />
                             </div>
-                            <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
-                                SHM has helped me connect with patients across all stages—from fertility counseling to postnatal care. I can easily access hormone profiles, ultrasound reports, and vitals. The digital prescription pad is seamless—I can document symptoms, prescribe medications or tests, and sign everything in one place.
-                            </p>
-                            <div className="flex items-center">
-                                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
-                                    <Image
-                                        src="/icons/hm-8-img6.png"
-                                        alt="Emily Johnson"
-                                        width={48}
-                                        height={48}
-                                        className="object-cover w-full h-full"
-                                    />
-                                </div>
-                                <div>
-                                    <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Priyanka Das</h4>
-                                    <p className="text-gray-500 text-sm font-['Montserrat']">Senior Consultant, Obstetrics & Gynaecology</p>
-                                </div>
+                            <div className='w-[85%] touch-hover:w-[100%]'>
+                                <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-gray-700 font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">
+                                    Healthcare Partnership Model
+                                </h3>
+                                <p className="text-[#989898] text-[16px] sm:text-[18px] font-[400] leading-[1.6] sm:leading-[1.5] tracking-[0%] group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300">
+                                    Collaborating with hospitals, communities, and institutions to build sustainable, patient-centric healthcare ecosystems.
+                                </p>
                             </div>
                         </div>
-                        <div className="w-[250px] h-auto sm:w-[350px] sm:w-[250px] md:w-[400px] md:w-[350px] bg-white p-6 sm:p-8 lg:p-10 rounded-lg border border-gray-200 relative flex flex-col justify-around">
-                            <div className="absolute top-2 left-2">
+                    </div>
+
+                    {/* Service Cards -3 */}
+                    <div
+                        onClick={(e) => handleToggle(e, 'card3')}
+                        className={`bg-white p-4 sm:p-6 rounded-lg border border-gray-200 transition-all duration-300 group card-hover 
+                  hover:bg-[#0E7280] min-h-[130px]`}
+                    >
+                        <div className="flex flex-row sm:flex-row items-center justify-around h-full gap-4 sm:gap-0">
+                            <div className="flex items-center justify-center relative w-[15%] group-hover:hidden touch-hover:hidden">
                                 <Image
-                                    src="/icons/hm-8-img2.png"
-                                    alt="Quote icon"
+                                    src="/icons/hm-6-lgo.png"
+                                    alt="Healthcare Partnership"
                                     width={50}
                                     height={50}
-                                    className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
+                                    className="group-hover:hidden touch-hover:hidden transition-opacity duration-300"
                                 />
+
                             </div>
-                            <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
-                                What I value most is the time-saving design. The digital queue, instant patient summaries, and seamless transition to the next case help me respond swiftly. With all reports and vitals ready when I join the call, every second is utilized effectively.
-                            </p>
-                            <div className="flex items-center">
-                                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
-                                    <Image
-                                        src="/icons/hm-8-img11.png"
-                                        alt="Emily Johnson"
-                                        width={48}
-                                        height={48}
-                                        className="object-cover w-full h-full"
-                                    />
-                                </div>
-                                <div>
-                                    <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Vijay Kumar K M</h4>
-                                    <p className="text-gray-500 text-sm font-['Montserrat']">Consultant, Emergency Medicine</p>
-                                </div>
+                            <div className='w-[85%] touch-hover:w-[100%]'>
+                                <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-gray-700 font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">
+                                    Innovation & Technology
+                                </h3>
+                                <p className="text-[#989898] text-[16px] sm:text-[18px] font-[400] leading-[1.6] sm:leading-[1.5] tracking-[0%] group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300">
+                                    Leveraging advanced medical devices and digital platforms to enhance care delivery, accuracy and accessibility.
+                                </p>
                             </div>
                         </div>
-                        <div className="w-[250px] h-auto sm:w-[350px] sm:w-[250px] md:w-[400px] md:w-[350px] bg-white p-6 sm:p-8 lg:p-10 rounded-lg border border-gray-200 relative flex flex-col justify-around">
-                            <div className="absolute top-2 left-2">
+                    </div>
+
+                    {/* Service Cards -4 */}
+                    <div
+                        onClick={(e) => handleToggle(e, 'card4')}
+                        className={`bg-white p-4 sm:p-6 rounded-lg border border-gray-200 transition-all duration-300 group card-hover 
+                  hover:bg-[#0E7280] min-h-[130px]`}
+                    >
+                        <div className="flex flex-row sm:flex-row items-center justify-around h-full gap-4 sm:gap-0">
+                            <div className="flex items-center justify-center relative w-[15%] group-hover:hidden touch-hover:hidden">
                                 <Image
-                                    src="/icons/hm-8-img2.png"
-                                    alt="Quote icon"
+                                    src="/icons/hm-6-lgo.png"
+                                    alt="Healthcare Partnership"
                                     width={50}
                                     height={50}
-                                    className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
+                                    className="group-hover:hidden touch-hover:hidden transition-opacity duration-300"
                                 />
                             </div>
-                            <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
-                                For surgical follow-ups and cosmetic consultations, SHM gives me everything I need—clinical images, vitals, and case history—well before I begin the consultation. It’s efficient and ensures I can provide precise guidance, even for patients consulting from a distance.
-                            </p>
-                            <div className="flex items-center">
-                                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
-                                    <Image
-                                        src="/icons/hm-8-img7.png"
-                                        alt="Emily Johnson"
-                                        width={48}
-                                        height={48}
-                                        className="object-cover w-full h-full"
-                                    />
-                                </div>
-                                <div>
-                                    <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Ramesh K T </h4>
-                                    <p className="text-gray-500 text-sm font-['Montserrat']">Consultant Plastic & Cosmetic Surgeon</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="w-[250px] h-auto sm:w-[350px] sm:w-[250px] md:w-[400px] md:w-[350px] bg-white p-6 sm:p-8 lg:p-10 rounded-lg border border-gray-200 relative flex flex-col justify-around">
-                            <div className="absolute top-2 left-2">
-                                <Image
-                                    src="/icons/hm-8-img2.png"
-                                    alt="Quote icon"
-                                    width={50}
-                                    height={50}
-                                    className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
-                                />
-                            </div>
-                            <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
-                                I find the SHM platform incredibly useful for reviewing patient X-rays, post-op images, and orthopedic test results. The structured format, combined with real-time vitals and symptom input, makes remote orthopedic evaluations smoother and more accurate.
-                            </p>
-                            <div className="flex items-center">
-                                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
-                                    <Image
-                                        src="/icons/hm-8-img3.png"
-                                        alt="Emily Johnson"
-                                        width={100}
-                                        height={100}
-                                        className="object-cover w-full h-full"
-                                    />
-                                </div>
-                                <div>
-                                    <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Avinash Parthasarathy</h4>
-                                    <p className="text-gray-500 text-sm font-['Montserrat']">Consultant, Orthopaedics</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="w-[250px] h-auto sm:w-[350px] sm:w-[250px] md:w-[400px] md:w-[350px] bg-white p-6 sm:p-8 lg:p-10 rounded-lg border border-gray-200 relative flex flex-col justify-around">
-                            <div className="absolute top-2 left-2">
-                                <Image
-                                    src="/icons/hm-8-img2.png"
-                                    alt="Quote icon"
-                                    width={50}
-                                    height={50}
-                                    className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
-                                />
-                            </div>
-                            <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
-                                In dermatology, image quality is critical. The SHM delivers high-resolution dermatoscope images, along with all relevant patient information in one place. It has made remote consultations feel just as thorough and reliable as in-person visits.
-                            </p>
-                            <div className="flex items-center">
-                                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
-                                    <Image
-                                        src="/icons/hm-8-img1.png"
-                                        alt="Emily Johnson"
-                                        width={48}
-                                        height={48}
-                                        className="object-cover w-full h-full"
-                                    />
-                                </div>
-                                <div>
-                                    <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Abhiram Rayapati</h4>
-                                    <p className="text-gray-500 text-sm font-['Montserrat']">Chief Consultant, Dermatology & ENT</p>
-                                </div>
+                            <div className='w-[85%] touch-hover:w-[100%]'>
+                                <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">
+                                    Scalable Healthcare Solution
+                                </h3>
+                                <p className="text-[#989898] text-[16px] sm:text-[18px] font-[400] leading-[1.6] sm:leading-[1.5] tracking-[0%] group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300">
+                                    Designed to expand across geographies—from urban centers to remote areas — while maintaining quality and efficiency.
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     </>);
 }

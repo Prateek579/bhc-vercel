@@ -4,6 +4,11 @@ import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Partner from './Partner';
 import Link from 'next/link';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const useCountAnimation = (end: number, duration: number = 1000) => {
   const [count, setCount] = useState(0);
@@ -48,7 +53,6 @@ const LandingPage = () => {
   const satisfactionRate = useCountAnimation(90);
   // Using a single static background image
   const [pageNum, setPageNum] = React.useState(1);
-  const [cardNum, setCardNum] = React.useState(1);
 
   const backgroundImage = '/hm-1-img.jpg';
 
@@ -300,15 +304,15 @@ const LandingPage = () => {
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             {/* Text Content */}
-            <div className="space-y-6">
-              <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+            <div className="space-y-4">
+              <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat']">
                 <span className="text-[#18A093]">Reimagining Access to</span>{' '}
                 <span className="text-[#003366]">Quality Healthcare</span>
               </h2>
-              <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
+              <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium">
                 From Cities to Villages. From Clinics to Communities.
               </p>
-              <p className="text-sm sm:text-base md:text-lg text-gray-600">
+              <p className="text-sm sm:text-base md:text-lg font-['Montserrat'] text-gray-600">
                 At Bridge Healthcare, we turn everyday spaces—residential societies, community centers, and underserved areas—into fully connected health hubs. With our Smart Healthcare Machine (SHM) and real-time tele-diagnostics, we deliver vital checkups, doctor consultations, and wellness programs where they&apos;re needed most.
                 Since 2022, we&apos;ve been making personalized, preventive healthcare accessible, affordable, and always within reach.
               </p>
@@ -405,6 +409,124 @@ const LandingPage = () => {
 
       {/* Our Addressing Key Challenges Section */}
       <div className="relative bg-white py-16 overflow-hidden">
+        <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22">
+          <h2 className="text-[32px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-3 sm:mb-4 text-center">
+            <span className="text-[#18A093]">Addressing</span>{' '}
+            <span className="text-[#003366]">Challenges</span>
+          </h2>
+
+          <div className="relative w-full max-w-screen-xl mx-auto md:px-12 py-10">
+            <button className="custom-prev cursor-pointer absolute left-0 top-[45%] z-10 p-2 rounded-full bg-white shadow-lg hover:bg-gray-100 transition-all duration-300">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M15 19l-7-7 7-7" stroke="#003366" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+
+            <button className="custom-next cursor-pointer absolute right-0 top-[45%] z-10 p-2 rounded-full bg-white shadow-lg hover:bg-gray-100 transition-all duration-300">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M9 5l7 7-7 7" stroke="#003366" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+
+            <Swiper
+              modules={[Navigation, Pagination]}
+              navigation={{
+                nextEl: '.custom-next',
+                prevEl: '.custom-prev',
+              }}
+              spaceBetween={30}
+              slidesPerView={2}
+              pagination={{ clickable: true, el: '.custom-pagination' }}
+              breakpoints={{
+                0: { slidesPerView: 1 },
+                640: { slidesPerView: 1 },
+                1024: { slidesPerView: 2 },
+              }}
+            >
+              {/* Card 1 */}
+              <SwiperSlide>
+                <div className="relative group overflow-hidden rounded-lg w-full max-w-[600px] aspect-[4/3]">
+                  <Image
+                    src="/icons/hm-4-img1.1.jpeg"
+                    alt="Sewer Lines"
+                    width={600}
+                    height={450}
+                    className="object-cover w-full h-full"
+                  />
+                  <div className="absolute bottom-0  bg-gradient-to-t from-black/90 to-black/10 flex flex-col justify-start p-8 h-[45%]">
+                    <h3 className="text-2xl sm:text-[26px] font-['Montserrat'] font-bold text-white mb-4 text-center">Limited Access to Quality Care</h3>
+                    <p className="text-white/90 text-sm font-['Montserrat'] sm:text-[16px] text-center">
+                      Quality healthcare remains inaccessible for millions — from remote rural regions to premium residential areas lacking sufficient medical infrastructure.
+                    </p>
+                  </div>
+                </div>
+              </SwiperSlide>
+
+              {/* Card 2 */}
+              <SwiperSlide>
+                <div className="relative group overflow-hidden rounded-lg w-full max-w-[600px] aspect-[4/3]">
+                  <Image
+                    src="/icons/hm-4-img4.jpg"
+                    alt="Stormwater Drains"
+                    width={600}
+                    height={450}
+                    className="object-cover w-full h-full"
+                  />
+                  <div className="absolute bottom-0  bg-gradient-to-t from-black/100 to-black/10 flex flex-col justify-start p-8">
+                    <h3 className="text-2xl sm:text-[26px] font-['Montserrat'] font-bold text-white mb-4 text-center">Gaps in Real-Time Tele-Diagnostics</h3>
+                    <p className="text-white/90 text-sm font-['Montserrat'] sm:text-[16px] text-center">
+                      While video consultations are common, they often lack real-time diagnostic data, leading to treatment based on assumptions rather than precision.
+
+                    </p>
+                  </div>
+                </div>
+              </SwiperSlide>
+
+              {/* Card 3 */}
+              <SwiperSlide>
+                <div className="relative group overflow-hidden rounded-lg w-full max-w-[600px] aspect-[4/3]">
+                  <Image
+                    src="/icons/hm-4-img2.1.webp"
+                    alt="Sewer Lines"
+                    width={600}
+                    height={450}
+                    className="object-cover w-full h-full"
+                  />
+                  <div className="absolute bottom-0  bg-gradient-to-t from-black/90 to-black/10 flex flex-col justify-start p-8">
+                    <h3 className="text-2xl sm:text-[26px] font-['Montserrat'] font-bold text-white mb-4 text-center">Neglect of Preventive & Chronic Care</h3>
+                    <p className="text-white/90 text-sm font-['Montserrat'] sm:text-[16px] text-center">
+                      Healthcare today still focuses more on treatment than prevention — missing early detection, wellness, and chronic care opportunities.
+                    </p>
+                  </div>
+                </div>
+              </SwiperSlide>
+
+              {/* Card 4 */}
+              <SwiperSlide>
+                <div className="relative group overflow-hidden rounded-lg w-full max-w-[600px] aspect-[4/3]">
+                  <Image
+                    src="/icons/hm-4-img2.1.jpg"
+                    alt="Stormwater Drains"
+                    width={600}
+                    height={450}
+                    className="object-cover w-full h-full"
+                  />
+                  <div className="absolute bottom-0  bg-gradient-to-t from-black/90 to-black/10 flex flex-col justify-start p-8">
+                    <h3 className="text-2xl sm:text-[26px] font-['Montserrat'] font-bold text-white mb-4 text-center">Fragmented Care & Missed Follow-Ups</h3>
+                    <p className="text-white/90 text-sm font-['Montserrat'] sm:text-[16px] text-center">
+                      Disconnected health records and fragmented follow-ups lead to inefficiencies for both patients and healthcare providers.
+                    </p>
+                  </div>
+
+                </div>
+              </SwiperSlide>
+            </Swiper>
+            <div className="custom-pagination flex justify-center gap-2 mt-6"></div>
+          </div>
+        </div>
+      </div>
+
+      {/* <div className="relative bg-white py-16 overflow-hidden">
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22">
           <h2 className="text-[32px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-3 sm:mb-4 text-center">
             <span className="text-[#18A093]">Addressing</span>{' '}
@@ -514,7 +636,7 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Our Key Services Section */}
       <div className="relative bg-white overflow-hidden">
@@ -757,7 +879,7 @@ const LandingPage = () => {
             <p className="text-[20px] sm:text-[24px] md:text-[30px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize font-['Montserrat'] text-[#003366]">Smart Healthcare Machine Features</p>
             <div className="flex flex-col sm:flex-col md:flex-row space-y-4 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300">
               <div className="w-full md:w-[40%] items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 flex items-center justify-center md:border-r-2 md:border-[#003366] md:mr-5 md:pr-5">
-                <Image src="/icons/hm-shm.png" alt="Smart Healthcare Machine Features" width={300} height={300} className="w-[50%] h-auto md:w-auto md:h-[80%]" />
+                <Image src="/icons/hm-shm.png" alt="Smart Healthcare Machine Features" width={300} height={300} className="w-[50%] h-auto md:w-full md:h-auto" />
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* Vitals Section */}
@@ -866,22 +988,21 @@ const LandingPage = () => {
                 {/* Digital Stethoscope Section */}
                 <div className="space-y-2">
                   <h3 className="text-[#003366] text-start align-middle font-['Montserrat] border-b-2 border-gray-300 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%]">Digital Stethoscope</h3>
-                  <p className='text-blacktext-sm sm:text-base md:text-lg text-gray-600 text-center flex flex-row items-center justify-center text-gray-700 '><Image src="/icons/hm-6-ls.png" alt='Stethoscope images' width={25} height={25} className='mr-2' />Live Stethoscope</p>
+                  <div className='flex flex-row items-center'>
+                    <Image src="/icons/hm-6-ls.png" alt='Stethoscope images' width={25} height={25} className='mr-2' />
+                    <p className="text-gray-700 font-['Montserrat'] text-blacktext-sm sm:text-base md:text-lg">Live Stethoscope</p>
+                  </div>
                   <div className="grid grid-cols-2 gap-2">
                     <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
-
                       <span className='text-blacktext-sm sm:text-base md:text-lg '>Aortic Sound</span>
                     </div>
                     <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
-
                       <span className='text-blacktext-sm sm:text-base md:text-lg '>Mitral Sound</span>
                     </div>
                     <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
-
                       <span className='text-blacktext-sm sm:text-base md:text-lg '>Pulmonic Sound</span>
                     </div>
                     <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
-
                       <span className='text-blacktext-sm sm:text-base md:text-lg '>Tricuspid Sound</span>
                     </div>
                   </div>
@@ -960,7 +1081,7 @@ const LandingPage = () => {
 
             {/* Product List */}
             <Link href="/ourProducts" className="w-full">
-              <div className="border-2 border-gray-200 group hover:cursor-pointer flex items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300 group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366]" >
+              <div className="border-2 border-gray-200 group hover:cursor-pointer flex items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300 group hover:bg-[#0E7280]" >
                 <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
                   <Image src="/icons/prd-2-lgo1.png" alt="Smart Healthcare Machine" width={32} height={32} className="w-full h-full" />
                 </div>
@@ -976,8 +1097,7 @@ const LandingPage = () => {
             </Link>
             <Link href="/ourProducts"
             >
-
-              <div className="border-2 border-gray-200 group hover:cursor-pointer flex items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300 group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366]" >
+              <div className="border-2 border-gray-200 group hover:cursor-pointer flex items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300 group hover:bg-[#0E7280]" >
                 <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
                   <Image src="/icons/prd-2-lgo1.png" alt="Doctor App" width={32} height={32} />
                 </div>
@@ -994,8 +1114,7 @@ const LandingPage = () => {
 
             <Link href="/ourProducts"
             >
-
-              <div className="border-2 border-gray-200 group hover:cursor-pointer flex items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300  group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366]" >
+              <div className="border-2 border-gray-200 group hover:cursor-pointer flex items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300  group hover:bg-[#0E7280]" >
                 <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
                   <Image src="/icons/prd-2-log2.png" alt="Patient App" width={32} height={32} />
                 </div>
@@ -1012,9 +1131,7 @@ const LandingPage = () => {
 
             <Link href="/ourProducts"
             >
-
-
-              <div className="border-2 border-gray-200 hover:cursor-pointer group flex items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300 group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366]" >
+              <div className="border-2 border-gray-200 hover:cursor-pointer group flex items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300 group hover:bg-[#0E7280]" >
                 <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
                   <Image src="/icons/prd-2-log2.png" alt="Operator / Nurse App" width={32} height={32} />
                 </div>
@@ -1041,162 +1158,7 @@ const LandingPage = () => {
         </div>
       </div >
 
-      {/* Why Join Bridge Healthcare Section */}
-      < div className="relative bg-white overflow-hidden" >
-        <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-12 sm:py-20 md:py-32">
-          <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] text-center mb-3 sm:mb-4">
-            <span className="text-[#18A093]">Why Join</span>{' '}
-            <span className="text-[#003366]">Bridge Healthcare</span>
-          </h2>
-          {/* <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
-            Be part of a mission to transform healthcare through innovation, accessibility and impact.
-          </p> */}
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-11 relative">
-            {/* Center Logo */}
-            <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-full flex items-center justify-center z-10 hidden md:flex border-1 border-gray-300 p-2">
-              <div className="w-16 sm:w-20 md:w-24 h-16 sm:h-20 md:h-24 flex item-center justify-center">
-                <Image
-                  src="/icons/hm-6-img.png"
-                  alt="Bridge Healthcare Logo"
-                  width={100}
-                  height={100}
-                  className=""
-                />
-              </div>
-            </div>
-
-            {/* Service Cards - 1*/}
-            <div
-              onClick={(e) => handleToggle(e, 'card1')}
-              className={`bg-white p-4 sm:p-6 rounded-lg border border-gray-200 transition-all duration-300 group card-hover 
-                  hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] 
-                  hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] 
-                  hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] 
-                  touch-hover:bg-gradient-to-r touch-hover:from-[rgba(24,160,147,0.7)] 
-                  touch-hover:via-[rgba(18,131,135,0.7)] touch-hover:via-[rgba(11,100,122,0.7)] 
-                  touch-hover:via-[rgba(6,80,114,0.7)] touch-hover:to-[rgba(0,51,102,0.7)]`}
-            >
-              <div className="flex flex-row sm:flex-row items-center justify-around h-full gap-4 sm:gap-0">
-                <div className="flex items-center justify-center relative w-[15%] group-hover:hidden touch-hover:hidden">
-                  <Image
-                    src="/icons/hm-6-lgo.png"
-                    alt="Healthcare Partnership"
-                    width={50}
-                    height={50}
-                    className="group-hover:hidden touch-hover:hidden transition-opacity duration-300"
-                  />
-                </div>
-                <div className='w-[85%] touch-hover:w-[100%]'>
-                  <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">
-                    Comprehensive Healthcare Solutions
-                  </h3>
-                  <p className="text-[#989898] text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.5] tracking-[0%] group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300">
-                    Delivering real-time diagnostics, preventive care and teleconsultations through a unified platform that ensures end-to-end patient care.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Service Cards -2 */}
-            <div
-              onClick={(e) => handleToggle(e, 'card2')}
-              className={`bg-white p-4 sm:p-6 rounded-lg border border-gray-200 transition-all duration-300 group card-hover 
-                  hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] 
-                  hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] 
-                  hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] 
-                  touch-hover:bg-gradient-to-r touch-hover:from-[rgba(24,160,147,0.7)] 
-                  touch-hover:via-[rgba(18,131,135,0.7)] touch-hover:via-[rgba(11,100,122,0.7)] 
-                  touch-hover:via-[rgba(6,80,114,0.7)] touch-hover:to-[rgba(0,51,102,0.7)]`}
-            >
-              <div className="flex flex-row sm:flex-row items-center justify-around h-full gap-4 sm:gap-0">
-                <div className="flex items-center justify-center relative w-[15%] group-hover:hidden touch-hover:hidden">
-                  <Image
-                    src="/icons/hm-6-lgo.png"
-                    alt="Healthcare Partnership"
-                    width={50}
-                    height={50}
-                    className="group-hover:hidden touch-hover:hidden transition-opacity duration-300"
-                  />
-                </div>
-                <div className='w-[85%] touch-hover:w-[100%]'>
-                  <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">
-                    Healthcare Partnership Model
-                  </h3>
-                  <p className="text-[#989898] text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.5] tracking-[0%] group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300">
-                    Collaborating with hospitals, communities, and institutions to build sustainable, patient-centric healthcare ecosystems.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Service Cards -3 */}
-            <div
-              onClick={(e) => handleToggle(e, 'card3')}
-              className={`bg-white p-4 sm:p-6 rounded-lg border border-gray-200 transition-all duration-300 group card-hover 
-                  hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] 
-                  hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] 
-                  hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] 
-                  touch-hover:bg-gradient-to-r touch-hover:from-[rgba(24,160,147,0.7)] 
-                  touch-hover:via-[rgba(18,131,135,0.7)] touch-hover:via-[rgba(11,100,122,0.7)] 
-                  touch-hover:via-[rgba(6,80,114,0.7)] touch-hover:to-[rgba(0,51,102,0.7)]`}
-            >
-              <div className="flex flex-row sm:flex-row items-center justify-around h-full gap-4 sm:gap-0">
-                <div className="flex items-center justify-center relative w-[15%] group-hover:hidden touch-hover:hidden">
-                  <Image
-                    src="/icons/hm-6-lgo.png"
-                    alt="Healthcare Partnership"
-                    width={50}
-                    height={50}
-                    className="group-hover:hidden touch-hover:hidden transition-opacity duration-300"
-                  />
-
-                </div>
-                <div className='w-[85%] touch-hover:w-[100%]'>
-                  <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">
-                    Innovation & Technology
-                  </h3>
-                  <p className="text-[#989898] text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.5] tracking-[0%] group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300">
-                    Leveraging advanced medical devices and digital platforms to enhance care delivery, accuracy and accessibility.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Service Cards -4 */}
-            <div
-              onClick={(e) => handleToggle(e, 'card4')}
-              className={`bg-white p-4 sm:p-6 rounded-lg border border-gray-200 transition-all duration-300 group card-hover 
-                  hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] 
-                  hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] 
-                  hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] 
-                  touch-hover:bg-gradient-to-r touch-hover:from-[rgba(24,160,147,0.7)] 
-                  touch-hover:via-[rgba(18,131,135,0.7)] touch-hover:via-[rgba(11,100,122,0.7)] 
-                  touch-hover:via-[rgba(6,80,114,0.7)] touch-hover:to-[rgba(0,51,102,0.7)]`}
-            >
-              <div className="flex flex-row sm:flex-row items-center justify-around h-full gap-4 sm:gap-0">
-                <div className="flex items-center justify-center relative w-[15%] group-hover:hidden touch-hover:hidden">
-                  <Image
-                    src="/icons/hm-6-lgo.png"
-                    alt="Healthcare Partnership"
-                    width={50}
-                    height={50}
-                    className="group-hover:hidden touch-hover:hidden transition-opacity duration-300"
-                  />
-                </div>
-                <div className='w-[85%] touch-hover:w-[100%]'>
-                  <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:hidden touch-hover:hidden transition-opacity duration-300">
-                    Scalable Healthcare Solution
-                  </h3>
-                  <p className="text-[#989898] text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.5] tracking-[0%] group-hover:text-white group-hover:block touch-hover:text-white touch-hover:block hidden transition-opacity duration-300 delay-300">
-                    Designed to expand across geographies—from urban centers to remote areas — while maintaining quality and efficiency.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div >
 
       {/* Testimonials Section */}
       < div className="relative bg-white overflow-hidden" >
@@ -1205,9 +1167,9 @@ const LandingPage = () => {
             <span className="text-[#18A093]">Our</span>{' '}
             <span className="text-[#003366]">Testimonials</span>
           </h2>
-          <p className="text-[#555555] text-center text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
+          {/* <p className="text-[#555555] text-center text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
             Our impact is reflected in the voices of patients, doctors and public sector leaders who trust us.
-          </p>
+          </p> */}
           <div className="w-full overflow-hidden">
             <div className="specialty-cards-container  gap-4 sm:gap-6 lg:gap-8">
               {/* Testimonial Card 1 */}

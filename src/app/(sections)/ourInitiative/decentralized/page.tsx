@@ -46,8 +46,9 @@ export default function Decentralized() {
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 md:px-8 lg:px-22 w-full">
           <div className="relative z-10 flex flex-col gap-6 max-w-4xl text-white">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-['Montserrat'] leading-tight">
-              Building The World&apos;s Largest
-              <span> Decentralized Healthcare Network</span>
+              Mission 2036
+              <br />
+              <span>Connecting 600K Villages to Smart Healthcare.</span>
             </h1>
             <p className="text-sm md:text-base lg:text-lg opacity-90 font-['Montserrat'] font-normal leading-relaxed text-[#FFA500]">
               By 2036, Transforming access to care by building a decentralized, tech-enabled healthcare network across every Indian sub-division.
@@ -57,72 +58,7 @@ export default function Decentralized() {
       </div>
     </div>
 
-    {/* Second Section - About Bridge Healthcare */}
-    <div className="relative bg-white">
-      <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-        <div className="w-full">
-          <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
-            <span className="text-[#18A093]">About</span>{' '}
-            <span className="text-[#003366]">Bridge Healthcare</span>
-          </h2>
-          <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
-            Reimagining healthcare delivery through smart diagnostics and seamless connectivity.
-          </p>
-        </div>
 
-        <div className="flex flex-col md:flex-row gap-8 md:gap-12">
-          {/* Vision and Mission Column */}
-          <div className="w-full md:w-1/2 space-y-12">
-            {/* Vision */}
-            <div className="border-2 border-gray-200 space-y-4 p-4 rounded-xl group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300">
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8">
-                  <Image
-                    src="/icons/abt-2-lgo1.png"
-                    alt="Vision Icon"
-                    width={32}
-                    height={32}
-                  />
-                </div>
-                <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white transition-colors duration-300">Vision</h3>
-              </div>
-              <p className="text-sm sm:text-base md:text-lg text-gray-600 group-hover:text-white transition-colors duration-300">
-                To revolutionize healthcare delivery by making premium, technology-driven healthcare services accessible, affordable, and reliable for everyone, everywhere.
-              </p>
-            </div>
-
-            {/* Mission */}
-            <div className="border-2 border-gray-200 space-y-4 p-4 rounded-xl group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300">
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8">
-                  <Image
-                    src="/icons/abt-2-img3.png"
-                    alt="Vision Icon"
-                    width={32}
-                    height={32}
-                  />
-                </div>
-                <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white transition-colors duration-300">Mission</h3>
-              </div>
-              <p className="text-sm sm:text-base md:text-lg text-gray-600 group-hover:text-white transition-colors duration-300">
-                To empower individuals and healthcare providers through advanced Tele-Diagnostic and Smart Healthcare solutions, ensuring real-time diagnostics, seamless tele-consultations, and connected care that improves health outcomes and transforms lives.
-              </p>
-            </div>
-          </div>
-
-          {/* Image Column */}
-          <div className="w-full md:w-1/2 flex items-center justify-center">
-            <Image
-              src="/icons/hm-5-img.png"
-              alt="Healthcare professionals using Bridge Healthcare platform"
-              className="object-cover rounded-lg shadow-xl w-full md:w-full lg:w-[550px]"
-              width={200}
-              height={200}
-            />
-          </div>
-        </div>
-      </div>
-    </div>
 
     {/* Mission 2036 Section */}
     <div className="bg-white">
@@ -221,71 +157,71 @@ export default function Decentralized() {
     <div className="bg-gray-50">
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
         <div className="mb-16">
-          <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+          <h2 className="text-[32px] sm:text-[38px] text-center md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
             <span className="text-[#18A093]">How We&apos;re Redefining</span>{' '}
             <span className="text-[#003366]">Healthcare in India</span>
           </h2>
-          <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
+          <p className="text-[#555555] text-[18px] text-center sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
             India&apos;s healthcare system faces deep gaps in accessibility and affordability — especially in rural regions. We&apos;re building a decentralized, tech-driven ecosystem that delivers real-time, community-centered care where it&apos;s needed most.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Card 1 - Breaking Geographical Barriers */}
-          <div 
-            className={`bg-white p-8 rounded-lg border-1 border-gray-300 card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer ${activeCard === 'card1' ? 'touch-hover' : ''}`}
+          <div
+            className={`bg-white p-8 rounded-lg border-1 border-gray-300 card-hover group hover:bg-[#0E7280] transition-all duration-300 cursor-pointer ${activeCard === 'card1' ? 'touch-hover' : ''}`}
             onClick={(e) => handleToggle(e, 'card1')}
           >
-            <div className="mb-6 group-hover:hidden touch-hover:hidden">
+            <div className="mb-6 group-hover:hidden touch-hover:hidden flex justify-center items-center">
               <Image
                 src="/icons/abt-3-lgo4.png"
                 alt="Academic Icon"
                 width={48}
                 height={48}
-                className="text-[#00A99D]"
+                className="md:h-[60px] md:w-auto"
               />
             </div>
-            <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] pb-2 group-hover:text-white touch-hover:text-white group-hover:hidden touch-hover:hidden">Breaking Geographical Barriers</h3>
+            <h3 className="text-[18px] text-center sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%]  align-middle capitalize text-gray-700 font-['Montserrat'] pb-2 group-hover:text-white touch-hover:text-white group-hover:hidden touch-hover:hidden">Breaking Geographical Barriers</h3>
             <p className="text-sm sm:text-base md:text-lg text-gray-600 group-hover:text-white touch-hover:text-white hidden group-hover:block touch-hover:block">
               Smart mobile clinics and tele-consultation hubs bring healthcare to every village — eliminating travel and reducing hospital overload.
             </p>
           </div>
 
           {/* Card 2 - Technology-Driven Access */}
-          <div 
-            className={`bg-white p-8 rounded-lg border-1 border-gray-300 card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer ${activeCard === 'card2' ? 'touch-hover' : ''}`}
+          <div
+            className={`bg-white p-8 rounded-lg border-1 border-gray-300 card-hover group hover:bg-[#0E7280] transition-all duration-300 cursor-pointer ${activeCard === 'card2' ? 'touch-hover' : ''}`}
             onClick={(e) => handleToggle(e, 'card2')}
           >
-            <div className="mb-6 group-hover:hidden touch-hover:hidden">
+            <div className="mb-6 group-hover:hidden touch-hover:hidden flex items-center justify-center">
               <Image
                 src="/icons/abt-3-lgo2.png"
                 alt="Industry Icon"
                 width={48}
                 height={48}
-                className="text-[#00A99D]"
+                className="md:h-[60px] md:w-auto"
               />
             </div>
-            <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] pb-2 group-hover:text-white touch-hover:text-white group-hover:hidden touch-hover:hidden">Technology-Driven Access</h3>
+            <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-center align-middle capitalize text-gray-700 font-['Montserrat'] pb-2 group-hover:text-white touch-hover:text-white group-hover:hidden touch-hover:hidden">Technology-Driven Access</h3>
             <p className="text-sm sm:text-base md:text-lg text-gray-600 group-hover:text-white touch-hover:text-white hidden group-hover:block touch-hover:block">
               From early disease detection to AI-powered health records and virtual consults — technology ensures accurate, accessible and timely care.
             </p>
           </div>
 
           {/* Card 3 - Community-Based Healthcare */}
-          <div 
-            className={`bg-white p-8 rounded-lg border-1 border-gray-300 card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer ${activeCard === 'card3' ? 'touch-hover' : ''}`}
+          <div
+            className={`bg-white p-8 rounded-lg border-1 border-gray-300 card-hover group hover:bg-[#0E7280] transition-all duration-300 cursor-pointer ${activeCard === 'card3' ? 'touch-hover' : ''}`}
             onClick={(e) => handleToggle(e, 'card3')}
           >
-            <div className="mb-6 group-hover:hidden touch-hover:hidden">
+            <div className="mb-6 group-hover:hidden touch-hover:hidden flex items-center justify-center">
               <Image
                 src="/icons/abt-3-lgo3.png"
                 alt="Hospital Icon"
                 width={48}
                 height={48}
-                className="text-[#00A99D]"
+                className="md:h-[60px] md:w-auto"
               />
             </div>
-            <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] pb-2 group-hover:text-white touch-hover:text-white group-hover:hidden touch-hover:hidden">Community-Based Healthcare</h3>
+            <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-center align-middle capitalize text-gray-700 font-['Montserrat'] pb-2 group-hover:text-white touch-hover:text-white group-hover:hidden touch-hover:hidden">Community-Based Healthcare</h3>
             <p className="text-sm sm:text-base md:text-lg text-gray-600 group-hover:text-white touch-hover:text-white hidden group-hover:block touch-hover:block">
               Empowering local workers with smart diagnostic tools and training to deliver first-level care and reduce pressure on tertiary systems.
             </p>
@@ -297,19 +233,19 @@ export default function Decentralized() {
     <div className="bg-white">
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
         <div className="mb-16">
-          <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+          <h2 className="text-[32px] text-center sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
             <span className="text-[#18A093]">How We&apos;re Redefining</span>{' '}
             <span className="text-[#003366]">Decentralized Healthcare Network</span>
           </h2>
-          <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
+          <p className="text-[#555555] text-center text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
             Milestones toward creating a nationwide network of smart health hubs across every sub-division in India.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Phase 1 */}
-          <div 
-            className={`bg-white p-8 rounded-lg border-1 border-gray-300 card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer sm:min-h-[100px] lg:min-h-[150px] ${activeCard === 'phase1' ? 'touch-hover' : ''}`}
+          <div
+            className={`bg-white p-8 rounded-lg border-1 border-gray-300 card-hover group hover:bg-[#0E7280] transition-all duration-300 cursor-pointer sm:min-h-[100px] md:min-h-[170px] flex items-center justify-center ] ${activeCard === 'phase1' ? 'touch-hover' : ''}`}
             onClick={(e) => handleToggle(e, 'phase1')}
           >
             <div className="flex flex-row items-center justify-start group-hover:hidden touch-hover:hidden h-full">
@@ -318,20 +254,23 @@ export default function Decentralized() {
                 alt="Phase 1 Icon"
                 width={48}
                 height={48}
-                className="text-[#00A99D]"
+                className=" sm:w-14 md:w-18 mr-4"
               />
-              <h3 className="w-[50%] text-center text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-center align-middle capitalize font-['Montserrat] text-[#18A093] group-hover:text-white touch-hover:text-white">Phase 1</h3>
+              <div className='w-full'>
+                <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%]  align-middle capitalize font-['Montserrat] text-[#18A093] group-hover:text-white touch-hover:text-white mb-2">Phase 1</h3>
+                <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] align-middle capitalize font-['Montserrat'] text-gray-700">Foundation & Proof of Concept
+                  (2024–2026)</h3>
+              </div>
             </div>
-
-            <ul className="text-sm sm:text-base md:text-lg text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white h-full">
+            <ul className="text-sm sm:text-base md:text-lg text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
               <li>Identifying key regions for implementation.</li>
               <li>Partnering with NGOs, government bodies, and healthcare startups.</li>
             </ul>
           </div>
 
           {/* Phase 2 */}
-          <div 
-            className={`bg-white p-8 rounded-lg border-1 border-gray-300 card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer sm:min-h-[100px] lg:min-h-[150px] ${activeCard === 'phase2' ? 'touch-hover' : ''}`}
+          <div
+            className={`bg-white p-8 rounded-lg border-1 border-gray-300 card-hover group hover:bg-[#0E7280] transition-all duration-300 cursor-pointer sm:min-h-[100px] md:min-h-[170px] flex items-center justify-center  ${activeCard === 'phase2' ? 'touch-hover' : ''}`}
             onClick={(e) => handleToggle(e, 'phase2')}
           >
             <div className="flex flex-row items-center group-hover:hidden touch-hover:hidden h-full">
@@ -340,20 +279,23 @@ export default function Decentralized() {
                 alt="Phase 2 Icon"
                 width={52}
                 height={58}
-                className="text-[#00A99D]"
+                className="mr-4 sm:w-14 md:w-22"
               />
-              <h3 className="w-[50%] text-center text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-center align-middle capitalize font-['Montserrat] text-[#18A093] group-hover:text-white touch-hover:text-white">Phase 2</h3>
+              <div className='w-full'>
+                <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%]  align-middle capitalize font-['Montserrat] text-[#18A093] group-hover:text-white touch-hover:text-white mb-2">Phase 2</h3>
+                <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] align-middle capitalize font-['Montserrat'] text-gray-700">Scale & Strengthen
+                  (2026–2029)</h3>
+              </div>
             </div>
-            
-            <ul className="text-sm sm:text-base md:text-lg text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white h-full">
+            <ul className="text-sm sm:text-base md:text-lg text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
               <li>Identifying key regions for implementation.</li>
               <li>Partnering with NGOs, government bodies, and healthcare startups.</li>
             </ul>
           </div>
 
           {/* Phase 3 */}
-          <div 
-            className={`bg-white p-8 rounded-lg border-1 border-gray-300 card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer  sm:min-h-[100px] lg:min-h-[150px] ${activeCard === 'phase3' ? 'touch-hover' : ''}`}
+          <div
+            className={`bg-white p-8 rounded-lg border-1 border-gray-300 card-hover group hover:bg-[#0E7280] transition-all duration-300 cursor-pointer sm:min-h-[100px] md:min-h-[170px] flex items-center justify-center ${activeCard === 'phase3' ? 'touch-hover' : ''}`}
             onClick={(e) => handleToggle(e, 'phase3')}
           >
             <div className="flex flex-row items-center group-hover:hidden touch-hover:hidden h-full">
@@ -362,11 +304,16 @@ export default function Decentralized() {
                 alt="Phase 3 Icon"
                 width={48}
                 height={48}
-                className="text-[#00A99D]"
+                className="mr-4 sm:w-16 md:w-20"
               />
-              <h3 className="w-[50%] text-center text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-center align-middle capitalize font-['Montserrat] text-[#18A093] group-hover:text-white touch-hover:text-white">Phase 3</h3>
+              <div className='w-full'>
+                <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%]  align-middle capitalize font-['Montserrat] text-[#18A093] group-hover:text-white touch-hover:text-white mb-2">Phase 3</h3>
+                <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] align-middle capitalize font-['Montserrat'] text-gray-700">Deep Reach & Public Systems Integration
+                  (2029–2032)</h3>
+              </div>
+
             </div>
-            <ul className="text-sm sm:text-base md:text-lg text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white h-full">
+            <ul className="text-sm sm:text-base md:text-lg text-gray-600 hidden group-hover:block touch-hover:block group-hover:text-white touch-hover:text-white">
               <li>Identifying key regions for implementation.</li>
               <li>Partnering with NGOs, government bodies, and healthcare startups.</li>
             </ul>
@@ -375,7 +322,7 @@ export default function Decentralized() {
       </div>
       <div className="pb-6 mt-3 bg-white relative overflow-hidden">
         <div className="slide-animation">
-  
+
           <Image
             src="/icons/dc-5-img.png"
             alt="Phase 3 Icon"

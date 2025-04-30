@@ -42,14 +42,11 @@ export default function KnowUsBetter() {
       />
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-6 md:px-8 lg:px-22 py-10 sm:py-16 md:py-24 lg:py-32">
         <div className="max-w-3xl">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-[700] font-['Montserrat'] leading-[120%] sm:leading-[110%] md:leading-[100%] tracking-[0%] align-middle text-[#1A1A1A] mb-4 sm:mb-6">
-            Teamwork in Motion,
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[45px] font-[700] font-['Montserrat'] leading-[120%] sm:leading-[110%] md:leading-[100%] tracking-[0%] align-middle text-[#1A1A1A] mb-4 sm:mb-6">
+            Smart, Scalable Systems
             <br />
-            Transforming Healthcare
+            Rethinking Healthcare for All
           </h1>
-          <p className="text-base sm:text-lg md:text-xl font-[400] font-['Font family'] leading-[150%] sm:leading-[130%] md:leading-[100%] tracking-[0%] align-middle text-[#555555]">
-            Providing immediate access to healthcare, empowering individuals and communities to lead healthier lives.
-          </p>
         </div>
       </div>
     </div>
@@ -58,58 +55,54 @@ export default function KnowUsBetter() {
     <div className="relative bg-white">
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
         <div className="w-full">
-          <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+          <h2 className="text-[32px] sm:text-[38px] text-center md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
             <span className="text-[#18A093]">About</span>{' '}
             <span className="text-[#003366]">Bridge Healthcare</span>
           </h2>
-          <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
+          <p className="text-[#555555] text-[18px] text-center sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
             Reimagining healthcare delivery through smart diagnostics and seamless connectivity.
           </p>
         </div>
 
         <div className="flex flex-col md:flex-row gap-8 md:gap-12">
-          {/* Vision and Mission Column */}
-          <div className="w-full md:w-1/2 space-y-12">
-            {/* Vision */}
-            <div className="border-2 border-gray-200 space-y-4 p-4 rounded-xl group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300">
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8">
-                  <Image
-                    src="/icons/abt-2-lgo1.png"
-                    alt="Vision Icon"
-                    width={32}
-                    height={32}
-                  />
-                </div>
-                <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white transition-colors duration-300">Vision</h3>
+          {/* Vision */}
+          <div className="border-2 border-gray-200 space-y-4 p-4 rounded-xl group hover:bg-[#0E7280] transition-all duration-300 w-[full] md:w-[50%]">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8">
+                <Image
+                  src="/icons/abt-2-lgo1.png"
+                  alt="Vision Icon"
+                  width={32}
+                  height={32}
+                />
               </div>
-              <p className="text-sm sm:text-base md:text-lg text-gray-600 group-hover:text-white transition-colors duration-300">
-                To reimagine healthcare by creating resilient, inclusive systems that prioritize preventive care, empower communities, and transform lives at scale.
-              </p>
+              <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white transition-colors duration-300">Vision</h3>
             </div>
+            <p className="text-sm font-['Montserrat'] sm:text-base md:text-lg text-gray-600 group-hover:text-white transition-colors duration-300">
+              To revolutionize healthcare delivery by making premium, technology-driven healthcare services accessible, affordable, and reliable for everyone, everywhere.
+            </p>
+          </div>
 
-            {/* Mission */}
-            <div className="border-2 border-gray-200 space-y-4 p-4 rounded-xl group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300">
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8">
-                  <Image
-                    src="/icons/abt-2-img3.png"
-                    alt="Vision Icon"
-                    width={32}
-                    height={32}
-                  />
-                </div>
-                <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white transition-colors duration-300">Mission</h3>
+          {/* Mission */}
+          <div className="w-[full] md:w-[50%] border-2 border-gray-200 space-y-4 p-4 rounded-xl group hover:bg-[#0E7280] transition-all duration-300">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8">
+                <Image
+                  src="/icons/abt-2-img3.png"
+                  alt="Vision Icon"
+                  width={32}
+                  height={32}
+                />
               </div>
-              <p className="text-sm sm:text-base md:text-lg text-gray-600 group-hover:text-white transition-colors duration-300">
-                To bridge healthcare gaps by delivering accessible, connected, and proactive healthcare services to all — through innovation, compassion, and collaboration.
-
-              </p>
+              <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white transition-colors duration-300">Mission</h3>
             </div>
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 group-hover:text-white transition-colors duration-300 font-['Montserrat']">
+              To empower individuals and healthcare providers through advanced Tele-Diagnostic and Smart Healthcare solutions, ensuring real-time diagnostics, seamless tele-consultations, and connected care that improves health outcomes and transforms lives.
+            </p>
           </div>
 
           {/* Image Column */}
-          <div className="w-full md:w-1/2 flex items-center justify-center">
+          {/* <div className="w-full md:w-1/2 flex items-center justify-center">
             <Image
               src="/icons/hm-5-img.png"
               alt="Healthcare professionals using Bridge Healthcare platform"
@@ -117,7 +110,7 @@ export default function KnowUsBetter() {
               width={200}
               height={200}
             />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
@@ -135,11 +128,11 @@ export default function KnowUsBetter() {
     <div className="bg-gray-50 py-16 md:py-24">
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-6 md:px-8 lg:px-22">
         <div className="mb-16">
-          <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+          <h2 className="text-[32px] sm:text-[38px] text-center md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
             <span className="text-[#18A093]">Our</span>{' '}
             <span className="text-[#003366]">Strength And Capacity</span>
           </h2>
-          <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
+          <p className="text-[#555555] text-[18px] text-center sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
             Robust Performance & Scalable Capacity for Evolving Healthcare Needs
           </p>
         </div>
@@ -147,19 +140,18 @@ export default function KnowUsBetter() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Card 1 - Academics & Researchers */}
           <div
-            className={`bg-white p-8 rounded-lg border-1 border-gray-300 card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-start justify-center ${activeCard === 'card1' ? 'touch-hover' : ''}`}
+            className={`bg-white p-8 rounded-lg border-1 border-gray-300 card-hover group hover:bg-[#0E7280] transition-all duration-300 cursor-pointer flex flex-col items-start justify-center min-h-[180px] md:min-h-[200px] ${activeCard === 'card1' ? 'touch-hover' : ''}`}
             onClick={(e) => handleToggle(e, 'card1')}
           >
-            <div className="mb-6 group-hover:hidden touch-hover:hidden">
+            <div className="mb-6 group-hover:hidden touch-hover:hidden flex items-center justify-center w-full">
               <Image
                 src="/icons/abt-3-lgo4.png"
                 alt="Academic Icon"
                 width={48}
                 height={48}
-                className="text-[#00A99D]"
               />
             </div>
-            <h3 className="text-2xl font-[700] font-['Montserrat'] leading-[100%] tracking-[0%] align-middle text-[#333333] mb-4 group-hover:hidden touch-hover:hidden">Academics & Researchers</h3>
+            <h3 className="text-2xl font-[700] font-['Montserrat'] leading-[100%] tracking-[0%] align-middle text-[#333333] mb-4 group-hover:hidden touch-hover:hidden text-center w-full">Academics & Researchers</h3>
             <p className="text-gray-600 font-['Montserrat'] group-hover:text-white touch-hover:text-white hidden group-hover:block touch-hover:block">
               Experts from IITS, AIIMS, NIMHANS, CMC Vellore & leading institutions, specializing in healthcare technology with a deep understanding of rural healthcare challenges
             </p>
@@ -167,19 +159,18 @@ export default function KnowUsBetter() {
 
           {/* Card 2 - Industry Professionals */}
           <div
-            className={`bg-white p-8 rounded-lg border-1 border-gray-300 card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-start justify-center ${activeCard === 'card2' ? 'touch-hover' : ''}`}
+            className={`bg-white p-8 rounded-lg border-1 border-gray-300 card-hover group hover:bg-[#0E7280] transition-all duration-300 cursor-pointer flex flex-col items-start justify-center min-h-[180px] md:min-h-[200px] ${activeCard === 'card2' ? 'touch-hover' : ''}`}
             onClick={(e) => handleToggle(e, 'card2')}
           >
-            <div className="mb-6 group-hover:hidden touch-hover:hidden">
+            <div className="mb-6 group-hover:hidden touch-hover:hidden flex items-center justify-center w-full">
               <Image
                 src="/icons/abt-3-lgo2.png"
                 alt="Industry Icon"
                 width={48}
                 height={48}
-                className="text-[#00A99D]"
               />
             </div>
-            <h3 className="text-2xl font-[700] font-['Montserrat'] leading-[100%] tracking-[0%] align-middle text-[#333333] mb-4 group-hover:hidden touch-hover:hidden">Industry Professionals & Entrepreneurs</h3>
+            <h3 className="text-2xl text-centr w-full font-[700] font-['Montserrat'] leading-[100%] tracking-[0%] align-middle text-[#333333] mb-4 group-hover:hidden touch-hover:hidden">Industry Professionals & Entrepreneurs</h3>
             <p className="text-gray-600 font-['Montserrat'] group-hover:text-white touch-hover:text-white hidden group-hover:block touch-hover:block">
               Proven track record of 20+ years of experience in operations, product innovation & scaling technology-driven solutions
             </p>
@@ -187,19 +178,18 @@ export default function KnowUsBetter() {
 
           {/* Card 3 - Hospitals & NGO */}
           <div
-            className={`bg-white p-8 rounded-lg border-1 border-gray-300 card-hover group hover:bg-gradient-to-r hover:from-[#18A093] hover:via-[#128387] hover:to-[#003366] transition-all duration-300 cursor-pointer flex flex-col items-start justify-center ${activeCard === 'card3' ? 'touch-hover' : ''}`}
+            className={`bg-white p-8 rounded-lg border-1 border-gray-300 card-hover group hover:bg-[#0E7280] transition-all duration-300 cursor-pointer flex flex-col items-start justify-center min-h-[180px] md:min-h-[200px] ${activeCard === 'card3' ? 'touch-hover' : ''}`}
             onClick={(e) => handleToggle(e, 'card3')}
           >
-            <div className="mb-6 group-hover:hidden touch-hover:hidden">
+            <div className="mb-6 group-hover:hidden touch-hover:hidden flex items-center justify-center w-full">
               <Image
                 src="/icons/abt-3-lgo3.png"
                 alt="Hospital Icon"
                 width={48}
                 height={48}
-                className="text-[#00A99D]"
               />
             </div>
-            <h3 className="text-2xl font-[700] font-['Montserrat'] leading-[100%] tracking-[0%] align-middle text-[#333333] mb-4 group-hover:hidden touch-hover:hidden">Hospitals & NGO Collaborators</h3>
+            <h3 className="text-2xl font-[700] font-['Montserrat'] leading-[100%] tracking-[0%] align-middle text-[#333333] mb-4 group-hover:hidden touch-hover:hidden w-full text-center">Hospitals & NGO Collaborators</h3>
             <p className="text-gray-600 font-['Montserrat'] group-hover:text-white touch-hover:text-white hidden group-hover:block touch-hover:block">
               Partnering with Prestigious Hospitals, alongside healthcare-focused NGO with vast experience in impact-driven programs.
             </p>
@@ -211,11 +201,11 @@ export default function KnowUsBetter() {
     <div className="bg-white">
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-6 md:px-8 lg:px-22">
         <div className="mb-8">
-          <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+          <h2 className="text-[32px] sm:text-[38px] text-center md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
             <span className="text-[#18A093]">Meet Our</span>{' '}
             <span className="text-[#003366]">Team</span>
           </h2>
-          <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
+          <p className="text-[#555555] text-[18px] text-center sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
             Bridge Healthcare&apos;s expert team innovates tele-diagnostics for better healthcare access.
           </p>
         </div>
@@ -235,8 +225,8 @@ export default function KnowUsBetter() {
               </a>
             </div>
             <h3 className="text-xl font-bold text-[#003366] mb-1">Anmol Garg</h3>
-            <p className="text-gray-600">(PH.D., IIT MADRAS)</p>
-            <p className="text-gray-600 mb-4">CO-FOUNDER & CEO</p>
+            <p className="text-gray-600">(Ph.D., IIT Madras)</p>
+            <p className="text-gray-600 mb-4">C-Founder & CEO</p>
           </div>
 
           {/* Team Member 2 */}
@@ -253,8 +243,8 @@ export default function KnowUsBetter() {
               </a>
             </div>
             <h3 className="text-xl font-bold text-[#003366] mb-1">Rahul Soni</h3>
-            <p className="text-gray-600">(M.S., IIT MADRAS)</p>
-            <p className="text-gray-600 mb-4">CO-FOUNDER & CTO</p>
+            <p className="text-gray-600">(M.S., IIT Madras)</p>
+            <p className="text-gray-600 mb-4">Co-Founder & CTO</p>
           </div>
 
           {/* Team Member 3 */}
@@ -271,8 +261,8 @@ export default function KnowUsBetter() {
               </a>
             </div>
             <h3 className="text-xl font-bold text-[#003366] mb-1">Dr. B. Rebecca </h3>
-            <p className="text-gray-600">(CMO, IIT MADRAS)</p>
-            <p className="text-gray-600 mb-4">DIRECTOR</p>
+            <p className="text-gray-600">(CMO, IIT Madras)</p>
+            <p className="text-gray-600 mb-4">Director</p>
 
           </div>
           {/* Team Member 1 */}
@@ -288,9 +278,9 @@ export default function KnowUsBetter() {
                 <Image src="/icons/intrnt.png" alt="LinkedIn" width={30} height={30} />
               </a>
             </div>
-            <h3 className="text-xl font-bold text-[#003366] mb-1">MD SHAJAHAN SK</h3>
-            <p className="text-gray-600">(MSW, M & PSW)</p>
-            <p className="text-gray-600 mb-4">NGO PARTNER</p>
+            <h3 className="text-xl font-bold text-[#003366] mb-1">Md Shajahan Sk</h3>
+            <p className="text-gray-600">(MSW, CMR & MHR - NIMHANS)</p>
+            <p className="text-gray-600 mb-4">NGO Partner</p>
 
           </div>
 
@@ -326,9 +316,9 @@ export default function KnowUsBetter() {
                 <Image src="/icons/lkdn.png" alt="LinkedIn" width={30} height={30} />
               </a>
             </div>
-            <h3 className="text-xl font-bold text-[#003366] mb-1">DR. AMIT NAIN</h3>
-            <p className="text-gray-600">(ASST. PROF IIT MADRAS)</p>
-            <p className="text-gray-600 mb-4">PRODUCT ADVISER</p>
+            <h3 className="text-xl font-bold text-[#003366] mb-1">Dr. Amit Nain</h3>
+            <p className="text-gray-600">(Asst. Prof - IIT Madras)</p>
+            <p className="text-gray-600 mb-4">Product Adviser</p>
 
           </div>
 
@@ -345,9 +335,9 @@ export default function KnowUsBetter() {
                 <Image src="/icons/intrnt.png" alt="LinkedIn" width={30} height={30} />
               </a>
             </div>
-            <h3 className="text-xl font-bold text-[#003366] mb-1">DR. SAGAR P KABADI</h3>
-            <p className="text-gray-600">(MBBS, MD - INTERNAL MEDICINE, C.C.E.B.D.M)</p>
-            <p className="text-gray-600 mb-4">PARTNERING DOCTOR</p>
+            <h3 className="text-xl font-bold text-[#003366] mb-1">Dr. Sagar P Kabadi</h3>
+            <p className="text-gray-600">(MBBS, MD - Internal Medicine, C.C.E.B.D.M)</p>
+            <p className="text-gray-600 mb-4">Partnering Doctor</p>
 
           </div>
 
@@ -365,8 +355,9 @@ export default function KnowUsBetter() {
                 <Image src="/icons/intrnt.png" alt="LinkedIn" width={30} height={30} />
               </a>
             </div>
-            <h3 className="text-xl font-bold text-[#003366] mb-1">DR. PRATHAM R</h3>
-            <p className="text-gray-600">(MBBS, MS - MCH - NEURO SURGERY)</p>
+            <h3 className="text-xl font-bold text-[#003366] mb-1">Dr. Pratham R</h3>
+            <p className="text-gray-600">(MBBS, MS - MCH - Neuro Surgery)</p>
+            <p className="text-gray-600 mb-4">Partnering Doctor</p>
           </div>
         </div>
       </div>
@@ -375,13 +366,13 @@ export default function KnowUsBetter() {
     {/* FAQ Section */}
     <div className="relative bg-white overflow-hidden">
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-16 sm:py-20 lg:py-32">
-        <h2 className="text-2xl sm:text-3xl lg:text-[36px] font-[700] font-['Montserrat'] mb-4 sm:mb-6 lg:mb-8">
-          <span className="text-[#18A093]">Frequently Asked</span>{' '}
-          <span className="text-[#003366]">Questions</span>
+        <h2 className="text-[32px] sm:text-[38px] text-center md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+          <span className="text-[#18A093]">FA</span>
+          <span className="text-[#003366]">Q&apos;s</span>
         </h2>
-        <p className="text-base sm:text-lg lg:text-[20px] text-[#555555] font-['Montserrat'] font-medium mb-8 sm:mb-10 lg:mb-12">
+        {/* <p className="text-base sm:text-lg lg:text-[20px] text-[#555555] font-['Montserrat'] font-medium mb-8 sm:mb-10 lg:mb-12">
           Learn how our solutions bring quality healthcare closer to those who need it most.
-        </p>
+        </p> */}
 
         <div className="space-y-3 sm:space-y-4 lg:space-y-6">
           {/* FAQ Items */}

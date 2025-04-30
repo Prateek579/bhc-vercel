@@ -29,7 +29,7 @@ const Navbar = () => {
       ]
     },
     {
-      title: 'Know Us Better',
+      title: 'Company',
       href: '/know-us-better',
       hasDropdown: true,
       dropdownItems: [
@@ -95,7 +95,7 @@ const Navbar = () => {
               <button
                 className={`nav-menu-item text-gray-700 hover:text-[#18A093] px-3 py-2 inline-flex items-center ${pathname.startsWith('/knowUsBetter') ? 'nav-menu-item-active' : ''}`}
               >
-                Know Us Better
+                Company
                 <svg
                   className="ml-2 h-4 w-4 transition-transform group-hover:rotate-180"
                   fill="none"

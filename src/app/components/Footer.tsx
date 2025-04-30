@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <>
       {/* Partners Section */}
-      <div className="relative bg-white overflow-hidden">
+      {/* <div className="relative bg-white overflow-hidden">
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-6 md:px-10 lg:px-22 py-10 sm:py-12 md:py-16 lg:py-22">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6 md:gap-8 items-center justify-items-center">
             <div className="w-full max-w-[200px] sm:max-w-[220px] md:max-w-[250px] aspect-[3/1] relative">
@@ -53,7 +53,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
 
 
@@ -64,7 +64,7 @@ const Footer = () => {
             <div>
               <h3 className="text-2xl sm:text-2xl font-base mb-4 sm:mb-5 md:mb-6">Product</h3>
               <ul className="space-y-2 sm:space-y-3 md:space-y-4 ">
-                <li><button onClick={(e) => e.preventDefault()} className="text-lg sm:text-xl hover:text-gray-300 transition-colors bg-transparent border-none p-0 cursor-pointer text-white">Smart Healthcare Machine</button></li>
+                <li><Link href="/ourProducts" className="text-lg sm:text-xl hover:text-gray-300 transition-colors bg-transparent border-none p-0 cursor-pointer text-white">Smart Healthcare Machine</Link></li>
                 <li><button onClick={(e) => e.preventDefault()} className="text-lg sm:text-xl hover:text-gray-300 transition-colors">SHM App</button></li>
                 <li><button onClick={(e) => e.preventDefault()} className="text-lg sm:text-xl hover:text-gray-300 transition-colors">Doctor App</button></li>
                 <li><button onClick={(e) => e.preventDefault()} className="text-lg sm:text-xl hover:text-gray-300 transition-colors">Patient App</button></li>
@@ -89,17 +89,17 @@ const Footer = () => {
             <div>
               <h3 className="text-2xl sm:text-2xl font-base mb-4 sm:mb-5 md:mb-6">Initiative</h3>
               <ul className="space-y-2 sm:space-y-3 md:space-y-4">
-                <li><Link href="#" className="text-lg sm:text-xl hover:text-gray-300 transition-colors">Animacare</Link></li>
-                <li><Link href="#" className="text-lg sm:text-xl hover:text-gray-300 transition-colors">Decentralized Network</Link></li>
+                <li><Link href="/ourInitiative/animacare" className="text-lg sm:text-xl hover:text-gray-300 transition-colors">Animacare</Link></li>
+                <li><Link href="/ourInitiative/decentralized" className="text-lg sm:text-xl hover:text-gray-300 transition-colors">Decentralized Network</Link></li>
               </ul>
             </div>
 
             <div>
               <h3 className="text-2xl sm:text-2xl font-base mb-4 sm:mb-5 md:mb-6">Company</h3>
               <ul className="space-y-2 sm:space-y-3 md:space-y-4">
-                <li><Link href="#" className="text-lg sm:text-xl hover:text-gray-300 transition-colors">About Us</Link></li>
-                <li><Link href="#" className="text-lg sm:text-xl hover:text-gray-300 transition-colors">News</Link></li>
-                <li><Link href="#" className="text-lg sm:text-xl hover:text-gray-300 transition-colors">Contact Us</Link></li>
+                <li><Link href="/knowUsBetter/about" className="text-lg sm:text-xl hover:text-gray-300 transition-colors">About Us</Link></li>
+                <li><Link href="/knowUsBetter/news" className="text-lg sm:text-xl hover:text-gray-300 transition-colors">News</Link></li>
+                <li><Link href="/contactUs" className="text-lg sm:text-xl hover:text-gray-300 transition-colors">Contact Us</Link></li>
               </ul>
               {/* <div className='mt-6'>
                 <h3 className="text-2xl sm:text-2xl font-base mb-4 sm:mb-5 md:mb-6">Doctor Login</h3>
@@ -144,8 +144,13 @@ const Footer = () => {
                 </svg>
               </Link>
               <Link href="https://www.instagram.com/bridgehealth.care/?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D#" className="hover:text-gray-300 transition-colors">
-                <svg className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-.139 9.237c.209 4.617-3.234 9.765-9.33 9.765-1.854 0-3.579-.543-5.032-1.475 1.742.205 3.48-.278 4.86-1.359-1.437-.027-2.649-.976-3.066-2.28.515.098 1.021.069 1.482-.056-1.579-.317-2.668-1.739-2.633-3.26.442.246.949.394 1.486.411-1.461-.977-1.875-2.907-1.016-4.383 1.619 1.986 4.038 3.293 6.766 3.43-.479-2.053 1.08-4.03 3.199-4.03.943 0 1.797.398 2.395 1.037.748-.147 1.451-.42 2.086-.796-.246.767-.766 1.41-1.443 1.816.664-.08 1.297-.256 1.885-.517-.439.656-.996 1.234-1.639 1.697z" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 2 .3 2.5.5.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.5.4 1.3.5 2.5.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 2-.5 2.5-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.5.2-1.3.4-2.5.5-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-2-.3-2.5-.5-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.5-.4-1.3-.5-2.5C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-2 .5-2.5.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.5-.2 1.3-.4 2.5-.5C8.4 2.2 8.8 2.2 12 2.2zm0-2.2C8.7 0 8.3 0 7 0 5.7 0 4.7.1 3.9.3c-.9.2-1.7.5-2.4 1.2C.8 2.2.5 3 .3 3.9.1 4.7 0 5.7 0 7c0 1.3 0 1.7.1 4.9s0 3.6.1 4.9c.1 1.2.3 2.2.5 3 .2.9.5 1.7 1.2 2.4.7.7 1.5 1 2.4 1.2.8.2 1.8.4 3 .5 1.3.1 1.7.1 4.9.1s3.6 0 4.9-.1c1.2-.1 2.2-.3 3-.5.9-.2 1.7-.5 2.4-1.2.7-.7 1-1.5 1.2-2.4.2-.8.4-1.8.5-3 .1-1.3.1-1.7.1-4.9s0-3.6-.1-4.9c-.1-1.2-.3-2.2-.5-3-.2-.9-.5-1.7-1.2-2.4-.7-.7-1.5-1-2.4-1.2C19.3.1 18.3 0 17 0c-1.3 0-1.7 0-4.9 0zM12 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zm0 10.2a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.6a1.44 1.44 0 1 1 0 2.88 1.44 1.44 0 0 1 0-2.88z" />
                 </svg>
               </Link>
             </div>

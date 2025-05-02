@@ -3,13 +3,69 @@
 import Partner from '@/app/components/Partner';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 export default function OurSolution() {
   const [activeFaq, setActiveFaq] = React.useState<string | null>(null);
-  const [activeSol, setActiveSol] = React.useState<number | null>(1);
-  const [showAllCards, setShowAllCards] = React.useState<boolean>(false);
   const [showFaq, setShowFaq] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const [activeCard, setActiveCard] = useState<string | null>(null);
+
+  useEffect(() => {
+    // Safe window check for SSR
+    const checkTouchDevice = (): boolean => {
+      if (typeof window === 'undefined') return false;
+      return 'ontouchstart' in window;
+    };
+
+    setIsTouchDevice(checkTouchDevice());
+  }, []);
+
+  const handleToggle = (e: React.MouseEvent<HTMLDivElement, MouseEvent>, cardId: string): void => {
+    if (isTouchDevice) {
+      // Remove touch-hover class from all cards except the current one
+      const cards = document.querySelectorAll('.card-hover');
+      cards.forEach(card => card.classList.remove('touch-hover'));
+
+      // Toggle the current card
+      if (activeCard === cardId) {
+        e.currentTarget.classList.remove('touch-hover');
+        setActiveCard(null);
+      } else {
+        e.currentTarget.classList.add('touch-hover');
+        setActiveCard(cardId);
+      }
+    }
+  };
+
+  // const [activeSol, setActiveSol] = React.useState<number | null>(null);
+  // useEffect(() => {
+  //   // Safe window check for SSR
+  //   const checkTouchDevice = (): boolean => {
+  //     if (typeof window === 'undefined') return false;
+  //     return 'ontouchstart' in window;
+  //   };
+
+  //   setIsTouchDevice(checkTouchDevice());
+  // }, []);
+
+  // const handleToggle = (e: React.MouseEvent<HTMLDivElement, MouseEvent>, cardId: string): void => {
+  //   if (isTouchDevice) {
+  //     // Remove touch-hover class from all cards except the current one
+  //     const cards = document.querySelectorAll('.card-hover');
+  //     cards.forEach(card => card.classList.remove('touch-hover'));
+
+  //     // Toggle the current card
+  //     if (activeCard === cardId) {
+  //       e.currentTarget.classList.remove('touch-hover');
+  //       setActiveCard(null);
+  //     } else {
+  //       e.currentTarget.classList.add('touch-hover');
+  //       setActiveCard(cardId);
+  //     }
+  //   }
+  // };
+
   return (<>
     <div className="fixed right-10 top-[40%] transform -translate-y-1/2 z-50 transform rotate-270 origin-top-right whitespace-nowrap">
       <Link
@@ -35,738 +91,461 @@ export default function OurSolution() {
             <br />
             From Symptoms to Specialist, Seamlessly.
           </h1>
-          {/* <p className="text-base sm:text-lg md:text-xl font-[400] font-['Font family'] leading-[150%] sm:leading-[130%] md:leading-[100%] tracking-[0%] align-middle text-[#555555]">
-            One platform for diagnostics, consultations and wellness — built to make healthcare simpler, smarter and truly patient-centered.
-          </p> */}
         </div>
       </div>
     </div>
 
-    {/* SOLUTION SECTION */}
+    {/* SOLUTION OVERVIEW SECTION */}
     <div className="relative overflow-hidden bg-white">
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
         <h2 className="text-[32px] sm:text-[38px] text-center md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
           <span className="text-[#18A093]">Our</span>{' '}
-          <span className="text-[#003366]">Solution</span>
+          <span className="text-[#003366]">Solution Overview</span>
         </h2>
         <p className="text-[#555555] text-[18px] text-center sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
           The Smart Healthcare Machine improves healthcare with data-driven accessibility and efficiency.
         </p>
-        <div className="grid md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
-          <div className="space-y-4 sm:space-y-6">
-            <div className={`bg-white p-4 sm:p-5 lg:py-6 rounded-lg flex items-center space-x-2 sm:space-x-3 lg:space-x-4 cursor-pointer transition-shadow ${activeSol === 1 && 'border-2 border-gray-300 shadow-sm'}`} onClick={() => setActiveSol(1)}>
-              <Image src="/icons/sol-2-lgo1.png"
-                alt='heart'
-                width={100}
-                height={100}
-                className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
-              <span className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat']">Health Check Up</span>
+
+        <div className="space-y-4 mb-16">
+          <div className="group hover:z-10 card-hover" onClick={(e) => handleToggle(e, 'tele-diagnostic')}>
+            <div className="bg-white border border-gray-200 p-4 rounded-lg flex items-center justify-between cursor-pointer hover:border-[#18A093] transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#18A093] group-hover:to-[#003366] md:w-[50%]">
+              <div className="flex items-center">
+                <div className=" flex items-center justify-center  mr-4  group-hover:bg-opacity-20">
+                  <Image src="/icons/sol-2-lgo1.png"
+                    alt='heart'
+                    width={100}
+                    height={100}
+                    className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
+                </div>
+                <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white  group-hover:text-white ">Tele-Diagnostic Access</h3>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-400 group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
             </div>
-            {activeSol === 1 && <div className="space-y-4 block md:hidden">
-              {/* First two cards are always visible */}
-              <div className="bg-white p-3 sm:p-1 lg:p-3 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-                <div className="flex flex-col items-start space-y-1 sm:space-y-1 lg:space-y-2">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
-                    <Image src="/icons/sol-2-lgo4.png"
-                      alt='heart'
-                      width={100}
-                      height={100}
-                      className="w-10 h-10 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
-                  </div>
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Body Checkups 30+</h3>
-                  <p className="text-sm sm:text-base md:text-lg text-gray-600">
-                    General health checkups including vitals like BP, SpO₂, heart rate, temperature, ECG, blood sugar, hemoglobin, lipid profile, uric acid, BMI, and body weight analysis.
-                  </p>
-                </div>
-              </div>
 
-              <div className="bg-white p-3 sm:p-1 lg:p-3 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-                <div className="flex flex-col items-start space-y-1 sm:space-y-1 lg:space-y-2">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
-                    <Image src="/icons/sol-2-lgo4.png"
-                      alt='heart'
-                      width={100}
-                      height={100}
-                      className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
-                  </div>
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Cardiac Checkups</h3>
-                  <p className="text-sm sm:text-base md:text-lg text-gray-600">
-                    Cardiac checkups through ECG and vital monitoring, helping detect arrhythmias, heart rate issues, and early cardiac risks.
-                  </p>
-                </div>
-              </div>
-
-              {/* Additional cards that show when showAllCards is true */}
-              {showAllCards && (
-                <>
-                  <div className="bg-white p-3 sm:p-1 lg:p-3 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-                    <div className="flex flex-col items-start space-y-1 sm:space-y-1 lg:space-y-2">
-                      <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
-                        <Image src="/icons/sol-2-lgo4.png"
-                          alt='heart'
-                          width={100}
-                          height={100}
-                          className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
-                      </div>
-                      <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Diabetes</h3>
-                      <p className="text-sm sm:text-base md:text-lg text-gray-600">
-                        Blood sugar and hemoglobin levels are tested instantly, enabling early detection of diabetes and continuous monitoring for better disease management.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="bg-white p-3 sm:p-1 lg:p-3 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-                    <div className="flex flex-col items-start space-y-1 sm:space-y-1 lg:space-y-2">
-                      <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
-                        <Image src="/icons/sol-2-lgo4.png"
-                          alt='heart'
-                          width={100}
-                          height={100}
-                          className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
-                      </div>
-                      <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Regular Checkups</h3>
-                      <p className="text-sm sm:text-base md:text-lg text-gray-600">
-                        Regular health checkups include vitals, blood tests, ECG, and body composition analysis—supporting early detection, lifestyle tracking, and overall wellness management.
-                      </p>
-                    </div>
-                  </div>
-                </>
-              )}
-              <div className="mt-12">
-                <button
-                  onClick={() => setShowAllCards(!showAllCards)}
-                  className="bg-[#003B87] text-white px-8 py-3 rounded-lg hover:bg-[#002D66] transition-colors"
-                >
-                  {showAllCards ? 'Show less' : 'Know more'}
-                </button>
-              </div>
-            </div>}
-
-
-            <div className={`bg-white p-4 sm:p-5 lg:p-6 rounded-lg flex items-center space-x-2 sm:space-x-3 lg:space-x-4 cursor-pointer transition-shadow ${activeSol === 2 && 'border-2 border-gray-300 shadow-sm'}`} onClick={() => setActiveSol(2)}>
-              <Image src="/icons/sol-2-lgo5.png"
-                alt='heart'
-                width={100}
-                height={100}
-                className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
-              <span className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat']">Consultation</span>
-            </div>
-            {activeSol === 2 && <div className="space-y-4 block md:hidden">
-              <div className="bg-white p-3 sm:p-1 lg:p-3 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-                <div className="flex flex-col items-start space-y-1 sm:space-y-1 lg:space-y-2">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
-                    <Image src="/icons/sol-2-lgo4.png"
-                      alt='heart'
-                      width={100}
-                      height={100}
-                      className="w-10 h-10 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
-                  </div>
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Tele-Consultation services</h3>
-                  <p className="text-sm sm:text-base md:text-lg text-gray-600">
-                    Patients connect with experienced doctors in real time, receiving personalized, data-backed medical advice along with digital prescriptions and follow-up care.
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-white p-3 sm:p-1 lg:p-3 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-                <div className="flex flex-col items-start space-y-1 sm:space-y-1 lg:space-y-2">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
-                    <Image src="/icons/sol-2-lgo4.png"
-                      alt='heart'
-                      width={100}
-                      height={100}
-                      className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
-                  </div>
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Real-time Diagnostic interface</h3>
-                  <p className="text-sm sm:text-base md:text-lg text-gray-600">
-                    A real-time diagnostic interface captures and transmits vital health data instantly, enabling doctors to make accurate, informed decisions during live consultations.
-                  </p>
-                </div>
-              </div>
-
-              {showAllCards && (<>
-                <div className="bg-white p-3 sm:p-1 lg:p-3 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-                  <div className="flex flex-col items-start space-y-1 sm:space-y-1 lg:space-y-2">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
+            {/* Hidden content that shows on hover */}
+            <div className={`hidden ${activeCard === 'tele-diagnostic' ? 'block' : ''} group-hover:block overflow-hidden w-full bg-white p-4 z-10`}>
+              <div className="flex flex-row items-center gap-6  specialty-cards-container  gap-4 sm:gap-6 lg:gap-8">
+                {/* Left column - Smart Health Checkups */}
+                <div className="h-full p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
                       <Image src="/icons/sol-2-lgo4.png"
                         alt='heart'
                         width={100}
                         height={100}
-                        className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
+                        className="w-6 h-6 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
                     </div>
-                    <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Tele-Digital Stethoscope</h3>
-                    <p className="text-sm sm:text-base md:text-lg text-gray-600">
-                      The tele-digital stethoscope transmits heart and lung sounds in real time, allowing doctors to perform remote auscultation with clinical precision.
-                    </p>
+                    <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Smart Health Checkups</h3>
                   </div>
+                  <ul className="list-disc border-b-2 border-gray-300 pb-2 list-inside text-gray-600 ml-4 space-y-1">
+                    <li>Vitals monitoring (BP, SPO2, Heart Rate, Temp)</li>
+                    <li>ECG, Blood tests, Hemoglobin, Lipid Profile</li>
+                    <li>Early detection of chronic conditions</li>
+                  </ul>
                 </div>
 
-                <div className="bg-white p-3 sm:p-1 lg:p-3 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-                  <div className="flex flex-col items-start space-y-1 sm:space-y-1 lg:space-y-2">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
+                {/* Right column - Teleconsultation Services */}
+                <div className=" h-full bg-white p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
                       <Image src="/icons/sol-2-lgo4.png"
                         alt='heart'
                         width={100}
                         height={100}
-                        className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
+                        className="w-6 h-6 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
                     </div>
-                    <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Advance modules</h3>
-                    <p className="text-sm sm:text-base md:text-lg text-gray-600">
-                      Advanced modules include tools like spirometer, dermatoscope, iris scope, ultrasound, and echocardiogram, enabling comprehensive diagnostics—where doctors can view real-time data remotely for accurate and timely clinical decisions.
-                    </p>
+                    <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Live Diagnostic Interface</h3>
                   </div>
+                  <ul className="list-disc border-b-2 border-gray-300 pb-2 list-inside text-gray-600 ml-4 space-y-1">
+                    <li>Real-time vitals and diagnostic data sharing</li>
+                    <li>Doctor access during teleconsultations</li>
+                    <li>Data-driven remote clinical decisions</li>
+                  </ul>
                 </div>
-
-                <div className="bg-white p-3 sm:p-1 lg:p-3 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-                  <div className="flex flex-col items-start space-y-1 sm:space-y-1 lg:space-y-2">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
+                <div className=" h-full bg-white p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
                       <Image src="/icons/sol-2-lgo4.png"
                         alt='heart'
                         width={100}
                         height={100}
-                        className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
+                        className="w-6 h-6 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
                     </div>
-                    <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Upload Documents</h3>
-                    <p className="text-sm sm:text-base md:text-lg text-gray-600">
-                      Patients can scan and upload their old medical documents in real time, enabling doctors to gain better context and provide more informed consultations.
-                    </p>
+                    <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Advance Diagnostic Modules</h3>
                   </div>
+                  <ul className="list-disc border-b-2 border-gray-300 pb-2 list-inside text-gray-600 ml-4 space-y-1">
+                    <li>Spirometer, Iris Scope, Ultrasound, ECG Viewer</li>
+                    <li>Comprehensive digital diagnostics</li>
+                    <li>Seamless specialist collaboration</li>
+                  </ul>
                 </div>
-                <div className="bg-white p-3 sm:p-1 lg:p-3 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-                  <div className="flex flex-col items-start space-y-1 sm:space-y-1 lg:space-y-2">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
+                <div className="h-full bg-white p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
                       <Image src="/icons/sol-2-lgo4.png"
                         alt='heart'
                         width={100}
                         height={100}
-                        className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
+                        className="w-6 h-6 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
                     </div>
-                    <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Printed Prescription</h3>
-                    <p className="text-sm sm:text-base md:text-lg text-gray-600">
-                      Prints prescription instantly after consultation, giving patients a clear, physical copy for medications, follow-up, or ongoing treatment.
-                    </p>
+                    <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Rapid Diagnostic Kits (Coming Soon)</h3>
                   </div>
-                </div>
-              </>)}
-              <div className="mt-12">
-                <button
-                  onClick={() => setShowAllCards(!showAllCards)}
-                  className="bg-[#003B87] text-white px-8 py-3 rounded-lg hover:bg-[#002D66] transition-colors"
-                >
-                  {showAllCards ? 'Show less' : 'Know more'}
-                </button>
-              </div>
-            </div>
-            }
-
-            <div className={`bg-white p-4 sm:p-5 lg:p-6 rounded-lg flex items-center space-x-2 sm:space-x-3 lg:space-x-4 cursor-pointer transition-shadow ${activeSol === 3 && 'border-2 border-gray-300 shadow-md'}`} onClick={() => setActiveSol(3)}>
-              <Image src="/icons/sol-2-lgo5.png"
-                alt='heart'
-                width={100}
-                height={100}
-                className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
-              <span className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat']">Hospital Connecting Service</span>
-            </div>
-            {activeSol === 3 && <div className="space-y-4 block md:hidden">
-              <div className="bg-white p-3 sm:p-1 lg:p-3 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-                <div className="flex flex-col items-start space-y-1 sm:space-y-1 lg:space-y-2">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
-                    <Image src="/icons/sol-2-lgo4.png"
-                      alt='heart'
-                      width={100}
-                      height={100}
-                      className="w-10 h-10 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
-                  </div>
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Hospital Specialists Connectivity</h3>
-                  <p className="text-sm sm:text-base md:text-lg text-gray-600">
-                    Doctors from the hospital can consult remotely using the Doctor App, with access to live vitals, ECG, imaging, and patient records—enabling accurate, clinic-quality diagnosis from anywhere..
-                  </p>
+                  <ul className="list-disc border-b-2 border-gray-300 pb-2 list-inside text-gray-600 ml-4 space-y-1">
+                    <li>Support for integration of blood, infection, and viral rapid tests</li>
+                    <li>Instant reporting via SHM digital workflow</li>
+                    <li>Expanding rural diagnostic capabilities</li>
+                  </ul>
                 </div>
               </div>
-
-              <div className="bg-white p-3 sm:p-1 lg:p-3 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-                <div className="flex flex-col items-start space-y-1 sm:space-y-1 lg:space-y-2">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
-                    <Image src="/icons/sol-2-lgo4.png"
-                      alt='heart'
-                      width={100}
-                      height={100}
-                      className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
-                  </div>
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Admin Dashboard for Hospital Operations</h3>
-                  <p className="text-sm sm:text-base md:text-lg text-gray-600">
-                    Hospitals get access to a centralized admin dashboard to manage patient data, doctor schedules, teleconsultations, follow-ups, and revenue insights.
-                  </p>
-                </div>
-              </div>
-
-              {showAllCards && (<>
-                <div className="bg-white p-3 sm:p-1 lg:p-3 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-                  <div className="flex flex-col items-start space-y-1 sm:space-y-1 lg:space-y-2">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
-                      <Image src="/icons/sol-2-lgo4.png"
-                        alt='heart'
-                        width={100}
-                        height={100}
-                        className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
-                    </div>
-                    <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Patient Referral & Inflow Support</h3>
-                    <p className="text-sm sm:text-base md:text-lg text-gray-600">
-                      Patients requiring further diagnosis, treatment, or admission are referred to the hospital
-                    </p>
-                  </div>
-                </div>
-
-                <div className="bg-white p-3 sm:p-1 lg:p-3 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-                  <div className="flex flex-col items-start space-y-1 sm:space-y-1 lg:space-y-2">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
-                      <Image src="/icons/sol-2-lgo4.png"
-                        alt='heart'
-                        width={100}
-                        height={100}
-                        className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
-                    </div>
-                    <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Chronic & Preventive Care Program Partnerships</h3>
-                    <p className="ttext-sm sm:text-base md:text-lg text-gray-600">
-                      Enabling long-term patient engagement through regular checkups, health tracking, and tele-consultations.
-                    </p>
-                  </div>
-                </div>
-              </>)}
-              <div className="mt-12">
-                <button
-                  onClick={() => setShowAllCards(!showAllCards)}
-                  className="bg-[#003B87] text-white px-8 py-3 rounded-lg hover:bg-[#002D66] transition-colors"
-                >
-                  {showAllCards ? 'Show less' : 'Know more'}
-                </button>
-              </div>
-            </div>}
-
-            <div className={`bg-white p-4 sm:p-5 lg:p-6 rounded-lg flex items-center space-x-2 sm:space-x-3 lg:space-x-4 cursor-pointer transition-shadow ${activeSol === 4 && 'border-2 border-gray-300 shadow-md'}`} onClick={() => setActiveSol(4)}>
-              <Image src="/icons/sol-2-lgo3.png"
-                alt='heart'
-                width={100}
-                height={100}
-                className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
-              <span className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat']">Wellness Programs</span>
             </div>
           </div>
-          {activeSol === 4 && <div className="space-y-4 block md:hidden">
-            <div className="bg-white p-3 sm:p-1 lg:p-3 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-              <div className="flex flex-col items-start space-y-1 sm:space-y-1 lg:space-y-2">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
-                  <Image src="/icons/sol-2-lgo4.png"
+
+
+          {/* Nurse-Enabled Health Access */}
+          <div className="group hover:z-10 card-hover" onClick={(e) => handleToggle(e, 'tele-diagnostic')}>
+            <div className="bg-white border border-gray-200 p-4 rounded-lg flex items-center justify-between cursor-pointer hover:border-[#18A093] transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#18A093] group-hover:to-[#003366] md:w-[50%]">
+              <div className="flex items-center">
+                <div className=" flex items-center justify-center  mr-4  group-hover:bg-opacity-20">
+                  <Image src="/icons/sol-2-lgo1.png"
                     alt='heart'
                     width={100}
                     height={100}
-                    className="w-10 h-10 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
+                    className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
                 </div>
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Dietary and Lifestyle Counseling</h3>
-                <p className="text-sm sm:text-base md:text-lg text-gray-600">
-                  Personalized dietary and lifestyle counseling improves nutrition, fitness, and chronic disease prevention—helping individuals build healthier, sustainable habits for long-term well-being.
-                </p>
+                <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white  group-hover:text-white ">Nurse-Enabled Health Access</h3>
               </div>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-400 group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
             </div>
-
-            <div className="bg-white p-3 sm:p-1 lg:p-3 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-              <div className="flex flex-col items-start space-y-1 sm:space-y-1 lg:space-y-2">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
-                  <Image src="/icons/sol-2-lgo4.png"
-                    alt='heart'
-                    width={100}
-                    height={100}
-                    className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
-                </div>
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Educational Workshops and Resources</h3>
-                <p className="text-sm sm:text-base md:text-lg text-gray-600">
-                  Interactive workshops and resources promote preventive care, healthy habits, and disease awareness for informed community wellness.
-                </p>
-              </div>
-            </div>
-
-            {showAllCards && (<>
-              <div className="bg-white p-3 sm:p-1 lg:p-3 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-                <div className="flex flex-col items-start space-y-1 sm:space-y-1 lg:space-y-2">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
-                    <Image src="/icons/sol-2-lgo4.png"
-                      alt='heart'
-                      width={100}
-                      height={100}
-                      className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
-                  </div>
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Tele-Consultations with Specialists</h3>
-                  <p className="text-sm sm:text-base md:text-lg text-gray-600">
-                    Tele-consultations with specialists provide personalized guidance on nutrition, fitness, and lifestyle, supporting holistic wellness and preventive healthcare.
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-white p-3 sm:p-1 lg:p-3 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-                <div className="flex flex-col items-start space-y-1 sm:space-y-1 lg:space-y-2">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
-                    <Image src="/icons/sol-2-lgo4.png"
-                      alt='heart'
-                      width={100}
-                      height={100}
-                      className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
-                  </div>
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Personalized Health Checkups</h3>
-                  <p className="text-sm sm:text-base md:text-lg text-gray-600">
-                    Personalized health checkups are tailored to individual needs, offering focused insights for early detection, prevention, and better lifestyle planning.
-                  </p>
-                </div>
-              </div>
-            </>)}
-            <div className="mt-12">
-              <button
-                onClick={() => setShowAllCards(!showAllCards)}
-                className="bg-[#003B87] text-white px-8 py-3 rounded-lg hover:bg-[#002D66] transition-colors"
-              >
-                {showAllCards ? 'Show less' : 'Know more'}
-              </button>
-            </div>
-          </div>}
-
-          {activeSol === 1 && <div className="space-y-4 hidden md:block">
-            {/* First two cards are always visible */}
-            <div className="bg-white p-3 sm:p-1 lg:p-3 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-              <div className="flex flex-col items-start space-y-1 sm:space-y-1 lg:space-y-2">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
-                  <Image src="/icons/sol-2-lgo4.png"
-                    alt='heart'
-                    width={100}
-                    height={100}
-                    className="w-10 h-10 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
-                </div>
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Body Checkups 30+</h3>
-                <p className="text-sm sm:text-base md:text-lg text-gray-600">
-                  General health checkups including vitals like BP, SpO₂, heart rate, temperature, ECG, blood sugar, hemoglobin, lipid profile, uric acid, BMI, and body weight analysis.
-                </p>
-              </div>
-            </div>
-
-            <div className="bg-white p-3 sm:p-1 lg:p-3 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-              <div className="flex flex-col items-start space-y-1 sm:space-y-1 lg:space-y-2">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
-                  <Image src="/icons/sol-2-lgo4.png"
-                    alt='heart'
-                    width={100}
-                    height={100}
-                    className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
-                </div>
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Cardiac Checkups</h3>
-                <p className="text-sm sm:text-base md:text-lg text-gray-600">
-                  Cardiac checkups through ECG and vital monitoring, helping detect arrhythmias, heart rate issues, and early cardiac risks.
-                </p>
-              </div>
-            </div>
-
-            {/* Additional cards that show when showAllCards is true */}
-            {showAllCards && (
-              <>
-                <div className="bg-white p-3 sm:p-1 lg:p-3 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-                  <div className="flex flex-col items-start space-y-1 sm:space-y-1 lg:space-y-2">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
+            {/* Hidden content that shows on hover */}
+            <div className={`hidden ${activeCard === 'tele-diagnostic' ? 'block' : ''} group-hover:block overflow-hidden w-full bg-white p-4 z-10`}>
+              <div className="flex flex-row items-center   gap-4 sm:gap-6 lg:gap-8">
+                {/* Left column - Smart Health Checkups */}
+                <div className="bg-white p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
                       <Image src="/icons/sol-2-lgo4.png"
                         alt='heart'
                         width={100}
                         height={100}
-                        className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
+                        className="w-6 h-6 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
                     </div>
-                    <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Diabetes</h3>
-                    <p className="text-sm sm:text-base md:text-lg text-gray-600">
-                      Blood sugar and hemoglobin levels are tested instantly, enabling early detection of diabetes and continuous monitoring for better disease management.
-                    </p>
+                    <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Guided Patient Screening</h3>
                   </div>
+                  <ul className="list-disc border-b-2 border-gray-300 pb-2 list-inside text-gray-600 ml-4 space-y-1">
+                    <li>Nurse-supported checkups using SHM</li>
+                    <li>Accurate data collection for remote diagnosis</li>
+                    <li>Improving confidence in underserved regions</li>
+                  </ul>
                 </div>
 
-                <div className="bg-white p-3 sm:p-1 lg:p-3 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-                  <div className="flex flex-col items-start space-y-1 sm:space-y-1 lg:space-y-2">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
+                {/* Right column - Teleconsultation Services */}
+                <div className="bg-white p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
                       <Image src="/icons/sol-2-lgo4.png"
                         alt='heart'
                         width={100}
                         height={100}
-                        className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
+                        className="w-6 h-6 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
                     </div>
-                    <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Regular Checkups</h3>
-                    <p className="text-sm sm:text-base md:text-lg text-gray-600">
-                      Regular health checkups include vitals, blood tests, ECG, and body composition analysis—supporting early detection, lifestyle tracking, and overall wellness management.
-                    </p>
+                    <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Teleconsultation Support</h3>
                   </div>
-                </div>
-              </>
-            )}
-            <div className="mt-12">
-              <button
-                onClick={() => setShowAllCards(!showAllCards)}
-                className="bg-[#003B87] text-white px-8 py-3 rounded-lg hover:bg-[#002D66] transition-colors"
-              >
-                {showAllCards ? 'Show less' : 'Know more'}
-              </button>
-            </div>
-          </div>}
-          {activeSol === 2 && <div className="space-y-4 hidden md:block">
-            <div className="bg-white p-3 sm:p-1 lg:p-3 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-              <div className="flex flex-col items-start space-y-1 sm:space-y-1 lg:space-y-2">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
-                  <Image src="/icons/sol-2-lgo4.png"
-                    alt='heart'
-                    width={100}
-                    height={100}
-                    className="w-10 h-10 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
-                </div>
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Tele-Consultation services</h3>
-                <p className="text-sm sm:text-base md:text-lg text-gray-600">
-                  Patients connect with experienced doctors in real time, receiving personalized, data-backed medical advice along with digital prescriptions and follow-up care.
-                </p>
-              </div>
-            </div>
-
-            <div className="bg-white p-3 sm:p-1 lg:p-3 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-              <div className="flex flex-col items-start space-y-1 sm:space-y-1 lg:space-y-2">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
-                  <Image src="/icons/sol-2-lgo4.png"
-                    alt='heart'
-                    width={100}
-                    height={100}
-                    className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
-                </div>
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Real-time Diagnostic interface</h3>
-                <p className="text-sm sm:text-base md:text-lg text-gray-600">
-                  A real-time diagnostic interface captures and transmits vital health data instantly, enabling doctors to make accurate, informed decisions during live consultations.
-                </p>
-              </div>
-            </div>
-
-            {showAllCards && (<>
-              <div className="bg-white p-3 sm:p-1 lg:p-3 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-                <div className="flex flex-col items-start space-y-1 sm:space-y-1 lg:space-y-2">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
-                    <Image src="/icons/sol-2-lgo4.png"
-                      alt='heart'
-                      width={100}
-                      height={100}
-                      className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
-                  </div>
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Tele-Digital Stethoscope</h3>
-                  <p className="text-sm sm:text-base md:text-lg text-gray-600">
-                    The tele-digital stethoscope transmits heart and lung sounds in real time, allowing doctors to perform remote auscultation with clinical precision.
-                  </p>
+                  <ul className="list-disc border-b-2 border-gray-300 pb-2 list-inside text-gray-600 ml-4 space-y-1">
+                    <li>Nurses assist patients in remote consultations</li>
+                    <li>Help patients understand doctor&apos;s advice</li>
+                    <li>Enable medication instructions and follow-ups</li>
+                  </ul>
                 </div>
               </div>
-
-              <div className="bg-white p-3 sm:p-1 lg:p-3 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-                <div className="flex flex-col items-start space-y-1 sm:space-y-1 lg:space-y-2">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
-                    <Image src="/icons/sol-2-lgo4.png"
-                      alt='heart'
-                      width={100}
-                      height={100}
-                      className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
-                  </div>
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Advance modules</h3>
-                  <p className="text-sm sm:text-base md:text-lg text-gray-600">
-                    Advanced modules include tools like spirometer, dermatoscope, iris scope, ultrasound, and echocardiogram, enabling comprehensive diagnostics—where doctors can view real-time data remotely for accurate and timely clinical decisions.
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-white p-3 sm:p-1 lg:p-3 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-                <div className="flex flex-col items-start space-y-1 sm:space-y-1 lg:space-y-2">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
-                    <Image src="/icons/sol-2-lgo4.png"
-                      alt='heart'
-                      width={100}
-                      height={100}
-                      className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
-                  </div>
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Upload Documents</h3>
-                  <p className="text-sm sm:text-base md:text-lg text-gray-600">
-                    Patients can scan and upload their old medical documents in real time, enabling doctors to gain better context and provide more informed consultations.
-                  </p>
-                </div>
-              </div>
-              <div className="bg-white p-3 sm:p-1 lg:p-3 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-                <div className="flex flex-col items-start space-y-1 sm:space-y-1 lg:space-y-2">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
-                    <Image src="/icons/sol-2-lgo4.png"
-                      alt='heart'
-                      width={100}
-                      height={100}
-                      className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
-                  </div>
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Printed Prescription</h3>
-                  <p className="text-sm sm:text-base md:text-lg text-gray-600">
-                    Prints prescription instantly after consultation, giving patients a clear, physical copy for medications, follow-up, or ongoing treatment.
-                  </p>
-                </div>
-              </div>
-            </>)}
-            <div className="mt-12">
-              <button
-                onClick={() => setShowAllCards(!showAllCards)}
-                className="bg-[#003B87] text-white px-8 py-3 rounded-lg hover:bg-[#002D66] transition-colors"
-              >
-                {showAllCards ? 'Show less' : 'Know more'}
-              </button>
             </div>
           </div>
-          }
-          {activeSol === 3 && <div className="space-y-4 hidden md:block">
-            <div className="bg-white p-3 sm:p-1 lg:p-3 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-              <div className="flex flex-col items-start space-y-1 sm:space-y-1 lg:space-y-2">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
-                  <Image src="/icons/sol-2-lgo4.png"
+
+          {/* Smart Queue Management */}
+          <div className="group  hover:z-10">
+            <div className="bg-white border border-gray-200 p-4 rounded-lg flex items-center justify-between cursor-pointer hover:border-[#18A093] transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#18A093] group-hover:to-[#003366] md:w-[50%]">
+              <div className="flex items-center">
+                <div className=" flex items-center justify-center  mr-4  group-hover:bg-opacity-20">
+                  <Image src="/icons/sol-2-lgo1.png"
                     alt='heart'
                     width={100}
                     height={100}
-                    className="w-10 h-10 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
+                    className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
                 </div>
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Hospital Specialists Connectivity</h3>
-                <p className="text-sm sm:text-base md:text-lg text-gray-600">
-                  Doctors from the hospital can consult remotely using the Doctor App, with access to live vitals, ECG, imaging, and patient records—enabling accurate, clinic-quality diagnosis from anywhere..
-                </p>
+                <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white  group-hover:text-white ">Smart Queue Management</h3>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-400 group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+            {/* Hidden content that shows on hover */}
+            <div className="hidden group-hover:block overflow-hidden  w-full bg-white  p-4   z-10">
+              <div className="flex flex-row items-center   gap-4 sm:gap-6 lg:gap-8">
+                {/* Left column - Smart Health Checkups */}
+                <div className="bg-white p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
+                      <Image src="/icons/sol-2-lgo4.png"
+                        alt='heart'
+                        width={100}
+                        height={100}
+                        className="w-6 h-6 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Digital Appointment Scheduling</h3>
+                  </div>
+                  <ul className="list-disc border-b-2 border-gray-300 pb-2 list-inside text-gray-600 ml-4 space-y-1">
+                    <li>Slot booking through Patient App</li>
+                    <li>Queue management based on urgency</li>
+                    <li>Reduces overcrowding at centers</li>
+                  </ul>
+                </div>
+
+                {/* Right column - Teleconsultation Services */}
+                <div className="bg-white p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
+                      <Image src="/icons/sol-2-lgo4.png"
+                        alt='heart'
+                        width={100}
+                        height={100}
+                        className="w-6 h-6 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Remote Patient Notifications</h3>
+                  </div>
+                  <ul className="list-disc border-b-2 border-gray-300 pb-2 list-inside text-gray-600 ml-4 space-y-1">
+                    <li>SMS/app alerts for appointment reminders</li>
+                    <li>Rescheduling and real-time wait time tracking</li>
+                    <li>Patient-friendly, low-wage loss experience</li>
+                  </ul>
+                </div>
               </div>
             </div>
+          </div>
 
-            <div className="bg-white p-3 sm:p-1 lg:p-3 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-              <div className="flex flex-col items-start space-y-1 sm:space-y-1 lg:space-y-2">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
-                  <Image src="/icons/sol-2-lgo4.png"
+          {/* Personalized Health Tracking */}
+          <div className="group  hover:z-10">
+            <div className="bg-white border border-gray-200 p-4 rounded-lg flex items-center justify-between cursor-pointer hover:border-[#18A093] transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#18A093] group-hover:to-[#003366] md:w-[50%]">
+              <div className="flex items-center">
+                <div className=" flex items-center justify-center  mr-4  group-hover:bg-opacity-20">
+                  <Image src="/icons/sol-2-lgo1.png"
                     alt='heart'
                     width={100}
                     height={100}
-                    className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
+                    className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
                 </div>
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Admin Dashboard for Hospital Operations</h3>
-                <p className="text-sm sm:text-base md:text-lg text-gray-600">
-                  Hospitals get access to a centralized admin dashboard to manage patient data, doctor schedules, teleconsultations, follow-ups, and revenue insights.
-                </p>
+                <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white  group-hover:text-white ">Personalized Health Tracking</h3>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-400 group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+            {/* Hidden content that shows on hover */}
+            <div className={`hidden ${activeCard === 'tele-diagnostic' ? 'block' : ''} group-hover:block overflow-hidden w-full bg-white p-4 z-10`}>
+              <div className="flex flex-row items-center   gap-4 sm:gap-6 lg:gap-8">
+                {/* Left column - Smart Health Checkups */}
+                <div className="bg-white p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
+                      <Image src="/icons/sol-2-lgo4.png"
+                        alt='heart'
+                        width={100}
+                        height={100}
+                        className="w-6 h-6 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Digital Health Records</h3>
+                  </div>
+                  <ul className="list-disc border-b-2 border-gray-300 pb-2 list-inside text-gray-600 ml-4 space-y-1">
+                    <li>Secure, cloud-based patient files</li>
+                    <li>Accessible by patients, doctors, and nurses</li>
+                    <li>Enables consistent long-term care</li>
+                  </ul>
+                </div>
+
+                {/* Right column - Teleconsultation Services */}
+                <div className="bg-white p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
+                      <Image src="/icons/sol-2-lgo4.png"
+                        alt='heart'
+                        width={100}
+                        height={100}
+                        className="w-6 h-6 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Follow-Up & Chronic Care Management</h3>
+                  </div>
+                  <ul className="list-disc border-b-2 border-gray-300 pb-2 list-inside text-gray-600 ml-4 space-y-1">
+                    <li>Scheduled remote consultations</li>
+                    <li>Smart reminders for medications and diagnostics</li>
+                    <li>Patient app integration for easy tracking</li>
+                  </ul>
+                </div>
               </div>
             </div>
+          </div>
 
-            {showAllCards && (<>
-              <div className="bg-white p-3 sm:p-1 lg:p-3 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-                <div className="flex flex-col items-start space-y-1 sm:space-y-1 lg:space-y-2">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
-                    <Image src="/icons/sol-2-lgo4.png"
-                      alt='heart'
-                      width={100}
-                      height={100}
-                      className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
-                  </div>
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Patient Referral & Inflow Support</h3>
-                  <p className="text-sm sm:text-base md:text-lg text-gray-600">
-                    Patients requiring further diagnosis, treatment, or admission are referred to the hospital
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-white p-3 sm:p-1 lg:p-3 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-                <div className="flex flex-col items-start space-y-1 sm:space-y-1 lg:space-y-2">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
-                    <Image src="/icons/sol-2-lgo4.png"
-                      alt='heart'
-                      width={100}
-                      height={100}
-                      className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
-                  </div>
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Chronic & Preventive Care Program Partnerships</h3>
-                  <p className="text-sm sm:text-base md:text-lg text-gray-600">
-                    Enabling long-term patient engagement through regular checkups, health tracking, and tele-consultations.
-                  </p>
-                </div>
-              </div>
-            </>)}
-            <div className="mt-12">
-              <button
-                onClick={() => setShowAllCards(!showAllCards)}
-                className="bg-[#003B87] text-white px-8 py-3 rounded-lg hover:bg-[#002D66] transition-colors"
-              >
-                {showAllCards ? 'Show less' : 'Know more'}
-              </button>
-            </div>
-          </div>}
-          {activeSol === 4 && <div className="space-y-4 hidden md:block">
-            <div className="bg-white p-3 sm:p-1 lg:p-3 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-              <div className="flex flex-col items-start space-y-1 sm:space-y-1 lg:space-y-2">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
-                  <Image src="/icons/sol-2-lgo4.png"
+          {/* Preventive Health Programs */}
+          <div className="group  hover:z-10">
+            <div className="bg-white border border-gray-200 p-4 rounded-lg flex items-center justify-between cursor-pointer hover:border-[#18A093] transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#18A093] group-hover:to-[#003366] md:w-[50%]">
+              <div className="flex items-center">
+                <div className=" flex items-center justify-center  mr-4  group-hover:bg-opacity-20">
+                  <Image src="/icons/sol-2-lgo1.png"
                     alt='heart'
                     width={100}
                     height={100}
-                    className="w-10 h-10 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
+                    className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
                 </div>
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Dietary and Lifestyle Counseling</h3>
-                <p className="text-sm sm:text-base md:text-lg text-gray-600">
-                  Personalized dietary and lifestyle counseling improves nutrition, fitness, and chronic disease prevention—helping individuals build healthier, sustainable habits for long-term well-being.
-                </p>
+                <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white  group-hover:text-white ">Preventive Health Programs</h3>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-400 group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+            {/* Hidden content that shows on hover */}
+            <div className={`hidden ${activeCard === 'tele-diagnostic' ? 'block' : ''} group-hover:block overflow-hidden w-full bg-white p-4 z-10`}>
+              <div className="flex flex-row items-center gap-6  specialty-cards-container  gap-4 sm:gap-6 lg:gap-8">
+                {/* Left column - Smart Health Checkups */}
+                <div className="bg-white p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
+                      <Image src="/icons/sol-2-lgo4.png"
+                        alt='heart'
+                        width={100}
+                        height={100}
+                        className="w-6 h-6 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Wellness Screenings</h3>
+                  </div>
+                  <ul className="list-disc border-b-2 border-gray-300 pb-2 list-inside text-gray-600 ml-4 space-y-1">
+                    <li>Mass health checkups for BP, Sugar, BMI, etc.</li>
+                    <li>Catch chronic diseases before symptoms escalate</li>
+                    <li>Community wellness initiatives</li>
+                  </ul>
+                </div>
+
+                {/* Right column - Teleconsultation Services */}
+                <div className="bg-white p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
+                      <Image src="/icons/sol-2-lgo4.png"
+                        alt='heart'
+                        width={100}
+                        height={100}
+                        className="w-6 h-6 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Dietary & Lifestyle Counseling</h3>
+                  </div>
+                  <ul className="list-disc border-b-2 border-gray-300 pb-2 list-inside text-gray-600 ml-4 space-y-1">
+                    <li>Personalized nutrition and fitness advice</li>
+                    <li>Preventive health and disease management focus</li>
+                    <li>Continuous virtual support for behavior change</li>
+                  </ul>
+                </div>
+                <div className="bg-white p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
+                      <Image src="/icons/sol-2-lgo4.png"
+                        alt='heart'
+                        width={100}
+                        height={100}
+                        className="w-6 h-6 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Educational Workshops & Resources</h3>
+                  </div>
+                  <ul className="list-disc border-b-2 border-gray-300 pb-2 list-inside text-gray-600 ml-4 space-y-1">
+                    <li>Preventive health seminars and webinars</li>
+                    <li>Digital material access through Patient App</li>
+                    <li>Building community awareness on wellness</li>
+                  </ul>
+                </div>
               </div>
             </div>
+          </div>
 
-            <div className="bg-white p-3 sm:p-1 lg:p-3 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-              <div className="flex flex-col items-start space-y-1 sm:space-y-1 lg:space-y-2">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
-                  <Image src="/icons/sol-2-lgo4.png"
+          {/* Targeted Health Interventions */}
+          <div className="group  hover:z-10">
+            <div className="bg-white border border-gray-200 p-4 rounded-lg flex items-center justify-between cursor-pointer hover:border-[#18A093] transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#18A093] group-hover:to-[#003366] md:w-[50%]">
+              <div className="flex items-center">
+                <div className=" flex items-center justify-center  mr-4  group-hover:bg-opacity-20">
+                  <Image src="/icons/sol-2-lgo1.png"
                     alt='heart'
                     width={100}
                     height={100}
-                    className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
+                    className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
                 </div>
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Educational Workshops and Resources</h3>
-                <p className="text-sm sm:text-base md:text-lg text-gray-600">
-                  Interactive workshops and resources promote preventive care, healthy habits, and disease awareness for informed community wellness.
-                </p>
+                <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white  group-hover:text-white ">Targeted Health Interventions</h3>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-400 group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+            {/* Hidden content that shows on hover */}
+            <div className={`hidden ${activeCard === 'tele-diagnostic' ? 'block' : ''} group-hover:block overflow-hidden w-full bg-white p-4 z-10`}>
+              <div className="flex flex-row items-center gap-6  specialty-cards-container  gap-4 sm:gap-6 lg:gap-8">
+                {/* Left column - Smart Health Checkups */}
+                <div className="bg-white p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
+                      <Image src="/icons/sol-2-lgo4.png"
+                        alt='heart'
+                        width={100}
+                        height={100}
+                        className="w-6 h-6 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Health Analytics Dashboard</h3>
+                  </div>
+                  <ul className="list-disc border-b-2 border-gray-300 pb-2 list-inside text-gray-600 ml-4 space-y-1">
+                    <li>Location-wise health trend visualization</li>
+                    <li>Predictive insights for outbreaks, chronic disease mapping</li>
+                    <li>Actionable analytics for faster response</li>
+                  </ul>
+                </div>
+
+                {/* Right column - Teleconsultation Services */}
+                <div className="bg-white p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
+                      <Image src="/icons/sol-2-lgo4.png"
+                        alt='heart'
+                        width={100}
+                        height={100}
+                        className="w-6 h-6 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat'] ">Hospital & NGO Connectivity</h3>
+                  </div>
+                  <ul className="list-disc border-b-2 border-gray-300 pb-2 list-inside text-gray-600 ml-4 space-y-1">
+                    <li>Connect rural areas to city hospitals & NGO programs</li>
+                    <li>Real-time tele-diagnostics + referrals</li>
+                    <li>Partnerships for scaling preventive health drive</li>
+                  </ul>
+                </div>
+                <div className="bg-white p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
+                      <Image src="/icons/sol-2-lgo4.png"
+                        alt='heart'
+                        width={100}
+                        height={100}
+                        className="w-6 h-6 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Data-Driven Program Planning</h3>
+                  </div>
+                  <ul className="list-disc border-b-2 border-gray-300 pb-2 list-inside text-gray-600 ml-4 space-y-1">
+                    <li>Resource allocation based on live data</li>
+                    <li>Enable funders and policymakers to optimize spending</li>
+                    <li>Targeted intervention for maximum impact</li>
+                  </ul>
+                </div>
               </div>
             </div>
-
-            {showAllCards && (<>
-              <div className="bg-white p-3 sm:p-1 lg:p-3 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-                <div className="flex flex-col items-start space-y-1 sm:space-y-1 lg:space-y-2">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
-                    <Image src="/icons/sol-2-lgo4.png"
-                      alt='heart'
-                      width={100}
-                      height={100}
-                      className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
-                  </div>
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Tele-Consultations with Specialists</h3>
-                  <p className="text-sm sm:text-base md:text-lg text-gray-600">
-                    Tele-consultations with specialists provide personalized guidance on nutrition, fitness, and lifestyle, supporting holistic wellness and preventive healthcare.
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-white p-3 sm:p-1 lg:p-3 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-                <div className="flex flex-col items-start space-y-1 sm:space-y-1 lg:space-y-2">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-[#EBF6FE] rounded-full">
-                    <Image src="/icons/sol-2-lgo4.png"
-                      alt='heart'
-                      width={100}
-                      height={100}
-                      className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10 lg:h-10" />
-                  </div>
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Personalized Health Checkups</h3>
-                  <p className="text-sm sm:text-base md:text-lg text-gray-600">
-                    Personalized health checkups are tailored to individual needs, offering focused insights for early detection, prevention, and better lifestyle planning.
-                  </p>
-                </div>
-              </div>
-            </>)}
-            <div className="mt-12">
-              <button
-                onClick={() => setShowAllCards(!showAllCards)}
-                className="bg-[#003B87] text-white px-8 py-3 rounded-lg hover:bg-[#002D66] transition-colors"
-              >
-                {showAllCards ? 'Show less' : 'Know more'}
-              </button>
-            </div>
-          </div>}
+          </div>
         </div>
       </div>
     </div>
+
+    
     {/* Departments Section */}
     <div className="relative bg-white overflow-hidden">
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">

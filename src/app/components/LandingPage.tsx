@@ -1415,6 +1415,53 @@ const LandingPage = () => {
         </div>
       </div >
 
+      {/*Aligned with Global & National Priorities*/}
+      < div className="relative bg-white overflow-hidden" >
+        <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
+          <h2 className="text-[28px] xs:text-[30px] text-center sm:text-[34px] md:text-[38px] lg:text-[42px] font-[700] font-['Montserrat'] mb-4 sm:mb-8">
+            <span className="text-[#18A093]">Our Work Aligned</span>{' '}
+            <span className="text-[#003366]">with Global Goal</span>
+          </h2>
+          <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-2 xs:gap-3 sm:gap-4 md:gap-5">
+            <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+              <Image src="/icons/hm-nm-img1.png" alt="CSR & Impact Funds" width={200} height={200} className='w-16 sm:w-18 md:w-28 h-auto object-contain' />
+            </div>
+            <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+              <Image src="/icons/hm-nm-img2.png" alt="CSR & Impact Funds" width={200} height={200} className='w-16 sm:w-18 md:w-28 h-auto object-contain' />
+            </div>
+            <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+              <Image src="/icons/hm-nm-img3.png" alt="CSR & Impact Funds" width={200} height={200} className='w-16 sm:w-18 md:w-28 h-auto object-contain' />
+            </div>
+            <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+              <Image src="/icons/hm-nm-img4.png" alt="CSR & Impact Funds" width={200} height={200} className='w-16 sm:w-18 md:w-28 h-auto object-contain' />
+            </div>
+          </div>
+        </div>
+      </div >
+
+      < div className="relative bg-white overflow-hidden" >
+        <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
+          <h2 className="text-[28px] xs:text-[30px] text-center sm:text-[34px] md:text-[38px] lg:text-[42px] font-[700] font-['Montserrat'] mb-4 sm:mb-8">
+            <span className="text-[#18A093]">Our Work Aligned with</span>{' '}
+            <span className="text-[#003366]">National Priorities</span>
+          </h2>
+          <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-2 xs:gap-3 sm:gap-4 md:gap-5">
+            <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+              <Image src="/icons/hm-un-img1.png" alt="CSR & Impact Funds" width={200} height={200} className='w-16 sm:w-18 md:w-28 h-auto object-contain' />
+            </div>
+            <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+              <Image src="/icons/hm-un-img2.png" alt="CSR & Impact Funds" width={200} height={200} className='w-16 sm:w-18 md:w-28 h-auto object-contain' />
+            </div>
+            <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+              <Image src="/icons/hm-un-img3.png" alt="CSR & Impact Funds" width={200} height={200} className='w-16 sm:w-18 md:w-28 h-auto object-contain' />
+            </div>
+            <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+              <Image src="/icons/hm-un-img4.png" alt="CSR & Impact Funds" width={200} height={200} className='w-16 sm:w-18 md:w-28 h-auto object-contain' />
+            </div>
+          </div>
+        </div>
+      </div >
+
       {/* We Work With Section */}
       < div className="relative bg-white overflow-hidden" >
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">

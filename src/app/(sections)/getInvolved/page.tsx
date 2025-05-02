@@ -56,177 +56,109 @@ export default function GetInvolved() {
             </div>
         </div>
 
-        {/* PARTNERSHIP OPPORTUNITIES SECTION */}
-        <div className="relative overflow-hidden bg-white">
-            <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-20 md:py-32">
-                <div className="flex flex-wrap gap-8">
-                    {/* Partnership Cards - Left Column */}
-                    <div className="space-y-6 flex-1 md:max-w-[60%]">
-                        {/* Card 1 - Partner with Us */}
-                        <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-                            <div className="flex flex-col items-start gap-4">
-                                <div className="w-10 h-10 flex items-center justify-center rounded-full">
-                                    <div className="w-6 h-6 flex items-center justify-center">
-                                        <Image src="/icons/inv-1-lgo.png" alt="Hospital Icon" width={24} height={24} />
-                                    </div>
-                                </div>
-                                <div className="flex-1">
-                                    <h3 className="text-xl font-semibold text-[#333333] mb-2">Partner with Us (For Hospitals & Clinics)</h3>
-                                    <p className="text-sm text-gray-600 mb-1">Collaborate to deploy Smart Healthcare Machines.</p>
-                                    <p className="text-sm text-gray-600 mb-1">Improve patient engagement and preventive care.</p>
-                                    <p className="text-sm text-gray-600">Access our advanced admin software and analytics tools.</p>
-                                </div>
-                            </div>
-                        </div>
 
-                        {/* Card 2 - CSR & Philanthropy */}
-                        <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-                            <div className="flex flex-col items-start gap-4">
-                                <div className="w-10 h-10 flex items-center justify-center rounded-full">
-                                    <div className="w-6 h-6 flex items-center justify-center">
-                                        <Image src="/icons/inv-1-lgo.png" alt="Hospital Icon" width={24} height={24} />
-                                    </div>
-                                </div>
-                                <div className="flex-1">
-                                    <h3 className="text-xl font-semibold text-[#333333] mb-2">CSR & Philanthropy (For Corporates & NGOs)</h3>
-                                    <p className="text-sm text-gray-600 mb-1">Support impactful healthcare initiatives in underserved communities.</p>
-                                    <p className="text-sm text-gray-600 mb-1">Help fund telemedicine access for rural populations and enable health camps, screenings and preventive care programs.</p>
-                                    <p className="text-sm text-gray-600">Together, we can extend quality healthcare to those who need it most.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Card 3 - Volunteer with Us */}
-                        <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-                            <div className="flex flex-col items-start gap-4">
-                                <div className="w-10 h-10 flex items-center justify-center rounded-full">
-                                    <div className="w-6 h-6 flex items-center justify-center">
-                                        <Image src="/icons/inv-1-lgo.png" alt="Hospital Icon" width={24} height={24} />
-                                    </div>
-                                </div>
-                                <div className="flex-1">
-                                    <h3 className="text-xl font-semibold text-[#333333] mb-2">Volunteer with Us</h3>
-                                    <p className="text-sm text-gray-600 mb-1">Join us in community outreach, health camps and awareness drives — your time and skills can make a real difference. Whether it&apos;s in healthcare, technology or operations, your contribution helps bring quality care closer to those who need it most.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Card 4 - Join Our Team */}
-                        <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-                            <div className="flex flex-col items-start gap-4">
-                                <div className="w-10 h-10 flex items-center justify-center rounded-full">
-                                    <div className="w-6 h-6 flex items-center justify-center">
-                                        <Image src="/icons/inv-1-lgo.png" alt="Hospital Icon" width={24} height={24} />
-                                    </div>
-                                </div>
-                                <div className="flex-1">
-                                    <h3 className="text-xl font-semibold text-[#333333] mb-2">Join Our Team (For Job Seekers & Interns)</h3>
-                                    <p className="text-sm text-gray-600">Apply now to contribute to one of India&apos;s most innovative health-tech startups.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Card 5 - Residential Societies */}
-                        <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-                            <div className="flex flex-col items-start gap-4">
-                                <div className="w-10 h-10 flex items-center justify-center rounded-full">
-                                    <div className="w-6 h-6 flex items-center justify-center">
-                                        <Image src="/icons/inv-1-lgo.png" alt="Hospital Icon" width={24} height={24} />
-                                    </div>
-                                </div>
-                                <div className="flex-1">
-                                    <h3 className="text-xl font-semibold text-[#333333] mb-2">Residential Societies & IT Parks</h3>
-                                    <p className="text-sm text-gray-600">We work with residential societies and IT parks to bring preventive healthcare at doorstep — through on-site diagnostics, tele-consultations and wellness programs in partnership with leading hospitals and NGOs.</p>
-                                </div>
-                            </div>
-                        </div>
+        < div className="relative bg-white overflow-hidden" >
+            <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-12 sm:py-20 md:py-32">
+                <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] text-center mb-3 sm:mb-4">
+                    <span className="text-[#18A093]">Why Partner</span>{' '}
+                    <span className="text-[#003366]">with Us</span>
+                </h2>
+                <p className="text-sm font-['Montserrat'] sm:text-base md:text-lg text-gray-600 mb-6">
+                    Bridge Healthcare addresses Indi&apos;s most pressing healthcare challenges with tech-enabled, point-of-care solutions.
+                    Through Smart Healthcare Machines, Tele-Diagnostics, and local capacity building, your CSR support directly translates to
+                    measurable health impact — where it&apos;s needed most.
+                </p>
+                <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] text-center mb-3 sm:mb-4">
+                    <span className="text-[#18A093] font-['Montserrat']">Where We</span>{' '}
+                    <span className="text-[#003366] font-['Montserrat']">Drive Impact</span>
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {/* Impact Card 1 */}
+                    <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                        <h4 className="text-lg font-semibold text-[#333333] mb-3 font-['Montserrat']">Improved Access to Quality Healthcare in Underserved Areas</h4>
+                        <p className="text-sm text-gray-600 font-['Montserrat']">Our solutions bring diagnostics, consultations, and treatment support to rural and remote regions.</p>
                     </div>
 
-                    <div className="bg-white">
-                        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#003366] mb-3 sm:mb-4 md:mb-5 lg:mb-6">Get Involved Now</h2>
-                        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 mb-4 sm:mb-6 md:mb-7 lg:mb-8">Fill-in your details here and our team will get in touch with you shortly.</p>
+                    {/* Impact Card 2 */}
+                    <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                        <h4 className="text-lg font-semibold text-[#333333] mb-3 font-['Montserrat']">Early Detection & Prevention of Chronic Diseases</h4>
+                        <p className="text-sm text-gray-600 font-['Montserrat']">We enable timely identification of high-risk conditions through real-time screenings and AI tagging.</p>
+                    </div>
 
-                        <form className="space-y-4">
-                            {/* Contact Method Selection */}
-                            <div className="flex items-center gap-6 mb-2">
-                                <label className="flex items-center gap-2 cursor-pointer">
-                                    <input type="radio" name="contactMethod" value="phone" className="w-4 h-4 text-[#18A093] border-gray-300 focus:ring-[#18A093]" />
-                                    <span className="text-sm text-gray-700">Phone Call</span>
-                                </label>
-                                <label className="flex items-center gap-2 cursor-pointer">
-                                    <input type="radio" name="contactMethod" value="email" className="w-4 h-4 text-[#18A093] border-gray-300 focus:ring-[#18A093]" />
-                                    <span className="text-sm text-gray-700">E-mail</span>
-                                </label>
-                            </div>
+                    {/* Impact Card 3 */}
+                    <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                        <h4 className="text-lg font-semibold text-[#333333] font-['Montserrat'] mb-3">Digitization of Health Records for Continuity of Care</h4>
+                        <p className="text-sm text-gray-600 font-['Montserrat']">Every consultation creates an EHR, empowering patients with longitudinal, portable health data.</p>
+                    </div>
 
-                            {/* Form Fields */}
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div>
-                                    <input
-                                        type="text"
-                                        placeholder="First Name*"
-                                        className="w-full px-4 py-3 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#18A093] focus:border-[#18A093] text-black"
-                                    />
-                                </div>
+                    {/* Impact Card 4 */}
+                    <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                        <h4 className="text-lg font-semibold text-[#333333] font-['Montserrat'] mb-3">Healthcare Equity for Women, Elderly & Low-Income Groups</h4>
+                        <p className="text-sm text-gray-600 font-['Montserrat']">Inclusive care delivery through community outreach, female health workers, and subsidized models.</p>
+                    </div>
 
-                                <div>
-                                    <input
-                                        type="text"
-                                        placeholder="Last Name*"
-                                        className="w-full px-4 py-3 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#18A093] focus:border-[#18A093] text-black"
-                                    />
-                                </div>
-                            </div>
+                    {/* Impact Card 5 */}
+                    <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                        <h4 className="text-lg font-semibold font-['Montserrat'] text-[#333333] mb-3">Community Employment & Skill Development</h4>
+                        <p className="text-sm text-gray-600 font-['Montserrat']">Training and employing local nurses and operators to run Smart Healthcare Machines.</p>
+                    </div>
 
-                            <div className="relative">
-                                <input
-                                    type="tel"
-                                    placeholder="Contact Number*"
-                                    className="w-full px-4 py-3 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#18A093] focus:border-[#18A093] text-black pr-12"
-                                />
-                            </div>
-
-                            <div>
-                                <input
-                                    type="email"
-                                    placeholder="Email*"
-                                    className="w-full px-4 py-3 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#18A093] focus:border-[#18A093] text-black"
-                                />
-                            </div>
-
-                            <div>
-                                <input
-                                    type="text"
-                                    placeholder="Location*"
-                                    className="w-full px-4 py-3 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#18A093] focus:border-[#18A093] text-black"
-                                />
-                            </div>
-
-                            <div className="relative">
-                                <textarea
-                                    placeholder="Your Message Here*"
-                                    className="w-full px-4 py-3 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#18A093] focus:border-[#18A093] text-black resize-none h-32"
-                                    maxLength={180}
-                                    onChange={(e) => {
-                                        const counter = document.getElementById('charCounter');
-                                        if (counter) counter.textContent = `${e.target.value.length} / 180`;
-                                    }}
-                                />
-                                <div id="charCounter" className="absolute bottom-2 right-3 text-xs text-gray-500">0 / 180</div>
-                            </div>
-                            <div className='w-full flex flex-row items-center justify-end'>
-                                <button
-                                    type="submit"
-                                    onClick={(e) => e.preventDefault()}
-                                    className=" w-full sm:w-[50%] md:w-[50%] lg:w-[30%] bg-[#003366] text-white text-sm py-3 px-6 rounded-lg hover:bg-[#18A093] transition-colors duration-300"
-                                >
-                                    Send Message
-                                </button></div>
-                        </form>
+                    {/* Impact Card 6 */}
+                    <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                        <h4 className="text-lg font-semibold font-['Montserrat'] text-[#333333] mb-3">Data-Driven Public Health Planning</h4>
+                        <p className="text-sm text-gray-600 font-['Montserrat']">Improved Access to Quality Healthcare in Underserved Areas Our solutions bring diagnostics, consultations, and treatment support to rural and remote regions.</p>
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
+
+        {/*Aligned with Global & National Priorities*/}
+        < div className="relative bg-white overflow-hidden" >
+            <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
+                <h2 className="text-[28px] xs:text-[30px] text-center sm:text-[34px] md:text-[38px] lg:text-[42px] font-[700] font-['Montserrat'] mb-4 sm:mb-8">
+                    <span className="text-[#18A093]">Our Work Aligned with</span>{' '}
+                    <span className="text-[#003366]">Global Goal</span>
+                </h2>
+                <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2 xs:gap-3 sm:gap-4 md:gap-5">
+                    <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+                        <Image src="/icons/hm-nm-img1.png" alt="CSR & Impact Funds" width={200} height={200} className='w-16 sm:w-18 md:w-28 h-auto object-contain' />
+                    </div>
+                    <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+                        <Image src="/icons/hm-nm-img2.png" alt="CSR & Impact Funds" width={200} height={200} className='w-16 sm:w-18 md:w-28 h-auto object-contain' />
+                    </div>
+                    <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+                        <Image src="/icons/hm-nm-img3.png" alt="CSR & Impact Funds" width={200} height={200} className='w-16 sm:w-18 md:w-28 h-auto object-contain' />
+                    </div>
+                    <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+                        <Image src="/icons/hm-nm-img4.png" alt="CSR & Impact Funds" width={200} height={200} className='w-16 sm:w-18 md:w-28 h-auto object-contain' />
+                    </div>
+                </div>
+            </div>
+        </div >
+
+        < div className="relative bg-white overflow-hidden" >
+            <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
+                <h2 className="text-[28px] xs:text-[30px] text-center sm:text-[34px] md:text-[38px] lg:text-[42px] font-[700] font-['Montserrat'] mb-4 sm:mb-8">
+                    <span className="text-[#18A093]">Our Work Aligned with</span>{' '}
+                    <span className="text-[#003366]">National Priorities</span>
+                </h2>
+                <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2 xs:gap-3 sm:gap-4 md:gap-5">
+                    <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+                        <Image src="/icons/hm-un-img1.png" alt="CSR & Impact Funds" width={200} height={200} className='w-16 sm:w-18 md:w-28 h-auto object-contain' />
+                    </div>
+                    <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+                        <Image src="/icons/hm-un-img2.png" alt="CSR & Impact Funds" width={200} height={200} className='w-16 sm:w-18 md:w-28 h-auto object-contain' />
+                    </div>
+                    <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+                        <Image src="/icons/hm-un-img3.png" alt="CSR & Impact Funds" width={200} height={200} className='w-16 sm:w-18 md:w-28 h-auto object-contain' />
+                    </div>
+                    <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+                        <Image src="/icons/hm-un-img4.png" alt="CSR & Impact Funds" width={200} height={200} className='w-16 sm:w-18 md:w-28 h-auto object-contain' />
+                    </div>
+                </div>
+            </div>
+        </div >
+
 
         {/* Why Join Bridge Healthcare Section */}
         < div className="relative bg-white overflow-hidden" >
@@ -235,9 +167,6 @@ export default function GetInvolved() {
                     <span className="text-[#18A093]">Why Join</span>{' '}
                     <span className="text-[#003366]">Bridge Healthcare</span>
                 </h2>
-                {/* <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
-            Be part of a mission to transform healthcare through innovation, accessibility and impact.
-          </p> */}
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-11 relative">
                     {/* Center Logo */}

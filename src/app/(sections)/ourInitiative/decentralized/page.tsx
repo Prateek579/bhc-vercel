@@ -51,8 +51,11 @@ export default function Decentralized() {
               <span>Connecting 600K Villages to Smart Healthcare.</span>
             </h1>
             <p className="text-sm md:text-base lg:text-lg opacity-90 font-['Montserrat'] font-normal leading-relaxed text-[#FFA500]">
-              By 2036, Transforming access to care by building a decentralized, tech-enabled healthcare network across every Indian sub-division.
+              he Decentralized Health Network is our mission to connect India’s most underserved regions with essential healthcare services by 2036. Unlike centralized models that rely on urban hospitals, this network empowers local communities through Smart Healthcare Machines, tele-diagnostics, and real-time consultations — right at the village level. It’s a scalable, tech-driven approach that ensures no region is left behind, bridging the healthcare gap across 600,000+ villages with speed, accuracy, and accessibility.
             </p>
+            {/* <p className="text-sm md:text-base lg:text-lg opacity-90 font-['Montserrat'] font-normal leading-relaxed text-[#FFA500]">
+              By 2036, Transforming access to care by building a decentralized, tech-enabled healthcare network across every Indian sub-division.
+            </p> */}
           </div>
         </div>
       </div>

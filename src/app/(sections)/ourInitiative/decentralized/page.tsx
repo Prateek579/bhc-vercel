@@ -336,6 +336,30 @@ export default function Decentralized() {
         </div>
       </div>
     </div>
+
+    {/*Powered by Government Schemes*/}
+    < div className="relative bg-white overflow-hidden" >
+      <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
+        <h2 className="text-[28px] xs:text-[30px] text-center sm:text-[34px] md:text-[38px] lg:text-[42px] font-[700] font-['Montserrat'] mb-4 sm:mb-8">
+          <span className="text-[#18A093]">Powered by</span>{' '}
+          <span className="text-[#003366]">Government Schemes</span>
+        </h2>
+        <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-2 xs:gap-3 sm:gap-4 md:gap-5">
+          <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+            <Image src="/icons/hm-gs-img1.png" alt="Gov. Schemes" width={200} height={200} className='w-30  md:w-45 h-auto object-contain' />
+          </div>
+          <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+            <Image src="/icons/hm-gs-img2.png" alt="Gov. Schemes" width={200} height={200} className='w-30  md:w-45 h-auto object-contain' />
+          </div>
+          <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+            <Image src="/icons/hm-gs-img3.png" alt="Gov. Schemes" width={200} height={200} className='w-30  md:w-45 h-auto object-contain' />
+          </div>
+          <div className="flex  items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+            <Image src="/icons/hm-gs-img4.png" alt="Gov. Schemes" width={200} height={200} className='w-30  md:w-45 h-auto object-contain' />
+          </div>
+        </div>
+      </div>
+    </div >
     {/* PARTNER SECTION */}
     <Partner />
   </>

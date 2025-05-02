@@ -21,50 +21,12 @@ export default function OurSolution() {
     setIsTouchDevice(checkTouchDevice());
   }, []);
 
-  const handleToggle = (e: React.MouseEvent<HTMLDivElement, MouseEvent>, cardId: string): void => {
+  const handleToggle = ( cardId: string): void => {
     if (isTouchDevice) {
-      // Remove touch-hover class from all cards except the current one
-      const cards = document.querySelectorAll('.card-hover');
-      cards.forEach(card => card.classList.remove('touch-hover'));
-
-      // Toggle the current card
-      if (activeCard === cardId) {
-        e.currentTarget.classList.remove('touch-hover');
-        setActiveCard(null);
-      } else {
-        e.currentTarget.classList.add('touch-hover');
-        setActiveCard(cardId);
-      }
+      console.log("touch", cardId)
+      setActiveCard(cardId);
     }
   };
-
-  // const [activeSol, setActiveSol] = React.useState<number | null>(null);
-  // useEffect(() => {
-  //   // Safe window check for SSR
-  //   const checkTouchDevice = (): boolean => {
-  //     if (typeof window === 'undefined') return false;
-  //     return 'ontouchstart' in window;
-  //   };
-
-  //   setIsTouchDevice(checkTouchDevice());
-  // }, []);
-
-  // const handleToggle = (e: React.MouseEvent<HTMLDivElement, MouseEvent>, cardId: string): void => {
-  //   if (isTouchDevice) {
-  //     // Remove touch-hover class from all cards except the current one
-  //     const cards = document.querySelectorAll('.card-hover');
-  //     cards.forEach(card => card.classList.remove('touch-hover'));
-
-  //     // Toggle the current card
-  //     if (activeCard === cardId) {
-  //       e.currentTarget.classList.remove('touch-hover');
-  //       setActiveCard(null);
-  //     } else {
-  //       e.currentTarget.classList.add('touch-hover');
-  //       setActiveCard(cardId);
-  //     }
-  //   }
-  // };
 
   return (<>
     <div className="fixed right-10 top-[40%] transform -translate-y-1/2 z-50 transform rotate-270 origin-top-right whitespace-nowrap">
@@ -107,8 +69,8 @@ export default function OurSolution() {
         </p>
 
         <div className="space-y-4 mb-16">
-          <div className="group hover:z-10 card-hover" onClick={(e) => handleToggle(e, 'tele-diagnostic')}>
-            <div className="bg-white border border-gray-200 p-4 rounded-lg flex items-center justify-between cursor-pointer hover:border-[#18A093] transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#18A093] group-hover:to-[#003366] md:w-[50%]">
+          <div className="group hover:z-10 card-hover" >
+            <div className="bg-white border border-gray-200 p-4 rounded-lg flex items-center justify-between cursor-pointer hover:border-[#18A093] transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#18A093] group-hover:to-[#003366] md:w-[50%]" onClick={() => handleToggle('card_1')}>
               <div className="flex items-center">
                 <div className=" flex items-center justify-center  mr-4  group-hover:bg-opacity-20">
                   <Image src="/icons/sol-2-lgo1.png"
@@ -125,10 +87,10 @@ export default function OurSolution() {
             </div>
 
             {/* Hidden content that shows on hover */}
-            <div className={`hidden ${activeCard === 'tele-diagnostic' ? 'block' : ''} group-hover:block overflow-hidden w-full bg-white p-4 z-10`}>
+            <div className={` group-hover:block overflow-hidden w-full bg-white p-4 z-10 ${activeCard === 'card_1' ? 'block' : 'hidden'}`}>
               <div className="flex flex-row items-center gap-6  specialty-cards-container  gap-4 sm:gap-6 lg:gap-8">
                 {/* Left column - Smart Health Checkups */}
-                <div className="h-full p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                <div className="h-full p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
                   <div className="flex items-center mb-4">
                     <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
                       <Image src="/icons/sol-2-lgo4.png"
@@ -147,7 +109,7 @@ export default function OurSolution() {
                 </div>
 
                 {/* Right column - Teleconsultation Services */}
-                <div className=" h-full bg-white p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                <div className=" h-full bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
                   <div className="flex items-center mb-4">
                     <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
                       <Image src="/icons/sol-2-lgo4.png"
@@ -164,7 +126,7 @@ export default function OurSolution() {
                     <li>Data-driven remote clinical decisions</li>
                   </ul>
                 </div>
-                <div className=" h-full bg-white p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                <div className=" h-full bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
                   <div className="flex items-center mb-4">
                     <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
                       <Image src="/icons/sol-2-lgo4.png"
@@ -181,7 +143,7 @@ export default function OurSolution() {
                     <li>Seamless specialist collaboration</li>
                   </ul>
                 </div>
-                <div className="h-full bg-white p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                <div className="h-full bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
                   <div className="flex items-center mb-4">
                     <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
                       <Image src="/icons/sol-2-lgo4.png"
@@ -204,8 +166,8 @@ export default function OurSolution() {
 
 
           {/* Nurse-Enabled Health Access */}
-          <div className="group hover:z-10 card-hover" onClick={(e) => handleToggle(e, 'tele-diagnostic')}>
-            <div className="bg-white border border-gray-200 p-4 rounded-lg flex items-center justify-between cursor-pointer hover:border-[#18A093] transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#18A093] group-hover:to-[#003366] md:w-[50%]">
+          <div className="group hover:z-10 card-hover" >
+            <div className="bg-white border border-gray-200 p-4 rounded-lg flex items-center justify-between cursor-pointer hover:border-[#18A093] transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#18A093] group-hover:to-[#003366] md:w-[50%]" onClick={() => handleToggle('card_2')}>
               <div className="flex items-center">
                 <div className=" flex items-center justify-center  mr-4  group-hover:bg-opacity-20">
                   <Image src="/icons/sol-2-lgo1.png"
@@ -221,10 +183,10 @@ export default function OurSolution() {
               </svg>
             </div>
             {/* Hidden content that shows on hover */}
-            <div className={`hidden ${activeCard === 'tele-diagnostic' ? 'block' : ''} group-hover:block overflow-hidden w-full bg-white p-4 z-10`}>
-              <div className="flex flex-row items-center   gap-4 sm:gap-6 lg:gap-8">
+            <div className={` ${activeCard === 'card_2' ? 'block' : 'hidden'} group-hover:block overflow-hidden w-full bg-white p-4 z-10`}>
+            <div className={`flex flex-row items-center   gap-4 sm:gap-6 lg:gap-8 ${activeCard === 'card_2' && ' specialty-cards-container'}`}>
                 {/* Left column - Smart Health Checkups */}
-                <div className="bg-white p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                <div className="bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
                   <div className="flex items-center mb-4">
                     <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
                       <Image src="/icons/sol-2-lgo4.png"
@@ -243,7 +205,7 @@ export default function OurSolution() {
                 </div>
 
                 {/* Right column - Teleconsultation Services */}
-                <div className="bg-white p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                <div className="bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
                   <div className="flex items-center mb-4">
                     <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
                       <Image src="/icons/sol-2-lgo4.png"
@@ -266,7 +228,7 @@ export default function OurSolution() {
 
           {/* Smart Queue Management */}
           <div className="group  hover:z-10">
-            <div className="bg-white border border-gray-200 p-4 rounded-lg flex items-center justify-between cursor-pointer hover:border-[#18A093] transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#18A093] group-hover:to-[#003366] md:w-[50%]">
+            <div className="bg-white border border-gray-200 p-4 rounded-lg flex items-center justify-between cursor-pointer hover:border-[#18A093] transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#18A093] group-hover:to-[#003366] md:w-[50%]" onClick={() => handleToggle('card_3')}>
               <div className="flex items-center">
                 <div className=" flex items-center justify-center  mr-4  group-hover:bg-opacity-20">
                   <Image src="/icons/sol-2-lgo1.png"
@@ -282,10 +244,10 @@ export default function OurSolution() {
               </svg>
             </div>
             {/* Hidden content that shows on hover */}
-            <div className="hidden group-hover:block overflow-hidden  w-full bg-white  p-4   z-10">
-              <div className="flex flex-row items-center   gap-4 sm:gap-6 lg:gap-8">
+            <div className={` ${activeCard === 'card_3' ? 'block' : 'hidden'} group-hover:block overflow-hidden w-full bg-white p-4 z-10`}>
+            <div className={`flex flex-row items-center   gap-4 sm:gap-6 lg:gap-8 ${activeCard === 'card_3' && ' specialty-cards-container'}`}>
                 {/* Left column - Smart Health Checkups */}
-                <div className="bg-white p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                <div className="bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
                   <div className="flex items-center mb-4">
                     <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
                       <Image src="/icons/sol-2-lgo4.png"
@@ -304,7 +266,7 @@ export default function OurSolution() {
                 </div>
 
                 {/* Right column - Teleconsultation Services */}
-                <div className="bg-white p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                <div className="bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
                   <div className="flex items-center mb-4">
                     <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
                       <Image src="/icons/sol-2-lgo4.png"
@@ -327,7 +289,7 @@ export default function OurSolution() {
 
           {/* Personalized Health Tracking */}
           <div className="group  hover:z-10">
-            <div className="bg-white border border-gray-200 p-4 rounded-lg flex items-center justify-between cursor-pointer hover:border-[#18A093] transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#18A093] group-hover:to-[#003366] md:w-[50%]">
+            <div className="bg-white border border-gray-200 p-4 rounded-lg flex items-center justify-between cursor-pointer hover:border-[#18A093] transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#18A093] group-hover:to-[#003366] md:w-[50%]" onClick={() => handleToggle('card_4')}>
               <div className="flex items-center">
                 <div className=" flex items-center justify-center  mr-4  group-hover:bg-opacity-20">
                   <Image src="/icons/sol-2-lgo1.png"
@@ -343,10 +305,10 @@ export default function OurSolution() {
               </svg>
             </div>
             {/* Hidden content that shows on hover */}
-            <div className={`hidden ${activeCard === 'tele-diagnostic' ? 'block' : ''} group-hover:block overflow-hidden w-full bg-white p-4 z-10`}>
-              <div className="flex flex-row items-center   gap-4 sm:gap-6 lg:gap-8">
+            <div className={` ${activeCard === 'card_4' ? 'block' : 'hidden'} group-hover:block overflow-hidden w-full bg-white p-4 z-10`}>
+              <div className={`flex flex-row items-center   gap-4 sm:gap-6 lg:gap-8 ${activeCard === 'card_4' && ' specialty-cards-container'}`}>
                 {/* Left column - Smart Health Checkups */}
-                <div className="bg-white p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                <div className="bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
                   <div className="flex items-center mb-4">
                     <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
                       <Image src="/icons/sol-2-lgo4.png"
@@ -365,7 +327,7 @@ export default function OurSolution() {
                 </div>
 
                 {/* Right column - Teleconsultation Services */}
-                <div className="bg-white p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                <div className="bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
                   <div className="flex items-center mb-4">
                     <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
                       <Image src="/icons/sol-2-lgo4.png"
@@ -388,7 +350,7 @@ export default function OurSolution() {
 
           {/* Preventive Health Programs */}
           <div className="group  hover:z-10">
-            <div className="bg-white border border-gray-200 p-4 rounded-lg flex items-center justify-between cursor-pointer hover:border-[#18A093] transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#18A093] group-hover:to-[#003366] md:w-[50%]">
+            <div className="bg-white border border-gray-200 p-4 rounded-lg flex items-center justify-between cursor-pointer hover:border-[#18A093] transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#18A093] group-hover:to-[#003366] md:w-[50%]" onClick={() => handleToggle('card_5')}>
               <div className="flex items-center">
                 <div className=" flex items-center justify-center  mr-4  group-hover:bg-opacity-20">
                   <Image src="/icons/sol-2-lgo1.png"
@@ -404,10 +366,10 @@ export default function OurSolution() {
               </svg>
             </div>
             {/* Hidden content that shows on hover */}
-            <div className={`hidden ${activeCard === 'tele-diagnostic' ? 'block' : ''} group-hover:block overflow-hidden w-full bg-white p-4 z-10`}>
+            <div className={` ${activeCard === 'card_5' ? 'block' : 'hidden'} group-hover:block overflow-hidden w-full bg-white p-4 z-10`}>
               <div className="flex flex-row items-center gap-6  specialty-cards-container  gap-4 sm:gap-6 lg:gap-8">
                 {/* Left column - Smart Health Checkups */}
-                <div className="bg-white p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                <div className="bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
                   <div className="flex items-center mb-4">
                     <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
                       <Image src="/icons/sol-2-lgo4.png"
@@ -426,7 +388,7 @@ export default function OurSolution() {
                 </div>
 
                 {/* Right column - Teleconsultation Services */}
-                <div className="bg-white p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                <div className="bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
                   <div className="flex items-center mb-4">
                     <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
                       <Image src="/icons/sol-2-lgo4.png"
@@ -443,7 +405,7 @@ export default function OurSolution() {
                     <li>Continuous virtual support for behavior change</li>
                   </ul>
                 </div>
-                <div className="bg-white p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                <div className="bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
                   <div className="flex items-center mb-4">
                     <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
                       <Image src="/icons/sol-2-lgo4.png"
@@ -466,7 +428,7 @@ export default function OurSolution() {
 
           {/* Targeted Health Interventions */}
           <div className="group  hover:z-10">
-            <div className="bg-white border border-gray-200 p-4 rounded-lg flex items-center justify-between cursor-pointer hover:border-[#18A093] transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#18A093] group-hover:to-[#003366] md:w-[50%]">
+            <div className="bg-white border border-gray-200 p-4 rounded-lg flex items-center justify-between cursor-pointer hover:border-[#18A093] transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#18A093] group-hover:to-[#003366] md:w-[50%]" onClick={() => handleToggle('card_6')}>
               <div className="flex items-center">
                 <div className=" flex items-center justify-center  mr-4  group-hover:bg-opacity-20">
                   <Image src="/icons/sol-2-lgo1.png"
@@ -482,10 +444,10 @@ export default function OurSolution() {
               </svg>
             </div>
             {/* Hidden content that shows on hover */}
-            <div className={`hidden ${activeCard === 'tele-diagnostic' ? 'block' : ''} group-hover:block overflow-hidden w-full bg-white p-4 z-10`}>
+            <div className={` ${activeCard === 'card_6' ? 'block' : 'hidden'} group-hover:block overflow-hidden w-full bg-white p-4 z-10`}>
               <div className="flex flex-row items-center gap-6  specialty-cards-container  gap-4 sm:gap-6 lg:gap-8">
                 {/* Left column - Smart Health Checkups */}
-                <div className="bg-white p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                <div className="bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
                   <div className="flex items-center mb-4">
                     <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
                       <Image src="/icons/sol-2-lgo4.png"
@@ -504,7 +466,7 @@ export default function OurSolution() {
                 </div>
 
                 {/* Right column - Teleconsultation Services */}
-                <div className="bg-white p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                <div className="bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
                   <div className="flex items-center mb-4">
                     <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
                       <Image src="/icons/sol-2-lgo4.png"
@@ -521,7 +483,7 @@ export default function OurSolution() {
                     <li>Partnerships for scaling preventive health drive</li>
                   </ul>
                 </div>
-                <div className="bg-white p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                <div className="bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
                   <div className="flex items-center mb-4">
                     <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
                       <Image src="/icons/sol-2-lgo4.png"
@@ -545,7 +507,7 @@ export default function OurSolution() {
       </div>
     </div>
 
-    
+
     {/* Departments Section */}
     <div className="relative bg-white overflow-hidden">
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
@@ -571,68 +533,68 @@ export default function OurSolution() {
             </div>
 
             <div className="hover:bg-[#0E7280] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center justify-between space-y-3 sm:space-y-4">
-              <Image src="/icons/sol-3-rdo.png" alt="Pediatrics" width={60} height={60} className='auto h-[70%]' />
+              <Image src="/icons/sol-3-rdo.png" alt="Pediatrics" width={60} height={60} className='w-auto h-[70%]' />
               <h3 className="text-base sm:text-lg text-gray-800 text-center group-hover:text-white h-[30%]">Radiology</h3>
             </div>
 
             <div className="hover:bg-[#0E7280] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center justify-between space-y-3 sm:space-y-4">
-              <Image src="/icons/sol-3-pul.png" alt="Pediatrics" width={74} height={80} className='auto h-[70%]' />
+              <Image src="/icons/sol-3-pul.png" alt="Pediatrics" width={74} height={80} className='w-auto h-[70%]' />
               <h3 className="text-base sm:text-lg text-gray-800 text-center group-hover:text-white h-[30%]">Pulmonary</h3>
             </div>
 
             <div className="hover:bg-[#0E7280] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center justify-between space-y-3 sm:space-y-4">
-              <Image src="/icons/sol-3-ent.png" alt="Pediatrics" width={60} height={60} className='auto h-[70%]' />
+              <Image src="/icons/sol-3-ent.png" alt="Pediatrics" width={60} height={60} className='w-auto h-[70%]' />
               <h3 className="text-base sm:text-lg text-gray-800 text-center group-hover:text-white h-[30%]">ENT</h3>
             </div>
 
             <div className="hover:bg-[#0E7280] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center justify-between space-y-3 sm:space-y-4">
-              <Image src="/icons/sol-3-crdio.png" alt="Pediatrics" width={60} height={60} className='auto h-[70%]' />
+              <Image src="/icons/sol-3-crdio.png" alt="Pediatrics" width={60} height={60} className='w-auto h-[70%]' />
               <h3 className="text-base sm:text-lg text-gray-800 text-center group-hover:text-white h-[30%]">Cardiology</h3>
             </div>
 
             <div className="hover:bg-[#0E7280] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center justify-between space-y-3 sm:space-y-4">
-              <Image src="/icons/sol-3-ortho.png" alt="Pediatrics" width={60} height={60} className='auto h-[70%]' />
+              <Image src="/icons/sol-3-ortho.png" alt="Pediatrics" width={60} height={60} className='w-auto h-[70%]' />
               <h3 className="text-base sm:text-lg text-gray-800 text-center group-hover:text-white h-[30%]">Orthopedics</h3>
             </div>
 
             <div className="hover:bg-[#0E7280] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center justify-between space-y-3 sm:space-y-4">
-              <Image src="/icons/sol-3-obs.png" alt="Pediatrics" width={60} height={60} className='auto h-[70%]' />
+              <Image src="/icons/sol-3-obs.png" alt="Pediatrics" width={60} height={60} className='w-auto h-[70%]' />
               <h3 className="text-base sm:text-lg text-gray-800 text-center group-hover:text-white h-[30%]">Obstetrics & Gynecology</h3>
             </div>
 
             {/* Duplicate set of cards for continuous scrolling */}
             <div className="hover:bg-[#0E7280] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center justify-between space-y-3 sm:space-y-4">
-              <Image src="/icons/sol-3-hemo.png" alt="Pediatrics" width={60} height={60} className='auto h-[70%]' />
+              <Image src="/icons/sol-3-hemo.png" alt="Pediatrics" width={60} height={60} className='w-auto h-[70%]' />
               <h3 className="text-base sm:text-lg text-gray-800 text-center group-hover:text-white h-[30%]">Haematology</h3>
             </div>
 
             <div className="hover:bg-[#0E7280] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center justify-between space-y-3 sm:space-y-4">
-              <Image src="/icons/sol-3-fmly.png" alt="Pediatrics" width={60} height={60} className='auto h-[70%]' />
+              <Image src="/icons/sol-3-fmly.png" alt="Pediatrics" width={60} height={60} className='w-auto h-[70%]' />
               <h3 className="text-base sm:text-lg text-gray-800 text-center group-hover:text-white h-[30%]">Family Medicine</h3>
             </div>
 
             <div className="hover:bg-[#0E7280] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center justify-between space-y-3 sm:space-y-4">
-              <Image src="/icons/sol-3-psy.png" alt="Pediatrics" width={60} height={60} className='auto h-[70%]' />
+              <Image src="/icons/sol-3-psy.png" alt="Pediatrics" width={60} height={60} className='w-auto h-[70%]' />
               <h3 className="text-base sm:text-lg text-gray-800 text-center group-hover:text-white h-[30%]">Psychology</h3>
             </div>
 
             <div className="hover:bg-[#0E7280] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center justify-between space-y-3 sm:space-y-4">
-              <Image src="/icons/sol-3-pedi.png" alt="Pediatrics" width={60} height={60} className='auto h-[70%]' />
+              <Image src="/icons/sol-3-pedi.png" alt="Pediatrics" width={60} height={60} className='w-auto h-[70%]' />
               <h3 className="text-base sm:text-lg text-gray-800 text-center group-hover:text-white h-[30%]">Pediatrics</h3>
             </div>
 
             <div className="hover:bg-[#0E7280] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center justify-between space-y-3 sm:space-y-4">
-              <Image src="/icons/sol-3-opt.png" alt="Pediatrics" width={60} height={60} className='auto h-[70%]' />
+              <Image src="/icons/sol-3-opt.png" alt="Pediatrics" width={60} height={60} className='w-auto h-[70%]' />
               <h3 className="text-base sm:text-lg text-gray-800 text-center group-hover:text-white h-[30%]">Ophthalmology</h3>
             </div>
 
             <div className="hover:bg-[#0E7280] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center justify-between space-y-3 sm:space-y-4">
-              <Image src="/icons/sol-3-ando.png" alt="Pediatrics" width={60} height={60} className='auto h-[70%]' />
+              <Image src="/icons/sol-3-ando.png" alt="Pediatrics" width={60} height={60} className='w-auto h-[70%]' />
               <h3 className="text-base sm:text-lg text-gray-800 text-center group-hover:text-white h-[30%]">Endocrinology</h3>
             </div>
 
             <div className="hover:bg-[#0E7280] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center justify-between space-y-3 sm:space-y-4">
-              <Image src="/icons/sol-3-nutri.png" alt="Pediatrics" width={60} height={60} className='auto h-[70%]' />
+              <Image src="/icons/sol-3-nutri.png" alt="Pediatrics" width={60} height={60} className='w-auto h-[70%]' />
               <h3 className="text-base sm:text-lg text-gray-800 text-center group-hover:text-white h-[30%]">Nutrition & Wellness</h3>
             </div>
           </div>

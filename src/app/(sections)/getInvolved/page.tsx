@@ -63,7 +63,7 @@ export default function GetInvolved() {
                     <span className="text-[#18A093]">Why Partner</span>{' '}
                     <span className="text-[#003366]">with Us</span>
                 </h2>
-                <p className="text-sm font-['Montserrat'] sm:text-base md:text-lg text-gray-600 mb-6">
+                <p className="text-[#555555] text-[18px] text-center sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
                     Bridge Healthcare addresses Indi&apos;s most pressing healthcare challenges with tech-enabled, point-of-care solutions.
                     Through Smart Healthcare Machines, Tele-Diagnostics, and local capacity building, your CSR support directly translates to
                     measurable health impact — where it&apos;s needed most.
@@ -75,38 +75,62 @@ export default function GetInvolved() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {/* Impact Card 1 */}
                     <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-                        <h4 className="text-lg font-semibold text-[#333333] mb-3 font-['Montserrat']">Improved Access to Quality Healthcare in Underserved Areas</h4>
-                        <p className="text-sm text-gray-600 font-['Montserrat']">Our solutions bring diagnostics, consultations, and treatment support to rural and remote regions.</p>
+                        <h4 className="text-lg sm:text-xl lg:text-[20px] font-[600] font-['Montserrat'] leading-[120%] sm:leading-[100%] tracking-[0%] align-middle text-[#1A1A1A] mb-3">Improved Access to Quality Healthcare in Underserved Areas</h4>
+                        <p className="font-['Montserrat'] text-sm sm:text-base md:text-lg text-gray-600">Our solutions bring diagnostics, consultations, and treatment support to rural and remote regions.</p>
                     </div>
 
                     {/* Impact Card 2 */}
                     <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-                        <h4 className="text-lg font-semibold text-[#333333] mb-3 font-['Montserrat']">Early Detection & Prevention of Chronic Diseases</h4>
-                        <p className="text-sm text-gray-600 font-['Montserrat']">We enable timely identification of high-risk conditions through real-time screenings and AI tagging.</p>
+                        <h4 className="text-lg sm:text-xl lg:text-[20px] font-[600] font-['Montserrat'] leading-[120%] sm:leading-[100%] tracking-[0%] align-middle text-[#1A1A1A] mb-3">Early Detection & Prevention of Chronic Diseases</h4>
+                        <p className="font-['Montserrat'] text-sm sm:text-base md:text-lg text-gray-600">We enable timely identification of high-risk conditions through real-time screenings and AI tagging.</p>
                     </div>
 
                     {/* Impact Card 3 */}
                     <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-                        <h4 className="text-lg font-semibold text-[#333333] font-['Montserrat'] mb-3">Digitization of Health Records for Continuity of Care</h4>
-                        <p className="text-sm text-gray-600 font-['Montserrat']">Every consultation creates an EHR, empowering patients with longitudinal, portable health data.</p>
+                        <h4 className="text-lg sm:text-xl lg:text-[20px] font-[600] font-['Montserrat'] leading-[120%] sm:leading-[100%] tracking-[0%] align-middle text-[#1A1A1A] mb-3">Digitization of Health Records for Continuity of Care</h4>
+                        <p className="font-['Montserrat'] text-sm sm:text-base md:text-lg text-gray-600">Every consultation creates an EHR, empowering patients with longitudinal, portable health data.</p>
                     </div>
 
                     {/* Impact Card 4 */}
                     <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-                        <h4 className="text-lg font-semibold text-[#333333] font-['Montserrat'] mb-3">Healthcare Equity for Women, Elderly & Low-Income Groups</h4>
-                        <p className="text-sm text-gray-600 font-['Montserrat']">Inclusive care delivery through community outreach, female health workers, and subsidized models.</p>
+                        <h4 className="text-lg sm:text-xl lg:text-[20px] font-[600] font-['Montserrat'] leading-[120%] sm:leading-[100%] tracking-[0%] align-middle text-[#1A1A1A] mb-3">Healthcare Equity for Women, Elderly & Low-Income Groups</h4>
+                        <p className="font-['Montserrat'] text-sm sm:text-base md:text-lg text-gray-600">Inclusive care delivery through community outreach, female health workers, and subsidized models.</p>
                     </div>
 
                     {/* Impact Card 5 */}
                     <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-                        <h4 className="text-lg font-semibold font-['Montserrat'] text-[#333333] mb-3">Community Employment & Skill Development</h4>
-                        <p className="text-sm text-gray-600 font-['Montserrat']">Training and employing local nurses and operators to run Smart Healthcare Machines.</p>
+                        <h4 className="text-lg sm:text-xl lg:text-[20px] font-[600] font-['Montserrat'] leading-[120%] sm:leading-[100%] tracking-[0%] align-middle text-[#1A1A1A] mb-3">Community Employment & Skill Development</h4>
+                        <p className="font-['Montserrat'] text-sm sm:text-base md:text-lg text-gray-600">Training and employing local nurses and operators to run Smart Healthcare Machines.</p>
                     </div>
 
                     {/* Impact Card 6 */}
                     <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-                        <h4 className="text-lg font-semibold font-['Montserrat'] text-[#333333] mb-3">Data-Driven Public Health Planning</h4>
-                        <p className="text-sm text-gray-600 font-['Montserrat']">Improved Access to Quality Healthcare in Underserved Areas Our solutions bring diagnostics, consultations, and treatment support to rural and remote regions.</p>
+                        <h4 className="text-lg sm:text-xl lg:text-[20px] font-[600] font-['Montserrat'] leading-[120%] sm:leading-[100%] tracking-[0%] align-middle text-[#1A1A1A] mb-3">Data-Driven Public Health Planning</h4>
+                        <p className="font-['Montserrat'] text-sm sm:text-base md:text-lg text-gray-600">Improved Access to Quality Healthcare in Underserved Areas Our solutions bring diagnostics, consultations, and treatment support to rural and remote regions.</p>
+                    </div>
+                </div>
+            </div>
+        </div >
+
+        {/*Powered by Government Schemes*/}
+        < div className="relative bg-white overflow-hidden" >
+            <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
+                <h2 className="text-[28px] xs:text-[30px] text-center sm:text-[34px] md:text-[38px] lg:text-[42px] font-[700] font-['Montserrat'] mb-4 sm:mb-8">
+                    <span className="text-[#18A093]">Powered by</span>{' '}
+                    <span className="text-[#003366]">Government Schemes</span>
+                </h2>
+                <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-2 xs:gap-3 sm:gap-4 md:gap-5">
+                    <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+                        <Image src="/icons/hm-gs-img1.png" alt="Gov. Schemes" width={200} height={200} className='w-30  md:w-45 h-auto object-contain' />
+                    </div>
+                    <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+                        <Image src="/icons/hm-gs-img2.png" alt="Gov. Schemes" width={200} height={200} className='w-30  md:w-45 h-auto object-contain' />
+                    </div>
+                    <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+                        <Image src="/icons/hm-gs-img3.png" alt="Gov. Schemes" width={200} height={200} className='w-30  md:w-45 h-auto object-contain' />
+                    </div>
+                    <div className="flex  items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+                        <Image src="/icons/hm-gs-img4.png" alt="Gov. Schemes" width={200} height={200} className='w-30  md:w-45 h-auto object-contain' />
                     </div>
                 </div>
             </div>
@@ -117,19 +141,19 @@ export default function GetInvolved() {
             <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
                 <h2 className="text-[28px] xs:text-[30px] text-center sm:text-[34px] md:text-[38px] lg:text-[42px] font-[700] font-['Montserrat'] mb-4 sm:mb-8">
                     <span className="text-[#18A093]">Our Work Aligned with</span>{' '}
-                    <span className="text-[#003366]">Global Goal</span>
+                    <span className="text-[#003366]">National Priorities</span>
                 </h2>
-                <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2 xs:gap-3 sm:gap-4 md:gap-5">
-                    <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+                <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-2 xs:gap-3 sm:gap-4 md:gap-5">
+                    <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-120 cursor-pointer">
                         <Image src="/icons/hm-nm-img1.png" alt="CSR & Impact Funds" width={200} height={200} className='w-16 sm:w-18 md:w-28 h-auto object-contain' />
                     </div>
-                    <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+                    <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-120 cursor-pointer">
                         <Image src="/icons/hm-nm-img2.png" alt="CSR & Impact Funds" width={200} height={200} className='w-16 sm:w-18 md:w-28 h-auto object-contain' />
                     </div>
-                    <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
-                        <Image src="/icons/hm-nm-img3.png" alt="CSR & Impact Funds" width={200} height={200} className='w-16 sm:w-18 md:w-28 h-auto object-contain' />
+                    <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-120 cursor-pointer">
+                        <Image src="/icons/hm-nm-img3.png" alt="CSR & Impact Funds" width={200} height={200} className='w-16 sm:w-30 md:w-40 h-auto object-contain' />
                     </div>
-                    <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+                    <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-120 cursor-pointer">
                         <Image src="/icons/hm-nm-img4.png" alt="CSR & Impact Funds" width={200} height={200} className='w-16 sm:w-18 md:w-28 h-auto object-contain' />
                     </div>
                 </div>
@@ -140,19 +164,19 @@ export default function GetInvolved() {
             <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
                 <h2 className="text-[28px] xs:text-[30px] text-center sm:text-[34px] md:text-[38px] lg:text-[42px] font-[700] font-['Montserrat'] mb-4 sm:mb-8">
                     <span className="text-[#18A093]">Our Work Aligned with</span>{' '}
-                    <span className="text-[#003366]">National Priorities</span>
+                    <span className="text-[#003366]">Global Goals</span>
                 </h2>
-                <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2 xs:gap-3 sm:gap-4 md:gap-5">
-                    <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+                <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-2 xs:gap-3 sm:gap-4 md:gap-5">
+                    <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-120 cursor-pointer">
                         <Image src="/icons/hm-un-img1.png" alt="CSR & Impact Funds" width={200} height={200} className='w-16 sm:w-18 md:w-28 h-auto object-contain' />
                     </div>
-                    <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+                    <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-120 cursor-pointer">
                         <Image src="/icons/hm-un-img2.png" alt="CSR & Impact Funds" width={200} height={200} className='w-16 sm:w-18 md:w-28 h-auto object-contain' />
                     </div>
-                    <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+                    <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-120 cursor-pointer">
                         <Image src="/icons/hm-un-img3.png" alt="CSR & Impact Funds" width={200} height={200} className='w-16 sm:w-18 md:w-28 h-auto object-contain' />
                     </div>
-                    <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+                    <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-120 cursor-pointer">
                         <Image src="/icons/hm-un-img4.png" alt="CSR & Impact Funds" width={200} height={200} className='w-16 sm:w-18 md:w-28 h-auto object-contain' />
                     </div>
                 </div>

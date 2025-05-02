@@ -297,12 +297,12 @@ export default function Animacare() {
                     />
                   </div>
                   <div className='md:h-[35%]'>
-                    <h3 className="text-xl font-semibold text-center text-[#333333]">Tele-Diagnostic & Tele-Consultation Centre</h3>
+                    <h3 className="text-xl font-['Montserrat'] text-center text-[#333333]">Tele-Diagnostic & Tele-Consultation Centre</h3>
                   </div>
                 </div>
                 <div className="mt-4 flex flex-col items-center">
-                  <h4 className="text-lg font-medium mb-3 text-[#333333]">TDTC Elements:</h4>
-                  <ul className="space-y-2 text-sm sm:text-base md:text-lg text-gray-600 flex flex-col items-center">
+                  <h4 className="text-lg font-medium font-['Montserrat'] mb-3 text-[#333333]">TDTC Elements:</h4>
+                  <ul className="space-y-2 font-['Montserrat'] text-sm sm:text-base md:text-lg text-gray-600 flex flex-col items-center">
                     <li>Smart Healthcare Machine</li>
                     <li>2 Nurses, 1 Supervisor</li>
                     <li>Clinic Inventory</li>
@@ -324,12 +324,12 @@ export default function Animacare() {
                     />
                   </div>
                   <div className='h-[35%]'>
-                    <h3 className="text-xl font-semibold text-[#333333]">Mobile Tele-Clinic Unit</h3>
+                    <h3 className="text-xl font-['Montserrat'] text-[#333333]">Mobile Tele-Clinic Unit</h3>
                   </div>
                 </div>
                 <div className="mt-4 flex flex-col items-center">
-                  <h4 className="text-lg font-medium mb-3 text-[#333333]">MTCU Elements:</h4>
-                  <ul className="space-y-2 text-sm sm:text-base md:text-lg text-gray-600 flex flex-col items-center">
+                  <h4 className="text-lg font-medium mb-3 font-['Montserrat'] text-[#333333]">MTCU Elements:</h4>
+                  <ul className="space-y-2 font-['Montserrat'] text-sm sm:text-base md:text-lg text-gray-600 flex flex-col items-center">
                     <li>Smart Healthcare Machine</li>
                     <li>2 Nurses, 1 Driver</li>
                     <li>Clinic Inventory</li>
@@ -351,39 +351,6 @@ export default function Animacare() {
         </div>
       </div>
     </div>
-
-
-
-    {/* <div className="relative overflow-hidden bg-white">
-      <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-        <div className="grid md:grid-cols-2 gap-8 items-center">
-          <div className="space-y-6">
-            <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
-              <span className="text-[#17A7AB]">Animacare</span>{' '}
-              <span className="text-[#003366]">Initiative</span>
-            </h2>
-            <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium">
-              Revolutionizing Rural Healthcare with Tele-Diagnostic Solutions
-            </p>
-            <p className="text-sm sm:text-base md:text-lg text-gray-600">
-              Animacare is redefining rural healthcare through on-ground diagnostics and real-time tele-consultation.
-              To ensure that even the most geographically isolated communities have access to primary and preventive care, our innovatively designed Tele-Diagnostic Solutions combine Smart Healthcare Machines with mobile Tele-Clinic Units—delivering timely checkups, virtual doctor consultations, and early disease detection right at the doorstep.
-
-            </p>
-          </div>
-
-          <div className="relative flex items-center justify-center">
-            <Image
-              src="/icons/anim-3-img2.png"
-              alt="Tele-Consultation"
-              width={150}
-              height={100}
-              className="h-full w-auto rounded-lg "
-            />
-          </div>
-        </div>
-      </div>
-    </div> */}
 
     {/* Animacare Initiative Section */}
     <div className="relative overflow-hidden bg-white">
@@ -464,7 +431,7 @@ export default function Animacare() {
               />
               <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white touch-hover:text-white transition-colors duration-300">Tele-Diagnostic & Tele-Consultation Centre</h3>
             </div>
-            <ul className="text-gray-600 group-hover:text-white touch-hover:text-white transition-colors duration-300">
+            <ul className="text-gray-600 font-['Montserrat'] group-hover:text-white touch-hover:text-white transition-colors duration-300">
               <li className="flex items-start gap-2 text-sm sm:text-base md:text-lg">
                 <span className="w-2 h-2 bg-[#17A7AB] group-hover:bg-white touch-hover:bg-white rounded-full mt-[0.5em]"></span>
                 <span>Installed at district sub-divisions, serving as the main center for healthcare services.</span>
@@ -495,7 +462,7 @@ export default function Animacare() {
               />
               <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white touch-hover:text-white transition-colors duration-300">Mobile Tele-Clinic Unit</h3>
             </div>
-            <ul className="text-gray-600 group-hover:text-white touch-hover:text-white transition-colors duration-300">
+            <ul className="font-['Montserrat'] text-gray-600 group-hover:text-white touch-hover:text-white transition-colors duration-300">
               <li className="flex items-start gap-2 text-sm sm:text-base md:text-lg">
                 <span className="w-2 h-2 bg-[#17A7AB] group-hover:bg-white touch-hover:bg-white rounded-full mt-[0.5em]"></span>
                 <span>Each TDTC is supported by 1 MTCUs per 300 sq. km area.</span>
@@ -526,7 +493,7 @@ export default function Animacare() {
               />
               <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white touch-hover:text-white transition-colors duration-300">Seamless Referral & Follow-up System</h3>
             </div>
-            <ul className="text-gray-600 group-hover:text-white touch-hover:text-white transition-colors duration-300">
+            <ul className="font-['Montserrat'] text-gray-600 group-hover:text-white touch-hover:text-white transition-colors duration-300">
               <li className="flex items-start gap-2 text-sm sm:text-base md:text-lg">
                 <span className="w-2 h-2 bg-[#17A7AB] group-hover:bg-white touch-hover:bg-white rounded-full mt-[0.5em]"></span>
                 <span>Patients needing further treatment are referred to the nearest TDTC or partnered hospitals.</span>
@@ -537,20 +504,33 @@ export default function Animacare() {
               </li>
             </ul>
           </div>
-
-          {/* Right Column - Network Flow Diagram */}
-          {/* <div className="relative  w-full h-full flex items-center justify-center">
-            <Image
-              src="/icons/anim-5-img.png"
-              alt="TDTC Center"
-              width={400}
-              height={400}
-              className="w-[80%] h-[80%]"
-            />
-          </div> */}
         </div>
       </div>
     </div>
+
+    {/*Powered by Government Schemes*/}
+    < div className="relative bg-white overflow-hidden" >
+      <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
+        <h2 className="text-[28px] xs:text-[30px] text-center sm:text-[34px] md:text-[38px] lg:text-[42px] font-[700] font-['Montserrat'] mb-4 sm:mb-8">
+          <span className="text-[#18A093]">Powered by</span>{' '}
+          <span className="text-[#003366]">Government Schemes</span>
+        </h2>
+        <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-2 xs:gap-3 sm:gap-4 md:gap-5">
+          <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+            <Image src="/icons/hm-gs-img1.png" alt="Gov. Schemes" width={200} height={200} className='w-30  md:w-45 h-auto object-contain' />
+          </div>
+          <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+            <Image src="/icons/hm-gs-img2.png" alt="Gov. Schemes" width={200} height={200} className='w-30  md:w-45 h-auto object-contain' />
+          </div>
+          <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+            <Image src="/icons/hm-gs-img3.png" alt="Gov. Schemes" width={200} height={200} className='w-30  md:w-45 h-auto object-contain' />
+          </div>
+          <div className="flex  items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+            <Image src="/icons/hm-gs-img4.png" alt="Gov. Schemes" width={200} height={200} className='w-30  md:w-45 h-auto object-contain' />
+          </div>
+        </div>
+      </div>
+    </div >
 
     {/* Social Impacts & Sustainability Section */}
     <div className="relative overflow-hidden bg-white">

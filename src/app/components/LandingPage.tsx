@@ -526,118 +526,6 @@ const LandingPage = () => {
         </div>
       </div>
 
-      {/* <div className="relative bg-white py-16 overflow-hidden">
-        <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22">
-          <h2 className="text-[32px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-3 sm:mb-4 text-center">
-            <span className="text-[#18A093]">Addressing</span>{' '}
-            <span className="text-[#003366]">Challenges</span>
-          </h2>
-
-          <div className="relative flex flex-col items-center justify-center">
-            <div className="flex items-center justify-center overflow-hidden w-[90%]">
-              <button
-                onClick={() => setCardNum(prevPage => prevPage === 1 ? 2 : prevPage - 1)}
-                className="absolute left-0 z-10 p-2 rounded-full bg-white shadow-lg hover:bg-gray-100 transition-all duration-300"
-              >
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M15 19l-7-7 7-7" stroke="#003366" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-
-              {cardNum === 1 && <div className="flex-1 flex justify-center gap-6">
-                <div className="relative group overflow-hidden rounded-lg w-full max-w-[600px] aspect-[4/3]">
-                  <Image
-                    src="/icons/hm-4-img1.1.jpeg"
-                    alt="Sewer Lines"
-                    width={600}
-                    height={450}
-                    className="object-cover w-full h-full"
-                  />
-                  <div className="absolute bottom-0  bg-gradient-to-t from-black/90 to-black/10 flex flex-col justify-start p-8 h-[45%]">
-                    <h3 className="text-2xl sm:text-[26px] font-['Montserrat'] font-bold text-white mb-4 text-center">Limited Access to Quality Care</h3>
-                    <p className="text-white/90 text-sm font-['Montserrat'] sm:text-[16px] text-center">
-                      Quality healthcare remains inaccessible for millions — from remote rural regions to premium residential areas lacking sufficient medical infrastructure.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="relative group overflow-hidden rounded-lg w-full max-w-[600px] aspect-[4/3]">
-                  <Image
-                    src="/icons/hm-4-img4.jpg"
-                    alt="Stormwater Drains"
-                    width={600}
-                    height={450}
-                    className="object-cover w-full h-full"
-                  />
-                  <div className="absolute bottom-0  bg-gradient-to-t from-black/100 to-black/10 flex flex-col justify-start p-8">
-                    <h3 className="text-2xl sm:text-[26px] font-['Montserrat'] font-bold text-white mb-4 text-center">Gaps in Real-Time Tele-Diagnostics</h3>
-                    <p className="text-white/90 text-sm font-['Montserrat'] sm:text-[16px] text-center">
-                      While video consultations are common, they often lack real-time diagnostic data, leading to treatment based on assumptions rather than precision.
-
-                    </p>
-                  </div>
-
-                </div>
-              </div>}
-
-              {cardNum === 2 && <div className="flex-1 flex justify-center gap-6">
-                <div className="relative group overflow-hidden rounded-lg w-full max-w-[600px] aspect-[4/3]">
-                  <Image
-                    src="/icons/hm-4-img2.1.webp"
-                    alt="Sewer Lines"
-                    width={600}
-                    height={450}
-                    className="object-cover w-full h-full"
-                  />
-                  <div className="absolute bottom-0  bg-gradient-to-t from-black/90 to-black/10 flex flex-col justify-start p-8">
-                    <h3 className="text-2xl sm:text-[26px] font-['Montserrat'] font-bold text-white mb-4 text-center">Neglect of Preventive & Chronic Care</h3>
-                    <p className="text-white/90 text-sm font-['Montserrat'] sm:text-[16px] text-center">
-                      Healthcare today still focuses more on treatment than prevention — missing early detection, wellness, and chronic care opportunities.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="relative group overflow-hidden rounded-lg w-full max-w-[600px] aspect-[4/3]">
-                  <Image
-                    src="/icons/hm-4-img2.1.jpg"
-                    alt="Stormwater Drains"
-                    width={600}
-                    height={450}
-                    className="object-cover w-full h-full"
-                  />
-                  <div className="absolute bottom-0  bg-gradient-to-t from-black/90 to-black/10 flex flex-col justify-start p-8">
-                    <h3 className="text-2xl sm:text-[26px] font-['Montserrat'] font-bold text-white mb-4 text-center">Fragmented Care & Missed Follow-Ups</h3>
-                    <p className="text-white/90 text-sm font-['Montserrat'] sm:text-[16px] text-center">
-                      Disconnected health records and fragmented follow-ups lead to inefficiencies for both patients and healthcare providers.
-                    </p>
-                  </div>
-
-                </div>
-              </div>}
-
-              <button
-                onClick={() => setCardNum(prevPage => prevPage === 2 ? 1 : prevPage + 1)}
-                className="absolute right-0 z-10 p-2 rounded-full bg-white shadow-lg hover:bg-gray-100 transition-all duration-300"
-              >
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M9 5l7 7-7 7" stroke="#003366" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-            </div>
-
-            <div className="flex justify-center gap-2 mt-6">
-              {[1, 2].map((num) => (
-                <button
-                  key={num}
-                  onClick={() => setCardNum(num)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${cardNum === num ? 'bg-[#003366] w-4' : 'bg-gray-300'}`}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-      </div> */}
-
       {/* Our Key Services Section */}
       <div className="relative bg-white overflow-hidden">
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
@@ -645,16 +533,7 @@ const LandingPage = () => {
             <span className="text-[#18A093]">Our</span>{' '}
             <span className="text-[#003366]">Solutions</span>
           </h2>
-          {/* <p className="text-[#555555] text-[18px] sm:text-[22px] text-center md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
-            The Smart Healthcare Machine improves healthcare with data-driven accessibility and efficiency.
-          </p> */}
-          {/* <div className="grid grid-cols-1 lg:grid-cols-2"> */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6 lg:gap-8">
-            {/* Service Cards */}
-            {/* <div className="grid grid-cols-1 sm:grid-cols-2 gap-6"> */}
-            {/* Health Checkup */}
-
-
             <div
               className={`bg-white rounded-lg overflow-hidden border-1 border-gray-300 card-hover group hover:bg-[#0E7280] transition-all duration-300 cursor-pointer flex flex-col items-center justify-around h-[250px] md:h-[300px] lg:h-[350px] ${activeCard === 'phase1' ? 'touch-hover' : ''}`}
               onClick={(e) => handleToggle(e, 'phase1')}
@@ -846,19 +725,6 @@ const LandingPage = () => {
                 </ul>
               </div>
             </div>
-
-            {/* </div> */}
-
-            {/* Image Section */}
-            {/* <div className="rflex items-center justify-center w-full h-full">
-              <Image
-                src="/icons/hm-anim.gif"
-                alt="Healthcare Services"
-                width={100}
-                height={100}
-                className="w-[98%] h-[98%]"
-              />
-            </div> */}
           </div>
         </div>
       </div >
@@ -1064,15 +930,6 @@ const LandingPage = () => {
                   </div>
                 </div>
               </div>
-
-              {/* <div className="ml-auto hidden group-hover:block">
-                <div className='flex flex-row items-center'>
-                  <Link href="/ourProducts" className="text-[#003366]">Know More</Link>
-                  <svg className="w-5 h-5 text-[#003366]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </div> */}
             </div>
           </div>
 
@@ -1415,24 +1272,48 @@ const LandingPage = () => {
         </div>
       </div >
 
+      {/*Powered by Government Schemes*/}
+      < div className="relative bg-white overflow-hidden" >
+            <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
+                <h2 className="text-[28px] xs:text-[30px] text-center sm:text-[34px] md:text-[38px] lg:text-[42px] font-[700] font-['Montserrat'] mb-4 sm:mb-8">
+                    <span className="text-[#18A093]">Powered by</span>{' '}
+                    <span className="text-[#003366]">Government Schemes</span>
+                </h2>
+                <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-2 xs:gap-3 sm:gap-4 md:gap-5">
+                    <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+                        <Image src="/icons/hm-gs-img1.png" alt="Gov. Schemes" width={200} height={200} className='w-30  md:w-45 h-auto object-contain' />
+                    </div>
+                    <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+                        <Image src="/icons/hm-gs-img2.png" alt="Gov. Schemes" width={200} height={200} className='w-30  md:w-45 h-auto object-contain' />
+                    </div>
+                    <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+                        <Image src="/icons/hm-gs-img3.png" alt="Gov. Schemes" width={200} height={200} className='w-30  md:w-45 h-auto object-contain' />
+                    </div>
+                    <div className="flex  items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+                        <Image src="/icons/hm-gs-img4.png" alt="Gov. Schemes" width={200} height={200} className='w-30  md:w-45 h-auto object-contain' />
+                    </div>
+                </div>
+            </div>
+        </div >
+
       {/*Aligned with Global & National Priorities*/}
       < div className="relative bg-white overflow-hidden" >
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
           <h2 className="text-[28px] xs:text-[30px] text-center sm:text-[34px] md:text-[38px] lg:text-[42px] font-[700] font-['Montserrat'] mb-4 sm:mb-8">
-            <span className="text-[#18A093]">Our Work Aligned</span>{' '}
-            <span className="text-[#003366]">with Global Goal</span>
+            <span className="text-[#18A093]">Our Work Aligned with</span>{' '}
+            <span className="text-[#003366]">National Priorities</span>
           </h2>
           <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-2 xs:gap-3 sm:gap-4 md:gap-5">
-            <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+            <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-120 cursor-pointer">
               <Image src="/icons/hm-nm-img1.png" alt="CSR & Impact Funds" width={200} height={200} className='w-16 sm:w-18 md:w-28 h-auto object-contain' />
             </div>
-            <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+            <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-120 cursor-pointer">
               <Image src="/icons/hm-nm-img2.png" alt="CSR & Impact Funds" width={200} height={200} className='w-16 sm:w-18 md:w-28 h-auto object-contain' />
             </div>
-            <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
-              <Image src="/icons/hm-nm-img3.png" alt="CSR & Impact Funds" width={200} height={200} className='w-16 sm:w-18 md:w-28 h-auto object-contain' />
+            <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-120 cursor-pointer">
+              <Image src="/icons/hm-nm-img3.png" alt="CSR & Impact Funds" width={200} height={200} className='w-16 sm:w-30 md:w-40 h-auto object-contain' />
             </div>
-            <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+            <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-120 cursor-pointer">
               <Image src="/icons/hm-nm-img4.png" alt="CSR & Impact Funds" width={200} height={200} className='w-16 sm:w-18 md:w-28 h-auto object-contain' />
             </div>
           </div>
@@ -1443,19 +1324,19 @@ const LandingPage = () => {
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
           <h2 className="text-[28px] xs:text-[30px] text-center sm:text-[34px] md:text-[38px] lg:text-[42px] font-[700] font-['Montserrat'] mb-4 sm:mb-8">
             <span className="text-[#18A093]">Our Work Aligned with</span>{' '}
-            <span className="text-[#003366]">National Priorities</span>
+            <span className="text-[#003366]">Global Goals</span>
           </h2>
           <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-2 xs:gap-3 sm:gap-4 md:gap-5">
-            <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+            <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-120 cursor-pointer">
               <Image src="/icons/hm-un-img1.png" alt="CSR & Impact Funds" width={200} height={200} className='w-16 sm:w-18 md:w-28 h-auto object-contain' />
             </div>
-            <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+            <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-120 cursor-pointer">
               <Image src="/icons/hm-un-img2.png" alt="CSR & Impact Funds" width={200} height={200} className='w-16 sm:w-18 md:w-28 h-auto object-contain' />
             </div>
-            <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+            <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-120 cursor-pointer">
               <Image src="/icons/hm-un-img3.png" alt="CSR & Impact Funds" width={200} height={200} className='w-16 sm:w-18 md:w-28 h-auto object-contain' />
             </div>
-            <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+            <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-120 cursor-pointer">
               <Image src="/icons/hm-un-img4.png" alt="CSR & Impact Funds" width={200} height={200} className='w-16 sm:w-18 md:w-28 h-auto object-contain' />
             </div>
           </div>

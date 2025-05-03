@@ -100,17 +100,6 @@ export default function KnowUsBetter() {
               To empower individuals and healthcare providers through advanced Tele-Diagnostic and Smart Healthcare solutions, ensuring real-time diagnostics, seamless tele-consultations, and connected care that improves health outcomes and transforms lives.
             </p>
           </div>
-
-          {/* Image Column */}
-          {/* <div className="w-full md:w-1/2 flex items-center justify-center">
-            <Image
-              src="/icons/hm-5-img.png"
-              alt="Healthcare professionals using Bridge Healthcare platform"
-              className="object-cover rounded-lg shadow-xl w-full md:w-full lg:w-[550px]"
-              width={200}
-              height={200}
-            />
-          </div> */}
         </div>
       </div>
     </div>
@@ -370,10 +359,6 @@ export default function KnowUsBetter() {
           <span className="text-[#18A093]">FA</span>
           <span className="text-[#003366]">Q&apos;s</span>
         </h2>
-        {/* <p className="text-base sm:text-lg lg:text-[20px] text-[#555555] font-['Montserrat'] font-medium mb-8 sm:mb-10 lg:mb-12">
-          Learn how our solutions bring quality healthcare closer to those who need it most.
-        </p> */}
-
         <div className="space-y-3 sm:space-y-4 lg:space-y-6">
           {/* FAQ Items */}
           <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq1' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>

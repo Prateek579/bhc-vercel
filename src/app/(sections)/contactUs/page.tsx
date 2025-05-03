@@ -67,19 +67,6 @@ export default function ContactUs() {
               </div>
             </div>
           </div>
-
-          {/* POC Card
-          <div className="bg-white p-4 sm:p-5 lg:p-6 rounded-lg border-1 border-gray-300 transition-all duration-300 hover:bg-gradient-to-r hover:from-[rgba(24,160,147,0.7)] hover:via-[rgba(18,131,135,0.7)] hover:via-[rgba(11,100,122,0.7)] hover:via-[rgba(6,80,114,0.7)] hover:to-[rgba(0,51,102,0.7)] group">
-            <div className="flex flex-col items-start space-y-3 sm:space-y-4">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-18 lg:h-20 flex items-center justify-center rounded-full">
-                <Image src="/icons/cont-2-lgo4.png" alt="POC" width={60} height={60} className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
-              </div>
-              <div>
-                <h3 className="text-base sm:text-lg lg:text-xl font-[600] text-[#525252] group-hover:text-white mb-1 sm:mb-2 font-['Font family'] leading-[100%] tracking-[0%] align-middle">POC</h3>
-                <p className="text-sm sm:text-base lg:text-lg text-gray-600 group-hover:text-white">876-256-876</p>
-              </div>
-            </div>
-          </div> */}
         </div>
       </div>
     </div>

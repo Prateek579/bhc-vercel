@@ -63,8 +63,109 @@ export default function OurProducts() {
       </div>
     </div>
 
+    {/* Screen View */}
+    <div className="md:hidden relative bg-[#18A093] px-3 sm:px-15 py-10">
+      <div
+        className="absolute inset-0 "
+        style={{
+          backgroundImage: 'url("/icons/hm-shm.png")',
+          backgroundSize: '80%',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          opacity: 0.8
+        }}
+      />
+      <div className="space-y-6 relative z-10 ">
+        {/* Vitals Section */}
+        <div className=" rounded-lg border-1 border-gray-300 p-4  transition-all duration-300">
+          <h3 className="text-white text-xl font-semibold mb-4">Vitals</h3>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="flex items-center gap-2 text-white font-['Montserrat']">
+              <Image src="/icons/hm-6-pr.png" alt="Pulse Rate" width={20} height={20} />
+              <span>Pulse Rate</span>
+            </div>
+            <div className="flex items-center gap-2 text-white font-['Montserrat']">
+              <Image src="/icons/hm-6-tem.png" alt="Temperature" width={20} height={20} />
+              <span>Temperature</span>
+            </div>
+            <div className="flex items-center gap-2 text-white font-['Montserrat']">
+              <Image src="/icons/hm-6-spo.png" alt="SpO2" width={20} height={20} />
+              <span>SpO2</span>
+            </div>
+            <div className="flex items-center gap-2 text-white font-['Montserrat']">
+              <Image src="/icons/hm-6-pp.png" alt="Blood Pressure" width={20} height={20} />
+              <span>Blood Pressure</span>
+            </div>
+            <div className="flex items-center gap-2 text-white font-['Montserrat']">
+              <Image src="/icons/hm-6-bmi.png" alt="BMI" width={20} height={20} />
+              <span>BMI</span>
+            </div>
+            <div className="flex items-center gap-2 text-white font-['Montserrat']">
+              <Image src="/icons/hm-6-hrt.png" alt="Heart Rate" width={20} height={20} />
+              <span>Heart Rate</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Blood Tests Section */}
+        <div className=" rounded-lg border-1 border-white p-4  transition-all duration-300">
+          <h3 className="text-white text-xl font-semibold mb-4">Blood Tests</h3>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="flex items-center gap-2 text-white font-['Montserrat']">
+              <Image src="/icons/hm-6-hem.png" alt="Hemoglobin" width={20} height={20} />
+              <span>Hemoglobin</span>
+            </div>
+            <div className="flex items-center gap-2 text-white font-['Montserrat']">
+              <Image src="/icons/hm-6-lp.png" alt="Lipid Profile" width={20} height={20} />
+              <span>Lipid Profile</span>
+            </div>
+            <div className="flex items-center gap-2 text-white font-['Montserrat']">
+              <Image src="/icons/hm-6-bs.png" alt="Blood Sugar" width={20} height={20} />
+              <span>Blood Sugar</span>
+            </div>
+            <div className="flex items-center gap-2 text-white font-['Montserrat']">
+              <Image src="/icons/hm-6-rft.png" alt="Renal Function" width={20} height={20} />
+              <span>Renal Function</span>
+            </div>
+            <div className="flex items-center gap-2 text-white font-['Montserrat']">
+              <Image src="/icons/hm-6-hb.png" alt="HbA1c" width={20} height={20} />
+              <span>HbA1c</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Digital Stethoscope Section */}
+        <div className="   rounded-lg border-1 border-white p-4  transition-all duration-300">
+          <h3 className="text-white text-xl font-semibold mb-4">Digital Stethoscope</h3>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="flex items-center gap-2 text-white font-['Montserrat']">
+              <span>Live Stethoscope</span>
+            </div>
+            <div className="flex items-center gap-2 text-white font-['Montserrat']">
+              <span>Aortic Sound</span>
+            </div>
+            <div className="flex items-center gap-2 text-white font-['Montserrat']">
+              <span>Mitral Sound</span>
+            </div>
+            <div className="flex items-center gap-2 text-white font-['Montserrat']">
+              <span>Pulmonic Sound</span>
+            </div>
+            <div className="flex items-center gap-2 text-white font-['Montserrat']">
+              <span>Tricuspid Sound</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div className="hidden md:block relative bg-white overflow-hidden">
+      <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
+        <Image src="/icons/prd-ph.jpg" alt='Prduct Image' width={1000} height={1000} className='w-full h-auto' />
+      </div>
+    </div>
+
     {/* Our Products Section */}
-    <div className="relative bg-white overflow-hidden">
+    <div className="hidden md:block relative bg-white overflow-hidden">
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
         <h2 className="text-[32px] text-center sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
           <span className="text-[#18A093]">Smart Healthcare</span>{' '}

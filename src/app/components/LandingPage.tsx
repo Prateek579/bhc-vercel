@@ -5,7 +5,8 @@ import Image from 'next/image';
 import Partner from './Partner';
 import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import type { Swiper as SwiperType } from 'swiper'
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -121,6 +122,14 @@ const LandingPage = () => {
         e.currentTarget.classList.add('touch-hover');
         setActiveCard(cardId);
       }
+    }
+  };
+
+  const swiperRef = useRef<SwiperType | null>(null);
+
+  const goToSlide = (index: number) => {
+    if (swiperRef.current) {
+      swiperRef.current.slideToLoop(index); // handles loop mode correctly
     }
   };
 
@@ -729,6 +738,93 @@ const LandingPage = () => {
         </div>
       </div >
 
+      <div className="relative bg-white overflow-hidden" >
+        <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
+          <div className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
+            <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] text-center mb-3 sm:mb-4">
+              <span className="text-[#18A093]">Our</span>{' '}
+              <span className="text-[#003366]">Products</span>
+            </h2>
+            {/* Slide Control Buttons */}
+            <div className="flex justify-center items-center gap-4 mb-6 ">
+              <div className="border-2 md:w-[280px] border-gray-200 group hover:cursor-pointer flex items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 p-2 sm:p-3 md:p-3 lg:p-4 rounded-lg transition-all duration-300 group hover:bg-[#0E7280]" onClick={() => goToSlide(0)}>
+                <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
+                  <Image src="/icons/prd-2-lgo1.png" alt="Smart Healthcare Machine" width={32} height={32} className="w-full h-full" />
+                </div>
+                <p className="text-[16px] sm:text-[18px] md:text-[20px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-gray-700 font-['Montserrat'] group-hover:text-white">SHM App</p>
+                <div className="ml-auto hidden group-hover:block">
+                  <div className='flex flex-row items-center'>
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div className="border-2 md:w-[280px] border-gray-200 group hover:cursor-pointer flex items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 p-2 sm:p-3 md:p-3 lg:p-4 rounded-lg transition-all duration-300 group hover:bg-[#0E7280]" onClick={() => goToSlide(1)}>
+                <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
+                  <Image src="/icons/prd-2-lgo1.png" alt="Doctor App" width={32} height={32} />
+                </div>
+                <p className="text-[16px] sm:text-[18px] md:text-[20px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-gray-700 font-['Montserrat'] group-hover:text-white">Nurse App</p>
+                <div className="ml-auto hidden group-hover:block ">
+                  <div className='flex flex-row items-center'>
+                    <svg className="w-5 h-5 text-[#003366] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div className="border-2 md:w-[280px] border-gray-200 group hover:cursor-pointer flex items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 p-2 sm:p-3 md:p-3 lg:p-4 rounded-lg transition-all duration-300  group hover:bg-[#0E7280]" onClick={() => goToSlide(2)}>
+                <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
+                  <Image src="/icons/prd-2-log2.png" alt="Patient App" width={32} height={32} />
+                </div>
+                <p className="text-[16px] sm:text-[18px] md:text-[20px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-gray-700 font-['Montserrat'] group-hover:text-white">Doctor App</p>
+                <div className="ml-auto hidden group-hover:block">
+                  <div className='flex flex-row items-center'>
+                    <svg className="w-5 h-5 text-[#003366] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative w-full  py-2">
+              <button className="custom-prev hidden"></button>
+              <button className="custom-next hidden"></button>
+
+              <Swiper
+                autoHeight={true}
+                modules={[Navigation, Pagination, Autoplay]}
+                onSwiper={(swiper) => (swiperRef.current = swiper)}
+                autoplay={{ delay: 3000, disableOnInteraction: false }}
+                pagination={{ clickable: true, el: '.custom-pagination' }}
+                slidesPerView={1}
+                loop
+
+              >
+                {/* Card 1 */}
+                <SwiperSlide>
+                  <Image src="/icons/hm-6-sl1.svg" alt='doctor' width={500} height={500} className='w-full h-full' />
+                </SwiperSlide>
+
+                {/* Card 2 */}
+                <SwiperSlide>
+                  <Image src="/icons/hm-6-sl2.svg" alt='doctor' width={500} height={500} className='w-full h-full' />
+                </SwiperSlide>
+
+                {/* Card 3 */}
+                <SwiperSlide>
+                  <Image src="/icons/hm-6-sl3.svg" alt='doctor' width={500} height={500} className='w-full h-full' />
+                </SwiperSlide>
+                <div className=" custom-pagination flex justify-center gap-2 mt-6"></div>
+              </Swiper>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
       {/* Our Products Section */}
       < div className="relative bg-white overflow-hidden" >
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
@@ -1274,27 +1370,27 @@ const LandingPage = () => {
 
       {/*Powered by Government Schemes*/}
       < div className="relative bg-white overflow-hidden" >
-            <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-                <h2 className="text-[28px] xs:text-[30px] text-center sm:text-[34px] md:text-[38px] lg:text-[42px] font-[700] font-['Montserrat'] mb-4 sm:mb-8">
-                    <span className="text-[#18A093]">Powered by</span>{' '}
-                    <span className="text-[#003366]">Government Schemes</span>
-                </h2>
-                <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-2 xs:gap-3 sm:gap-4 md:gap-5">
-                    <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
-                        <Image src="/icons/hm-gs-img1.png" alt="Gov. Schemes" width={200} height={200} className='w-30  md:w-45 h-auto object-contain' />
-                    </div>
-                    <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
-                        <Image src="/icons/hm-gs-img2.png" alt="Gov. Schemes" width={200} height={200} className='w-30  md:w-45 h-auto object-contain' />
-                    </div>
-                    <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
-                        <Image src="/icons/hm-gs-img3.png" alt="Gov. Schemes" width={200} height={200} className='w-30  md:w-45 h-auto object-contain' />
-                    </div>
-                    <div className="flex  items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
-                        <Image src="/icons/hm-gs-img4.png" alt="Gov. Schemes" width={200} height={200} className='w-30  md:w-45 h-auto object-contain' />
-                    </div>
-                </div>
+        <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
+          <h2 className="text-[28px] xs:text-[30px] text-center sm:text-[34px] md:text-[38px] lg:text-[42px] font-[700] font-['Montserrat'] mb-4 sm:mb-8">
+            <span className="text-[#18A093]">Powered by</span>{' '}
+            <span className="text-[#003366]">Government Schemes</span>
+          </h2>
+          <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-2 xs:gap-3 sm:gap-4 md:gap-5">
+            <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+              <Image src="/icons/hm-gs-img1.png" alt="Gov. Schemes" width={200} height={200} className='w-30  md:w-45 h-auto object-contain' />
             </div>
-        </div >
+            <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+              <Image src="/icons/hm-gs-img2.png" alt="Gov. Schemes" width={200} height={200} className='w-30  md:w-45 h-auto object-contain' />
+            </div>
+            <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+              <Image src="/icons/hm-gs-img3.png" alt="Gov. Schemes" width={200} height={200} className='w-30  md:w-45 h-auto object-contain' />
+            </div>
+            <div className="flex  items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+              <Image src="/icons/hm-gs-img4.png" alt="Gov. Schemes" width={200} height={200} className='w-30  md:w-45 h-auto object-contain' />
+            </div>
+          </div>
+        </div>
+      </div >
 
       {/*Aligned with Global & National Priorities*/}
       < div className="relative bg-white overflow-hidden" >

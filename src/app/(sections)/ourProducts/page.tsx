@@ -164,7 +164,13 @@ export default function OurProducts() {
       </div>
     </div>
 
-    {/* Our Products Section */}
+    <div className="hidden md:block relative bg-white overflow-hidden">
+      <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-16 py-10 md:py-15 ">
+        <Image src="/icons/prd-2-sl2.svg" alt='Prduct Image' width={1000} height={1000} className='w-full h-auto' />
+      </div>
+    </div>
+
+    {/* Our Products Section
     <div className="hidden md:block relative bg-white overflow-hidden">
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
         <h2 className="text-[32px] text-center sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
@@ -174,11 +180,11 @@ export default function OurProducts() {
         <p className="text-[#555555] text-[18px] text-center sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
           Diagnostic Capability
         </p>
-        {/* Diagnostic Features Layout */}
+        Diagnostic Features Layout
         <div className="relative max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-center py-10 min-h-[90vh]">
-          {/* Left Column - Vitals & Rapid Tests */}
+          Left Column - Vitals & Rapid Tests
           <div className="h-full flex flex-col justify-between">
-            {/* Vitals Section */}
+            Vitals Section
             <div className="space-y-2">
               <h3 className="text-[#003366] text-start align-middle font-['Montserrat]  text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%]">Vitals</h3>
               <div className="grid grid-cols-2 gap-2">
@@ -209,7 +215,7 @@ export default function OurProducts() {
               </div>
             </div>
 
-            {/* Rapid Tests Section */}
+            Rapid Tests Section
             <div className="space-y-2">
               <h3 className="text-[#003366] text-start align-middle font-['Montserrat]  text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%]">Rapid Test</h3>
               <div className="grid grid-cols-2 gap-2">
@@ -255,7 +261,7 @@ export default function OurProducts() {
               </div>
             </div>
 
-            {/* ECG Section */}
+            ECG Section
             <div className="space-y-2">
               <h3 className="text-[#003366] text-start align-middle font-['Montserrat]  text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%]">ECG</h3>
               <div className="grid grid-cols-2 gap-2">
@@ -271,16 +277,16 @@ export default function OurProducts() {
             </div>
           </div>
 
-          {/* Center Column - Machine Image */}
+          Center Column - Machine Image
           <div className="relative flex items-center justify-center">
             <div className="bg-[#18A093] rounded-full p-8 w-[250px] h-[250px] flex items-center justify-center">
               <Image src="/icons/hm-shm.png" alt="Smart Healthcare Machine" width={250} height={250} className="object-contain" />
             </div>
           </div>
 
-          {/* Right Column - Blood Tests & Digital Features */}
+          Right Column - Blood Tests & Digital Features
           <div className="h-full flex flex-col justify-between">
-            {/* Blood Tests Section */}
+            Blood Tests Section
             <div className="space-y-2">
               <h3 className="text-[#003366] text-start align-middle font-['Montserrat]  text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%]">Blood Tests</h3>
               <div className="grid grid-cols-2 gap-2">
@@ -307,7 +313,7 @@ export default function OurProducts() {
               </div>
             </div>
 
-            {/* Digital Stethoscope Section */}
+            Digital Stethoscope Section
             <div className="space-y-2">
               <h3 className="text-[#003366] text-start align-middle font-['Montserrat]  text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%]">Digital Stethoscope</h3>
               <div className='flex flex-row items-center'>
@@ -330,7 +336,7 @@ export default function OurProducts() {
               </div>
             </div>
 
-            {/* Digital Modules Section */}
+            Digital Modules Section
             <div className="space-y-2 md:col-span-2">
               <h3 className="text-[#003366] text-start align-middle font-['Montserrat]  text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%]">Digital Modules for Specialist Consultation</h3>
               <div className="grid grid-cols-2  gap-2">
@@ -371,11 +377,11 @@ export default function OurProducts() {
           Diagnostic Capability
         </p>
 
-        {/* Diagnostic Features Layout */}
+        Diagnostic Features Layout
         <div className="relative max-w-6xl  mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-center min-h-[95vh]">
-          {/* Left Column - Vitals & Rapid Tests */}
+          Left Column - Vitals & Rapid Tests
           <div className="h-full flex flex-col gap-y-10">
-            {/* Vitals Section */}
+            Vitals Section
             <div className="space-y-2 md:h-1/3">
               <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] text-[#003366] font-['Montserrat'] leading-[1.2] sm:leading-[24px] tracking-[0%]">Real-Time Data</h3>
               <div className="grid grid-cols-2 gap-4">
@@ -394,7 +400,7 @@ export default function OurProducts() {
               </div>
             </div>
 
-            {/* Rapid Tests Section */}
+            Rapid Tests Section
             <div className="space-y-2 md:h-1/3 flex flex-row items-center">
               <Image src="/icons/prd-2-img2.1.jpg" alt="Live Stethoscope" width={300} height={300} className='h-[150px] w-[100px] object-contain' />
               <div className="right w-2/3 h-full flex flex-col items-start pl-8 justify-center">
@@ -407,16 +413,16 @@ export default function OurProducts() {
             </div>
           </div>
 
-          {/* Center Column - Machine Image */}
+          Center Column - Machine Image
           <div className="relative flex items-center justify-center">
             <div className="bg-[#18A093] rounded-full p-8 w-[250px] h-[250px] flex items-center justify-center">
               <Image src="/icons/hm-shm.png" alt="Smart Healthcare Machine" width={250} height={250} className="object-contain" />
             </div>
           </div>
 
-          {/* Right Column - Blood Tests & Digital Features */}
+          Right Column - Blood Tests & Digital Features
           <div className="h-full  flex flex-col justify-end">
-            {/* Blood Tests Section */}
+            Blood Tests Section
             <div className="space-y-2 md:h-1/3 flex flex-row items-center">
               <div className="left flex flex-col justify-center space-y-2">
                 <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] text-[#003366] font-['Montserrat'] leading-[1.2] sm:leading-[24px] tracking-[0%]">Doctor Application</h3>
@@ -429,7 +435,7 @@ export default function OurProducts() {
               <Image src="/icons/prd-2-img3.jpg" alt="Prescription" width={200} height={200} className='w-[150px] h-[150px]' />
             </div>
 
-            {/* Digital Stethoscope Section */}
+            Digital Stethoscope Section
             <div className="space-y-2 md:col-span-2 md:h-1/3">
               <h3 className="text-[#003366] text-start align-middle font-['Montserrat] border-b-2 border-gray-300 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%]">Digital Modules for Specialist Consultation</h3>
               <div className="grid grid-cols-2  gap-2">
@@ -458,7 +464,7 @@ export default function OurProducts() {
           </div>
         </div>
       </div>
-    </div>
+    </div> */}
 
 
     {/* How it Works Section */}

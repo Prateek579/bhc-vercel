@@ -159,8 +159,8 @@ export default function OurProducts() {
     </div>
 
     <div className="hidden md:block relative bg-white overflow-hidden">
-      <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-        <Image src="/icons/prd-ph.jpg" alt='Prduct Image' width={1000} height={1000} className='w-full h-auto' />
+      <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-16 py-10 md:py-15 ">
+        <Image src="/icons/prd-photo.svg" alt='Prduct Image' width={1000} height={1000} className='w-full h-auto' />
       </div>
     </div>
 

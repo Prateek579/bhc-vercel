@@ -60,11 +60,11 @@ export default function OurSolution() {
     {/* SOLUTION OVERVIEW SECTION */}
     <div className="relative overflow-hidden bg-white">
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-        <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
+        <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] text-center">
           <span className="text-[#18A093]">Our</span>{' '}
           <span className="text-[#003366]">Solution Overview</span>
         </h2>
-        <p className="text-[#555555] text-[18px] text-center sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
+        <p className="text-[#555555] text-[18px] text-center sm:text-[22px] md:text-[22px] font-['Montserrat'] font-medium mb-4 sm:mb-8">
           The Smart Healthcare Machine improves healthcare with data-driven accessibility and efficiency.
         </p>
 
@@ -510,90 +510,90 @@ export default function OurSolution() {
 
     {/* Departments Section */}
     <div className="relative bg-white overflow-hidden">
-      <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
+      <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15 bg-gray-100">
         <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
           <span className="text-[#18A093]">25+</span>{' '}
           <span className="text-[#003366]">Connecting Departments</span>
         </h2>
-        <p className="text-[#555555] text-[18px] text-center sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
+        <p className="text-[#555555] text-[18px] text-center sm:text-[22px] md:text-[22px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
           Seamlessly connecting patients to 25+ medical departments for comprehensive, coordinated care.
         </p>
         <div className="pl-2 sm:pl-4 lg:pl-8 overflow-hidden">
           <div className="specialty-cards-container pb-4 sm:pb-5 lg:pb-6 space-x-4 sm:space-x-5 lg:space-x-6">
             {/* First set of cards */}
             {/* Department Cards */}
-            <div className="hover:bg-[#0E7280] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center justify-between space-y-3 sm:space-y-4">
+            <div className="hover:bg-[#0E7280] group w-40 sm:w-44 lg:w-48 bg-gray-100 p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center justify-between space-y-3 sm:space-y-4">
               <Image src="/icons/sol-3-neu.png" alt="Pediatrics" width={75} height={80} className='w-auto h-[70%]' />
               <h3 className="text-base sm:text-lg text-gray-800 text-center group-hover:text-white  h-[30%]">Neurology</h3>
             </div>
 
-            <div className="hover:bg-[#0E7280] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center justify-between space-y-3 sm:space-y-4">
+            <div className="hover:bg-[#0E7280] group w-40 sm:w-44 lg:w-48 bg-gray-100 p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center justify-between space-y-3 sm:space-y-4">
               <Image src="/icons/sol-3-drmt.png" alt="Pediatrics" width={60} height={60} className='w-auto h-[70%]' />
               <h3 className="text-base sm:text-lg text-gray-800 text-center group-hover:text-white h-[30%]">Dermatology</h3>
             </div>
 
-            <div className="hover:bg-[#0E7280] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center justify-between space-y-3 sm:space-y-4">
+            <div className="hover:bg-[#0E7280] group w-40 sm:w-44 lg:w-48 bg-gray-100 p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center justify-between space-y-3 sm:space-y-4">
               <Image src="/icons/sol-3-rdo.png" alt="Pediatrics" width={60} height={60} className='w-auto h-[70%]' />
               <h3 className="text-base sm:text-lg text-gray-800 text-center group-hover:text-white h-[30%]">Radiology</h3>
             </div>
 
-            <div className="hover:bg-[#0E7280] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center justify-between space-y-3 sm:space-y-4">
+            <div className="hover:bg-[#0E7280] group w-40 sm:w-44 lg:w-48 bg-gray-100 p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center justify-between space-y-3 sm:space-y-4">
               <Image src="/icons/sol-3-pul.png" alt="Pediatrics" width={74} height={80} className='w-auto h-[70%]' />
               <h3 className="text-base sm:text-lg text-gray-800 text-center group-hover:text-white h-[30%]">Pulmonary</h3>
             </div>
 
-            <div className="hover:bg-[#0E7280] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center justify-between space-y-3 sm:space-y-4">
+            <div className="hover:bg-[#0E7280] group w-40 sm:w-44 lg:w-48 bg-gray-100 p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center justify-between space-y-3 sm:space-y-4">
               <Image src="/icons/sol-3-ent.png" alt="Pediatrics" width={60} height={60} className='w-auto h-[70%]' />
               <h3 className="text-base sm:text-lg text-gray-800 text-center group-hover:text-white h-[30%]">ENT</h3>
             </div>
 
-            <div className="hover:bg-[#0E7280] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center justify-between space-y-3 sm:space-y-4">
+            <div className="hover:bg-[#0E7280] group w-40 sm:w-44 lg:w-48 bg-gray-100 p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center justify-between space-y-3 sm:space-y-4">
               <Image src="/icons/sol-3-crdio.png" alt="Pediatrics" width={60} height={60} className='w-auto h-[70%]' />
               <h3 className="text-base sm:text-lg text-gray-800 text-center group-hover:text-white h-[30%]">Cardiology</h3>
             </div>
 
-            <div className="hover:bg-[#0E7280] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center justify-between space-y-3 sm:space-y-4">
+            <div className="hover:bg-[#0E7280] group w-40 sm:w-44 lg:w-48 bg-gray-100 p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center justify-between space-y-3 sm:space-y-4">
               <Image src="/icons/sol-3-ortho.png" alt="Pediatrics" width={60} height={60} className='w-auto h-[70%]' />
               <h3 className="text-base sm:text-lg text-gray-800 text-center group-hover:text-white h-[30%]">Orthopedics</h3>
             </div>
 
-            <div className="hover:bg-[#0E7280] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center justify-between space-y-3 sm:space-y-4">
+            <div className="hover:bg-[#0E7280] group w-40 sm:w-44 lg:w-48 bg-gray-100 p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center justify-between space-y-3 sm:space-y-4">
               <Image src="/icons/sol-3-obs.png" alt="Pediatrics" width={60} height={60} className='w-auto h-[70%]' />
               <h3 className="text-base sm:text-lg text-gray-800 text-center group-hover:text-white h-[30%]">Obstetrics & Gynecology</h3>
             </div>
 
             {/* Duplicate set of cards for continuous scrolling */}
-            <div className="hover:bg-[#0E7280] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center justify-between space-y-3 sm:space-y-4">
+            <div className="hover:bg-[#0E7280] group w-40 sm:w-44 lg:w-48 bg-gray-100 p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center justify-between space-y-3 sm:space-y-4">
               <Image src="/icons/sol-3-hemo.png" alt="Pediatrics" width={60} height={60} className='w-auto h-[70%]' />
               <h3 className="text-base sm:text-lg text-gray-800 text-center group-hover:text-white h-[30%]">Haematology</h3>
             </div>
 
-            <div className="hover:bg-[#0E7280] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center justify-between space-y-3 sm:space-y-4">
+            <div className="hover:bg-[#0E7280] group w-40 sm:w-44 lg:w-48 bg-gray-100 p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center justify-between space-y-3 sm:space-y-4">
               <Image src="/icons/sol-3-fmly.png" alt="Pediatrics" width={60} height={60} className='w-auto h-[70%]' />
               <h3 className="text-base sm:text-lg text-gray-800 text-center group-hover:text-white h-[30%]">Family Medicine</h3>
             </div>
 
-            <div className="hover:bg-[#0E7280] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center justify-between space-y-3 sm:space-y-4">
+            <div className="hover:bg-[#0E7280] group w-40 sm:w-44 lg:w-48 bg-gray-100 p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center justify-between space-y-3 sm:space-y-4">
               <Image src="/icons/sol-3-psy.png" alt="Pediatrics" width={60} height={60} className='w-auto h-[70%]' />
               <h3 className="text-base sm:text-lg text-gray-800 text-center group-hover:text-white h-[30%]">Psychology</h3>
             </div>
 
-            <div className="hover:bg-[#0E7280] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center justify-between space-y-3 sm:space-y-4">
+            <div className="hover:bg-[#0E7280] group w-40 sm:w-44 lg:w-48 bg-gray-100 p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center justify-between space-y-3 sm:space-y-4">
               <Image src="/icons/sol-3-pedi.png" alt="Pediatrics" width={60} height={60} className='w-auto h-[70%]' />
               <h3 className="text-base sm:text-lg text-gray-800 text-center group-hover:text-white h-[30%]">Pediatrics</h3>
             </div>
 
-            <div className="hover:bg-[#0E7280] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center justify-between space-y-3 sm:space-y-4">
+            <div className="hover:bg-[#0E7280] group w-40 sm:w-44 lg:w-48 bg-gray-100 p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center justify-between space-y-3 sm:space-y-4">
               <Image src="/icons/sol-3-opt.png" alt="Pediatrics" width={60} height={60} className='w-auto h-[70%]' />
               <h3 className="text-base sm:text-lg text-gray-800 text-center group-hover:text-white h-[30%]">Ophthalmology</h3>
             </div>
 
-            <div className="hover:bg-[#0E7280] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center justify-between space-y-3 sm:space-y-4">
+            <div className="hover:bg-[#0E7280] group w-40 sm:w-44 lg:w-48 bg-gray-100 p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center justify-between space-y-3 sm:space-y-4">
               <Image src="/icons/sol-3-ando.png" alt="Pediatrics" width={60} height={60} className='w-auto h-[70%]' />
               <h3 className="text-base sm:text-lg text-gray-800 text-center group-hover:text-white h-[30%]">Endocrinology</h3>
             </div>
 
-            <div className="hover:bg-[#0E7280] group w-40 sm:w-44 lg:w-48 bg-white p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center justify-between space-y-3 sm:space-y-4">
+            <div className="hover:bg-[#0E7280] group w-40 sm:w-44 lg:w-48 bg-gray-100 p-4 sm:p-5 lg:p-6 rounded-lg  flex flex-col items-center justify-between space-y-3 sm:space-y-4">
               <Image src="/icons/sol-3-nutri.png" alt="Pediatrics" width={60} height={60} className='w-auto h-[70%]' />
               <h3 className="text-base sm:text-lg text-gray-800 text-center group-hover:text-white h-[30%]">Nutrition & Wellness</h3>
             </div>
@@ -605,7 +605,7 @@ export default function OurSolution() {
     {/* FAQ Section */}
     <div className="relative bg-white overflow-hidden">
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-        <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
+        <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-4 sm:mb-8 text-center">
           <span className="text-[#18A093]">FA</span>
           <span className="text-[#003366]">Q<span className='text-[26px] sm:text-[30px]'>s</span> </span>
         </h2>

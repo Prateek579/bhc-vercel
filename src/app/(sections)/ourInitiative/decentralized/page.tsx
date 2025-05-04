@@ -48,28 +48,33 @@ export default function Decentralized() {
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-['Montserrat'] leading-tight">
               Mission 2036
               <br />
-              <span>Connecting 600K Villages to Smart Healthcare.</span>
+              <span>Connecting 600K Villages to Smart Healthcare</span>
             </h1>
-            <p className="text-sm md:text-base lg:text-lg opacity-90 font-['Montserrat'] font-normal leading-relaxed text-[#FFA500]">
-              he Decentralized Health Network is our mission to connect India’s most underserved regions with essential healthcare services by 2036. Unlike centralized models that rely on urban hospitals, this network empowers local communities through Smart Healthcare Machines, tele-diagnostics, and real-time consultations — right at the village level. It’s a scalable, tech-driven approach that ensures no region is left behind, bridging the healthcare gap across 600,000+ villages with speed, accuracy, and accessibility.
-            </p>
-            {/* <p className="text-sm md:text-base lg:text-lg opacity-90 font-['Montserrat'] font-normal leading-relaxed text-[#FFA500]">
-              By 2036, Transforming access to care by building a decentralized, tech-enabled healthcare network across every Indian sub-division.
-            </p> */}
           </div>
         </div>
       </div>
     </div>
 
 
+    <div className="bg-gray-50">
+      <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
+        <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-4 sm:mb-8 text-center">
+          <span className="text-[#18A093]">Decentralized</span>{' '}
+          <span className="text-[#003366]">Health Network</span>
+        </h2>
+        <p className="text-[#555555] text-[18px] text-center sm:text-[22px] md:text-[22px] font-['Montserrat'] font-medium">
+          The Decentralized Health Network is our mission to connect India&apos;s most underserved regions with essential healthcare services by 2036. Unlike centralized models that rely on urban hospitals, this network empowers local communities through Smart Healthcare Machines, tele-diagnostics, and real-time consultations — right at the village level. It&apos;s a scalable, tech-driven approach that ensures no region is left behind, bridging the healthcare gap across 600,000+ villages with speed, accuracy, and accessibility.
+        </p>
+      </div>
+    </div>
 
     {/* Mission 2036 Section */}
     <div className="bg-white">
-      <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
+      <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15 bg-gray-100">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
           {/* Left Column - Statistics */}
           <div className="space-y-6 sm:space-y-8 lg:space-y-10">
-            <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
+            <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-4 sm:mb-8">
               <span className="text-[#18A093]">Mission</span>{' '}
               <span className="text-[#003366]">2036</span>
             </h2>
@@ -86,8 +91,8 @@ export default function Decentralized() {
                 />
               </div>
               <div>
-                <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] pb-2">10k TDTCs (Smart Health Centre)</h3>
-                <p className="text-sm sm:text-base md:text-lg text-gray-600 group-hover:text-white transition-colors duration-300">Serving 6500+ sub-divisions with tech-enabled primary care.</p>
+                <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] pb-2">10k TDTCs (Smart Health Centres)</h3>
+                <p className="text-sm sm:text-base font-['Montserrat'] md:text-lg text-gray-600 group-hover:text-white transition-colors duration-300">Serving 6500+ sub-divisions with tech-enabled primary care.</p>
               </div>
             </div>
 
@@ -104,7 +109,7 @@ export default function Decentralized() {
               </div>
               <div>
                 <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] pb-2">15k MTCUs (Smart Mobile Units)</h3>
-                <p className="text-sm sm:text-base md:text-lg text-gray-600 group-hover:text-white transition-colors duration-300">Reaching Remote Villages With Mobile Diagnostics And Care.</p>
+                <p className="text-sm sm:text-base md:text-lg font-['Montserrat'] text-gray-600 group-hover:text-white transition-colors duration-300">Reaching remote villages with mobile diagnostics and care.</p>
               </div>
             </div>
 
@@ -112,7 +117,7 @@ export default function Decentralized() {
             <div className="flex items-start gap-3 sm:gap-4 lg:gap-6">
               <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 flex-shrink-0">
                 <Image
-                  src="/icons/dc-3-lgo3.png"
+                  src="/icons/dc-3-lgo1.png"
                   alt="Specialist Icon"
                   width={56}
                   height={56}
@@ -121,7 +126,7 @@ export default function Decentralized() {
               </div>
               <div>
                 <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] pb-2 ">50k Specialists Network</h3>
-                <p className="text-sm sm:text-base md:text-lg text-gray-600 group-hover:text-white transition-colors duration-300">Providing expert consultations anytime, anywhere.</p>
+                <p className="text-sm sm:text-base font-['Montserrat'] md:text-lg text-gray-600 group-hover:text-white transition-colors duration-300">Providing expert consultations anytime, anywhere.</p>
               </div>
             </div>
 
@@ -138,7 +143,7 @@ export default function Decentralized() {
               </div>
               <div>
                 <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] pb-2">600k Villages</h3>
-                <p className="text-sm sm:text-base md:text-lg text-gray-600 group-hover:text-white transition-colors duration-300">Targeting underserved regions across India for better access.</p>
+                <p className="text-sm sm:text-base font-['Montserrat'] md:text-lg text-gray-600 group-hover:text-white transition-colors duration-300">Targeting underserved regions across India for better access.</p>
               </div>
             </div>
           </div>
@@ -164,7 +169,7 @@ export default function Decentralized() {
             <span className="text-[#18A093]">How We&apos;re Redefining</span>{' '}
             <span className="text-[#003366]">Healthcare in India</span>
           </h2>
-          <p className="text-[#555555] text-[18px] text-center sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
+          <p className="text-[#555555] text-[18px] text-center sm:text-[22px] md:text-[22px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
             India&apos;s healthcare system faces deep gaps in accessibility and affordability — especially in rural regions. We&apos;re building a decentralized, tech-driven ecosystem that delivers real-time, community-centered care where it&apos;s needed most.
           </p>
         </div>
@@ -185,7 +190,7 @@ export default function Decentralized() {
               />
             </div>
             <h3 className="text-[18px] text-center sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%]  align-middle capitalize text-gray-700 font-['Montserrat'] pb-2 group-hover:text-white touch-hover:text-white group-hover:hidden touch-hover:hidden">Breaking Geographical Barriers</h3>
-            <p className="text-sm sm:text-base md:text-lg text-gray-600 group-hover:text-white touch-hover:text-white hidden group-hover:block touch-hover:block">
+            <p className="text-sm sm:text-base font-['Montserrat'] md:text-lg  transition-colors duration-300 group-hover:text-white touch-hover:text-white hidden group-hover:block touch-hover:block">
               Smart mobile clinics and tele-consultation hubs bring healthcare to every village — eliminating travel and reducing hospital overload.
             </p>
           </div>
@@ -205,7 +210,7 @@ export default function Decentralized() {
               />
             </div>
             <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-center align-middle capitalize text-gray-700 font-['Montserrat'] pb-2 group-hover:text-white touch-hover:text-white group-hover:hidden touch-hover:hidden">Technology-Driven Access</h3>
-            <p className="text-sm sm:text-base md:text-lg text-gray-600 group-hover:text-white touch-hover:text-white hidden group-hover:block touch-hover:block">
+            <p className="text-sm sm:text-base font-['Montserrat'] md:text-lg  transition-colors duration-300 group-hover:text-white touch-hover:text-white hidden group-hover:block touch-hover:block">
               From early disease detection to AI-powered health records and virtual consults — technology ensures accurate, accessible and timely care.
             </p>
           </div>
@@ -225,7 +230,7 @@ export default function Decentralized() {
               />
             </div>
             <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-center align-middle capitalize text-gray-700 font-['Montserrat'] pb-2 group-hover:text-white touch-hover:text-white group-hover:hidden touch-hover:hidden">Community-Based Healthcare</h3>
-            <p className="text-sm sm:text-base md:text-lg text-gray-600 group-hover:text-white touch-hover:text-white hidden group-hover:block touch-hover:block">
+            <p className="text-sm sm:text-base font-['Montserrat'] md:text-lg  transition-colors duration-300 group-hover:text-white touch-hover:text-white hidden group-hover:block touch-hover:block">
               Empowering local workers with smart diagnostic tools and training to deliver first-level care and reduce pressure on tertiary systems.
             </p>
           </div>
@@ -235,17 +240,12 @@ export default function Decentralized() {
     {/* Fifth Section - Roadmap */}
     <div className="bg-white">
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-        <div className="mb-16">
-          <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
+          <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-4 sm:mb-8 text-center">
             <span className="text-[#18A093]">How We&apos;re Redefining</span>{' '}
             <span className="text-[#003366]">Decentralized Healthcare Network</span>
           </h2>
-          <p className="text-[#555555] text-center text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
-            Milestones toward creating a nationwide network of smart health hubs across every sub-division in India.
-          </p>
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid  grid-cols-1 md:grid-cols-3 gap-8">
           {/* Phase 1 */}
           <div
             className={`bg-white p-8 rounded-lg border-1 border-gray-300 card-hover group hover:bg-[#0E7280] transition-all duration-300 cursor-pointer sm:min-h-[100px] md:min-h-[170px] flex items-center justify-center ] ${activeCard === 'phase1' ? 'touch-hover' : ''}`}
@@ -340,7 +340,7 @@ export default function Decentralized() {
     {/*Powered by Government Schemes*/}
     < div className="relative bg-white overflow-hidden" >
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-        <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
+        <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-4 sm:mb-8 text-center">
           <span className="text-[#18A093]">Powered by</span>{' '}
           <span className="text-[#003366]">Government Schemes</span>
         </h2>

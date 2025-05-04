@@ -116,12 +116,10 @@ export default function KnowUsBetter() {
     {/* Third Section - Our Strength and Capacity */}
     <div className="bg-gray-50 py-16 md:py-24">
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-6 md:px-8 lg:px-22">
-        <div className="mb-16">
-          <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
-            <span className="text-[#18A093]">Our</span>{' '}
-            <span className="text-[#003366]">Strength And Capacity</span>
-          </h2>
-        </div>
+        <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-4 sm:mb-8 text-center">
+          <span className="text-[#18A093]">Our</span>{' '}
+          <span className="text-[#003366]">Strength And Capacity</span>
+        </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Card 1 - Academics & Researchers */}
@@ -187,7 +185,7 @@ export default function KnowUsBetter() {
     <div className="bg-white">
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-6 md:px-8 lg:px-22">
         <div className="mb-8">
-          <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
+          <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-4 sm:mb-8 text-center">
             <span className="text-[#18A093]">Meet Our</span>{' '}
             <span className="text-[#003366]">Team</span>
           </h2>
@@ -349,7 +347,7 @@ export default function KnowUsBetter() {
     {/* FAQ Section */}
     <div className="relative bg-white overflow-hidden">
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-        <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
+        <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-4 sm:mb-8 text-center">
           <span className="text-[#18A093]">FA</span>
           <span className="text-[#003366]">Q<span className='text-[26px] sm:text-[30px]'>s</span></span>
         </h2>

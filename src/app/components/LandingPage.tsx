@@ -359,9 +359,9 @@ const LandingPage = () => {
                   alt="Specialist Referrals"
                   width={40}
                   height={40}
-                  className="w-12 h-14 sm:w-15 sm:h-17 md:w-15 md:h-17 mr-4"
+                  className="w-12 h-14 sm:w-15 sm:h-17 md:w-15 md:h-17 mr-2"
                 />
-                <h3 className="text-2xl sm:text-[35px] md:text-[35px] font-bold font-['Montserrat']">{departments.count}+</h3>
+                <h3 className="text-2xl sm:text-[35px] md:text-[35px] font-bold font-['Montserrat'] ` w-[100px]">{departments.count}+</h3>
               </div>
               <p className="text-[18px] sm:text-[15px] md:text-[20px] opacity-90 font-['Montserrat']">Connecting Departments</p>
             </div>
@@ -374,9 +374,9 @@ const LandingPage = () => {
                   alt="Early Disease Detection"
                   width={40}
                   height={40}
-                  className="w-12 h-14 sm:w-15 sm:h-17 md:w-15 md:h-17 mr-4"
+                  className="w-12 h-14 sm:w-15 sm:h-17 md:w-15 md:h-17 mr-2"
                 />
-                <h3 className="text-2xl sm:text-[35px] md:text-[35px] font-bold font-['Montserrat']">{diseaseDetection.count}%</h3>
+                <h3 className="text-2xl sm:text-[35px] md:text-[35px] font-bold font-['Montserrat']  w-[100px]">{diseaseDetection.count}%</h3>
               </div>
 
               <p className="text-[18px] sm:text-[15px] md:text-[20px] opacity-90 font-['Montserrat']">Early Disease Detected</p>
@@ -390,9 +390,9 @@ const LandingPage = () => {
                   alt="Patients Treated"
                   width={40}
                   height={40}
-                  className="w-12 h-14 sm:w-13 sm:h-15 mr-4"
+                  className="w-12 h-14 sm:w-13 sm:h-15 mr-2"
                 />
-                <h3 className="text-2xl sm:text-[35px] md:text-[35px] font-bold font-['Montserrat']">{hospitalReferrals.count}+</h3>
+                <h3 className="text-2xl sm:text-[35px] md:text-[35px] font-bold font-['Montserrat']  w-[100px]">{hospitalReferrals.count}+</h3>
               </div>
 
               <p className="text-[18px] sm:text-[15px] md:text-[20px] opacity-90 font-['Montserrat']">Hospital Referals</p>
@@ -406,9 +406,9 @@ const LandingPage = () => {
                   alt="Patient Satisfaction"
                   width={40}
                   height={40}
-                  className="w-12 h-14 sm:w-15 sm:h-17 md:w-15 md:h-17 mr-4"
+                  className="w-12 h-14 sm:w-15 sm:h-17 md:w-15 md:h-17 mr-2"
                 />
-                <h3 className="text-2xl sm:text-[35px] md:text-[35px] font-bold font-['Montserrat']">{satisfactionRate.count}%</h3>
+                <h3 className="text-2xl sm:text-[35px] md:text-[35px] font-bold font-['Montserrat']  w-[100px]">{satisfactionRate.count}%</h3>
               </div>
 
               <p className="text-[18px] sm:text-[15px] md:text-[20px] opacity-90 font-['Montserrat']">Patients Satisfaction</p>
@@ -444,12 +444,12 @@ const LandingPage = () => {
 
       <div className="relative  py-16 overflow-hidden bg-gray-100">
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 ">
-          <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
+          <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-4 sm:mb-8 text-center">
             <span className="text-[#18A093]">Addressing</span>{' '}
             <span className="text-[#003366]">Challenges</span>
           </h2>
 
-          <div className="relative w-full max-w-screen-xl mx-auto md:px-12 pt-4 md:py-10">
+          <div className="relative w-full max-w-screen-xl mx-auto md:px-12">
             <button className="custom-prev cursor-pointer absolute left-0 top-[45%] z-10 p-2 rounded-full bg-white shadow-lg hover:bg-gray-100 transition-all duration-300">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path d="M15 19l-7-7 7-7" stroke="#003366" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -564,7 +564,7 @@ const LandingPage = () => {
       <div className="relative bg-white overflow-hidden" >
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 pt-0 pb-4 md:py-15">
           <div className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
-            <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
+            <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-4 sm:mb-8 text-center">
               <span className="text-[#18A093]">Our</span>{' '}
               <span className="text-[#003366]">Products</span>
             </h2>
@@ -583,40 +583,42 @@ const LandingPage = () => {
               </div>
             </div>
 
-            <div className="relative w-full  py-2">
-              <button className="custom-prev hidden"></button>
-              <button className="custom-next hidden"></button>
+            <div className="w-full h-full flex items-center justify-center">
+              <div className="relative w-full md:w-[70%]  py-2">
+                <button className="custom-prev hidden"></button>
+                <button className="custom-next hidden"></button>
 
-              <Swiper
-                autoHeight={true}
-                modules={[Navigation, Pagination, Autoplay]}
-                onSwiper={(swiper) => (swiperRef.current = swiper)}
-                pagination={{ clickable: true, el: '.custom-pagination' }}
-                slidesPerView={1}
-                initialSlide={0}
-                autoplay={{
-                  delay: 5000,
-                  disableOnInteraction: false
-                }}
-                onSlideChange={(swiper) => setActiveProductBtn(swiper.realIndex)}
-              >
-                {/* Card 1 */}
-                <SwiperSlide>
-                  <Image src="/icons/hm-6-sl1.svg" alt='doctor' width={500} height={500} className='w-full h-full' />
-                </SwiperSlide>
+                <Swiper
+                  autoHeight={true}
+                  modules={[Navigation, Pagination, Autoplay]}
+                  onSwiper={(swiper) => (swiperRef.current = swiper)}
+                  pagination={{ clickable: true, el: '.custom-pagination' }}
+                  slidesPerView={1}
+                  initialSlide={0}
+                  autoplay={{
+                    delay: 5000,
+                    disableOnInteraction: false
+                  }}
+                  onSlideChange={(swiper) => setActiveProductBtn(swiper.realIndex)}
+                >
+                  {/* Card 1 */}
+                  <SwiperSlide>
+                    <Image src="/icons/hm-6-sl1.png" alt='doctor' width={1000} height={1000} className='w-full h-full' />
+                  </SwiperSlide>
 
-                {/* Card 2 */}
-                <SwiperSlide>
-                  <Image src="/icons/hm-6-sl2.svg" alt='doctor' width={500} height={500} className='w-full h-full' />
-                </SwiperSlide>
+                  {/* Card 2 */}
+                  <SwiperSlide>
+                    <Image src="/icons/hm-6-sl2.png" alt='doctor' width={500} height={500} className='w-full h-full' />
+                  </SwiperSlide>
 
-                {/* Card 3 */}
-                <SwiperSlide>
-                  <Image src="/icons/hm-6-sl3.svg" alt='doctor' width={500} height={500} className='w-full h-full' />
-                </SwiperSlide>
-                <div className=" custom-pagination flex justify-center gap-2 mt-6"></div>
-              </Swiper>
+                  {/* Card 3 */}
+                  <SwiperSlide>
+                    <Image src="/icons/hm-6-sl3.png" alt='doctor' width={1000} height={1000} className='w-full h-full' />
+                  </SwiperSlide>
+                  <div className=" custom-pagination flex justify-center gap-2 mt-6"></div>
+                </Swiper>
 
+              </div>
             </div>
           </div>
         </div>
@@ -626,7 +628,7 @@ const LandingPage = () => {
       {/* Our Key Services Section */}
       <div className="relative bg-gray-100 overflow-hidden">
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-          <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
+          <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-4 sm:mb-8 text-center">
             <span className="text-[#18A093]">Our</span>{' '}
             <span className="text-[#003366]">Solutions</span>
           </h2>
@@ -829,7 +831,7 @@ const LandingPage = () => {
       {/* Testimonials Section */}
       < div className="relative bg-white overflow-hidden" >
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-          <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
+          <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-4 sm:mb-8 text-center">
             <span className="text-[#18A093]">Our</span>{' '}
             <span className="text-[#003366]">Testimonials</span>
           </h2>
@@ -1083,7 +1085,7 @@ const LandingPage = () => {
       {/*Aligned with Global & National Priorities*/}
       < div className="relative bg-gray-100 overflow-hidden" >
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-          <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
+          <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-4 sm:mb-8 text-center">
             <span className="text-[#18A093]">Our Work Aligns with</span>{' '}
             <span className="text-[#003366]">National Priorities</span>
           </h2>
@@ -1106,7 +1108,7 @@ const LandingPage = () => {
 
       < div className="relative bg-white overflow-hidden" >
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-          <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
+          <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-4 sm:mb-8 text-center">
             <span className="text-[#18A093]">Our Work Aligns with</span>{' '}
             <span className="text-[#003366]">Global Goals</span>
           </h2>
@@ -1130,7 +1132,7 @@ const LandingPage = () => {
       {/* We Work With Section */}
       < div className="relative bg-gray-100 overflow-hidden" >
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-          <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
+          <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-4 sm:mb-8 text-center">
             <span className="text-[#18A093]">We</span>{' '}
             <span className="text-[#003366]">Work With</span>
           </h2>
@@ -1214,7 +1216,7 @@ const LandingPage = () => {
       {/* FAQ Section */}
       < div className="relative bg-white overflow-hidden" >
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-          <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
+          <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-4 sm:mb-8 text-center">
             <span className="text-[#18A093]">FA</span>
             <span className="text-[#003366]">Q<span className='text-[26px] sm:text-[30px]'>s</span> </span>
           </h2>

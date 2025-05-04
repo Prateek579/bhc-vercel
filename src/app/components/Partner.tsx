@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const Partner = () => {
     return (
-        <div className="relative  overflow-hidden max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 bg-white" >
+        <div className="relative  overflow-hidden  mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 bg-white" >
             <div className="mx-auto p-3 sm:p-4 lg:p-6 bg-gradient-to-r from-[#18A093] to-[#003366] rounded-xl">
                 <div className="text-center text-white space-y-4 sm:space-y-6 flex flex-col items-center justify-center">
                     <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold font-['Montserrat'] leading-tight tracking-tight text-[#F4F0E3]">Join Us in Shaping the Future of Healthcare</h2>

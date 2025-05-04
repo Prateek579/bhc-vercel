@@ -155,59 +155,76 @@ export default function Animacare() {
               <span className="text-[#18A093]">Chapter 1-</span>{' '}
               <span className="text-[#003366]">West Bengal (Murshidhabad)</span>
             </h2>
-            <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">Revolutionizing Rural Healthcare with Tele-Diagnostic Solutions</p>
+            <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[22px] font-['Montserrat'] font-medium mb-8 sm:mb-12">Revolutionizing Rural Healthcare with Tele-Diagnostic Solutions</p>
           </div>
 
           {/* District Info */}
           <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="space-y-6">
-              <h2 className="mb-4 text-2xl sm:text-3xl md:text-4xl lg:text-[36px] font-[700] font-['Montserrat'] leading-tight sm:leading-tight md:leading-tight lg:leading-[100%] tracking-[0px] align-middle text-[#003366]">
-                <span className="text-[#003366]">Transforming Healthcare Access in</span>{' '}
-                <span className="text-[#18A093]">Murshidabad, WB</span>
+            <div className="space-y-6 sm:space-y-8 lg:space-y-10">
+              <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4">
+                <span className="text-[#18A093]">Why</span>{' '}
+                <span className="text-[#003366]">Murshidabad?</span>
               </h2>
-              <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">Why Murshidabad?
-              </p>
 
-              {/* Statistics */}
-              <div className="space-y-4">
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 flex-shrink-0">
-                    <Image src="/icons/dc-3-lgo1.png" alt="Population" width={56} height={56} className="w-full h-full" />
-                  </div>
-                  <div>
-                    <h4 className="text-lg sm:text-xl lg:text-2xl font-[700] text-[#565656] font-['Montserrat'] tracking-[0%] mb-2">1,333</h4>
-                    <p className="text-sm sm:text-base text-gray-500">People/km2</p>
-                  </div>
+              {/* TDTCs */}
+              <div className="flex flex-row items-center gap-3 sm:gap-4 lg:gap-6">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 flex-shrink-0">
+                  <Image
+                    src="/icons/anim-2-img1.5.png"
+                    alt="TDTC Icon"
+                    width={56}
+                    height={56}
+                    className="w-full h-full"
+                  />
                 </div>
-
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 flex-shrink-0">
-                    <Image src="/icons/anim-2-lgo-2.png" alt="Health" width={56} height={56} className="w-full h-full" />
-                  </div>
-                  <div>
-                    <h4 className="text-lg sm:text-xl lg:text-2xl font-[700] text-[#565656] font-['Montserrat'] tracking-[0%] mb-2">High Prevalence</h4>
-                    <p className="text-sm sm:text-base text-gray-500">Preventable Disease</p>
-                  </div>
+                <div>
+                  <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] pb-2">1,333 People/km²</h3>
+                  <p className="text-sm sm:text-base font-['Montserrat'] md:text-lg text-gray-600 group-hover:text-white transition-colors duration-300">Dense rural population puts continuous pressure on local healthcare systems.</p>
                 </div>
+              </div>
 
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 flex-shrink-0">
-                    <Image src="/icons/anim-2-lgo3.png" alt="Villages" width={56} height={56} className="w-full h-full" />
-                  </div>
-                  <div>
-                    <h4 className="text-lg sm:text-xl lg:text-2xl font-[700] text-[#565656] font-['Montserrat'] tracking-[0%] mb-2">1886 villages</h4>
-                    <p className="text-sm sm:text-base text-gray-500">Inadequate Healthcare Access</p>
-                  </div>
+              {/* MTCUs */}
+              <div className="flex flex-row items-center gap-3 sm:gap-4 lg:gap-6">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 flex-shrink-0">
+                  <Image
+                    src="/icons/anim-2-img1.6.png"
+                    alt="MTCU Icon"
+                    width={56}
+                    height={56}
+                    className="w-full h-full"
+                  />
+                </div>
+                <div>
+                  <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] pb-2">High Prevalence of Preventable Disease
+                  </h3>
+                  <p className="text-sm sm:text-base md:text-lg font-['Montserrat'] text-gray-600 group-hover:text-white transition-colors duration-300">Lack of early care and awareness leads to high rates of avoidable illnesses.</p>
+                </div>
+              </div>
+
+              {/* Specialists Network */}
+              <div className="flex flex-row items-center gap-3 sm:gap-4 lg:gap-6">
+                <div className="w-10 h-10  sm:w-16 sm:h-12 lg:w-14 lg:h-14 flex-shrink-0">
+                  <Image
+                    src="/icons/anim-2-img1.7.png"
+                    alt="Specialist Icon"
+                    width={56}
+                    height={56}
+                    className="w-full h-full"
+                  />
+                </div>
+                <div>
+                  <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] pb-2">1886 Villages
+                  </h3>
+                  <p className="text-sm sm:text-base font-['Montserrat'] md:text-lg text-gray-600 group-hover:text-white transition-colors duration-300">Vast number of villages remain underserved by essential healthcare services.</p>
                 </div>
               </div>
             </div>
-
             {/* Map Image */}
             <div className="relative h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] flex items-center justify-center">
               <Image
                 src="/icons/anim-2-img1.1.png"
                 alt="Murshidabad District Map"
-                width={500} height={500}
+                width={800} height={800}
                 className="sm:h-[95%] md:h-[80%] lg:h-[80%] w-auto"
               />
             </div>
@@ -215,7 +232,7 @@ export default function Animacare() {
 
           {/* Impact Images */}
           <div className="mt-12">
-            <h3 className="mb-4 text-2xl sm:text-3xl md:text-4xl lg:text-[36px] font-[700] font-['Montserrat'] leading-tight sm:leading-tight md:leading-tight lg:leading-[100%] tracking-[0px] align-middle text-[#003366] text-center">Our Footprint in Murshidabad</h3>
+            <h3 className="mb-4 text-2xl sm:text-3xl md:text-4xl lg:text-[36px] font-[700] font-['Montserrat'] leading-tight sm:leading-tight md:leading-tight lg:leading-[100%] tracking-[0px] align-middle text-[#003366] text-center mb-4 sm:mb-8">Our Footprint in Murshidabad</h3>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               <div className="relative h-40 sm:h-44 lg:h-48">
                 <Image src="/icons/anim-2-img2.1.png" alt="Impact 1" width={500} height={500} className="w-full h-full rounded-lg" />
@@ -273,19 +290,19 @@ export default function Animacare() {
     {/* Original Animacare Initiative Section */}
 
     <div className="relative overflow-hidden bg-white">
-      <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-      <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
+      <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15 bg-gray-100">
+        <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-4 sm:mb-8 text-center">
           <span className="text-[#17A7AB]">Animacare</span>{' '}
           <span className="text-[#003366]">Initiative</span>
         </h2>
-        <p className="text-[#555555] text-center text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium">
+        <p className="text-[#555555] text-[18px] text-center sm:text-[22px] md:text-[22px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
           To effectively cater to the healthcare needs of rural regions, we will develop a Mobile Tele-Clinic Unit that complements the Tele-Diagnostic and Tele-Consultation Centers in sub-divisions of district. This solution ensures that even the most geographically isolated communities have access to primary and preventive healthcare.
         </p>
         <div className="flex flex-col md:flex-row items-center justity-between">
           <div className="space-y-6 md:w-[65%] md:border-r-2 md:border-[#003366]">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 md:gap-8">
               {/* TDTC Column */}
-              <div className="bg-white p-6">
+              <div className=" p-6">
                 <div className="flex flex-col items-center gap-4 md:mb-4 border-b-2 border-[#003366] h-[45%]">
                   <div className="h-[65%] flex items-center justify-center">
                     <Image
@@ -312,7 +329,7 @@ export default function Animacare() {
               </div>
 
               {/* MTCU Column */}
-              <div className="bg-white p-6">
+              <div className=" p-6">
                 <div className="flex flex-col items-center gap-4 md:mb-4 border-b-2 border-[#003366] h-[45%]">
                   <div className="h-[65%] flex items-center justify-center">
                     <Image
@@ -371,7 +388,7 @@ export default function Animacare() {
               </div>
 
               {/* Mission Description */}
-              <p className="text-base sm:text-lg md:text-xl opacity-90 leading-relaxed font-['Montserrat'] font-[400] leading-[100%] tracking-[0%] align-middle text-[#F7F7F7]">
+              <p className=" text-[18px] text-center sm:text-[22px] md:text-[22px] font-['Montserrat'] font-medium text-[#F7F7F7]">
                 Our mission is not just about numbers — it&apos;s about touching lives, building trust, and transforming
                 healthcare access for communities that has been unreached. We&apos;re not stopping here — this is just
                 the beginning.
@@ -404,11 +421,11 @@ export default function Animacare() {
     <div className="relative overflow-hidden bg-white">
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
         <div className="mb-8">
-        <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
+          <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
             <span className="text-[#18A093]">Network Workflow of</span>{' '}
             <span className="text-[#003366]">Animacare Initiative</span>
           </h2>
-          <p className="text-[#555555] text-center text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
+          <p className="text-[#555555] text-[18px] text-center sm:text-[22px] md:text-[22px] font-['Montserrat'] font-medium mb-4 sm:mb-8">
             A scalable network of Tele-Diagnostic & Tele-Consultation Centers (TDTCs) and Mobile Tele-Clinics (MTCUs).
           </p>
         </div>
@@ -511,7 +528,7 @@ export default function Animacare() {
     {/*Powered by Government Schemes*/}
     < div className="relative bg-white overflow-hidden" >
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-      <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
+        <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-4 sm:mb-8 text-center">
           <span className="text-[#18A093]">Powered by</span>{' '}
           <span className="text-[#003366]">Government Schemes</span>
         </h2>
@@ -535,7 +552,7 @@ export default function Animacare() {
     {/* Social Impacts & Sustainability Section */}
     <div className="relative overflow-hidden bg-white">
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-      <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
+        <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-4 sm:mb-8 text-center">
           <span className="text-[#18A093]">Social Impacts</span>{' '}
           <span className="text-[#003366]">& Sustainability</span>
         </h2>
@@ -615,7 +632,7 @@ export default function Animacare() {
     {/* FAQ Section */}
     <div className="relative bg-white overflow-hidden">
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-        <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
+        <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-4 sm:mb-8 text-center">
           <span className="text-[#18A093]">FA</span>
           <span className="text-[#003366]">Q<span className='text-[26px] sm:text-[30px]'>s</span> </span>
         </h2>

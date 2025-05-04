@@ -160,21 +160,25 @@ export default function OurProducts() {
 
     <div className="hidden md:block relative bg-white overflow-hidden">
       <div className="max-w-screen-2xl flex flex-col itmes-center mx-auto px-3 sm:px-15 lg:px-16 py-10 md:py-15 ">
-        <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
-          <span className="text-[#18A093]">Smart Healthcare Machine</span>{' '}
+        <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-4 sm:mb-8 text-center">
+          <span className="text-[#18A093]">Smart Healthcare Machine - </span>{' '}
           <span className="text-[#003366]">Tele-Diagnostic Capability</span>
         </h2>
-        <Image src="/icons/prd-photo.svg" alt='Prduct Image' width={1000} height={1000} className='w-full h-auto' />
+        <div className="w-full h-full flex items-center justify-center">
+          <Image src="/icons/prd-2-sl1.png" alt='Prduct Image' width={1000} height={1000} className='w-full md:w-[80%] h-auto' />
+        </div>
       </div>
     </div>
 
     <div className="hidden md:block relative bg-white overflow-hidden">
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-16 py-10 md:py-15 ">
-        <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
-          <span className="text-[#18A093]">Smart Healthcare Machine</span>{' '}
-          <span className="text-[#003366]">Tele-Consultation</span>
+        <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-4 sm:mb-8 text-center">
+          <span className="text-[#18A093]">Smart Healthcare Machine - </span>{' '}
+          <span className="text-[#003366]">Tele-Consultation Capability</span>
         </h2>
-        <Image src="/icons/prd-2-sl2.svg" alt='Prduct Image' width={1000} height={1000} className='w-full h-auto' />
+        <div className="w-full h-full flex items-center justify-center">
+          <Image src="/icons/prd-2-sl3.png" alt='Prduct Image' width={1000} height={1000} className='w-full md:w-[80%] h-auto' />
+        </div>
       </div>
     </div>
 
@@ -267,7 +271,7 @@ export default function OurProducts() {
     {/* Video Section */}
     <div className="relative bg-white overflow-hidden">
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15 bg-gray-100">
-        <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
+        <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-4 sm:mb-8 text-center">
           <span className="text-[#18A093]">Demo</span>{' '}
           <span className="text-[#003366]">Video</span>
         </h2>
@@ -286,7 +290,7 @@ export default function OurProducts() {
     {/* FAQ Section */}
     <div className="relative bg-white overflow-hidden">
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-        <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
+        <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-4 sm:mb-8 text-center">
           <span className="text-[#18A093]">FA</span>
           <span className="text-[#003366]">Q<span className='text-[26px] sm:text-[30px]'>s</span> </span>
         </h2>

@@ -59,7 +59,7 @@ export default function GetInvolved() {
 
         < div className="relative bg-white overflow-hidden" >
             <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-12 sm:py-20 md:py-32">
-                <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] text-center mb-3 sm:mb-4">
+                <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
                     <span className="text-[#18A093]">Why Partner</span>{' '}
                     <span className="text-[#003366]">with Us</span>
                 </h2>
@@ -68,7 +68,7 @@ export default function GetInvolved() {
                     Through Smart Healthcare Machines, Tele-Diagnostics, and local capacity building, your CSR support directly translates to
                     measurable health impact — where it&apos;s needed most.
                 </p>
-                <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] text-center mb-3 sm:mb-4">
+                <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
                     <span className="text-[#18A093] font-['Montserrat']">Where We</span>{' '}
                     <span className="text-[#003366] font-['Montserrat']">Drive Impact</span>
                 </h2>
@@ -115,7 +115,7 @@ export default function GetInvolved() {
         {/*Powered by Government Schemes*/}
         < div className="relative bg-white overflow-hidden" >
             <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-                <h2 className="text-[28px] xs:text-[30px] text-center sm:text-[34px] md:text-[38px] lg:text-[42px] font-[700] font-['Montserrat'] mb-4 sm:mb-8">
+                <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
                     <span className="text-[#18A093]">Powered by</span>{' '}
                     <span className="text-[#003366]">Government Schemes</span>
                 </h2>
@@ -139,7 +139,7 @@ export default function GetInvolved() {
         {/*Aligned with Global & National Priorities*/}
         < div className="relative bg-white overflow-hidden" >
             <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-                <h2 className="text-[28px] xs:text-[30px] text-center sm:text-[34px] md:text-[38px] lg:text-[42px] font-[700] font-['Montserrat'] mb-4 sm:mb-8">
+                <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
                     <span className="text-[#18A093]">Our Work Aligned with</span>{' '}
                     <span className="text-[#003366]">National Priorities</span>
                 </h2>
@@ -162,7 +162,7 @@ export default function GetInvolved() {
 
         < div className="relative bg-white overflow-hidden" >
             <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-                <h2 className="text-[28px] xs:text-[30px] text-center sm:text-[34px] md:text-[38px] lg:text-[42px] font-[700] font-['Montserrat'] mb-4 sm:mb-8">
+                <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
                     <span className="text-[#18A093]">Our Work Aligned with</span>{' '}
                     <span className="text-[#003366]">Global Goals</span>
                 </h2>
@@ -187,7 +187,7 @@ export default function GetInvolved() {
         {/* Why Join Bridge Healthcare Section */}
         < div className="relative bg-white overflow-hidden" >
             <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-12 sm:py-20 md:py-32">
-                <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] text-center mb-3 sm:mb-4">
+                <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
                     <span className="text-[#18A093]">Why Join</span>{' '}
                     <span className="text-[#003366]">Bridge Healthcare</span>
                 </h2>

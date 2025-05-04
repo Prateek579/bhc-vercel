@@ -69,7 +69,7 @@ export default function Decentralized() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
           {/* Left Column - Statistics */}
           <div className="space-y-6 sm:space-y-8 lg:space-y-10">
-            <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+            <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
               <span className="text-[#18A093]">Mission</span>{' '}
               <span className="text-[#003366]">2036</span>
             </h2>
@@ -160,7 +160,7 @@ export default function Decentralized() {
     <div className="bg-gray-50">
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
         <div className="mb-16">
-          <h2 className="text-[32px] sm:text-[38px] text-center md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+          <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
             <span className="text-[#18A093]">How We&apos;re Redefining</span>{' '}
             <span className="text-[#003366]">Healthcare in India</span>
           </h2>
@@ -236,7 +236,7 @@ export default function Decentralized() {
     <div className="bg-white">
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
         <div className="mb-16">
-          <h2 className="text-[32px] text-center sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+          <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
             <span className="text-[#18A093]">How We&apos;re Redefining</span>{' '}
             <span className="text-[#003366]">Decentralized Healthcare Network</span>
           </h2>
@@ -340,7 +340,7 @@ export default function Decentralized() {
     {/*Powered by Government Schemes*/}
     < div className="relative bg-white overflow-hidden" >
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-        <h2 className="text-[28px] xs:text-[30px] text-center sm:text-[34px] md:text-[38px] lg:text-[42px] font-[700] font-['Montserrat'] mb-4 sm:mb-8">
+        <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
           <span className="text-[#18A093]">Powered by</span>{' '}
           <span className="text-[#003366]">Government Schemes</span>
         </h2>

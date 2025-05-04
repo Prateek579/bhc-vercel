@@ -21,7 +21,7 @@ export default function OurSolution() {
     setIsTouchDevice(checkTouchDevice());
   }, []);
 
-  const handleToggle = ( cardId: string): void => {
+  const handleToggle = (cardId: string): void => {
     if (isTouchDevice) {
       console.log("touch", cardId)
       setActiveCard(cardId);
@@ -60,7 +60,7 @@ export default function OurSolution() {
     {/* SOLUTION OVERVIEW SECTION */}
     <div className="relative overflow-hidden bg-white">
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-        <h2 className="text-[32px] sm:text-[38px] text-center md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+        <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
           <span className="text-[#18A093]">Our</span>{' '}
           <span className="text-[#003366]">Solution Overview</span>
         </h2>
@@ -184,7 +184,7 @@ export default function OurSolution() {
             </div>
             {/* Hidden content that shows on hover */}
             <div className={` ${activeCard === 'card_2' ? 'block' : 'hidden'} group-hover:block overflow-hidden w-full bg-white p-4 z-10`}>
-            <div className={`flex flex-row items-center   gap-4 sm:gap-6 lg:gap-8 ${activeCard === 'card_2' && ' specialty-cards-container'}`}>
+              <div className={`flex flex-row items-center   gap-4 sm:gap-6 lg:gap-8 ${activeCard === 'card_2' && ' specialty-cards-container'}`}>
                 {/* Left column - Smart Health Checkups */}
                 <div className="bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
                   <div className="flex items-center mb-4">
@@ -245,7 +245,7 @@ export default function OurSolution() {
             </div>
             {/* Hidden content that shows on hover */}
             <div className={` ${activeCard === 'card_3' ? 'block' : 'hidden'} group-hover:block overflow-hidden w-full bg-white p-4 z-10`}>
-            <div className={`flex flex-row items-center   gap-4 sm:gap-6 lg:gap-8 ${activeCard === 'card_3' && ' specialty-cards-container'}`}>
+              <div className={`flex flex-row items-center   gap-4 sm:gap-6 lg:gap-8 ${activeCard === 'card_3' && ' specialty-cards-container'}`}>
                 {/* Left column - Smart Health Checkups */}
                 <div className="bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
                   <div className="flex items-center mb-4">
@@ -511,7 +511,7 @@ export default function OurSolution() {
     {/* Departments Section */}
     <div className="relative bg-white overflow-hidden">
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-        <h2 className="text-[32px] sm:text-[38px] text-center md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+        <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
           <span className="text-[#18A093]">25+</span>{' '}
           <span className="text-[#003366]">Connecting Departments</span>
         </h2>
@@ -605,21 +605,18 @@ export default function OurSolution() {
     {/* FAQ Section */}
     <div className="relative bg-white overflow-hidden">
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-        <h2 className="text-[32px] sm:text-[38px] text-center md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+        <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
           <span className="text-[#18A093]">FA</span>
-          <span className="text-[#003366]">Q&apos;s</span>
+          <span className="text-[#003366]">Q<span className='text-[26px] sm:text-[30px]'>s</span> </span>
         </h2>
-        {/* <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
-          Learn how our solutions bring quality healthcare closer to those who need it most.
-        </p> */}
-        <div className="space-y-3 sm:space-y-4 lg:space-y-6">
+        <div className="space-y-2 sm:space-y-3 lg:space-y-4">
           {/* FAQ Items */}
           <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq1' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
             <button
               onClick={() => setActiveFaq(activeFaq === 'faq1' ? null : 'faq1')}
-              className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6 transition-colors duration-200"
+              className="w-full flex items-center justify-between p-2 sm:p-3 lg:p-4 transition-colors duration-200"
             >
-              <span className={`text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq1' ? 'text-white' : 'text-[#333333]'} `}>How do advanced digital modules support specialists across different departments?</span>
+              <span className={`text-base sm:text-lg lg:text-[18px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq1' ? 'text-white' : 'text-[#333333]'} `}>How do advanced digital modules support specialists across different departments?</span>
               <svg
                 className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq1' ? 'rotate-180' : ''}`}
                 fill="none"
@@ -629,17 +626,17 @@ export default function OurSolution() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq1' ? 'max-h-[1000px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
-              <p className="text-sm sm:text-base lg:text-lg font-['Montserrat'] text-white">Our advanced modules—like the Digital Otoscope, Dermatoscope, Spirometer, Ultrasound, and Iris Scope—enable specialists from ENT, dermatology, pulmonology, maternal health, and ophthalmology to remotely assess patients with high clinical accuracy. These tools provide medical-grade visuals and data, allowing specialists to evaluate conditions as if the patient were in front of them—making multi-specialty care accessible even in remote corners of the country.</p>
+            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq1' ? 'max-h-[500px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
+              <p className="text-sm sm:text-[14px] lg:text-[16px] font-['Montserrat'] text-white leading-relaxed">Our advanced modules—like the Digital Otoscope, Dermatoscope, Spirometer, Ultrasound, and Iris Scope—enable specialists from ENT, dermatology, pulmonology, maternal health, and ophthalmology to remotely assess patients with high clinical accuracy. These tools provide medical-grade visuals and data, allowing specialists to evaluate conditions as if the patient were in front of them—making multi-specialty care accessible even in remote corners of the country.</p>
             </div>
           </div>
 
           <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq2' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
             <button
               onClick={() => setActiveFaq(activeFaq === 'faq2' ? null : 'faq2')}
-              className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6  transition-colors duration-200"
+              className="w-full flex items-center justify-between p-2 sm:p-3 lg:p-4 transition-colors duration-200"
             >
-              <span className={`text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq2' ? 'text-white' : 'text-[#333333]'} `}> What kind of diagnostic tests are supported by the Smart Healthcare Machine?
+              <span className={`text-base sm:text-lg lg:text-[18px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq2' ? 'text-white' : 'text-[#333333]'} `}> What kind of diagnostic tests are supported by the Smart Healthcare Machine?
               </span>
               <svg
                 className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq2' ? 'rotate-180' : ''}`}
@@ -650,17 +647,17 @@ export default function OurSolution() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq2' ? 'max-h-[1000px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
-              <p className="text-sm sm:text-base lg:text-lg text-white font-['Montserrat']">The Smart Healthcare Machine supports a comprehensive suite of tests including Blood Sugar, Hemoglobin, Lipid Profile, and Renal Function Test, alongside vital signs like Blood Pressure, SpO₂, Heart Rate, and Temperature. Integrated with 12-lead ECG and a Digital Stethoscope, it offers a strong foundation for cardiac and general medical evaluations. Together, these diagnostics ensure that patients receive timely and accurate care without needing to travel to distant health facilities.</p>
+            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq2' ? 'max-h-[500px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
+              <p className="text-sm sm:text-[14px] lg:text-[16px] text-white font-['Montserrat'] leading-relaxed">The Smart Healthcare Machine supports a comprehensive suite of tests including Blood Sugar, Hemoglobin, Lipid Profile, and Renal Function Test, alongside vital signs like Blood Pressure, SpO₂, Heart Rate, and Temperature. Integrated with 12-lead ECG and a Digital Stethoscope, it offers a strong foundation for cardiac and general medical evaluations. Together, these diagnostics ensure that patients receive timely and accurate care without needing to travel to distant health facilities.</p>
             </div>
           </div>
 
           <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq3' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
             <button
               onClick={() => setActiveFaq(activeFaq === 'faq3' ? null : 'faq3')}
-              className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6  transition-colors duration-200"
+              className="w-full flex items-center justify-between p-2 sm:p-3 lg:p-4 transition-colors duration-200"
             >
-              <span className={`text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq3' ? 'text-white' : 'text-[#333333]'} `}>How do doctors access real-time diagnostic data during tele-consultations?</span>
+              <span className={`text-base sm:text-lg lg:text-[18px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq3' ? 'text-white' : 'text-[#333333]'} `}>How do doctors access real-time diagnostic data during tele-consultations?</span>
               <svg
                 className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq3' ? 'rotate-180' : ''}`}
                 fill="none"
@@ -670,17 +667,17 @@ export default function OurSolution() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq3' ? 'max-h-[1000px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
-              <p className="text-sm sm:text-base lg:text-lg text-white font-['Montserrat']"> During tele-consultations, doctors receive live health data, including ECGs, vitals, diagnostic reports, scanned documents, and even real-time auscultation audio from the digital stethoscope. This enables them to make informed decisions with full context, enhancing the accuracy and depth of virtual consultations—especially critical in rural settings with limited access to specialists.</p>
+            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq3' ? 'max-h-[500px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
+              <p className="text-sm sm:text-[14px] lg:text-[16px] text-white font-['Montserrat'] leading-relaxed"> During tele-consultations, doctors receive live health data, including ECGs, vitals, diagnostic reports, scanned documents, and even real-time auscultation audio from the digital stethoscope. This enables them to make informed decisions with full context, enhancing the accuracy and depth of virtual consultations—especially critical in rural settings with limited access to specialists.</p>
             </div>
           </div>
 
           {showFaq === true && <> <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq4' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
             <button
               onClick={() => setActiveFaq(activeFaq === 'faq4' ? null : 'faq4')}
-              className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6  transition-colors duration-200"
+              className="w-full flex items-center justify-between p-2 sm:p-3 lg:p-4 transition-colors duration-200"
             >
-              <span className={`text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq4' ? 'text-white' : 'text-[#333333]'} `}>Can patients receive their reports and prescriptions instantly?
+              <span className={`text-base sm:text-lg lg:text-[18px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq4' ? 'text-white' : 'text-[#333333]'} `}>Can patients receive their reports and prescriptions instantly?
               </span>
               <svg
                 className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq4' ? 'rotate-180' : ''}`}
@@ -691,7 +688,7 @@ export default function OurSolution() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq4' ? 'max-h-[1000px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
+            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq4' ? 'max-h-[500px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
               <p className="text-sm sm:text-base lg:text-lg text-white font-['Montserrat']">
                 Yes. Once the consultation is complete, patients receive printed copies of their reports and prescriptions on the spot via the machine’s integrated printer. All data is also securely stored in their digital health profile, making future follow-ups and continuity of care seamless and accessible—even if the patient has never had a medical record before.</p>
             </div>
@@ -700,9 +697,9 @@ export default function OurSolution() {
             <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq5' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
               <button
                 onClick={() => setActiveFaq(activeFaq === 'faq5' ? null : 'faq5')}
-                className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6  transition-colors duration-200"
+                className="w-full flex items-center justify-between p-2 sm:p-3 lg:p-4 transition-colors duration-200"
               >
-                <span className={`text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq5' ? 'text-white' : 'text-[#333333]'} `}> What is Bridge Healthcare’s Hospital Connecting Service and how does it work?</span>
+                <span className={`text-base sm:text-lg lg:text-[18px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq5' ? 'text-white' : 'text-[#333333]'} `}>What is Bridge Healthcare’s Hospital Connecting Service and how does it work?</span>
                 <svg
                   className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq5' ? 'rotate-180' : ''}`}
                   fill="none"
@@ -712,7 +709,7 @@ export default function OurSolution() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq5' ? 'max-h-[1000px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
+              <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq5' ? 'max-h-[500px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
                 <p className="text-sm sm:text-base lg:text-lg font-['Montserrat'] text-white">Our Hospital Connecting Service bridges the gap between rural patients and advanced hospital care. Through our Smart Healthcare Machines and nurse-led operations, we capture diagnostic data and connect patients with specialists from partner hospitals in real time. If a case requires further intervention, our platform facilitates digital referrals, document transfer, and even hospital appointment bookings—ensuring smoother transitions from village-level care to secondary or tertiary institutions.
                   This model strengthens hospital outreach, enables early case identification, and reduces overcrowding by digitally triaging patients—all while keeping them informed, prepared, and guided through the care journey.</p>
               </div>
@@ -720,9 +717,9 @@ export default function OurSolution() {
             <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq6' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
               <button
                 onClick={() => setActiveFaq(activeFaq === 'faq6' ? null : 'faq6')}
-                className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6  transition-colors duration-200"
+                className="w-full flex items-center justify-between p-2 sm:p-3 lg:p-4 transition-colors duration-200"
               >
-                <span className={`text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq6' ? 'text-white' : 'text-[#333333]'} `}> What kind of Wellness Programs does Bridge Healthcare offer?                </span>
+                <span className={`text-base sm:text-lg lg:text-[18px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq6' ? 'text-white' : 'text-[#333333]'} `}>What kind of Wellness Programs does Bridge Healthcare offer?                </span>
                 <svg
                   className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq6' ? 'rotate-180' : ''}`}
                   fill="none"
@@ -736,7 +733,7 @@ export default function OurSolution() {
                 <p className="text-sm sm:text-base lg:text-lg text-white font-['Montserrat']"> We offer community-driven Wellness Programs focused on preventive care, lifestyle monitoring, and chronic disease management. These programs are designed to detect risks early and promote healthier habits through periodic checkups, awareness drives, and health tracking via our digital system.
                   <br />Wellness modules include:
                   <br />1: Hypertension and Diabetes monitoring
-                  <br />2: Women’s wellness and reproductive health
+                  <br />2: Women&apos;s wellness and reproductive health
                   <br />3: Elderly care follow-ups
                   <br />4: Nutrition and lifestyle guidance
                   <br />All data is recorded in patient profiles, enabling long-term care visibility and helping hospitals or NGOs run evidence-based community health interventions.
@@ -747,7 +744,7 @@ export default function OurSolution() {
             <button onClick={() => setShowFaq(!showFaq)}
               className="inline-block px-8 py-3 border-1 border-[#003366] text-[#003366] rounded-xl font-semibold hover:bg-[#003366] hover:text-white transition-all duration-300"
             >
-              {showFaq === true ? 'Hide All' : 'Show All'}
+              {showFaq === true ? 'Hide' : 'Show All'}
             </button>
           </div>
         </div>

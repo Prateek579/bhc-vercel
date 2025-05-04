@@ -55,7 +55,7 @@ export default function KnowUsBetter() {
     <div className="relative bg-white">
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
         <div className="w-full">
-          <h2 className="text-[32px] sm:text-[38px] text-center md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+          <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
             <span className="text-[#18A093]">About</span>{' '}
             <span className="text-[#003366]">Bridge Healthcare</span>
           </h2>
@@ -117,19 +117,16 @@ export default function KnowUsBetter() {
     <div className="bg-gray-50 py-16 md:py-24">
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-6 md:px-8 lg:px-22">
         <div className="mb-16">
-          <h2 className="text-[32px] sm:text-[38px] text-center md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+          <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
             <span className="text-[#18A093]">Our</span>{' '}
             <span className="text-[#003366]">Strength And Capacity</span>
           </h2>
-          <p className="text-[#555555] text-[18px] text-center sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
-            Robust Performance & Scalable Capacity for Evolving Healthcare Needs
-          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Card 1 - Academics & Researchers */}
           <div
-            className={`bg-white p-8 rounded-lg border-1 border-gray-300 card-hover group hover:bg-[#0E7280] transition-all duration-300 cursor-pointer flex flex-col items-start justify-center min-h-[180px] md:min-h-[200px] ${activeCard === 'card1' ? 'touch-hover' : ''}`}
+            className={`bg-white p-8 rounded-lg border-1 border-gray-300 card-hover group hover:bg-[#0E7280] transition-all duration-300 cursor-pointer flex flex-col items-start justify-center min-h-[180px] md:min-h-[220px] ${activeCard === 'card1' ? 'touch-hover' : ''}`}
             onClick={(e) => handleToggle(e, 'card1')}
           >
             <div className="mb-6 group-hover:hidden touch-hover:hidden flex items-center justify-center w-full">
@@ -140,15 +137,15 @@ export default function KnowUsBetter() {
                 height={48}
               />
             </div>
-            <h3 className="text-2xl font-[700] font-['Montserrat'] leading-[100%] tracking-[0%] align-middle text-[#333333] mb-4 group-hover:hidden touch-hover:hidden text-center w-full">Academics & Researchers</h3>
-            <p className="text-gray-600 font-['Montserrat'] group-hover:text-white touch-hover:text-white hidden group-hover:block touch-hover:block">
+            <h3 className="text-2xl font-[700] font-['Montserrat'] leading-[100%] tracking-[0%] text-[#333333] align-middle  mb-4 group-hover:hidden touch-hover:hidden text-center w-full">Academics & Researchers</h3>
+            <p className="text-sm font-['Montserrat'] sm:text-base md:text-lg  text-gray-600  group-hover:text-white touch-hover:text-white hidden group-hover:block touch-hover:block">
               Experts from IITS, AIIMS, NIMHANS, CMC Vellore & leading institutions, specializing in healthcare technology with a deep understanding of rural healthcare challenges
             </p>
           </div>
 
           {/* Card 2 - Industry Professionals */}
           <div
-            className={`bg-white p-8 rounded-lg border-1 border-gray-300 card-hover group hover:bg-[#0E7280] transition-all duration-300 cursor-pointer flex flex-col items-start justify-center min-h-[180px] md:min-h-[200px] ${activeCard === 'card2' ? 'touch-hover' : ''}`}
+            className={`bg-white p-8 rounded-lg border-1 border-gray-300 card-hover group hover:bg-[#0E7280] transition-all duration-300 cursor-pointer flex flex-col items-start justify-center min-h-[180px] md:min-h-[220px] ${activeCard === 'card2' ? 'touch-hover' : ''}`}
             onClick={(e) => handleToggle(e, 'card2')}
           >
             <div className="mb-6 group-hover:hidden touch-hover:hidden flex items-center justify-center w-full">
@@ -159,15 +156,15 @@ export default function KnowUsBetter() {
                 height={48}
               />
             </div>
-            <h3 className="text-2xl text-centr w-full font-[700] font-['Montserrat'] leading-[100%] tracking-[0%] align-middle text-[#333333] mb-4 group-hover:hidden touch-hover:hidden">Industry Professionals & Entrepreneurs</h3>
-            <p className="text-gray-600 font-['Montserrat'] group-hover:text-white touch-hover:text-white hidden group-hover:block touch-hover:block">
+            <h3 className="text-2xl font-[700] font-['Montserrat'] leading-[100%] tracking-[0%] align-middle text-[#333333] mb-4 group-hover:hidden touch-hover:hidden text-center w-full">Industry Professionals & Entrepreneurs</h3>
+            <p className="text-sm font-['Montserrat'] sm:text-base md:text-lg  text-gray-600  group-hover:text-white touch-hover:text-white hidden group-hover:block touch-hover:block">
               Proven track record of 20+ years of experience in operations, product innovation & scaling technology-driven solutions
             </p>
           </div>
 
           {/* Card 3 - Hospitals & NGO */}
           <div
-            className={`bg-white p-8 rounded-lg border-1 border-gray-300 card-hover group hover:bg-[#0E7280] transition-all duration-300 cursor-pointer flex flex-col items-start justify-center min-h-[180px] md:min-h-[200px] ${activeCard === 'card3' ? 'touch-hover' : ''}`}
+            className={`bg-white p-8 rounded-lg border-1 border-gray-300 card-hover group hover:bg-[#0E7280] transition-all duration-300 cursor-pointer flex flex-col items-start justify-center min-h-[180px] md:min-h-[220px] ${activeCard === 'card3' ? 'touch-hover' : ''}`}
             onClick={(e) => handleToggle(e, 'card3')}
           >
             <div className="mb-6 group-hover:hidden touch-hover:hidden flex items-center justify-center w-full">
@@ -178,8 +175,8 @@ export default function KnowUsBetter() {
                 height={48}
               />
             </div>
-            <h3 className="text-2xl font-[700] font-['Montserrat'] leading-[100%] tracking-[0%] align-middle text-[#333333] mb-4 group-hover:hidden touch-hover:hidden w-full text-center">Hospitals & NGO Collaborators</h3>
-            <p className="text-gray-600 font-['Montserrat'] group-hover:text-white touch-hover:text-white hidden group-hover:block touch-hover:block">
+            <h3 className="text-2xl font-[700] font-['Montserrat'] leading-[100%] tracking-[0%] align-middle text-[#333333] mb-4 group-hover:hidden touch-hover:hidden text-center w-full">Hospitals & NGO Collaborators</h3>
+            <p className="text-sm font-['Montserrat'] sm:text-base md:text-lg  text-gray-600  group-hover:text-white touch-hover:text-white hidden group-hover:block touch-hover:block">
               Partnering with Prestigious Hospitals, alongside healthcare-focused NGO with vast experience in impact-driven programs.
             </p>
           </div>
@@ -190,13 +187,10 @@ export default function KnowUsBetter() {
     <div className="bg-white">
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-6 md:px-8 lg:px-22">
         <div className="mb-8">
-          <h2 className="text-[32px] sm:text-[38px] text-center md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+          <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
             <span className="text-[#18A093]">Meet Our</span>{' '}
             <span className="text-[#003366]">Team</span>
           </h2>
-          <p className="text-[#555555] text-[18px] text-center sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
-            Bridge Healthcare&apos;s expert team innovates tele-diagnostics for better healthcare access.
-          </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -354,19 +348,19 @@ export default function KnowUsBetter() {
 
     {/* FAQ Section */}
     <div className="relative bg-white overflow-hidden">
-      <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-16 sm:py-20 lg:py-32">
-        <h2 className="text-[32px] sm:text-[38px] text-center md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+      <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
+        <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
           <span className="text-[#18A093]">FA</span>
-          <span className="text-[#003366]">Q&apos;s</span>
+          <span className="text-[#003366]">Q<span className='text-[26px] sm:text-[30px]'>s</span></span>
         </h2>
-        <div className="space-y-3 sm:space-y-4 lg:space-y-6">
+        <div className="space-y-2 sm:space-y-3 lg:space-y-4">
           {/* FAQ Items */}
           <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq1' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
             <button
               onClick={() => setActiveFaq(activeFaq === 'faq1' ? null : 'faq1')}
-              className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6 transition-colors duration-200"
+              className="w-full flex items-center justify-between p-2 sm:p-3 lg:p-4 transition-colors duration-200"
             >
-              <span className={`text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq1' ? 'text-white' : 'text-[#333333]'} `}>What inspired the creation of Bridge Healthcare?</span>
+              <span className={`text-base sm:text-lg lg:text-[18px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq1' ? 'text-white' : 'text-[#333333]'} `}>What inspired the creation of Bridge Healthcare?</span>
               <svg
                 className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq1' ? 'rotate-180' : ''}`}
                 fill="none"
@@ -376,17 +370,17 @@ export default function KnowUsBetter() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq1' ? 'max-h-[1000px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
-              <p className="text-sm sm:text-base lg:text-lg font-['Montserrat'] text-white">Bridge Healthcare was born from a simple yet powerful realization: millions of people in rural India still lack access to timely, quality healthcare. We saw a chance to go beyond convenience and create real-world impact — by bringing diagnostics, doctor consultations, and continuous care right to the doorstep of every village through technology and local empowerment.</p>
+            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq1' ? 'max-h-[500px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
+              <p className="text-sm sm:text-[14px] lg:text-[16px] font-['Montserrat'] text-white">Bridge Healthcare was born from a simple yet powerful realization: millions of people in rural India still lack access to timely, quality healthcare. We saw a chance to go beyond convenience and create real-world impact — by bringing diagnostics, doctor consultations, and continuous care right to the doorstep of every village through technology and local empowerment.</p>
             </div>
           </div>
 
           <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq2' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
             <button
               onClick={() => setActiveFaq(activeFaq === 'faq2' ? null : 'faq2')}
-              className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6  transition-colors duration-200"
+              className="w-full flex items-center justify-between p-2 sm:p-3 lg:p-4 transition-colors duration-200"
             >
-              <span className={`text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq2' ? 'text-white' : 'text-[#333333]'} `}>What is the core mission and vision of Bridge Healthcare?
+              <span className={`text-base sm:text-lg lg:text-[18px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq2' ? 'text-white' : 'text-[#333333]'} `}>What is the core mission and vision of Bridge Healthcare?
               </span>
               <svg
                 className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq2' ? 'rotate-180' : ''}`}
@@ -397,17 +391,17 @@ export default function KnowUsBetter() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq2' ? 'max-h-[1000px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
-              <p className="text-sm sm:text-base lg:text-lg text-white font-['Montserrat']">Our mission is to make healthcare equitable, real-time and preventive for every community — regardless of location or income. We envision a future where people in the most remote areas receive the same standard of care as those in cities, through a system powered by innovation, empathy and grassroots connectivity.</p>
+            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq2' ? 'max-h-[500px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
+              <p className="text-sm sm:text-[14px] lg:text-[16px] text-white font-['Montserrat']">Our mission is to make healthcare equitable, real-time and preventive for every community — regardless of location or income. We envision a future where people in the most remote areas receive the same standard of care as those in cities, through a system powered by innovation, empathy and grassroots connectivity.</p>
             </div>
           </div>
 
           <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq3' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
             <button
               onClick={() => setActiveFaq(activeFaq === 'faq3' ? null : 'faq3')}
-              className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6  transition-colors duration-200"
+              className="w-full flex items-center justify-between p-2 sm:p-3 lg:p-4 transition-colors duration-200"
             >
-              <span className={`text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq3' ? 'text-white' : 'text-[#333333]'} `}>Who are the people behind Bridge Healthcare?</span>
+              <span className={`text-base sm:text-lg lg:text-[18px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq3' ? 'text-white' : 'text-[#333333]'} `}>Who are the people behind Bridge Healthcare?</span>
               <svg
                 className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq3' ? 'rotate-180' : ''}`}
                 fill="none"
@@ -417,17 +411,17 @@ export default function KnowUsBetter() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq3' ? 'max-h-[1000px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
-              <p className="text-sm sm:text-base lg:text-lg text-white font-['Montserrat']">Bridge Healthcare is driven by a passionate team of healthcare professionals, engineers, and social innovators with experience across rural development, diagnostics, public health and technology. We’re united by a shared vision — to reimagine how healthcare reaches people, blending deep empathy with practical execution, at scale.</p>
+            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq3' ? 'max-h-[500px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
+              <p className="text-sm sm:text-[14px] lg:text-[16px] text-white font-['Montserrat']">Bridge Healthcare is driven by a passionate team of healthcare professionals, engineers, and social innovators with experience across rural development, diagnostics, public health and technology. We&apos;re united by a shared vision — to reimagine how healthcare reaches people, blending deep empathy with practical execution, at scale.</p>
             </div>
           </div>
 
           {showFaq === true && <> <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq4' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
             <button
               onClick={() => setActiveFaq(activeFaq === 'faq4' ? null : 'faq4')}
-              className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6  transition-colors duration-200"
+              className="w-full flex items-center justify-between p-2 sm:p-3 lg:p-4 transition-colors duration-200"
             >
-              <span className={`text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq4' ? 'text-white' : 'text-[#333333]'} `}>How does Bridge Healthcare plan to scale its impact?</span>
+              <span className={`text-base sm:text-lg lg:text-[18px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq4' ? 'text-white' : 'text-[#333333]'} `}>How does Bridge Healthcare plan to scale its impact?</span>
               <svg
                 className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq4' ? 'rotate-180' : ''}`}
                 fill="none"
@@ -437,17 +431,17 @@ export default function KnowUsBetter() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq4' ? 'max-h-[1000px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
-              <p className="text-sm sm:text-base lg:text-lg text-white font-['Montserrat']">We scale by creating hyperlocal care ecosystems. By deploying Smart Healthcare Machines, training local operators, and connecting them with doctors via our tech platform, we make healthcare accessible, efficient and trustworthy. Our model is flexible enough to serve rural villages and high-density urban clusters alike, enabling broad and meaningful replication.</p>
+            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq4' ? 'max-h-[500px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
+              <p className="text-sm sm:text-[14px] lg:text-[16px] text-white font-['Montserrat']">We scale by creating hyperlocal care ecosystems. By deploying Smart Healthcare Machines, training local operators, and connecting them with doctors via our tech platform, we make healthcare accessible, efficient and trustworthy. Our model is flexible enough to serve rural villages and high-density urban clusters alike, enabling broad and meaningful replication.</p>
             </div>
           </div>
 
             <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq5' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
               <button
                 onClick={() => setActiveFaq(activeFaq === 'faq5' ? null : 'faq5')}
-                className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6  transition-colors duration-200"
+                className="w-full flex items-center justify-between p-2 sm:p-3 lg:p-4 transition-colors duration-200"
               >
-                <span className={`text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq5' ? 'text-white' : 'text-[#333333]'} `}>How can individuals or organizations collaborate with Bridge Healthcare?</span>
+                <span className={`text-base sm:text-lg lg:text-[18px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq5' ? 'text-white' : 'text-[#333333]'} `}>How can individuals or organizations collaborate with Bridge Healthcare?</span>
                 <svg
                   className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq5' ? 'rotate-180' : ''}`}
                   fill="none"
@@ -457,15 +451,15 @@ export default function KnowUsBetter() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq5' ? 'max-h-[1000px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
-                <p className="text-sm sm:text-base lg:text-lg text-white font-['Montserrat']">We believe collaboration is key to systemic change. Whether you&apos;re a CSR partner, NGO, hospital, panchayat, or impact-driven institution, there’s space to work together. From deploying care units to running health programs or scaling our platform in new regions—we invite you to join us in building a healthier, more inclusive future.</p>
+              <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq5' ? 'max-h-[500px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
+                <p className="text-sm sm:text-[14px] lg:text-[16px] text-white font-['Montserrat']">We believe collaboration is key to systemic change. Whether you&apos;re a CSR partner, NGO, hospital, panchayat, or impact-driven institution, there’s space to work together. From deploying care units to running health programs or scaling our platform in new regions—we invite you to join us in building a healthier, more inclusive future.</p>
               </div>
             </div></>}
           <div className="mt-12">
             <button onClick={() => setShowFaq(!showFaq)}
               className="inline-block px-8 py-3 border-1 border-[#003366] text-[#003366] rounded-xl font-semibold hover:bg-[#003366] hover:text-white transition-all duration-300"
             >
-              {showFaq === true ? 'Hide All' : 'Show All'}
+              {showFaq === true ? 'Hide' : 'Show All'}
             </button>
           </div>
         </div>

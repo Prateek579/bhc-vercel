@@ -274,7 +274,7 @@ export default function Animacare() {
 
     <div className="relative overflow-hidden bg-white">
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-        <h2 className="text-[32px] sm:text-[38px] text-center md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+      <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
           <span className="text-[#17A7AB]">Animacare</span>{' '}
           <span className="text-[#003366]">Initiative</span>
         </h2>
@@ -404,7 +404,7 @@ export default function Animacare() {
     <div className="relative overflow-hidden bg-white">
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
         <div className="mb-8">
-          <h2 className="text-[32px] sm:text-[38px] text-center md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+        <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
             <span className="text-[#18A093]">Network Workflow of</span>{' '}
             <span className="text-[#003366]">Animacare Initiative</span>
           </h2>
@@ -511,7 +511,7 @@ export default function Animacare() {
     {/*Powered by Government Schemes*/}
     < div className="relative bg-white overflow-hidden" >
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-        <h2 className="text-[28px] xs:text-[30px] text-center sm:text-[34px] md:text-[38px] lg:text-[42px] font-[700] font-['Montserrat'] mb-4 sm:mb-8">
+      <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
           <span className="text-[#18A093]">Powered by</span>{' '}
           <span className="text-[#003366]">Government Schemes</span>
         </h2>
@@ -535,7 +535,7 @@ export default function Animacare() {
     {/* Social Impacts & Sustainability Section */}
     <div className="relative overflow-hidden bg-white">
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-        <h2 className="text-center text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+      <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
           <span className="text-[#18A093]">Social Impacts</span>{' '}
           <span className="text-[#003366]">& Sustainability</span>
         </h2>
@@ -547,7 +547,7 @@ export default function Animacare() {
           >
             <Image src="/icons/anim-4-lgo1.png" alt="Innovation" width={40} height={40} className="mr-2" />
             <div className='w-[90%] '>
-              <h3 className="text-lg font-semibold text-[#003366] leading-[1.2] sm:leading-[20px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat']">
+              <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  text-[#003366] font-['Montserrat'] ">
                 Improved Access to Quality Healthcare in Underserved Areas
               </h3>
             </div>
@@ -559,7 +559,7 @@ export default function Animacare() {
           >
             <Image src="/icons/anim-4-lgo1.png" alt="Innovation" width={40} height={40} className="mr-2" />
             <div className='w-[90%] '>
-              <h3 className="text-lg font-semibold text-[#003366] leading-[1.2] sm:leading-[20px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat']">
+              <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  text-[#003366] font-['Montserrat'] ">
                 Early Detection & Prevention of Chronic Diseases
               </h3>
             </div>
@@ -570,7 +570,7 @@ export default function Animacare() {
           >
             <Image src="/icons/anim-4-lgo1.png" alt="Innovation" width={40} height={40} className="mr-2" />
             <div className='w-[90%] '>
-              <h3 className="text-lg font-semibold text-[#003366] leading-[1.2] sm:leading-[20px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat']">
+              <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  text-[#003366] font-['Montserrat'] ">
                 Healthcare Equity for Women, Elderly & Low-Income Groups
               </h3>
             </div>
@@ -581,7 +581,7 @@ export default function Animacare() {
           >
             <Image src="/icons/anim-4-lgo1.png" alt="Innovation" width={40} height={40} className="mr-2" />
             <div className='w-[90%] '>
-              <h3 className="text-lg font-semibold text-[#003366] leading-[1.2] sm:leading-[20px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat']">
+              <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  text-[#003366] font-['Montserrat'] ">
                 Digitization of Health Records for Continuity of Care
               </h3>
             </div>
@@ -592,7 +592,7 @@ export default function Animacare() {
           >
             <Image src="/icons/anim-4-lgo1.png" alt="Innovation" width={40} height={40} className="mr-2" />
             <div className='w-[90%] '>
-              <h3 className="text-lg font-semibold text-[#003366] leading-[1.2] sm:leading-[20px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat']">
+              <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  text-[#003366] font-['Montserrat'] ">
                 Community Employment & Skill Development
               </h3>
             </div>
@@ -603,7 +603,7 @@ export default function Animacare() {
           >
             <Image src="/icons/anim-4-lgo1.png" alt="Innovation" width={40} height={40} className="mr-2" />
             <div className='w-[90%] '>
-              <h3 className="text-lg font-semibold text-[#003366] leading-[1.2] sm:leading-[20px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat']">
+              <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  text-[#003366] font-['Montserrat'] ">
                 Data-Driven Public Health Planning
               </h3>
             </div>
@@ -615,21 +615,21 @@ export default function Animacare() {
     {/* FAQ Section */}
     <div className="relative bg-white overflow-hidden">
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-        <h2 className="text-[32px] sm:text-[38px] text-center md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+        <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
           <span className="text-[#18A093]">FA</span>
-          <span className="text-[#003366]">Q&apos;s</span>
+          <span className="text-[#003366]">Q<span className='text-[26px] sm:text-[30px]'>s</span> </span>
         </h2>
         {/* <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
           Learn how our solutions bring quality healthcare closer to those who need it most.
         </p> */}
-        <div className="space-y-3 sm:space-y-4 lg:space-y-6">
+        <div className="space-y-2 sm:space-y-3 lg:space-y-4">
           {/* FAQ Items */}
           <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq1' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
             <button
               onClick={() => setActiveFaq(activeFaq === 'faq1' ? null : 'faq1')}
-              className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6 transition-colors duration-200"
+              className="w-full flex items-center justify-between p-2 sm:p-3 lg:p-4 transition-colors duration-200"
             >
-              <span className={`text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq1' ? 'text-white' : 'text-[#333333]'} `}>What is the Animacare Initiative and how does the model work?</span>
+              <span className={`text-base sm:text-lg lg:text-[18px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq1' ? 'text-white' : 'text-[#333333]'} `}>What is the Animacare Initiative and how does the model work?</span>
               <svg
                 className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq1' ? 'rotate-180' : ''}`}
                 fill="none"
@@ -639,17 +639,17 @@ export default function Animacare() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq1' ? 'max-h-[1000px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
-              <p className="text-sm sm:text-base lg:text-lg font-['Montserrat'] text-white">The Animacare Initiative is Bridge Healthcare’s flagship rural health model—designed to create an integrated, tech-enabled care network across villages. The model is built around strategically placed Tele-Diagnostic and Tele-Consultation Centers (TDTCs) and mobile Medical Tele-Consultation Units (MTCUs). Together, they provide accessible, affordable, and continuous care by combining on-ground diagnostics, trained nurse assistance, and specialist tele-consultation, ensuring no one is left behind due to distance or lack of infrastructure.</p>
+            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq1' ? 'max-h-[500px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
+              <p className="text-sm sm:text-[14px] lg:text-[16px] font-['Montserrat'] text-white leading-relaxed">The Animacare Initiative is Bridge Healthcare’s flagship rural health model—designed to create an integrated, tech-enabled care network across villages. The model is built around strategically placed Tele-Diagnostic and Tele-Consultation Centers (TDTCs) and mobile Medical Tele-Consultation Units (MTCUs). Together, they provide accessible, affordable, and continuous care by combining on-ground diagnostics, trained nurse assistance, and specialist tele-consultation, ensuring no one is left behind due to distance or lack of infrastructure.</p>
             </div>
           </div>
 
           <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq2' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
             <button
               onClick={() => setActiveFaq(activeFaq === 'faq2' ? null : 'faq2')}
-              className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6  transition-colors duration-200"
+              className="w-full flex items-center justify-between p-2 sm:p-3 lg:p-4 transition-colors duration-200"
             >
-              <span className={`text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq2' ? 'text-white' : 'text-[#333333]'} `}>What services are provided by TDTCs and MTCUs?
+              <span className={`text-base sm:text-lg lg:text-[18px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq2' ? 'text-white' : 'text-[#333333]'} `}>What services are provided by TDTCs and MTCUs?
               </span>
               <svg
                 className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq2' ? 'rotate-180' : ''}`}
@@ -660,8 +660,8 @@ export default function Animacare() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq2' ? 'max-h-[1000px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
-              <p className="text-sm sm:text-base lg:text-lg text-white font-['Montserrat']">
+            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq2' ? 'max-h-[500px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
+              <p className="text-sm sm:text-[14px] lg:text-[16px] text-white font-['Montserrat'] leading-relaxed">
                 TDTCs act as fixed community care hubs equipped with the Smart Healthcare Machine and a dedicated operator/nurse. They offer routine checkups, diagnostic tests, real-time doctor consultations, health record digitization, and printed prescriptions.
                 MTCUs are mobile units that take these services to remote hamlets—reaching those who can&apos;t travel to health centers. They serve as a bridge between hard-to-reach populations and the core care ecosystem.</p>
             </div>
@@ -670,9 +670,9 @@ export default function Animacare() {
           <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq3' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
             <button
               onClick={() => setActiveFaq(activeFaq === 'faq3' ? null : 'faq3')}
-              className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6  transition-colors duration-200"
+              className="w-full flex items-center justify-between p-2 sm:p-3 lg:p-4 transition-colors duration-200"
             >
-              <span className={`text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq3' ? 'text-white' : 'text-[#333333]'} `}>How does the referral and follow-up system work?</span>
+              <span className={`text-base sm:text-lg lg:text-[18px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq3' ? 'text-white' : 'text-[#333333]'} `}>How does the referral and follow-up system work?</span>
               <svg
                 className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq3' ? 'rotate-180' : ''}`}
                 fill="none"
@@ -682,17 +682,17 @@ export default function Animacare() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq3' ? 'max-h-[1000px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
-              <p className="text-sm sm:text-base lg:text-lg text-white font-['Montserrat']">Once a consultation is complete, doctors can digitally prescribe follow-up visits, diagnostics, or hospital referrals. Each patient&apos;s data is securely stored and linked to their profile, ensuring smooth coordination for repeat visits or escalations to higher medical facilities. The nurse at the TDTC tracks follow-up timelines, reaching out to patients proactively and ensuring care continuity with dignity.</p>
+            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq3' ? 'max-h-[500px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
+              <p className="text-sm sm:text-[14px] lg:text-[16px] text-white font-['Montserrat'] leading-relaxed">Once a consultation is complete, doctors can digitally prescribe follow-up visits, diagnostics, or hospital referrals. Each patient&apos;s data is securely stored and linked to their profile, ensuring smooth coordination for repeat visits or escalations to higher medical facilities. The nurse at the TDTC tracks follow-up timelines, reaching out to patients proactively and ensuring care continuity with dignity.</p>
             </div>
           </div>
 
           {showFaq === true && <> <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq4' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
             <button
               onClick={() => setActiveFaq(activeFaq === 'faq4' ? null : 'faq4')}
-              className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6  transition-colors duration-200"
+              className="w-full flex items-center justify-between p-2 sm:p-3 lg:p-4 transition-colors duration-200"
             >
-              <span className={`text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq4' ? 'text-white' : 'text-[#333333]'} `}>What early results or outcomes have you achieved so far?</span>
+              <span className={`text-base sm:text-lg lg:text-[18px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq4' ? 'text-white' : 'text-[#333333]'} `}>What early results or outcomes have you achieved so far?</span>
               <svg
                 className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq4' ? 'rotate-180' : ''}`}
                 fill="none"
@@ -702,8 +702,8 @@ export default function Animacare() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq4' ? 'max-h-[1000px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
-              <p className="text-sm sm:text-base lg:text-lg text-white font-['Montserrat']">Our deployments in rural districts like Murshidabad (West Bengal) and Varanasi (Uttar Pradesh) have already led to:
+            <div className={`px-3 sm:px-4 lg:px-6 transition-all duration-200 ease-in-out ${activeFaq === 'faq4' ? 'max-h-[500px] py-3 sm:py-4 lg:py-6' : 'max-h-0'} overflow-hidden`}>
+              <p className="text-sm sm:text-[14px] lg:text-[16px] text-white font-['Montserrat'] leading-relaxed">Our deployments in rural districts like Murshidabad (West Bengal) and Varanasi (Uttar Pradesh) have already led to:
                 <br />1: Hundreds of patients receiving quality consultations without leaving their village
                 <br />2: High detection rates of early-stage chronic conditions
                 <br />3: Increased health-seeking behavior, especially among women and the elderly
@@ -714,9 +714,9 @@ export default function Animacare() {
             <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq5' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
               <button
                 onClick={() => setActiveFaq(activeFaq === 'faq5' ? null : 'faq5')}
-                className="w-full flex items-center justify-between p-3 sm:p-4 lg:p-6  transition-colors duration-200"
+                className="w-full flex items-center justify-between p-2 sm:p-3 lg:p-4 transition-colors duration-200"
               >
-                <span className={`text-base sm:text-lg lg:text-[20px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq5' ? 'text-white' : 'text-[#333333]'} `}> How scalable is the Animacare Initiative for other rural regions?</span>
+                <span className={`text-base sm:text-lg lg:text-[18px] font-[500] leading-[100%] tracking-[0%] font-['Montserrat'] ${activeFaq === 'faq5' ? 'text-white' : 'text-[#333333]'} `}> How scalable is the Animacare Initiative for other rural regions?</span>
                 <svg
                   className={`w-5 h-5 sm:w-6 sm:h-6 text-[#003366] transform transition-transform duration-200 ${activeFaq === 'faq5' ? 'rotate-180' : ''}`}
                   fill="none"
@@ -734,7 +734,7 @@ export default function Animacare() {
             <button onClick={() => setShowFaq(!showFaq)}
               className="inline-block px-8 py-3 border-1 border-[#003366] text-[#003366] rounded-xl font-semibold hover:bg-[#003366] hover:text-white transition-all duration-300"
             >
-              {showFaq === true ? 'Hide All' : 'Show All'}
+              {showFaq === true ? 'Hide' : 'Show All'}
             </button>
           </div>
         </div>

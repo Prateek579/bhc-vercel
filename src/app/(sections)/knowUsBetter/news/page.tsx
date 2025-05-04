@@ -35,20 +35,20 @@ export default function News() {
                         <div className="w-full flex flex-row items-center justify-between">
                             <button
                                 onClick={() => setActiveTab("NEWS")}
-                                className={`px-6 sm:px-8 lg:px-12 py-2 sm:py-2.5 text-sm sm:text-base lg:text-lg font-medium text-[#1A1A1A] bg-white font-bold leading-[100%] text-center align-middle ${activeTab === 'NEWS' ? 'border-b-2 border-black' : ''}`}
+                                className={`px-6 sm:px-8 lg:px-12 py-2 sm:py-2.5 text-sm sm:text-base lg:text-lg   bg-white  text-center align-middle  font-[700] font-['Montserrat'] leading-[100%] tracking-[0%] text-[#333333] cursor-pointer ${activeTab === 'NEWS' ? 'border-b-2 border-black' : ''}`}
                             >
                                 NEWS
                             </button>
                             <button
                                 disabled
                                 onClick={() => setActiveTab("BLOGS")}
-                                className={`px-6 sm:px-8 lg:px-12 py-2 sm:py-2.5 text-sm sm:text-base lg:text-lg font-medium text-[#1A1A1A] bg-white font-bold leading-[100%] text-center align-middle ${activeTab === 'BLOGS' ? 'border-b-2 border-black' : ''}`}
+                                className={`px-6 sm:px-8 lg:px-12 py-2 sm:py-2.5 text-sm sm:text-base lg:text-lg   bg-white  text-center align-middle  font-[700] font-['Montserrat'] leading-[100%] tracking-[0%] text-[#333333] ${activeTab === 'BLOGS' ? 'border-b-2 border-black' : ''}`}
                             >
                                 BLOGS
                             </button>
                             <button
                                 onClick={() => setActiveTab("ACHIEVEMENTS")}
-                                className={`px-6 sm:px-8 lg:px-12 py-2 sm:py-2.5 text-sm sm:text-base lg:text-lg font-medium text-[#1A1A1A] bg-white font-bold leading-[100%] text-center align-middle ${activeTab === 'ACHIEVEMENTS' ? 'border-b-2 border-black' : ''}`}
+                                className={`px-6 sm:px-8 lg:px-12 py-2 sm:py-2.5 text-sm sm:text-base lg:text-lg   bg-white  text-center align-middle  font-[700] font-['Montserrat'] leading-[100%] tracking-[0%] text-[#333333] cursor-pointer ${activeTab === 'ACHIEVEMENTS' ? 'border-b-2 border-black' : ''}`}
                             >
                                 ACHIEVEMENTS
                             </button>

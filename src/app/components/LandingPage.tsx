@@ -38,7 +38,7 @@ const useCountAnimation = (end: number, duration: number = 1000) => {
 const LandingPage = () => {
   const [activeFaq, setActiveFaq] = React.useState<string | null>(null);
   const statsRef = useRef<HTMLDivElement>(null);
-  // const [activeProd, setActiveProd] = React.useState<number | null>(1);
+  const [activeProductBtn, setActiveProductBtn] = useState(0);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
   const [activeCard, setActiveCard] = useState<string | null>(null);
   const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
@@ -314,11 +314,12 @@ const LandingPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             {/* Text Content */}
             <div className="space-y-4">
-              <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat']">
+              <h2 className="text-[32px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
                 <span className="text-[#18A093]">Reimagining Access to</span>{' '}
+                <br />
                 <span className="text-[#003366]">Quality Healthcare</span>
               </h2>
-              <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium">
+              <p className="text-[#555555] text-[16px] sm:text-[20px] md:text-[22px] font-['Montserrat'] font-medium">
                 From Cities to Villages. From Clinics to Communities.
               </p>
               <p className="text-sm sm:text-base md:text-lg font-['Montserrat'] text-gray-600">
@@ -348,7 +349,7 @@ const LandingPage = () => {
         style={{ background: 'linear-gradient(90deg, rgba(24, 160, 147, 0.7) 0%, rgba(18, 131, 135, 0.7) 33.17%, rgba(11, 100, 122, 0.7) 64.42%, rgba(6, 80, 114, 0.7) 87.02%, rgba(0, 51, 102, 0.7) 100%)' }}>
 
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22">
-          <h1 className='font-bold mb-2  text-[20px] sm:text-[20px] md:text-[30px] lg:text-[35px] text-center'>Impact that matters</h1>
+          <h1 className='font-bold mb-2  text-[20px] sm:text-[20px] md:text-[30px] lg:text-[35px] text-center'>Impact That Matters</h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 text-white">
             {/* Specialist Referrals */}
             <div className="flex flex-col items-center justify-center text-center p-3 sm:p-4 md:p-5 h-[140px] sm:h-[150px] md:h-[160px] space-y-3 sm:space-y-4">
@@ -416,15 +417,39 @@ const LandingPage = () => {
         </div>
       </div>
 
-      {/* Our Addressing Key Challenges Section */}
-      <div className="relative bg-white py-16 overflow-hidden">
-        <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22">
-          <h2 className="text-[32px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-3 sm:mb-4 text-center">
+      {/*Powered by Government Schemes*/}
+      < div className="relative bg-white overflow-hidden" >
+        <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
+          <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
+            <span className="text-[#18A093]">Powered by</span>{' '}
+            <span className="text-[#003366]">Government Schemes</span>
+          </h2>
+          <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-2 xs:gap-3 sm:gap-4 md:gap-5">
+            <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+              <Image src="/icons/hm-gs-img1.png" alt="Gov. Schemes" width={200} height={200} className='w-30  md:w-45 h-auto object-contain' />
+            </div>
+            <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+              <Image src="/icons/hm-gs-img2.png" alt="Gov. Schemes" width={200} height={200} className='w-30  md:w-45 h-auto object-contain' />
+            </div>
+            <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+              <Image src="/icons/hm-gs-img3.png" alt="Gov. Schemes" width={200} height={200} className='w-30  md:w-45 h-auto object-contain' />
+            </div>
+            <div className="flex  items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+              <Image src="/icons/hm-gs-img4.png" alt="Gov. Schemes" width={200} height={200} className='w-30  md:w-45 h-auto object-contain' />
+            </div>
+          </div>
+        </div>
+      </div >
+
+
+      <div className="relative  py-16 overflow-hidden bg-gray-100">
+        <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 ">
+          <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
             <span className="text-[#18A093]">Addressing</span>{' '}
             <span className="text-[#003366]">Challenges</span>
           </h2>
 
-          <div className="relative w-full max-w-screen-xl mx-auto md:px-12 py-10">
+          <div className="relative w-full max-w-screen-xl mx-auto md:px-12 pt-4 md:py-10">
             <button className="custom-prev cursor-pointer absolute left-0 top-[45%] z-10 p-2 rounded-full bg-white shadow-lg hover:bg-gray-100 transition-all duration-300">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path d="M15 19l-7-7 7-7" stroke="#003366" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -462,7 +487,7 @@ const LandingPage = () => {
                     height={450}
                     className="object-cover w-full h-full"
                   />
-                  <div className="absolute bottom-0  bg-gradient-to-t from-black/90 to-black/10 flex flex-col justify-start p-8 h-[45%]">
+                  <div className="absolute bottom-0  bg-gradient-to-t from-black/90 to-black/10 flex flex-col justify-start p-8">
                     <h3 className="text-2xl sm:text-[26px] font-['Montserrat'] font-bold text-white mb-4 text-center">Limited Access to Quality Care</h3>
                     <p className="text-white/90 text-sm font-['Montserrat'] sm:text-[16px] text-center">
                       Quality healthcare remains inaccessible for millions — from remote rural regions to premium residential areas lacking sufficient medical infrastructure.
@@ -535,10 +560,73 @@ const LandingPage = () => {
         </div>
       </div>
 
+      {/* Our Products section */}
+      <div className="relative bg-white overflow-hidden" >
+        <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 pt-0 pb-4 md:py-15">
+          <div className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
+            <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
+              <span className="text-[#18A093]">Our</span>{' '}
+              <span className="text-[#003366]">Products</span>
+            </h2>
+            {/* Slide Control Buttons */}
+            <div className="w-full h-full flex itmes-center justify-center">
+              <div className="grid grid-cols-3  md:w-[80%] gap-1 md:gap-4 mb-6 ">
+                <div className={`border-2 border-gray-200 group flex items-center justify-center hover:cursor-pointer p-1 md:p-2 lg:p-3 rounded-lg transition-all duration-300 ${activeProductBtn === 0 ? 'bg-[#0E7280]' : 'hover:bg-[#0E7280]'}`} onClick={() => { goToSlide(0); setActiveProductBtn(0); }}>
+                  <p className={`text-[12px] sm:text-[18px] md:text-[20px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] align-middle capitalize font-['Montserrat'] text-center ${activeProductBtn === 0 ? 'text-white' : 'text-gray-700 group-hover:text-white'}`}>Smart Healthcare Machine</p>
+                </div>
+                <div className={`border-2 border-gray-200 group flex items-center justify-center hover:cursor-pointer p-1 md:p-2 lg:p-3 rounded-lg transition-all duration-300 ${activeProductBtn === 1 ? 'bg-[#0E7280]' : 'hover:bg-[#0E7280]'}`} onClick={() => { goToSlide(1); setActiveProductBtn(1); }}>
+                  <p className={`text-[12px] sm:text-[18px] md:text-[20px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] align-middle capitalize font-['Montserrat'] text-center ${activeProductBtn === 1 ? 'text-white' : 'text-gray-700 group-hover:text-white'}`}>Nurse App</p>
+                </div>
+                <div className={`border-2 border-gray-200 group flex items-center justify-center hover:cursor-pointer p-1 md:p-2 lg:p-3 rounded-lg transition-all duration-300 ${activeProductBtn === 2 ? 'bg-[#0E7280]' : 'hover:bg-[#0E7280]'}`} onClick={() => { goToSlide(2); setActiveProductBtn(2); }}>
+                  <p className={`text-[12px] sm:text-[18px] md:text-[20px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] align-middle capitalize font-['Montserrat'] text-center ${activeProductBtn === 2 ? 'text-white' : 'text-gray-700 group-hover:text-white'}`}>Doctor App</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative w-full  py-2">
+              <button className="custom-prev hidden"></button>
+              <button className="custom-next hidden"></button>
+
+              <Swiper
+                autoHeight={true}
+                modules={[Navigation, Pagination, Autoplay]}
+                onSwiper={(swiper) => (swiperRef.current = swiper)}
+                pagination={{ clickable: true, el: '.custom-pagination' }}
+                slidesPerView={1}
+                initialSlide={0}
+                autoplay={{
+                  delay: 5000,
+                  disableOnInteraction: false
+                }}
+                onSlideChange={(swiper) => setActiveProductBtn(swiper.realIndex)}
+              >
+                {/* Card 1 */}
+                <SwiperSlide>
+                  <Image src="/icons/hm-6-sl1.svg" alt='doctor' width={500} height={500} className='w-full h-full' />
+                </SwiperSlide>
+
+                {/* Card 2 */}
+                <SwiperSlide>
+                  <Image src="/icons/hm-6-sl2.svg" alt='doctor' width={500} height={500} className='w-full h-full' />
+                </SwiperSlide>
+
+                {/* Card 3 */}
+                <SwiperSlide>
+                  <Image src="/icons/hm-6-sl3.svg" alt='doctor' width={500} height={500} className='w-full h-full' />
+                </SwiperSlide>
+                <div className=" custom-pagination flex justify-center gap-2 mt-6"></div>
+              </Swiper>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
       {/* Our Key Services Section */}
-      <div className="relative bg-white overflow-hidden">
+      <div className="relative bg-gray-100 overflow-hidden">
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-          <h2 className="text-[32px] sm:text-[38px] md:text-[42px] text-center font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+          <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
             <span className="text-[#18A093]">Our</span>{' '}
             <span className="text-[#003366]">Solutions</span>
           </h2>
@@ -738,665 +826,265 @@ const LandingPage = () => {
         </div>
       </div >
 
-      <div className="relative bg-white overflow-hidden" >
-        <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-          <div className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
-            <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] text-center mb-3 sm:mb-4">
-              <span className="text-[#18A093]">Our</span>{' '}
-              <span className="text-[#003366]">Products</span>
-            </h2>
-            {/* Slide Control Buttons */}
-            <div className="flex justify-center items-center gap-4 mb-6 ">
-              <div className="border-2 md:w-[280px] border-gray-200 group hover:cursor-pointer flex items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 p-2 sm:p-3 md:p-3 lg:p-4 rounded-lg transition-all duration-300 group hover:bg-[#0E7280]" onClick={() => goToSlide(0)}>
-                <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
-                  <Image src="/icons/prd-2-lgo1.png" alt="Smart Healthcare Machine" width={32} height={32} className="w-full h-full" />
-                </div>
-                <p className="text-[16px] sm:text-[18px] md:text-[20px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-gray-700 font-['Montserrat'] group-hover:text-white">SHM App</p>
-                <div className="ml-auto hidden group-hover:block">
-                  <div className='flex flex-row items-center'>
-                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              <div className="border-2 md:w-[280px] border-gray-200 group hover:cursor-pointer flex items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 p-2 sm:p-3 md:p-3 lg:p-4 rounded-lg transition-all duration-300 group hover:bg-[#0E7280]" onClick={() => goToSlide(1)}>
-                <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
-                  <Image src="/icons/prd-2-lgo1.png" alt="Doctor App" width={32} height={32} />
-                </div>
-                <p className="text-[16px] sm:text-[18px] md:text-[20px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-gray-700 font-['Montserrat'] group-hover:text-white">Nurse App</p>
-                <div className="ml-auto hidden group-hover:block ">
-                  <div className='flex flex-row items-center'>
-                    <svg className="w-5 h-5 text-[#003366] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              <div className="border-2 md:w-[280px] border-gray-200 group hover:cursor-pointer flex items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 p-2 sm:p-3 md:p-3 lg:p-4 rounded-lg transition-all duration-300  group hover:bg-[#0E7280]" onClick={() => goToSlide(2)}>
-                <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
-                  <Image src="/icons/prd-2-log2.png" alt="Patient App" width={32} height={32} />
-                </div>
-                <p className="text-[16px] sm:text-[18px] md:text-[20px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-gray-700 font-['Montserrat'] group-hover:text-white">Doctor App</p>
-                <div className="ml-auto hidden group-hover:block">
-                  <div className='flex flex-row items-center'>
-                    <svg className="w-5 h-5 text-[#003366] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="relative w-full  py-2">
-              <button className="custom-prev hidden"></button>
-              <button className="custom-next hidden"></button>
-
-              <Swiper
-                autoHeight={true}
-                modules={[Navigation, Pagination, Autoplay]}
-                onSwiper={(swiper) => (swiperRef.current = swiper)}
-                autoplay={{ delay: 3000, disableOnInteraction: false }}
-                pagination={{ clickable: true, el: '.custom-pagination' }}
-                slidesPerView={1}
-                loop
-
-              >
-                {/* Card 1 */}
-                <SwiperSlide>
-                  <Image src="/icons/hm-6-sl1.svg" alt='doctor' width={500} height={500} className='w-full h-full' />
-                </SwiperSlide>
-
-                {/* Card 2 */}
-                <SwiperSlide>
-                  <Image src="/icons/hm-6-sl2.svg" alt='doctor' width={500} height={500} className='w-full h-full' />
-                </SwiperSlide>
-
-                {/* Card 3 */}
-                <SwiperSlide>
-                  <Image src="/icons/hm-6-sl3.svg" alt='doctor' width={500} height={500} className='w-full h-full' />
-                </SwiperSlide>
-                <div className=" custom-pagination flex justify-center gap-2 mt-6"></div>
-              </Swiper>
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      {/* Our Products Section */}
-      < div className="relative bg-white overflow-hidden" >
-        <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-          <div className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
-            <h2 className="text-[32px] sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] text-center mb-3 sm:mb-4">
-              <span className="text-[#18A093]">Our</span>{' '}
-              <span className="text-[#003366]">Products</span>
-            </h2>
-          </div>
-          {/* NEW CARD} */}
-
-          {/* NEW CARD} */}
-          <div className="py-4 sm:py-6 md:py-8 lg:py-10">
-            <p className="text-[20px] sm:text-[24px] md:text-[30px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize font-['Montserrat'] text-[#003366]">Smart Healthcare Machine Features</p>
-            <div className="flex flex-col sm:flex-col md:flex-row space-y-4 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300">
-              <div className="w-full md:w-[40%] items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 flex items-center justify-center md:border-r-2 md:border-[#003366] md:mr-5 md:pr-5">
-                <Image src="/icons/hm-shm.png" alt="Smart Healthcare Machine Features" width={300} height={300} className="w-[50%] h-auto md:w-full md:h-auto" />
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {/* Vitals Section */}
-                <div className="space-y-2">
-                  <h3 className="text-[#003366] text-start align-middle font-['Montserrat] border-b-2 border-gray-300 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%]">Vitals</h3>
-                  <div className="grid grid-cols-2 gap-2">
-                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
-                      <Image src="/icons/hm-6-pr.png" alt='Pulse Rate image' width={25} height={25} />
-                      <span className='text-sm sm:text-base md:text-lg' >Pulse Rate</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
-                      <Image src="/icons/hm-6-tem.png" alt='Temperature image' width={20} height={20} />
-                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Temperature</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
-                      <Image src="/icons/hm-6-spo.png" alt='SpO2 image' width={25} height={25} />
-                      <span className='text-blacktext-sm sm:text-base md:text-lg '>SpO2</span>
-                    </div>
-                    <div className="flex items-center gap-1 text-gray-700 font-['Montserrat']">
-                      <Image src="/icons/hm-6-pp.png" alt='Blood Pressure images' width={25} height={25} />
-                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Blood Pressure</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
-                      <Image src="/icons/hm-6-bmi.png" alt='Blood Sugar images' width={25} height={25} />
-                      <span className='text-blacktext-sm sm:text-base md:text-lg '>BMI</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
-                      <Image src="/icons/hm-6-hrt.png" alt='Heart Rate images' width={25} height={25} />
-                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Heart Rate</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Blood Tests Section */}
-                <div className="space-y-2">
-                  <h3 className="text-[#003366] text-start align-middle font-['Montserrat] border-b-2 border-gray-300 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%]">Blood Tests</h3>
-                  <div className="grid grid-cols-2 gap-2">
-                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
-                      <Image src="/icons/hm-6-hem.png" alt='Hemoglobin images' width={25} height={25} />
-                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Hemoglobin</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
-                      <Image src="/icons/hm-6-lp.png" alt='Lipid Profile images' width={25} height={25} />
-                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Lipid Profile</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
-                      <Image src="/icons/hm-6-bs.png" alt='Blood Sugar images' width={25} height={25} />
-                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Blood Sugar</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
-                      <Image src="/icons/hm-6-rft.png" alt='Renal Funtion Test images' width={25} height={25} />
-                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Renal Function Test</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
-                      <Image src="/icons/hm-6-hb.png" alt='HbA1c images' width={25} height={25} />
-                      <span className='text-blacktext-sm sm:text-base md:text-lg '>HbA1c</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* RAPID TEST */}
-                <div className="space-y-2">
-                  <h3 className="text-[#003366] text-start align-middle font-['Montserrat] border-b-2 border-gray-300 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%]">Rapid Test</h3>
-                  <div className="grid grid-cols-2 gap-2">
-                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
-
-                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Ovulation LH</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
-
-                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Malaria AG</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
-                      <span className='text-blacktext-sm sm:text-base md:text-lg '>HIV I & II</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
-
-                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Troponin I</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
-
-                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Hepatitis C</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
-
-                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Hepatitis B</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
-
-                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Malaria AB</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
-
-                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Pregnancy hCG</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
-
-                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Syphilis</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
-
-                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Typhoid</span>
-                    </div>
-                  </div>
-                </div>
-                {/* Digital Stethoscope Section */}
-                <div className="space-y-2">
-                  <h3 className="text-[#003366] text-start align-middle font-['Montserrat] border-b-2 border-gray-300 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%]">Digital Stethoscope</h3>
-                  <div className='flex flex-row items-center'>
-                    <Image src="/icons/hm-6-ls.png" alt='Stethoscope images' width={25} height={25} className='mr-2' />
-                    <p className="text-gray-700 font-['Montserrat'] text-blacktext-sm sm:text-base md:text-lg">Live Stethoscope</p>
-                  </div>
-                  <div className="grid grid-cols-2 gap-2">
-                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
-                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Aortic Sound</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
-                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Mitral Sound</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
-                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Pulmonic Sound</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
-                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Tricuspid Sound</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* ECG Section */}
-                <div className="space-y-2">
-                  <h3 className="text-[#003366] text-start align-middle font-['Montserrat] border-b-2 border-gray-300 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%]">ECG</h3>
-                  <div className="grid grid-cols-2 gap-2">
-                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
-                      <Image src="/icons/hm-6-lead.png" alt='12 Lead image' width={25} height={25} />
-                      <span className='text-blacktext-sm sm:text-base md:text-lg '>12 Lead</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
-                      <Image src="/icons/hm-6-rr.png" alt='Respiration rate images' width={25} height={25} />
-                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Respiration Rate</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <h3 className="text-[#003366] text-start align-middle font-['Montserrat] border-b-2 border-gray-300 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%]">Tele-Consultation: Real-Time Data</h3>
-                  <div className="grid grid-cols-2 gap-2">
-                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
-                      <Image src="/icons/hm-6-vc.png" alt='Video Consultation image' width={25} height={25} />
-                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Video Consultation</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
-                      <Image src="/icons/hm-6-rtda.png" alt='Real time data images' width={25} height={25} />
-                      <span className='text-blacktext-sm sm:text-base md:text-lg'>Real-Time Data Accessibility</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Digital Modules Section */}
-                <div className="space-y-2 md:col-span-2">
-                  <h3 className="text-[#003366] text-start align-middle font-['Montserrat] border-b-2 border-gray-300 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%]">Digital Modules for Specialist Consultation</h3>
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
-                      <Image src="/icons/hm-6-sp.png" alt='Spirometer images' width={25} height={25} />
-                      <span className='text-blacktext-sm sm:text-base md:text-lg'>Spirometer</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
-                      <Image src="/icons/hm-6-os.png" alt='Otoscope image' width={25} height={25} />
-                      <span className='text-blacktext-sm sm:text-base md:text-lg'>Otoscope</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
-                      <Image src="/icons/hm-6-pu.png" alt='Portable Ultrasound images' width={25} height={25} />
-                      <span className='text-blacktext-sm sm:text-base md:text-lg'>Portable Ultrasound</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
-                      <Image src="/icons/hm-6-is.png" alt='Irish Scope images' width={25} height={25} />
-                      <span className='text-blacktext-sm sm:text-base md:text-lg '>Irish Scope</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-700 font-['Montserrat']">
-                      <Image src="/icons/hm-6-der.png" alt='Dermatoscope' width={25} height={25} />
-                      <span className='text-blacktext-sm sm:text-base md:text-lg'>Dermatoscope</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-            {/* Text Content */}
-
-            {/* Product List */}
-            <Link href="/ourProducts" className="w-full">
-              <div className="border-2 border-gray-200 group hover:cursor-pointer flex items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300 group hover:bg-[#0E7280]" >
-                <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
-                  <Image src="/icons/prd-2-lgo1.png" alt="Smart Healthcare Machine" width={32} height={32} className="w-full h-full" />
-                </div>
-                <p className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-gray-700 font-['Montserrat'] group-hover:text-white">SHM App</p>
-                <div className="ml-auto hidden group-hover:block">
-                  <div className='flex flex-row items-center'>
-                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </Link>
-            <Link href="/ourProducts"
-            >
-              <div className="border-2 border-gray-200 group hover:cursor-pointer flex items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300 group hover:bg-[#0E7280]" >
-                <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
-                  <Image src="/icons/prd-2-lgo1.png" alt="Doctor App" width={32} height={32} />
-                </div>
-                <p className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-gray-700 font-['Montserrat'] group-hover:text-white">Doctor App</p>
-                <div className="ml-auto hidden group-hover:block ">
-                  <div className='flex flex-row items-center'>
-                    <svg className="w-5 h-5 text-[#003366] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </Link>
-
-            <Link href="/ourProducts"
-            >
-              <div className="border-2 border-gray-200 group hover:cursor-pointer flex items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300  group hover:bg-[#0E7280]" >
-                <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
-                  <Image src="/icons/prd-2-log2.png" alt="Patient App" width={32} height={32} />
-                </div>
-                <p className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-gray-700 font-['Montserrat'] group-hover:text-white">Patient App</p>
-                <div className="ml-auto hidden group-hover:block">
-                  <div className='flex flex-row items-center'>
-                    <svg className="w-5 h-5 text-[#003366] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </Link>
-
-            <Link href="/ourProducts"
-            >
-              <div className="border-2 border-gray-200 hover:cursor-pointer group flex items-center space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 p-4 sm:p-5 md:p-6 lg:p-6 rounded-lg transition-all duration-300 group hover:bg-[#0E7280]" >
-                <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
-                  <Image src="/icons/prd-2-log2.png" alt="Operator / Nurse App" width={32} height={32} />
-                </div>
-                <p className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-gray-700 font-['Montserrat'] group-hover:text-white">Nurse App</p>
-                <div className="ml-auto hidden group-hover:block">
-                  <div className='flex flex-row items-center'>
-
-                    <svg className="w-5 h-5 text-[#003366] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </Link>
-
-            <div className="mt-2">
-              <Link href="/contactUs"
-                className="inline-block px-8 py-3 border-1 border-[#003366] text-[#003366] rounded-xl font-semibold hover:bg-[#003366] hover:text-white transition-all duration-300"
-              >
-                Schedule a Demo
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div >
-
-
-
       {/* Testimonials Section */}
       < div className="relative bg-white overflow-hidden" >
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-          <h2 className="text-[32px] sm:text-[38px] text-center md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+          <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
             <span className="text-[#18A093]">Our</span>{' '}
             <span className="text-[#003366]">Testimonials</span>
           </h2>
-          {/* <p className="text-[#555555] text-center text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
-            Our impact is reflected in the voices of patients, doctors and public sector leaders who trust us.
-          </p> */}
           <div className="w-full overflow-hidden">
-            <div className="specialty-cards-container  gap-4 sm:gap-6 lg:gap-8">
-              {/* Testimonial Card 1 */}
-              <div className="w-[250px] h-auto sm:w-[350px] sm:h-[250px] md:w-[400px] md:h-[350px] bg-white p-6 sm:p-8 lg:p-10 rounded-lg border border-gray-200 relative flex flex-col justify-around">
-                <div className="absolute top-2 left-2">
-                  <Image
-                    src="/icons/hm-8-img2.png"
-                    alt="Quote icon"
-                    width={50}
-                    height={50}
-                    className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
-                  />
-                </div>
-                <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
-                  As a gastroenterologist, having quick access to liver function tests, vitals, and previous reports helps me make decisions with greater clarity. The SHM platform makes all of this available in a single interface. It feels organized and efficient, especially during follow-ups and chronic care management.
-                </p>
-                <div className="flex items-center">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
+            <div className=" gap-4 sm:gap-6 lg:gap-8">
+              <div className="specialty-cards-container  gap-4 sm:gap-6 lg:gap-8">
+                {/* Testimonial Card 1 */}
+                <div className="w-[280px] h-auto sm:w-[350px] sm:h-[250px] md:w-[400px] md:h-[350px] bg-white p-2 sm:p-8 lg:p-10 rounded-lg border-2 border-gray-200 relative flex flex-col justify-around">
+                  <div className="absolute top-2 left-2">
                     <Image
-                      src="/icons/hm-8-img8.png"
-                      alt="Jane Smith"
-                      width={48}
-                      height={48}
-                      className="object-cover w-full h-full"
+                      src="/icons/hm-8-img2.png"
+                      alt="Quote icon"
+                      width={50}
+                      height={50}
+                      className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
                     />
                   </div>
-                  <div>
-                    <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Sagar P Kabadi</h4>
-                    <p className="text-gray-500 text-xs sm:text-sm font-['Montserrat']">Senior Consultant, Medical Gastroenterologist
-                    </p>
+                  <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
+                    As a gastroenterologist, having quick access to liver function tests, vitals, and previous reports helps me make decisions with greater clarity. The SHM platform makes all of this available in a single interface. It feels organized and efficient, especially during follow-ups and chronic care management.
+                  </p>
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
+                      <Image
+                        src="/icons/hm-8-img8.png"
+                        alt="Jane Smith"
+                        width={48}
+                        height={48}
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
+                    <div>
+                      <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Sagar P Kabadi</h4>
+                      <p className="text-gray-500 text-xs sm:text-sm font-['Montserrat']">Senior Consultant, Medical Gastroenterologist
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Testimonial Card 2 */}
-              <div className="w-[250px] h-auto sm:w-[350px] sm:w-[250px] md:w-[400px] md:w-[350px] bg-white p-6 sm:p-8 lg:p-10 rounded-lg border border-gray-200 relative flex flex-col justify-around">
-                <div className="absolute top-2 left-2">
-                  <Image
-                    src="/icons/hm-8-img2.png"
-                    alt="Quote icon"
-                    width={50}
-                    height={50}
-                    className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
-                  />
-                </div>
-                <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
-                  The SHM platform stands out with its ability to organize and present all necessary patient data—especially radiology reports like MRIs and CTs—before I begin my consultation. It brings a lot of clarity to my decision-making and allows me to focus directly on the clinical need.
-                </p>
-                <div className="flex items-center">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
+                {/* Testimonial Card 2 */}
+                <div className="w-[280px] h-auto sm:w-[350px] sm:w-[250px] md:w-[400px] md:w-[350px] bg-white p-2 sm:p-8 lg:p-10 rounded-lg border-2 border-gray-200 relative flex flex-col justify-around">
+                  <div className="absolute top-2 left-2">
                     <Image
-                      src="/icons/hm-8-img5.png"
-                      alt="John Doe"
-                      width={48}
-                      height={48}
-                      className="object-cover  w-full h-full"
+                      src="/icons/hm-8-img2.png"
+                      alt="Quote icon"
+                      width={50}
+                      height={50}
+                      className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
                     />
                   </div>
-                  <div>
-                    <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Pratham R Bysan</h4>
-                    <p className="text-gray-500 text-xs sm:text-sm font-['Montserrat']">Consultant Neurosciences</p>
+                  <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
+                    The SHM platform stands out with its ability to organize and present all necessary patient data—especially radiology reports like MRIs and CTs—before I begin my consultation. It brings a lot of clarity to my decision-making and allows me to focus directly on the clinical need.
+                  </p>
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
+                      <Image
+                        src="/icons/hm-8-img5.png"
+                        alt="John Doe"
+                        width={48}
+                        height={48}
+                        className="object-cover  w-full h-full"
+                      />
+                    </div>
+                    <div>
+                      <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Pratham R Bysan</h4>
+                      <p className="text-gray-500 text-xs sm:text-sm font-['Montserrat']">Consultant Neurosciences</p>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Testimonial Card 3 */}
-              <div className="w-[250px] h-auto sm:w-[350px] sm:w-[250px] md:w-[400px] md:w-[350px] bg-white p-6 sm:p-8 lg:p-10 rounded-lg border border-gray-200 relative flex flex-col justify-around">
-                <div className="absolute top-2 left-2">
-                  <Image
-                    src="/icons/hm-8-img2.png"
-                    alt="Quote icon"
-                    width={50}
-                    height={50}
-                    className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
-                  />
-                </div>
-                <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
-                  In cardiology, speed and accuracy are essential. SHM delivers real-time 12-lead ECGs that are clear and immediate. Combined with vitals and patient history, it gives me all the inputs I need to make confident and timely clinical decisions. It’s an excellent tool for proactive cardiac care.
-                </p>
-                <div className="flex items-center">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
+                {/* Testimonial Card 3 */}
+                <div className="w-[280px] h-auto sm:w-[350px] sm:w-[250px] md:w-[400px] md:w-[350px] bg-white p-2 sm:p-8 lg:p-10 rounded-lg border-2 border-gray-200 relative flex flex-col justify-around">
+                  <div className="absolute top-2 left-2">
                     <Image
-                      src="/icons/hm-8-img9.png"
-                      alt="Emily Johnson"
-                      width={48}
-                      height={48}
-                      className="object-cover w-full h-full"
+                      src="/icons/hm-8-img2.png"
+                      alt="Quote icon"
+                      width={50}
+                      height={50}
+                      className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
                     />
                   </div>
-                  <div>
-                    <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Sarthak Sahoo</h4>
-                    <p className="text-gray-500 text-sm font-['Montserrat']">Senior Consultant, Cardiology</p>
+                  <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
+                    In cardiology, speed and accuracy are essential. SHM delivers real-time 12-lead ECGs that are clear and immediate. Combined with vitals and patient history, it gives me all the inputs I need to make confident and timely clinical decisions. It’s an excellent tool for proactive cardiac care.
+                  </p>
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
+                      <Image
+                        src="/icons/hm-8-img9.png"
+                        alt="Emily Johnson"
+                        width={48}
+                        height={48}
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
+                    <div>
+                      <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Sarthak Sahoo</h4>
+                      <p className="text-gray-500 text-sm font-['Montserrat']">Senior Consultant, Cardiology</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="w-[280px] h-auto sm:w-[350px] sm:w-[250px] md:w-[400px] md:w-[350px] bg-white p-2 sm:p-8 lg:p-10 rounded-lg border-2 border-gray-200 relative flex flex-col justify-around">
+                  <div className="absolute top-2 left-2">
+                    <Image
+                      src="/icons/hm-8-img2.png"
+                      alt="Quote icon"
+                      width={50}
+                      height={50}
+                      className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
+                    />
+                  </div>
+                  <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
+                    SHM has helped me connect with patients across all stages—from fertility counseling to postnatal care. I can easily access hormone profiles, ultrasound reports, and vitals. The digital prescription pad is seamless—I can document symptoms, prescribe medications or tests, and sign everything in one place.
+                  </p>
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
+                      <Image
+                        src="/icons/hm-8-img6.png"
+                        alt="Emily Johnson"
+                        width={48}
+                        height={48}
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
+                    <div>
+                      <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Priyanka Das</h4>
+                      <p className="text-gray-500 text-sm font-['Montserrat']">Senior Consultant, Obstetrics & Gynaecology</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="w-[280px] h-auto sm:w-[350px] sm:w-[250px] md:w-[400px] md:w-[350px] bg-white p-2 sm:p-8 lg:p-10 rounded-lg border-2 border-gray-200 relative flex flex-col justify-around">
+                  <div className="absolute top-2 left-2">
+                    <Image
+                      src="/icons/hm-8-img2.png"
+                      alt="Quote icon"
+                      width={50}
+                      height={50}
+                      className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
+                    />
+                  </div>
+                  <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
+                    What I value most is the time-saving design. The digital queue, instant patient summaries, and seamless transition to the next case help me respond swiftly. With all reports and vitals ready when I join the call, every second is utilized effectively.
+                  </p>
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
+                      <Image
+                        src="/icons/hm-8-img11.png"
+                        alt="Emily Johnson"
+                        width={48}
+                        height={48}
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
+                    <div>
+                      <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Vijay Kumar K M</h4>
+                      <p className="text-gray-500 text-sm font-['Montserrat']">Consultant, Emergency Medicine</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="w-[280px] h-auto sm:w-[350px] sm:w-[250px] md:w-[400px] md:w-[350px] bg-white p-2 sm:p-8 lg:p-10 rounded-lg border-2 border-gray-200 relative flex flex-col justify-around">
+                  <div className="absolute top-2 left-2">
+                    <Image
+                      src="/icons/hm-8-img2.png"
+                      alt="Quote icon"
+                      width={50}
+                      height={50}
+                      className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
+                    />
+                  </div>
+                  <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
+                    For surgical follow-ups and cosmetic consultations, SHM gives me everything I need—clinical images, vitals, and case history—well before I begin the consultation. It’s efficient and ensures I can provide precise guidance, even for patients consulting from a distance.
+                  </p>
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
+                      <Image
+                        src="/icons/hm-8-img7.png"
+                        alt="Emily Johnson"
+                        width={48}
+                        height={48}
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
+                    <div>
+                      <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Ramesh K T </h4>
+                      <p className="text-gray-500 text-sm font-['Montserrat']">Consultant Plastic & Cosmetic Surgeon</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="w-[280px] h-auto sm:w-[350px] sm:w-[250px] md:w-[400px] md:w-[350px] bg-white p-2 sm:p-8 lg:p-10 rounded-lg border-2 border-gray-200 relative flex flex-col justify-around">
+                  <div className="absolute top-2 left-2">
+                    <Image
+                      src="/icons/hm-8-img2.png"
+                      alt="Quote icon"
+                      width={50}
+                      height={50}
+                      className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
+                    />
+                  </div>
+                  <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
+                    I find the SHM platform incredibly useful for reviewing patient X-rays, post-op images, and orthopedic test results. The structured format, combined with real-time vitals and symptom input, makes remote orthopedic evaluations smoother and more accurate.
+                  </p>
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
+                      <Image
+                        src="/icons/hm-8-img3.png"
+                        alt="Emily Johnson"
+                        width={100}
+                        height={100}
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
+                    <div>
+                      <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Avinash Parthasarathy</h4>
+                      <p className="text-gray-500 text-sm font-['Montserrat']">Consultant, Orthopaedics</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="w-[280px] h-auto sm:w-[350px] sm:w-[250px] md:w-[400px] md:w-[350px] bg-white p-2 sm:p-8 lg:p-10 rounded-lg border-2 border-gray-200 relative flex flex-col justify-around">
+                  <div className="absolute top-2 left-2">
+                    <Image
+                      src="/icons/hm-8-img2.png"
+                      alt="Quote icon"
+                      width={50}
+                      height={50}
+                      className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
+                    />
+                  </div>
+                  <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
+                    In dermatology, image quality is critical. The SHM delivers high-resolution dermatoscope images, along with all relevant patient information in one place. It has made remote consultations feel just as thorough and reliable as in-person visits.
+                  </p>
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
+                      <Image
+                        src="/icons/hm-8-img1.png"
+                        alt="Emily Johnson"
+                        width={48}
+                        height={48}
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
+                    <div>
+                      <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Abhiram Rayapati</h4>
+                      <p className="text-gray-500 text-sm font-['Montserrat']">Chief Consultant, Dermatology & ENT</p>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div className="w-[250px] h-auto sm:w-[350px] sm:w-[250px] md:w-[400px] md:w-[350px] bg-white p-6 sm:p-8 lg:p-10 rounded-lg border border-gray-200 relative flex flex-col justify-around">
-                <div className="absolute top-2 left-2">
-                  <Image
-                    src="/icons/hm-8-img2.png"
-                    alt="Quote icon"
-                    width={50}
-                    height={50}
-                    className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
-                  />
-                </div>
-                <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
-                  SHM has helped me connect with patients across all stages—from fertility counseling to postnatal care. I can easily access hormone profiles, ultrasound reports, and vitals. The digital prescription pad is seamless—I can document symptoms, prescribe medications or tests, and sign everything in one place.
-                </p>
-                <div className="flex items-center">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
-                    <Image
-                      src="/icons/hm-8-img6.png"
-                      alt="Emily Johnson"
-                      width={48}
-                      height={48}
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                  <div>
-                    <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Priyanka Das</h4>
-                    <p className="text-gray-500 text-sm font-['Montserrat']">Senior Consultant, Obstetrics & Gynaecology</p>
-                  </div>
-                </div>
-              </div>
-              <div className="w-[250px] h-auto sm:w-[350px] sm:w-[250px] md:w-[400px] md:w-[350px] bg-white p-6 sm:p-8 lg:p-10 rounded-lg border border-gray-200 relative flex flex-col justify-around">
-                <div className="absolute top-2 left-2">
-                  <Image
-                    src="/icons/hm-8-img2.png"
-                    alt="Quote icon"
-                    width={50}
-                    height={50}
-                    className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
-                  />
-                </div>
-                <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
-                  What I value most is the time-saving design. The digital queue, instant patient summaries, and seamless transition to the next case help me respond swiftly. With all reports and vitals ready when I join the call, every second is utilized effectively.
-                </p>
-                <div className="flex items-center">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
-                    <Image
-                      src="/icons/hm-8-img11.png"
-                      alt="Emily Johnson"
-                      width={48}
-                      height={48}
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                  <div>
-                    <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Vijay Kumar K M</h4>
-                    <p className="text-gray-500 text-sm font-['Montserrat']">Consultant, Emergency Medicine</p>
-                  </div>
-                </div>
-              </div>
-              <div className="w-[250px] h-auto sm:w-[350px] sm:w-[250px] md:w-[400px] md:w-[350px] bg-white p-6 sm:p-8 lg:p-10 rounded-lg border border-gray-200 relative flex flex-col justify-around">
-                <div className="absolute top-2 left-2">
-                  <Image
-                    src="/icons/hm-8-img2.png"
-                    alt="Quote icon"
-                    width={50}
-                    height={50}
-                    className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
-                  />
-                </div>
-                <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
-                  For surgical follow-ups and cosmetic consultations, SHM gives me everything I need—clinical images, vitals, and case history—well before I begin the consultation. It’s efficient and ensures I can provide precise guidance, even for patients consulting from a distance.
-                </p>
-                <div className="flex items-center">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
-                    <Image
-                      src="/icons/hm-8-img7.png"
-                      alt="Emily Johnson"
-                      width={48}
-                      height={48}
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                  <div>
-                    <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Ramesh K T </h4>
-                    <p className="text-gray-500 text-sm font-['Montserrat']">Consultant Plastic & Cosmetic Surgeon</p>
-                  </div>
-                </div>
-              </div>
-              <div className="w-[250px] h-auto sm:w-[350px] sm:w-[250px] md:w-[400px] md:w-[350px] bg-white p-6 sm:p-8 lg:p-10 rounded-lg border border-gray-200 relative flex flex-col justify-around">
-                <div className="absolute top-2 left-2">
-                  <Image
-                    src="/icons/hm-8-img2.png"
-                    alt="Quote icon"
-                    width={50}
-                    height={50}
-                    className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
-                  />
-                </div>
-                <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
-                  I find the SHM platform incredibly useful for reviewing patient X-rays, post-op images, and orthopedic test results. The structured format, combined with real-time vitals and symptom input, makes remote orthopedic evaluations smoother and more accurate.
-                </p>
-                <div className="flex items-center">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
-                    <Image
-                      src="/icons/hm-8-img3.png"
-                      alt="Emily Johnson"
-                      width={100}
-                      height={100}
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                  <div>
-                    <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Avinash Parthasarathy</h4>
-                    <p className="text-gray-500 text-sm font-['Montserrat']">Consultant, Orthopaedics</p>
-                  </div>
-                </div>
-              </div>
-              <div className="w-[250px] h-auto sm:w-[350px] sm:w-[250px] md:w-[400px] md:w-[350px] bg-white p-6 sm:p-8 lg:p-10 rounded-lg border border-gray-200 relative flex flex-col justify-around">
-                <div className="absolute top-2 left-2">
-                  <Image
-                    src="/icons/hm-8-img2.png"
-                    alt="Quote icon"
-                    width={50}
-                    height={50}
-                    className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px] text-[#18A093]"
-                  />
-                </div>
-                <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-[16px] font-[400] leading-[1.6] sm:leading-[1.4] tracking-[0%] ">
-                  In dermatology, image quality is critical. The SHM delivers high-resolution dermatoscope images, along with all relevant patient information in one place. It has made remote consultations feel just as thorough and reliable as in-person visits.
-                </p>
-                <div className="flex items-center">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
-                    <Image
-                      src="/icons/hm-8-img1.png"
-                      alt="Emily Johnson"
-                      width={48}
-                      height={48}
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                  <div>
-                    <h4 className="text-[#003366] font-semibold font-['Montserrat'] text-base sm:text-lg">Dr. Abhiram Rayapati</h4>
-                    <p className="text-gray-500 text-sm font-['Montserrat']">Chief Consultant, Dermatology & ENT</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div >
-
-      {/*Powered by Government Schemes*/}
-      < div className="relative bg-white overflow-hidden" >
-        <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-          <h2 className="text-[28px] xs:text-[30px] text-center sm:text-[34px] md:text-[38px] lg:text-[42px] font-[700] font-['Montserrat'] mb-4 sm:mb-8">
-            <span className="text-[#18A093]">Powered by</span>{' '}
-            <span className="text-[#003366]">Government Schemes</span>
-          </h2>
-          <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-2 xs:gap-3 sm:gap-4 md:gap-5">
-            <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
-              <Image src="/icons/hm-gs-img1.png" alt="Gov. Schemes" width={200} height={200} className='w-30  md:w-45 h-auto object-contain' />
-            </div>
-            <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
-              <Image src="/icons/hm-gs-img2.png" alt="Gov. Schemes" width={200} height={200} className='w-30  md:w-45 h-auto object-contain' />
-            </div>
-            <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
-              <Image src="/icons/hm-gs-img3.png" alt="Gov. Schemes" width={200} height={200} className='w-30  md:w-45 h-auto object-contain' />
-            </div>
-            <div className="flex  items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
-              <Image src="/icons/hm-gs-img4.png" alt="Gov. Schemes" width={200} height={200} className='w-30  md:w-45 h-auto object-contain' />
             </div>
           </div>
         </div>
       </div >
 
       {/*Aligned with Global & National Priorities*/}
-      < div className="relative bg-white overflow-hidden" >
+      < div className="relative bg-gray-100 overflow-hidden" >
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-          <h2 className="text-[28px] xs:text-[30px] text-center sm:text-[34px] md:text-[38px] lg:text-[42px] font-[700] font-['Montserrat'] mb-4 sm:mb-8">
-            <span className="text-[#18A093]">Our Work Aligned with</span>{' '}
+          <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
+            <span className="text-[#18A093]">Our Work Aligns with</span>{' '}
             <span className="text-[#003366]">National Priorities</span>
           </h2>
           <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-2 xs:gap-3 sm:gap-4 md:gap-5">
@@ -1418,8 +1106,8 @@ const LandingPage = () => {
 
       < div className="relative bg-white overflow-hidden" >
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-          <h2 className="text-[28px] xs:text-[30px] text-center sm:text-[34px] md:text-[38px] lg:text-[42px] font-[700] font-['Montserrat'] mb-4 sm:mb-8">
-            <span className="text-[#18A093]">Our Work Aligned with</span>{' '}
+          <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
+            <span className="text-[#18A093]">Our Work Aligns with</span>{' '}
             <span className="text-[#003366]">Global Goals</span>
           </h2>
           <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-2 xs:gap-3 sm:gap-4 md:gap-5">
@@ -1440,9 +1128,9 @@ const LandingPage = () => {
       </div >
 
       {/* We Work With Section */}
-      < div className="relative bg-white overflow-hidden" >
+      < div className="relative bg-gray-100 overflow-hidden" >
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-          <h2 className="text-[28px] xs:text-[30px] text-center sm:text-[34px] md:text-[38px] lg:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+          <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
             <span className="text-[#18A093]">We</span>{' '}
             <span className="text-[#003366]">Work With</span>
           </h2>
@@ -1526,13 +1214,10 @@ const LandingPage = () => {
       {/* FAQ Section */}
       < div className="relative bg-white overflow-hidden" >
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-          <h2 className="text-[32px] text-center sm:text-[38px] md:text-[42px] font-[700] font-['Montserrat'] mb-3 sm:mb-4">
+          <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
             <span className="text-[#18A093]">FA</span>
-            <span className="text-[#003366]">Q&apos;s</span>
+            <span className="text-[#003366]">Q<span className='text-[26px] sm:text-[30px]'>s</span> </span>
           </h2>
-          {/* <p className="text-[#555555] text-[18px] sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
-            Learn how our solutions bring quality healthcare closer to those who need it most.
-          </p> */}
           <div className="space-y-2 sm:space-y-3 lg:space-y-4">
             {/* FAQ Items */}
             <div className={`border border-gray-200 rounded-lg overflow-hidden ${activeFaq === 'faq1' && 'bg-gradient-to-r from-[#18A093] to-[#003366]'}`}>
@@ -1639,7 +1324,7 @@ const LandingPage = () => {
               <button onClick={() => setShowFaq(!showFaq)}
                 className="inline-block px-8 py-3 border-1 border-[#003366] text-[#003366] rounded-xl font-semibold hover:bg-[#003366] hover:text-white transition-all duration-300"
               >
-                {showFaq === true ? 'Hide All' : 'Show All'}
+                {showFaq === true ? 'Hide' : 'Show All'}
               </button>
             </div>
           </div>

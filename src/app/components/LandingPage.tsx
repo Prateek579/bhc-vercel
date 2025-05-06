@@ -48,6 +48,7 @@ const LandingPage = () => {
   const [currentMediaIndexFive, setCurrentMediaIndexFive] = useState(0);
   const [showFaq, setShowFaq] = useState(false);
 
+
   const departments = useCountAnimation(25);
   const diseaseDetection = useCountAnimation(20);
   const hospitalReferrals = useCountAnimation(400);
@@ -347,9 +348,8 @@ const LandingPage = () => {
         ref={statsRef}
         className="relative overflow-hidden py-4 sm:py-4 md:py-5 lg:py-5"
         style={{ background: 'linear-gradient(90deg, rgba(24, 160, 147, 0.7) 0%, rgba(18, 131, 135, 0.7) 33.17%, rgba(11, 100, 122, 0.7) 64.42%, rgba(6, 80, 114, 0.7) 87.02%, rgba(0, 51, 102, 0.7) 100%)' }}>
-
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22">
-          <h1 className='font-bold mb-2  text-[20px] sm:text-[20px] md:text-[30px] lg:text-[35px] text-center'>Impact That Matters</h1>
+          <h1 className='font-bold mb-2  text-[20px] sm:text-[20px] md:text-[30px] lg:text-[35px] text-center'>Impact that Matters</h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 text-white">
             {/* Specialist Referrals */}
             <div className="flex flex-col items-center justify-center text-center p-3 sm:p-4 md:p-5 h-[140px] sm:h-[150px] md:h-[160px] space-y-3 sm:space-y-4">
@@ -426,16 +426,16 @@ const LandingPage = () => {
           </h2>
           <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-2 xs:gap-3 sm:gap-4 md:gap-5">
             <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
-              <Image src="/icons/hm-gs-img1.png" alt="Gov. Schemes" width={200} height={200} className='w-30  md:w-45 h-auto object-contain' />
+              <Image src="/icons/hm-gs-img1.png" alt="Gov. Schemes" width={200} height={200} className='w-20  md:w-45 h-auto object-contain' />
             </div>
             <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
-              <Image src="/icons/hm-gs-img2.png" alt="Gov. Schemes" width={200} height={200} className='w-30  md:w-45 h-auto object-contain' />
+              <Image src="/icons/hm-gs-img2.png" alt="Gov. Schemes" width={200} height={200} className='w-20  md:w-45 h-auto object-contain' />
             </div>
             <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
-              <Image src="/icons/hm-gs-img3.png" alt="Gov. Schemes" width={200} height={200} className='w-30  md:w-45 h-auto object-contain' />
+              <Image src="/icons/hm-gs-img3.png" alt="Gov. Schemes" width={200} height={200} className='w-20  md:w-45 h-auto object-contain' />
             </div>
             <div className="flex  items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
-              <Image src="/icons/hm-gs-img4.png" alt="Gov. Schemes" width={200} height={200} className='w-30  md:w-45 h-auto object-contain' />
+              <Image src="/icons/hm-gs-img4.png" alt="Gov. Schemes" width={200} height={200} className='w-20  md:w-45 h-auto object-contain' />
             </div>
           </div>
         </div>
@@ -449,7 +449,7 @@ const LandingPage = () => {
             <span className="text-[#003366]">Challenges</span>
           </h2>
 
-          <div className="relative w-full max-w-screen-xl mx-auto md:px-12">
+          <div className="relative w-full max-w-screen-xl mx-auto md:px-6 ">
             <button className="custom-prev cursor-pointer absolute left-0 top-[45%] z-10 p-2 rounded-full bg-white shadow-lg hover:bg-gray-100 transition-all duration-300">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path d="M15 19l-7-7 7-7" stroke="#003366" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -479,7 +479,7 @@ const LandingPage = () => {
             >
               {/* Card 1 */}
               <SwiperSlide>
-                <div className="relative group overflow-hidden rounded-lg w-full max-w-[600px] aspect-[4/3]">
+                <div className="relative md:h-[500px] group overflow-hidden rounded-lg w-full max-w-[600px] aspect-[4/3]">
                   <Image
                     src="/icons/hm-4-img1.1.jpeg"
                     alt="Sewer Lines"
@@ -498,7 +498,7 @@ const LandingPage = () => {
 
               {/* Card 2 */}
               <SwiperSlide>
-                <div className="relative group overflow-hidden rounded-lg w-full max-w-[600px] aspect-[4/3]">
+                <div className="relative md:h-[500px] group overflow-hidden rounded-lg w-full max-w-[600px] aspect-[4/3]">
                   <Image
                     src="/icons/hm-4-img4.jpg"
                     alt="Stormwater Drains"
@@ -518,7 +518,7 @@ const LandingPage = () => {
 
               {/* Card 3 */}
               <SwiperSlide>
-                <div className="relative group overflow-hidden rounded-lg w-full max-w-[600px] aspect-[4/3]">
+                <div className="relative md:h-[500px] group overflow-hidden rounded-lg w-full max-w-[600px] aspect-[4/3]">
                   <Image
                     src="/icons/hm-4-img2.1.webp"
                     alt="Sewer Lines"
@@ -537,7 +537,7 @@ const LandingPage = () => {
 
               {/* Card 4 */}
               <SwiperSlide>
-                <div className="relative group overflow-hidden rounded-lg w-full max-w-[600px] aspect-[4/3]">
+                <div className="relative md:h-[500px] group overflow-hidden rounded-lg w-full max-w-[600px] aspect-[4/3]">
                   <Image
                     src="/icons/hm-4-img2.1.jpg"
                     alt="Stormwater Drains"
@@ -554,14 +554,83 @@ const LandingPage = () => {
 
                 </div>
               </SwiperSlide>
+              <div className="custom-pagination flex justify-center gap-2 mt-6"></div>
             </Swiper>
-            <div className="custom-pagination flex justify-center gap-2 mt-6"></div>
+
           </div>
         </div>
       </div>
 
+      {/*Small screen Our Products section */}
+      <div className="bg-white overflow-hidden  md:hidden">
+        <div className="lg:px-22 pt-0 pb-4 md:py-15">
+          <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-4 sm:mb-8 text-center">
+            <span className="text-[#18A093]">Our</span>{' '}
+            <span className="text-[#003366]">Products</span>
+          </h2>
+          <div className="parallax-section section1 border-b-3 border-white h-[90vh]" >
+            <div className="content w-full h-full  overflow-scroll ">
+              <div className="content-prd h-full flex items-center justify-center ">
+                <div className="text-5xl font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-white">Smart Healthcare Machine</div>
+              </div>
+              <div className="bg-[#003366]/70 h-full flex flex-col px-4 justify-around">
+                <div className="text-lg font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-white text-start">Live Stethscope</div>
+                <div className="text-lg font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-white text-start">12 Lead ECG</div>
+                <div className="text-lg font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-white text-start">Print Health Report & Prescription</div>
+                <div className="text-lg font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-white text-start">Digital Health Records</div>
+                <div className="text-lg font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-white text-start">Tele-Diagnostic Tools</div>
+                <div className="text-lg font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-white text-start">Blood Tests</div>
+                <div className="text-lg font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-white text-start">Rapid Tests</div>
+                <div className="text-lg font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-white text-start">Real-Time Heath Data Sreaming</div>
+                <div className="text-lg font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-white text-start">Tele-Consultation</div>
+                <div className="text-lg font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-white text-start">Multi-Specialist Connect</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="parallax-section section2 border-b-3  border-white h-[90vh]">
+            <div className="content w-full h-full  overflow-scroll ">
+              <div className="content-prd h-full flex items-center justify-center ">
+                <div className="text-5xl font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-gray-700">Nurse App</div>
+              </div>
+              <div className="bg-[#003366]/70 h-full flex flex-col px-4 justify-around">
+                <div className="text-lg font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-white text-start">Add Patient Information</div>
+                <div className="text-lg font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-white text-start">Book Appointments</div>
+                <div className="text-lg font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-white text-start">Manage Follow-Ups</div>
+                <div className="text-lg font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-white text-start">Digital Health Records</div>
+                <div className="text-lg font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-white text-start">EHR Management</div>
+                <div className="text-lg font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-white text-start">Upload Reports</div>
+                <div className="text-lg font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-white text-start">Add Doctors to SHM</div>
+                <div className="text-lg font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-white text-start">Digital Queue Management</div>
+                <div className="text-lg font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-white text-start">Mangae Consultation Time Slots</div>
+                <div className="text-lg font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-white text-start">Print Priscription</div>
+              </div>
+            </div>
+          </div>
+          <div className="parallax-section section3 border-b-3  border-white h-[90vh]">
+            <div className="content w-full h-full  overflow-scroll ">
+              <div className="content-prd h-full flex items-center justify-center ">
+                <div className="text-5xl font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-gray-700">Doctor App</div>
+              </div>
+              <div className="bg-[#003366]/70 h-full flex flex-col px-4 justify-around">
+                <div className="text-lg font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-white text-start">Add Patient Information</div>
+                <div className="text-lg font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-white text-start">Live Stethscope</div>
+                <div className="text-lg font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-white text-start">12 Lead ECG</div>
+                <div className="text-lg font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-white text-start">Print Health Report & Prescription</div>
+                <div className="text-lg font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-white text-start">Digital Health Records</div>
+                <div className="text-lg font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-white text-start">Tele-Diagnostic Tools</div>
+                <div className="text-lg font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-white text-start">Blood Tests</div>
+                <div className="text-lg font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-white text-start">Rapid Tests</div>
+                <div className="text-lg font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-white text-start">Real-Time Heath Data Sreaming</div>
+                <div className="text-lg font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-white text-start">Tele-Consultation</div>
+                <div className="text-lg font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-white text-start">Multi-Specialist Connect</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       {/* Our Products section */}
-      <div className="relative bg-white overflow-hidden" >
+      <div className="relative bg-white hidden md:block overflow-hidden" >
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 pt-0 pb-4 md:py-15">
           <div className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
             <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-4 sm:mb-8 text-center">
@@ -1134,46 +1203,46 @@ const LandingPage = () => {
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
           <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-4 sm:mb-8 text-center">
             <span className="text-[#18A093]">We</span>{' '}
-            <span className="text-[#003366]">Work With</span>
+            <span className="text-[#003366]">Work with</span>
           </h2>
           <div className="w-full grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-2 xs:gap-3 sm:gap-4 md:gap-5">
-            <div className="bg-white p-3 xs:p-4 sm:p-5 lg:p-6 flex flex-col items-center justify-center h-[180px] xs:h-[200px] sm:h-[220px] md:h-[250px] space-y-2 xs:space-y-3 sm:space-y-4">
-              <div className="flex-1 flex items-center justify-center">
+            <div className="bg-gray-100 p-3 xs:p-4 sm:p-5 lg:p-6 flex flex-col items-center justify-center h-[180px] xs:h-[200px] sm:h-[220px] md:h-[250px] space-y-2 xs:space-y-3 sm:space-y-4">
+              <div className="flex-1 flex items-center justify-center ">
                 <Image src="/icons/hm-10-img11.png" alt="CSR & Impact Funds" width={70} height={70} className='w-10 xs:w-12 sm:w-14 md:w-16 lg:w-20 h-auto object-contain' />
               </div>
               <h3 className="text-xs font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-gray-800 text-center h-[40%]">CSR & Impact Funds</h3>
             </div>
-            <div className="bg-white p-3 xs:p-4 sm:p-5 lg:p-6 flex flex-col items-center justify-center h-[180px] xs:h-[200px] sm:h-[220px] md:h-[250px] space-y-2 xs:space-y-3 sm:space-y-4">
+            <div className="bg-gray-100 p-3 xs:p-4 sm:p-5 lg:p-6 flex flex-col items-center justify-center h-[180px] xs:h-[200px] sm:h-[220px] md:h-[250px] space-y-2 xs:space-y-3 sm:space-y-4">
               <div className="flex-1 flex items-center justify-center">
                 <Image src="/icons/hm-10-img12.png" alt="Doctors & Healthcare Professionals" width={70} height={70} className='w-10 xs:w-12 sm:w-14 md:w-16 lg:w-20 h-auto object-contain' />
               </div>
               <h3 className="text-xs font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-gray-800 text-center h-[40%]">Healthcare Professionals</h3>
             </div>
-            <div className="bg-white p-3 xs:p-4 sm:p-5 lg:p-6 flex flex-col items-center justify-center h-[180px] xs:h-[200px] sm:h-[220px] md:h-[250px] space-y-2 xs:space-y-3 sm:space-y-4">
+            <div className="bg-gray-100 p-3 xs:p-4 sm:p-5 lg:p-6 flex flex-col items-center justify-center h-[180px] xs:h-[200px] sm:h-[220px] md:h-[250px] space-y-2 xs:space-y-3 sm:space-y-4">
               <div className="flex-1 flex items-center justify-center h-[50%]">
                 <Image src="/icons/hm-10-img13.png" alt="Hospitals & Clinics" width={70} height={60} className='w-10 xs:w-12 sm:w-14 md:w-16 lg:w-18 h-auto object-contain' />
               </div>
               <h3 className="text-xs font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-gray-800 text-center h-[40%]">Hospitals & Clinics</h3>
             </div>
-            <div className="bg-white p-3 xs:p-4 sm:p-5 lg:p-6 flex flex-col items-center justify-center h-[180px] xs:h-[200px] sm:h-[220px] md:h-[250px] space-y-2 xs:space-y-3 sm:space-y-4">
+            <div className="bg-gray-100 p-3 xs:p-4 sm:p-5 lg:p-6 flex flex-col items-center justify-center h-[180px] xs:h-[200px] sm:h-[220px] md:h-[250px] space-y-2 xs:space-y-3 sm:space-y-4">
               <div className="flex-1 flex items-center justify-center h-[50%]">
                 <Image src="/icons/hm-10-img14.png" alt="IT Park & Corporate" width={70} height={70} className='w-10 xs:w-12 sm:w-14 md:w-16 lg:w-20 h-auto object-contain' />
               </div>
               <h3 className="text-xs font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-gray-800 text-center h-[40%] ">IT Park & Corporate</h3>
             </div>
-            <div className="bg-white p-3 xs:p-4 sm:p-5 lg:p-6 flex flex-col items-center justify-center h-[180px] xs:h-[200px] sm:h-[220px] md:h-[250px] space-y-2 xs:space-y-3 sm:space-y-4">
+            <div className="bg-gray-100 p-3 xs:p-4 sm:p-5 lg:p-6 flex flex-col items-center justify-center h-[180px] xs:h-[200px] sm:h-[220px] md:h-[250px] space-y-2 xs:space-y-3 sm:space-y-4">
               <div className="flex-1 flex items-center justify-center h-[50%]">
                 <Image src="/icons/hm-10-img15.png" alt="Policy Makers & Local Bodies" width={70} height={70} className='w-10 xs:w-12 sm:w-14 md:w-16 lg:w-20 h-auto object-contain' />
               </div>
               <h3 className="text-xs font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-gray-800 text-center h-[40%] ">Policy Makers</h3>
             </div>
-            <div className="bg-white p-3 xs:p-4 sm:p-5 lg:p-6 flex flex-col items-center justify-center h-[180px] xs:h-[200px] sm:h-[220px] md:h-[250px] space-y-2 xs:space-y-3 sm:space-y-4">
+            <div className="bg-gray-100 p-3 xs:p-4 sm:p-5 lg:p-6 flex flex-col items-center justify-center h-[180px] xs:h-[200px] sm:h-[220px] md:h-[250px] space-y-2 xs:space-y-3 sm:space-y-4">
               <div className="flex-1 flex items-center justify-center h-[50%]">
                 <Image src="/icons/hm-10-img16.png" alt="Residential Complex & Gated Communities" width={70} height={70} className='w-10 xs:w-12 sm:w-14 md:w-16 lg:w-20 h-auto object-contain' />
               </div>
               <h3 className="text-xs font-['Montserrat'] xs:text-sm sm:text-base lg:text-lg text-gray-800 text-center h-[40%] ">Residential Complex</h3>
             </div>
-            <div className="bg-white p-3 xs:p-4 sm:p-5 lg:p-6 flex flex-col items-center justify-center h-[180px] xs:h-[200px] sm:h-[220px] md:h-[250px] space-y-2 xs:space-y-3 sm:space-y-4">
+            <div className="bg-gray-100 p-3 xs:p-4 sm:p-5 lg:p-6 flex flex-col items-center justify-center h-[180px] xs:h-[200px] sm:h-[220px] md:h-[250px] space-y-2 xs:space-y-3 sm:space-y-4">
               <div className="flex-1 flex items-center justify-center h-[50%]">
                 <Image src="/icons/hm-10-img17.png" alt="Rural Health Centers & Panchayats" width={70} height={70} className='w-10 xs:w-12 sm:w-14 md:w-16 lg:w-20 h-auto object-contain' />
               </div>

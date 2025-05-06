@@ -78,7 +78,7 @@ export default function OurProducts() {
       <div className="space-y-6 relative z-10 ">
         {/* Vitals Section */}
         <div className=" rounded-lg border-1 border-gray-300 p-4  transition-all duration-300">
-          <h3 className="text-white text-xl font-semibold mb-4">Vitals</h3>
+          <h3 className="text-white text-xl font-semibold mb-4">Vitals Parameters</h3>
           <div className="grid grid-cols-2 gap-4">
             <div className="flex items-center gap-2 text-white font-['Montserrat']">
               <Image src="/icons/hm-6-pr.png" alt="Pulse Rate" width={20} height={20} />
@@ -155,6 +155,35 @@ export default function OurProducts() {
             </div>
           </div>
         </div>
+        <div className="   rounded-lg border-1 border-white p-4  transition-all duration-300">
+          <h3 className="text-white text-xl font-semibold mb-4">Rapid Tests</h3>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="flex items-center gap-2 text-white font-['Montserrat']">
+              <span>Ovulation LH</span>
+            </div>
+            <div className="flex items-center gap-2 text-white font-['Montserrat']">
+              <span>Malaria AG</span>
+            </div>
+            <div className="flex items-center gap-2 text-white font-['Montserrat']">
+              <span>HIV I & II</span>
+            </div>
+            <div className="flex items-center gap-2 text-white font-['Montserrat']">
+              <span>Troponin I</span>
+            </div>
+            <div className="flex items-center gap-2 text-white font-['Montserrat']">
+              <span>Hepatitis C</span>
+            </div>
+            <div className="flex items-center gap-2 text-white font-['Montserrat']">
+              <span>Hepatitis B</span>
+            </div>
+            <div className="flex items-center gap-2 text-white font-['Montserrat']">
+              <span>Malaria AB</span>
+            </div>
+            <div className="flex items-center gap-2 text-white font-['Montserrat']">
+              <span>Pregnancy hCG Syphilis</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -208,10 +237,10 @@ export default function OurProducts() {
           <div className=" h-full w-full">
             <div className="flex flex-col items-start h-full w-full sm:space-y-6 lg:space-y-8 space-y-4">
               <div
-                className={`w-full flex flex-row items-center justify-start p-4 rounded-lg transition-all duration-300 hover:bg-gradient-to-r hover:from-[#18A093] hover:to-[#003366] group cursor-pointer ${activeStep === 'step1' ? 'bg-gradient-to-r from-[#18A093] to-[#003366] text-white' : ''}`}
+                className={`w-full flex flex-row items-center justify-start p-4 rounded-lg transition-all duration-300 hover:bg-[#0E7280] group cursor-pointer border-1 border-[#0E7280]/50 ${activeStep === 'step1' ? 'bg-gradient-to-r from-[#18A093] to-[#003366] text-white' : ''}`}
                 onClick={(e) => handleStepToggle(e, 'step1')}
               >
-                <div className={`sm:mr-2 md:mr-4 lg:mr-10 mr-4 flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#18A093] group-hover:bg-white flex items-center justify-center group-hover:text-[#18A093] text-lg sm:text-xl font-bold transition-colors duration-300 ${activeStep === 'step1' ? 'bg-white text-[#18A093]' : 'text-white'} `}>1</div>
+                <div className={`sm:mr-2 md:mr-4 lg:mr-10 mr-4 flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#0E7280] group-hover:bg-white flex items-center justify-center group-hover:text-[#18A093] text-lg sm:text-xl font-bold transition-colors duration-300 ${activeStep === 'step1' ? 'bg-white text-[#18A093]' : 'text-white'} `}>1</div>
                 <div className="flex flex-col items-start">
                   <h3 className={`text-lg sm:text-xl lg:text-[20px] font-[600] font-['Montserrat'] leading-[120%] sm:leading-[100%] tracking-[0%] align-middle text-[#1A1A1A] group-hover:hidden transition-colors duration-300 ${activeStep === 'step1' ? 'hidden' : 'block'}`}>Patient Screening & Health Checkup</h3>
                   <div className={`space-y-2 group-hover:block transition-all duration-300 overflow-hidden ${activeStep === 'step1' ? 'block' : 'hidden'}`}>
@@ -222,10 +251,10 @@ export default function OurProducts() {
                 </div>
               </div>
               <div
-                className={`w-full flex flex-row items-center justify-start p-4 rounded-lg transition-all duration-300 hover:bg-gradient-to-r hover:from-[#18A093] hover:to-[#003366] group cursor-pointer ${activeStep === 'step2' ? 'bg-gradient-to-r from-[#18A093] to-[#003366] text-white' : ''}`}
+                className={`w-full flex flex-row items-center justify-start p-4 rounded-lg transition-all duration-300 hover:bg-[#0E7280] group cursor-pointer border-1 border-[#0E7280]/50 ${activeStep === 'step2' ? 'bg-gradient-to-r from-[#18A093] to-[#003366] text-white' : ''}`}
                 onClick={(e) => handleStepToggle(e, 'step2')}
               >
-                <div className={`sm:mr-2 md:mr-4 lg:mr-10 mr-4 flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#18A093] group-hover:bg-white flex items-center justify-center group-hover:text-[#18A093] text-lg sm:text-xl font-bold transition-colors duration-300 ${activeStep === 'step2' ? 'bg-white text-[#18A093]' : 'text-white'} `}>2</div>
+                <div className={`sm:mr-2 md:mr-4 lg:mr-10 mr-4 flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#0E7280] group-hover:bg-white flex items-center justify-center group-hover:text-[#18A093] text-lg sm:text-xl font-bold transition-colors duration-300 ${activeStep === 'step2' ? 'bg-white text-[#18A093]' : 'text-white'} `}>2</div>
                 <div className="flex flex-col items-start">
                   <h3 className={`text-lg sm:text-xl lg:text-[20px] font-[600] font-['Montserrat'] leading-[120%] sm:leading-[100%] tracking-[0%] align-middle text-[#1A1A1A] group-hover:hidden transition-colors duration-300 ${activeStep === 'step2' ? 'hidden' : 'block'}`}>Primary Consultation </h3>
                   <div className={`space-y-2 group-hover:block transition-all duration-300 overflow-hidden ${activeStep === 'step2' ? 'block' : 'hidden'}`}>
@@ -236,10 +265,10 @@ export default function OurProducts() {
                 </div>
               </div>
               <div
-                className={`w-full flex flex-row items-center justify-start p-4 rounded-lg transition-all duration-300 hover:bg-gradient-to-r hover:from-[#18A093] hover:to-[#003366] group cursor-pointer ${activeStep === 'step3' ? 'bg-gradient-to-r from-[#18A093] to-[#003366] text-white' : ''}`}
+                className={`w-full flex flex-row items-center justify-start p-4 rounded-lg transition-all duration-300 hover:bg-[#0E7280] group cursor-pointer border-1 border-[#0E7280]/50 ${activeStep === 'step3' ? 'bg-gradient-to-r from-[#18A093] to-[#003366] text-white' : ''}`}
                 onClick={(e) => handleStepToggle(e, 'step3')}
               >
-                <div className={`sm:mr-2 md:mr-4 lg:mr-10 mr-4 flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#18A093] group-hover:bg-white flex items-center justify-center group-hover:text-[#18A093] text-lg sm:text-xl font-bold transition-colors duration-300 ${activeStep === 'step3' ? 'bg-white text-[#18A093]' : 'text-white'} `}>3</div>
+                <div className={`sm:mr-2 md:mr-4 lg:mr-10 mr-4 flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#0E7280] group-hover:bg-white flex items-center justify-center group-hover:text-[#18A093] text-lg sm:text-xl font-bold transition-colors duration-300 ${activeStep === 'step3' ? 'bg-white text-[#18A093]' : 'text-white'} `}>3</div>
                 <div className="flex flex-col items-start">
                   <h3 className={`text-lg sm:text-xl lg:text-[20px] font-[600] font-['Montserrat'] leading-[120%] sm:leading-[100%] tracking-[0%] align-middle text-[#1A1A1A] group-hover:hidden transition-colors duration-300 ${activeStep === 'step3' ? 'hidden' : 'block'}`}>Follow-up & Chronic Care</h3>
                   <div className={`space-y-2 group-hover:block transition-all duration-300 overflow-hidden ${activeStep === 'step3' ? 'block' : 'hidden'}`}>
@@ -249,10 +278,10 @@ export default function OurProducts() {
                 </div>
               </div>
               <div
-                className={`w-full flex flex-row items-center justify-start p-4 rounded-lg transition-all duration-300 hover:bg-gradient-to-r hover:from-[#18A093] hover:to-[#003366] group cursor-pointer ${activeStep === 'step4' ? 'bg-gradient-to-r from-[#18A093] to-[#003366] text-white' : ''}`}
+                className={`w-full flex flex-row items-center justify-start p-4 rounded-lg transition-all duration-300 hover:bg-[#0E7280] group cursor-pointer border-1 border-[#0E7280]/50 ${activeStep === 'step4' ? 'bg-gradient-to-r from-[#18A093] to-[#003366] text-white' : ''}`}
                 onClick={(e) => handleStepToggle(e, 'step4')}
               >
-                <div className={`sm:mr-2 md:mr-4 lg:mr-10 mr-4 flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#18A093] group-hover:bg-white flex items-center justify-center group-hover:text-[#18A093] text-lg sm:text-xl font-bold transition-colors duration-300 ${activeStep === 'step4' ? 'bg-white text-[#18A093]' : 'text-white'} `}>4</div>
+                <div className={`sm:mr-2 md:mr-4 lg:mr-10 mr-4 flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#0E7280] group-hover:bg-white flex items-center justify-center group-hover:text-[#18A093] text-lg sm:text-xl font-bold transition-colors duration-300 ${activeStep === 'step4' ? 'bg-white text-[#18A093]' : 'text-white'} `}>4</div>
                 <div className="flex flex-col items-start">
                   <h3 className={`text-lg sm:text-xl lg:text-[20px] font-[600] font-['Montserrat'] leading-[120%] sm:leading-[100%] tracking-[0%] align-middle text-[#1A1A1A] group-hover:hidden transition-colors duration-300 ${activeStep === 'step4' ? 'hidden' : 'block'}`}>Specialist Consultation</h3>
                   <div className={`space-y-2 group-hover:block transition-all duration-300 overflow-hidden ${activeStep === 'step4' ? 'block' : 'hidden'}`}>

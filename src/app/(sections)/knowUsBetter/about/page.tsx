@@ -51,59 +51,6 @@ export default function KnowUsBetter() {
       </div>
     </div>
 
-    {/* Second Section - About Bridge Healthcare */}
-    <div className="relative bg-white">
-      <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-        <div className="w-full">
-          <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
-            <span className="text-[#18A093]">About</span>{' '}
-            <span className="text-[#003366]">Bridge Healthcare</span>
-          </h2>
-          <p className="text-[#555555] text-[18px] text-center sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
-            Reimagining healthcare delivery through smart diagnostics and seamless connectivity.
-          </p>
-        </div>
-
-        <div className="flex flex-col md:flex-row gap-8 md:gap-12">
-          {/* Vision */}
-          <div className="border-2 border-gray-200 space-y-4 p-4 rounded-xl group hover:bg-[#0E7280] transition-all duration-300 w-[full] md:w-[50%]">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8">
-                <Image
-                  src="/icons/abt-2-lgo1.png"
-                  alt="Vision Icon"
-                  width={32}
-                  height={32}
-                />
-              </div>
-              <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white transition-colors duration-300">Vision</h3>
-            </div>
-            <p className="text-sm font-['Montserrat'] sm:text-base md:text-lg text-gray-600 group-hover:text-white transition-colors duration-300">
-              To revolutionize healthcare delivery by making premium, technology-driven healthcare services accessible, affordable, and reliable for everyone, everywhere.
-            </p>
-          </div>
-
-          {/* Mission */}
-          <div className="w-[full] md:w-[50%] border-2 border-gray-200 space-y-4 p-4 rounded-xl group hover:bg-[#0E7280] transition-all duration-300">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8">
-                <Image
-                  src="/icons/abt-2-img3.png"
-                  alt="Vision Icon"
-                  width={32}
-                  height={32}
-                />
-              </div>
-              <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white transition-colors duration-300">Mission</h3>
-            </div>
-            <p className="text-sm sm:text-base md:text-lg text-gray-600 group-hover:text-white transition-colors duration-300 font-['Montserrat']">
-              To empower individuals and healthcare providers through advanced Tele-Diagnostic and Smart Healthcare solutions, ensuring real-time diagnostics, seamless tele-consultations, and connected care that improves health outcomes and transforms lives.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
     {/* Background overlay */}
     <div
       className="absolute inset-0 -z-10"
@@ -181,6 +128,60 @@ export default function KnowUsBetter() {
         </div>
       </div>
     </div>
+
+    {/* Second Section - About Bridge Healthcare */}
+    <div className="relative bg-white">
+      <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
+        <div className="w-full">
+          <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
+            <span className="text-[#18A093]">About</span>{' '}
+            <span className="text-[#003366]">Bridge Healthcare</span>
+          </h2>
+          <p className="text-[#555555] text-[18px] text-center sm:text-[22px] md:text-[24px] font-['Montserrat'] font-medium mb-8 sm:mb-12">
+            Reimagining healthcare delivery through smart diagnostics and seamless connectivity.
+          </p>
+        </div>
+
+        <div className="flex flex-col md:flex-row gap-8 md:gap-12">
+          {/* Vision */}
+          <div className="border-2 border-gray-200 space-y-4 p-4 rounded-xl group hover:bg-[#0E7280] transition-all duration-300 w-[full] md:w-[50%]">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8">
+                <Image
+                  src="/icons/abt-2-lgo1.png"
+                  alt="Vision Icon"
+                  width={32}
+                  height={32}
+                />
+              </div>
+              <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white transition-colors duration-300">Vision</h3>
+            </div>
+            <p className="text-sm font-['Montserrat'] sm:text-base md:text-lg text-gray-600 group-hover:text-white transition-colors duration-300">
+              To revolutionize healthcare delivery by making premium, technology-driven healthcare services accessible, affordable, and reliable for everyone, everywhere.
+            </p>
+          </div>
+
+          {/* Mission */}
+          <div className="w-[full] md:w-[50%] border-2 border-gray-200 space-y-4 p-4 rounded-xl group hover:bg-[#0E7280] transition-all duration-300">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8">
+                <Image
+                  src="/icons/abt-2-img3.png"
+                  alt="Vision Icon"
+                  width={32}
+                  height={32}
+                />
+              </div>
+              <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white transition-colors duration-300">Mission</h3>
+            </div>
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 group-hover:text-white transition-colors duration-300 font-['Montserrat']">
+              To empower individuals and healthcare providers through advanced Tele-Diagnostic and Smart Healthcare solutions, ensuring real-time diagnostics, seamless tele-consultations, and connected care that improves health outcomes and transforms lives.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     {/* Fourth Section - Our Team */}
     <div className="bg-white">
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-6 md:px-8 lg:px-22">

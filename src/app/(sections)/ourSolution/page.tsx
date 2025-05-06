@@ -3,29 +3,21 @@
 import Partner from '@/app/components/Partner';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 export default function OurSolution() {
   const [activeFaq, setActiveFaq] = React.useState<string | null>(null);
   const [showFaq, setShowFaq] = useState(false);
-  const [isTouchDevice, setIsTouchDevice] = useState(false);
-  const [activeCard, setActiveCard] = useState<string | null>(null);
-
-  useEffect(() => {
-    // Safe window check for SSR
-    const checkTouchDevice = (): boolean => {
-      if (typeof window === 'undefined') return false;
-      return 'ontouchstart' in window;
-    };
-
-    setIsTouchDevice(checkTouchDevice());
-  }, []);
+  const [activeCard, setActiveCard] = useState<string | null>("card_1");
 
   const handleToggle = (cardId: string): void => {
-    if (isTouchDevice) {
-      console.log("touch", cardId)
-      setActiveCard(cardId);
-    }
+    setActiveCard(cardId);
   };
 
   return (<>
@@ -62,24 +54,17 @@ export default function OurSolution() {
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
         <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] text-center">
           <span className="text-[#18A093]">Our</span>{' '}
-          <span className="text-[#003366]">Solution Overview</span>
+          <span className="text-[#003366]">Solutions</span>
         </h2>
         <p className="text-[#555555] text-[18px] text-center sm:text-[22px] md:text-[22px] font-['Montserrat'] font-medium mb-4 sm:mb-8">
           The Smart Healthcare Machine improves healthcare with data-driven accessibility and efficiency.
         </p>
 
         <div className="space-y-4 mb-16">
-          <div className="group hover:z-10 card-hover" >
-            <div className="bg-white border border-gray-200 p-4 rounded-lg flex items-center justify-between cursor-pointer hover:border-[#18A093] transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#18A093] group-hover:to-[#003366] md:w-[50%]" onClick={() => handleToggle('card_1')}>
+          <div className=" hover:z-10 card-hover" >
+            <div className={`border border-gray-200 p-4 rounded-lg flex items-center justify-between cursor-pointer  transition-all duration-300  md:w-[50%] ${activeCard === "card_1" ? "bg-[#0E7280]" : "bg-white"}`} onClick={() => handleToggle('card_1')}>
               <div className="flex items-center">
-                <div className=" flex items-center justify-center  mr-4  group-hover:bg-opacity-20">
-                  <Image src="/icons/sol-2-lgo1.png"
-                    alt='heart'
-                    width={100}
-                    height={100}
-                    className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
-                </div>
-                <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white  group-hover:text-white ">Tele-Diagnostic Access</h3>
+                <h3 className={`text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']  ${activeCard === "card_1" ? "text-white" : "text-[#5A5A5A]"} `}>Tele-Diagnostic Access</h3>
               </div>
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-400 group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -87,79 +72,92 @@ export default function OurSolution() {
             </div>
 
             {/* Hidden content that shows on hover */}
-            <div className={` group-hover:block overflow-hidden w-full bg-white p-4 z-10 ${activeCard === 'card_1' ? 'block' : 'hidden'}`}>
-              <div className="flex flex-row items-center gap-6  specialty-cards-container  gap-4 sm:gap-6 lg:gap-8">
-                {/* Left column - Smart Health Checkups */}
-                <div className="h-full p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
-                      <Image src="/icons/sol-2-lgo4.png"
-                        alt='heart'
-                        width={100}
-                        height={100}
-                        className="w-6 h-6 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Smart Health Checkups</h3>
-                  </div>
-                  <ul className="list-disc border-b-2 border-gray-300 pb-2 list-inside text-gray-600 ml-4 space-y-1">
-                    <li>Vitals monitoring (BP, SPO2, Heart Rate, Temp)</li>
-                    <li>ECG, Blood tests, Hemoglobin, Lipid Profile</li>
-                    <li>Early detection of chronic conditions</li>
-                  </ul>
-                </div>
 
-                {/* Right column - Teleconsultation Services */}
-                <div className=" h-full bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
-                      <Image src="/icons/sol-2-lgo4.png"
-                        alt='heart'
-                        width={100}
-                        height={100}
-                        className="w-6 h-6 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
+            <div className={` overflow-hidden w-full bg-white p-4 z-10 ${activeCard === 'card_1' ? 'block' : 'hidden'}`}>
+              <div className="relative p-4 md:px-6 flex flex-row items-center gap-6   gap-4 sm:gap-6 lg:gap-8">
+                <button className="custom-prev cursor-pointer absolute left-0 top-[35%] z-10 p-2 rounded-full bg-white shadow-lg hover:bg-gray-100 transition-all duration-300">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M15 19l-7-7 7-7" stroke="#003366" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+
+                <button className="custom-next cursor-pointer absolute right-0 top-[35%] z-10 p-2 rounded-full bg-white shadow-lg hover:bg-gray-100 transition-all duration-300">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M9 5l7 7-7 7" stroke="#003366" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+                {/* Left column - Smart Health Checkups */}
+                <Swiper
+                  modules={[Navigation, Pagination]}
+                  navigation={{
+                    nextEl: '.custom-next',
+                    prevEl: '.custom-prev',
+                  }}
+                  spaceBetween={30}
+                  slidesPerView={2}
+                  pagination={{ clickable: true, el: '.custom-pagination' }}
+                  breakpoints={{
+                    0: { slidesPerView: 1 },
+                    640: { slidesPerView: 1 },
+                    1024: { slidesPerView: 2 },
+                  }}
+                >
+                  {/* Card 1 */}
+                  <SwiperSlide>
+                    <div className="h-full p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                      <div className="flex items-center mb-4">
+                        <h3 className="text-xl text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Smart Health Checkups</h3>
+                      </div>
+                      <ul className="list-disc border-b-2 font-['Montserrat'] border-gray-300 pb-2 text-gray-600 font-[600] leading-[1.2] ml-4 tracking-[0%] space-y-1">
+                        <li>Vitals monitoring (BP, SPO2, Heart Rate, Temp)</li>
+                        <li>ECG, Blood tests, Hemoglobin, Lipid Profile</li>
+                        <li>Early detection of chronic conditions</li>
+                      </ul>
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Live Diagnostic Interface</h3>
-                  </div>
-                  <ul className="list-disc border-b-2 border-gray-300 pb-2 list-inside text-gray-600 ml-4 space-y-1">
-                    <li>Real-time vitals and diagnostic data sharing</li>
-                    <li>Doctor access during teleconsultations</li>
-                    <li>Data-driven remote clinical decisions</li>
-                  </ul>
-                </div>
-                <div className=" h-full bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
-                      <Image src="/icons/sol-2-lgo4.png"
-                        alt='heart'
-                        width={100}
-                        height={100}
-                        className="w-6 h-6 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
+                  </SwiperSlide>
+
+                  {/* Card 2 */}
+                  <SwiperSlide>
+                    <div className=" h-full bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                      <div className="flex items-center mb-4">
+                        <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Live Diagnostic Interface</h3>
+                      </div>
+                      <ul className="list-disc border-b-2 font-['Montserrat'] border-gray-300 pb-2 text-gray-600 font-[600] leading-[1.2] ml-4 tracking-[0%] space-y-1">
+                        <li>Real-time vitals and diagnostic data sharing</li>
+                        <li>Doctor access during teleconsultations</li>
+                        <li>Data-driven remote clinical decisions</li>
+                      </ul>
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Advance Diagnostic Modules</h3>
-                  </div>
-                  <ul className="list-disc border-b-2 border-gray-300 pb-2 list-inside text-gray-600 ml-4 space-y-1">
-                    <li>Spirometer, Iris Scope, Ultrasound, ECG Viewer</li>
-                    <li>Comprehensive digital diagnostics</li>
-                    <li>Seamless specialist collaboration</li>
-                  </ul>
-                </div>
-                <div className="h-full bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
-                      <Image src="/icons/sol-2-lgo4.png"
-                        alt='heart'
-                        width={100}
-                        height={100}
-                        className="w-6 h-6 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
+                  </SwiperSlide>
+
+                  {/* Card 3 */}
+                  <SwiperSlide>
+                    <div className=" h-full bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                      <div className="flex items-center mb-4">
+                        <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Advance Diagnostic Modules</h3>
+                      </div>
+                      <ul className="list-disc border-b-2 font-['Montserrat'] border-gray-300 pb-2 text-gray-600 font-[600] leading-[1.2] ml-4 tracking-[0%] space-y-1">
+                        <li>Spirometer, Iris Scope, Ultrasound, ECG Viewer</li>
+                        <li>Comprehensive digital diagnostics</li>
+                        <li>Seamless specialist collaboration</li>
+                      </ul>
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Rapid Diagnostic Kits (Coming Soon)</h3>
-                  </div>
-                  <ul className="list-disc border-b-2 border-gray-300 pb-2 list-inside text-gray-600 ml-4 space-y-1">
-                    <li>Support for integration of blood, infection, and viral rapid tests</li>
-                    <li>Instant reporting via SHM digital workflow</li>
-                    <li>Expanding rural diagnostic capabilities</li>
-                  </ul>
-                </div>
+                  </SwiperSlide>
+
+                  <SwiperSlide>
+                    <div className="h-full bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                      <div className="flex items-center mb-4">
+                        <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Rapid Diagnostic Kits (Coming Soon)</h3>
+                      </div>
+                      <ul className="list-disc border-b-2 font-['Montserrat'] border-gray-300 pb-2 text-gray-600 font-[600] leading-[1.2] ml-4 tracking-[0%] space-y-1">
+                        <li>Support for integration of blood, infection, and viral rapid tests</li>
+                        <li>Instant reporting via SHM digital workflow</li>
+                        <li>Expanding rural diagnostic capabilities</li>
+                      </ul>
+                    </div>
+                  </SwiperSlide>
+                  <div className="custom-pagination flex justify-center gap-2 mt-6"></div>
+                </Swiper>
               </div>
             </div>
           </div>
@@ -167,339 +165,405 @@ export default function OurSolution() {
 
           {/* Nurse-Enabled Health Access */}
           <div className="group hover:z-10 card-hover" >
-            <div className="bg-white border border-gray-200 p-4 rounded-lg flex items-center justify-between cursor-pointer hover:border-[#18A093] transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#18A093] group-hover:to-[#003366] md:w-[50%]" onClick={() => handleToggle('card_2')}>
+            <div className={`border border-gray-200 p-4 rounded-lg flex items-center justify-between cursor-pointer  transition-all duration-300  md:w-[50%] ${activeCard === "card_2" ? "bg-[#0E7280]" : "bg-white"}`} onClick={() => handleToggle('card_2')}>
               <div className="flex items-center">
-                <div className=" flex items-center justify-center  mr-4  group-hover:bg-opacity-20">
-                  <Image src="/icons/sol-2-lgo1.png"
-                    alt='heart'
-                    width={100}
-                    height={100}
-                    className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
-                </div>
-                <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white  group-hover:text-white ">Nurse-Enabled Health Access</h3>
+
+                <h3 className={`text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']  ${activeCard === "card_2" ? "text-white" : "text-[#5A5A5A]"} `}>Nurse-Enabled Health Access</h3>
               </div>
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-400 group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </div>
             {/* Hidden content that shows on hover */}
-            <div className={` ${activeCard === 'card_2' ? 'block' : 'hidden'} group-hover:block overflow-hidden w-full bg-white p-4 z-10`}>
-              <div className={`flex flex-row items-center   gap-4 sm:gap-6 lg:gap-8 ${activeCard === 'card_2' && ' specialty-cards-container'}`}>
-                {/* Left column - Smart Health Checkups */}
-                <div className="bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
-                      <Image src="/icons/sol-2-lgo4.png"
-                        alt='heart'
-                        width={100}
-                        height={100}
-                        className="w-6 h-6 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Guided Patient Screening</h3>
-                  </div>
-                  <ul className="list-disc border-b-2 border-gray-300 pb-2 list-inside text-gray-600 ml-4 space-y-1">
-                    <li>Nurse-supported checkups using SHM</li>
-                    <li>Accurate data collection for remote diagnosis</li>
-                    <li>Improving confidence in underserved regions</li>
-                  </ul>
-                </div>
+            <div className={` overflow-hidden w-full bg-white p-4 z-10 ${activeCard === 'card_2' ? 'block' : 'hidden'}`}>
+              <div className="relative p-4 md:px-6 flex flex-row items-center gap-6   gap-4 sm:gap-6 lg:gap-8">
+                <button className="custom-prev cursor-pointer absolute left-0 top-[35%] z-10 p-2 rounded-full bg-white shadow-lg hover:bg-gray-100 transition-all duration-300">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M15 19l-7-7 7-7" stroke="#003366" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
 
-                {/* Right column - Teleconsultation Services */}
-                <div className="bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
-                      <Image src="/icons/sol-2-lgo4.png"
-                        alt='heart'
-                        width={100}
-                        height={100}
-                        className="w-6 h-6 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
+                <button className="custom-next cursor-pointer absolute right-0 top-[35%] z-10 p-2 rounded-full bg-white shadow-lg hover:bg-gray-100 transition-all duration-300">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M9 5l7 7-7 7" stroke="#003366" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+                {/* Left column - Smart Health Checkups */}
+                <Swiper
+                  modules={[Navigation, Pagination]}
+                  navigation={{
+                    nextEl: '.custom-next',
+                    prevEl: '.custom-prev',
+                  }}
+                  spaceBetween={30}
+                  slidesPerView={2}
+                  pagination={{ clickable: true, el: '.custom-pagination' }}
+                  breakpoints={{
+                    0: { slidesPerView: 1 },
+                    640: { slidesPerView: 1 },
+                    1024: { slidesPerView: 2 },
+                  }}
+                >
+                  {/* Card 1 */}
+                  <SwiperSlide>
+                    <div className="bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                      <div className="flex items-center mb-4">
+                        <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Guided Patient Screening</h3>
+                      </div>
+                      <ul className="list-disc border-b-2 font-['Montserrat'] border-gray-300 pb-2 text-gray-600 font-[600] leading-[1.2] ml-4 tracking-[0%] space-y-1">
+                        <li>Nurse-supported checkups using SHM</li>
+                        <li>Accurate data collection for remote diagnosis</li>
+                        <li>Improving confidence in underserved regions</li>
+                      </ul>
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Teleconsultation Support</h3>
-                  </div>
-                  <ul className="list-disc border-b-2 border-gray-300 pb-2 list-inside text-gray-600 ml-4 space-y-1">
-                    <li>Nurses assist patients in remote consultations</li>
-                    <li>Help patients understand doctor&apos;s advice</li>
-                    <li>Enable medication instructions and follow-ups</li>
-                  </ul>
-                </div>
+                  </SwiperSlide>
+
+                  {/* Card 2 */}
+                  <SwiperSlide>
+                    <div className="bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                      <div className="flex items-center mb-4">
+                        <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Teleconsultation Support</h3>
+                      </div>
+                      <ul className="list-disc border-b-2 font-['Montserrat'] border-gray-300 pb-2 text-gray-600 font-[600] leading-[1.2] ml-4 tracking-[0%] space-y-1">
+                        <li>Nurses assist patients in remote consultations</li>
+                        <li>Help patients understand doctor&apos;s advice</li>
+                        <li>Enable medication instructions and follow-ups</li>
+                      </ul>
+                    </div>
+                  </SwiperSlide>
+
+
+                  <div className="custom-pagination flex justify-center gap-2 mt-6"></div>
+                </Swiper>
               </div>
             </div>
           </div>
 
           {/* Smart Queue Management */}
           <div className="group  hover:z-10">
-            <div className="bg-white border border-gray-200 p-4 rounded-lg flex items-center justify-between cursor-pointer hover:border-[#18A093] transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#18A093] group-hover:to-[#003366] md:w-[50%]" onClick={() => handleToggle('card_3')}>
+            <div className={`border border-gray-200 p-4 rounded-lg flex items-center justify-between cursor-pointer  transition-all duration-300  md:w-[50%] ${activeCard === "card_3" ? "bg-[#0E7280]" : "bg-white"}`} onClick={() => handleToggle('card_3')}>
               <div className="flex items-center">
-                <div className=" flex items-center justify-center  mr-4  group-hover:bg-opacity-20">
-                  <Image src="/icons/sol-2-lgo1.png"
-                    alt='heart'
-                    width={100}
-                    height={100}
-                    className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
-                </div>
-                <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white  group-hover:text-white ">Smart Queue Management</h3>
+
+                <h3 className={`text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']  ${activeCard === "card_3" ? "text-white" : "text-[#5A5A5A]"} `}>Smart Queue Management</h3>
               </div>
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-400 group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </div>
             {/* Hidden content that shows on hover */}
-            <div className={` ${activeCard === 'card_3' ? 'block' : 'hidden'} group-hover:block overflow-hidden w-full bg-white p-4 z-10`}>
-              <div className={`flex flex-row items-center   gap-4 sm:gap-6 lg:gap-8 ${activeCard === 'card_3' && ' specialty-cards-container'}`}>
-                {/* Left column - Smart Health Checkups */}
-                <div className="bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
-                      <Image src="/icons/sol-2-lgo4.png"
-                        alt='heart'
-                        width={100}
-                        height={100}
-                        className="w-6 h-6 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Digital Appointment Scheduling</h3>
-                  </div>
-                  <ul className="list-disc border-b-2 border-gray-300 pb-2 list-inside text-gray-600 ml-4 space-y-1">
-                    <li>Slot booking through Patient App</li>
-                    <li>Queue management based on urgency</li>
-                    <li>Reduces overcrowding at centers</li>
-                  </ul>
-                </div>
+            <div className={` overflow-hidden w-full bg-white p-4 z-10 ${activeCard === 'card_3' ? 'block' : 'hidden'}`}>
+              <div className="relative p-4 md:px-6 flex flex-row items-center gap-6   gap-4 sm:gap-6 lg:gap-8">
+                <button className="custom-prev cursor-pointer absolute left-0 top-[35%] z-10 p-2 rounded-full bg-white shadow-lg hover:bg-gray-100 transition-all duration-300">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M15 19l-7-7 7-7" stroke="#003366" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
 
-                {/* Right column - Teleconsultation Services */}
-                <div className="bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
-                      <Image src="/icons/sol-2-lgo4.png"
-                        alt='heart'
-                        width={100}
-                        height={100}
-                        className="w-6 h-6 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
+                <button className="custom-next cursor-pointer absolute right-0 top-[35%] z-10 p-2 rounded-full bg-white shadow-lg hover:bg-gray-100 transition-all duration-300">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M9 5l7 7-7 7" stroke="#003366" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+                {/* Left column - Smart Health Checkups */}
+                <Swiper
+                  modules={[Navigation, Pagination]}
+                  navigation={{
+                    nextEl: '.custom-next',
+                    prevEl: '.custom-prev',
+                  }}
+                  spaceBetween={30}
+                  slidesPerView={2}
+                  pagination={{ clickable: true, el: '.custom-pagination' }}
+                  breakpoints={{
+                    0: { slidesPerView: 1 },
+                    640: { slidesPerView: 1 },
+                    1024: { slidesPerView: 2 },
+                  }}
+                >
+                  {/* Card 1 */}
+                  <SwiperSlide>
+                    <div className="bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                      <div className="flex items-center mb-4">
+
+                        <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Digital Appointment Scheduling</h3>
+                      </div>
+                      <ul className="list-disc border-b-2 font-['Montserrat'] border-gray-300 pb-2 text-gray-600 font-[600] leading-[1.2] ml-4 tracking-[0%] space-y-1">
+                        <li>Slot booking through Patient App</li>
+                        <li>Queue management based on urgency</li>
+                        <li>Reduces overcrowding at centers</li>
+                      </ul>
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Remote Patient Notifications</h3>
-                  </div>
-                  <ul className="list-disc border-b-2 border-gray-300 pb-2 list-inside text-gray-600 ml-4 space-y-1">
-                    <li>SMS/app alerts for appointment reminders</li>
-                    <li>Rescheduling and real-time wait time tracking</li>
-                    <li>Patient-friendly, low-wage loss experience</li>
-                  </ul>
-                </div>
+                  </SwiperSlide>
+
+                  {/* Card 2 */}
+                  <SwiperSlide>
+                    <div className="bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                      <div className="flex items-center mb-4">
+
+                        <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Remote Patient Notifications</h3>
+                      </div>
+                      <ul className="list-disc border-b-2 font-['Montserrat'] border-gray-300 pb-2 text-gray-600 font-[600] leading-[1.2] ml-4 tracking-[0%] space-y-1">
+                        <li>SMS/app alerts for appointment reminders</li>
+                        <li>Rescheduling and real-time wait time tracking</li>
+                        <li>Patient-friendly, low-wage loss experience</li>
+                      </ul>
+                    </div>
+                  </SwiperSlide>
+                  <div className="custom-pagination flex justify-center gap-2 mt-6"></div>
+                </Swiper>
               </div>
             </div>
           </div>
 
           {/* Personalized Health Tracking */}
           <div className="group  hover:z-10">
-            <div className="bg-white border border-gray-200 p-4 rounded-lg flex items-center justify-between cursor-pointer hover:border-[#18A093] transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#18A093] group-hover:to-[#003366] md:w-[50%]" onClick={() => handleToggle('card_4')}>
+            <div className={`border border-gray-200 p-4 rounded-lg flex items-center justify-between cursor-pointer  transition-all duration-300  md:w-[50%] ${activeCard === "card_4" ? "bg-[#0E7280]" : "bg-white"}`} onClick={() => handleToggle('card_4')}>
               <div className="flex items-center">
-                <div className=" flex items-center justify-center  mr-4  group-hover:bg-opacity-20">
-                  <Image src="/icons/sol-2-lgo1.png"
-                    alt='heart'
-                    width={100}
-                    height={100}
-                    className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
-                </div>
-                <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white  group-hover:text-white ">Personalized Health Tracking</h3>
+
+                <h3 className={`text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']  ${activeCard === "card_4" ? "text-white" : "text-[#5A5A5A]"} `}>Personalized Health Tracking</h3>
               </div>
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-400 group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </div>
             {/* Hidden content that shows on hover */}
-            <div className={` ${activeCard === 'card_4' ? 'block' : 'hidden'} group-hover:block overflow-hidden w-full bg-white p-4 z-10`}>
-              <div className={`flex flex-row items-center   gap-4 sm:gap-6 lg:gap-8 ${activeCard === 'card_4' && ' specialty-cards-container'}`}>
-                {/* Left column - Smart Health Checkups */}
-                <div className="bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
-                      <Image src="/icons/sol-2-lgo4.png"
-                        alt='heart'
-                        width={100}
-                        height={100}
-                        className="w-6 h-6 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Digital Health Records</h3>
-                  </div>
-                  <ul className="list-disc border-b-2 border-gray-300 pb-2 list-inside text-gray-600 ml-4 space-y-1">
-                    <li>Secure, cloud-based patient files</li>
-                    <li>Accessible by patients, doctors, and nurses</li>
-                    <li>Enables consistent long-term care</li>
-                  </ul>
-                </div>
+            <div className={` overflow-hidden w-full bg-white p-4 z-10 ${activeCard === 'card_4' ? 'block' : 'hidden'}`}>
+              <div className="relative p-4 md:px-6 flex flex-row items-center gap-6   gap-4 sm:gap-6 lg:gap-8">
+                <button className="custom-prev cursor-pointer absolute left-0 top-[35%] z-10 p-2 rounded-full bg-white shadow-lg hover:bg-gray-100 transition-all duration-300">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M15 19l-7-7 7-7" stroke="#003366" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
 
-                {/* Right column - Teleconsultation Services */}
-                <div className="bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
-                      <Image src="/icons/sol-2-lgo4.png"
-                        alt='heart'
-                        width={100}
-                        height={100}
-                        className="w-6 h-6 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
+                <button className="custom-next cursor-pointer absolute right-0 top-[35%] z-10 p-2 rounded-full bg-white shadow-lg hover:bg-gray-100 transition-all duration-300">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M9 5l7 7-7 7" stroke="#003366" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+                {/* Left column - Smart Health Checkups */}
+                <Swiper
+                  modules={[Navigation, Pagination]}
+                  navigation={{
+                    nextEl: '.custom-next',
+                    prevEl: '.custom-prev',
+                  }}
+                  spaceBetween={30}
+                  slidesPerView={2}
+                  pagination={{ clickable: true, el: '.custom-pagination' }}
+                  breakpoints={{
+                    0: { slidesPerView: 1 },
+                    640: { slidesPerView: 1 },
+                    1024: { slidesPerView: 2 },
+                  }}
+                >
+                  {/* Card 1 */}
+                  <SwiperSlide>
+                    <div className="bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                      <div className="flex items-center mb-4">
+
+                        <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Digital Health Records</h3>
+                      </div>
+                      <ul className="list-disc border-b-2 font-['Montserrat'] border-gray-300 pb-2 text-gray-600 font-[600] leading-[1.2] ml-4 tracking-[0%] space-y-1">
+                        <li>Secure, cloud-based patient files</li>
+                        <li>Accessible by patients, doctors, and nurses</li>
+                        <li>Enables consistent long-term care</li>
+                      </ul>
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Follow-Up & Chronic Care Management</h3>
-                  </div>
-                  <ul className="list-disc border-b-2 border-gray-300 pb-2 list-inside text-gray-600 ml-4 space-y-1">
-                    <li>Scheduled remote consultations</li>
-                    <li>Smart reminders for medications and diagnostics</li>
-                    <li>Patient app integration for easy tracking</li>
-                  </ul>
-                </div>
+                  </SwiperSlide>
+
+                  {/* Card 2 */}
+                  <SwiperSlide>
+                    <div className="bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                      <div className="flex items-center mb-4">
+
+                        <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Follow-Up & Chronic Care Management</h3>
+                      </div>
+                      <ul className="list-disc border-b-2 font-['Montserrat'] border-gray-300 pb-2 text-gray-600 font-[600] leading-[1.2] ml-4 tracking-[0%] space-y-1">
+                        <li>Scheduled remote consultations</li>
+                        <li>Smart reminders for medications and diagnostics</li>
+                        <li>Patient app integration for easy tracking</li>
+                      </ul>
+                    </div>
+                  </SwiperSlide>
+                  <div className="custom-pagination flex justify-center gap-2 mt-6"></div>
+                </Swiper>
               </div>
             </div>
           </div>
 
           {/* Preventive Health Programs */}
           <div className="group  hover:z-10">
-            <div className="bg-white border border-gray-200 p-4 rounded-lg flex items-center justify-between cursor-pointer hover:border-[#18A093] transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#18A093] group-hover:to-[#003366] md:w-[50%]" onClick={() => handleToggle('card_5')}>
+            <div className={`border border-gray-200 p-4 rounded-lg flex items-center justify-between cursor-pointer  transition-all duration-300  md:w-[50%] ${activeCard === "card_5" ? "bg-[#0E7280]" : "bg-white"}`} onClick={() => handleToggle('card_5')}>
               <div className="flex items-center">
-                <div className=" flex items-center justify-center  mr-4  group-hover:bg-opacity-20">
-                  <Image src="/icons/sol-2-lgo1.png"
-                    alt='heart'
-                    width={100}
-                    height={100}
-                    className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
-                </div>
-                <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white  group-hover:text-white ">Preventive Health Programs</h3>
+
+                <h3 className={`text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']  ${activeCard === "card_5" ? "text-white" : "text-[#5A5A5A]"} `}>Preventive Health Programs</h3>
               </div>
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-400 group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </div>
             {/* Hidden content that shows on hover */}
-            <div className={` ${activeCard === 'card_5' ? 'block' : 'hidden'} group-hover:block overflow-hidden w-full bg-white p-4 z-10`}>
-              <div className="flex flex-row items-center gap-6  specialty-cards-container  gap-4 sm:gap-6 lg:gap-8">
-                {/* Left column - Smart Health Checkups */}
-                <div className="bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
-                      <Image src="/icons/sol-2-lgo4.png"
-                        alt='heart'
-                        width={100}
-                        height={100}
-                        className="w-6 h-6 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Wellness Screenings</h3>
-                  </div>
-                  <ul className="list-disc border-b-2 border-gray-300 pb-2 list-inside text-gray-600 ml-4 space-y-1">
-                    <li>Mass health checkups for BP, Sugar, BMI, etc.</li>
-                    <li>Catch chronic diseases before symptoms escalate</li>
-                    <li>Community wellness initiatives</li>
-                  </ul>
-                </div>
+            <div className={` overflow-hidden w-full bg-white p-4 z-10 ${activeCard === 'card_5' ? 'block' : 'hidden'}`}>
+              <div className="relative p-4 md:px-6 flex flex-row items-center gap-6   gap-4 sm:gap-6 lg:gap-8">
+                <button className="custom-prev cursor-pointer absolute left-0 top-[35%] z-10 p-2 rounded-full bg-white shadow-lg hover:bg-gray-100 transition-all duration-300">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M15 19l-7-7 7-7" stroke="#003366" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
 
-                {/* Right column - Teleconsultation Services */}
-                <div className="bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
-                      <Image src="/icons/sol-2-lgo4.png"
-                        alt='heart'
-                        width={100}
-                        height={100}
-                        className="w-6 h-6 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
+                <button className="custom-next cursor-pointer absolute right-0 top-[35%] z-10 p-2 rounded-full bg-white shadow-lg hover:bg-gray-100 transition-all duration-300">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M9 5l7 7-7 7" stroke="#003366" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+                {/* Left column - Smart Health Checkups */}
+                <Swiper
+                  modules={[Navigation, Pagination]}
+                  navigation={{
+                    nextEl: '.custom-next',
+                    prevEl: '.custom-prev',
+                  }}
+                  spaceBetween={30}
+                  slidesPerView={2}
+                  pagination={{ clickable: true, el: '.custom-pagination' }}
+                  breakpoints={{
+                    0: { slidesPerView: 1 },
+                    640: { slidesPerView: 1 },
+                    1024: { slidesPerView: 2 },
+                  }}
+                >
+                  {/* Card 1 */}
+                  <SwiperSlide>
+                    <div className="bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                      <div className="flex items-center mb-4">
+
+                        <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Wellness Screenings</h3>
+                      </div>
+                      <ul className="list-disc border-b-2 font-['Montserrat'] border-gray-300 pb-2 text-gray-600 font-[600] leading-[1.2] ml-4 tracking-[0%] space-y-1">
+                        <li>Mass health checkups for BP, Sugar, BMI, etc.</li>
+                        <li>Catch chronic diseases before symptoms escalate</li>
+                        <li>Community wellness initiatives</li>
+                      </ul>
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Dietary & Lifestyle Counseling</h3>
-                  </div>
-                  <ul className="list-disc border-b-2 border-gray-300 pb-2 list-inside text-gray-600 ml-4 space-y-1">
-                    <li>Personalized nutrition and fitness advice</li>
-                    <li>Preventive health and disease management focus</li>
-                    <li>Continuous virtual support for behavior change</li>
-                  </ul>
-                </div>
-                <div className="bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
-                      <Image src="/icons/sol-2-lgo4.png"
-                        alt='heart'
-                        width={100}
-                        height={100}
-                        className="w-6 h-6 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
+                  </SwiperSlide>
+
+                  {/* Card 2 */}
+                  <SwiperSlide>
+                    <div className="bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                      <div className="flex items-center mb-4">
+
+                        <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Dietary & Lifestyle Counseling</h3>
+                      </div>
+                      <ul className="list-disc border-b-2 font-['Montserrat'] border-gray-300 pb-2 text-gray-600 font-[600] leading-[1.2] ml-4 tracking-[0%] space-y-1">
+                        <li>Personalized nutrition and fitness advice</li>
+                        <li>Preventive health and disease management focus</li>
+                        <li>Continuous virtual support for behavior change</li>
+                      </ul>
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Educational Workshops & Resources</h3>
-                  </div>
-                  <ul className="list-disc border-b-2 border-gray-300 pb-2 list-inside text-gray-600 ml-4 space-y-1">
-                    <li>Preventive health seminars and webinars</li>
-                    <li>Digital material access through Patient App</li>
-                    <li>Building community awareness on wellness</li>
-                  </ul>
-                </div>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <div className="bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                      <div className="flex items-center mb-4">
+
+                        <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Educational Workshops & Resources</h3>
+                      </div>
+                      <ul className="list-disc border-b-2 font-['Montserrat'] border-gray-300 pb-2 text-gray-600 font-[600] leading-[1.2] ml-4 tracking-[0%] space-y-1">
+                        <li>Preventive health seminars and webinars</li>
+                        <li>Digital material access through Patient App</li>
+                        <li>Building community awareness on wellness</li>
+                      </ul>
+                    </div>
+                  </SwiperSlide>
+                  <div className="custom-pagination flex justify-center gap-2 mt-6"></div>
+                </Swiper>
               </div>
             </div>
           </div>
 
           {/* Targeted Health Interventions */}
           <div className="group  hover:z-10">
-            <div className="bg-white border border-gray-200 p-4 rounded-lg flex items-center justify-between cursor-pointer hover:border-[#18A093] transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#18A093] group-hover:to-[#003366] md:w-[50%]" onClick={() => handleToggle('card_6')}>
+            <div className={`border border-gray-200 p-4 rounded-lg flex items-center justify-between cursor-pointer  transition-all duration-300  md:w-[50%] ${activeCard === "card_6" ? "bg-[#0E7280]" : "bg-white"}`} onClick={() => handleToggle('card_6')}>
               <div className="flex items-center">
-                <div className=" flex items-center justify-center  mr-4  group-hover:bg-opacity-20">
-                  <Image src="/icons/sol-2-lgo1.png"
-                    alt='heart'
-                    width={100}
-                    height={100}
-                    className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
-                </div>
-                <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white  group-hover:text-white ">Targeted Health Interventions</h3>
+
+                <h3 className={`text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']  ${activeCard === "card_6" ? "text-white" : "text-[#5A5A5A]"} `}>Targeted Health Interventions</h3>
               </div>
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-400 group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </div>
             {/* Hidden content that shows on hover */}
-            <div className={` ${activeCard === 'card_6' ? 'block' : 'hidden'} group-hover:block overflow-hidden w-full bg-white p-4 z-10`}>
-              <div className="flex flex-row items-center gap-6  specialty-cards-container  gap-4 sm:gap-6 lg:gap-8">
-                {/* Left column - Smart Health Checkups */}
-                <div className="bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
-                      <Image src="/icons/sol-2-lgo4.png"
-                        alt='heart'
-                        width={100}
-                        height={100}
-                        className="w-6 h-6 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Health Analytics Dashboard</h3>
-                  </div>
-                  <ul className="list-disc border-b-2 border-gray-300 pb-2 list-inside text-gray-600 ml-4 space-y-1">
-                    <li>Location-wise health trend visualization</li>
-                    <li>Predictive insights for outbreaks, chronic disease mapping</li>
-                    <li>Actionable analytics for faster response</li>
-                  </ul>
-                </div>
+            <div className={` overflow-hidden w-full bg-white p-4 z-10 ${activeCard === 'card_6' ? 'block' : 'hidden'}`}>
+              <div className="relative p-4 md:px-6 flex flex-row items-center gap-6   gap-4 sm:gap-6 lg:gap-8">
+                <button className="custom-prev cursor-pointer absolute left-0 top-[35%] z-10 p-2 rounded-full bg-white shadow-lg hover:bg-gray-100 transition-all duration-300">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M15 19l-7-7 7-7" stroke="#003366" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
 
-                {/* Right column - Teleconsultation Services */}
-                <div className="bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
-                      <Image src="/icons/sol-2-lgo4.png"
-                        alt='heart'
-                        width={100}
-                        height={100}
-                        className="w-6 h-6 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
+                <button className="custom-next cursor-pointer absolute right-0 top-[35%] z-10 p-2 rounded-full bg-white shadow-lg hover:bg-gray-100 transition-all duration-300">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M9 5l7 7-7 7" stroke="#003366" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+                {/* Left column - Smart Health Checkups */}
+                <Swiper
+                  modules={[Navigation, Pagination]}
+                  navigation={{
+                    nextEl: '.custom-next',
+                    prevEl: '.custom-prev',
+                  }}
+                  spaceBetween={30}
+                  slidesPerView={2}
+                  pagination={{ clickable: true, el: '.custom-pagination' }}
+                  breakpoints={{
+                    0: { slidesPerView: 1 },
+                    640: { slidesPerView: 1 },
+                    1024: { slidesPerView: 2 },
+                  }}
+                >
+                  {/* Card 1 */}
+                  <SwiperSlide>
+                    <div className="bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                      <div className="flex items-center mb-4">
+                        <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Health Analytics Dashboard</h3>
+                      </div>
+                      <ul className="list-disc border-b-2 font-['Montserrat'] border-gray-300 pb-2 text-gray-600 font-[600] leading-[1.2] ml-4 tracking-[0%] space-y-1">
+                        <li>Location-wise health trend visualization</li>
+                        <li>Predictive insights for outbreaks, chronic disease mapping</li>
+                        <li>Actionable analytics for faster response</li>
+                      </ul>
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat'] ">Hospital & NGO Connectivity</h3>
-                  </div>
-                  <ul className="list-disc border-b-2 border-gray-300 pb-2 list-inside text-gray-600 ml-4 space-y-1">
-                    <li>Connect rural areas to city hospitals & NGO programs</li>
-                    <li>Real-time tele-diagnostics + referrals</li>
-                    <li>Partnerships for scaling preventive health drive</li>
-                  </ul>
-                </div>
-                <div className="bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#EBF6FE] rounded-full mr-4">
-                      <Image src="/icons/sol-2-lgo4.png"
-                        alt='heart'
-                        width={100}
-                        height={100}
-                        className="w-6 h-6 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
+                  </SwiperSlide>
+
+                  {/* Card 2 */}
+                  <SwiperSlide>
+                    <div className="bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                      <div className="flex items-center mb-4">
+
+                        <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat'] ">Hospital & NGO Connectivity</h3>
+                      </div>
+                      <ul className="list-disc border-b-2 font-['Montserrat'] border-gray-300 pb-2 text-gray-600 font-[600] leading-[1.2] ml-4 tracking-[0%] space-y-1">
+                        <li>Connect rural areas to city hospitals & NGO programs</li>
+                        <li>Real-time tele-diagnostics + referrals</li>
+                        <li>Partnerships for scaling preventive health drive</li>
+                      </ul>
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Data-Driven Program Planning</h3>
-                  </div>
-                  <ul className="list-disc border-b-2 border-gray-300 pb-2 list-inside text-gray-600 ml-4 space-y-1">
-                    <li>Resource allocation based on live data</li>
-                    <li>Enable funders and policymakers to optimize spending</li>
-                    <li>Targeted intervention for maximum impact</li>
-                  </ul>
-                </div>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <div className="bg-white p-2 md:p-6 rounded-lg border-2 border-gray-300 transition-all duration-300">
+                      <div className="flex items-center mb-4">
+
+                        <h3 className="text-xl font-semibold text-gray-800 text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize  font-['Montserrat']">Data-Driven Program Planning</h3>
+                      </div>
+                      <ul className="list-disc border-b-2 font-['Montserrat'] border-gray-300 pb-2 text-gray-600 font-[600] leading-[1.2] ml-4 tracking-[0%] space-y-1">
+                        <li>Resource allocation based on live data</li>
+                        <li>Enable funders and policymakers to optimize spending</li>
+                        <li>Targeted intervention for maximum impact</li>
+                      </ul>
+                    </div>
+                  </SwiperSlide>
+                  <div className="custom-pagination flex justify-center gap-2 mt-6"></div>
+                </Swiper>
               </div>
             </div>
           </div>

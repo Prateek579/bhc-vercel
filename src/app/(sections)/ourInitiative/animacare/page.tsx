@@ -220,12 +220,12 @@ export default function Animacare() {
               </div>
             </div>
             {/* Map Image */}
-            <div className="relative h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] flex items-center justify-center">
+            <div className="relative h-[200px] sm:h-[300px] md:h-[400px] flex items-center justify-center">
               <Image
                 src="/icons/anim-2-img1.1.png"
                 alt="Murshidabad District Map"
                 width={800} height={800}
-                className="sm:h-[95%] md:h-[80%] lg:h-[80%] w-auto"
+                className="h-full w-auto"
               />
             </div>
           </div>
@@ -310,7 +310,7 @@ export default function Animacare() {
                       alt="TDTC Building"
                       width={48}
                       height={48}
-                      className="w-20 h-22"
+                      className="w-20 h-18"
                     />
                   </div>
                   <div className='md:h-[35%]'>
@@ -333,11 +333,11 @@ export default function Animacare() {
                 <div className="flex flex-col items-center gap-4 md:mb-4 border-b-2 border-[#003366] h-[45%]">
                   <div className="h-[65%] flex items-center justify-center">
                     <Image
-                      src="/icons/anim-6-lgo2.1.png"
+                      src="/icons/anim-6-lgo2.png"
                       alt="MTCU Vehicle"
                       width={100}
                       height={100}
-                      className="w-24 h-21"
+                      className="w-auto h-14"
                     />
                   </div>
                   <div className='h-[35%]'>
@@ -444,7 +444,7 @@ export default function Animacare() {
                 alt="TDTC Icon"
                 width={40}
                 height={40}
-                className="flex-shrink-0 group-hover:hidden touch-hover:hidden"
+                className="flex-shrink-0 group-hover:hidden touch-hover:hidden w-14"
               />
               <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white touch-hover:text-white transition-colors duration-300">Tele-Diagnostic & Tele-Consultation Centre</h3>
             </div>
@@ -471,7 +471,7 @@ export default function Animacare() {
           >
             <div className="flex items-center gap-4 mb-6">
               <Image
-                src="/icons/anim-6-lgo2.1.png"
+                src="/icons/anim-6-lgo2.png"
                 alt="TDTC Icon"
                 width={55}
                 height={55}
@@ -506,7 +506,7 @@ export default function Animacare() {
                 alt="TDTC Icon"
                 width={35}
                 height={35}
-                className="flex-shrink-0 group-hover:hidden touch-hover:hidden"
+                className="flex-shrink-0 group-hover:hidden touch-hover:hidden w-11"
               />
               <h3 className="text-[18px] sm:text-[22px] md:text-[24px] font-[600] leading-[1.2] sm:leading-[24px] tracking-[0%] text-start align-middle capitalize text-[#5A5A5A] font-['Montserrat'] group-hover:text-white touch-hover:text-white transition-colors duration-300">Seamless Referral & Follow-up System</h3>
             </div>
@@ -525,29 +525,29 @@ export default function Animacare() {
       </div>
     </div>
 
-    {/*Powered by Government Schemes*/}
-    < div className="relative bg-white overflow-hidden" >
-      <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
-        <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-4 sm:mb-8 text-center">
-          <span className="text-[#18A093]">Powered by</span>{' '}
-          <span className="text-[#003366]">Government Schemes</span>
-        </h2>
-        <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-2 xs:gap-3 sm:gap-4 md:gap-5">
-          <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
-            <Image src="/icons/hm-gs-img1.png" alt="Gov. Schemes" width={200} height={200} className='w-30  md:w-45 h-auto object-contain' />
-          </div>
-          <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
-            <Image src="/icons/hm-gs-img2.png" alt="Gov. Schemes" width={200} height={200} className='w-30  md:w-45 h-auto object-contain' />
-          </div>
-          <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
-            <Image src="/icons/hm-gs-img3.png" alt="Gov. Schemes" width={200} height={200} className='w-30  md:w-45 h-auto object-contain' />
-          </div>
-          <div className="flex  items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
-            <Image src="/icons/hm-gs-img4.png" alt="Gov. Schemes" width={200} height={200} className='w-30  md:w-45 h-auto object-contain' />
+  {/*Powered by Government Schemes*/}
+  < div className="relative bg-white overflow-hidden" >
+        <div className="max-w-screen-2xl mx-auto px-3 sm:px-15 lg:px-22 py-10 md:py-15">
+          <h2 className="text-[25px] sm:text-[38px] md:text-[38px] font-[700] font-['Montserrat'] mb-1 sm:mb-4 text-center">
+            <span className="text-[#18A093]">Powered by</span>{' '}
+            <span className="text-[#003366]">Government Schemes</span>
+          </h2>
+          <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-2 xs:gap-3 sm:gap-4 md:gap-5">
+            <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+              <Image src="/icons/hm-gs-img1.png" alt="Gov. Schemes" width={200} height={200} className='w-20  md:w-45 h-auto object-contain' />
+            </div>
+            <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+              <Image src="/icons/hm-gs-img2.png" alt="Gov. Schemes" width={200} height={200} className='w-20  md:w-45 h-auto object-contain' />
+            </div>
+            <div className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+              <Image src="/icons/hm-gs-img3.png" alt="Gov. Schemes" width={200} height={200} className='w-20  md:w-45 h-auto object-contain' />
+            </div>
+            <div className="flex  items-center justify-center p-2 transition-all duration-300 hover:scale-112 cursor-pointer">
+              <Image src="/icons/hm-gs-img4.png" alt="Gov. Schemes" width={200} height={200} className='w-20  md:w-45 h-auto object-contain' />
+            </div>
           </div>
         </div>
-      </div>
-    </div >
+      </div >
 
     {/* Social Impacts & Sustainability Section */}
     <div className="relative overflow-hidden bg-white">

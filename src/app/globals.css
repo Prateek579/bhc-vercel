@@ -97,6 +97,7 @@ body {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -106,6 +107,7 @@ body {
   0% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
   }
@@ -153,4 +155,83 @@ body {
 .swiper-pagination-bullet-active {
   width: 16px;
   background-color: #003366;
+}
+
+
+/* parallax sections */
+.parallax-section {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  font-family: sans-serif;
+  transition: filter 0.3s ease;
+}
+
+.parallax-section .content {
+  transition: opacity 0.3s ease;
+}
+
+.parallax-section.scrolled {
+  filter: blur(3px);
+}
+
+/* .parallax-section .content-prd {
+  position: sticky;
+  top: 0;
+  transition: transform 0.3s ease;
+} */
+
+.parallax-section.scrolled .content-prd {
+  transform: translateY(-50%);
+}
+
+@keyframes autoScroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+/* .auto-scroll-container {
+  animation: autoScroll 10s linear infinite;
+}
+
+.auto-scroll-container:hover {
+  animation-play-state: paused;
+}
+
+.auto-scroll-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.auto-scroll-content > div {
+  cursor: pointer;
+} */
+
+/* Each section's unique background image */
+.section1 {
+  background-image: url('/icons/hm-shm.png');
+  opacity: 0.8;
+
+}
+
+.section2 {
+  background-image: url('/icons/hm-nrs.svg');
+  opacity: 0.8;
+}
+
+.section3 {
+  background-image: url('/icons/prd-2-img3.jpg');
+  opacity: 0.9;
 }
